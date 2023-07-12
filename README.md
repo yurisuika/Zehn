@@ -20,6 +20,6 @@ Please note that the library in these previews does not yet exist. This is from 
 
 ![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1128805252137754705/zehn.png)
 
-![zehn settings](https://cdn.discordapp.com/attachments/729991202778251317/1128805258844442754/zehn-settings.png)
+![zehn settings](https://cdn.discordapp.com/attachments/729991202778251317/1128817047690813440/zehn-settings.png)
 
 ![zehn chat](https://cdn.discordapp.com/attachments/729991202778251317/1128813573045506198/zehn-chat.gif)
