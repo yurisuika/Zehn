@@ -15,6 +15,13 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
+#### To-Do
+- Most things on the overlay
+- Library
+- Downloads
+- Screenshots
+- Figure out to implement Reveal on stuff that isn't initially loaded
+
 #### Previews
 Please note that the library in these previews does not yet exist. This is from my old skin, but it will return very much the same to appear as so.
 
