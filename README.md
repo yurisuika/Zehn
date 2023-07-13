@@ -10,7 +10,7 @@ If you are using [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/rele
 
 Extract the root folder `Zehn` and place it in `~/Steam/steamui/skins`, and then select the skin in SFP.
 
-### Customization
+#### Customization
 In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for settings windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors.
 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
