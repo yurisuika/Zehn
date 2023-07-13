@@ -20,6 +20,7 @@ In default colors, the in-game is styled to match the accent. If you haven't alr
 - Library
 - Downloads
 - Screenshots
+- Notifications dropdown
 - Figure out to implement Reveal on stuff that isn't initially loaded
 
 #### Previews
