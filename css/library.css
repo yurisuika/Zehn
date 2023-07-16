@@ -406,9 +406,11 @@
   height: 16px !important;
 }
 
+/* GAMES LIST DYNAMIC COLLECTION ICON */
 [class*="gamelistsectionheader_SectionHeaderContent_"] svg {
   fill: rgb(var(--color-white)) !important;
   margin: 4px !important;
+  display: none !important;
 }
 
 [class*="gamelistsectionheader_SectionHeaderContent_"] svg polyline:first-of-type, [class*="gamelistsectionheader_SectionHeaderContent_"] svg polyline:last-of-type {
@@ -430,46 +432,12 @@
   background-color: transparent !important;
 }
 
-[class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"]::before {
-  position: absolute !important;
-  display: block !important;
-  width: 0px !important;
-  height: 20px !important;
-  outline: 2px solid rgb(var(--color-accent)) !important;
-  content: "" !important;
-  left: 2px !important;
-  background: rgb(var(--color-accent)) !important;
-  /* z-index: 99 !important; */
-  top: 2px !important;
-}
-
 [class*="gamelistentry_Container_"]:not([class*="gamelistentry_Selected_"]):hover {
   background-color: rgba(var(--color-white), 0.1) !important;
 }
 
 [class*="gamelistentry_Container_"]:not([class*="gamelistentry_Selected_"]):active {
   background-color: rgba(var(--color-white), 0.2) !important;
-}
-
-[class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"] {
-  background: rgba(var(--color-white), 0.1) !important;
-  display: none !important;
-  border-radius: 0px !important;
-}
-
-[class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]:active, [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]:active, [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]:active {
-  background: rgba(var(--color-white), 0.2) !important;
-}
-
-[class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]::before, [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]::before, [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]::before {
-  background: rgb(var(--color-background)) !important;
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
 }
 
 [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"]:hover {
@@ -541,6 +509,71 @@
 
 [class*="gamelistentry_FriendIsPlaying_"] svg circle, [class*="gamelistentry_FriendIsPlaying_"] svg path {
   fill: rgb(var(--color-accent)) !important;
+}
+
+/* GAMES LIST SELECTED BAR */
+[class*="gamepadui_SteamUIPopupWindowBody_"] div div:not([class*="hoverposition_HoverPositionOuter_"]) [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"]::before {
+  position: absolute !important;
+  display: block !important;
+  width: 0px !important;
+  height: 20px !important;
+  outline: 2px solid rgb(var(--color-accent)) !important;
+  content: "" !important;
+  left: 2px !important;
+  background: rgb(var(--color-accent)) !important;
+  top: 2px !important;
+  z-index: 99 !important;
+}
+
+[class*="gamepadui_SteamUIPopupWindowBody_"] div [class*="hoverposition_HoverPositionOuter_"] [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"]::before {
+  position: absolute !important;
+  display: block !important;
+  width: 0px !important;
+  height: 20px !important;
+  outline: 2px solid rgb(var(--color-accent)) !important;
+  content: "" !important;
+  left: 4px !important;
+  background: rgb(var(--color-accent)) !important;
+  top: 4px !important;
+  z-index: 99 !important;
+}
+
+/* GAMES LIST HOVER OVERLAY */
+[class*="hoverposition_HoverPositionOuter_"] {
+  /* pointer-events: none; */
+}
+
+[class*="hoverposition_HoverPosition_"][class*="hoverposition_Ready_"] {
+  background: rgb(var(--color-background)) !important;
+}
+
+[class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"] {
+  /* background: rgba(var(--color-white), 0.1) !important; */
+  /* display: none !important; */
+  background: transparent !important;
+  border-radius: 0px !important;
+  /* margin-top: 0px !important; */
+  /* height: 24px !important; */
+  line-height: 24px !important;
+}
+
+[class*="gamepadui_SteamUIPopupHTML_"]:hover [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamepadui_SteamUIPopupHTML_"]:hover [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamepadui_SteamUIPopupHTML_"]:hover [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"] {
+  background: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="gamepadui_SteamUIPopupHTML_"]:active [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamepadui_SteamUIPopupHTML_"]:active [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"], [class*="gamepadui_SteamUIPopupHTML_"]:active [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"] {
+  background: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]::before, [class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]::before, [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"][class*="gamelistentry_HoverOverlay_"]::before {
+  background: rgb(var(--color-background)) !important;
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
 }
 
 /* DIVIDER */
