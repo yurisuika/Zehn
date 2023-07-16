@@ -17,10 +17,11 @@ In default colors, the in-game is styled to match the accent. If you haven't alr
 
 #### To-Do
 - Most things on the overlay
-- Library
-- Downloads
-- Screenshots
-- Notifications dropdown
+- Library Page
+- Downloads Page
+- Screenshots Page Icons
+- Notifications Dropdown
+- Some invite/notification stuff on chat
 - Figure out to implement Reveal on stuff that isn't initially loaded
 
 #### Previews

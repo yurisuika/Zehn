@@ -257,7 +257,8 @@
 }
 
 .chatHistoryScroll {
-  padding: 0px !important;
+  /* padding: 0px !important; */
+  padding: 0px 0px 16px 0px !important;
   /* overflow: auto !important; */
   overflow-x: hidden !important;
 }
@@ -378,8 +379,19 @@
   display: var(--option-display-time-division) !important;
 }
 
+.timeDivision.time_passes .preHorizDivider {
+  height: 1px !important;
+  border: 0px solid transparent !important;
+  background-color: linear-gradient(270deg, transparent, rgba(var(--color-white), 0.2)) !important;
+}
+
+.timeDivision.time_passes .horizDivider {
+  height: 1px!important;
+  border: 0px solid transparent !important;
+  background-color: rgba(var(--color-white), 0.0) !important;
+}
+
 .timeDivision .preHorizDivider {
-  /* background-color: rgba(var(--color-white), 0.0) !important; */
   background: linear-gradient(90deg, transparent, rgba(var(--color-white), 0.2)) !important;
   flex-grow: 1 !important;
   margin-right: 16px !important;
@@ -429,6 +441,74 @@
 .msg .gameInviteDismissed:active, .msg .gameInviteSelf:active, .msg .gameInviteAccepted:active {
   filter: brightness(1) !important;
   color: rgb(var(--color-text-sub)) !important;
+}
+
+.ChatMessageInvite {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size) !important;
+  font-weight: normal !important;
+}
+
+.msg.ChatMessageInvite.gameInviteMsg.Panel.Focusable {
+  background: transparent !important;
+}
+
+.msg .inviteLaebl, .msg .productName {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size) !important;
+  font-weight: normal !important;
+}
+
+.gameInviteMsg .productName, .broadcastInviteMsg .productName, .broadcastViewRequestMsg .productName {
+  letter-spacing: 2px !important;
+}
+
+.msg.ChatMessageInvite .closeButton .SVGIcon_Button {
+  height: 38px !important;
+  width: 38px !important;
+  fill: transparent !important;
+}
+
+.msg .invitedTimeLabel {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size) !important;
+  font-weight: normal !important;
+}
+
+.msg .productImage.productImageBlur {
+  display: none !important;
+}
+
+.msg .acceptButtonsGroup button.DialogButton.GreenPlay {
+  /* background: transparent !important; */
+}
+
+.msg .acceptButtonsGroup button.DialogButton.GreenPlay:hover {
+  /* background-color: rgba(var(--color-white), 0.1) !important; */
+}
+
+.msg .acceptButtonsGroup button.DialogButton.GreenPlay:active {
+  /* background-color: rgba(var(--color-white), 0.2) !important; */
+}
+
+.msg .acceptButtonsGroup button.DialogButton.GreenPlay {
+  background: rgba(var(--color-white), 0.2) !important;
+  color: rgb(var(--color-white)) !important;
+  border-radius: 0px !important;
+}
+
+.msg .acceptButtonsGroup button.DialogButton.GreenPlay:hover {
+  background: rgba(var(--color-white), 0.3) !important;
+  color: rgb(var(--color-white)) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+.msg .acceptButtonsGroup button.DialogButton.GreenPlay:active {
+  background: rgba(var(--color-white), 0.4) !important;
+  color: rgb(var(--color-white)) !important;
+  outline: 2px solid transparent !important;
+  outline-offset: -2px !important;
 }
 
 /* MESSAGE ADDONS */
