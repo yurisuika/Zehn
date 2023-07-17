@@ -95,25 +95,12 @@
   background-color: transparent !important;
 }
 
-/* [class*="gamelistbar_Container_"]::before, [class*="gamelistbar_Container_"]::after {
- content: "" !important;
- position: absolute !important;
- z-index: -1 !important;
- top: 0 !important;
- left: 0 !important;
- right: 0 !important;
- bottom: 0 !important;
-}
-
-[class*="gamelistbar_Container_"]::before {
+[class*="library_LeftListSizableContainer_"] {
   background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(40px) !important;
+  /* backdrop-filter: blur(40px) !important; */
   background-blend-mode: exclusion !important;
-}
-
-[class*="gamelistbar_Container_"]::after {
   background-image: var(--image-acrylic) !important;
-} */
+}
 
 [class*="library_LeftListSizableContainer_"] {
   /* opacity: 0 !important; */
@@ -135,7 +122,7 @@
 /* GAMES LIST HOME */
 [class*="gamelistbar_GameListHomeAndSearch_"] {
   background-color: transparent !important;
-  padding: 0px !important;
+  padding: 16px 0px 0px 0px !important;
   /* margin-top: 8px !important; */
   height: 38px !important;
 }
@@ -211,9 +198,13 @@
 }
 
 /* GAMES LIST DROPDOWN */
+[class*="gamelistdropdown_SearchBar_"] {
+  padding: 0px 0px 0px 16px !important;
+}
+
 [class*="gamelistdropdown_Bar_"] {
-  padding: 0px !important;
-  height: 32px !important;
+  padding: 16px 0px 0px 0px !important;
+  /* height: 48px !important; */
 }
 
 [class*="gamelistdropdown_Bar_"] [class*="gamelistdropdown_MenuHeader_"] {
@@ -224,6 +215,7 @@
   border-radius: 0px !important;
   outline: 2px solid rgba(var(--color-white), 0.5) !important;
   outline-offset: -2px !important;
+  margin-right: 16px !important;
 }
 
 [class*="gamelistdropdown_Bar_"] [class*="gamelistdropdown_MenuHeader_"]:hover {
@@ -366,7 +358,7 @@
 
 /* GAMES LIST SEARCH */
 [class*="gamelistsearchbar_Container_"] {
-  padding: 0px !important;
+  padding: 16px 0px 16px 0px !important;
   margin: 0px !important;
   height: 32px !important;
   min-height: 32px !important;
@@ -385,8 +377,53 @@
   border-radius: 0px !important;
 }
 
+[class*="gamelistsearchbar_SearchInput_"] .DialogTextInputBase {
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+  border-radius: 0px !important;
+  outline: 0px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="gamelistsearchbar_SearchInput_"] .DialogTextInputBase:hover {
+  background: transparent !important;
+  outline: 0px solid rgba(var(--color-white), 0.65) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="gamelistsearchbar_SearchInput_"] .DialogTextInputBase:active {
+  background: transparent !important;
+  outline: 0px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"] {
+  width: 14px !important;
+  height: 14px !important;
+  right: 9px !important;
+  top: 9px !important;
+}
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction svg, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"] svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction svg line, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"] svg line {
+  stroke: rgb(var(--color-white)) !important;
+}
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction:not(:hover), [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"]:not(:hover) {
+  opacity: 0.4 !important;
+}
+
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_Wrapper._DialogLayout.Panel.Focusable {
+  /* padding: 0px 16px !important; */
+}
+
 [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchInput_"] .DialogTextInputBase {
-  padding: 0px !important;
+  padding: 0px 16px !important;
 }
 
 [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchInput_"] .DialogInput {
@@ -457,7 +494,34 @@
 [class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"] [class*="appfilterpane_FilterBucketLabel_"] {
   font-size: var(--font-size-text) !important;
   font-weight: normal !important;
-  color: rgb(var(--color-accent)) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="shared_svg_library_SteamDeckCompatIcon_"][class*="shared_svg_library_SteamDeckCompatVerified_"] {
+  color: rgb(var(--color-white)) !important;
+}
+
+[class*="shared_svg_library_SteamDeckCompatIcon_"][class*="shared_svg_library_SteamDeckCompatPlayable_"] {
+  color: rgb(var(--color-white)) !important;
+}
+
+[class*="shared_svg_library_SteamDeckCompatIcon_"][class*="shared_svg_library_SteamDeckCompatUnknown_"] {
+  color: rgb(var(--color-white)) !important;
+}
+
+[class*="shared_svg_library_SteamDeckCompatIcon_"][class*="shared_svg_library_SteamDeckCompatUnsupported_"] {
+  color: rgb(var(--color-white)) !important;
+}
+
+/* GAMES LIST FILTER TAGS */
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] {
+  background-color: rgb(var(--color-accent)) !important;
+  border-radius: 0px !important;
+  margin: 2px 2px !important;
+  padding: 2px 6px 6px !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: normal !important;
+  color: rgb(var(--color-text)) !important;
 }
 
 /* GAMES LIST SECTION */
