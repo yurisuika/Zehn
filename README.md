@@ -15,13 +15,17 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
+#### Things of Note
+In the library page, the divider has a width of 0.1px. Upon hover, it will expand with a delay, which you can then use to resize the sidebar.
+
+If things crash because of the class moving, press F5 to refresh the client. This will hopefully be resolved soon. I believe it has to do with the downloads progress.
+
 #### To-Do
 - Most things on the overlay
 - Library Page
 - Downloads Page
-- Screenshots Page Icons
 - Notifications Dropdown
-- Some invite/notification stuff on chat
+- Account Dropdown
 - Figure out to implement Reveal on stuff that isn't initially loaded
 
 #### Previews
