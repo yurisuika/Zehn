@@ -222,9 +222,16 @@
 
 /* NAVMENU LINK INACTIVE */
 [class*="supernav_SuperNavMenu_"] [class*="supernav_MenuButton_"] {
-  color: rgb(var(--color-text-sub)) !important;
   position: relative !important;
   top: 9px !important;
+}
+
+[class*="supernav_SuperNavMenu_"]:not([class*="menu_MenuOpen_"]) [class*="supernav_MenuButton_"] {
+  color: rgb(var(--color-text-sub)) !important;
+}
+
+[class*="supernav_SuperNavMenu_"][class*="menu_MenuOpen_"] [class*="supernav_MenuButton_"] {
+  color: rgb(var(--color-text)) !important;
 }
 
 [class*="supernav_SuperNavMenu_"]:hover > [class*="supernav_MenuButton_"], [class*="supernav_SuperNavMenu_"]:active > [class*="supernav_MenuButton_"] {
