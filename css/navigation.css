@@ -194,13 +194,15 @@
   width: calc(100% + 20px) !important;
   height: 2px !important;
   margin-left: -10px !important;
-  margin-top: 10px !important;
+  margin-top: -2px !important;
+  border-radius: 0px !important;
 }
 
 /* NAVMENU LINKS */
 [class*="supernav_SuperNavMenu_"] {
   font-size: var(--font-size-text) !important;
   /* padding: 18px 10px 0 10px !important; */
+  font-weight: 500 !important;
 }
 
 [class*="supernav_SuperNavMenu_"]:hover {
@@ -223,7 +225,8 @@
 /* NAVMENU LINK INACTIVE */
 [class*="supernav_SuperNavMenu_"] [class*="supernav_MenuButton_"] {
   position: relative !important;
-  top: 9px !important;
+  /* top: 9px !important; */
+  line-height: 38px !important;
 }
 
 [class*="supernav_SuperNavMenu_"]:not([class*="menu_MenuOpen_"]) [class*="supernav_MenuButton_"] {
@@ -275,22 +278,23 @@
   display: none !important;
 }
 
-#SteamDesktop > div[class*="steamdesktop_Wrapper_"] > div[class*="steamdesktop_OuterFrame_"] > div[class*="steamdesktop_TopBar_"] > div[class*="steamdesktop_TitleBar_"] > div[class*="steamdesktop_DragArea_"] > div[class*="titlebarcontrols_AccountMenu_"] > div:nth-child(2) {
+[class*="titlebarcontrols_AccountMenu_"] > div:nth-child(2) {
   display: none !important;
 }
 
 [class*="titlebarcontrols_AccountMenu_"] {
-  margin-top: -2px !important;
+  /* margin-top: -2px !important; */
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
-  font-weight: normal !important;
+  font-weight: 400 !important;
+  line-height: 38px !important;
 }
 
 /* ACCOUNT BALANCE */
 [class*="titlebarcontrols_AccountMenu_"] [class*="titlebarcontrols_WalletBalance_"] {
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
-  font-weight: normal !important;
+  font-weight: 400 !important;
 }
 
 [class*="titlebarcontrols_AccountMenu_"] {
@@ -322,7 +326,7 @@
 }
 
 [class*="bottombar_DownloadStatusContent_"] [class*="bottombar_Status_"] {
-  display: none !important;
+  /* display: none !important; */
   font-size: var(--font-size-text) !important;
 }
 
@@ -555,6 +559,10 @@
   display: none !important;
 }
 
+[class*="titlebarcontrols_AnnouncementWaveSVG_"] {
+  display: none !important;
+}
+
 /* DOWNLOAD BUTTON */
 [class*="bottombar_DownloadStatus_"] {
   background-color: transparent !important;
@@ -572,12 +580,14 @@
   -webkit-app-region: no-drag !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
+  /* background-position: right !important; */
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjklEQVRYhe3XywqAIBSE4exps/ffT5sOiCk0Nl2g+cFFFvRxEKIEYPpi89uAXoaxGcZmGJthbIaxKWHSj+4vJibNMDbD2EZhWfzcMQAjCwByY6+8zo2902sUtuwvXTuwuF/jb4eVEwlcwFroR2H1ZKBCKWAlLrqMUsEkZ6peCfCfOJVhbIaxGcZmGJthbBsQFMjMji+hXgAAAABJRU5ErkJggg==') !important;
 }
 
 [class*="bottombar_DownloadStatusContent_"] {
   padding: 0px !important;
   width: 38px !important;
+  /* float: right !important; */
 }
 
 [class*="bottombar_DownloadStatusContent_"]:not([class*="bottombar_Disabled_"]):hover, [class*="bottombar_DownloadStatusContent_"]:hover {
@@ -597,7 +607,7 @@
 [class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_StatusLine_"] {
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
-  font-weight: normal !important;
+  font-weight: 400 !important;
 }
 
 [class*="bottombar_DownloadStatusContent_"] [class*="bottombar_Status_"] {
@@ -606,7 +616,8 @@
 
 [class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_ProgressBar_"] {
   height: 2px !important;
-  margin-top: 8px !important;
+  /* margin-top: 8px !important; */
+  margin-top: -4px !important;
 }
 
 [class*="progressbar_ProgressBar_"][class*="progressbar_AnimateProgress_"]::after {
@@ -619,8 +630,11 @@
 }
 
 [class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_Status_"] {
-  margin-top: 9px !important;
+  /* margin-top: 9px !important; */
   text-transform: uppercase !important;
+  line-height: 38px !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
 }
 
 [class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_IconBevel_"] {
@@ -639,7 +653,8 @@
   width: 200px !important;
   height: 38px !important;
   float: right !important;
-  margin-right: 24px !important;
+  /* margin-right: 24px !important; */
+  /* margin-right: 38px !important; */
   /* padding-left: 26px !important; */ /* WHEN INJECTING DETAILEDDOWNLOADPROGRESS */
   margin-top: 0px !important;
 }
@@ -648,8 +663,10 @@
   /* max-width: 38px !important; */
   /* display: none !important; */
   max-width: 200px !important;
+  /* max-width: 238px !important; */
   display: flex !important;
   float: right !important;
+  margin-right: 24px !important;
 }
 
 [class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_Icon_"] {

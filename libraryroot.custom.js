@@ -15,7 +15,6 @@ moveElements(
   'titlebarcontrols_NotificationButtonContainer_3mGEz',
   'titlebarcontrols_AnnouncementsButton_5wILZ',
   'titlebarcontrols_AccountMenu_3yD46',
-  'bottombar_ProgressBarWrapper_2_Fom',
   'bottombar_DetailedDownloadProgress_2VtAq']
 )
 
