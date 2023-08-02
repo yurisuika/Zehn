@@ -369,20 +369,27 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   color: rgb(var(--color-white)) !important;
 }
 
+.DialogCheckbox.Disabled {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
 /* TOGGLE */
 [class*="gamepaddialog_ToggleRail_"] {
   background: transparent !important;
-  border-radius: 9001px !important;
+  border-radius: 0px !important;
 }
 
 [class*="gamepaddialog_ToggleRail_"]::before {
-  background: rgb(var(--color-accent)) !important;
-  transform: translateX(-40px);
+  /* background: rgb(var(--color-accent)) !important; */
+  /* transform: translateX(-40px); */
   content: "" !important;
+  background: transparent !important;
+  transform: none !important;
 }
 
 [class*="gamepaddialog_ToggleRail_"]::after {
-  background: rgb(var(--color-accent)) !important;
+  /* background: rgb(var(--color-accent)) !important; */
+  background: transparent !important;
 }
 
 [class*="gamepaddialog_Toggle_"] {
@@ -392,14 +399,51 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   margin-right: 4px !important;
 }
 
-[class*="gamepaddialog_Toggle_"] {
-  border: 2px solid rgba(var(--color-white), 0.8) !important;
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] {
+  /* background: transparent !important; */
+  background: rgb(var(--color-accent)) !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleRail_"] {
+  /* background: rgb(var(--color-accent)) !important; */
+  background: transparent !important;
+}
+
+[class*="gamepaddialog_Toggle_"], [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"] {
+  border: 2px solid rgba(var(--color-white), 0.84) !important;
   border-radius: 9001px !important;
 }
 
-[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] {
-  border: 2px solid rgb(var(--color-accent)) !important;
+[class*="gamepaddialog_Toggle_"]:hover {
+  border-color: rgb(var(--color-white)) !important;
+  /* background: rgba(var(--color-white), 0.84) !important; */
+}
+
+[class*="gamepaddialog_Toggle_"]:active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+  background: rgba(var(--color-white), 0.67) !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:active [class*="gamepaddialog_ToggleRail_"] {
+  /* background: rgba(var(--color-white), 0.67) !important; */
+  background: transparent !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"] {
+  filter: saturate(0.0) brightness(0.5);
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"], [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"][class*="gamepaddialog_On_"] {
+  border-color: rgb(var(--color-accent)) !important;
   border-radius: 9001px !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]:active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:active [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] {
+  /* border: 2px solid rgba(var(--color-white), 0.67) !important */
 }
 
 [class*="gamepaddialog_ToggleSwitch_"] {
@@ -407,16 +451,35 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   height: 10px !important;
   margin-top: 3px !important;
   margin-left: 3px !important;
-  color: rgba(var(--color-white), 0.8) !important;
+  background: rgba(var(--color-white), 0.84) !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:hover [class*="gamepaddialog_ToggleSwitch_"], [class*="gamepaddialog_Toggle_"]:active [class*="gamepaddialog_ToggleSwitch_"] {
+  background: rgb(var(--color-white)) !important;
+}
+
+[class*="gamepaddialog_Toggle_"] [class*="gamepaddialog_ToggleSwitch_"] {
+  transform: translateX(0px);
+  transition: transform 0.25s !important;
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleSwitch_"] {
   transform: translateX(24px);
+  transition: transform 0.25s !important;
   color: rgb(var(--color-white)) !important;
+  /* transform: none !important; */
+  /* margin-left: 24px !important;
+  transition: margin-left 2s !important; */
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleRail_"]::before {
-  transform: translateX(0px) !important;
+  /* transform: translateX(0px) !important; */
+  /* transition: transform 2s !important; */
+  transform: none !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"] [class*="gamepaddialog_ToggleSwitch_"] {
+  background: rgb(var(--color-white)) !important;
 }
 
 /* DROPDOWN */
