@@ -63,9 +63,10 @@
 
 /* SUBTITLES */
 .DialogLabel, .DialogLabelStrong {
-  color: rgb(var(--color-text-sub)) !important;
+  color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
-  font-size: var(--font-size-text) !important;
+  font-size: var(--font-size-section) !important;
+  text-transform: none !important;
 }
 
 .ChatRoomNotificationSettingsDialog .DialogFooter {
@@ -380,21 +381,78 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 }
 
 /* TOGGLE */
+[class*="toggle_Toggle_"] {
+  background-color: transparent !important;
+}
+
+[class*="toggle_Toggle_"][class*="toggle_Disabled_"] {
+  filter: saturate(0.0) brightness(0.5);
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"] {
+  width: 40px !important;
+  height: 16px !important;
+  left: 0px !important;
+  top: 0px !important;
+  border: 2px solid rgba(var(--color-white), 0.84) !important;
+  border-radius: 9001px !important;
+  background-color: transparent !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"]:hover {
+  border-color: rgb(var(--color-white)) !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"] {
+  background: transparent !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"][class*="toggle_On_"] {
+  border-color: rgb(var(--color-accent)) !important;
+  background: rgb(var(--color-accent)) !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"][class*="toggle_On_"]:active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+  background: rgba(var(--color-white), 0.67) !important;
+}
+
+[class*="toggle_ToggleSwitch_"] {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 5px !important;
+  background: rgba(var(--color-white), 0.84) !important;
+}
+
+[class*="toggle_Toggle_"]:hover [class*="toggle_ToggleSwitch_"], [class*="toggle_Toggle_"]:active [class*="toggle_ToggleSwitch_"] {
+  background: rgb(var(--color-white)) !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleSwitch_"] {
+  transform: translateX(0px);
+  transition: transform 0.25s !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleSwitch_"][class*="toggle_On_"] {
+  margin: 5px !important;
+  transform: translateX(24px);
+  transition: transform 0.25s !important;
+  color: rgb(var(--color-white)) !important;
+}
+
+/* GAMEPAD TOGGLE */
 [class*="gamepaddialog_ToggleRail_"] {
   background: transparent !important;
   border-radius: 0px !important;
 }
 
 [class*="gamepaddialog_ToggleRail_"]::before {
-  /* background: rgb(var(--color-accent)) !important; */
-  /* transform: translateX(-40px); */
   content: "" !important;
   background: transparent !important;
   transform: none !important;
 }
 
 [class*="gamepaddialog_ToggleRail_"]::after {
-  /* background: rgb(var(--color-accent)) !important; */
   background: transparent !important;
 }
 
@@ -406,12 +464,10 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] {
-  /* background: transparent !important; */
   background: rgb(var(--color-accent)) !important;
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleRail_"] {
-  /* background: rgb(var(--color-accent)) !important; */
   background: transparent !important;
 }
 
@@ -422,7 +478,6 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 
 [class*="gamepaddialog_Toggle_"]:hover {
   border-color: rgb(var(--color-white)) !important;
-  /* background: rgba(var(--color-white), 0.84) !important; */
 }
 
 [class*="gamepaddialog_Toggle_"]:active {
@@ -431,7 +486,6 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 }
 
 [class*="gamepaddialog_Toggle_"]:active [class*="gamepaddialog_ToggleRail_"] {
-  /* background: rgba(var(--color-white), 0.67) !important; */
   background: transparent !important;
 }
 
@@ -446,10 +500,6 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]:active {
   border-color: rgba(var(--color-white), 0.67) !important;
-}
-
-[class*="gamepaddialog_Toggle_"]:active [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] {
-  /* border: 2px solid rgba(var(--color-white), 0.67) !important */
 }
 
 [class*="gamepaddialog_ToggleSwitch_"] {
@@ -473,14 +523,9 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   transform: translateX(24px);
   transition: transform 0.25s !important;
   color: rgb(var(--color-white)) !important;
-  /* transform: none !important; */
-  /* margin-left: 24px !important;
-  transition: margin-left 2s !important; */
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleRail_"]::before {
-  /* transform: translateX(0px) !important; */
-  /* transition: transform 2s !important; */
   transform: none !important;
 }
 
