@@ -1,6 +1,5 @@
 /* TOOLTIP */
 [class*="tooltip_TextToolTip_"] {
-  /* display: none !important; */
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
@@ -22,6 +21,11 @@
   border-radius: 0px !important;
 }
 
+/* NAVIGATION TOOLTIPS */
+[class*="gamepadui_SteamUIPopupHTML_"] [class*="tooltip_TextToolTip_"] {
+  /* display: none !important; */
+}
+
 /* CUSTOM TOOLTIP */
 [class*="hoverposition_HoverPositionOuter_"] {
   z-index: 9999 !important;
@@ -29,7 +33,6 @@
 
 [class*="hoverposition_HoverPositionOuter_"] [class*="hoverposition_HoverPosition_"][class*="hoverposition_Ready_"] {
   background: transparent !important;
-  /* background: rgb(var(--color-black)) !important; */
 }
 
 [class*="tooltip_ToolTipCustom_"] {
@@ -63,25 +66,3 @@
   color: rgb(var(--color-text-sub)) !important;
   margin: 6px 4px;
 }
-
-/* [class*="tooltip_ToolTipCustom_"]::before, [class*="tooltip_ToolTipCustom_"]::after {
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-[class*="tooltip_ToolTipCustom_"]::before {
-  background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(40px) !important;
-  background-blend-mode: exclusion !important;
-}
-
-[class*="tooltip_ToolTipCustom_"]::after {
-  background-image: var(--image-acrylic) !important;
-} */
