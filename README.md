@@ -11,27 +11,29 @@ If you are using [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/rele
 Extract the root folder `Zehn` and place it in `~/Steam/steamui/skins`, and then select the skin in SFP.
 
 #### Customization
-In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for settings windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors.
+In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for settings windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
 #### Things of Note
-In the library page, the divider has a width of 0.1px. Upon hover, it will expand with a delay, which you can then use to resize the sidebar.
+In the library page, the divider has a width of 0.1px. Upon hover it will expand with a delay, which you can then use to resize the sidebar.
 
-If things crash because of the class moving, press F5 to refresh the client. This will hopefully be resolved soon. I believe it has to do with the downloads progress.
+If things crash because of the class moving, press F5 to refresh the client (this may require dev mode). This will hopefully be resolved soon. I believe it has to do with the downloads progress.
 
 #### To-Do
 - Most things on the overlay
-- Library Page
-- Downloads Page
-- Notifications Dropdown
-- Account Dropdown
+- Notifications
+- Replace/add icons in settings
+- Implement Reveal
 - Figure out to implement Reveal on stuff that isn't initially loaded
+- Figure out why webkit text rendering is so much blurrier than in UWP apps
+- Maybe do browser?
+- Anything I haven't come across from daily use
 
 #### Previews
 Please note that the library in these previews does not yet exist. This is from my old skin, but it will return very much the same to appear as so.
 
-![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1128805252137754705/zehn.png)
+![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1137189892481359902/zehn.png)
 
 ![zehn settings](https://cdn.discordapp.com/attachments/729991202778251317/1128817047690813440/zehn-settings.png)
 
