@@ -89,10 +89,26 @@
   background-image: var(--image-acrylic) !important;
 }
 
+/* GAMES LIST CONTAINER AUTO-HIDE */
+body:not(:hover) [class*="library_LeftListSizableContainer_"] {
+  min-width: 0px !important;
+  max-width: 0px !important;
+  transition: max-width 5s ease, min-width 5s ease !important;
+  transition-delay: 1s !important;
+}
+
+body:hover [class*="library_LeftListSizableContainer_"] {
+  max-width: calc(min(50%, 100% - 400px)) !important;
+  min-width: 256px !important;
+  transition: max-width 5s ease, min-width 5s ease !important;
+  transition-delay: 1s !important;
+}
+
 /* GAMES LIST CONTAINER */
 [class*="gamelistbar_Container_"] {
-  background-image: url() !important;
+  background-image: linear-gradient() !important;
   background-color: transparent !important;
+  background: transparent !important;
 }
 
 [class*="library_LeftListSizableContainer_"] {
@@ -100,23 +116,6 @@
   /* backdrop-filter: blur(40px) !important; */
   background-blend-mode: exclusion !important;
   background-image: var(--image-acrylic) !important;
-}
-
-[class*="library_LeftListSizableContainer_"] {
-  /* opacity: 0 !important; */
-  /* z-index: 9 !important; */
-  /* min-width: 0px !important; */
-  /* max-width: 0px !important; */
-  transition: max-width 2s ease, min-width 2s ease, opacity 1s ease !important;
-  transition-delay: 0.5s !important;
-}
-
-[class*="library_LeftListSizableContainer_"]:hover {
-  /* opacity: 1 !important; */
-  /* min-width: 256px !important; */
-  /* max-width: unset !important; */
-  transition: max-width 2s ease, min-width 2s ease, opacity 1s ease !important;
-  transition-delay: 0.5s !important;
 }
 
 /* GAMES LIST HOME */
@@ -915,21 +914,11 @@
 /* DIVIDER */
 [class*="library_LibraryWindowDivider_"][class*="library_Sizable_"] {
   background-color: transparent !important;
-  width: 0.1px !important;
+  width: 8px !important;
+  margin-right: -8px !important;
+  z-index: 1 !important;
+  position: relative !important;
   min-width: 0px !important;
-  /* left: 8px !important; */
-  /* display: none !important; */
-  transition: width 0.5s ease, background-color 0.5s ease !important;
-  transition-delay: 0.5s !important;
-  top: 0px !important;
-  /* height: 38px !important; */
-}
-
-[class*="library_LibraryWindowDivider_"][class*="library_Sizable_"]:hover, [class*="library_LibraryWindowDivider_"][class*="library_Sizable_"]:active {
-  /* width: 16px !important; */
-  /* background-color: rgba(var(--color-white), 0.2) !important; */
-  width: 5px !important;
-  background-color: rgb(var(--color-accent)) !important;
 }
 
 /* LIBRARY CONTAINER */

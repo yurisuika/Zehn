@@ -16,7 +16,7 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
 #### Things of Note
-In the library page, the divider has a width of 0.1px. Upon hover it will expand with a delay, which you can then use to resize the sidebar.
+The library games list sidebar automatically collapses when the library window is not in focus for a more pleasant view.
 
 If things crash because of the class moving, press F5 to refresh the client (this may require dev mode). This will hopefully be resolved soon. I believe it has to do with the downloads progress.
 
