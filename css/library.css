@@ -90,14 +90,14 @@
 }
 
 /* GAMES LIST CONTAINER AUTO-HIDE */
-body:not(:hover) [class*="library_LeftListSizableContainer_"] {
+html:not(:hover) [class*="library_LeftListSizableContainer_"] {
   min-width: 0px !important;
   max-width: 0px !important;
   transition: max-width 5s ease, min-width 5s ease !important;
   transition-delay: 1s !important;
 }
 
-body:hover [class*="library_LeftListSizableContainer_"] {
+html:hover [class*="library_LeftListSizableContainer_"] {
   max-width: calc(min(50%, 100% - 400px)) !important;
   min-width: 256px !important;
   transition: max-width 5s ease, min-width 5s ease !important;
@@ -2183,4 +2183,54 @@ body:hover [class*="library_LeftListSizableContainer_"] {
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
+}
+
+/* REORDERING */
+[class*="libraryhomeshowcases_DoneReorderingRow_"] [class*="libraryhomeshowcases_DoneReordering_"] {
+  margin-bottom: 16px;
+  margin-top: 16px !important;
+}
+
+[class*="libraryhomeshowcases_Reordering_"] [class*="libraryhomeshowcases_Showcase_"] {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+[class*="libraryhomeshowcases_ShowcaseHeader_"][class*="libraryhomeshowcases_Reordering_"] {
+  border-radius: 0px !important;
+  /* background-color: rgba(var(--color-white), 0.1) !important; */
+  background-color: transparent !important;
+  padding: 16px !important;
+}
+
+[class*="libraryhomeshowcases_ShowcaseHeader_"][class*="libraryhomeshowcases_Reordering_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="libraryhomeshowcases_ShowcaseHeader_"][class*="libraryhomeshowcases_Reordering_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="libraryhomeshowcases_DeleteButton_"] {
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+  padding: 0px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgUlEQVRYhe2VwQqAMAxDG/H/fzmeJlgmxjnXS3Ipg2x9tKMFyajUVprdAAYwQETsignA5czO8EAyqfNFAriBOhP2gOR3xLsjCfBs0VsAksxl7qn51KKUf8IhgNbzHJcBzJQBDGCAIYA2EXNcBjBTr7bhl4l3J3lp/KXyFhjAAAY4ADdOMDpRrOneAAAAAElFTkSuQmCC') !important;
+}
+
+[class*="libraryhomeshowcases_DeleteButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="libraryhomeshowcases_DeleteButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="libraryhomeshowcases_DeleteButton_"] svg {
+  display: none !important;
 }
