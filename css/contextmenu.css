@@ -62,7 +62,21 @@
   font-size: var(--font-size-text) !important;
 }
 
-[class*="contextmenu_contextMenuContents_"]::before, [class*="contextmenu_contextMenuContents_"]::after {
+
+[class*="contextmenu_contextMenuContents_"] {
+  /* background: transparent !important;
+  border-radius: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 0px !important; */
+  /* border: 1px solid rgba(var(--color-white), 0.05) !important; */
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(40px) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+}
+
+/* [class*="contextmenu_contextMenuContents_"]::before, [class*="contextmenu_contextMenuContents_"]::after {
   content: "" !important;
   position: absolute !important;
   z-index: -1 !important;
@@ -80,7 +94,7 @@
 
 [class*="contextmenu_contextMenuContents_"]::after {
   background-image: var(--image-acrylic) !important;
-}
+} */
 
 [class*="contextmenu_contextMenuContents_"]:not([class*="menu_MenuPopup_"]) {
   border: 1px solid rgb(var(--color-contextmenu-border)) !important;
@@ -364,6 +378,10 @@
   height: 0px !important;
   opacity: 0 !important;
   display: none !important;
+}
+
+[class*="contextmenu_contextMenuItem_"] .SVGIcon_PlusCircle line {
+  stroke: rgb(var(--color-white)) !important;
 }
 
 /* TRAY */

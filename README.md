@@ -16,24 +16,25 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
 #### Things of Note
-The library games list sidebar automatically collapses when the library window is not in focus for a more pleasant view.
+The library games list sidebar automatically collapses when the library window is not in focus for a more pleasant view. This may be replaced by an injected button later on to improve performance/be less annoying.
 
 If things crash because of the class moving, press F5 to refresh the client (this may require dev mode). This will hopefully be resolved soon. I believe it has to do with the downloads progress.
 
 #### To-Do
 - Most things on the overlay
+- Game page
+- Event page popup
 - Notifications
 - Replace/add icons in settings
 - Implement Reveal
 - Figure out to implement Reveal on stuff that isn't initially loaded
-- Figure out why webkit text rendering is so much blurrier than in UWP apps
-- Maybe do browser?
+- Figure out why text rendering is so much blurrier than in UWP apps
+- Figure out how to get JS to move classes again when reloaded and not just on initial load
+- Maybe do browser content?
 - Anything I haven't come across from daily use
 
 #### Previews
-Please note that the library in these previews does not yet exist. This is from my old skin, but it will return very much the same to appear as so.
-
-![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1137189892481359902/zehn.png)
+![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1137508618112094319/zehn.png)
 
 ![zehn settings](https://cdn.discordapp.com/attachments/729991202778251317/1128817047690813440/zehn-settings.png)
 
