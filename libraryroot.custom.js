@@ -8,14 +8,23 @@ function moveElements(target, classes) {
 }
 
 moveElements(
-  'steamdesktop_DragArea_30vB9', [
-  'bottombar_AddGameButton_2foCk',
-  'bottombar_DownloadStatus_2EQ7g',
-  'bottombar_FriendsButton_1TdaA',
-  'titlebarcontrols_NotificationButtonContainer_3mGEz',
-  'titlebarcontrols_AnnouncementsButton_5wILZ',
-  'titlebarcontrols_AccountMenu_3yD46',
-  'bottombar_DetailedDownloadProgress_2VtAq']
+  'steamdesktop_DragArea_30vB9',
+  [
+    'bottombar_AddGameButton_2foCk',
+    'bottombar_DownloadStatus_2EQ7g',
+    'bottombar_FriendsButton_1TdaA',
+    'titlebarcontrols_NotificationButtonContainer_3mGEz',
+    'titlebarcontrols_AnnouncementsButton_5wILZ',
+    'titlebarcontrols_AccountMenu_3yD46',
+    'bottombar_DetailedDownloadProgress_2VtAq'
+  ]
+)
+
+moveElements(
+  'libraryhome_LibraryHome_3Sb2o',
+  [
+    'libraryhomeshowcases_AddShowcaseRow_3SkuN'
+  ]
 )
 
 // document.querySelector(".rootmenu_RootMenuButton_2UyOB").style.border = "1px solid transparent";
