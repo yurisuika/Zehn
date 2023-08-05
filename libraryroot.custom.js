@@ -3,27 +3,27 @@ import { RevealEffectsMasked } from './js/revealMasked.js';
 
 function moveElements(target, classes) {
   classes.forEach((name) => {
-    document.querySelector(`.${target}`).appendChild(document.querySelector(`.${name}`));
+    document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`));
   });
 }
 
 moveElements(
-  'steamdesktop_DragArea_30vB9',
+  '[class*="steamdesktop_DragArea_"]',
   [
-    'bottombar_AddGameButton_2foCk',
-    'bottombar_DownloadStatus_2EQ7g',
-    'bottombar_FriendsButton_1TdaA',
-    'titlebarcontrols_NotificationButtonContainer_3mGEz',
-    'titlebarcontrols_AnnouncementsButton_5wILZ',
-    'titlebarcontrols_AccountMenu_3yD46',
-    'bottombar_DetailedDownloadProgress_2VtAq'
+    '[class*="bottombar_AddGameButton_"]',
+    '[class*="bottombar_DownloadStatus_"]',
+    '[class*="bottombar_FriendsButton_"]',
+    '[class*="titlebarcontrols_NotificationButtonContainer_"]',
+    '[class*="titlebarcontrols_AnnouncementsButton_"]',
+    '[class*="titlebarcontrols_AccountMenu_"]',
+    '[class*="bottombar_DetailedDownloadProgress_"]'
   ]
 )
 
 moveElements(
-  'libraryhome_LibraryHome_3Sb2o',
+  '[class*="libraryhome_LibraryHome_"]',
   [
-    'libraryhomeshowcases_AddShowcaseRow_3SkuN'
+    '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
   ]
 )
 
