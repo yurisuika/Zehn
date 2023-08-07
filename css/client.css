@@ -41,6 +41,8 @@
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
   font-size: var(--font-size-header) !important;
+  margin-bottom: 0px !important;
+  margin-right: 0px !important;
 }
 
 .DialogHeaderSubtitle {
@@ -270,6 +272,7 @@ button.DialogButton {
   background: rgba(var(--color-white), 0.2) !important;
   color: rgb(var(--color-white)) !important;
   border-radius: 0px !important;
+  margin: 0px !important;
 }
 
 button.DialogButton::before {
@@ -291,13 +294,20 @@ button.DialogButton:enabled:active, button.DialogButton:enabled:active.gpfocus {
 }
 
 button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton.Disabled, button.DialogButton.Disabled:hover {
-  background: rgba(var(--color-white), 0.05) !important;
-  color: rgb(var(--color-text-sub)) !important;
+  /* background: rgba(var(--color-white), 0.05) !important; */
+  /* background: rgba(var(--color-white), 0.2) !important; */
+  /* color: rgb(var(--color-text-sub)) !important; */
+  filter: saturate(0.0) brightness(0.5) !important;
 }
 
 button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:hover:active, button.DialogButton.Primary:enabled:active.gpfocus {
   background: rgba(var(--color-white), 0.4) !important;
   color: rgb(var(--color-white)) !important;
+}
+
+.DialogButton:disabled .SVGIcon_Button, .DialogButton.Disabled .SVGIcon_Button {
+  opacity: 1 !important;
+  filter: saturate(0.0) brightness(0.5) !important;
 }
 
 /* RADIO */
