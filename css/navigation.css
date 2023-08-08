@@ -56,61 +56,6 @@
   /* padding-top: 38px !important; */
 }
 
-/* STICKY HEADER LIBRARY */
-[class*="appdetails_Header_"][class*="appdetails_HeaderLoaded_"] {
-  /* margin-top: 76px !important; */
-  margin-top: 38px !important;
-}
-
-[class*="appdetailsplaysection_StickyHeader_39Rhe"] [class*="appdetailsplaysection_Glassy_"] {
-  margin-top: 0px !important;
-  padding-top: 0px !important;
-}
-
-[class*="appdetailsplaysection_Glassy_"][class*="appdetailsplaysection_PlayBar_"] {
-  background: transparent !important;
-}
-
-[class*="appdetails_PlayBar_"][class*="appdetails_ShowPlayBar_"][class*="appdetailsplaysection_Container_"][class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"][class*="appdetailsplaysection_PlayBar_"]::before, [class*="appdetails_PlayBar_"][class*="appdetails_ShowPlayBar_"][class*="appdetailsplaysection_Container_"][class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"][class*="appdetailsplaysection_PlayBar_"]::after {
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-}
-
-[class*="appdetails_PlayBar_"][class*="appdetails_ShowPlayBar_"][class*="appdetailsplaysection_Container_"][class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"][class*="appdetailsplaysection_PlayBar_"]::before {
-  background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(40px) !important;
-  background-blend-mode: exclusion !important;
-  height: 70px !important;
-}
-
-[class*="appdetails_PlayBar_"][class*="appdetails_ShowPlayBar_"][class*="appdetailsplaysection_Container_"][class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"][class*="appdetailsplaysection_PlayBar_"]::after {
-  background-image: var(--image-acrylic) !important;
-  height: 70px !important;
-}
-
-[class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_StatusAndStats_"] {
-  height: 38px !important;
-  line-height: 38px !important;
-}
-
-[class*="appdetailsplaysection_StatusAndStats_"] [class*="appdetailsplaysection_PlayBarIconAndGame_"] {
-  padding-left: 16px !important;
-  height: 38px !important;
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-subheader) !important;
-  font-weight: 400 !important;
-}
-
-[class*="appdetailsplaysection_StatusAndStats_"] [class*="appdetailsplaysection_PlayBarIconAndGame_"] [class*="appdetailsplaysection_PlayBarGameIcon_"] {
-  border-radius: 0px !important;
-  margin-right: 8px !important;
-}
-
 /* TITLEBAR */
 [class*="steamdesktop_TitleBar_"] {
   height: 38px !important;
@@ -742,6 +687,18 @@
 
 [class*="bottombar_DownloadStatusContent_"] [class*="bottombar_Status_"] {
   color: rgb(var(--color-text)) !important;
+  margin-left: 16px !important;
+}
+
+[class*="steamdesktop_DragArea_"] > [class*="bottombar_Status_"] {
+  margin-right: 16px !important;
+  line-height: 38px !important;
+  /* width: auto !important; */
+  float: right !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  width: 200px !important;
 }
 
 [class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_ProgressBar_"] {
@@ -760,12 +717,14 @@
   background-color: transparent !important;
 }
 
-[class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_Status_"] {
+[class*="steamdesktop_DragArea_30vB9"] > [class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_Status_"] {
   /* margin-top: 9px !important; */
   text-transform: uppercase !important;
   line-height: 38px !important;
   font-weight: 400 !important;
   white-space: nowrap !important;
+  width: 200px !important;
+  text-align: right !important;
 }
 
 [class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_IconBevel_"] {
@@ -790,14 +749,19 @@
   margin-top: 0px !important;
 }
 
-[class*="bottombar_DetailedDownloadProgress_"] {
+[class*="steamdesktop_DragArea_"] > [class*="bottombar_DetailedDownloadProgress_"] {
   /* max-width: 38px !important; */
   /* display: none !important; */
   max-width: 200px !important;
   /* max-width: 238px !important; */
   display: flex !important;
   float: right !important;
-  margin-right: 24px !important;
+  /* margin-right: 24px !important; */
+  right: -200px !important;
+}
+
+[class*="bottombar_BottomBar_"] > [class*="bottombar_DownloadStatus__"] > [class*="bottombar_DownloadStatusContent_"] > [class*="bottombar_Status_"] {
+
 }
 
 [class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_Icon_"] {

@@ -81,6 +81,7 @@
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
   font-size: var(--font-size-text) !important;
+  margin-bottom: 16px !important;
 }
 
 .DialogDropDown {
@@ -275,10 +276,6 @@ button.DialogButton {
   margin: 0px !important;
 }
 
-button.DialogButton::before {
-  box-shadow: 0 0 0 0 transparent !important;
-}
-
 button.DialogButton:hover, button.DialogButton.gpfocus {
   background: rgba(var(--color-white), 0.3) !important;
   color: rgb(var(--color-white)) !important;
@@ -291,6 +288,10 @@ button.DialogButton:enabled:active, button.DialogButton:enabled:active.gpfocus {
   color: rgb(var(--color-white)) !important;
   outline: 2px solid transparent !important;
   outline-offset: -2px !important;
+}
+
+button.DialogButton::before {
+  box-shadow: 0 0 0 0 transparent !important;
 }
 
 button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton.Disabled, button.DialogButton.Disabled:hover {
@@ -308,6 +309,10 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 .DialogButton:disabled .SVGIcon_Button, .DialogButton.Disabled .SVGIcon_Button {
   opacity: 1 !important;
   filter: saturate(0.0) brightness(0.5) !important;
+}
+
+.DesktopUI .DialogThreeColLayout._DialogColLayout {
+  gap: 16px !important;
 }
 
 /* RADIO */
@@ -388,6 +393,49 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 .DialogCheckbox.Disabled {
   filter: saturate(0.0) brightness(0.5) !important;
 }
+
+/* TOGGLE FIELD */
+._DialogInputContainer {
+  margin-bottom: 16px !important;
+  line-height: 18px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+.DialogToggleField._DialogInputContainer {
+  padding-left: 0px !important;
+  padding: 8px !important;
+}
+
+.DialogToggleField_Control {
+  border-radius: 0px !important;
+  line-height: 32px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  background-color: rgba(var(--color-white), 0.1) !important;
+  margin-left: 0px !important;
+}
+
+.DialogToggleField_Option.Off.Active {
+  color: rgb(var(--color-text)) !important;
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+.DialogToggleField_Option.Active {
+  color: rgb(var(--color-text)) !important;
+  background-color: rgb(var(--color-primary)) !important;
+}
+
+.DialogToggleField_Option:hover:not(.Active) {
+  background-color: rgba(var(--color-white), 0.3) !important;
+}
+
+.DialogToggleField_Option:active:not(.Active) {
+  background-color: rgba(var(--color-white), 0.4) !important;
+}
+
 
 /* TOGGLE */
 [class*="toggle_Toggle_"] {
@@ -629,6 +677,19 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   opacity: 0.6 !important;
 }
 
+/* LOADING */
+[class*="steamdesktop_FocusBar_"][class*="steamdesktop_Focused"] {
+  background: rgb(var(--color-background)) !important;
+}
+
+[class*="loadingthrobber_Container_"] {
+  background: rgb(var(--color-background)) !important;
+}
+
+[class*="loadingthrobber_Medium_"] {
+  filter: saturate(0) brightness(5) !important;
+}
+
 /* CONNECTION TROUBLE */
 .ConnectionTrouble .ConnectionTroubleContent {
   background: rgb(var(--color-primary)) !important;
@@ -637,6 +698,25 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 .ConnectionTroubleContent .ConnectionTroubleMessage, .ConnectionTroubleContent .ConnectionTroubleReconnectMessage {
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-section) !important;
+}
+
+.errorDisconnected .friendsListContainer {
+  opacity: 1.0 !important;
+}
+
+.errorDisconnected .multiChatDialog {
+  opacity: 1.0 !important;
+}
+
+.ConnectionTrouble::after {
+  content: "" !important;
+  position: fixed !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  right: 0px !important;
+  z-index: -1 !important;
+  background: rgba(var(--color-black), 0.8) !important;
 }
 
 /* CHAT LOADING */
@@ -653,4 +733,13 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 
 [class*="throbber_LoadingWrapper_"][class*="SteamLogoThrobber_"][class*="throbber_throbber_large_"][class*="throbber_noString_"] {
   filter: saturate(0) brightness(5);
+}
+
+/* NEW INDICATOR */
+[class*="emoticon_NewEmoticonIndicator_"] {
+  background: transparent !important;
+}
+
+[class*="emoticon_NewEmoticonIndicator_"] [class*="emoticon_NewEmoticonCircle_"] {
+  background-color: rgb(var(--color-primary)) !important;
 }

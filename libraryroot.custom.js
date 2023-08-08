@@ -7,6 +7,12 @@ function moveElements(target, classes) {
   });
 }
 
+function moveChildElements(target, classes) {
+  classes.forEach((name) => {
+    document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
+  });
+}
+
 moveElements(
   '[class*="steamdesktop_DragArea_"]',
   [
@@ -16,28 +22,23 @@ moveElements(
     '[class*="titlebarcontrols_NotificationButtonContainer_"]',
     '[class*="titlebarcontrols_AnnouncementsButton_"]',
     '[class*="titlebarcontrols_AccountMenu_"]',
-    '[class*="bottombar_DetailedDownloadProgress_"]'
+    '[class*="bottombar_Status_"]'
   ]
 )
 
-function moveChildElements(target, classes) {
-  classes.forEach((name) => {
-    document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
-  });
-}
+moveChildElements(
+  '[class*="libraryhome_LibraryHome_"]',
+  [
+    '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
+  ]
+)
 
-window.addEventListener('change', onChange);
-
-function onChange() {
-  moveChildElements(
-    '[class*="libraryhome_LibraryHome_"]',
-    [
-      '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
-    ]
-  )
-}
-
-onChange()
+moveElements(
+  '[class*="steamdesktop_DragArea_"]',
+  [
+    '[class*="bottombar_DetailedDownloadProgress_"]'
+  ]
+)
 
 // document.querySelector(".rootmenu_RootMenuButton_2UyOB").style.border = "1px solid transparent";
 // document.querySelector(".DialogButton").style.border = "1px solid transparent";
