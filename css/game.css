@@ -1,4 +1,4 @@
-/* APP DETAILS PAGE */
+/* PAGE */
 [class*="sharedappdetailsheader_TopCapsule_"] {
   background-color: rgb(var(--color-background)) !important;
 }
@@ -45,7 +45,7 @@
   display: none !important;
 }
 
-/* APP DETAILS PLAY BUTTON */
+/* PLAY BUTTON */
 [class*="appdetailsplaysection_ActionSection_"] {
   margin-right: 16px !important;
   height: 38px !important;
@@ -139,7 +139,7 @@
   stroke: transparent !important;
 }
 
-/* APP DETAILS STATS */
+/* STATS */
 [class*="appdetailsplaysection_StatusAndStats_"] {
   max-height: 38px !important;
 }
@@ -257,7 +257,7 @@
   background-color: rgb(var(--color-primary)) !important;
 }
 
-/* APP DETAILS RIGHT CONTROLS */
+/* RIGHT CONTROLS */
 [class*="appdetailsplaysection_RightControls_"] {
   margin: 0px !important;
 }
@@ -325,9 +325,13 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABKElEQVRYhe2W4W2DMBBGv6u6QDoCGSErsEJWyAqZJStkhXSEdIR0BDLC648YFVHscjZp+eEnIZB94p7s44wBWiMv/y0Qo4p5qWJeqpiXKuZltWKvnmAzi84Be0l3M3tPxDxH7BfacI+KeXiG2CIsUmPATlIjqQnPxSxV/PvIcz7A7Cvxjhvf3JbI5Vox4MQEemxjTzMVA5w8udwrBrRAF0k+RQe07lxesZBgA1xnSF2BTdYi5IgNEp0TUueS3Sn9KlPNtKjRloqlWkNR27CpLYoGj85KoJPU11C/Qv0JcDezt1H8fLPcGgMOg3o6DsaPg/FDdq4CsQuPVvDjCAJ2Ye6SK1ZSY5+Stmb2MZ4IY9sQk4Wrxv6S1f7BVjEvVcxLFfNSxbysVuwL5kyoTw2A358AAAAASUVORK5CYII=') !important;
 }
 
-/* APP DETAILS LINKS */
+/* LINKS */
 [class*="appdetailsprimarylinkssection_LinksSection_"] {
   padding: 0px 16px !important;
+}
+
+[class*="appdetailsprimarylinkssection_LinksSection_"] [class*="appdetailssection_Body_"] {
+  background: transparent !important;
 }
 
 [class*="appdetailssection_AppDetailsSectionContainer_"][class*="appdetailssection_RightColumnSection_"] {
@@ -360,6 +364,9 @@
 [class*="appdetailsprimarylinkssection_LinkInner_"] {
   margin: 0px 16px 0px 0px !important;
   padding: 0px !important;
+  /* width: 100% !important; */
+  /* float: left !important; */
+  /* position: relative !important; */
 }
 
 [class*="appdetailsprimarylinkssection_Anchor_"] [class*="appdetailsprimarylinkssection_Link_"] {
@@ -380,22 +387,55 @@
   color: rgb(var(--color-text-sub)) !important;
 }
 
-[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_ColumnContainer_"] {
-  margin: 0px !important;
-  padding: 16px !important;
+[class*="appdetailsprimarylinkssection_Anchor_"] [class*="appdetailsprimarylinkssection_Link_"]:hover [class*="appdetailsprimarylinkssection_Text_"] {
+  color: rgb(var(--color-text)) !important;
 }
 
-/* APP DETAILS ADD REVIEW */
+[class*="appdetailsprimarylinkssection_Anchor_"] [class*="appdetailsprimarylinkssection_Link_"]:active [class*="appdetailsprimarylinkssection_Text_"] {
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_ColumnContainer_"] {
+  margin: 0px !important;
+  /* padding: 16px !important; */
+  padding: 0px 16px 16px 16px !important;
+}
+
+/* LINKS OVERFLOW MENU */
+[class*="appdetailsprimarylinkssection_MenuButton_"] {
+  padding-right: 0px !important;
+  width: 32px !important;
+  height: 32px !important;
+  stroke: transparent !important;
+  fill: transparent !important;
+  content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAT0lEQVRYhe3WMQpAIQyD4US8ifc/0jtLXBVE3laHP2Mo9KNTnUSVaaXbAQAAAAAAgBcA/efcJ0m2x1omufaStv6U8guYhwQAAAAAAACoBkx6Zw87StekHQAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="appdetailsprimarylinkssection_MenuButton_"]:hover {
+  background-color: rgb(var(--color-white), 0.1) !important;
+}
+
+[class*="appdetailsprimarylinkssection_MenuButton_"]:active {
+  background-color: rgb(var(--color-white), 0.2) !important;
+}
+
+/* ADD REVIEW */
 [class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"] {
   padding: 0px !important;
   margin-bottom: 0px !important;
   /* margin-bottom: 16px !important; */
   /* padding: 16px !important; */
-    background-color: rgb(var(--color-white), 0.1) !important;
+  background-color: rgb(var(--color-white), 0.1) !important;
+  margin-top: 16px !important;
 }
 
 [class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"]>div:last-child {
   margin-bottom: 0px !important;
+}
+
+[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"]>div:not(:first-child) {
+  /* margin-top: 16px !important; */
+  margin-top: 0px !important;
 }
 
 [class*="appdetailsspotlight_ReviewContainer_"] {
@@ -434,7 +474,7 @@
 }
 
 [class*="writereview_ReviewThumbButton_"] {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background: rgba(var(--color-white), 0.2) !important;
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
@@ -447,17 +487,25 @@
 }
 
 [class*="writereview_ReviewThumbButton_"]:not([class*="writereview_Selected_"]):hover {
-  background-color: rgba(var(--color-white), 0.3) !important;
+  background: rgba(var(--color-white), 0.3) !important;
   color: rgb(var(--color-white)) !important;
   outline: 2px solid rgba(var(--color-white), 0.5) !important;
   outline-offset: -2px !important;
 }
 
 [class*="writereview_ReviewThumbButton_"]:not([class*="writereview_Selected_"]):active {
-  background-color: rgba(var(--color-white), 0.4) !important;
+  background: rgba(var(--color-white), 0.4) !important;
   color: rgb(var(--color-white)) !important;
   outline: 2px solid transparent !important;
   outline-offset: -2px !important;
+}
+
+[class*="writereview_ReviewThumbButton_"] span {
+  padding-left: 38px !important;
+}
+
+[class*="writereview_ReviewThumbButton_"][class*="writereview_NoIcon_"] span {
+  padding-left: 0px !important;
 }
 
 [class*="writereview_ThumbIcon_"][class*="writereview_Up_"] {
@@ -471,16 +519,91 @@
 [class*="writereview_ThumbIcon_"] {
   width: 38px !important;
   height: 38px !important;
-  left: 0px !important;
+  left: 16px !important;
   fill: transparent !important;
-  content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVRYhe2W0U3DMBBAnxELdIUyAiuwghkhK7ACK7ACjJAVWKEdIYzw+MCVqihpcxjSqvKT/BEnvnu6s60klWvk7tICczSxKE0sShOL0sSi3IZYSunsADIg8Dnxbjnq4rEgVvaH7MSCSK4/a6WagXfguUx91Qasrthxpcpzr75V5aoVU7tjqTI3qI8XE1Nfx1Jlfor+38Qmkg3q04mdchDdlO8X57o/F3RMCp97ADpgH1mw1gWbgY/IgjS3qWcwWjF1AwzAA4GqrVGxDtinlK6uleE2AtWnUnWnvpSWjWMfTuM2mqv2HtsWqd2MtGr/myJEN/9q3Mb/2Jo0sShNLEoTi9LEojSxKN9MHKnr+LjxKAAAAABJRU5ErkJggg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: auto !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVRYhe2W0U3DMBBAnxELdIUyAiuwghkhK7ACK7ACjJAVWKEdIYzw+MCVqihpcxjSqvKT/BEnvnu6s60klWvk7tICczSxKE0sShOL0sSi3IZYSunsADIg8Dnxbjnq4rEgVvaH7MSCSK4/a6WagXfguUx91Qasrthxpcpzr75V5aoVU7tjqTI3qI8XE1Nfx1Jlfor+38Qmkg3q04mdchDdlO8X57o/F3RMCp97ADpgH1mw1gWbgY/IgjS3qWcwWjF1AwzAA4GqrVGxDtinlK6uleE2AtWnUnWnvpSWjWMfTuM2mqv2HtsWqd2MtGr/myJEN/9q3Mb/2Jo0sShNLEoTi9LEojSxKN9MHKnr+LjxKAAAAABJRU5ErkJggg==') !important;
 }
 
 [class*="writereview_ReviewThumbButton_"][class*="writereview_NoIcon_"] {
   padding: 0px 16px !important;
 }
 
-/* APP DETAILS SECTION */
+/* GAME SUMMARY */
+[class*="spotlightgameplaysummary_GamePlaySummaryContainer_"] {
+  padding: 16px !important;
+}
+
+[class*="spotlightgameplaysummary_GamePlaySummaryHeader_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+}
+
+[class*="spotlightgameplaysummary_SummaryCarouselContainer_"] {
+  padding: 0px !important;
+  border-radius: 0px !important;
+  background: transparent !important;
+}
+
+[class*="spotlightgameplaysummary_SummaryCarouselContainer_"]:after {
+  box-shadow: 0 0 0 0 transparent !important;
+  border-radius: 0px !important;
+}
+
+[class*="spotlightgameplaysummary_SummaryContainer_"]:first-child {
+  margin-left: 0px !important;
+}
+
+[class*="spotlightgameplaysummary_EventHeaderBlock_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+[class*="spotlightgameplaysummary_GamePlaySummaryContainer_"] [class*="pageablecontainer_HeaderPageControls_"] {
+  padding: 0px !important;
+}
+
+[class*="spotlightgameplaysummary_GamePlaySummaryContainer_"] [class*="pageablecontainer_PageClickContainer_"] {
+  margin-bottom: 0px !important;
+}
+
+[class*="pageablecontainer_PageableCloseButton_"] {
+  opacity: 1 !important;
+  margin-left: 0px !important;
+  width: 32px !important;
+  height: 32px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="pageablecontainer_PageableCloseButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important
+}
+
+[class*="pageablecontainer_PageableCloseButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important
+}
+
+[class*="pageablecontainer_PageableCloseButton_"][class*="pageablecontainer_Small_"] {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+[class*="pageablecontainer_PageableCloseButton_"][class*="pageablecontainer_Small_"] svg {
+  fill: transparent !important;
+  stroke: transparent !important;
+  display: none !important;
+}
+
+/* SECTION */
 [class*="appdetailssectionheader_SectionHeader_"] {
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-text) !important;
@@ -492,10 +615,19 @@
 [class*="appdetailssection_AppDetailsSection_"] {
   /* margin-bottom: 16px !important; */
   margin-bottom: 0px !important;
+  margin-top: 16px !important;
+}
+
+[class*="appdetailssection_AppDetailsSection_"][class*="appdetailsprimarylinkssection_LinksSection_"] {
+  margin-top: 0px !important;
 }
 
 [class*="appdetailssectionheader_Label_"] {
   line-height: 32px !important;
+}
+
+[class*="appdetailssectionheader_SectionHeader_"][class*="appdetailssectionheader_PadLeft_"][class*="appdetailscommunityfeed_HeaderStyles_"] [class*="appdetailssectionheader_Label_"] {
+  color: rgb(var(--color-text)) !important;
 }
 
 [class*="appdetailssectionheader_SectionHeader_"][class*="appdetailssectionheader_PadLeft_"] {
@@ -522,7 +654,16 @@
 
 [class*="appactivityday_PartnerEvent_"] {
   border: 0px solid transparent !important;
+  /* background: rgba(var(--color-white), 0.1) !important */
+  background: transparent !important;
+}
+
+[class*="appactivityday_PartnerEvent_"]:hover {
   background: rgba(var(--color-white), 0.1) !important
+}
+
+[class*="appactivityday_PartnerEvent_"]:active {
+  background: rgba(var(--color-white), 0.2) !important
 }
 
 [class*="appactivityday_AppActivityDay_"] {
@@ -543,11 +684,11 @@
 }
 
 [class*="comment_thread_RatingBar_"]:not([class*="comment_thread_IsVisible_"]) {
-  opacity: 1 !important;
+  /* opacity: 1 !important; */
 }
 
 [class*="comment_thread_RatingBar_"] {
-  background: rgba(var(--color-white), 0.1) !important
+  /* background: rgba(var(--color-white), 0.1) !important */
 }
 
 [class*="comment_thread_RatingBar_"] {
@@ -563,7 +704,7 @@
 }
 
 [class*="comment_thread_RatingBar_"]:not([class*="comment_thread_IsVisible_"]) div {
-  opacity: 0 !important;
+  /* opacity: 0 !important; */
 }
 
 [class*="comment_thread_RatingBar_"] [class*="comment_thread_LikeButton_"], [class*="comment_thread_RatingBar_"] [class*="comment_thread_CommentButton_"], [class*="comment_thread_RatingBar_"] [class*="comment_thread_Reactions_"] {
@@ -571,7 +712,7 @@
   padding-left: 0px !important;
 }
 
-/* APP DETAILS ACTIVITY POST */
+/* ACTIVITY POST */
 [class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] {
   margin: 0px 0px 16px 0px !important;
 }
@@ -695,7 +836,7 @@
   outline-offset: -2px !important;
 }
 
-/* APP DETAILS EVENT */
+/* EVENT */
 [class*="appactivityday_PartnerEventMediumImage_Title_"] {
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-subheader) !important;
@@ -735,7 +876,7 @@
   max-height: 122px !important;
 }
 
-/* APP DETAILS NO ACTIVITY */
+/* NO ACTIVITY */
 [class*="appdetailsactivitysection_NoActivity_"], [class*="appdetailsactivitysection_Loading_"] {
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-text) !important;
@@ -746,13 +887,13 @@
   border: 0px solid transparent !important;
 }
 
-/* APP DETAILS LOAD MORE ACTIVITY */
+/* LOAD MORE ACTIVITY */
 [class*="appdetailsactivitysection_ActivityFeedContainer_"] [class*="appdetailsactivitysection_FetchMoreContainer_"] {
   padding: 0px 16px;
   line-height: 32px !important;
 }
 
-/* APP DETAILS COMMUNITY CONTENT */
+/* COMMUNITY CONTENT */
 [class*="appdetailssectionheader_SectionHeader_"][class*="appdetailssectionheader_PadLeft_"][class*="appdetailscommunityfeed_HeaderStyles_"] {
   border-radius: 0px !important;
   padding: 16px !important;
@@ -795,7 +936,7 @@
   outline-offset: -2px !important;
 }
 
-/* APP DETAILS SIDEBAR */
+/* SIDEBAR */
 [class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_RightColumn_"] {
   margin-left: 16px !important;
 }
@@ -811,7 +952,7 @@
   background: rgba(var(--color-white), 0.1) !important;
 }
 
-/* APP DETAILS SIDEBAR FRIENDS WHO PLAY */
+/* SIDEBAR FRIENDS WHO PLAY */
 [class*="appdetailsfriendssection_Subsection_"] [class*="appdetailsfriendssection_SubsectionHeader_"]{
   padding-bottom: 0px !important;
   color: rgb(var(--color-text)) !important;
@@ -852,7 +993,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   height: 32px !important;
 }
 
-/* APP DETAILS SIDEBAR ACHIEVEMENTS */
+/* SIDEBAR ACHIEVEMENTS */
 [class*="appdetailsachievementssection_UnlockedLabel_"] {
   color: rgb(var(--color-text)) !important;
 }
@@ -868,7 +1009,8 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
-  background: transparent !important;
+  /* background: transparent !important; */
+  background: rgba(var(--color-white), 0.1) !important
 }
 
 [class*="appdetailsachievementssection_AchievementProgressContainer_"] {
@@ -934,7 +1076,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   font-weight: 400 !important;
 }
 
-/* APP DETAILS SIDEBAR NOTES */
+/* SIDEBAR NOTES */
 [class*="appdetailsnotessection_NoteLink_"] {
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-subtext) !important;
@@ -948,19 +1090,19 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   text-decoration: none !important;
 }
 
-/* APP DETAILS SIDEBAR DLC */
+/* SIDEBAR DLC */
 [class*="appdetailsdlcsection_DLCSection_"] [class*="appdetailsdlcsection_DLC_"] {
   grid-gap: 8px 8px !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 8px !important;
 }
 
-button.DialogButton[class*="appdetailsbutton_AppDetailsButton"] [class*="appdetailsbutton_Left"] {
+button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdetailsbutton_Left_"] {
   padding: 0px 16px !important;
   line-height: 32px !important;
   height: 32px !important;
 }
 
-/* APP DETAILS SIDEBAR SCREENSHOTS */
+/* SIDEBAR SCREENSHOTS */
 [class*="appdetailsscreenshotssection_ScreenshotsSection_"] [class*="appdetailsscreenshotssection_NoneTaken_"] {
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-subtext) !important;
@@ -1005,7 +1147,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton"] [class*="appdeta
   background-color: rgba(var(--color-white), 0.2) !important
 }
 
-/* APP DETAILS SIDEBAR REVIEW */
+/* SIDEBAR REVIEW */
 [class*="appdetailsreviewsection_PlayedForTime_"] {
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-subtext) !important;
