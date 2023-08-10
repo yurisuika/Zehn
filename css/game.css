@@ -45,6 +45,62 @@
   padding: 16px !important;
 }
 
+/* STICKY HEADER */
+[class*="appdetails_Header_"][class*="appdetails_HeaderLoaded_"] {
+  /* margin-top: 76px !important; */
+  margin-top: 38px !important;
+}
+
+[class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"] {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  backdrop-filter: none !important;
+}
+
+[class*="appdetailsplaysection_Glassy_"][class*="appdetailsplaysection_PlayBar_"] {
+  background: transparent !important;
+}
+
+[class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::before, [class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+[class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::before {
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(40px) !important;
+  background-blend-mode: exclusion !important;
+  height: 70px !important;
+}
+
+[class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::after {
+  background-image: var(--image-acrylic) !important;
+  height: 70px !important;
+}
+
+[class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_StatusAndStats_"] {
+  height: 38px !important;
+  line-height: 38px !important;
+}
+
+[class*="appdetailsplaysection_StatusAndStats_"] [class*="appdetailsplaysection_PlayBarIconAndGame_"] {
+  padding-left: 16px !important;
+  height: 38px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-subheader) !important;
+  font-weight: 400 !important;
+}
+
+[class*="appdetailsplaysection_StatusAndStats_"] [class*="appdetailsplaysection_PlayBarIconAndGame_"] [class*="appdetailsplaysection_PlayBarGameIcon_"] {
+  border-radius: 0px !important;
+  margin-right: 8px !important;
+}
+
 [class*="appdetailsplaysection_StickyHeaderShadow_"] {
   background: transparent !important;
   top: 0px !important;
@@ -827,6 +883,10 @@
   /* opacity: 1 !important; */
 }
 
+[class*="comment_thread_ActivityCommentThreadMinimized_"] {
+  padding-top: 0px !important;
+}
+
 [class*="comment_thread_RatingBar_"] {
   /* background: rgba(var(--color-white), 0.1) !important */
   /* height: 32px !important; */
@@ -899,12 +959,24 @@
   width: 24px !important;
   height: 24px !important;
   margin: 0px !important;
-  padding: 0px !important
+  padding: 0px !important;
   stroke: transparent !important;
   fill: transparent !important;
   background-size: auto !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
+}
+
+[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg {
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg path {
+  stroke: transparent !important;
+  fill: transparent !important;
 }
 
 [class*="comment_thread_RatingBar_"] [class*="comment_thread_LikeIcon_"] [class*="comment_thread_RatingIcon_"] {
@@ -915,7 +987,7 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAiUlEQVRIie2T2w2AIAxFqXEBh3MFxnaV4w8mokUqj0SNN+GjTXoP0FYA11NDV/cfYNGo5Gq7LjmAExHR8jmhjOT7e2ACEJSKqwE1MgFC05dUfFmrvJTKKYpqn/FFzQH7KQE8RqkEIDoHyGburTc++WUAALPVvARwy9wMAKYScw2g7UFTfXQPWmoFrczfXo/W3j8AAAAASUVORK5CYII=') !important;
 }
 
-[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] [class*="comment_thread_RatingIcon_"] {
+[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVRIid2V3Y3DIBCEh+vAtTgluAW34BaulrSQFpwSnBJoAZfw3YOXEzjrn4dEkTISEiy7s2sY1gHQO/HzVvbvTBBCqIakTtIkKUnCRjJb5/jXAKpR2BtgYsEVaIu91myYT7PJ5yUw8rgOdorLRcTst+YLa5mGEARMNr8cnbGR/vs/yX6dEeiBtFf5xpcki90/ImAErkVwBKJDWtntTsY1nyfTVtL9bPUF7hZb4ekOJBFcvR2DhayK/chLnoG+qGpXpsW8lzSfSfDQ8noF/EqKXhKzRfORxTy8KnZlCtxsPZgcG5sn4JaTnZapBYz58dh6MFlmRGAo9idg9Ap+e6twVRRCmCXlNpHYaHZauqokXSzGrcLtpsV+Z1Wm4oiS2bojPu+hvRRf+Mt8Nf4A/mMVS/FcudoAAAAASUVORK5CYII=') !important;
 }
 
@@ -927,7 +999,7 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAeUlEQVRIie2V0QnAIAxEc6ULdDhn6P4TXL9KjbWYKIJKD/KRfNzDeBCQlJ7aurovAdgzs9ZPQdzMv6JhABC927RvBlTLCkiTZU6a5wVVkGFWNBEAQC6CpzzRLJUWSVXR/Fbw3IyXXwHgMjcDSB4kg8v5A4D/ZK4PuACze3JFWvaRvAAAAABJRU5ErkJggg==') !important;
 }
 
-[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] [class*="comment_thread_RatingIcon_"][class*="comment_thread_UserRated_"] {
+[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg[class*="comment_thread_UserRated_"] {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABDUlEQVRIieVVyw3CMAx95d4bEh2ABeDIAVFW6grdpjsQ4ACrkHJkgMehjtSmsRJ+AoknWUrtPFtxntOMJD6JyUez/02BJQADwAKgmBXfMsomqVlOcsc4jOwN5tFOkAM4JfWgw1k4I2SKTA26VpSJBfayfzuKBI61IWkTWuPDCneQL1Sg8YiFmI+C5MzzNSl3sPYPqbTlAiCLcIN38OrbMSj6lUFrI98P7Q0VOPbWFYC5UqSVWNXzHUa7EmS6YTeptfitrHOS5TMydVI1PXItsnTxQnwOJiRRkuoku6fiivg07wFMAawA3PygpqKbEHydh0AteRfVX1NnC2lB/16s+BYxvtait+En/mi/XeAOkqwWvtQKFsIAAAAASUVORK5CYII=') !important;
 }
 
@@ -1137,6 +1209,52 @@
 
 [class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"]:active {
   background: rgba(var(--color-white), 0.2) !important;
+}
+
+/* EVENT SCREENSHOT */
+[class*="appactivityday_ScreenshotCarousel_"] [class*="appactivityday_ActiveScreenshot_"] {
+  margin: 0px !important;
+}
+
+[class*="appactivityday_ScreenshotCarousel_"] [class*="appactivityday_ActiveScreenshot_"] img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+[class*="appactivityday_ScreenshotCarousel_"] [class*="appactivityday_ActiveScreenshot_"] [class*="appactivityday_TimeStamp_"] {
+  margin: 0px !important;
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-subtext) !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+[class*="appactivityday_ScreenshotCaption_"][class*="appactivityday_HasCaption_"], [class*="appactivityday_VideoTitle_"][class*="appactivityday_HasCaption_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  padding: 0px 16px !important;
+  line-height: 32px !important;
+  margin: 0px 0px 24px 0px !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
+  background-image: var(--image-acrylic) !important;
+  background-blend-mode: exclusion !important;
+  backdrop-filter: blur(40px) !important;
+  /* max-width: 100% !important; */
+}
+
+[class*="appactivityday_ScreenshotCaption_"][class*="appactivityday_HasCaption_"] [class*="appactivityday_CaptionQuote_"], [class*="appactivityday_VideoTitle_"][class*="appactivityday_HasCaption_"] [class*="appactivityday_CaptionQuote_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+[class*="appactivityday_ScreenshotCarousel_"] [class*="appactivityday_ScreenshotCaption_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
 }
 
 /* LARGE EVENT */
@@ -1537,6 +1655,79 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 [class*="aappdetailsdlcsection_DLCArt_"] [class*="aappdetailsdlcsection_Gloss_"] {
   opacity: 0 !important;
   background: transparent !important;
+}
+
+/* SIDEBAR STEAM WORKSHOP */
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemImage_"] {
+  margin-right: 16px !important;
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemDetailsContainer_"] [class*="appdetailsworkshopsection_FeaturedItemHeader_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  width: calc(100% - 32px) !important;
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemDetailsContainer_"] [class*="appdetailsworkshopsection_FeaturedItemName_"] {
+  margin-bottom: 0px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-section) !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  /* line-height: calc(var(--font-size-section) + 2px) !important; */
+  /* margin: 4px 0px !important; */
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemDetailsContainer_"] [class*="appdetailsworkshopsection_FeaturedItemDesc_"] {
+  width: 100% !important;
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-subtext) !important;
+  font-weight: 400 !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemDetailsContainer_"] [class*="appdetailsworkshopsection_FeaturedLinks_"] [class*="appdetailsworkshopsection_FeaturedItemLink_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemDetailsContainer_"] [class*="appdetailsworkshopsection_FeaturedLinks_"] [class*="appdetailsworkshopsection_FeaturedItemLink_"]:hover {
+  color: rgb(var(--color-text-sub)) !important;
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemDetailsContainer_"] [class*="appdetailsworkshopsection_FeaturedLinks_"] [class*="appdetailsworkshopsection_FeaturedItemLink_"]:active {
+  color: rgb(var(--color-text-disabled)) !important;
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemHideButton_"] {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0px !important;
+  border-radius: 0px !important;
+  top: 0px !important;
+  right: 0px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemHideButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemHideButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important
+}
+
+[class*="appdetailsworkshopsection_FeaturedItem_"] [class*="appdetailsworkshopsection_FeaturedItemHideButton_"] .SVGIcon_X_Line {
+  fill: transparent !important;
+  display: none !important;
 }
 
 /* SIDEBAR SCREENSHOTS */
