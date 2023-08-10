@@ -51,6 +51,10 @@
   height: 38px !important;
 }
 
+[class*="appactionbutton_PlayButtonContainer_"]:not([class*="appactionbutton_ShowingStreaming_"]) {
+  min-width: calc(218px - 38px - 16px) !important;
+}
+
 [class*="appactionbutton_PlayButtonContainer_"][class*="appactionbutton_ShowingStreaming_"] {
   min-width: 218px !important;
 }
@@ -998,6 +1002,38 @@
   max-height: 122px !important;
 }
 
+/* EVENT ACHIEVEMENT */
+[class*="appactivityday_Event_"] [class*="appactivityday_EventHeadline_"] {
+  padding: 0px !important;
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="appactivityday_Event_"] [class*="appactivityday_EventHeadline_"] [class*="appactivityday_EventActorAvatar_"] {
+  display: none !important;
+}
+
+[class*="appactivityday_Event_"] [class*="appactivityday_EventHeadline_"] [class*="appactivityday_SpanEvent_"] {
+  height: 32px !important;
+  line-height: 32px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+[class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"] {
+  margin: 0px !important;
+  background: transparent !important;
+}
+
+[class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"]:hover {
+  background: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"]:active {
+  background: rgba(var(--color-white), 0.2) !important;
+}
+
 /* NO ACTIVITY */
 [class*="appdetailsactivitysection_NoActivity_"], [class*="appdetailsactivitysection_Loading_"] {
   color: rgb(var(--color-text-sub)) !important;
@@ -1080,12 +1116,19 @@
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
+  line-height: 32px !important;
 }
 
 [class*="appdetailsfriendssection_Subsection_"] {
-  margin-bottom: 16px !important;
+  /* margin-bottom: 16px !important; */
+  margin-bottom: 0px !important;
   padding-bottom: 0px !important;
 }
+
+[class*="appdetailsfriendssection_Subsection_"]:last-of-type {
+  margin-bottom: 16px !important;
+}
+
 
 [class*="overflowbox_OverflowBox_"] {
   width: 100% !important;
@@ -1097,7 +1140,39 @@
 
 [class*="appdetailsfriendssection_AvatarAndLabel_"] {
   margin-right: 0px !important;
-  height: 38px !important;
+  height: 32px !important;
+}
+
+[class*="appdetailsfriendssection_Subsection_"] [class*="appdetailsfriendssection_Friends_"] {
+  /* line-height: 38px !important; */
+  /* height: 38px !important; */
+}
+
+[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"] {
+  transform: none !important;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+[class*="overflowbox_OverflowBoxContent_"][class*="overflowbox_NoMask_"] > div:not(:last-of-type) {
+  margin-right: 8px !important;
+}
+
+[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarStatus_"].bottom {
+  display: none !important;
+  height: 0px !important;
+}
+
+[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"].ingame {
+  border: 1px solid rgb(var(--color-ingame)) !important;
+}
+
+[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"].online {
+  border: 1px solid rgb(var(--color-online)) !important;
+}
+
+[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"].offline {
+  border: 1px solid rgb(var(--color-offline)) !important;
 }
 
 [class*="appdetailsfriendssection_AvatarAndLabel_"]:hover {
@@ -1212,10 +1287,41 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   text-decoration: none !important;
 }
 
+/* SIDEBAR TRADING CARDS */
+[class*="appdetailstradingcardssection_Badge_"][class*="appdetailstradingcardssection_EmptyCircle_"] {
+  margin: 0px 16px 0px 0px !important;
+  border: 2px dashed rgb(var(--color-text-disabled)) !important;
+}
+
+[class*="appdetailstradingcardssection_BadgeInfo_"] [class*="appdetailstradingcardssection_BadgeName_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="appdetailstradingcardssection_BadgeInfo_"] [class*="appdetailstradingcardssection_BadgeLevel_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="appdetailstradingcardssection_CardsLeft_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="appdetailstradingcardssection_CardsSection_"] {
+  margin-right: 0px !important;
+  margin-bottom: 16px !important;
+}
+
 /* SIDEBAR DLC */
 [class*="appdetailsdlcsection_DLCSection_"] [class*="appdetailsdlcsection_DLC_"] {
   grid-gap: 8px 8px !important;
   margin-bottom: 8px !important;
+  margin-bottom: 0px !important;
+  line-height: 32px !important;
 }
 
 button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdetailsbutton_Left_"] {
