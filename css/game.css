@@ -8,6 +8,14 @@
   background: transparent !important;
 }
 
+[class*="appdetails_InnerContainer_"].Panel > .Panel {
+
+}
+
+[class*="appdetailsoverview_Container_"][class*="appdetailsoverview_Glassy_"] {
+
+}
+
 [class*="sharedappdetailsheader_ImgSrc_"] {
   z-index: 1 !important;
 }
@@ -491,6 +499,29 @@
   width: calc(67% - 16px) !important;
 }
 
+[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"] {
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  /* margin-bottom: 16px !important; */
+  /* background-color: rgb(var(--color-white), 0.1) !important; */
+  /* padding: 16px !important; */
+  /* margin-top: 16px !important; */
+}
+
+[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"] > div {
+  margin-top: 16px !important;
+  background-color: rgb(var(--color-white), 0.1) !important;
+}
+
+[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"]>div:last-child {
+  margin-bottom: 0px !important;
+}
+
+[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"]>div:not(:first-child) {
+  /* margin-top: 16px !important; */
+  margin-top: 0px !important;
+}
+
 /* DEMO */
 [class*="appdetailsspotlight_AppDetailsSpotlightDemo_"] {
   padding: 16px !important;
@@ -546,24 +577,6 @@
 }
 
 /* ADD REVIEW */
-[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"] {
-  padding: 0px !important;
-  margin-bottom: 0px !important;
-  /* margin-bottom: 16px !important; */
-  /* padding: 16px !important; */
-  background-color: rgb(var(--color-white), 0.1) !important;
-  margin-top: 16px !important;
-}
-
-[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"]>div:last-child {
-  margin-bottom: 0px !important;
-}
-
-[class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"]>div:not(:first-child) {
-  /* margin-top: 16px !important; */
-  margin-top: 0px !important;
-}
-
 [class*="appdetailsspotlight_ReviewContainer_"] {
   /* padding: 0px !important; */
   padding: 16px !important;
@@ -815,6 +828,7 @@
 
 [class*="comment_thread_RatingBar_"] {
   /* background: rgba(var(--color-white), 0.1) !important */
+  height: 32px !important;
 }
 
 [class*="comment_thread_RatingBar_"] {
@@ -967,6 +981,7 @@
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-subheader) !important;
   font-weight: 400 !important;
+  line-height: 32px !important;
 }
 
 [class*="appactivityday_PartnerEventType_"] {
@@ -980,7 +995,7 @@
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-subtext) !important;
   font-weight: 400 !important;
-  padding-top: 8px !important;
+  padding-top: 0px !important;
 }
 
 [class*="appactivityday_PartnerEventMediumImage_Container_"], [class*="appactivityday_PartnerEventMediumImage_Container_"]:hover {
@@ -997,7 +1012,7 @@
 }
 
 [class*="appactivityday_PartnerEventMediumImage_TextColumn_"] {
-  margin: 0px !important;
+  margin: 0px 16px 0px 0px !important;
   padding: 16px !important;
   max-height: 122px !important;
 }
@@ -1032,6 +1047,65 @@
 
 [class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"]:active {
   background: rgba(var(--color-white), 0.2) !important;
+}
+
+/* LARGE EVENT */
+[class*="appactivityday_PartnerEventLargeUpdate_"] {
+  border: 0px solid transparent !important;
+  border-image: url() !important;
+  border-image-width: 0px !important;
+  background: rgba(var(--color-primary), 0.2) !important;
+}
+
+[class*="appactivityday_PartnerEventLargeUpdate_"]:hover {
+  background: rgba(var(--color-primary), 0.3) !important;
+}
+
+[class*="appactivityday_PartnerEventLargeUpdate_"]:active {
+  background: rgba(var(--color-primary), 0.4) !important;
+}
+
+[class*="appactivityday_LeftSideMajorUpdateBar_"] {
+  width: 0px !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  background: transparent !important;
+}
+
+[class*="appactivityday_PartnerEventLargeImage_Container_"] {
+  background: transparent !important;
+}
+
+[class*="appactivityday_PartnerEventLargeImage_Image_"][class*="appactivityday_Blur_"] {
+  filter: none !important;
+  content: url() !important;
+  display: none !important;
+}
+
+[class*="appactivityday_ImageContainer_"] {
+  margin-right: 16px !important;
+  padding-right: 0px !important;
+}
+
+[class*="appactivityday_PartnerEventLargeImage_TextColumn_"] {
+  margin-top: 16px !important;
+  padding: 0px !important;
+  margin-right: 16px !important;
+}
+
+[class*="appactivityday_PartnerEventLargeImage_Title_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-subheader) !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+}
+
+[class*="appactivityday_PartnerEventLargeImage_Summary_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-subtext) !important;
+  font-weight: 400 !important;
+  padding-top: 0px !important;
 }
 
 /* NO ACTIVITY */
@@ -1111,12 +1185,14 @@
 }
 
 /* SIDEBAR FRIENDS WHO PLAY */
-[class*="appdetailsfriendssection_Subsection_"] [class*="appdetailsfriendssection_SubsectionHeader_"]{
-  padding-bottom: 0px !important;
+[class*="appdetailsfriendssection_Subsection_"] [class*="appdetailsfriendssection_SubsectionHeader_"] {
+  /* padding-bottom: 0px !important; */
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
-  line-height: 32px !important;
+  /* line-height: 32px !important; */
+  line-height: calc(var(--font-size-text) + 2px) !important; /* dang wrapping */
+  padding: 8px 0px !important;
 }
 
 [class*="appdetailsfriendssection_Subsection_"] {
@@ -1128,7 +1204,6 @@
 [class*="appdetailsfriendssection_Subsection_"]:last-of-type {
   margin-bottom: 16px !important;
 }
-
 
 [class*="overflowbox_OverflowBox_"] {
   width: 100% !important;
@@ -1155,7 +1230,23 @@
 }
 
 [class*="overflowbox_OverflowBoxContent_"][class*="overflowbox_NoMask_"] > div:not(:last-of-type) {
-  margin-right: 8px !important;
+  /* margin-right: 8px !important; */
+}
+
+[class*="overflowbox_OverflowBoxContent_"][class*="overflowbox_NoMask_"] > div {
+  height: 38px !important;
+}
+
+[class*="overflowbox_OverflowBoxContent_"][class*="overflowbox_NoMask_"] > div [class*="steamavatar_avatarHolder_"] {
+  /* left: 2px !important;
+  top: 2px !important; */
+  margin: 2px !important;
+}
+
+[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatar_"] {
+  border: 0px solid transparent !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 [class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarStatus_"].bottom {
@@ -1200,7 +1291,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 }
 
 [class*="appdetailssection_Highlight_"] {
-  padding: 16px !important;
+  padding: 16px 16px 0px 16px !important;
   margin-bottom: 0px !important;
   border-radius: 0px !important;
   color: rgb(var(--color-text)) !important;
@@ -1320,7 +1411,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 [class*="appdetailsdlcsection_DLCSection_"] [class*="appdetailsdlcsection_DLC_"] {
   grid-gap: 8px 8px !important;
   margin-bottom: 8px !important;
-  margin-bottom: 0px !important;
+  /* margin-bottom: 0px !important; */
   line-height: 32px !important;
 }
 
@@ -1328,6 +1419,16 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   padding: 0px 16px !important;
   line-height: 32px !important;
   height: 32px !important;
+  white-space: nowrap !important;
+}
+
+button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdetailsbutton_Left_"]:not(:last-of-type) {
+  margin-right: 0px !important;
+}
+
+[class*="aappdetailsdlcsection_DLCArt_"] [class*="aappdetailsdlcsection_Gloss_"] {
+  opacity: 0 !important;
+  background: transparent !important;
 }
 
 /* SIDEBAR SCREENSHOTS */
@@ -1376,10 +1477,111 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 }
 
 /* SIDEBAR REVIEW */
+[class*="appdetailsreviewsection_ReviewIcon_"] {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 0px !important;
+  margin-right: 16px !important;
+}
+
+[class*="appdetailsreviewsection_ReviewIconThumbsDownBox_"] {
+  background: transparent !important;
+}
+
+[class*="appdetailsreviewsection_ReviewIconThumbsUpBox_"] {
+  background: transparent !important;
+}
+
+[class*="appdetailsreviewsection_ThumbsDown_"] {
+  transform: none !important;
+}
+
+[class*="appdetailsreviewsection_ReviewIconThumbsDownColor_"] {
+  fill: transparent !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+klEQVRYhe2W4Q2CMBCF37kBjsAKruAKrMAKrMAKzuAIrIAjsAKO8PwBJkqK9pWkGnJf0j+k1370rpcaSfwjh18LrOFiKi6m4mIqLqbiYir7EDMzmBkAdAC4MgYADYDyOf8lLh6S0WOeX3KiCKxVkGxIDgwTv1eCWEuy134fUMVSaqwCcE2IkzDxoVhiqqGjmd2VQE4bRReaemI1gJsqlYIqliWNALTiX7uNgTXPJMdst5JkF+wB71LV/Lndcghyu1hsdCI5BqTqrdnZKnYh2S2kqg8pziY2zkJfpXKLMVYqt1gfK6WKqZ0/G/t4j+XExVRcTMXFVFxM5QFZJS8OA8mCZwAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="appdetailsreviewsection_ReviewIconThumbsUpColor_"] {
+  fill: transparent !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABCUlEQVRYhe2W0U3DMBBAnxELdIUyAiuwghkhK7ACK7ACjJAVWKEdIYzw+MCVqihpcxjSqvKT/BEnvnu6s60klWvk7tICczSxKE0sShOL0sSi3IZYSunsADIg8Dnxbjnq4rEgVvaH7MSCSK4/a6WagXfguUx91Qasrthxpcpzr75V5aoVU7tjqTI3qI8XE1Nfx1Jlfor+38Qmkg3q04mdchDdlO8X57o/F3RMCp97ADpgH1mw1gWbgY/IgjS3qWcwWjF1AwzAA4GqrVGxDtinlK6uleE2AtWnUnWnvpSWjWMfTuM2mqv2HtsWqd2MtGr/myJEN/9q3Mb/2Jo0sShNLEoTi9LEojSxKN9MHKnr+LjxKAAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="appdetailsreviewsection_ReviewDescription_"] {
+  line-height: 16px !important;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
 [class*="appdetailsreviewsection_PlayedForTime_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  padding-bottom: 0px !important;
+  /* margin-bottom: 16px !important; */
+}
+
+[class*="appdetailsreviewsection_ReviewText_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="appdetailsreviewsection_ReviewTextContainer_"] {
+  padding-bottom: 0px !important;
+}
+
+[class*="appdetailsreviewsection_CommentsGroup_"] {
+  margin: 16px 0px !important;
+}
+
+[class*="appdetailsreviewsection_CommentsGroup_"] [class*="appdetailsreviewsection_CommentsContainer_"] [class*="appdetailsreviewsection_UpVotesIcon_"] {
+  width: 24px !important;
+  height: 24px !important;
+  margin-right: 4px !important;
+  fill: transparent !important;
+  padding: 0px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2klEQVRIie2V0Q2CQBBEZ40N0AIt2IItYAm0YAu2YAtaAi3YApaAJTw/PA3iwh0iHxonuQ82t2/uBjYYoDm1mJX+EwYCnlZiT8FNpyhvrEELXuA0dHmjIgIKSQdJm1C6pDQl3aB98vBcAfsoL8UAKNvwUGuA1WQDYNeFh7qnKmrgNDXAeiDlu2EW9j/xlt5mM7MY0FEp6dwtfnLQCknHl6oX0VhyK5580hwMqJR0NrPZIvLjkZK+IoAa2AKZ0/+Ix+OlzEEe4HWPOUDVd2B7452O0vf/cP4GUV0BYmnCqzvzdKYAAAAASUVORK5CYII=') !important;
+}
+
+[class*="appdetailsreviewsection_CommentsGroup_"] [class*="appdetailsreviewsection_CommentsContainer_"] [class*="appdetailsreviewsection_CommentIcon_"] {
+  width: 24px !important;
+  height: 24px !important;
+  margin-right: 4px !important;
+  fill: transparent !important;
+  padding: 0px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAiUlEQVRIie2T2w2AIAxFqXEBh3MFxnaV4w8mokUqj0SNN+GjTXoP0FYA11NDV/cfYNGo5Gq7LjmAExHR8jmhjOT7e2ACEJSKqwE1MgFC05dUfFmrvJTKKYpqn/FFzQH7KQE8RqkEIDoHyGburTc++WUAALPVvARwy9wMAKYScw2g7UFTfXQPWmoFrczfXo/W3j8AAAAASUVORK5CYII=') !important;
+}
+
+[class*="appdetailsreviewsection_CommentsGroup_"] [class*="appdetailsreviewsection_CommentsContainer_"] {
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-subtext) !important;
   font-weight: 400 !important;
+}
+
+[class*="appdetailsreviewsection_CommentsGroup_"] [class*="appdetailsreviewsection_CommentsContainer_"] [class*="appdetailsreviewsection_CommentsLabel_"] {
+  color: rgb(var(--color-text-sub)) !important;
+}
+
+[class*="appdetailsreviewsection_CommentsGroup_"] [class*="appdetailsreviewsection_CommentsContainer_"] [class*="appdetailsreviewsection_CommentCount_"] {
+  color: rgb(var(--color-text)) !important;
+  margin-left: 4px !important;
+}
+
+[class*="appdetailsreviewsection_CommentsGroup_"] [class*="appdetailsreviewsection_CommentsContainer_"] [class*="appdetailsreviewsection_CommentCount_"]::before {
+  /* content: "\00a0 " !important; */
+  /* position: relative !important; */
 }
 
 [class*="appdetailsreviewsection_VoteUpDownContainer_"] {
@@ -1395,6 +1597,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   margin-right: auto !important;
   margin-left: auto !important;
   height: 32px !important;
+  white-space: nowrap !important;
 }
 
 button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdetailsbutton_BottomRight_"] {
@@ -1402,4 +1605,5 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   padding: 0px 16px !important;
   height: 32px !important;
   /* background-color: transparent !important; */
+  white-space: nowrap !important;
 }
