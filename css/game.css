@@ -25,7 +25,7 @@
   background-color: rgba(var(--color-black), 0.75) !important;
   background-image: var(--image-acrylic) !important;
   background-blend-mode: exclusion !important;
-  backdrop-filter: blur(40px) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
 }
 
 [class*="sharedappdetailsheader_ImgSrc_"][class*="sharedappdetailsheader_ImgBlurBackdrop_"] {
@@ -73,7 +73,7 @@
 
 [class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::before {
   background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(40px) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important;
   height: 70px !important;
 }
@@ -881,6 +881,11 @@
 /* RATING BAR */
 [class*="comment_thread_RatingBar_"]:not([class*="comment_thread_IsVisible_"]) {
   /* opacity: 1 !important; */
+  height: 24px !important;
+}
+
+[class*="comment_thread_RatingBar_"][class*="comment_thread_IsVisible_"] {
+  height: 24px !important;
 }
 
 [class*="comment_thread_ActivityCommentThreadMinimized_"] {
@@ -890,7 +895,6 @@
 [class*="comment_thread_RatingBar_"] {
   /* background: rgba(var(--color-white), 0.1) !important */
   /* height: 32px !important; */
-  height: 24px !important;
 }
 
 [class*="comment_thread_RatingBar_"] {
@@ -1011,9 +1015,147 @@
   display: none !important;
 }
 
+[class*="comment_thread_ActivityCommentThread_"] {
+  background: transparent !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+[class*="comment_thread_AddReply_"] {
+  padding: 0px !important;
+}
+
+/* ACTIVITY COMMENT THREAD */
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] {
+  padding: 0px !important;
+  margin: 0px 0px 16px 0px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_HeaderandBody_"]{
+  margin-left: 8px !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommenterandTime_"]{
+  margin-top: 0px !important;
+  line-height: 24px !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentHeader_"] [class*="comment_thread_ActorName_"] {
+  margin-left: 0px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentHeader_"] [class*="comment_thread_CommentTime_"] {
+  margin-left: 16px !important;
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-subtext) !important;
+  font-weight: 400 !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] {
+  margin: 0px !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentText_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] {
+  margin-left: 8px !important;
+  /* float: right !important; */
+  height: 24px !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_CommentRatingButton_"] {
+  border-radius: 0px !important;
+  margin: 0px 8px 0px 0px !important;
+  padding: 0px !important;
+  height: 24px !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_CommentRatingButton_"][class*="comment_thread_HasRating_"] {
+  /* width: auto !important; */
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_CommentRatingButton_"] [class*="comment_thread_CommentRating_"] {
+  /* padding: 0px !important; */
+  /* margin: 0px !important; */
+  color: transparent !important;
+  fill: transparent !important;
+  stroke: transparent !important;
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_CommentRatingButton_"] [class*="comment_thread_CommentRating_"] [class*="comment_thread_ThumbsUpComment_"] {
+  /* padding: 0px !important;
+  margin: 0px !important; */
+  color: transparent !important;
+  fill: transparent !important;
+  stroke: transparent !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2klEQVRIie2V0Q2CQBBEZ40N0AIt2IItYAm0YAu2YAtaAi3YApaAJTw/PA3iwh0iHxonuQ82t2/uBjYYoDm1mJX+EwYCnlZiT8FNpyhvrEELXuA0dHmjIgIKSQdJm1C6pDQl3aB98vBcAfsoL8UAKNvwUGuA1WQDYNeFh7qnKmrgNDXAeiDlu2EW9j/xlt5mM7MY0FEp6dwtfnLQCknHl6oX0VhyK5580hwMqJR0NrPZIvLjkZK+IoAa2AKZ0/+Ix+OlzEEe4HWPOUDVd2B7452O0vf/cP4GUV0BYmnCqzvzdKYAAAAASUVORK5CYII=') !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_CommentRatingButton_"] [class*="comment_thread_CommentRating_"][class*="comment_thread_HasRating_"]  [class*="comment_thread_ThumbsUpComment_"]  {
+  margin-left: 4px !important;
+  opacity: 1 !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAy0lEQVRIie2V0Q3CMBBDbcQCrEBGYBZWYBZmYARWoCPAChmhjGA+KkSahN5VNB+VsJSPVLrnnK9pKQkttWlK/xu4JGm0nDVHDbqbvLkGCVyqFPxkkMMl9ZbB1jxyAgdwTR51AKKn0OxA0kmlekkHk2cZSDpX4N90y3mszSnbPwHszCg+Yrrx3IM58GIm7iE79MAw+JE8Ec1RQNbFkp+KSLJZRNV4AH9EEcDeMAkkY84rIiJJDK/aewUAF0zf2q4WD1DvYFGt/4ezfoMXVU0WVmhXEUMAAAAASUVORK5CYII=') !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_DeleteButton_"] {
+  border-radius: 0px !important;
+  margin: 0px 8px 0px 0px !important;
+  padding: 0px !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_DeleteButton_"] [class*="comment_thread_DeleteUserNews_"] {
+  /* padding: 0px !important; */
+  margin: 0px !important;
+  color: transparent !important;
+  fill: transparent !important;
+  stroke: transparent !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAdklEQVRIie2U2wqAMAxDjfj/vxxfnGBJBF0nRZaXstLtbL0MJJeRWoee/gvAppwALmuKQiEEuVpKgIGeByqg3Wdi37QWlNOlCCQZ0yBvcsS5R9XoopbzaNMAPZqACfgI0CY62jRAj25/0ycT62Q/qSzVKHJpwA7iDzAqJjLZdgAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_CommentRatingButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_CommentRatingButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_DeleteButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="comment_thread_ActivityCommentThread_"] [class*="comment_thread_Comment_"] [class*="comment_thread_CommentBody_"] [class*="comment_thread_CommentControls_"] [class*="comment_thread_DeleteButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="comment_thread_CommentRating_"] [class*="comment_thread_BackgroundEffects_"] {
+  top: 0px !important;
+  right: 0px !important;
+}
+
 /* ACTIVITY POST */
 [class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] {
-  margin: 0px 0px 16px 0px !important;
+  margin: 0px 0px 0px 0px !important;
 }
 
 [class*="appdetailsactivitysection_PostTextEntry_"] {
@@ -1022,8 +1164,11 @@
 
 [class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"][class*="posttextentry_Active_"] {
   max-height: 50px;
-  margin: 16px 0px !important;
+  margin: 0px 0px 16px 0px !important;
   padding-bottom: 0px !important;
+}
+
+[class*="posttextentry_PostTextEntry_"][class*="comment_thread_AddReply_"].Panel {
 }
 
 [class*="posttextentry_PostTextEntryArea_"] {
@@ -1036,9 +1181,10 @@
   outline-offset: -2px !important;
   border: 0px solid transparent !important;
   margin-top: 0px !important;
-  width: calc(100% - 16px) !important;
+  margin-bottom: 16px !important; /* FOR THE OUTOUNE? */
+  width: calc(100% - 32px) !important;
   line-height: 20px !important;
-  padding: 8px !important;
+  padding: 9px 16px !important;
 }
 
 [class*="posttextentry_PostTextEntry_"] [class*="posttextentry_PostTextEntryArea_"]:focus {
@@ -1111,7 +1257,7 @@
 }
 
 [class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] [class*="posttextentry_PostButton_"] {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background: rgba(var(--color-white), 0.2) !important;
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
@@ -1119,17 +1265,23 @@
   margin: 0px 0px 0px 16px !important;
   padding: 0px 16px;
   line-height: 38px !important;
+  filter: brightness(0.5) saturate(0) !important;
 }
 
-[class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] [class*="posttextentry_PostButton_"]:hover {
-  background-color: rgba(var(--color-white), 0.3) !important;
+[class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] [class*="posttextentry_PostButton_"][class*="posttextentry_Enabled_"] {
+  background: rgba(var(--color-white), 0.2) !important;
+  filter: none !important;
+}
+
+[class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] [class*="posttextentry_PostButton_"][class*="posttextentry_Enabled_"]:hover {
+  background: rgba(var(--color-white), 0.3) !important;
   color: rgb(var(--color-white)) !important;
   outline: 2px solid rgba(var(--color-white), 0.5) !important;
   outline-offset: -2px !important;
 }
 
-[class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] [class*="posttextentry_PostButton_"]:active {
-  background-color: rgba(var(--color-white), 0.4) !important;
+[class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] [class*="posttextentry_PostButton_"][class*="posttextentry_Enabled_"]:active {
+  background: rgba(var(--color-white), 0.4) !important;
   color: rgb(var(--color-white)) !important;
   outline: 2px solid transparent !important;
   outline-offset: -2px !important;
@@ -1177,6 +1329,17 @@
   margin: 0px 16px 0px 0px !important;
   padding: 16px !important;
   max-height: 122px !important;
+}
+
+/* EVENT USER POST */
+[class*="aappactivityday_Event_"] [class*="aappactivityday_EventBody_"][class*="aappactivityday_UserStatus_"] {
+  padding: 16px !important;
+}
+
+[class*="aappactivityday_ActivityPublishedStatus_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
 }
 
 /* EVENT ACHIEVEMENT */
@@ -1239,7 +1402,7 @@
   background-color: rgba(var(--color-black), 0.75) !important;
   background-image: var(--image-acrylic) !important;
   background-blend-mode: exclusion !important;
-  backdrop-filter: blur(40px) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
   /* max-width: 100% !important; */
 }
 
@@ -1255,6 +1418,7 @@
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
+  border-radius: 0px !important;
 }
 
 /* LARGE EVENT */
@@ -1433,12 +1597,6 @@
   /* height: 38px !important; */
 }
 
-[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"] {
-  transform: none !important;
-  height: 32px !important;
-  width: 32px !important;
-}
-
 [class*="overflowbox_OverflowBoxContent_"][class*="overflowbox_NoMask_"] > div:not(:last-of-type) {
   /* margin-right: 8px !important; */
 }
@@ -1451,29 +1609,6 @@
   /* left: 2px !important;
   top: 2px !important; */
   margin: 2px !important;
-}
-
-[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatar_"] {
-  border: 0px solid transparent !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarStatus_"].bottom {
-  display: none !important;
-  height: 0px !important;
-}
-
-[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"].ingame {
-  border: 1px solid rgb(var(--color-ingame)) !important;
-}
-
-[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"].online {
-  border: 1px solid rgb(var(--color-online)) !important;
-}
-
-[class*="appdetailsfriendssection_Subsection_"] [class*="steamavatar_avatarHolder_"].offline {
-  border: 1px solid rgb(var(--color-offline)) !important;
 }
 
 [class*="appdetailsfriendssection_AvatarAndLabel_"]:hover {

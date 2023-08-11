@@ -123,6 +123,10 @@
 [class*="personanameandstatus_playerName_"] {
   font-weight: 400 !important;
   font-size: var(--font-size-text) !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+  -webkit-mask: none !important;
+  mask: none !important;
 }
 
 .ingame [class*="personanameandstatus_playerName_"] {
@@ -210,6 +214,36 @@
 /* AVATAR STATUS BAR */
 [class*="steamavatar_avatarHolder_"] [class*="steamavatar_avatarStatus_"].right, [class*="steamavatar_avatarHolder_"] [class*="steamavatar_avatarStatus_"].bottom {
   display: none !important;
+}
+
+/* AVATAR */
+[class*="steamavatar_avatarHolder_"] {
+  transform: none !important;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+[class*="steamavatar_avatar_"] {
+  border: 0px solid transparent !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+[class*="steamavatar_avatarStatus_"].bottom {
+  display: none !important;
+  height: 0px !important;
+}
+
+[class*="steamavatar_avatarHolder_"].ingame {
+  border: 1px solid rgb(var(--color-ingame)) !important;
+}
+
+[class*="steamavatar_avatarHolder_"].online {
+  border: 1px solid rgb(var(--color-online)) !important;
+}
+
+[class*="steamavatar_avatarHolder_"].offline {
+  border: 1px solid rgb(var(--color-offline)) !important;
 }
 
 /* STATUS ICONS */
@@ -628,7 +662,7 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   padding: 0px !important;
   border: 1px solid rgba(var(--color-white), 0.05) !important;
   background-color: rgba(var(--color-white), 0.1) !important;
-  backdrop-filter: blur(40px) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--image-acrylic) !important;
 }
@@ -642,14 +676,14 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   right: 0 !important;
   bottom: 0 !important; */
   /* background-color: rgba(var(--color-white), 0.1) !important;
-  backdrop-filter: blur(40px) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--image-acrylic) !important; */
 }
 
 [class*="dropdown_DialogDropDownMenu_"]._DialogInputContainer::before {
   /* background-color: rgba(var(--color-white), 0.1) !important;
-  backdrop-filter: blur(40px) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important; */
 }
 
