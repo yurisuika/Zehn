@@ -22,13 +22,14 @@ If things crash because of the class moving, press F5 to refresh the client (thi
 
 #### To-Do
 - Most things on the overlay
-- Game page
+- Some game page stuff still left to do
 - Event page popup
 - Notifications
 - Replace/add icons in settings
+- Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe
 - Implement Reveal
 - Figure out to implement Reveal on stuff that isn't initially loaded
-- Figure out why text rendering is so much blurrier than in UWP apps
+- Figure out why text rendering is so much blurrier than in UWP apps???
 - Figure out how to get JS to move classes again when reloaded and not just on initial load
 - Maybe do browser content?
 - Anything I haven't come across from daily use
