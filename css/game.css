@@ -381,23 +381,28 @@
 [class*="appdetailsplaysection_DetailsSection_"][class*="appdetailsplaysection_Downloading_"] {
   background-repeat: no-repeat !important;
   background-position: left !important;
+  width: 138px !important;
   padding-left: 38px !important;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMElEQVRYhe2WsUoDQRRFz4rYWVlbZhu/wUZS+gN+QNL7A+ZzbGy1Fay1MmliLLSKjdna5lrMA0NAnDuBGMIcGAK7L3MPu8N720hiG9n7b4HfqGIuVcylirlUMZedFRsBz8AnoFgdMAau1tpZUslqJb1IWki6kzRcujeMawtJs6i1M0ql5pIeM+rGUdtTIjunKfi6eAPegdPM+glwCBwDTW6Ie8auY/NcKYAT4MDMYd+sPwNujPrijz33VbbAtDTMoeSMbYSdbbC59Nw/uGJaWblcAnMnqOSJfZBaRnZPAs6BeyekROyL1DRzeYjfCyekRKwPHJGGd/tH7RPpfPXtlDWG+GsM6tuVIT6Ia10M+o0N8eU1ikHd6YdO0iTuFe9dG6xLFXOpYi5VzKWKuWyt2DcyaQeC84ot8AAAAABJRU5ErkJggg==') !important;
 }
 
 [class*="appdetailsplaysection_DetailsSection_"] [class*="appdetailsplaysection_DetailsSectionStatus_"] {
-  position: absolute !important;
-  top: 5px !important;
+  /* position: absolute !important; */
+  position: relative !important;
+  /* top: 5px !important; */
 }
 
 [class*="appdetailsplaysection_DetailsSection_"] [class*="appdetailsplaysection_DetailsSectionExtra_"] {
   position: relative !important;
-  top: 10px !important;
+  /* top: 10px !important; */
+  overflow: visible !important;
 }
 
 [class*="appdetailsplaysection_DetailsSection_"] [class*="appdetailsplaysection_DetailsProgressContainer_"] {
-  width: 150px !important;
-  margin-top: 2px !important;
+  width: 100px !important;
+  /* margin-top: 16px !important; */
+  position: absolute;
+  top: 11px !important;
 }
 
 [class*="appdetailsplaysection_DetailsProgressContainer_"] {
@@ -602,18 +607,69 @@
   background: transparent !important;
 }
 
+/* INFO BOX ART */
 [class*="appdetailsgameinfocontainer_AppGameInfoContainer_"][class*="appdetailsgameinfocontainer_AppDetailsExpanded_"] {
   margin: 16px !important;
+}
+
+[class*="appdetailsgameinfocontainer_AppGameInfoContainer_"][class*="appdetailsgameinfocontainer_AppDetailsExpanded_"][class*="appdetailsgameinfocontainer_BoxArtExpanded_"] {
+  height: unset !important;
+  transition: none !important;
 }
 
 [class*="appdetailsgameinfocontainer_AppGameInfoContainer_"][class*="appdetailsgameinfocontainer_AppDetailsCollapsed_"] {
   margin: 0px !important;
 }
 
-[class*="appdetailsgameinfopanel_Container_"] [class*="appdetailsgameinfopanel_InnerContainer_"]{
+[class*="appdetailsgameinfopanel_Portrait_"][class*="appdetailsgameinfopanel_Expanded_"] {
+  border: 0px solid transparent !important;
+}
+
+[class*="appdetailsgameinfopanel_Portrait_"] {
+  border: 0px solid transparent !important;
+  border-radius: 0px !important;
+}
+
+/* INFO SECTIONS */
+[class*="appdetailsgameinfopanel_Container_"] [class*="appdetailsgameinfopanel_InnerContainer_"] {
   padding: 0px !important;
   border-radius: 0px !important;
   grid-column-gap: 16px !important;
+}
+
+[class*="appdetailsgameinfopanel_Portrait_"] [class*="appdetailsgameinfopanel_ZoomInButton_"] {
+  width: 32px !important;
+  height: 32px !important;
+  left: 0px !important;
+  bottom: 0px !important;
+  border-radius: 0px !important;
+  opacity: 1 !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2ElEQVRYhe2WMWrDQBBFn4J7l1EqH8DoELqEcoYcxjcIpPYN7MqolLsEkgOkCSnTuXsurCKFbFYrCRXegWFhBv5/MDOwmcqc8TCrewJIAAkgAYwAUAFNm+/ADih6Kaix+aLW6uO/Wqk2ahGqMwSgUZ866qW6D9WJHUEFfAM/Hb0DkIcKDdmBvxu909QANdeXLQeyqQF+uYzgtcN8C2xChRaRACWwBj6BI/ABLIEV8NZChEXE9pfqV/vSnuGzWsVc01DzwTmreV+A0c1VMk2/4gSQABLAnQOcAQnRX9BFYc88AAAAAElFTkSuQmCC') !important;
+}
+
+[class*="appdetailsgameinfopanel_Portrait_"]:not(:hover) [class*="appdetailsgameinfopanel_ZoomInButton_"] {
+  opacity: 0 !important;
+}
+
+[class*="appdetailsgameinfopanel_Portrait_"] [class*="appdetailsgameinfopanel_ZoomInButton_"] svg {
+  display: none !important;
+}
+
+[class*="appdetailsgameinfocontainer_AppGameInfoContainer_"][class*="appdetailsgameinfocontainer_AppDetailsExpanded_"][class*="appdetailsgameinfocontainer_BoxArtExpanded_"] [class*="appdetailsgameinfopanel_Portrait_"] [class*="appdetailsgameinfopanel_ZoomInButton_"] {
+  display: none !important;
+}
+
+[class*="appdetailsgameinfopanel_Portrait_"] [class*="appdetailsgameinfopanel_ZoomInButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+  opacity: 1 !important;
+}
+
+[class*="appdetailsgameinfopanel_Portrait_"] [class*="appdetailsgameinfopanel_ZoomInButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+  opacity: 1 !important;
 }
 
 [class*="appdetailsgameinfopanel_Container_"] [class*="appdetailsgameinfopanel_SectionContainer_"] {
