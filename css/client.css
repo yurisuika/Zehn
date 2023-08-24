@@ -68,6 +68,8 @@
   font-weight: 400 !important;
   font-size: var(--font-size-section) !important;
   text-transform: none !important;
+  margin-bottom: 0px !important;
+  line-height: 16px !important;
 }
 
 .ChatRoomNotificationSettingsDialog .DialogFooter {
@@ -361,6 +363,56 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 }
 
 /* RADIO */
+input[type="radio" i] {
+  background-color: transparent !important;
+  border: 2px solid rgba(var(--color-white), 0.8) !important;
+  height: 20px !important;
+  width: 20px !important;
+  margin: 0px !important;
+  appearance: unset !important;
+  border-radius: 25px !important;
+}
+
+input[type="radio" i]:hover {
+  border-color: rgb(var(--color-white)) !important;
+}
+
+input[type="radio" i]:active {
+  /* border-color: rgba(var(--color-white), 0.6) !important; */
+  filter: saturate(0) brightness(0.6) !important;
+}
+
+input[type="radio" i]:checked {
+  border-color: rgb(var(--color-primary)) !important;
+}
+
+input[type="radio" i]:checked:active {
+  /* border-color: rgba(var(--color-white), 0.6) !important; */
+  border-color: rgb(var(--color-white)) !important;
+  filter: saturate(0) brightness(0.6) !important;
+}
+
+input[type="radio" i]:checked:after {
+  content: "" !important;
+  background-color: rgba(var(--color-white), 0.8) !important;
+  border-radius: 25px !important;
+  display: block !important;
+  position: relative !important;
+  height: 10px !important;
+  width: 10px !important;
+  left: 3px !important;
+  top: 3px !important;
+}
+
+input[type="radio" i]:checked:after:hover {
+  background-color: rgb(var(--color-white)) !important;
+}
+
+input[type="radio" i]:checked:after:active {
+  /* background-color: rgba(var(--color-white), 0.6) !important; */
+}
+
+/* RADIO BUTTON */
 [class*="radio_Button_"][class*="radio_Active_"], [class*="radio_Button_"][class*="radio_Active_"]:hover {
   background-color: rgb(var(--color-primary)) !important;
   color: rgb(var(--color-text)) !important;
@@ -385,6 +437,11 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 }
 
 /* CHECKBOX */
+.DialogCheckbox_Container {
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 .DialogCheckbox {
   width: 16px !important;
   height: 16px !important;
