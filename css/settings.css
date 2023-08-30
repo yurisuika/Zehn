@@ -61,6 +61,10 @@
   display: none !important;
 }
 
+[class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogHeader.DesktopUI, .DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogHeader {
+  margin-top: 0px !important;
+}
+
 [class*="settings_SettingsDialogSubHeader_"].DesktopUI, .DesktopUI [class*="settings_SettingsDialogSubHeader_"] {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
@@ -178,7 +182,10 @@
 
 /* SETTINGS BODY */
 [class*="pagedsettings_PagedSettingsDialog_PageContent_"].DesktopUI .DialogBody, .DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogBody {
-  padding-top: 12px !important;
+  /* padding-top: 12px !important; */
+  /* padding: 0px !important; */
+  padding-top: 0px !important;
+  padding-right: 0px !important;
 }
 
 /* STEAM GUARD */
@@ -275,6 +282,8 @@
 /* FADE */
 [class*="settings_SettingsDialogBodyFade_"].DesktopUI, .DesktopUI [class*="settings_SettingsDialogBodyFade_"] {
   -webkit-mask-image: none !important;
+  padding-top: 0px !important;
+  padding-bottom: 38px !important;
 }
 
 /* RESTART POPUP */
@@ -331,6 +340,16 @@
 
 .DialogContent._DialogLayout.GenericConfirmDialog._DialogCenterVertically .DialogContent_InnerWidth {
   min-height: 180px !important;
+}
+
+/* LIBRARY */
+[class*="librarysettings_ActionSection_"] {
+  gap: 16px !important;
+}
+
+[class*="librarysettings_DescriptionText_"].DesktopUI, .DesktopUI [class*="librarysettings_DescriptionText_"] {
+  margin-top: 16px;
+  margin-bottom: 16px !important;
 }
 
 /* STORAGE */
@@ -402,10 +421,30 @@
   font-weight: 400 !important;
 }
 
+[class*="settings_SettingsModalRoot_"] [class*="settings_SettingsModal_"] [class*="boxcarousel_BoxCarouselContents_"][class*="boxcarousel_MaskRight_"] {
+  gap: 16px !important;
+  display: flex !important;
+}
+
 [class*="contentmanagement_InstallFolder_"] {
   border-radius: 0px !important;
   color: rgb(var(--color-white)) !important;
+  padding: 0px 16px !important;
+  margin-right: 0px !important;
+}
+
+[class*="contentmanagement_InstallFolder_"] svg {
+  width: 32px !important;
+  height: 32px !important;
+  margin-right: 0px !important;
   background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: left !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAc0lEQVRYhe3WUQqAIBBF0TvRWtz/GmoV0WKm35DSQYwheA9kfkQPOqDm7mRmSd1dAAEEEECAvwA2wAfH3lvcAq+hAwU4A9h7CnAANgPQXORhbl1fM7sHrKrdpDfhGpz32bcpAggf50jSr0AAAQQQQIB0wAWpayCyReV/5AAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="contentmanagement_InstallFolder_"] svg path {
+  fill: transparent !important;
 }
 
 [class*="contentmanagement_InstallFolder_"]:last-child {
@@ -440,6 +479,9 @@
 
 [class*="contentmanagement_DriveName_"], [class*="contentmanagement_DriveSize_"] {
   color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-text) !important;
+  line-height: 24px !important;
 }
 
 [class*="contentmanagement_IsSelected_"] [class*="contentmanagement_DriveName_"], [class*="contentmanagement_IsSelected_"] [class*="contentmanagement_DriveSize_"], [class*="contentmanagement_IsSelected_"] svg {
@@ -502,16 +544,32 @@
 
 [class*="contentmanagement_FolderInfo_"] svg {
   color: rgb(var(--color-white)) !important;
+  margin-left: 0px !important;
 }
 
 [class*="contentmanagement_FolderInfo_"] svg path {
   fill: transparent !important;
-  stroke: rgb(var(--color-white)) !important;
+  /* stroke: rgb(var(--color-white)) !important; */
+  stroke: transparent !important;
   stroke-width: 3px !important;
 }
 
+[class*="contentmanagement_FolderInfo_"] svg {
+  /* width: 38px !important; */
+  /* height: 38px !important; */
+  background-size: 24px 24px !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: left !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVRIid2V3XGDQAyEVxk3QAumBFqgBVpwC67FLTglQAl2CVAClPDlIWJCDu44Z8JDsjOaY/S3QhKHAToSb4dm/xcEp1BhZlFnoJE0mVmX8EkT7KD2M0oQ4qcE+QC+ScKv4gtVbr5XhtxIero0uUEWVh0bMtBLep/JzKyM+K0VgdyIo3CJ4bZq+dYMgBoYgRYoYq/vZK371lsFR4fswQ+gB84byc9ueyyLyCZYBNzn9gTkI3DfmsGrW9RJGsxsmknMbJI0KeODyyFoJHWefG5Z4cl31zWHoJI0SOr9nJ8nt6WRmgFwWazgdaG/LvSXZL4dgnkFV5XyeXWMQJsi2GvRIKk0s2docF3pPlGsrorfxt//ZR5O8AFsk637qp7yDQAAAABJRU5ErkJggg==') !important;
+}
+
 [class*="contentmanagement_AddFolder_"] {
-  padding: 15px !important;
+  /* padding: 15px !important; */
+  padding: 0px !important;
+  height: 38px !important;
+  width: 38px !important;
+  margin-top: 9px !important;
 }
 
 [class*="contentmanagement_AddFolder_"] svg {
@@ -544,6 +602,10 @@
 
 [class*="pagedsettings_PagedSettingsDialog_PageContent_"] [class*="pageablecontainer_PageClickContainer_"] {
   margin-bottom: 8px !important;
+}
+
+[class*="contentmanagement_AppActionBarButtons_"] {
+  gap: 16px !important;
 }
 
 /* TOOLBAR */
@@ -580,6 +642,12 @@
 
 [class*="accountsettings_AvatarAndLabel_"] [class*="accountsettings_LabelHolder_"] {
   font-weight: 400 !important;
+}
+
+[class*="accountsettings_AvatarAndLabel_"] [class*="accountsettings_Avatar_"] {
+  margin-left: 0px !important;
+  margin-right: 8px !important;
+  margin-top: 2px !important;
 }
 
 /* SECURITY */
@@ -1017,110 +1085,6 @@ button.DialogButton.roleButton .SVGIcon_Crown {
   height: 0px !important;
   opacity: 0 !important;
   display: none !important;
-}
-
-/* GAME INFO DIALOG */
-.DialogButton._DialogLayout.Primary.Disabled.Focusable span [class*="gamepadui_svg_library_Spinner_"] {
-  display: none !important;
-}
-
-[class*="gamepadui_svg_library_Spinner_"] > path {
-  width: 0px !important;
-  height: 0px !important;
-  opacity: 0 !important;
-}
-
-[class*="gamepaddialog_Field_"][class*="gamepaddialog_Clickable_"]:not([class*="gamepaddialog_Disabled_"]) button.DialogButton.Primary {
-  margin-left: 16px !important;
-}
-
-/* MOVE GAME DIALOG */
-[class*="moveappsdialog_MoveAppsIndicator_"] {
-  min-height: 15px !important;
-  margin-top: 8px !important;
-  margin-bottom: 8px !important;
-  background-color: rgba(var(--color-white), 0.2) !important;
-  border-radius: 0px !important;
-}
-
-[class*="moveappsdialog_DialogBodyText_"] {
-  color: rgb(var(--color-text-sub)) !important;
-  font-weight: 400 !important;
-  font-size: var(--font-size-text) !important;
-}
-
-[class*="moveappsdialog_MoveAppsBar_"] {
-  background-color: rgb(var(--color-primary)) !important;
-}
-
-/* INSTALL GAME DIALOG */
-[class*="installrequest_FolderOption_"][class*="installrequest_Active_"] {
-  color: rgb(var(--color-text)) !important;
-  background: rgb(var(--color-primary)) !important;
-}
-
-[class*="installrequest_FolderOption_"]:not([class*="installrequest_Active_"]) {
-  background: rgba(var(--color-white), 0.1) !important;
-}
-
-[class*="installrequest_FolderOption_"]:not([class*="installrequest_Active_"]):hover {
-  background: rgba(var(--color-white), 0.2) !important;
-}
-
-[class*="installrequest_FolderOption_"]:not([class*="installrequest_Active_"]):active {
-  background: rgba(var(--color-white), 0.3) !important;
-}
-
-[class*="installrequest_FolderOption_"] {
-  color: rgb(var(--color-text)) !important;
-  font-weight: 400 !important;
-  font-size: var(--font-size-text) !important;
-  column-gap: 12px !important;
-  padding: 12px 16px !important;
-  border-radius: 0px !important;
-  margin: 4px 0 !important;
-  line-height: 22px !important;
-}
-
-[class*="installrequest_DiskSpace_"] {
-  color: rgb(var(--color-text)) !important;
-  font-weight: 400 !important;
-  font-size: var(--font-size-text) !important;
-}
-
-[class*="installrequest_FolderOption_"] [class*="installrequest_FolderFlagStar_"] svg path {
-  fill: transparent !important;
-  stroke: rgb(var(--color-text)) !important;
-  stroke-width: 5px !important;
-}
-
-[class*="installrequest_AppName_"] {
-  color: rgb(var(--color-text)) !important;
-  font-weight: 400 !important;
-  font-size: var(--font-size-section) !important;
-}
-
-[class*="installrequest_AppsToInstall_"] {
-  border-top: 0px solid transparent !important;
-}
-
-[class*="installrequest_AppsToInstall_"] [class*="installrequest_AppToInstall_"] {
-  border-bottom: 0px solid transparent !important;
-}
-
-/* CD KEYS DIALOG */
-[class*="cdkeysdialog_CDKeysDialog_"] .DialogBody [class*="cdkeysdialog_KeyList_"] [class*="cdkeysdialog_CDKeyOption_"] [class*="cdkeysdialog_KeyName_"] {
-  background-color: rgba(var(--color-white), 0.1) !important;
-  color: rgb(var(--color-text)) !important;
-  font-weight: 400 !important;
-  font-size: var(--font-size-text) !important;
-}
-
-[class*="cdkeysdialog_CDKeysDialog_"] .DialogBody [class*="cdkeysdialog_KeyList_"] [class*="cdkeysdialog_CDKeyOption_"] [class*="cdkeysdialog_KeyValue_"] {
-  background-color: rgba(var(--color-white), 0.1) !important;
-  color: rgb(var(--color-text)) !important;
-  font-weight: 400 !important;
-  font-size: var(--font-size-text) !important;
 }
 
 /* WHAT'S NEW SETTINGS */
