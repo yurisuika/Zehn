@@ -588,14 +588,51 @@
   transform: none !important;
 }
 
+[class*="libraryassetimage_Container_"][class*="libraryassetimage_GreyBackground_"][class*="libraryassetimage_PortraitImage_"][class*="appportrait_PortraitImage_"][class*="appportrait_Capsule_"][class*="appportrait_CapsuleVisible_"] {
+  background-color: rgba(var(--color-primary), 0.5) !important;
+}
+
+[class*="libraryassetimage_Image_"][class*="libraryassetimage_Visibility_"][class*="libraryassetimage_Visible_"][src="/images/defaultappimage.png"] {
+  /* content: url() !important; */
+  opacity: 0 !important;
+}
+
 [class*="appportrait_HoversEnabled_"] [class*="appportrait_LibraryItemBox_"]:not([class*="appportrait_Landscape_"]) [class*="appportrait_PortraitImage_"] {
   transform: scale(1.0) !important;
   transition: transform 0.5s ease !important;
 }
 
-[class*="appportrait_HoversEnabled_"] [class*="appportrait_LibraryItemBox_"]:hover:not([class*="appportrait_Landscape_"]) [class*="appportrait_PortraitImage_"] {
+[class*="appportrait_HoversEnabled_"] [class*="appportrait_LibraryItemBox_"]:hover:not([class*="appportrait_Landscape_"]) [class*="appportrait_PortraitImage_"] [class*="libraryassetimage_Visibility_"][class*="libraryassetimage_Visible_"] {
   transform: scale(1.05) !important;
   transition: transform 0.5s ease !important;
+}
+
+[class*="libraryassetimage_Title_"] {
+  color: rgb(var(--color-white)) !important;
+  opacity: 1 !important;
+  font-size: var(--font-size-subheader) !important;
+  line-height: 24px !important;
+  /* background: rgb(var(--color-white)) !important; */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* background: linear-gradient(to bottom, white 0%, white 60%) !important; */
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -webkit-text-fill-color: rgb(var(--color-white)) !important;
+}
+
+[class*="libraryassetimage_Title_"][class*="libraryassetimage_LongTitles_"] {
+}
+
+[class*="appportraithover_AppPortraitHover_"] [class*="libraryassetimage_Title_"] {
+  /* background-image: unset !important; */
+  /* background: linear-gradient(to bottom, transparent 0%, transparent 60%) !important; */
+}
+
+[class*="libraryassetimage_Container_"][class*="libraryassetimage_LandscapeImage_"] {
+    /* padding-top: 46.7391304348%; */
+    /* padding-top: 0px !important; */
 }
 
 [class*="appportrait_FriendsBar_"] [class*="appportrait_SummaryLeader_"] {
@@ -991,118 +1028,6 @@
   color: rgb(var(--color-text-sub)) !important;
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
-}
-
-/* APP HOVER */
-[class*="appportraithover_AppPortraitHover_"] {
-  background-color: rgb(var(--color-black)) !important;
-}
-
-[class*="appportraithover_AppTitle_"] {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-section) !important;
-  font-weight: 400 !important;
-}
-
-[class*="appportraithover_GameUpdatedContainer_"] [class*="appportraithover_GameUpdatedCircle_"] {
-  background: rgb(var(--color-text)) !important;
-}
-
-[class*="appportraithover_GameUpdatedContainer_"] [class*="appportraithover_ImportantUpdate_"] {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-}
-
-[class*="appportraithover_AppStatus_"] {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-  padding: 0px 8px !important;
-  margin: 0px !important;
-  height: auto !important;
-  max-height: 25px !important;
-}
-
-[class*="appportraithover_Content_"] div {
-  z-index: 999 !important;
-}
-
-[class*="appportraithover_Content_"] > div:last-child {
-  /* width: 100% !important; */
-  width: 220px !important;
-}
-
-[class*="appportraithover_PlaytimeDetails_"] {
-  padding: 8px !important;
-  margin: 0px !important;
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-  border-radius: 0px !important;
-}
-
-[class*="appportraithover_PlaytimeDetails_"] div {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-}
-
-[class*="appportraithover_PlaytimeDetails_"] [class*="appportraithover_Header_"] {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-  margin-bottom: 0px !important;
-}
-
-[class*="appportraithover_CapsuleBackground_"] {
-  filter: blur(var(--option-blur-radius)) opacity(50%) saturate(0.7) !important;
-}
-
-[class*="appportraithover_FriendsContainer_"] {
-  background-color: transparent !important;
-}
-
-[class*="appportraithover_FriendsContainer_"] [class*="appportraithover_FriendsHeader_"] [class*="appportraithover_FriendsCircle_"] {
-  background: rgb(var(--color-text)) !important;
-}
-
-[class*="appportraithover_FriendsContainer_"] [class*="appportraithover_FriendsHeader_"] [class*="appportraithover_FriendsLabel_"] {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-}
-
-[class*="appportraithover_AppPortraitHover_"] [class*="appportraithover_DownloadStatus_"] {
-  background-color: transparent !important;
-  padding: 0px 8px 8px 8px !important;
-  margin: 0px !important;
-  border-radius: 0px !important;
-  line-height: 16px !important;
-  width: 220px !important;
-}
-
-[class*="appportraithover_DownloadStatus_"] [class*="appportraithover_DownloadContainer_"] [class*="appportraithover_DownloadStatusTitle_"] {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-  margin: 0px !important;
-}
-
-[class*="appportraithover_DownloadStatus_"] [class*="appportraithover_DownloadContainer_"] [class*="appdetailsplaysection_DetailsProgressContainer_"][class*="appdetailsplaysection_PortraitBar_"] {
-  background-color: rgba(var(--color-white), 0.2) !important;
-  margin: 4px 0px !important;
-}
-
-[class*="appportraithover_DownloadStatus_"] [class*="appportraithover_DownloadContainer_"] [class*="appdetailsplaysection_DetailsProgressContainer_"] [class*="appdetailsplaysection_DetailsProgressBar_"] {
-  background-color: rgb(var(--color-primary)) !important;
-}
-
-[class*="appportraithover_DownloadStatus_"] [class*="appportraithover_DownloadContainer_"] [class*="appportraithover_DownloadStatusDetails_"] {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--font-size-label) !important;
-  font-weight: 400 !important;
-  margin: 0px !important;
 }
 
 /* COLLECTION PAGE */
