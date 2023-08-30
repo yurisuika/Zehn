@@ -119,12 +119,18 @@
 [class*="contextmenu_contextMenuItem_"] {
   color: rgb(var(--color-text)) !important;
   border: 0px solid transparent !important;
-  padding: 8px 18px !important;
+  /* padding: 8px 18px !important; */
+  padding: 0px 16px !important;
   font-size: rgb(var(--color-text)) !important;
 }
 
 [class*="contextmenu_contextMenuContents_"]:not([class*="menu_MenuPopup_"]) [class*="contextmenu_contextMenuItem_"] {
   margin: 1px !important;
+}
+
+[class*="contextmenu_contextMenuItem_"] {
+  /* line-height: 16px !important; */
+  line-height: 32px !important;
 }
 
 [class*="contextmenu_contextMenuItem_"]:hover {
@@ -142,6 +148,65 @@
 
 [class*="contextmenu_contextMenuItem_"][class*="contextmenu_active_"]:hover, [class*="contextmenu_contextMenuItem_"][class*="contextmenu_active_"]:active {
   /* background-color: rgb(var(--color-primary)) !important; */
+}
+
+[class*="contextmenu_contextMenuItem_"][class*="contextmenu_SubMenu_"] [class*="contextmenu_Arrow_"] {
+  margin: 0px -16px 0px 0px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+[class*="contextmenu_contextMenuItem_"][class*="contextmenu_SubMenu_"] .SVGIcon_DownArrowContextMenu {
+  /* margin: 0px !important; */
+  fill: transparent !important;
+}
+
+/* FRIENDS CONTEXT MENU */
+.persona_menu_descriptor, .persona_menu_dnd_descriptor {
+  line-height: 24px !important;
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-sub-text) !important;
+  font-weight: 400 !important;
+  margin-top: -8px !important;
+}
+
+.persona_menu_dnd_descriptor {
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+}
+
+.personaContextMenuItem[class*="contextmenu_contextMenuItem_"].contextMenuItem {
+  /* max-width: 20px !important;
+  max-height: 20px !important; */
+}
+
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel {
+  /* min-width: 32px !important;
+  min-height: 32px !important; */
+  /* display: block !important; */
+  /* display: none !important; */
+}
+
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox {
+  /* display: none !important; */
+  /* min-width: 18px !important; */
+  /* min-height: 18px !important; */
+  /* border: 0px solid transparent !important; */
+  /* transform: scale(1); */
+  transform: none !important;
+}
+
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox .SVGIcon_DialogCheck {
+  margin: 0px !important;
+  top: 0px !important;
+  padding: 0px !important;
+  width: 16px !important;
+  height: 16px !important;
+  transform: none !important;
+}
+
+.contextMenuCheckMark {
+  /* display: none !important; */
 }
 
 /* GAME SECTION */
@@ -173,10 +238,6 @@
 
 [class*="library_ContextMenuAction_"].Stream:active, [class*="library_ContextMenuAction_"].Connect:active, [class*="library_ContextMenuAction_"].Launch:active, [class*="library_ContextMenuAction_"].PlayMusic:active, [class*="library_ContextMenuAction_"].Play:active, [class*="library_ContextMenuAction_"].Download:active, [class*="library_ContextMenuAction_"].Update:active, [class*="library_ContextMenuAction_"].PreLoad:active, [class*="library_ContextMenuAction_"].Resume:active, [class*="library_ContextMenuAction_"].Pause:active, [class*="library_ContextMenuAction_"].BorrowApp:active, [class*="library_ContextMenuAction_"].Stop:active, [class*="library_ContextMenuAction_"].Cancel:active, [class*="library_ContextMenuAction_"].Install:active, [class*="library_ContextMenuAction_"].PurchaseApp:active {
   background: rgba(var(--color-white), 0.2) !important
-}
-
-[class*="contextmenu_contextMenuItem_"][class*="contextmenu_SubMenu_"] .SVGIcon_DownArrowContextMenu {
-  fill: rgb(var(--color-white)) !important;
 }
 
 /* FRIENDS REACT */
@@ -404,7 +465,8 @@
 
 /* TRAY */
 .contextMenuItem [class*="jumplist_JumpListGameName_"][class*="jumplist_Updating_"] {
-  color: rgb(var(--color-primary)) !important;
+  /* color: rgb(var(--color-primary)) !important; */
+  color: rgb(var(--color-white)) !important;
   font-weight: 400 !important;
 }
 

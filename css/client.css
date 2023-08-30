@@ -276,16 +276,29 @@
 }
 
 /* STATUS CONTEXT CHEVRON */
+.ContextMenuButton {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.ContextMenuButton .SVGIcon_DownArrowContextMenu {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
 :not(.friendInviteContainer) .ingame .ContextMenuButton .SVGIcon_DownArrowContextMenu {
-  fill: rgb(var(--color-ingame)) !important;
+  /* fill: rgb(var(--color-ingame)) !important; */
+  fill: transparent !important;
 }
 
 :not(.friendInviteContainer) .online .ContextMenuButton .SVGIcon_DownArrowContextMenu {
-  fill: rgb(var(--color-online)) !important;
+  /* fill: rgb(var(--color-online)) !important; */
+  fill: transparent !important;
 }
 
 :not(.friendInviteContainer) .offline .ContextMenuButton .SVGIcon_DownArrowContextMenu {
-  fill: rgb(var(--color-offline)) !important;
+  /* fill: rgb(var(--color-offline)) !important; */
+  fill: transparent !important;
 }
 
 /* STATUS LINE */
@@ -483,17 +496,39 @@ input[type="radio" i]:checked:after:active {
   height: 16px !important;
   margin-top: 0px !important;
   margin-left: 0px !important;
+  stroke: transparent !important;
+}
+
+.DialogCheckbox.Active {
+  height: 16px !important;
+  width: 16px !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAiElEQVQ4jaWTwQ3CMAxFXxGbNEduLMAILM4kCAkGqB4XIpmipCW25Evi9518J5NKJg4pGjgm2AKcRgUKcAOWacCDCgOcUf/JWX19sqik4CpwjQuNLAGe4x7qY63agX9qtgq6cPSgFj7DETfhtYnRpEvrzj2B2NU9cGuMRb3vmAwqIy/xK9K/8Q2+K9cuaoLzHwAAAABJRU5ErkJggg==') !important;
+  background-repeat: no-repeat !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
 }
 
 .DialogCheckbox.Active .SVGIcon_DialogCheck {
-  stroke: rgb(var(--color-white)) !important;
-  margin-bottom: 1px !important; /* FOR SOME REASON THIS IS MOVED DOWN 1PX */
+  /* stroke: rgb(var(--color-white)) !important; */
+  stroke: transparent !important;
+  /* margin-bottom: 1px !important;*/
+  height: 16px !important;
+  width: 16px !important;
+  margin: 0px !important;
+}
+
+[class*="gamelistdropdown_DropDown_"] [class*="gamelistdropdown_Row_"][class*="gamelistdropdown_Checkbox_"] svg {
+  width: 16px !important;
+  height: 16px !important;
+  margin-left: 0px !important;
 }
 
 .DialogCheckbox .SVGIcon_DialogCheck path {
   stroke-width: 20px !important;
-  stroke: rgb(var(--color-white)) !important;
-  color: rgb(var(--color-white)) !important;
+  /* stroke: rgb(var(--color-white)) !important; */
+  /* color: rgb(var(--color-white)) !important; */
+  stroke: transparent !important;
+  color: transparent !important;
 }
 
 .DialogCheckbox.Disabled {
@@ -772,14 +807,25 @@ option:active {
 }
 
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu {
-  fill: rgb(var(--color-white)) !important;
+  /* fill: rgb(var(--color-white)) !important; */
+  fill: transparent !important;
+}
+
+.SVGIcon_DownArrowContextMenu {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfklEQVRYhe3WvQmAMBRF4RN3cIdkNBvdwSVczW2eTdKIiPkjCPfVF85HCtGZGSNvGloXQAABBBAgEzD32OYAdmD7sFvjtjlgAXwMvMVD3DYHJETg+SWy4yWAhPA3RFEcwFX8kBzACVhpvBaQEJTGWwCq71cfIgEEEEAAAbrcBQibGDxU5pISAAAAAElFTkSuQmCC') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 32px 32px !important;
+  height: 32px !important;
+  width: 32px !important;
 }
 
 .DialogDropDown, [class*="settings_SettingsModal_"].DialogDropDown {
   height: 32px !important;
   gap: 8px !important;
   line-height: 32px !important;
-  padding: 0px 16px !important;
+  /* padding: 0px 16px !important; */
+  padding: 0px 0px 0px 16px !important;
 }
 
 [class*="dropdown_DialogDropDownMenu_"]._DialogInputContainer {
@@ -841,7 +887,8 @@ option:active {
 }
 
 .DialogDropDown_Arrow.DesktopUI, .DesktopUI .DialogDropDown_Arrow {
-  opacity: 0.6 !important;
+  /* opacity: 0.6 !important; */
+  opacity: 1 !important;
   /* position: inherit !important; */
   /* position: absolute !important; */
   /* display: block !important; */
@@ -849,7 +896,9 @@ option:active {
   top: 0px !important;
   right: 0px !important;
   /* right: 8px !important; */
-  width: 16px !important;
+  /* width: 16px !important; */
+  /* width: 14px !important */
+  width: 32px !important;
   height: 32px !important;
 }
 
