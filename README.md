@@ -1,5 +1,7 @@
 # Zehn
-Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design language. It is currently a WIP, so some sections are not complete and may change at any time.
+Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design language.
+
+This skin is currently a WIP, so some sections are not complete and may change at any time.
 
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2. It isn't quite the Metro of Windows 8 or the Fluent of Windows 11. Rather, it is a transitional design language that merges the sharp lines and minimalistic icons of Metro with effects such as Acrylic and Reveal that would later stay in Fluent. Unfortunately, some iconography of Fluent came into Windows 10 over the years through updates. If you're like me, you've managed to stop those updates from happening yet still be on 22H2. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
@@ -33,6 +35,7 @@ If things crash because of the class moving, press F5 to refresh the client (thi
 - Figure out how to get JS to move classes again when reloaded and not just on initial load
 - Maybe do browser content?
 - Anything I haven't come across from daily use
+- Wait for Steam to one day support :has selector so I may target unclassed SVGs.
 
 #### Previews
 ![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1137508618112094319/zehn.png)
