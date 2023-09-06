@@ -20,22 +20,41 @@
 
 }
 
+[class*="sharedappdetailsheader_ImgContainer_"] {
+  height: calc(100% + 70px) !important;
+}
+
 [class*="sharedappdetailsheader_ImgSrc_"] {
   z-index: 1 !important;
+  /* -webkit-mask-image: none !important; */
 }
 
 [class*="appdetailsoverview_Glassy_"] [class*="appdetailsoverview_Backdrop_"] {
   height: calc(100vh * 9999999999999999999999999999999999999999999) !important;
-  background-color: rgba(var(--color-black), 0.75) !important;
-  background-image: var(--image-acrylic) !important;
-  background-blend-mode: exclusion !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  /* background-color: rgba(var(--color-black), 0.75) !important; */
+  /* background-image: var(--image-acrylic) !important; */
+  /* background-blend-mode: exclusion !important; */
+  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
+  background-color: rgb(var(--color-background)) !important;
+  margin-top: 70px !important;
+  /* background-color: transparent !important; */
+  backdrop-filter: none !important[class*="appdetailssectionheader_SectionHeader_"][class*="appdetailssectionheader_PadLeft_"][class*="appdetailscommunityfeed_HeaderStyles_"]
+  /* display: none !important; */
 }
 
 [class*="sharedappdetailsheader_ImgSrc_"][class*="sharedappdetailsheader_ImgBlurBackdrop_"] {
   opacity: 1 !important;
   transform: scaleY(-1) !important;
   filter: saturate(1) !important;
+  /* transform: none !important;
+  filter: none !important;
+  opacity: 0 !important;
+  display: none !important; */
+}
+
+[class*="sharedappdetailsheader_ImgSrc_"][class*="sharedappdetailsheader_ImgBlurBackdrop_"], [class*="sharedappdetailsheader_ImgSrc_"][class*="sharedappdetailsheader_ImgBlur_"] {
+  /* display: none !important; */
+  /* height: 0px !important; */
 }
 
 [class*="appdetailsoverview_Glassy_"] [class*="appdetailsoverview_BackdropGlass_"] {
@@ -62,7 +81,7 @@
   height: 24px !important;
   line-height: 24px !important;
   border: 0px solid transparent !important;
-  background-color: rgba(var(--color-black), 0.1) !important;
+  background-color: rgba(var(--color-black), 0.25) !important;
   color: rgb(var(--color-text)) !important;
   backdrop-filter: blur(var(--option-blur-radius)) !important;
 }
@@ -183,7 +202,7 @@
 [class*="sharedappdetailsheader_Features_"] [class*="appdetailsfeatureicon_Container_"] {
   height: 24px !important;
   margin-left: 8px !important;
-  background-color: rgba(var(--color-black), 0.1) !important;
+  background-color: rgba(var(--color-black), 0.25) !important;
   backdrop-filter: blur(var(--option-blur-radius)) !important;
 }
 
@@ -205,6 +224,8 @@
 
 [class*="sharedappdetailsheader_HeaderBackgroundImage_"] {
   top: 38px !important;
+  /* transform: none !important; */
+  /* transform: translateZ(0px) scale(1) !important; */
 }
 
 [class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"] {
@@ -216,6 +237,10 @@
 [class*="appdetailsplaysection_Glassy_"][class*="appdetailsplaysection_PlayBar_"] {
   background: transparent !important;
   margin-bottom: 0px !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
 }
 
 [class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::before, [class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::after {
@@ -229,14 +254,14 @@
 }
 
 [class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::before {
-  background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
-  background-blend-mode: exclusion !important;
+  /* background-color: rgba(var(--color-black), 0.75) !important; */
+  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
+  /* background-blend-mode: exclusion !important; */
   height: 70px !important;
 }
 
 [class*="appdetailsplaysection_StickyHeader_"] [class*="appdetailsplaysection_Glassy_"]::after {
-  background-image: var(--image-acrylic) !important;
+  /* background-image: var(--image-acrylic) !important; */
   height: 70px !important;
 }
 
@@ -639,10 +664,10 @@
 /* INFO PANEL */
 [class*="appdetailsgameinfocontainer_AppGameInfoContainer_"] {
   padding: 0px !important;
-  /* background: rgba(var(--color-black), 0.75) !important;
+  background: rgba(var(--color-black), 0.75) !important;
   backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important;
-  background-image: var(--image-acrylic) !important; */
+  background-image: var(--image-acrylic) !important;
 }
 
 [class*="appdetailsgameinfopanel_Container_"] {
@@ -654,7 +679,7 @@
 
 /* INFO BOX ART */
 [class*="appdetailsgameinfocontainer_AppGameInfoContainer_"][class*="appdetailsgameinfocontainer_AppDetailsExpanded_"] {
-  margin: 16px !important;
+  margin: 16px 16px 0px 16px !important;
 }
 
 [class*="appdetailsgameinfocontainer_AppGameInfoContainer_"][class*="appdetailsgameinfocontainer_AppDetailsExpanded_"][class*="appdetailsgameinfocontainer_BoxArtExpanded_"] {
@@ -718,7 +743,7 @@
 }
 
 [class*="appdetailsgameinfopanel_Container_"] [class*="appdetailsgameinfopanel_SectionContainer_"] {
-  padding: 0px !important;
+  padding: 8px !important;
 }
 
 [class*="appdetailsgameinfopanel_Container_"] [class*="appdetailsgameinfopanel_SectionContainer_"] [class*="appdetailsgameinfopanel_GameDescription_"] {
@@ -956,12 +981,13 @@
 
 [class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"] > div {
   margin-top: 16px !important;
-  background-color: rgb(var(--color-white), 0.1) !important;
+  /* background-color: rgb(var(--color-white), 0.1) !important; */
   /* background: rgb(var(--color-background)) !important; */
-  /* background: rgba(var(--color-black), 0.75) !important;
+  background: rgba(var(--color-black), 0.75) !important;
   backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important;
-  background-image: var(--image-acrylic) !important; */
+  background-image: var(--image-acrylic) !important;
+  /* background-color: transparent !important; */
 }
 
 [class*="appdetailsoverview_Container_"] [class*="appdetailsoverview_Spotlights_"]>div:last-child {
@@ -1242,7 +1268,8 @@
 }
 
 [class*="appdetailssection_AppDetailsSection_"][class*="appdetailsprimarylinkssection_LinksSection_"] {
-  margin-top: 0px !important;
+  /* margin-top: 0px !important; */
+  margin-top: 16px !important;
 }
 
 [class*="appdetailssectionheader_Label_"] {
@@ -1286,11 +1313,11 @@
 }
 
 [class*="appactivityday_PartnerEvent_"]:hover {
-  background: rgba(var(--color-white), 0.1) !important
+  /* background: rgba(var(--color-white), 0.1) !important */
 }
 
 [class*="appactivityday_PartnerEvent_"]:active {
-  background: rgba(var(--color-white), 0.2) !important
+  /* background: rgba(var(--color-white), 0.2) !important */
 }
 
 [class*="appactivityday_AppActivityDay_"] {
@@ -1916,17 +1943,30 @@
   margin: 0px !important;
 }
 
+[class*="appactivityday_Event_"] {
+  transition: background .2s ease-out !important;
+}
+
+[class*="appactivityday_Event_"]:hover {
+  /* background: rgba(var(--color-white), 0.1) !important; */
+}
+
+[class*="appactivityday_Event_"]:active {
+  /* background: rgba(var(--color-white), 0.2) !important; */
+}
+
 [class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"] {
   margin: 0px !important;
   background: transparent !important;
+  transition: background .2s ease-out !important;
 }
 
 [class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"]:hover {
-  background: rgba(var(--color-white), 0.1) !important;
+  /* background: rgba(var(--color-white), 0.1) !important; */
 }
 
 [class*="appactivityday_Event_"] [class*="appactivityday_EventBody_"]:active {
-  background: rgba(var(--color-white), 0.2) !important;
+  /* background: rgba(var(--color-white), 0.2) !important; */
 }
 
 /* EVENT SCREENSHOT */
@@ -1976,9 +2016,7 @@
   line-height: 24px !important;
   vertical-align: middle !important;
   margin: 0px 0px 24px 0px !important;
-  /* background: rgba(var(--color-white), 0.1) !important; */
-  /* background: rgb(var(--color-background)) !important; */
-  background-color: rgba(var(--color-black), 0.75) !important;
+  background-color: rgba(var(--color-black), 0.25) !important;
   background-image: var(--image-acrylic) !important;
   background-blend-mode: exclusion !important;
   backdrop-filter: blur(var(--option-blur-radius)) !important;
@@ -2088,12 +2126,17 @@
   border-radius: 0px !important;
   padding: 16px !important;
   margin: 0px !important;
-  background: rgba(var(--color-white), 0.1) !important;
+  /* background: rgba(var(--color-white), 0.1) !important; */
   /* background: rgb(var(--color-background)) !important; */
-  /* background: rgba(var(--color-black), 0.75) !important; */
-  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
-  /* background-blend-mode: exclusion !important; */
-  /* background-image: var(--image-acrylic) !important; */
+  background: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+  /* background-color: transparent !important; */
+}
+
+[class*="appdetailscommunityfeed_HeaderStyles_"] {
+  background: transparent !important;
 }
 
 [class*="appdetailscommunityfeed_InnerContainer_"] {
@@ -2153,12 +2196,13 @@
 [class*="appdetailssection_Body_"] {
   padding: 16px !important;
   /* background: transparent !important; */
-  background: rgba(var(--color-white), 0.1) !important;
+  /* background: rgba(var(--color-white), 0.1) !important; */
   /* background: rgb(var(--color-background)) !important; */
-  /* background: rgba(var(--color-black), 0.75) !important; */
-  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
-  /* background-blend-mode: exclusion !important; */
-  /* background-image: var(--image-acrylic) !important; */
+  background: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+  /* background-color: transparent !important; */
 }
 
 /* SIDEBAR FRIENDS WHO PLAY */
@@ -2268,12 +2312,13 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   font-size: var(--font-size-text) !important;
   font-weight: 400 !important;
   /* background: transparent !important; */
-  background: rgba(var(--color-white), 0.1) !important;
+  /* background: rgba(var(--color-white), 0.1) !important; */
   /* background: rgb(var(--color-background)) !important; */
-  /* background: rgba(var(--color-black), 0.75) !important; */
-  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
-  /* background-blend-mode: exclusion !important; */
-  /* background-image: var(--image-acrylic) !important; */
+  background: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+  /* background: transparent !important; */
 }
 
 [class*="appdetailsachievementssection_AchievementProgressContainer_"] {
@@ -2763,8 +2808,13 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 }
 
 [class*="appdetailscommunityfeed_CommunityItem_"] {
-  background-color: rgb(var(--color-white), 0.1) !important;
+  /* background-color: rgb(var(--color-white), 0.1) !important; */
+  background: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
   border-radius: 0px !important;
+  /* background-color: transparent !important; */
 }
 
 [class*="appdetailscommunityfeed_CommunityItem_"] [class*="appdetailscommunityfeed_PreviewContainer_"] {
@@ -2782,7 +2832,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
   line-height: 24px !important;
   vertical-align: middle !important;
   margin: 0px !important;
-  background-color: rgba(var(--color-black), 0.75) !important;
+  background-color: rgba(var(--color-black), 0.25) !important;
   background-image: var(--image-acrylic) !important;
   background-blend-mode: exclusion !important;
   backdrop-filter: blur(var(--option-blur-radius)) !important;
