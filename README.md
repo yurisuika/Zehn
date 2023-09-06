@@ -24,7 +24,6 @@ If things crash because of the class moving, press F5 to refresh the client (thi
 
 #### To-Do
 - Most things on the overlay
-- Some game page stuff still left to do
 - Event page popup
 - Notifications
 - Replace/add icons in settings
@@ -35,7 +34,7 @@ If things crash because of the class moving, press F5 to refresh the client (thi
 - Figure out how to get JS to move classes again when reloaded and not just on initial load
 - Maybe do browser content?
 - Anything I haven't come across from daily use
-- Wait for Steam to one day support :has selector so I may target unclassed SVGs.
+- Wait for Steam to one day support :has selector so I may target unclassed SVGs
 
 #### Previews
 ![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1137508618112094319/zehn.png)
