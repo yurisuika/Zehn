@@ -32,7 +32,7 @@ moveElements(
 moveChildElements(
   '[class*="libraryhome_LibraryHome_"]',
   [
-    '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
+    // '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
   ]
 )
 
