@@ -14,14 +14,16 @@ function moveChildElements(target, classes) {
 }
 
 moveElements(
-  '[class*="steamdesktop_DragArea_"]',
+  '[class*="steamdesktop_TitleBarControls_"]',
   [
-    '[class*="titlebarcontrols_NotificationButtonContainer_"]',
     '[class*="titlebarcontrols_AnnouncementsButton_"]',
+    '[class*="titlebarcontrols_NotificationButtonContainer_"]',
     // '[class*="titlebarcontrols_AccountMenu_"]',
-    '[class*="bottombar_AddGameButton_"]',
+    '[class*="bottombar_DownloadStatus_"]',
     '[class*="bottombar_FriendsButton_"]',
-    '[class*="bottombar_DownloadStatus_"]'
+    '[class*="bottombar_AddGameButton_"]',
+    '[class*="titlebarcontrols_VRToggle_"]',
+    '[class*="titlebarcontrols_GamepadUIToggle_"]'
     // '[class*="titlebarcontrols_WalletBalance_"]',
     // '[class*="bottombar_Status_"]'
   ]
