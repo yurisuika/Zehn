@@ -20,7 +20,7 @@ In default colors, the in-game is styled to match the accent. If you haven't alr
 #### Things of Note
 The library games list sidebar automatically collapses when the library window is not in focus for a more pleasant view. This may be replaced by an injected button later on to improve performance/be less annoying.
 
-If things crash because of the class moving, press F5 to refresh the client (this may require dev mode). This will hopefully be resolved soon. I believe it has to do with the downloads progress.
+If things crash because of the class moving, press F5 to refresh the client (this may require dev mode).
 
 #### To-Do
 - Most things on the overlay
