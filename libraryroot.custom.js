@@ -29,19 +29,19 @@ moveElements(
   ]
 )
 
-moveChildElements(
-  '[class*="libraryhome_LibraryHome_"]',
-  [
-    // '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
-  ]
-)
+// moveChildElements(
+//   '[class*="libraryhome_LibraryHome_"]',
+//   [
+//     '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
+//   ]
+// )
 
-moveElements(
-  '[class*="steamdesktop_DragArea_"]',
-  [
-    // '[class*="bottombar_DetailedDownloadProgress_"]'
-  ]
-)
+// moveElements(
+//   '[class*="steamdesktop_DragArea_"]',
+//   [
+//     '[class*="bottombar_DetailedDownloadProgress_"]'
+//   ]
+// )
 
 // document.querySelector(".rootmenu_RootMenuButton_2UyOB").style.border = "1px solid transparent";
 // document.querySelector(".DialogButton").style.border = "1px solid transparent";
