@@ -24,7 +24,6 @@ If things crash because of the class moving, press F5 to refresh the client (thi
 
 #### To-Do
 - Most things on the overlay
-- Event page popup
 - Notifications
 - Replace/add icons in settings
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe
