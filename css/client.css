@@ -269,7 +269,7 @@ body, body[class*="shared_common_v6_"] {
 }
 
 [class*="steamavatar_avatar_"] {
-  border: 0px solid transparent !important;
+  border: unset !important;
   width: 100% !important;
   height: 100% !important;
 }
@@ -1012,4 +1012,72 @@ option:active {
 
 [class*="emoticon_NewEmoticonIndicator_"] [class*="emoticon_NewEmoticonCircle_"] {
   background-color: rgb(var(--color-primary)) !important;
+}
+
+/* INJECTED BUTTON */
+.ZehnButton {
+  background-color: transparent !important;
+  border: unset !important;
+  border-radius: 0px !important;
+  appearance: unset !important;
+  padding: 0px !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+.ZehnButton:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+  border: unset !important;
+}
+
+.ZehnButton:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+  border: unset !important;
+}
+
+.ZehnButton:focus {
+  border: unset !important;
+  outline: unset !important;
+}
+
+[class*="library_AppDetailsMain_"] > .ZehnButton {
+  /* position: absolute !important;
+  bottom: 0px !important;
+  left: 0px !important; */
+}
+
+.ZehnButton[value="open"] {
+  transform: rotate(270deg) !important;
+}
+
+.ZehnButton[value="close"] {
+  transform: rotate(90deg) !important;
+}
+
+#toggleSidebar {
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjklEQVRYhe3VMQ4CIRCF4R/LvYHaWmz2/rdBSz3CtmwDzSYob8UQkzclmcz7MiEQUkqMrNPQdAMMMMAAA0TALPQurY1B+IxW4AXcPvTdgQswtQxVNjDlwfFNz0MJVwEFca0gInBWwo8AaoiYz6Rw0O7AvlbgCQTEtfcCFARHw3sAvq6/eogMMMAAAwz4SW1UfBt9bpAZJwAAAABJRU5ErkJggg==') !important;
+}
+
+#toggleLibrary {
+  width: 38px !important;
+  height: 38px !important;
+  line-height: 38px !important;
+  position: absolute !important;
+  bottom: 32px !important;
+  right: 32px !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVRYhe3WsQrCMBSF4T+OeQN1dSi+/9tER32ErnGwQ5GqnJuIpZx/LIH70V5CU62VNbb7N+BdhqkZpmaYmmFqhqkZprY52CCcPUcGpOD/2AjcgdOXcxfgAGR1QPSN5Wlg+XDmGkVB245l4MgyrgD7KAral38JV6ZnYRTEd+y1EbgBiYbPN68XDJ446ICCvrCube6C/XmGqRmmZpiaYWqGqRmmtlrYAwDvG4k2VUlcAAAAAElFTkSuQmCC') !important;
+  transition: opacity: 0.25s ease !important;
+  transition-delay: 1s !important;
+  display: none;
+  backdrop-filter: blur(var(--option-blur-radius));
+}
+
+html:not(:hover) #toggleLibrary {
+  opacity: 0 !important;
+}
+
+html:hover #toggleLibrary {
+  opacity: 1 !important;
 }

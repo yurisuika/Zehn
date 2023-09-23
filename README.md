@@ -18,7 +18,7 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
 #### Things of Note
-The library games list sidebar automatically collapses when the library window is not in focus for a more pleasant view. This may be replaced by an injected button later on to improve performance/be less annoying.
+The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered.
 
 If things crash because of the class moving or fail to load, press F5 to refresh the client (this may require dev mode).
 
