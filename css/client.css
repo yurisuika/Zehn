@@ -1016,68 +1016,74 @@ option:active {
 
 /* INJECTED BUTTON */
 .ZehnButton {
-  background-color: transparent !important;
-  border: unset !important;
-  border-radius: 0px !important;
-  appearance: unset !important;
-  padding: 0px !important;
-  color: rgb(var(--color-text)) !important;
+  background-color: transparent;
+  border: unset;
+  border-radius: 0px;
+  appearance: unset;
+  padding: 0px;
+  color: rgb(var(--color-text));
 }
 
 .ZehnButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
-  border: unset !important;
+  background-color: rgba(var(--color-white), 0.1);
+  border: unset;
 }
 
 .ZehnButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
-  border: unset !important;
+  background-color: rgba(var(--color-white), 0.2);
+  border: unset;
 }
 
 .ZehnButton:focus {
-  border: unset !important;
-  outline: unset !important;
-}
-
-[class*="library_AppDetailsMain_"] > .ZehnButton {
-  /* position: absolute !important;
-  bottom: 0px !important;
-  left: 0px !important; */
+  border: unset;
+  outline: unset;
 }
 
 .ZehnButton[value="open"] {
-  transform: rotate(270deg) !important;
+  transform: rotate(270deg);
 }
 
 .ZehnButton[value="close"] {
-  transform: rotate(90deg) !important;
+  transform: rotate(90deg);
 }
 
 #toggleSidebar {
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjklEQVRYhe3VMQ4CIRCF4R/LvYHaWmz2/rdBSz3CtmwDzSYob8UQkzclmcz7MiEQUkqMrNPQdAMMMMAAA0TALPQurY1B+IxW4AXcPvTdgQswtQxVNjDlwfFNz0MJVwEFca0gInBWwo8AaoiYz6Rw0O7AvlbgCQTEtfcCFARHw3sAvq6/eogMMMAAAwz4SW1UfBt9bpAZJwAAAABJRU5ErkJggg==') !important;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
 }
 
 #toggleLibrary {
-  width: 38px !important;
-  height: 38px !important;
-  line-height: 38px !important;
-  position: absolute !important;
-  bottom: 32px !important;
-  right: 32px !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVRYhe3WsQrCMBSF4T+OeQN1dSi+/9tER32ErnGwQ5GqnJuIpZx/LIH70V5CU62VNbb7N+BdhqkZpmaYmmFqhqkZprY52CCcPUcGpOD/2AjcgdOXcxfgAGR1QPSN5Wlg+XDmGkVB245l4MgyrgD7KAral38JV6ZnYRTEd+y1EbgBiYbPN68XDJ446ICCvrCube6C/XmGqRmmZpiaYWqGqRmmtlrYAwDvG4k2VUlcAAAAAElFTkSuQmCC') !important;
-  transition: opacity: 0.25s ease !important;
-  transition-delay: 1s !important;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  transition: opacity: 0.25s ease;
+  transition-delay: 1s;
   display: none;
   backdrop-filter: blur(var(--option-blur-radius));
+  background-blend-mode: exclusion;
+  background-image: var(--image-acrylic);
 }
 
 html:not(:hover) #toggleLibrary {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 html:hover #toggleLibrary {
-  opacity: 1 !important;
+  opacity: 1;
+}
+
+#toggleSidebarIcon {
+  width: 32px;
+  height: 32px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjklEQVRYhe3VMQ4CIRCF4R/LvYHaWmz2/rdBSz3CtmwDzSYob8UQkzclmcz7MiEQUkqMrNPQdAMMMMAAA0TALPQurY1B+IxW4AXcPvTdgQswtQxVNjDlwfFNz0MJVwEFca0gInBWwo8AaoiYz6Rw0O7AvlbgCQTEtfcCFARHw3sAvq6/eogMMMAAAwz4SW1UfBt9bpAZJwAAAABJRU5ErkJggg==');
+}
+
+#toggleLibraryIcon {
+  width: 38px;
+  height: 38px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVRYhe3WsQrCMBSF4T+OeQN1dSi+/9tER32ErnGwQ5GqnJuIpZx/LIH70V5CU62VNbb7N+BdhqkZpmaYmmFqhqkZprY52CCcPUcGpOD/2AjcgdOXcxfgAGR1QPSN5Wlg+XDmGkVB245l4MgyrgD7KAral38JV6ZnYRTEd+y1EbgBiYbPN68XDJ446ICCvrCube6C/XmGqRmmZpiaYWqGqRmmtlrYAwDvG4k2VUlcAAAAAElFTkSuQmCC');
 }

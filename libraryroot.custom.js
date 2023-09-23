@@ -30,6 +30,9 @@ function addButtonSidebar() {
     }
   };
   document.querySelector(`[class*="gamelistbar_HomeBox_"]`).after(btn);
+  var icon = document.createElement("div");
+  icon.id = "toggleSidebarIcon";
+  document.getElementById("toggleSidebar").append(icon);
 }
 
 addButtonSidebar()
@@ -64,6 +67,9 @@ function addButtonLibrary() {
     }
   };
   document.querySelector(`[class*="library_AppDetailsMain_"]`).append(btn);
+  var icon = document.createElement("div");
+  icon.id = "toggleLibraryIcon";
+  document.getElementById("toggleLibrary").append(icon);
 }
 
 addButtonLibrary()
