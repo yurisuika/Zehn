@@ -1,7 +1,7 @@
 /* MENU */
 [class*="menu_MenuPopup_"] {
   background: rgb(var(--color-contextmenu-background)) !important;
-  min-width: 250px !important;
+  min-width: 0px !important;
   border-bottom: 1px solid rgb(var(--color-contextmenu-border)) !important;
   border-left: 1px solid rgb(var(--color-contextmenu-border)) !important;
   border-right: 1px solid rgb(var(--color-contextmenu-border)) !important;
@@ -9,6 +9,11 @@
 
 [class*="menu_MenuItem_"][class*="menu_Separator_"] {
   border-bottom: 0px solid rgb(var(--color-contextmenu-border)) !important;
+}
+
+[class*="menu_MenuItem_"][class*="menu_Item_"] {
+  width: 200px !important;
+  min-width: fit-content !important;
 }
 
 [class*="menu_MenuItem_"][class*="menu_Item_"]:hover {
@@ -28,7 +33,7 @@
 
 /* FAKE ACRYLIC FOR FRIENDS LIST */
 [class*="contextmenu_ContextMenuPopup_"] [class*="contextmenu_contextMenuContents_"]{
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
 }
 
 [class*="contextmenu_ContextMenuPopup_"] [class*="contextmenu_contextMenuContents_"]::before, [class*="contextmenu_ContextMenuPopup_"] [class*="contextmenu_contextMenuContents_"]::after {
@@ -67,7 +72,6 @@
 [class*="contextmenu_contextMenuContents_"] {
   font-size: var(--font-size-text) !important;
 }
-
 
 [class*="contextmenu_contextMenuContents_"] {
   /* background: transparent !important;
@@ -173,9 +177,12 @@
 .persona_menu_descriptor, .persona_menu_dnd_descriptor {
   line-height: 24px !important;
   color: rgb(var(--color-text-sub)) !important;
-  font-size: var(--font-size-text) !important;
+  font-size: var(--font-size-subtext) !important;
   font-weight: 400 !important;
   margin-top: -8px !important;
+  width: 0px !important;
+  min-width: 0px !important;
+  /* margin-right: 16px !important; */
 }
 
 .persona_menu_dnd_descriptor {
@@ -215,6 +222,19 @@
 
 .contextMenuCheckMark {
   /* display: none !important; */
+}
+
+/* RECENT */
+.recentName {
+  padding: 0px 16px !important;
+  font-size: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-text)) !important;
+  line-height: 32px !important;
+  min-width: fit-content !important;
+  display: block !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  white-space: nowrap !important;
 }
 
 /* GAME SECTION */
@@ -474,17 +494,19 @@
 /* TRAY */
 .contextMenuItem [class*="jumplist_JumpListGameName_"][class*="jumplist_Updating_"] {
   /* color: rgb(var(--color-primary)) !important; */
-  color: rgb(var(--color-white)) !important;
+  color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
 }
 
 .contextMenuItem [class*="jumplist_JumpListGameName_"][class*="jumplist_Running_"] {
-  color: rgb(var(--color-primary)) !important;
+  /* color: rgb(var(--color-primary)) !important; */
+  color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
 }
 
 .contextMenuItem:hover [class*="jumplist_JumpListGameName_"][class*="jumplist_Updating_"], .contextMenuItem:hover [class*="jumplist_JumpListGameName_"][class*="jumplist_Running_"] {
-  color: rgb(var(--color-primary)) !important;
+  /* color: rgb(var(--color-primary)) !important; */
+  color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
 }
 
