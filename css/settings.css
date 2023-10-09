@@ -391,11 +391,24 @@
 }
 
 .DialogContent .DialogControlsSection:not(:last-child) {
-  margin-bottom: 16px !important;
+  /* margin-bottom: 16px !important; */
 }
 
 .DialogContent .DialogControlsSection:not(:first-child), .DialogContent .DialogControlsSectionHeader:not(:first-child), .DialogContent .DialogHeader:not(:first-child), .DialogContent .DialogSubHeader:not(:first-child) {
   margin-top: 0px !important;
+}
+
+.DialogControlsSection:not(:last-child) {
+  margin-bottom: 0px !important;
+}
+
+.DialogControlsSectionHeader:not(:last-child) {
+  margin-bottom: 0px !important;
+}
+
+[class*="gamepaddialog_FieldDescription_"] {
+  margin-top: 0px !important;
+  width: 80%
 }
 
 /* SLIDER */
@@ -503,7 +516,7 @@
 }
 
 [class*="librarysettings_LibrarySettings_"] .DialogControlsSection {
-  margin-bottom: 16px !important;
+  /* margin-bottom: 16px !important; */
 }
 
 [class*="librarysettings_DescriptionText_"].DesktopUI, .DesktopUI [class*="librarysettings_DescriptionText_"] {
@@ -848,7 +861,8 @@ button.settings_BuiltInLayoutButton_30Og7.DialogButton {
 /* VOICE */
 [class*="voicesettings_MicrophoneTest_"] [class*="voicesettings_MicrophoneTestButton_"] {
   /* width: fit-content !important; */
-  width: 100% !important;
+  width: auto !important;
+  min-width: fit-content !important;
   gap: 16px !important;
 }
 
@@ -902,9 +916,40 @@ button.settings_BuiltInLayoutButton_30Og7.DialogButton {
   gap: 16px !important;
 }
 
+[class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_ItemMaxSizeDesktop_"] [class*="gamepaddialog_ControlsListChild_"] [class*="accountpanel_FatButton_"] {
+  /* height: 32px !important;
+  width: 32px !important;
+  margin: 0px !important; */
+  padding: 16px 0px !important;
+}
+
+[class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_ItemMaxSizeDesktop_"] [class*="gamepaddialog_ControlsListChild_"] [class*="accountpanel_FatButton_"] svg {
+  color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  height: 32px !important;
+  width: 32px !important;
+  margin: 0px !important;
+}
+
+/* FUNDS */
+[class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_ItemMaxSizeDesktop_"] [class*="gamepaddialog_ControlsListChild_"]:nth-child(1) [class*="accountpanel_FatButton_"] svg {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsUlEQVRYhe2V4Q2CQAyFX40L4Ajs5Czs5Ao6gis4gyN8/LAkzf2hl2AQ05c0Kce78qVXwADtqdOuTy+AAiiALICZycwkaZB0l4THK+RPSUPwbgcQdHOIi8db0sPz5X6fgNUIXoAxXI+4IebZuoAs8yleWgpgTX/jWpOnGpAC0OeMe5UahHO62spktZ3I1j3Ga1gABVAAPwEAXDOejK/dlImJPk2b/oy+qePMQAEUwN8CzOy28ZREVUbJAAAAAElFTkSuQmCC') !important;
+}
+
+/* PRIVACY */
+[class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_ItemMaxSizeDesktop_"] [class*="gamepaddialog_ControlsListChild_"]:nth-child(2) [class*="accountpanel_FatButton_"] svg {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVRYhe2W2w3CMAxFr9kgjMAKXQFGYAVmYYUyAiuwQldghTLC4QMXSqiSiIdAKJauqjq2c2w1Sg3QN2321d0rQAWoABWgBMDM7iRpI+koqZeEq3ffZiI+bUBSo7gG6F1boInWtqP1prh+CQCw5mJtQUOtx67fAgCEoev8PK8QwzTCOwBaoIs2CEDHzTogRDGd5ybrl5yCpaRd5Nv7c+4a+wbbeW52XDk9/DB414vR+yIR99oErOgsPZ9rE+BxkQcfcJAUJK3cdZB0MrPVRGyaoOQYTuRkP8LS+tkJfNp+/y6oABWgAlSAvwc4A2l42T5dzbRkAAAAAElFTkSuQmCC') !important;
+}
+
+/* DETAILS */
+[class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_ItemMaxSizeDesktop_"] [class*="gamepaddialog_ControlsListChild_"]:nth-child(3) [class*="accountpanel_FatButton_"] svg {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABDklEQVRYhe2WMWpCQRRFj5IFWIg7CAYsBLGxMSZB+LqJ4D6yomzAwkptLENK0UZImyKtwrUZ8fMxzOh/Kso8ePC58Oae+4r5U5DENat4VfcIEAEiwBkA6sASWAEToHRJgD7wBbwDNeAPmHmnJFn0q/b1mNJ/fbMPBskTYAg0gDUwdxsoB03nTJ641L2UVk1to+E7w8I8yei1A1DmAIeSp/WX0LMsk/+nmwL4zIPWfipA1zL5sQBvzqSa0Xt5zI8B2DijlqV5KMCTpIWkjjN8llS3MA8F+JD06b7b2lc3r7kkCpL3VTwCmsAUqLgeAOOTLu5MhfwLfoCF6xHwbWG8q5ANnLXu7kUUASLA7QFsASBdWtTx/addAAAAAElFTkSuQmCC') !important;
+}
+
 [class*="gamepaddialog_ControlsListOuterPanel_"] [class*="gamepaddialog_ControlsListChild_"] {
   margin-bottom: 0px !important;
-  height: 97px !important;
+  /* height: 97px !important; */
 }
 
 [class*="accountsettings_EntryValue_"] {
@@ -921,6 +966,10 @@ button.settings_BuiltInLayoutButton_30Og7.DialogButton {
   margin-left: 0px !important;
   margin-right: 8px !important;
   margin-top: 2px !important;
+}
+
+[class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_StandardSpacing_"] {
+  --controls-list-spacing: 0px !important;
 }
 
 /* SECURITY */
