@@ -294,11 +294,21 @@
 
 /* STEAM GUARD */
 [class*="desktopsecuritysettings_SteamGuardIcon_"] {
-  color: rgb(var(--color-white)) !important;
+  /* color: rgb(var(--color-white)) !important; */
+  display: none !important;
+  color: transparent !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVRIid2U0RGDIAyGf7oBK9gRuoIrOIsrOIsruEI7givQEb4+mN5RhFZ6tg/mLucRfvIBhjhAv7TTT7MfE+Cce3FJXtIkicgnST6j/QyQJMADLTBJChY+uyXL2cYBmEzni0cAUn9aAEbgkupsfLH5EK1Z5XOZMsVlzhvrctfBIlhNHLCK/gG4A11NEtPftwJuktoagOlvJXrqnZWeL+mSuDd9lyvTdWBZdAXGjYARmAubLQIa29XwDgAMpmuqACbu7HX2OYAlJy6IKoAtaJ8tI3MtAWiTeB0g+omzJeztO6dF8DUgc9/DG82mZrerHbMX7WoPCzXoB3KjS6IAAAAASUVORK5CYII=') !important;
 }
 
 [class*="desktopsecuritysettings_SteamGuardIcon_"][class*="desktopsecuritysettings_EnabledTwoFactor_"] {
-  color: rgb(var(--color-white)) !important;
+  /* color: rgb(var(--color-white)) !important; */
+  color: transparent !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA9UlEQVRIid2U0RGDIAyGf7oBK9gRuoIrOIsrOIsruEI7givQEb4+mN5RhFZ6tg/mLucRfvIBhjhAv7TTT7MfE+Cce3FJXtIkicgnST6j/QyQJMADLTBJChY+uyXL2cYBmEzni0cAUn9aAEbgkupsfLH5EK1Z5XOZMsVlzhvrctfBIlhNHLCK/gG4A11NEtPftwJuktoagOlvJXrqnZWeL+mSuDd9lyvTdWBZdAXGjYARmAubLQIa29XwDgAMpmuqACbu7HX2OYAlJy6IKoAtaJ8tI3MtAWiTeB0g+omzJeztO6dF8DUgc9/DG82mZrerHbMX7WoPCzXoB3KjS6IAAAAASUVORK5CYII=') !important;
 }
 
 /* DESCRIPTION */
@@ -525,12 +535,22 @@
 }
 
 /* STORAGE */
+[class*="contentmanagement_AppsGrid_"] {
+  margin-top: 16px !important;
+}
+
 [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBodyLeft_"] [class*="contentmanagement_AppInfo_"] [class*="contentmanagement_AppUsageText_"] {
   color: rgb(var(--color-text-sub)) !important;
+  margin-left: 0px !important;
 }
 
 [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBodyLeft_"] [class*="contentmanagement_AppInfo_"] [class*="contentmanagement_AppUsageValue_"] {
   color: rgb(var(--color-text-sub)) !important;
+  margin-left: 4px !important;
+}
+
+[class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBodyLeft_"] [class*="contentmanagement_AppInfo_"] [class*="contentmanagement_AppUsageValue_"]::before {
+  /* content: " " !important; */
 }
 
 [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppHeader_"] [class*="contentmanagement_AppHeaderValue_"] {
@@ -543,6 +563,8 @@
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-section) !important;
   font-weight: 400 !important;
+  padding: 0px !important;
+  line-height: 32px !important;
 }
 
 [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppHeader_"] [class*="contentmanagement_Rule_"] {
@@ -571,6 +593,18 @@
   background-repeat: no-repeat !important;
   background-position: center !important;
 }
+
+[class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBodyLeft_"] [class*="contentmanagement_AppInfo_"] [class*="contentmanagement_AppInfoItem_"] {
+  font-weight: 400 !important;
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-subtext) !important;
+  letter-spacing: normal !important;
+  margin-right: 0px !important;
+  line-height: 24px !important;
+}
+
+/* TIME ICON */
+
 
 /* DRIVE */
 [class*="contentmanagement_InstallDropdownOption_"] svg, [class*="contentmanagement_InstallDropdownOption_"][class*="contentmanagement_IsSelectedDropdownOption_"] svg {
@@ -614,6 +648,7 @@
 
 [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBodyLeft_"] [class*="contentmanagement_AppInfo_"] svg.DesktopUI, .DesktopUI [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBodyLeft_"] [class*="contentmanagement_AppInfo_"] svg {
   color: rgb(var(--color-white)) !important;
+  display: none !important;
 }
 
 [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBody_"]:hover, [class*="contentmanagement_AppsGrid_"] [class*="contentmanagement_AppBody_"]:active {
@@ -725,6 +760,12 @@
   color: rgb(var(--color-text-sub)) !important;
 }
 
+[class*="contentmanagement_DriveUsageText_"], [class*="contentmanagement_DriveUsageNumber_"] {
+  font-weight: 400 !important;
+  font-size: var(--font-size-label) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
 [class*="contentmanagement_DriveUsageNumber_"] {
   color: rgb(var(--color-text-sub)) !important;
 }
@@ -765,6 +806,75 @@
   min-height: 15px !important;
   background-color: rgba(var(--color-white), 0.2) !important;
   border-radius: 0px !important;
+}
+
+[class*="contentmanagement_ContentManagement_"] [class*="appgrid_SortingDropDown_"] {
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+  border-radius: 0px !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="contentmanagement_ContentManagement_"] [class*="appgrid_SortingDropDown_"]:hover {
+  background: transparent !important;
+  outline: 2px solid rgba(var(--color-white), 0.65) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="contentmanagement_ContentManagement_"] [class*="appgrid_SortingDropDown_"]:active {
+  background: rgba(var(--color-white), 0.3) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="contentmanagement_ContentManagement_"] [class*="appgrid_SortingDropDownContainer_"] {
+  left: unset !important;
+  right: 16px !important;
+}
+
+[class*="appgrid_SortingDropDownContainer_"] [class*="dropdown_DialogDropDownMenu_"] {
+  /* background-color: rgba(var(--color-white), 0.1) !important; */
+}
+
+[class*="sortingdropdowncontrolbutton_BasicHomeDropDownControlButton_"] {
+  padding: 0px 0px 0px 16px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  margin-top: 0px !important;
+}
+
+[class*="sortingdropdowncontrolbutton_BasicHomeDropDownControlButton_"][class*="sortingdropdowncontrolbutton_SortingDropDownControlButton_"] {
+  font-weight: 400 !important;
+  font-size: var(--font-size-text) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="sortingdropdowncontrolbutton_BasicHomeDropDownControlButton_"] svg:not(:last-child) {
+  display: none !important;
+  /* margin-right: 16px !important; */
+  margin-right: 0px !important;
+  height: 32px !important;
+  width: 32px !important;
+  background-repeat: no-repeat !important;
+  background-position: left !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2klEQVRYhe2V0RHCIAyGf9ygK7CkK7iCK9QVHKEruEJX+Ppg7UWkgHK9qkfueEm45AuQHwdoTzvsWr0BNIAGUALgnFuWJC9plOSt38SJ+NIGJJfZ54GRu42Aj+R6UbVc/qIrmIsNkq6z6yJpiEG8bTlC03lvuwTO4Ul8cgIlAB1wjBUBTkBXA+Byn1H4kADcyuuKxXL5v38MG0ADSFk4okHsaURTSYqk2Oy3OrAmUv1DpKqFKAUQQsz/xFK8qMFagACCiDxvD2AgbgQfVLUUb22/PYYNoAH8BcAEbcki0tzGMkgAAAAASUVORK5CYII=') !important;
+  color: transparent !important;
+}
+
+[class*="sortingdropdowncontrolbutton_BasicHomeDropDownControlButton_"] [class*="sortingdropdowncontrolbutton_SortIcon_"] {
+  margin-left: 16px !important;
+  height: 32px !important;
+  width: 32px !important;
+  background-repeat: no-repeat !important;
+  background-position: left !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjklEQVRYhe3WywnDMBCE4d+pIJ04qUbqxE4FcspzRZOLTsZg62FMYAaEhFh2v5PQIIk787h1ugEGGGCAAYWA5xW1JYAPEE/UxVzbHTABbyAcDB9z7blIKl1JUti5D5K+pf1qAEhaNohYM1wSQ8OHJAFrPr+AuaZJCwBgyXvV8B6A5vzVQ2SAAQYYYMAl+QFozdWqm5zvEgAAAABJRU5ErkJggg==') !important;
+  color: transparent !important;
+}
+
+[class*="sortingdropdowncontrolbutton_BasicHomeDropDownControlButton_"] svg {
+  height: 16px !important;
+  width: 16px !important;
 }
 
 [class*="contentmanagement_FolderInfo_"] svg {
@@ -839,13 +949,50 @@
 }
 
 /* CONTROLLER */
+[class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] svg:not([class*="controllersettings_Rumble_"]) {
+  height: 24px !important;
+  width: 24px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVRIie2VUQrAIAxDk7H731Cvkn24D2Ht7ATxYy2IUEhfUhApCSvrWDo9Af8FFACaOMUC0HgHIsmvTtUGPXTuim5B+PZqb4KI++0JzoEAJGm57PtvhlxAL/IGRJJagDraq1PVNJH/QQISgAs0jnJgQae/TwAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] svg:not([class*="controllersettings_Rumble_"]) * {
+  fill: transparent !important;
+}
+
+[class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] [class*="controllersettings_Rumble_"] {
+  height: 24px !important;
+  width: 24px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABMklEQVRIie2Uv0rEQBDGf7ESLdQnsBBEbGx1W19A7LT0GXwJfYhUV+fyAtrdpdVGOSsbG0EUC++6zyKzEHOTGMEgwg1Msd/8+WZnZjeRRJ+y1Gv2BcG/IDgHxsAVECp4MKwwn0ZJWta0AHaBO2AF2AaWzTYDHoAPYAeYAPtuFkmeBkkzSZcN9qpemG/w7E1BQ0mTBjxz8HuzdSZ4kpR2qD5qKum5K8GJpOkPkkd9k3Rax70hj4FVYK9tOxy5AZJ6nLemW8Cgcg5AZsSF6RgY8nV1B8BmPZl3A1klMXkOvAIvVlC0rwMbwDEwcmINme/l1FYu2ODylr5n5hP952bn3eAWWKOcwwg4ctpYlRw4oHx079Rm0PSSr4FH4Oyb5FFSyv4f1g1tX8WvyJ//pguC/gk+Ac1qsRm3FZMmAAAAAElFTkSuQmCC') !important;
+}
+
+[class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] [class*="controllersettings_Rumble_"] * {
+  color: transparent !important;
+}
+
+[class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] {
+  display: none !important;
+  padding-right: 0px !important;
+}
+
+[class*="controllersettings_NintendoSwitchLayoutToggle_"] [class*="controllersettings_NintendoSwitchLayoutToggleDesc_"] {
+  color: rgb(var(--color-text-sub)) !important;
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  width: 80% !important;
+  margin-bottom: 16px !important;
+}
+
 [class*="settings_SettingsDialogButton_"].DesktopUI, .DesktopUI [class*="settings_SettingsDialogButton_"] {
   padding: 0px 16px !important;
   /* background-color: transparent !important; */
   line-height: 32px !important;
 }
 
-button.settings_BuiltInLayoutButton_30Og7.DialogButton {
+[class*="settings_BuiltInLayoutButton_"].DialogButton {
   /* width: 38px !important; */
   height: 38px !important;
   color: transparent !important;
