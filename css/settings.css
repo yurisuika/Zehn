@@ -56,6 +56,13 @@
   background: rgb(var(--color-background-settings)) !important;
 }
 
+/* TEXT */
+.ModalPosition_Content {
+  font-size: var(--font-size-text) !important;
+  font-weight: 400 !important;
+  color: rgb(var(--color-text)) !important;
+}
+
 /* TITLE */
 [class*="pagedsettings_PagedSettingsDialog_Title_"] {
   color: rgb(var(--color-text)) !important;
@@ -1356,6 +1363,7 @@
   background: transparent !important;
   min-height: 0px !important;
   max-height: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .ChatRoomNotificationSettingsDialog .NotificationChannelName {
@@ -1367,8 +1375,30 @@
 }
 
 /* GROUP CHAT INVITE */
+.inviteLinkContainer .DialogInputLabelGroup .DialogInput, .DialogInput_Wrapper>input.DialogInput {
+  border: unset !important;
+  line-height: 32px !important;
+}
+
+.inviteLinkContainer .DialogInputLabelGroup {
+  margin-top: 0px !important;
+}
+
 .OrSeparator .HBar {
   background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+.OrSeparator {
+  margin: 0px !important;
+  height: 16px !important;
+}
+
+.DialogSpanningTable th, .DialogSpanningTable tr {
+  font-size: var(--font-size-text) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  height: 32px !important;
 }
 
 .OrSeparator .OrSeparatorLabel {
@@ -1378,9 +1408,52 @@
   font-weight: 400 !important;
 }
 
+.InviteLinksTable td {
+  border-spacing: 0px !important;
+  border-collapse: collapse !important;
+}
+
+.InviteLinksTable tbody tr {
+  /* margin-bottom: 8px !important; */
+  height: 38px !important;
+  min-height: 38px !important;
+}
+
+.InviteLinksTable tbody tr:nth-child(even) {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+.InviteLinksTable .DialogInput {
+  padding: 0px 16px !important;
+  margin: 0px !important;
+  margin-right: 16px !important;
+  /* line-height: 32px !important; */
+  height: 32px !important;
+}
+
+.DialogSpanningTable td.dateCell {
+  font-size: var(--font-size-text) !important;
+  margin: 0px 16px !important;
+  padding: 0px !important;
+}
+
+.DialogSpanningTable td.buttonCell {
+  padding: 0px !important;
+}
+
+.DialogTextInputBase.inviteURLLink {
+  border: unset !important;
+}
+
 .inviteLinkContainer .DialogInput_Wrapper._DialogLayout {
   border-radius: 0px !important;
   background-color: transparent !important;
+  padding: 0px !important;
+  gap: 16px !important;
+}
+
+.inviteLinkContainer .DialogInputLabelGroup .DialogInput {
+  margin: 0px !important;
 }
 
 .DialogHeader .ChatRoomGroupAvatar.Small {
@@ -1388,6 +1461,33 @@
   height: 0px !important;
   opacity: 0 !important;
   display: none !important;
+}
+
+.expireLinkInContainer {
+  margin-top: 16px !important;
+  justify-content: flex-start !important;
+}
+
+.inviteLinkContainer .DialogDropDown._DialogInputContainer {
+  margin-left: 8px !important;
+  margin-right: 0px !important;
+  display: flex !important;
+  min-width: 100% !important;
+}
+
+.inviteLinkContainer .DialogDropDown._DialogInputContainer .DialogDropDown_CurrentDisplay {
+  margin-right: 16px !important;
+}
+
+.inviteLinkContainer .DialogDropDown._DialogInputContainer .DialogDropDown_Arrow {
+  top: 0px !important;
+  right: 0px !important;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+.DialogSpanningTable {
+  border-spacing: 0px 0px !important;
 }
 
 /* GROUP CHAT SETTINGS */
@@ -1428,14 +1528,29 @@
   letter-spacing: unset !important;
 }
 
+[class*="chatroomgroupsettings_General_"] [class*="chatroomgroupsettings_AvatarAndUser_"] {
+  padding: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+}
+
 [class*="chatroomgroupsettings_General_"] [class*="chatroomgroupsettings_Avatar_"] {
   background-color: rgba(var(--color-primary), 0.4) !important;
+  margin: 0px 16px 16px 16px !important;
 }
 
 [class*="chatroomgroupsettings_General_"] [class*="chatroomgroupsettings_NoIconLabel_"] {
   color: rgb(var(--color-text-sub)) !important;
   font-weight: 400 !important;
   font-size: var(--font-size-text) !important;
+  top: 96px !important;
+  width: 180px !important;
+}
+
+.GeneralChatSettings {
+  margin-left: 16px !important;
+  display: grid !important;
+  gap: 16px !important;
 }
 
 [class*="pagedcontent_Container_"] {
@@ -1527,18 +1642,39 @@
 }
 
 /* GROUP CHAT CHANNELS */
+[class*="chatroomgroupsettings_ChannelsButtons_"] {
+  margin-bottom: 16px !important;
+  gap: 16px !important;
+}
+
+button.DialogButton.DialogButtonTall {
+  height: 38px !important;
+  max-width: 100% !important;
+  min-width: fit-content !important;
+}
+
 .ChatGroupSettingsChannels_Row ._DialogRow {
   background: rgba(var(--color-white), 0.1) !important;
   color: rgb(var(--color-text)) !important;
-  margin: 0px 0px 4px 0px !important;
+  margin: 0px 0px 0px 0px !important;
   padding: 0px 16px !important;
   line-height: 32px !important;
   height: 32px !important;
   border-radius: 0px !important;
 }
 
+.ChatGroupSettingsChannels_Row:nth-child(even) ._DialogRow {
+  background: rgba(var(--color-white), 0.2) !important;
+}
+
 .ChatGroupSettingsChannels_Row .ChannelDeleteButton {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-text) !important;
+  line-height: 32px !important;
+  margin-right: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 .ChatGroupSettingsChannels_Row .ChannelDeleteButton:hover {
@@ -1551,11 +1687,19 @@
 
 ._DialogRow ._DialogRowSecondaryLabel, ._DialogRow ._DialogRowLabel {
   font-size: var(--font-size-text) !important;
+  text-align: right !important;
+  margin: 0px !important;
+  line-height: 32px !important;
 }
 
 ._DialogRowLabel .HomeChannel {
   font-style: normal !important;
   font-weight: 400 !important;
+}
+
+.rolePriorityButton {
+  width: 24px !important;
+  height: 16px !important;
 }
 
 .rolePriorityButton.Disabled:active, .rolePriorityButton.Disabled:hover, .rolePriorityButton.Disabled {
@@ -1579,15 +1723,30 @@
 
 .rolePriorityButton svg {
   fill: rgb(var(--color-white)) !important;
+  /* fill: transparent !important; */
   opacity: 0.6 !important;
+  height: 16px !important;
 }
 
 .rolePriorityButton:hover svg {
   opacity: 1.0 !important;
 }
 
+.rolePriorityContainer {
+  width: 24px !important;
+  height: 32px !important;
+}
+
 .rolePriorityContainer .rolePriorityButton.roleDown {
   top: 16px !important;
+}
+
+.rolePriorityButton.roleUp svg {
+  padding-bottom: 0px !important;
+}
+
+.rolePriorityButton.roleDown svg {
+  padding-top: 0px !important;
 }
 
 /* GROUP CHAT PERMISSIONS */
@@ -1605,8 +1764,19 @@ button.DialogButton.roleButton .SVGIcon_Crown {
   display: none !important;
 }
 
+button.DialogButton.roleButton {
+  padding: 0px 16px !important;
+  width: calc(100% - 32px) !important;
+}
+
 .roleButton:last-child {
   margin-bottom: 16px !important;
+}
+
+[class*="chatroomgroupsettings_RoleNameHeader_"] {
+  margin-bottom: 0px !important;
+  margin-top: 16px !important;
+  min-height: 32px !important;
 }
 
 /* WHAT'S NEW SETTINGS */
