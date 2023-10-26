@@ -25,7 +25,6 @@ If things crash because of the class moving or fail to load, press F5 to refresh
 #### To-Do
 - Most things on the overlay
 - Notifications
-- Replace/add icons in settings
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe
 - Implement Reveal
 - Figure out to implement Reveal on stuff that isn't initially loaded
