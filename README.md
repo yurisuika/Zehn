@@ -24,6 +24,7 @@ If things crash because of the class moving or fail to load, press F5 to refresh
 
 #### To-Do
 - Overlay Web Browser
+- Overlay Controller Settings
 - Notifications
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
 - Implement Reveal
