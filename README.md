@@ -23,9 +23,9 @@ The library games list sidebar can be toggled by an added button. You will find 
 If things crash because of the class moving or fail to load, press F5 to refresh the client (this may require dev mode).
 
 #### To-Do
-- Most things on the overlay
+- Overlay Web Browser
 - Notifications
-- Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe
+- Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
 - Implement Reveal
 - Figure out to implement Reveal on stuff that isn't initially loaded
 - Figure out why text rendering is so much blurrier than in UWP apps???
