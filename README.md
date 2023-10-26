@@ -36,6 +36,6 @@ If things crash because of the class moving or fail to load, press F5 to refresh
 - Wait for Steam to one day support :has selector so I may target unclassed SVGs
 
 #### Previews
-![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1167156275122012230/zehn.png)
+![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1167158711073120297/zehn.png)
 
 ![zehn chat](https://cdn.discordapp.com/attachments/729991202778251317/1128813573045506198/zehn-chat.gif)
