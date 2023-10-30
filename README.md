@@ -8,9 +8,14 @@ Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a s
 Zehn is partly based on the [Metro](https://steamcommunity.com/groups/metroskin) skin, however everything has been re-made from the ground up in CSS. Reveal effects are courtesy of [FluentReveal](https://github.com/aleversn/FluentReveal). Thanks to [AikoMidori](https://github.com/AikoMidori/SteamSkins) for my introduction to JS in moving some classes around.
 
 #### Installation
-If you are using [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases), ensure that JavaScript support is enabled. This skin uses JS to move several elements around. As well, button reveal effects are done with JS. Please review the JS code before injection if you have received this skin from elsewhere.
+1. Download the [latest commit](https://github.com/yurisuika/Zehn/archive/refs/heads/master.zip).
+2. Extract the archive `Zehn`.
+3. Navigate to your Steam folder.
+4. Place the extracted skin folder in `~/Steam/steamui/skins`.
+5. Enable JavaScript support in your patcher of choice.
+6. Select the skin in the patcher.
 
-Extract the root folder `Zehn` and place it in `~/Steam/steamui/skins`, and then select the skin in SFP.
+Currently this skin works fine on [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases). I have yet to resolve some patching issues with [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases), including JS seemingly not loading and some menus not being skinned.
 
 #### Customization
 In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for settings windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
@@ -18,14 +23,17 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
 #### Things of Note
-The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered.
+The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If the JS has failed to inject, then this button will not appear. As such, if you switch from the library to the downloads page, it will unload. I have yet to resolve this.
 
-If things crash because of the class moving or fail to load, press F5 to refresh the client (this may require dev mode).
+If things crash because of the class moving or fail to load, press F5 to refresh the client (this may require dev mode enabled).
+
+Because Steam has chosen to not give unique classes to some things, you may notice repeated icons in some areas.
 
 #### To-Do
 - Overlay Web Browser
 - Overlay Controller Settings
 - Notifications
+- Convert skin to live version so you don't need to download over and over
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
 - Implement Reveal
 - Figure out to implement Reveal on stuff that isn't initially loaded
