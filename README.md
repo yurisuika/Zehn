@@ -44,6 +44,6 @@ Because Steam has chosen to not give unique classes to some things, you may noti
 - Wait for Steam to one day support :has selector so I may target unclassed SVGs
 
 #### Previews
-![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1167158711073120297/zehn.png)
+![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1168732963844935800/zehn.png)
 
 ![zehn chat](https://cdn.discordapp.com/attachments/729991202778251317/1128813573045506198/zehn-chat.gif)
