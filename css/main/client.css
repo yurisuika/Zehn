@@ -220,6 +220,11 @@ table, th, td, tbody, thead, tr {
   font-size: var(--font-size-smaller) !important;
 }
 
+[class*="personanameandstatus_richPresenceLabel_"] {
+  margin-right: 0px !important;
+  -webkit-mask: unset !important;
+}
+
 .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a, .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:hover, .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:active, .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:visited, .ingame [class*="personanameandstatus_twoLine_"][class*="personanameandstatus_richPresenceLabel_"] {
   color: rgb(var(--color-ingame)) !important;
 }
@@ -236,8 +241,18 @@ table, th, td, tbody, thead, tr {
 }
 
 [class*="personanameandstatus_richPresenceLabel_"]:nth-child(2) {
-  font-size: var(--font-size-smallest) !important;
+  /* font-size: var(--font-size-smallest) !important; */
+  font-size: var(--font-size-smaller) !important;
   line-height: unset !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"]:nth-child(2)::before {
+  padding-left: 4px !important;
+  content: "(" !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"]:nth-child(2)::after {
+  content: ")" !important;
 }
 
 .ingame.awayOrSnooze [class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_richPresenceLabel_"] a, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:hover, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:active, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:visited {
