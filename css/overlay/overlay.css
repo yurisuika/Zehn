@@ -295,9 +295,13 @@
   border: 1px solid rgb(var(--color-primary)) !important;
 }
 
-[class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"]:not(.ScreenshotManager) {
+[class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"]:not(.ScreenshotManager):not(.OverlayBrowser_Browser):not(.OverlayBrowser_Guides):not(.OverlayBrowser_Discussions) {
   padding-bottom: 16px !important;
   /* height: calc(100% - 16px) !important; */
+}
+
+[class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].OverlayBrowser_Browser, [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].OverlayBrowser_Guides, [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].OverlayBrowser_Discussions {
+  padding-bottom: 0px !important;
 }
 
 [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].GameNotes, [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].ScreenshotManager,

@@ -77,10 +77,12 @@
 /* FOCUSBAR */
 [class*="steamdesktop_FocusBar_"] [class*="steamdesktop_Focused_"], [class*="steamdesktop_FocusBar_"] {
   display: none !important;
+  height: 0px !important;
+  background-color: transparent !important;
 }
 
 /* URLBAR */
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] {
+[class*="steamdesktop_URLBar_"] {
   display: var(--option-display-urlbar) !important;
   background: transparent !important;
   height: 38px !important;
@@ -92,13 +94,14 @@
   background-image: var(--image-acrylic) !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"] {
+/* RELOAD BUTTON */
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"] {
   background-color: transparent !important;
-  color: white !important;
+  color: rgb(var(--color-white)) !important;
   border-radius: 0px !important;
   width: 38px !important;
   height: 38px !important;
-  margin-right: 16px !important;
+  /* margin-right: 16px !important; */
   background-size: auto !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -106,62 +109,66 @@
   padding: 0px !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"] svg {
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"] svg {
   display: none !important;
   padding: 0px !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"]:hover {
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"]:hover {
   background-color: rgba(var(--color-white), 0.1) !important;
-  color: white !important;
+  color: rgb(var(--color-white)) !important;
   border-radius: 0px !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"]:active {
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"]:active {
   background-color: rgba(var(--color-white), 0.2) !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] {
+/* URL */
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] {
   background: transparent !important;
   border-radius: 0px !important;
   line-height: 38px !important;
   padding: 0px !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover {
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover {
   background: transparent !important;
   border-radius: 0px !important;
   padding: 0px !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_StatusIcon_"] {
-  color: rgb(var(--color-sub)) !important;
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_StatusIcon_"] {
+  color: transparent !important;
   line-height: 38px !important;
   margin-top: auto !important;
   margin-bottom: auto !important;
+  width: 38px !important;
+  height: 38px !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_LockIcon_"] {
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_LockIcon_"] {
   padding-bottom: 0px !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPklEQVRYhe2WMU7DQBBFnxEXoKOigJoj0Mc1XCHmDLkA3IScg1wBU9NSOdAk5U+RsVgFO/asbYGifdLI9u7Yeh57R5tJ4j9y9tcCbSQxL0nMSxLzksS8nJxYDpTABpAdSxsfhRixpUUF3AMZ8ACsgRebG44kT+SS1pKKlvnC5nPnc39F5txdlFaZO+DTxi4PclbABXA7pGDeT3kNPAXXTW/1DNxEGxneion9PzVWXiveim2BWUfODPiO0/nBK/YBLDpyrthXrIgyqolclY8deYWkrx55rRFz01JSJWkVtIVc0qukzYFcdaS1jC5Wi7yZiOz4budNlXPLDWqCDRFSj81jKje2WCgYXs8lbT3P8Pax3msqOM+Csd69baptT+aRaOJ8JJFjRH2SqcWiq3ZyO9jJSWJekpiXJOYliXnZASg97Cz79cRIAAAAAElFTkSuQmCC') !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover [class*="steamdesktop_StatusIcon_"] {
-  color: rgb(var(--color-sub)) !important;
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover [class*="steamdesktop_StatusIcon_"] {
+  color: transparent !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_StatusIcon_"] svg {
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_StatusIcon_"] svg {
   padding: 0px !important;
-  margin-bottom: 9px !important;
+  margin-bottom: 0px !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_URL_"] {
-  padding: 0px 16px !important;
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_URL_"] {
+  padding: 0px 3px 0px 0px !important;
   color: rgb(var(--color-sub)) !important;
   font-size: var(--font-size-small) !important;
   font-weight: 400 !important;
 }
 
-[class*="steamdesktop_BrowserWrapper_"] [class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover [class*="steamdesktop_URL_"] {
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover [class*="steamdesktop_URL_"] {
   color: rgb(var(--color-sub)) !important;
   font-size: var(--font-size-small) !important;
   font-weight: 400 !important;
@@ -253,13 +260,17 @@
 }
 
 /* NAVMENU ARROW ENABLED */
-[class*="supernav_Arrow_"]:not([class*="supernav_Disabled_"]) {
+[class*="supernav_Arrow_"] {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVRYhe2WUQrCMBBEJ+J99FJWSK5j/fFS8UTjRyNWqcIk3VroPggTSLp5bChtIIk1svu3wDdcTMXFVFxMxcVUXExlM2IJQAYQWwvtm1Xe6UueS15rC80tBgxyAUBXsv+9fRoLMQC4ACCAU0m5c1ZiwKtTXUlJLlT8weapOqP5Z8Hn2kE5pKZjR2FvxNCxm3wKSasRSd5JpprnraQSyVwrZSXWLGUhllqubzxq3spF2MxHfDZcTMXFVFxMxcVUXExltWIPrsbjpfdiH/4AAAAASUVORK5CYII=') !important;
 }
 
+[class*="supernav_Arrow_"][class*="supernav_Enabled_"] {
+  filter: none !important;
+}
+
 /* NAVMENU ARROW DISABLED */
-[class*="supernav_Arrow_"], [class*="supernav_Arrow_"] [class*="supernav_Disabled_"] {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVRYhe3WWw6CMBBG4VPjGqhugv3vCGQR1ofWACaa/G0nkjDnhfTtywy3kFLiiF3+DfiWw9QcpuYwNYepOUztNLABGMu1qWu7ZdcCBCBuzlX1hgE8WHGhnOUsYAAz8GSdnIyzgsF+rQlxrTWw8eOcCuBXN0RYMP61jmTUjLhOy1UOZNhExdNp9YKNwJ08papXhsXEIg2Tetd7YpG8woUGFNjf/NWd5iPeLYepOUzNYWoOU3OY2mFhL1sSH4LbHEkpAAAAAElFTkSuQmCC') !important;
+[class*="supernav_Arrow_"][class*="supernav_Disabled_"] {
+  filter: saturate(0.0) brightness(0.5) !important;
 }
 
 /* NAVMENU SELECTOR */

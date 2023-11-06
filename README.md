@@ -30,7 +30,6 @@ If things crash because of the class moving or fail to load, press F5 to refresh
 Because Steam has chosen to not give unique classes to some things, you may notice repeated icons in some areas.
 
 #### To-Do
-- Overlay Web Browser
 - Overlay Controller Settings
 - Convert skin to live version so you don't need to download over and over
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
