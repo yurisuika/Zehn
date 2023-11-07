@@ -31,6 +31,7 @@ Because Steam has chosen to not give unique classes to some things, you may noti
 
 #### To-Do
 - Overlay Controller Settings
+- Clean up garbage
 - Convert skin to live version so you don't need to download over and over
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
 - Implement Reveal
