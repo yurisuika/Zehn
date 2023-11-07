@@ -447,7 +447,7 @@
 .VoiceControlPanelButton.chatEndVoiceChat.Focusable {
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAf0lEQVRYhe3WSwqAMAwE0Il4YU/SI48LEbrLh0hczEB3rX2QNtZIYjLH6O4CCCAAgLOwJts4rBvgfnSLix0vgQAZwPpEQDIyFp9E57/DXZPZPJMwYPwMjJcg2oiu3Yx4I3JjzD/JMgB37vgZEKD6N2x7y1cAbTcA+EEJBBBAgBuruT7IGb9lpwAAAABJRU5ErkJggg==') !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVRYhe2V4Q2CMBCFv2dcAEdwBXdxBGdwBGfREVwBRpBVnn+KQRJpSaMI6Uvuz1Gu372WQ7aZU5tZdy8ABaAA/APANmFN7qRSLkC0yIii8Is4AgCk6Sak/Gdmd6AArAvAdmX7YfvwcwDbFVADjaQmpOOfju1Y9HWxvQ9dDvOfNFo/xQGFaIAKuANtLy/gDOxC/jZ4lu1AF3Xo6Dry3usOpNZVbFp1E9B2DbSSjgmuvTWY5UBv3WnKxqn1ow58W+saRAWgACwS4AljQit1ZIn3HAAAAABJRU5ErkJggg==') !important;
 }
 
 .activeVoiceButtons .SVGIcon_Button {
@@ -1286,8 +1286,18 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   filter: none !important;
 }
 
+.emptyChannelNotice.Visible {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+}
+
 .emptyChannelNotice {
   color: rgb(var(--color-sub)) !important;
+  font-size: var(--font-size-smallest) !important;
+  margin-left: 16px !important;
+  font-weight: 400 !important;
 }
 
 .dropTargetBox {
@@ -1379,18 +1389,37 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   background-color: rgba(var(--color-white), 0.2) !important;
 }
 
+/* GO TO CHANNEL BUTTON */
 .chatRoomVoiceChannel .chatRoomTextChannel .chatRoomTextChannelIcon {
+  width: 32px !important;
+  height: 32px !important;
   margin: 0px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAh0lEQVRYhe2W4QqAMAiEW/SwWw9Uj3v9iEBGkF4DC+5AEBz6TbexAmDK1JxaXQACEMAXABbnOva1KqMAXMk6uaB/MwKrp52FOsUAREcxHEAd6DvwCii9A+nXMAKAzpqJ1Zu4MyvA2IpTDUA1fjgXC2Ah6OIAqEN4aTP+ziYp+pYLQAACyAY4ALrN2vNGemM1AAAAAElFTkSuQmCC') !important;
+  color: transparent !important;
 }
 
+/* END VOICE CHAT BUTTON */
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat {
+  width: 32px !important;
+  height: 32px !important;
   margin: 0px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAf0lEQVRYhe3WSwqAMAwE0Il4YU/SI48LEbrLh0hczEB3rX2QNtZIYjLH6O4CCCAAgLOwJts4rBvgfnSLix0vgQAZwPpEQDIyFp9E57/DXZPZPJMwYPwMjJcg2oiu3Yx4I3JjzD/JMgB37vgZEKD6N2x7y1cAbTcA+EEJBBBAgBuruT7IGb9lpwAAAABJRU5ErkJggg==') !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVRYhe2V4Q2CMBCFv2dcAEdwBXdxBGdwBGfREVwBRpBVnn+KQRJpSaMI6Uvuz1Gu372WQ7aZU5tZdy8ABaAA/APANmFN7qRSLkC0yIii8Is4AgCk6Sak/Gdmd6AArAvAdmX7YfvwcwDbFVADjaQmpOOfju1Y9HWxvQ9dDvOfNFo/xQGFaIAKuANtLy/gDOxC/jZ4lu1AF3Xo6Dry3usOpNZVbFp1E9B2DbSSjgmuvTWY5UBv3WnKxqn1ow58W+saRAWgACwS4AljQit1ZIn3HAAAAABJRU5ErkJggg==') !important;
+  color: transparent !important;
+}
+
+/* VOICE ICONS */
+.VoiceIconCtn, .VoiceIconCtn:hover, .VoiceIconCtn:active {
+  color: transparent !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.VoiceIconCtn:hover SVG, .VoiceIconCtn:active SVG {
+  color: transparent !important;
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat:hover {

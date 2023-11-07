@@ -111,16 +111,44 @@
   padding: 3px 0px 3px 3px !important;
 }
 
+/* MIC STATUS */
 [class*="chattabs_ChatTab_"][class*="chattabs_Active_"] [class*="chattabs_MicStatus_"] {
   background: transparent !important;
 }
 
-[class*="chattabs_ChatTab_2Vrcp_"] [class*="chattabs_MicStatus_"] {
+[class*="chattabs_ChatTab_"]:hover [class*="chattabs_MicStatus_"], [class*="chattabs_ChatTab_"]:active [class*="chattabs_MicStatus_"] {
+  opacity: 0 !important;
+  transition: opacity 0.25s ease-out !important;
+}
+
+[class*="chattabs_ChatTab_"]:not([class*="chattabs_Active_"]):not(:hover):not(:active) [class*="chattabs_MicStatus_"] {
+  filter: brightness(0.5) !important;
+  transition: none !important;
+}
+
+[class*="chattabs_ChatTab_"]:not([class*="chattabs_Active_"]) * {
+  stroke: transparent !important;
+  fill: transparent !important;
+}
+
+[class*="chattabs_ChatTab_"] [class*="chattabs_MicStatus_"] {
   width: 38px !important;
   height: 38px !important;
   padding: 0px !important;
-  left: 0px !important;
+  left: unset !important;
+  right: 0px !important;
   top: 0px !important;
+}
+
+[class*="chattabs_ChatTab_"] [class*="chattabs_MicStatus_"] svg {
+  /* display: none !important; */
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0px !important;
+  color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVRYhe2VfQoCIRBH30ZH2M6wndZO1yWK6OMCv/4pMHBpZ3QpZB4I6uDwGNQZJPGPbH4tMEeIWQkxKyFmJcSsdCuWABVGqszLUNkrBYzAJdvbASdgqEncQqwkMLe/mG7v2GqEmJXuxJY+ZfeT765iOeOXtYut89wdmIADcC7EE7AHHs78IMkzkqSjpGkmPr3iyZnfLfaWu6rMrUZKUnWv/Cg+lf0xx3vHclSYVwu2EGtWpZyu/7FVCDErIWYlxKyEmJUnHvMO61G9/O0AAAAASUVORK5CYII=') !important;
 }
 
 [class*="chattabs_ChatTab_"] .SVGIcon_Microphone {
@@ -1304,6 +1332,11 @@ div:hover > .inviteAnotherFriendButton {
   font-style: normal !important;
   font-weight: 400 !important;
   line-height: 38px !important;
+  padding-left: 16px !important;
+}
+
+.chatRoomVoiceChannelName, .chatRoomTextChannel, .chatRoomDirectMessageEntry {
+  padding-left: 16px !important;
 }
 
 .chatRoomTextChannel.ActiveTextChannel, .chatRoomVoiceChannel.ActiveVoiceChannel {
@@ -1354,7 +1387,7 @@ div:hover > .inviteAnotherFriendButton {
   stroke: transparent !important;
 }
 
-.chatRoomTextChannelIcon {
+.chatDialogs .chatRoomTextChannelIcon {
   margin: 0px !important;
   width: 38px !important;
   height: 38px !important;
@@ -1365,7 +1398,7 @@ div:hover > .inviteAnotherFriendButton {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVRYhe3VMQ6AIBAFUTHc/8pLZUnCYMRfzKslTrIbaFV1Jbr/DpgxjDKMMowyjDKM6vD73Ye10QM0DP9gV+woY8NO7dhjeRXcMSo27MsdezV2d4yKDfMeo2JHaRhlGGUYZRhlGBUbNgBK1wdd5HxzBgAAAABJRU5ErkJggg==') !important;
 }
 
-.chatRoomVoiceChannelIcon {
+.chatDialogs .chatRoomVoiceChannelIcon {
   width: 38px !important;
   height: 38px !important;
   min-width: 38px !important;
