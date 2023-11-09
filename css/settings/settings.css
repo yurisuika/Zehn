@@ -66,7 +66,14 @@
 /* TITLE */
 [class*="pagedsettings_PagedSettingsDialog_Title_"] {
   color: rgb(var(--color-text)) !important;
-  display: none !important;
+  padding: 16px 0px !important;
+  font-size: var(--font-size-small) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0px !important;
+  line-height: 32px !important;
+  padding-left: 16px !important;
+  text-transform: capitalize !important;
 }
 
 [class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogHeader.DesktopUI, .DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogHeader {
@@ -105,16 +112,17 @@
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
   padding: 0px 0px 0px 16px !important;
-
 }
 
 /* LIST COLUMN */
 [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] {
-  background-color: transparent !important;
-  background: transparent !important;
-  padding-top: 40px !important;
+  padding-top: 0px !important;
   min-width: 200px !important;
   max-width: 200px !important;
+  background-color: rgba(var(--color-white), 0.1) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
 }
 
 [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"]::before, [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"]::after {
@@ -125,6 +133,7 @@
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
+  display: none !important;
 }
 
 [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"]::before {
@@ -137,12 +146,14 @@
   background-image: var(--image-acrylic) !important;
 }
 
+/* LIST ITEMS */
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"][class*="pagedsettings_Active_"] {
   background: transparent !important;
 }
 
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"] {
   color: rgb(var(--color-white)) !important;
+  max-width: unset !important;
 }
 
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:hover {
@@ -479,12 +490,16 @@
 }
 
 [class*="gamepadslider_DefaultValueTickContainer_"] {
-  transform: translateX(calc(-100% * var(--inverse-normalized-default-value) + 12px * var(--inverse-normalized-default-value))) !important;
+  transform: translateX(calc(-100% * var(--inverse-normalized-default-value) + 8px * var(--inverse-normalized-default-value))) !important;
+}
+
+[class*="gamepadslider_SliderControlAndNotches_"][class*="gamepadslider_WithDefaultValue_"] {
+  padding-top: 0px !important;
 }
 
 [class*="gamepadslider_DefaultValueTick_"] {
-  width: 16px !important;
-  height: 16px !important;
+  width: 8px !important;
+  height: 8px !important;
 }
 
 [class*="gamepadslider_DefaultValueTick_"]>svg {
