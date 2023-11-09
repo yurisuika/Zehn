@@ -175,6 +175,11 @@
   stroke: transparent !important;
 }
 
+[class*="steamdesktopoverlay_ToolbarContainer_"] [class*="steamdesktopoverlay_Toolbar_"] [class*="steamdesktopoverlay_ToolbarButton_"][class*="steamdesktopoverlay_Toggled_"] {
+  background-color: rgb(var(--color-primary)) !important;
+  outline: unset !important;
+}
+
 [class*="steamdesktopoverlay_ToolbarContainer_"] [class*="steamdesktopoverlay_Toolbar_"] [class*="steamdesktopoverlay_ToolbarButton_"]>svg {
   margin-bottom: 0px !important;
   height: 38px !important;
@@ -283,6 +288,14 @@
 /* POPUP */
 .ModalDialogPopup:not([class*="steamdesktopoverlay_NoTitlebarSpacer_"]) [class*="steamdesktopoverlay_OverlayPopup_"] [class*="steamdesktopoverlay_WindowControls_"] {
   height: 38px !important;
+  position: absolute !important;
+  top: 0px !important;
+  right: 0px !important;
+  width: 100% !important;
+}
+
+.ModalDialogPopup:not([class*="steamdesktopoverlay_NoTitlebarSpacer_"]) [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser [class*="steamdesktopoverlay_WindowControls_"] {
+  width: calc(38px * 4) !important;
 }
 
 [class*="steamdesktopoverlay_OverlayPopup_"].GameOverview, [class*="steamdesktopoverlay_OverlayPopup_"].GameNotes, [class*="steamdesktopoverlay_OverlayPopup_"].ScreenshotManager, [class*="steamdesktopoverlay_OverlayPopup_"].Achievements, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Guides, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Discussions, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser,
@@ -308,5 +321,9 @@
 [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].GameNotes,
 [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].ScreenshotManager,
 [class*="gamepadui_GamepadUIPopupWindowBody_"] [class*="steamdesktopoverlay_OverlayPopup_"] {
+  height: calc(100% - 2px) !important;
+}
+
+[class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"] {
   height: calc(100% - 2px) !important;
 }
