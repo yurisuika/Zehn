@@ -7,7 +7,6 @@
   background: transparent !important;
 }
 
-
 /* HEADER */
 .BasicUI [class*="header_Header_"] {
   color: rgb(var(--color-text)) !important;
@@ -31,7 +30,8 @@
 }
 
 [class*="gamepadpage_GamepadPage_"][class*="gamepadpage_PadForHeader_"] {
-  margin-top: calc(38px + 16px) !important;
+  /* margin-top: calc(38px + 16px) !important; */
+  margin-top: 0px !important;
 }
 
 /* SEARCH CONTAINER */
@@ -177,7 +177,8 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 /* BOTTOM SECTION */
 [class*="controllerconfigurator_BottomSection_"] {
-  padding: 16px !important;
+  /* padding: 16px !important; */
+  padding: 0px !important;
   background-color: transparent !important;
   min-height: fit-content !important;
 }
@@ -302,13 +303,13 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
   font-size: var(--font-size-medium) !important;
-  line-height: 32px !important;
+  line-height: 38px !important;
   text-align: center !important;
 }
 
 [class*="controllerconfiguratorsummary_BottomControlsSections_"] {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
+  padding: 16px 0px 0px 0px !important;
+  min-height: unset !important;
 }
 
 [class*="controllerconfiguratorsummary_BottomControlsSections_"] [class*="controllerconfiguratorsummary_DirectAccessButton_"] {
@@ -344,6 +345,8 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 .DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth {
   /* padding: 38px 0px 0px 0px !important; */
   padding: 0px !important;
+  /* margin-bottom: 16px !important; */
+  margin-bottom: 0px !important;
 }
 
 [class*="gamepadpage_GamepadPage_"][class*="gamepadpage_DialogBackground_"] {
@@ -394,7 +397,8 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 .DialogContentTransition[class*="gamepadpagedsettings_PagedSettingDialog_ContentColumn_"] {
   width: auto !important;
-  max-width: calc(100% - 216px) !important;
+  max-width: calc(100% - 232px) !important;
+  margin: 0px 16px !important;
 }
 
 .DialogContent[class*="gamepadpagedsettings_PagedSettingsDialog_PageContent_"] {
@@ -404,6 +408,10 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 [class*="gamepaddialog_GamepadDialogContent_"] {
   padding: 0px !important;
+}
+
+[class*="gamepaddialog_GamepadDialogContent_"].DialogHeader {
+  gap: 16px !important;
 }
 
 [class*="gamepaddialog_GamepadDialogContent_"] [class*="gamepaddialog_Field_"] {
@@ -419,22 +427,113 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 [class*="controllerconfiguratormapping_BindingOptionsButton_"] svg {
   width: 38px !important;
   height: 38px !important;
+  color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABzElEQVRYhe3Wv2oUURQG8N8aa8E0GivRwsJCEi3FmH+V+hIS7MXeuPsA+gJJJRZJJZqNhaBgUkYELYK1sJt6X+BY3LswRle8s66RMB9cZuacM+d8zDn3m9uKCP8jTh03gVFoiJWiIVaKhlgpGmKlOLHElrCJDxXbHrawMk7icYg9wwt8zc8dtBE4wHM8rZv89BjEvuAKHuMG3mX7Ivaz7aBu8laN00UH3/AJrzEzIq6HO7iOq3hYVCUiStZyRPQjohsRvYhY+01sJ8d0I+IwIpZKapUS28wFj9o3cvF+vj/qb0fEVkmt0uGfwW1pfobYwHncxc0cs17xr0hzd26SrRQRjyJiUHnuRcRsRFyKiMt59Sr+QUQ8Ka1TZ1ee/YVtKl9bmPazDE0pRGkrdzEvtWaIHUm/pnEGa9iu+Bex4EcR/uvEengv6dQQqzjEK3TRz7Yh9iWN6xdVqikX23mO2n8gFzv5neWSWnUEti0J7Ge8xIURcT3cw6x/ILDVdT8i3uT7ubz7BpUv042I1br5x/lXXsQ16QsuSD/sgTT8tzCHj3WT12llFUt4IAnsfLbtSm1cx9vjIjYxnNgT7MTQECtFQ6wUDbFSNMRK8R1RypTgMj/PVAAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="controllerconfiguratormapping_BindingOptionsButton_"].DialogButton {
 }
 
 [class*="gamepaddropdown_DropDownControlButton_"].DialogButton {
   padding: 0px !important;
+  min-width: 200px !important;
+  max-width: 400px !important;
+}
+
+/* OPTION HIGHLIGHT */
+[class*="gamepaddialog_Field_"][class*="gamepaddialog_HighlightOnFocus_"].gpfocus, [class*="gamepaddialog_Field_"][class*="gamepaddialog_HighlightOnFocus_"].gpfocuswithin, [class*="gamepaddialog_Field_"][class*="gamepaddialog_Clickable_"]:not([class*="gamepaddialog_Disabled_"]):hover {
+  /* background: rgba(var(--color-white), 0.1) !important; */
+  background: transparent !important;
+}
+
+[class*=gamepaddialog_Field_"][class*=gamepaddialog_Clickable_"]:not([class*="gamepaddialog_Disabled_"]):active {
+  background: rgba(var(--color-white), 0.2) !important;
+}
+
+/* DROPDOWN BUTTON */
+[class*="gamepaddialog_DropDownControlButtonContents_"] {
+  padding-left: 16px !important;
+}
+
+[class*="gamepaddialog_Button_"].DialogButton, [class*="gamepaddialog_Button_"].DialogButton:enabled, [class*="gamepaddialog_Button_"].DialogButton:active, [class*="gamepaddialog_Button_"].DialogButton:enabled:active:hover {
+  line-height: 38px !important;
+}
+
+[class*="gamepaddialog_Button_"] [class*="dropdownlabel_DropDownLabelTitle_"] {
+  line-height: 38px !important;
 }
 
 [class*="gamepaddialog_DropDownControlButtonContents_"] [class*="gamepaddialog_Spacer_"] {
-  min-width: 16px !important;
+  min-width: 8px !important;
 }
 
 [class*="gamepaddialog_DropDownControlButtonContents_"]>svg {
   height: 38px !important;
+  color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVRYhe3WQQ6CMBRF0YsrcCegm6E7QVag22NFdWB1ghJeWyIh705g8ENOfpqGJsbIHjv9G/Arw9QMUzNMzTA1w9QMUzsc7LzR7Kdc2AiEFXMhzcrlwgbgAvQLMwFo06xcyRkbgI7vuJ4XPGtbUH74R+abC8CVzE29ayr989+BKb13wK30g7VgAI/0LEZBXVjVDnfBbp5haoapGaZmmJphaoap7Rb2BHQqFv3+qvBdAAAAAElFTkSuQmCC') !important;
 }
 
 [class*="gamepaddialog_DropDownControlButtonContents_"] [class*="dropdownlabel_DropDownLabelContainer_"] {
   padding: 0px !important;
+}
+
+/* BINDING BUTTON */
+[class*="gamepaddialog_Button_"] {
+  padding: 0px !important;
+}
+
+[class*="controllerconfiguratormapping_BindingButton_"] {
+  padding: 0px !important;
+  min-width: 200px !important;
+  max-width: 400px !important;
+}
+
+/* BINDING NOT SET */
+[class*="DialogButton.controllerconfiguratormapping_AddBindingText_"][class*="controllerconfiguratormapping_AddBindingText_"] {
+  opacity: 1 !important;
+}
+
+/* DISABLED BUTTON */
+[class*="gamepaddialog_Button_"].DialogButton.Disabled, [class*="gamepaddialog_Button_"].DialogButton[disabled], [class*="gamepaddialog_Button_"].DialogButton:enabled.Disabled, [class*="gamepaddialog_Button_"].DialogButton:enabled[disabled], [class*="gamepaddialog_Button_"].DialogButton:active.Disabled, [class*="gamepaddialog_Button_"].DialogButton:active[disabled], [class*="gamepaddialog_Button_"].DialogButton:enabled:active:hover.Disabled, [class*="gamepaddialog_Button_"].DialogButton:enabled:active:hover[disabled] {
+  opacity: 1 !important;
+}
+
+/* CONTROLLER SETTINGS OPTIONS */
+[class*="controllerconfiguratormapping_SettingFieldDescription_"] {
+  color: rgb(var(--color-sub)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+}
+
+/* EDITABLE VALUE */
+[class*="gamepadslider_EditableValue_"], [class*="gamepadslider_FakeEditableValue_"] {
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+  border-radius: 0px !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+  min-width: 200px !important;
+  border-radius: 0px !important;
+  padding: 0px 16px !important;
+  line-height: 32px !important;
+}
+
+[class*="gamepadslider_EditableValue_"]:hover, [class*="gamepadslider_FakeEditableValue_"]:hover {
+  background: transparent !important;
+  outline: 2px solid rgba(var(--color-white), 0.65) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="gamepadslider_EditableValue_"]:active, [class*="gamepadslider_FakeEditableValue_"]:active {
+  background: rgba(var(--color-white), 0.3) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
 }
 
 /* INFO INTERSTITIAL */
@@ -475,6 +574,63 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   font-weight: 600 !important;
 }
 
+/* INTERSTITIAL DIVIDER */
+[class*="controllerconfigurator_interstitial_ActionSetDivider_"] {
+  width: 1px !important;
+  height: 130px !important;
+  margin: 0px 40px !important;
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+/* INTERSITITAL ACTIONSET HIGHLIGHT */
+[class*="controllerconfigurator_interstitial_ActionSetItem_"] [class*="controllerconfigurator_interstitial_Highlight_"] {
+  padding: 0px 16px !important;
+  margin-bottom: 0px !important;
+  border-radius: 30px !important;
+  line-height: 32px !important;
+  background-color: rgba(var(--color-primary), 0.5) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-smallest) !important;
+}
+
+[class*="controllerconfigurator_interstitial_ActionSetLayout_"] {
+  padding: 16px 0px !important;
+}
+
+[class*="controllerconfigurator_interstitial_ActionSetLayout_"] [class*="controllerconfigurator_interstitial_ActionSetRow_"] {
+  padding-right: 40px !important;
+  border-bottom: 1px solid rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="controllerconfigurator_interstitial_ActionSetLayout_"] [class*="controllerconfigurator_interstitial_LayerRow_"] {
+  margin-left: 40px !important;
+  border-bottom: 1px solid rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="controllerconfigurator_interstitial_ActionSetLayout_"] [class*="controllerconfigurator_interstitial_SetLabel_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+}
+
+[class*="controllerconfigurator_interstitial_ActionSetLayout_"] [class*="controllerconfigurator_interstitial_LayerRow2_"] {
+  border-bottom: 1px solid rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="controllerconfigurator_interstitial_ActionSetLayout_"] [class*="controllerconfigurator_interstitial_ActivatorLabel_"] {
+  width: 180px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-smaller) !important;
+}
+
+[class*="controllerconfigurator_interstitial_ActionSetLayout_"] [class*="controllerconfigurator_interstitial_ControlLabel_"] {
+  max-width: unset !important;
+  /* min-width: fit-content !important; */
+  min-width: 300px !important;
+}
+
 /* INTERSTITIAL IMAGE CONTAINER */
 [class*="controllerconfigurator_interstitial_InterstitialImageContainer_"] {
   margin: 0px !important;
@@ -485,11 +641,13 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   height: 38px !important;
   line-height: 38px !important;
   border-radius: 0px !important;
-  margin: 16px !important;
+  /* margin: 16px !important; */
+  margin: 16px 0px !important;
   color: rgb(var(--color-text)) !important;
   font-weight: 600 !important;
   font-size: var(--font-size-small) !important;
   background-color: rgba(var(--color-white), 0.2) !important;
+  min-width: 100% !important;
 }
 
 [class*="controllerconfigurator_interstitial_DescImage_"] {
@@ -547,11 +705,11 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 [class*="footer_BasicFooter_"] {
   background: transparent !important;
   min-height: 38px !important;
-  margin-bottom: 16px !important;
+  /* margin-bottom: 16px !important; */
 }
 
 [class*="footer_BasicFooter_"]:not([class*="footer_WithKeyboard_"]) {
-  padding: 0px 16px !important;
+  padding: 16px 16px !important;
 }
 
 [class*="footer_BasicFooter_"] [class*="footer_FooterLegend_"] {
