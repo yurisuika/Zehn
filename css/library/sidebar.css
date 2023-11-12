@@ -855,6 +855,8 @@ html:hover [class*="library_LeftListSizableContainer_"] {
 }
 
 [class*="gamelistentry_Container_"][class*="gamelistentry_Updating_"] {
+  font-size: var(--font-size-small) !important;
+  font-weight: 400 !important;
   color: rgb(var(--color-text)) !important;
 }
 
@@ -878,6 +880,56 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   color: rgb(var(--color-sub)) !important;
 }
 
+/* GAMES LIST CLOUD ERROR SYNC */
+[class*="gamelistentry_Container_"] [class*="gamelistentry_GameListEntryContainer_"] svg:not(.SVGIcon_FriendIcon) circle:not(.SVGIcon_ProgressCircle &) {
+  stroke: rgb(var(--color-white)) !important;
+  fill: rgb(var(--color-white)) !important;
+  stroke-width: 12px !important;
+  display: none !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+[class*="gamelistentry_Container_"] [class*="gamelistentry_GameListEntryContainer_"] svg:not(.SVGIcon_FriendIcon) {
+  /* display: none !important; */
+  opacity: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  width: 24px !important;
+}
+
+[class*="gamelistentry_Container_"] [class*="gamelistentry_GameListEntryContainer_"][class*="gamelistentry_CloudError_"] {
+  padding-left: 0px !important;
+}
+
+[class*="gamelistentry_Container_"][class*="gamelistentry_CloudOutOfDate_"] {
+  font-size: var(--font-size-small) !important;
+  font-weight: 400 !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="gamelistentry_Container_"][class*="gamelistentry_CloudError_"] {
+  font-size: var(--font-size-small) !important;
+  font-weight: 400 !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="gamelistentry_Container_"][class*="gamelistentry_Synchronizing_"] {
+  font-size: var(--font-size-small) !important;
+  font-weight: 400 !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"] [class*="gamelistentry_Synchronizing_"], [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"] [class*="gamelistentry_Synchronizing_"] {
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+}
+
+[class*="gamelistentry_Selected_"][class*="gamelistentry_Container_"] [class*="gamelistentry_CloudError_"], [class*="gamelistentry_Selected_"] [class*="gamelistentry_Container_"] [class*="gamelistentry_CloudError_"] {
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+}
+
 /* GAMES LIST FRIEND STATUS */
 [class*="gamelistentry_FriendIsPlaying_"] svg circle, [class*="gamelistentry_FriendIsPlaying_"] svg path {
   fill: rgb(var(--color-primary)) !important;
@@ -891,7 +943,6 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   border-radius: 50% !important;
   top: 9px !important;
   left: 9px !important;
-
 }
 
 [class*="gamelistentry_FriendStatusHover_"] {
