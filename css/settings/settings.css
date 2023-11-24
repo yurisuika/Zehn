@@ -354,6 +354,7 @@
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-small) !important;
   font-weight: 400 !important;
+  line-height: 32px !important;
 }
 
 [class*="gamepaddialog_Field_"] {
@@ -512,7 +513,7 @@
 [class*="settings_SettingsDialogBodyFade_"].DesktopUI, .DesktopUI [class*="settings_SettingsDialogBodyFade_"] {
   -webkit-mask-image: none !important;
   padding-top: 0px !important;
-  padding-bottom: 38px !important;
+  padding-bottom: 16px !important;
 }
 
 /* RESTART POPUP */
@@ -997,6 +998,19 @@
 }
 
 /* CONTROLLER */
+[class*="gamepadtabbedpage_TabIcon_"] {
+  width: 32px !important;
+  height: 32px !important;
+  background-size: 32px 32px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABTElEQVRYhe3VsU5UURAG4G8NhcECeAILEyA2dAZva2uBdljyDL4EPoTV1rCtBXa722IDQuULGI0FbjcW5272hux6Z41kA7mTTHFn5sz8/5w5c3sRYZXyaKXVOwAdgA5AB+AfALzHCGeoGvaqto3rmLT0lljFYzzHBdaxjce1b4Jr3GAXV9hPZY2IjFYRMYmID4nY4zq2yuTOduC0Zr8zxx54e8t+ia9405Z4LVMdL/Bpjn1RgTFepzIn2nQYEb+TV9XUnxHx7n9cwQhPsJdiNJNz9NrOZZ7hM/Qb3xVOamDjWkfKPDSfZh9P25JnOhAKk2nxAX7gu0Jg6t/EljKQwzln50pmCCdmzAYK24MFsSdKJ6b+SVvyTAe+YEOZg+Ffik9lgJfKUvqlZQaye+AzvuEoE4yPyv2/agtcZhXfidy7v2EHoAPQAXh4AP4A8ogMSba+8jcAAAAASUVORK5CYII=') !important;
+}
+
+[class*="gamepadtabbedpage_TabIcon_"] svg path {
+  fill: transparent !important;
+}
+
 [class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] svg:not([class*="controllersettings_Rumble_"]) {
   height: 24px !important;
   width: 24px !important;
@@ -1046,15 +1060,31 @@
 
 [class*="settings_BuiltInLayoutButton_"].DialogButton {
   /* width: 38px !important; */
-  height: 38px !important;
+  height: 32px !important;
   color: transparent !important;
+}
+
+[class*="settings_BuiltInLayoutButton_"].DialogButton svg {
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABzElEQVRYhe3Wv2oUURQG8N8aa8E0GivRwsJCEi3FmH+V+hIS7MXeuPsA+gJJJRZJJZqNhaBgUkYELYK1sJt6X+BY3LswRle8s66RMB9cZuacM+d8zDn3m9uKCP8jTh03gVFoiJWiIVaKhlgpGmKlOLHElrCJDxXbHrawMk7icYg9wwt8zc8dtBE4wHM8rZv89BjEvuAKHuMG3mX7Ivaz7aBu8laN00UH3/AJrzEzIq6HO7iOq3hYVCUiStZyRPQjohsRvYhY+01sJ8d0I+IwIpZKapUS28wFj9o3cvF+vj/qb0fEVkmt0uGfwW1pfobYwHncxc0cs17xr0hzd26SrRQRjyJiUHnuRcRsRFyKiMt59Sr+QUQ8Ka1TZ1ee/YVtKl9bmPazDE0pRGkrdzEvtWaIHUm/pnEGa9iu+Bex4EcR/uvEengv6dQQqzjEK3TRz7Yh9iWN6xdVqikX23mO2n8gFzv5neWSWnUEti0J7Ge8xIURcT3cw6x/ILDVdT8i3uT7ubz7BpUv042I1br5x/lXXsQ16QsuSD/sgTT8tzCHj3WT12llFUt4IAnsfLbtSm1cx9vjIjYxnNgT7MTQECtFQ6wUDbFSNMRK8R1RypTgMj/PVAAAAABJRU5ErkJggg==') !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABtElEQVRYhe3Wv2oUURQG8F+MtWAajZVoYWEhiZZizL9KfQkJ9mJv3DyAvkBSiUVSiWZjISiYlBFBi2At7KbeF/gs5i6MUbOzISEoe+Ay95575rvfnH93xpI4TTlzqqePCIwIjAgckcA81vGpptvBBhZPmsALvML3sl5BC8EeXuL5MIBnhyTwDdfwFLfwoejnsFt0e8MAjjVsxSv4gS94i8m/2HVwDzdxHY8HIicZNBaSdJO0k3SSLB9iu1Js2kn2k8wPwm9CYL0AH9SvlUO6ZX5wv5VkYxB+kyScxF1VfPuyhou4j9vFZrW2v6jKiwvHEQJJniTp1dadJFNJriS5Wkantt9L8qwJdtMqOP8H3Xh5jmHC7yU9roE0CcE2ZlQu7cuWqv4ncA7L2Kztz2HWr83qyAQ6+Kiq874sYR9v0Ea36Pqyq+oR3YHoQ5ThZolzq0EZbpV3FgbhN21ELVUj+orXuHSItx5gyjE2ovp4mORdmU+XbO/VvrSdZGkYzGHvgsu4UTwyq7p4eqokvINpfB4GsGkI6jKPR6pGNFN02yr3r+L9SRM4Vvkn/4hGBEYE/i8CPwHyVDsu32fdmgAAAABJRU5ErkJggg==') !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+[class*="settings_BuiltInLayoutButton_"].DialogButton svg path,
+[class*="settings_BuiltInLayoutButton_"].DialogButton:hover svg path,
+[class*="settings_BuiltInLayoutButton_"].DialogButton:active svg path {
+  fill: transparent !important;
 }
 
 [class*="settings_BuiltInLayoutButtons_"] {
   gap: 16px !important;
+}
+
+button[class*="settings_BuiltInLayoutButton_"].DialogButton {
+  width: 32px !important;
+  min-height: 32px !important;
 }
 
 /* VOICE */
@@ -1192,6 +1222,9 @@
 /* SECURITY */
 [class*="desktopsecuritysettings_EntryValue_"] {
   color: rgb(var(--color-sub)) !important;
+  line-height: 32px !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
 }
 
 /* VOICE STILL ACTIVE */

@@ -443,7 +443,7 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-small) !important;
   font-weight: 400 !important;
-  gap: 16px !important;
+  gap: 0px !important;
 }
 
 [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchInput_"] {
@@ -459,6 +459,7 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   /* JUST TEXT INPUT, WITHOUT THE TAGS */
   /* margin-left: 32px !important; */
   margin-left: 16px !important;
+  margin-right: 16px !important;
 }
 
 [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchInput_"] .DialogInput_Wrapper .DialogInput::placeholder {
@@ -493,23 +494,50 @@ html:hover [class*="library_LeftListSizableContainer_"] {
 }
 
 [class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"] {
-  width: 14px !important;
-  height: 14px !important;
-  right: 9px !important;
-  top: 9px !important;
+  width: 32px !important;
+  height: 32px !important;
+  right: 0px !important;
+  top: 0px !important;
+  background: transparent !important;
+  color: rgb(var(--color-text)) !important;
+  background-size: 32px 32px !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+  background-position: right !important;
+  background-repeat: no-repeat !important;
+}
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction:hover, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction:active, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+  color: rgb(var(--color-text)) !important;
 }
 
 [class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction svg, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"] svg {
-  width: 14px !important;
-  height: 14px !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: auto !important;
+  position: absolute !important;
+  right: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  display: none !important;
 }
 
 [class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction svg line, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"] svg line {
+  stroke: rgba(var(--color-white), 0.4) !important;
+}
+
+[class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction:hover svg line, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"]:hover svg line, [class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction:active svg line, [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"]:active svg line {
   stroke: rgb(var(--color-white)) !important;
 }
 
 [class*="gamelistsearchbar_Container_"] .DialogInput_ClearAction:not(:hover), [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_SearchFilterInputClear_"]:not(:hover) {
-  opacity: 0.4 !important;
+  opacity: 1 !important;
 }
 
 
@@ -678,12 +706,44 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   background-color: rgba(var(--color-white), 0.1) !important;
   border-radius: 0px !important;
   margin: 0px !important;
-  padding: 0px 8px !important;
+  padding: 0px 0px 0px 8px !important;
   font-size: var(--font-size-small) !important;
   font-weight: 400 !important;
   color: rgb(var(--color-text)) !important;
   line-height: 32px;
   height: 32px !important;
+  width: calc(100% - 56px) !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] > div:nth-of-type(3) {
+  width: calc(100% - 32px) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] > div:nth-of-type(4) {
+  margin-left: auto !important;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] svg {
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 1 !important;
+  margin: 10px !important;
+  right: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] svg line {
+  stroke: rgba(var(--color-white), 0.4) !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"]:hover svg line, [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"]:active svg line {
+  stroke: rgb(var(--color-white)) !important;
 }
 
 [class*="gamelistsearchbar_SearchFilterInput_"][class*="gamelistsearchbar_Disabled_"] [class*="gamelistsearchbar_FilterTag_"] {
@@ -708,6 +768,32 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   color: rgb(var(--color-text)) !important;
   /* margin-left: auto !important;
   margin-right: auto !important; */
+}
+
+[class*="gamelist_NoSearchResultsContainer_"] {
+  margin: 16px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--font-size-small) !important;
+  font-weight: 400 !important;
+}
+
+[class*="gamelist_NoResultsTitle_"] {
+  margin-top: 0px !important;
+}
+
+[class*="gamelist_NoResultsLink_"] {
+  color: rgb(var(--color-primary)) !important;
+  font-size: var(--font-size-small) !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+}
+
+[class*="gamelist_NoResultsLink_"]:hover {
+  color: rgb(var(--color-sub)) !important;
+}
+
+[class*="gamelist_NoResultsLink_"]:active {
+  color: rgb(var(--color-disabled)) !important;
 }
 
 /* GAMES LIST SECTION */
