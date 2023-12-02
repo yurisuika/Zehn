@@ -21,6 +21,7 @@
 
 [class*="header_Header_"]::before {
   background-color: transparent !important;
+  backdrop-filter: none !important;
 }
 
 /* HEADER ITEM */
@@ -66,7 +67,7 @@
 }
 
 /* SEARCH CONTAINER */
-.FlexGrowUniversalSearch [class*="searchbar_SearchContainer_"] {
+.FlexGrowUniversalSearch [class*="searchbar_SearchAndTitleContainer_"] {
   padding: 16px 0px 16px 16px !important;
   line-height: 32px !important;
   top: 16px !important;
@@ -74,7 +75,11 @@
   max-width: 200px !important;
 }
 
-[class*="searchbar_SearchContainer_"] > div {
+.FlexGrowUniversalSearch [class*="searchbar_SearchAndTitleContainer_"][class*="searchbar_ShowingTitle_"] {
+  padding: 16px 0px 16px 16px !important;
+}
+
+[class*="searchbar_SearchAndTitleContainer_"] > div {
   width: calc(200px - 16px) !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
@@ -82,23 +87,23 @@
   white-space: nowrap !important;
 }
 
-[class*="searchbar_SearchContainer_"] {
+[class*="searchbar_SearchAndTitleContainer_"] {
   color: rgb(var(--color-text)) !important;
   font-weight: 600 !important;
   font-size: var(--font-size-small) !important;
   /* display: none !important; */
 }
 
-[class*="searchbar_SearchContainer_"].gpfocuswithin, [class*="searchbar_SearchContainer_"][class*="searchbar_ForceExpanded_"], [class*="searchbar_SearchContainer_"]:hover {
+[class*="searchbar_SearchAndTitleContainer_"].gpfocuswithin, [class*="searchbar_SearchAndTitleContainer_"][class*="searchbar_ForceExpanded_"], [class*="searchbar_SearchAndTitleContainer_"]:hover {
   color: rgb(var(--color-text)) !important;
 }
 
-[class*="searchbar_SearchContainer_"]:not([class*="searchbar_VR_"]):hover {
+[class*="searchbar_SearchAndTitleContainer_"]:not([class*="searchbar_VR_"]):hover {
   /* background-color: rgba(var(--color-white), 0.1) !important; */
   background-color: transparent !important;
 }
 
-[class*="searchbar_SearchContainer_"]:not([class*="searchbar_VR_"]):active {
+[class*="searchbar_SearchAndTitleContainer_"]:not([class*="searchbar_VR_"]):active {
   /* background-color: rgba(var(--color-white), 0.2) !important; */
   background-color: transparent !important;
 }
@@ -876,6 +881,10 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   background: transparent !important;
   min-height: 38px !important;
   /* margin-bottom: 16px !important; */
+  border-image: url() !important;
+  border-top: unset !important;
+  backdrop-filter: none !important;
+  position: relative !important;
 }
 
 [class*="footer_BasicFooter_"]:not([class*="footer_WithKeyboard_"]) {
@@ -957,7 +966,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 /* CONTROLLER SETTINGS */
 [class*="controllerconfiguratormapping_RightColumnContainer_"] {
-  height: 100% !important;
+  height: auto !important;
   margin-top: calc(32px + 16px + 38px) !important;
   padding-left: 0px !important;
   margin-left: 16px !important;
@@ -1006,4 +1015,9 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 [class*="controllerconfiguratormapping_SettingMaxWidth_"] {
   max-width: 100% !important;
+}
+
+/* SETTING DROPDOWN */
+[class*="gamepadcontextmenu_contextMenuItem_"] {
+  background: unset !important;
 }
