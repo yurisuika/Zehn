@@ -288,15 +288,16 @@ table, th, td, tbody, thead, tr {
   font-size: var(--font-size-smaller) !important;
   line-height: unset !important;
   flex-shrink: 10 !important;
-  margin-left: 4px !important;
+  margin-left: 0px !important;
 }
 
 [class*="personanameandstatus_richPresenceLabel_"]:nth-child(2)::before {
-  content: "(" !important;
+  content: "\00a0(" !important;
 }
 
 [class*="personanameandstatus_richPresenceLabel_"]:nth-child(2)::after {
   content: ")" !important;
+  margin-left: -2pt !important; /* FIX EXTRA SPACE */
 }
 
 .ingame.awayOrSnooze [class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_richPresenceLabel_"] a, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:hover, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:active, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:visited {
@@ -312,6 +313,21 @@ table, th, td, tbody, thead, tr {
 }
 
 /* STATUS SNOOZE */
+[class*="friendsnooze_SnoozeContainer_"] {
+  margin-left: 0px !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"]::after {
+  content: "\00a0◒" !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 16px !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"] [class*="friendsnooze_SnoozeZ_"] {
+  display: none !important;
+}
+
 [class*="friendsnooze_SnoozeContainer_"].in-game [class*="friendsnooze_SnoozeZ_"] {
   color: rgb(var(--color-ingame)) !important;
 }
@@ -331,6 +347,28 @@ table, th, td, tbody, thead, tr {
 /* AVATAR STATUS BAR */
 [class*="steamavatar_avatarHolder_"] [class*="steamavatar_avatarStatus_"].right, [class*="steamavatar_avatarHolder_"] [class*="steamavatar_avatarStatus_"].bottom {
   display: none !important;
+}
+
+[class*="standardtemplates_StandardTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_AllNotificationsTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_StandardTemplateDesktop_"] [class*="standardtemplates_AvatarStatus_"] {
+  /* height: 44px !important; */
+  /* display: none !important; */
+  height: 44px !important;
+  width: 44px !important;
+  border-radius: var(--option-round-avatars) !important;
+  position: absolute !important;
+  z-index: -1 !important;
+}
+
+[class*="standardtemplates_AvatarStatus_"].ingame, [class*="standardtemplates_AvatarStatus_"].in-game {
+  background-color: rgb(var(--color-ingame)) !important;
+}
+
+[class*="standardtemplates_AvatarStatus_"].online {
+  background-color: rgb(var(--color-online)) !important;
+}
+
+[class*="standardtemplates_AvatarStatus_"].offline {
+  background-color: rgb(var(--color-offline)) !important;
 }
 
 /* AVATAR */
@@ -373,11 +411,31 @@ table, th, td, tbody, thead, tr {
   border: 1px solid rgb(var(--color-offline)) !important;
 }
 
+/* OTHER AVATAR */
+[class*="steamtemplates_StandardLogoDimensions_"] {
+  border-radius: var(--option-round-avatars) !important;
+  margin: 1px !important;
+  height: 42px !important;
+  width: 42px !important;
+}
+
+[class*="standardtemplates_AllNotificationsTemplate_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_StandardTemplateDesktop_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_PinnedTemplateWeb_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_PinnedTemplateDesktop_"] [class*="standardtemplates_StandardLogoDimensions_"] {
+  height: 44px !important;
+  width: 44px !important;
+}
+
 /* STATUS ICONS */
 [class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_MobilePhoneIcon_"], [class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_VRIcon_"],
 [class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_BigPictureIcon_"] {
   margin-top: 0px !important;
   margin-left: 0px !important;
+  width: unset !important;
+  height: unset !important;
+  line-height: 16px !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_VR, [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_MobilePhone, [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_BigPicture {
+  display: none !important;
 }
 
 [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_VR path, [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_MobilePhone path, [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_BigPicture path {
@@ -394,6 +452,27 @@ table, th, td, tbody, thead, tr {
 
 [class*="personastatusicons_PersonaStatusIcon_"].online .SVGIcon_Button path {
   fill: rgb(var(--color-online)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_MobilePhoneIcon_"]::after {
+  content: "\00a0▯" !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 16px !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_VRIcon_"]::after {
+  content: "\00a0▽" !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 16px !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_BigPictureIcon_"]::after {
+  content: "\00a0▭" !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 16px !important;
 }
 
 /* STATUS CONTEXT CHEVRON */
