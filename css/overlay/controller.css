@@ -7,6 +7,14 @@
   background: transparent !important;
 }
 
+/* OVERLAY */
+[class*="gamepadui_GamepadDialogOverlay_"] .ModalOverlayBackground {
+  /* background: rgba(var(--color-black), 0.8) !important; */
+  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
+  background: rgb(var(--color-settings)) !important;
+  backdrop-filter: none !important;
+}
+
 /* HEADER */
 .BasicUI [class*="header_Header_"] {
   color: rgb(var(--color-text)) !important;
@@ -112,6 +120,7 @@
 [class*="controllerconfigurator_ControllerConfiguratorMain_"] {
   background: transparent !important;
   margin: 0px auto !important;
+  gap: 16px !important;
 }
 
 /* TOP SECTION */
@@ -125,6 +134,7 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   margin-top: 38px !important;
+  gap: 16px !important;
 }
 
 /* TOP HEADER */
@@ -134,7 +144,85 @@
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
   font-size: var(--font-size-largest) !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
+}
+
+/* CONTROLLER SUPPORT INFO */
+[class*="controllerconfigurator_ControllerSupportInfoSection_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-large) !important;
+  line-height: 22px !important;
+  margin-bottom: 0px !important;
+  gap: 16px !important;
+}
+
+[class*="controllerconfigurator_ControllerSupportInfoSection_"] [class*="controllerconfigurator_SupportTitle_"] {
+  margin-top: 0px !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 32px !important;
+}
+
+[class*="controllerconfigurator_ControllerSupportInfoSection_"] [class*="controllerconfigurator_SupportLabel_"] {
+  color: rgb(var(--color-sub)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 16px !important;
+  margin-top: 0px !important;
+}
+
+[class*="controllerconfigurator_ControllerImageRow_"] {
+  gap: 16px !important;
+}
+
+[class*="controllerconfigurator_ControllerImageRow_"] {
+  height: 50px !important;
+  place-content: center !important;
+  padding-top: 16px !important;
+}
+
+[class*="controllerconfigurator_ControllerImageRow_"][class*="controllerconfigurator_HasADevice_"] {
+  height: 78px !important;
+}
+
+[class*="controllerconfigurator_ControllerInfoSVG_"] {
+  opacity: 1 !important;
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+[class*="controllerconfigurator_ControllerSupportImage_"][class*="controllerconfigurator_Checked_"] [class*="controllerconfigurator_ControllerInfoSVG_"] {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+[class*="controllerconfigurator_ControllerSupportImage_"] [class*="controllerconfigurator_Checkmark_"] {
+  color: rgb(var(--color-primary)) !important;
+  height: 24px !important;
+  top: -16px !important;
+}
+
+[class*="controllerconfigurator_ControllerSupportImage_"] [class*="controllerconfigurator_YourControllerLabel_"] {
+  border-radius: 5px !important;
+  color: rgb(var(--color-black)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-smaller) !important;
+  background: rgb(var(--color-primary)) !important;
+  height: 16px !important;
+  line-height: 16px !important;
+  padding: 0px 8px !important;
+  transform: translateX(-50%) translateX(27px) translateY(62px) !important;
+}
+
+[class*="controllerconfigurator_ControllerSupportImage_"] [class*="controllerconfigurator_YourControllerLabel_"]:after {
+  bottom: 100% !important;
+  left: 50% !important;
+  border: solid transparent !important;
+  border-color: transparent !important;
+  border-bottom-color: rgb(var(--color-primary)) !important;
+  border-width: 8px !important;
+  margin-left: -8px !important;
 }
 
 /* HELP BUTTON */
@@ -161,7 +249,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 /* CURRENT CONFIG */
 [class*="controllerconfigurator_CurrentConfigurationButton_"].DialogButton._DialogLayout.Secondary[class*="gamepaddialog_Button_"].Focusable {
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
   padding: 0px !important;
 }
 
@@ -249,7 +337,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 /* ACTION BUTTONS */
 [class*="controllerconfigurator_ControllerConfiguratorMain_"] [class*="controllerconfigurator_ControllerConfigurationActionButtons_"] {
   margin-top: 0px !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
   gap: 16px !important;
 }
 
@@ -713,7 +801,8 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 /* INFO INTERSTITIAL */
 [class*="controllerconfigurator_interstitial_ConfiguratorInterstitialContainer_"] {
-  background-color: rgb(var(--color-settings)) !important;
+  background-color: transparent !important;
+  background: transparent !important;
   padding: 0px 10% !important;
 }
 
@@ -1023,7 +1112,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 }
 
 [class*="controllerconfiguratormapping_FlexFlowRow_"] > div:first-of-type {
-  width: 32px !important;
+  width: auto !important;
   height: 32px !important;
 }
 
@@ -1036,6 +1125,10 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   margin-right: auto !important;
   height: 100% !important;
   max-height: 100% !important;
+}
+
+[class*="controllerconfiguratorsummary_GlyphAndLabel_"] {
+  padding-left: 8px !important;
 }
 
 /* CONTROLLER SETTINGS ACTIVATOR */
@@ -1064,6 +1157,17 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 [class*="gamepadcontextmenu_SubMenu_"]:hover, [class*="gamepadcontextmenu_SubMenu_"]:active {
   background-color: rgb(var(--color-primary)) !important;
+}
+
+[class*="dropdownlabel_DropDownLabelIconContainer_"] {
+  padding-right: unset !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
+
+svg[class*="controllerconfiguratormapping_DropDownStarSVG_"] {
+  width: 32px !important;
+  margin-top: 0px !important;
 }
 
 /* BIND TABS */
@@ -1152,12 +1256,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   margin-right: 0px !important;
 }
 
-[class*="controllerconfiguratorchoosebinding_SelectButton_"], [class*="controllerconfiguratorchoosebinding_StartButton_"] {
-  width: 140px !important;
-  padding: 0px !important;
-}
-
-[class*="controllerconfiguratorchoosebinding_TriggerButton_"], [class*="controllerconfiguratorchoosebinding_BumperButton_"] {
+[class*="controllerconfiguratorchoosebinding_LEDButton_"], [class*="controllerconfiguratorchoosebinding_SelectButton_"], [class*="controllerconfiguratorchoosebinding_StartButton_"], [class*="controllerconfiguratorchoosebinding_TriggerButton_"], [class*="controllerconfiguratorchoosebinding_BumperButton_"] {
   width: 140px !important;
   padding: 0px !important;
 }
@@ -1209,14 +1308,30 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   margin: 5px !important;
 }
 
+[class*="controllerconfiguratorchoosebinding_CardinalButtonGroupButton_"] [class*="controllerconfiguratorchoosebinding_KeyboardKeyLabel_"]:hover {
+  color: rgb(var(--color-sub)) !important;
+}
+
+[class*="controllerconfiguratorchoosebinding_CardinalButtonGroupButton_"] [class*="controllerconfiguratorchoosebinding_KeyboardKeyLabel_"]:hover {
+  color: rgb(var(--color-disabled)) !important;
+}
+
 [class*="controllerconfiguratorchoosebinding_CardinalButtonGroupButton_"][class*="controllerconfiguratorchoosebinding_SelectedBinding_"] [class*="controllerconfiguratorchoosebinding_KeyboardKeyLabel_"] {
   color: rgb(var(--color-primary)) !important;
+}
+
+[class*="controllerconfiguratorchoosebinding_CardinalButtonGroupButton_"][class*="controllerconfiguratorchoosebinding_SelectedBinding_"] [class*="controllerconfiguratorchoosebinding_KeyboardKeyLabel_"]:hover {
+  color: rgb(var(--color-primary)) !important;
+}
+
+[class*="controllerconfiguratorchoosebinding_CardinalButtonGroupButton_"][class*="controllerconfiguratorchoosebinding_SelectedBinding_"] [class*="controllerconfiguratorchoosebinding_KeyboardKeyLabel_"]:active {
+  color: rgb(var(--color-sub)) !important;
 }
 
 [class*="controllerconfiguratorchoosebinding_CardinalButtonGroup_"][class*="controllerconfiguratorchoosebinding_Diamond_"]::before {
   border: 1px solid rgb(var(--color-white)) !important;
   border-radius: 25% !important;
-  transform: rotate(45deg) scale(0.8071) !important;
+  transform: rotate(45deg) scale(0.8) !important;
 }
 
 [class*="controllerconfiguratorchoosebinding_CardinalButtonGroup_"][class*="controllerconfiguratorchoosebinding_Circle_"]::before {
@@ -1237,6 +1352,15 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   height: 110px !important;
   margin-left: 15px !important;
   margin-right: 15px !important;
+}
+
+[class*="controllerconfiguratorchoosebinding_ControllerActionKey_"][class*="controllerconfiguratorchoosebinding_Disabled_"] {
+  background-color: rgba(var(--color-white), 0.2) !important;
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+[class*="controllerconfiguratorchoosebinding_ControllerActionKey_"][class*="controllerconfiguratorchoosebinding_Disabled_"]:hover, [class*="controllerconfiguratorchoosebinding_ControllerActionKey_"][class*="controllerconfiguratorchoosebinding_Disabled_"]:active {
+  outline: unset !important;
 }
 
 /* MOUSE */
