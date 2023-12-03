@@ -32,13 +32,22 @@
   backdrop-filter: none !important;
 }
 
+[class*="gamepadui_SteamUIPopupWindowBody_"][class*="gamepadui_GamepadUIPopupWindowBody_"] [class*="steamdesktopoverlay_OverlayPopup_"] [class*="steamdesktopoverlay_WindowControls_"] {
+  margin-right: calc(38px * 2) !important;
+}
+
+[class*="gamepadui_SteamUIPopupWindowBody_"] [class*="steamdesktopoverlay_OverlayPopup_"] .title-bar-actions.window-controls {
+  transform: translateX(calc(38px * 2)) !important;
+}
+
 /* HEADER ITEM */
 [class*="header_HeaderItem_"] {
   padding: 0px !important;
   /* margin-right: 38px !important; */
   /* margin-top: 38px !important; */
-  top: 38px !important;
+  /* top: 38px !important; */
   position: absolute !important;
+  right: 38px !important;
 }
 
 [class*="header_HeaderItem_"][class*="header_UpdatesIcon_"]:hover {
@@ -525,6 +534,12 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   padding: 0px !important;
   /* margin-bottom: 16px !important; */
   margin-bottom: 0px !important;
+}
+
+.DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth > div > .Panel {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 [class*="gamepadpage_GamepadPage_"][class*="gamepadpage_DialogBackground_"] {
@@ -1522,6 +1537,18 @@ svg[class*="controllerconfiguratormapping_DropDownStarSVG_"] {
 /* SYSTEM */
 
 /* EXPORT LAYOUT */
+[class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth.Panel > form {
+  gap: 16px !important;
+}
+
+[class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth.Panel > form > .DialogHeader {
+  margin-bottom: 0px !important;
+}
+
+[class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth.Panel > form > .DialogFooter {
+  padding-top: 0px !important;
+}
+
 [class*="gamepaddialog_GamepadDialogContent_"].GenericConfirmDialog {
   background-color: rgb(var(--color-settings)) !important;
   border: 1px solid rgb(var(--color-primary)) !important;
@@ -1534,7 +1561,7 @@ svg[class*="controllerconfiguratormapping_DropDownStarSVG_"] {
 }
 
 .DialogContent[class*="gamepadpagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_Field_"][class*="gamepaddialog_ExtraPaddingOnChildrenBelow_"] [class*="gamepaddialog_FieldLabelRow_"] {
-  margin-top: 16px !important;
+  /* margin-top: 16px !important; */
 }
 
 /* LAYOUT DETAILS */
