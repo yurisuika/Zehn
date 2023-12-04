@@ -402,6 +402,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 [class*="controllerconfiguratorsummary_ControlsListSection_"] {
   font-size: var(--font-size-medium) !important;
+  max-height: fit-content !important;
 }
 
 [class*="controllerconfiguratorsummary_ControllerConfiguratorSummary_"] [class*="controllerconfiguratorsummary_Left_"] {
@@ -519,6 +520,21 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   outline-offset: -2px !important;
 }
 
+[class*="controllerconfiguratorsummary_ControllerInputDisplay_"] [class*="controllerconfiguratorsummary_ShrinkList_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-medium) !important;
+  line-height: 38px !important;
+}
+
+[class*="controllerconfiguratorsummary_ControllerInputDisplay_"] [class*="controllerconfiguratorsummary_ActivatorText_"] {
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="controllerconfiguratorsummary_ControlsListSection_"]:hover [class*="marquee_Container_"][class*="marquee_Marquee_"] [class*="marquee_Content_"], [class*="controllerconfiguratorsummary_ControlsListSection_"]:active [class*="marquee_Container_"][class*="marquee_Marquee_"] [class*="marquee_Content_"] {
+  animation-play-state: running !important;
+}
+
 /* CONTROLLER IMAGE */
 .controller_xboxone [class*="controllerconfiguratorsummary_BackgroundController_"] {
   filter: saturate(0) !important;
@@ -598,6 +614,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   max-width: calc(100% - 232px) !important;
   margin: 0px 16px !important;
   margin-top: 38px !important;
+  padding-top: 16px !important;
 }
 
 .DialogContent[class*="gamepadpagedsettings_PagedSettingsDialog_PageContent_"] {
@@ -811,6 +828,42 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   content: "" !important;
   left: -46px !important;
   background-color: rgb(var(--color-primary)) !important;
+}
+
+/* SIDEBAR ACTION SET INDICATORS */
+[class*="controllerconfiguratoractionsetselector_ActionSetNameOverIndicators_"] {
+  padding-top: 0px !important;
+}
+
+[class*="controllerconfiguratoractionsetselector_ActionSetNameAndHeader_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 16px !important;
+}
+
+[class*="controllerconfiguratoractionsetselector_ActionSetHeader_"] {
+  color: rgb(var(--color-sub)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-smallest) !important;
+  line-height: 16px !important;
+  text-transform: uppercase !important;
+}
+
+[class*="controllerconfiguratoractionsetselector_ActionSetName_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 16px !important;
+}
+
+[class*="controllerconfiguratoractionsetselector_ActionSetGlyph_"] {
+  padding-top: 8px !important;
+}
+
+[class*="controllerconfiguratoractionsetselector_ActionSetSelectorDisabled_"] {
+  opacity: 1 !important;
+  filter: brightness(0.5) saturate(0) !important;
 }
 
 /* INFO INTERSTITIAL */
@@ -1535,6 +1588,84 @@ svg[class*="controllerconfiguratormapping_DropDownStarSVG_"] {
 }
 
 /* SYSTEM */
+
+/* VIRTUAL MENU */
+.DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth > .Panel {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth > .Panel > .DialogHeader {
+  margin-bottom: 0px !important;
+}
+
+.DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth > .Panel > .DialogBody {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[class*="controllerconfigurator_AddSetButtonContainer_"] {
+  margin-top: 0px !important;
+  gap: 16px !important;
+}
+
+/* EDIT VIRTUAL MENU */
+[class*="controllerconfiguratoriconpicker_BindingIcon_"] {
+  padding: 8px !important;
+  /* background-color: rgba(var(--color-white), 0.2) !important; */
+  background-color: transparent !important;
+}
+
+[class*="controllerconfiguratoriconpicker_BindingIcon_"][class*="controllerconfiguratoriconpicker_Placeholder_"] {
+  padding: 0px !important;
+}
+
+[class*="controllerconfiguratoriconpicker_BindingIcon_"][class*="controllerconfiguratoriconpicker_Placeholder_"], .gpfocus [class*="controllerconfiguratoriconpicker_BindingIcon_"][class*="controllerconfiguratoriconpicker_Placeholder_"] {
+  height: 32px !important;
+}
+
+[class*="controllerconfiguratoriconpicker_BindingIcon_"][class*="controllerconfiguratoriconpicker_Placeholder_"], .gpfocus [class*="controllerconfiguratoriconpicker_BindingIcon_"][class*="controllerconfiguratoriconpicker_Placeholder_"] {
+  color: rgb(var(--color-white)) !important;
+}
+
+button.DialogButton[class*="controllerconfiguratormapping_AddBindingText_"][class*="controllerconfiguratormapping_AddBindingText_"] {
+  opacity: 1 !important;
+}
+
+/* ADD VIRTUAL MENU */
+[class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelIconContainer_"] {
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+[class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"]:nth-child(1) [class*="dropdownlabel_DropDownLabelIconContainer_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABQElEQVRYhe2UMUsDURCEv1ilNgo2VlbBWpDYxASLgCAErCz8czGQE9IoliKo+QlJZXGmEUT/wljcHqzh4O5ijkN4Aw9uZ+ftzsG+bUiiTmzV2j0YCAaCgTUNDIAHYO64uXGDqg08AlPgG2g7vm3c1DSF0SixCb+sSQf4BAQ0LJd+7wIzYBtobdLAK3AA7Dkuy0CKD+ANOMmtLCnv9JSg6bgzSbcunki6cnHT7vTz6hcx8CwpcvGppJmkruMOJT1JunZcZHf/bCDWb0SSjjJ0O5LuVrRxXv0yQ1gJ/sUiikmmPD0ToJuh2wfuV7RxbvU1hlA2hBeO60h6kXRZxRD2ral/hseSblw8lnTu4vQZ9jY1hJUtotpXcZlX0AKWwDswysiPLLcs2rysAYAeMCT5w4XjF8YNTVMYYREFA8FAMPADsjtBaF7GhZMAAAAASUVORK5CYII=') !important;
+}
+
+[class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"]:nth-child(2) [class*="dropdownlabel_DropDownLabelIconContainer_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAYElEQVRYhe2VSwpAIQwDq3j/K9e9P6LwCA8m62AHYtOSmeFUtU4HAAAAIqIJnlNRlAvPM8DukXGo4plkjwAAO4D6CZWT+XRWFYDjGl14lvpFBBTRpwLADkAR2SMAAAAAOpuLD00ssxpkAAAAAElFTkSuQmCC') !important;
+}
+
+[class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"]:nth-child(3) [class*="dropdownlabel_DropDownLabelIconContainer_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAVUlEQVRYhe3XMQoAIAxD0VS8/5XrbhVqQRz8GYPow8Giubtepj09HQAAAJJ6Ys38UFixXyZ7A7bZ6LQvA64FAAAAAAAAyIxjKY7Yah9i/AsAAPgeMAANYgxAmuasWwAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelIconContainer_"] svg {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+[class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelIconContainer_"] svg path, [class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelIconContainer_"] svg rect {
+  /* display: none !important; */
+  fill: transparent !important;
+}
+
+[class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelTextColumn_"] [class*="dropdownlabel_DropDownLabelTitle_"], [class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelTextColumn_"] [class*="dropdownlabel_DropDownLabelDescription_"] {
+  /* line-height: 32px !important; */
+}
 
 /* EXPORT LAYOUT */
 [class*="gamepaddialog_GamepadDialogContent_InnerWidth_"].DialogContent_InnerWidth.Panel > form {
