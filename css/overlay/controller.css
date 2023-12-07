@@ -382,7 +382,8 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 }
 
 [class*="gamepaddialog_Field_"][class*="gamepaddialog_StandardPadding_"] {
-  --field-row-children-spacing: 16px;
+  --field-row-children-spacing: 16px !important;
+  padding-left: calc((var(--indent-level) * 16px) - 16px) !important;
 }
 
 /* CONTROLLER SUMMARY */
@@ -594,6 +595,23 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   transform: none !important;
 }
 
+/* TAB ENTRIES */
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(1) > [class*="pagedsettings_PageListItem_Icon_"] [class*="controllerconfigurator_SectionGlyph_"] {
+  content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyUlEQVQ4jaWTXRWDMAyFb3GAhU4CFrCAhVmYlmopEmYBCyDh20sYpUsfYDmnL7k3PzdJpcqAEXgDK4et5htrfhnYGwkgAUOBDebDOL0XvLigX2Q58cz5brb3m+jgA5NpbFZudLICk4AMpAZpt+jgCcidpEHS7BR6SdrsPR18ljQEgBBC8HRasCTFEMLD4dA1NEbr7JugXGtpnaQNmJz2JSlK2od7kmExmzvE/SZKOcBScRKQ/1+jOfLtQyoy3j/lCrz+mapEl77zB10LXfsY8wmeAAAAAElFTkSuQmCC') !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(2) > [class*="pagedsettings_PageListItem_Icon_"] [class*="controllerconfigurator_SectionGlyph_"] {
+  content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAWElEQVQ4jc1TywoAIAib0f//sp2KEKeRHdoxcexhoqqooJW2AfRgZqXJjQJhi6cEKZ5mkNXhZmJDZH7t+yJ7XiOrjtrbCahMMgfwW40e0p8WEYQnPFG2MABF7wst5lcHxQAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(3) > [class*="pagedsettings_PageListItem_Icon_"] [class*="controllerconfigurator_SectionGlyph_"] {
+  content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2UlEQVQ4jZ2TUVnEQAyE/+DgLNRCkQASagELWDgLZ6EakHCVcEhoJfw8XMqX9oC2zNNuNjOb7GRRAVAvHsNNbUIlIvCu9BwRAxtQT0APTE8lPm0RZ0TEBAxAUwUG4G2vCPDxk8DLAYF7xeURW3WcT50Pcl2xyCn7B1K9Tu3VfhWztvAvfAuo7RFi5i9sbIHPVZLrVgo6YKqD1AOniHjdWcEVGKoLN3XXHKhdFteQTnTVwg1yo47qeQ6gXtXLzpvHhZ0p4G8u5ICdkzg+tJkCf33lMd/nPX/hAl+NFCoAsNt0aAAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(4) > [class*="pagedsettings_PageListItem_Icon_"] [class*="controllerconfigurator_SectionGlyph_"] {
+  content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAWUlEQVQ4jd2TSwrAMAhEZ0ruf8PkKq+bCiXELOqipQOCouMXDaiCo8T+T4IuiYfSReEMAOURmqQxd2HbUSH0sCf+WLaVEVbjfuOMW3Ah87cd+b7ANOb1bzwB3Xs/Zf6Jf00AAAAASUVORK5CYII=') !important;
+}
+
 /* LIST SEPARARTOR */
 [class*="gamepadpagedsettings_Separator_"] {
   height: 0px !important;
@@ -614,7 +632,11 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   max-width: calc(100% - 232px) !important;
   margin: 0px 16px !important;
   margin-top: 38px !important;
-  padding-top: 16px !important;
+  /* padding-top: 16px !important; */
+}
+
+[class*="gamepaddialog_GamepadDialogContent_"].DialogContent._DialogLayout[class*="gamepadpagedsettings_PagedSettingsDialog_PageContent_"].Panel {
+  padding: 16px 0px !important;
 }
 
 .DialogContent[class*="gamepadpagedsettings_PagedSettingsDialog_PageContent_"] {
@@ -998,6 +1020,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   margin-left: 0px !important;
   margin-right: 16px !important;
   padding: 4px 0px !important;
+  filter: brightness(5) !important;
 }
 
 [class*="controllerconfigurator_interstitial_InterstitialArrow_"] {
@@ -1039,13 +1062,17 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 
 /* FOOTER */
 [class*="footer_BasicFooter_"] {
-  background: transparent !important;
+  /* background: transparent !important; */
   min-height: 38px !important;
   /* margin-bottom: 16px !important; */
   border-image: url() !important;
   border-top: unset !important;
   backdrop-filter: none !important;
   position: relative !important;
+  background-color: rgba(var(--color-white), 0.1) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
 }
 
 [class*="footer_BasicFooter_"]:not([class*="footer_WithKeyboard_"]) {
@@ -1708,6 +1735,61 @@ button.DialogButton[class*="controllerconfiguratormapping_AddBindingText_"][clas
 
 [class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelTextColumn_"] [class*="dropdownlabel_DropDownLabelTitle_"], [class*="contextmenu_contextMenuContents_"] [class*="gamepadcontextmenu_contextMenuItem_"] [class*="dropdownlabel_DropDownLabelTextColumn_"] [class*="dropdownlabel_DropDownLabelDescription_"] {
   /* line-height: 32px !important; */
+}
+
+/* VIRTUAL MENU SETTINGS */
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"] > [class*="pagedsettings_PageListItem_Title_"]:nth-child(1) {
+  background-repeat: no-repeat !important;
+  background-position: left !important;
+  background-size: auto !important;
+  padding-left: 32px !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(1) > [class*="pagedsettings_PageListItem_Title_"]:nth-child(1) {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPElEQVQ4jWP8//8/AyWAiSLdg8IAFgYGBooCgQVKM5Kp///Ah8HAGwALRLJjguJYoIoLyLWdgYFhMMQCAIagCCclnogMAAAAAElFTkSuQmCC') !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(2) > [class*="pagedsettings_PageListItem_Title_"]:nth-child(1) {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVQ4jcWT0Q2AIAwFxbgRK7BCV2D/Dc4fiQ3SUjXGl/DRNndpICRg+SxABeQpLJy5J1FwPU5comBRvZhkBIclHjyVRGBTApR21TNYSVpKa+ReQJfBLF+sVu3N1ujaVv4XbLrwXsKapbffeQdjv9KgCXk0WQAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(3) > [class*="pagedsettings_PageListItem_Title_"]:nth-child(1) {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAYUlEQVQ4ja1Syw7AIAhrF/7/l7uDYYcJCbH2ZAT7QCgJDh7rNYAA4FmQkUGS4pSIJIEVYbucKOc5usIUH8FUvSXo1JP4X99mMHFQkV1ZJFQWK2dlj7tIdAiAFeHo+xL2EF+l4TgWkZnhQQAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(4) > [class*="pagedsettings_PageListItem_Title_"]:nth-child(1) {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0ElEQVQ4jaWS0Q2DMAxEL2zAClmBFcoIrNAVWIGd0hG6Ah0hK7x+4EQmAqHSk6wolxfLdhIA/aNOkkIINSRFSUlSloRFNi827JagCJglrbYdg0nSaN5qzO5SWRcgA4+zcoGHMUu9CwiIbJquegYmY6NPkIDkoN68ojfQu/NkUROswLMBWqWmihVQsBkQylg34PBtD5jQHYG/qCT4NAN8HbDVs3Y/ZXM2xLfv/2qI/z2jHdz/SA6YXcmD8wf3tLPz9wnMjAZnN4NsXmzY+g9u6wuxxV32fBUohAAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="gamepadpage_GamepadPageDialogContent_"] [class*="pagedsettings_PagedSettingsDialog_PageListColumn_"] [class*="gamepadpagedsettings_PagedSettingsDialog_PageList_"] [class*="pagedsettings_PagedSettingsDialog_PageListItem_"]:nth-of-type(5) > [class*="pagedsettings_PageListItem_Title_"]:nth-child(1) {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAABA0lEQVQ4jaWTMU7DQBBF36ZCUAAnoEBCiIYWfApEB+fgEnCIVKkdXyDp4rTQgEJPEwmBKEi6R+GxZaIokGSkX+zMn7+a/bNJZZvobNW9ROAOKIEBkLXyWeTGwWkitUYYA2fAM7ALnAA7UZsDr8A3cApMgAsAVNRMnasPcV6F++BmaiPQVydLyH01X5J/iVoj8KZ2/3F7ja46rQVu1NkazTU+1duklsAecL6mg49A6gDHQG/BsjzsHAdKoL9gbQ84SlY+plZzAXwA71R7UtcPgEPgGhgFX2L+LDBVixVz58Gp+bOkPgH78Q4j4OqP2Qvgkmqpvmrl4QY2DtRfq7xRbP0bfwC7VGWrQHGArgAAAABJRU5ErkJggg==') !important;
+}
+
+/* ACTION SET */
+[class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] {
+  padding-right: 0px !important;
+}
+
+[class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_Front_"] svg {
+  color: transparent !important;
+  height: 38px !important;
+  width: 38px !important;
+  background-repeat: no-repeat !important;
+  background-position: left !important;
+  background-size: auto !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkklEQVRYhe2XQQrAIAwETen/v5xeKliK4CSk9bBzjmRcIaq5e9uR42+BGRKjSIwiMYrEKBKjnLAeXaxmZo/F4F6mYq9mMzz5OsBipGmvW93MSEiMNIsmFxYjTYe65eRSYq3VJbftuJAYBYtl59MqSMxuqmRGwkdZnVxI7Ivk0nOsKjnTTxwiMYrEKBKjSIwiMcoFANQyTOqT6QgAAAAASUVORK5CYII=') !important;
+}
+
+
+[class*="controllerconfigurator_ActionSetEntry_"] svg {
+  height: 38px !important;
+  margin-right: 0px !important;
+  color: transparent !important;
+  width: 38px !important;
+  background-repeat: no-repeat !important;
+  background-position: left !important;
+  background-size: auto !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzUlEQVRYhe2V0Q3CMAxEHcQCWYGdWCErsAKswAjM0lm6wvGBhSrhhF4j1Ajdk/zjJvVLr2oTABuRw94CNSTGIjEWibFIjEViLJRYSiksMytmNnmVxrr1AFhdwd4CYAIwA7h4zd4rXbO2iAVCeXEt1wR/JlYTWvTfIpEgM+vIBf/B2UVOZnbz3tV79647s1H6k3jgxbco4WszPUtRsvx1lJUDd0U57C+JjtL3jPWBDQ411i+pIRgKbRFLrYF7MuzLLzEWibFIjEViLBJjeQJVDRXbz4Vu2QAAAABJRU5ErkJggg==') !important;
 }
 
 /* EXPORT LAYOUT */
