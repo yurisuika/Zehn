@@ -65,18 +65,29 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABTElEQVRYhe3WzypFURTH8c9V6hooETERGcgrEANGTJWJV7ieBm9gIg9gZCRKGZspXYXyJxMiahucrfw9Z5+LROdXa3D2Xmvt71l7r7NPLYTgN9X2q6tXABVABVASILyxl+rBOuZ/EqCOPdx+MHeHxwix9VMA+7jG2AdzN1hEP4Zxkpq0lvgp3sYo+uJzQC3H/wIHmCrMHEIosumQqZ7g+2wdMWa6yDelAts4xULh27zWhmxLJvOcUs7AIFZLLg4rMTZXKRU4jYkeSgK0o4mBPKeUCtS87/sUFR3UZIB7jLcAMB5jvwzQRKMFgEaMzVdCS8200Ib172xD2MGIrK1SdIZDTBQ5pgLAJa5ke3v+iU8vdtEtu6AKVeYu6MGxbF/XMIvOaHNxrBl9khanXAWeNYslDKErjl3jCMvYLJOsFYBv1Z/6I6oAKoD/CfAE88IOHrVTWeoAAAAASUVORK5CYII=') !important;
 }
 
+/* SERVER PANE */
+[class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] {
+  gap: 16px !important;
+}
+
+[class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] {
+  gap: 16px !important;
+}
+
 /* SERVER LIST */
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] {
-  margin-top: 16px !important;
+  margin-top: 0px !important;
   margin-bottom: 0px !important;
-  background: rgba(var(--color-white), 0.1) !important;
+  /* background: rgba(var(--color-white), 0.1) !important; */
+  background: transparent !important;
   border: unset !important;
   gap: 0px !important;
 }
 
 /* HEADER */
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] [class*="serverbrowserdialog_ServerListHeaderCtr_"] {
-  background: rgba(var(--color-white), 0.1) !important;
+  /* background: rgba(var(--color-white), 0.1) !important; */
+  background: transparent !important;
   padding: 0px !important;
   line-height: 32px !important;
 }
@@ -85,6 +96,22 @@
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
   font-size: var(--font-size-small) !important;
+}
+
+[class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] [class*="serverbrowserdialog_ServerListHeaderSort_"]:hover {
+  color: rgb(var(--color-sub)) !important;
+}
+
+[class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] [class*="serverbrowserdialog_ServerListHeaderSort_"]:hover svg {
+  filter: brightness(0.57) !important;
+}
+
+[class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] [class*="serverbrowserdialog_ServerListHeaderSort_"]:active {
+  color: rgb(var(--color-disabled)) !important;
+}
+
+[class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] [class*="serverbrowserdialog_ServerListHeaderSort_"]:active svg {
+  filter: brightness(0.36) !important;
 }
 
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] [class*="serverbrowserdialog_ServerListHeaderRow_"] {
@@ -317,6 +344,7 @@
   margin: 0px !important;
   padding: 0px !important;
   background: rgba(var(--color-white), 0.2) !important;
+  opacity: 0 !important;
 }
 
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_ServerList_"] [class*="serverbrowserdialog_ColumnResizer_"] span {
@@ -327,13 +355,14 @@
 /* FILTERS */
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_FilterOptionsCtr_"] {
   gap: 32px !important;
-  padding: 16px 0px 0px 0px !important;
+  padding: 0px !important;
   height: auto !important;
 }
 
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_FilterOptionsCtr_"][class*="serverbrowserdialog_Collapsed_"] {
   height: 0px !important;
   padding: 0px !important;
+  display: none !important;
 }
 
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_DropdownLabel_"] {
@@ -358,7 +387,7 @@
 [class*="serverbrowserdialog_ServerBrowserDialog_"] [class*="serverbrowserdialog_DialogBody_"] [class*="serverbrowserdialog_ServerTabPane_"] [class*="serverbrowserdialog_BottomControlsRow_"] {
   height: 32px !important;
   gap: 16px !important;
-  padding-top: 16px !important;
+  padding-top: 0px !important;
 }
 
 /* FILTER BUTTON */
