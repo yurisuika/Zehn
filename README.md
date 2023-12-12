@@ -31,6 +31,7 @@ If things crash because of the class moving or fail to load, press F5 to refresh
 Because Steam has chosen to not give unique classes or ids to some things, you may notice repeated icons in some areas.
 
 #### To-Do
+- Virtual Keyboard
 - Clean up garbage
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
 - Implement Reveal effects
