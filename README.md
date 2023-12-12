@@ -3,10 +3,13 @@ Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design lang
 
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2. It isn't quite the Metro of Windows 8 or the Fluent of Windows 11. Rather, it is a transitional design language that merges the sharp lines and minimalistic icons of Metro with effects such as Acrylic and Reveal that would later stay in Fluent. Unfortunately, some iconography of Fluent came into Windows 10 over the years through updates. If you're like me, you've managed to stop those updates from happening yet still be on 22H2. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
-Zehn is partly based on the [Metro](https://steamcommunity.com/groups/metroskin) skin, however everything has been re-made from the ground up in CSS. Reveal effects are courtesy of [FluentReveal](https://github.com/aleversn/FluentReveal). Thanks to [AikoMidori](https://github.com/AikoMidori/SteamSkins) for my introduction to JS in moving some classes around.
+#### Downloading
+Zehn now features both a [static](https://github.com/yurisuika/Zehn/archive/refs/heads/master.zip) and a [live](https://github.com/yurisuika/Zehn/archive/refs/heads/live.zip) version!
+
+The live version references the static version, so each time Steam is started or reloaded you will have the latest changes and fixes applied! Unless config options are added or renamed, you should not need to install an update again!
 
 #### Installation
-1. Download the [latest commit](https://github.com/yurisuika/Zehn/archive/refs/heads/master.zip).
+1. Download your preferred version.
 2. Extract the archive `Zehn`.
 3. Navigate to your Steam folder.
 4. Place the extracted skin folder in `~/Steam/steamui/skins`.
@@ -29,15 +32,21 @@ Because Steam has chosen to not give unique classes or ids to some things, you m
 
 #### To-Do
 - Clean up garbage
-- Convert skin to live version so you don't need to download over and over
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
-- Implement Reveal
+- Implement Reveal effects
 - Figure out to implement Reveal on stuff that isn't initially loaded
 - Figure out why text rendering is so much blurrier than in UWP apps???
 - Figure out how to get JS to move classes again when reloaded and not just on initial load
 - Maybe do browser content?
 - Anything I haven't come across from daily use
 - Wait for Steam to one day support :has selector so I may target unclassed SVGs
+
+#### Thanks
+- [Metro](https://steamcommunity.com/groups/metroskin) - The OG skin that brought Windows design language to Steam skinning!
+- [RoseTheFlower](https://github.com/RoseTheFlower/MetroSteam) - For bringing Metro back to Friends when Valve started to move away from VGUI.
+- [AikoMidori](https://github.com/AikoMidori/SteamSkins) - I wrote my first lines of JS code learning from your skin.
+- [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) - For allowing this skin to work at all!
+- [FluentReveal](https://github.com/aleversn/FluentReveal) - Provides the Reveal effect (not yet implemented).
 
 #### Previews
 ![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1169769999368462338/zehn.png)
