@@ -1,8 +1,6 @@
 # Zehn
 Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design language.
 
-This skin is currently a WIP, so some sections are not complete and may change at any time.
-
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2. It isn't quite the Metro of Windows 8 or the Fluent of Windows 11. Rather, it is a transitional design language that merges the sharp lines and minimalistic icons of Metro with effects such as Acrylic and Reveal that would later stay in Fluent. Unfortunately, some iconography of Fluent came into Windows 10 over the years through updates. If you're like me, you've managed to stop those updates from happening yet still be on 22H2. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
 Zehn is partly based on the [Metro](https://steamcommunity.com/groups/metroskin) skin, however everything has been re-made from the ground up in CSS. Reveal effects are courtesy of [FluentReveal](https://github.com/aleversn/FluentReveal). Thanks to [AikoMidori](https://github.com/AikoMidori/SteamSkins) for my introduction to JS in moving some classes around.
@@ -27,10 +25,9 @@ The library games list sidebar can be toggled by an added button. You will find 
 
 If things crash because of the class moving or fail to load, press F5 to refresh the client (this may require dev mode enabled).
 
-Because Steam has chosen to not give unique classes to some things, you may notice repeated icons in some areas.
+Because Steam has chosen to not give unique classes or ids to some things, you may notice repeated icons in some areas.
 
 #### To-Do
-- Overlay Controller Settings
 - Clean up garbage
 - Convert skin to live version so you don't need to download over and over
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
