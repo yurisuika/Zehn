@@ -1,0 +1,125 @@
+/* VIRTUAL KEYBOARD */
+[class*="virtualkeyboardcontainer_VirtualKeyboardContainer_"] {
+  background-color: rgb(var(--color-settings)) !important;
+}
+
+/* THEME */
+.DefaultTheme {
+  --background-color: rgba(var(--color-white), 0.1) !important;
+  --foreground-color: rgb(var(--color-text)) !important;
+  --key-action-button-glyph-color: rgb(var(--color-text)) !important;
+  --key-focused-action-button-left-color: rgb(var(--color-text)) !important;
+  --key-focused-action-button-right-color: rgb(var(--color-text)) !important;
+  --key-color: rgb(var(--color-text)) !important;
+  --key-background-color: rgba(var(--color-white), 0.1) !important;
+  --key-shift-label-color: rgb(var(--color-sub)) !important;
+  --key-focused-shift-label-color: rgb(var(--color-white)) !important;
+  --key-focused-color: rgb(var(--color-text)) !important;
+  --key-focused-background-color: rgb(var(--color-primary)) !important;
+  --key-meta-color: rgb(var(--color-text)) !important;
+  --key-meta-background-color: rgba(var(--color-white), 0.2) !important;
+  --key-tab-color: rgb(var(--color-text)) !important;
+  --key-tab-background-color: rgba(var(--color-white), 0.2) !important;
+  --key-caps-color: rgb(var(--color-text)) !important;
+  --key-caps-background-color: rgba(var(--color-white), 0.2) !important;
+  --key-shift-color: rgb(var(--color-text)) !important;
+  --key-shift-background-color: rgba(var(--color-white), 0.2) !important;
+  --key-enter-color: rgb(var(--color-text)) !important;
+  --key-enter-background-color: rgba(var(--color-white), 0.2) !important;
+  --key-enter-action-button-glyph-color: rgb(var(--color-text)) !important;
+  --key-backspace-color: rgb(var(--color-text)) !important;
+  --key-backspace-background-color: rgba(var(--color-white), 0.2) !important;
+  --key-spacebar-color: rgb(var(--color-text)) !important;
+  --key-spacebar-background-color: rgba(var(--color-white), 0.1) !important;
+  --key-spacer-background-color: rgba(var(--color-white), 0.1) !important;
+  --key-extendedkey-background-color: rgba(var(--color-white), 0.2) !important;
+  --key-extendedkey-color: rgb(var(--color-text)) !important;
+  --key-extendedkey-focused-background-color: rgb(var(--color-primary)) !important;
+  --key-extendedkey-focused-color: rgb(var(--color-text)) !important;
+  --key-extendedkey-hover-background-color: rgb(var(--color-primary)) !important;
+  --key-extendedkey-hover-color: rgb(var(--color-text)) !important;
+  --key-toggleon-background-color: rgb(var(--color-primary)) !important;
+  --key-toggleon-color: rgb(var(--color-text)) !important;
+  --key-toggleoneshot-background-color: rgb(var(--color-primary)) !important;
+  --key-toggleoneshot-color: rgb(var(--color-text)) !important;
+  --key-emoji-category-background-color: transparent;
+  --key-emoji-category-highlight-background-color: rgb(var(--color-primary)) !important;
+  --key-emoji-row-background-color: transparent;
+  --key-emoji-background-color: transparent;
+  --key-emoji-color: rgb(var(--color-text)) !important;
+  --key-emoji-focused-color: rgb(var(--color-text)) !important;
+  --key-emoji-focused-background-color: rgb(var(--color-primary)) !important;
+  --key-touched-background-color: rgb(var(--color-primary)) !important;
+  --key-touched-color: rgb(var(--color-text)) !important;
+  --key-pointer-stroke-color: rgb(var(--color-text)) !important;
+  --key-pointer-background-color: rgba(var(--color-white), 0.1) !important;
+  --key-deadkey-background-color: rgba(var(--color-white), 0.1) !important;
+  --key-deadkeyinactive-color: rgb(var(--color-text)) !important;
+  --key-deadkeyactive-color: rgb(var(--color-text)) !important;
+}
+
+/* KEYBOARD ROWS */
+[class*="virtualkeyboard_Keyboard_"] {
+  padding: 12px !important;
+  gap: 12px !important;
+}
+
+/* KEYBOARD ROW */
+[class*="virtualkeyboard_KeyboardRow_"] {
+  gap: 12px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+}
+
+/* KEYS */
+[class*="virtualkeyboard_KeyboardKeyHitArea_"] {
+  padding: 0px !important;
+}
+
+[class*="virtualkeyboard_KeyboardKey_"] {
+  font-size: var(--font-size-large) !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+  place-content: center !important;
+}
+
+[class*="virtualkeyboard_KeyboardKey_"] span:not([class*="virtualkeyboard_ShiftedLabel_"]) {
+  margin: 16px !important;
+}
+
+[class*="virtualkeyboard_KeyboardKey_"] [class*="virtualkeyboard_ShiftedLabel_"] {
+  opacity: 1 !important;
+  font-size: var(--font-size-small) !important;
+  line-height: 8px !important;
+  margin: 8px !important;
+  text-align: left !important;
+  position: absolute !important;
+  top: 0px !important;
+  left: 0px !important;
+  transform: none !important;
+}
+
+.DefaultTheme [class*="virtualkeyboard_KeyboardKey_"][class*="virtualkeyboard_Touched_"] {
+  background-color: rgb(var(--color-primary)) !important;
+}
+
+[class*="virtualkeyboard_KeyboardTabKey_"], [class*="virtualkeyboard_KeyboardCapsKey_"], [class*="virtualkeyboard_KeyboardRightShift_"], [class*="virtualkeyboard_KeyboardMetaKey_"], [class*="virtualkeyboard_KeyboardBackspace_"], [class*="virtualkeyboard_KeyboardEnter_"], [class*="virtualkeyboard_KeyboardRightShift_"] {
+  font-size: var(--font-size-large) !important;
+  line-height: 16px !important;
+  font-weight: 400 !important;
+}
+
+/* ACTION BUTTON ICONS */
+[class*="virtualkeyboard_KeyboardActionButtonLeft_"] {
+  left: 16px !important;
+  bottom: unset !important;
+}
+
+[class*="virtualkeyboard_KeyboardActionButtonRight_"] {
+  right: 16px !important;
+  bottom: unset !important;
+}
+
+[class*="virtualkeyboard_KeyboardKey_"][class*="virtualkeyboard_Focused_"] img {
+  filter: none !important;
+}
