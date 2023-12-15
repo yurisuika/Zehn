@@ -11,6 +11,22 @@
   padding: calc(38px + 16px) 0px 16px 0px !important;
 }
 
+.DialogContent_InnerWidth>form {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.DialogContent_InnerWidth > form > .Panel {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.DialogBody.Panel {
+  gap: 16px !important;
+}
+
 [class*="dialogs_DialogContent_"] {
   padding-left: 16px !important;
   padding-right: 16px !important;
@@ -22,6 +38,34 @@
 [class*="pagedsettings_PagedSettingsDialog_PageContent_"].DesktopUI .DialogContent_InnerWidth, .DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogContent_InnerWidth {
   padding: calc(38px + 16px) 0px 0px 0px !important;
   /* padding: 38px 0px 16px 0px !important; */
+}
+
+.DialogContent._DialogLayout.GenericConfirmDialog._DialogCenterVertically .DialogContent_InnerWidth {
+  min-height: fit-content !important;
+}
+
+.ModalDialogPopup .DialogContent_InnerWidth {
+  gap: 16px !important;
+}
+
+/* HEADER NOT ON SETTINGS */
+.DialogContent:not([class*="pagedsettings_PagedSettingsDialog_PageContent_"]) .DialogHeader {
+  position: absolute !important;
+  top: 0px !important;
+  left: 0px !important;
+  padding: 0px 12px !important;
+  line-height: 38px !important;
+  font-size: var(--font-size-smaller) !important;
+  margin-bottom: 0px !important;
+}
+
+/* FOOTER */
+.DialogContent._DialogLayout.GenericConfirmDialog._DialogCenterVertically .DialogFooter {
+  padding-top: 0px !important;
+}
+
+.DialogFooter {
+  padding-top: 0px !important;
 }
 
 /* ERROR */
