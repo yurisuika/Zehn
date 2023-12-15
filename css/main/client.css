@@ -787,18 +787,17 @@ input[type="radio" i]:checked:after:active {
 }
 
 /* TOGGLE FIELD */
-._DialogInputContainer {
-  /* margin-bottom: 16px !important; */
+._DialogInputContainer:not(.DialogToggleField) {
+  margin-bottom: 0px !important;
   line-height: 16px !important;
   color: rgb(var(--color-text)) !important;
   font-size: var(--font-size-small) !important;
   font-weight: 400 !important;
-  padding: 16px !important;
 }
 
 .DialogToggleField._DialogInputContainer {
   padding-left: 0px !important;
-  padding: 16px !important;
+  padding: 0px !important;
 }
 
 .DialogToggleField_Control {
@@ -1038,21 +1037,32 @@ option:active {
 }
 
 /* DROPDOWN */
-.DialogTextInputBase, ._DialogInputContainer:not([class*="dropdown_DialogDropDownMenu_"]) {
+.DialogTextInputBase, ._DialogInputContainer {
+  color: rgb(var(--color-text)) !important;
+}
+
+._DialogInputContainer {
+  margin-bottom: 0px !important;
+  line-height: 32px !important;
+}
+
+.DialogTextInputBase, ._DialogInputContainer:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField) {
   color: rgb(var(--color-text)) !important;
   background: transparent !important;
   border-radius: 0px !important;
   outline: 2px solid rgba(var(--color-white), 0.5) !important;
   outline-offset: -2px !important;
+  border-radius: 0px !important;
+  font-size: var(--font-size-small) !important;
 }
 
-.DialogTextInputBase:hover, ._DialogInputContainer:hover:not([class*="dropdown_DialogDropDownMenu_"]) {
+.DialogTextInputBase:hover, ._DialogInputContainer:hover:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField) {
   background: transparent !important;
   outline: 2px solid rgba(var(--color-white), 0.65) !important;
   outline-offset: -2px !important;
 }
 
-.DialogTextInputBase:active, ._DialogInputContainer:active:not([class*="dropdown_DialogDropDownMenu_"]) {
+.DialogTextInputBase:active, ._DialogInputContainer:active:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField) {
   background: rgba(var(--color-white), 0.3) !important;
   outline: 2px solid rgba(var(--color-white), 0.5) !important;
   outline-offset: -2px !important;
