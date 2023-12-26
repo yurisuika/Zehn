@@ -1622,16 +1622,20 @@
 
 /* ACTIVITY POST */
 [class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"] {
-  margin: 0px 0px 0px 0px !important;
+  margin: 0px !important;
 }
 
 [class*="appdetailsactivitysection_PostTextEntry_"] {
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
+}
+
+[class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"]:not([class*="posttextentry_Active_"]) {
+  display: none !important;
 }
 
 [class*="posttextentry_PostTextEntry_"] [class*="posttextentry_Controls_"][class*="posttextentry_Active_"] {
   max-height: 50px;
-  margin: 0px 0px 16px 0px !important;
+  margin: 0px !important;
   padding-bottom: 0px !important;
 }
 
@@ -1648,8 +1652,8 @@
   outline-offset: -2px !important;
   border: unset !important;
   margin-top: 0px !important;
-  margin-bottom: 16px !important; /* FOR THE OUTOUNE? */
-  width: calc(100% - 32px) !important;
+  margin-bottom: 0px !important;
+  width: calc(100% - 24px) !important; /* STRANGE NUMBER BUT IT WORKS */
   line-height: 20px !important;
   padding: 9px 12px !important;
 }
@@ -1693,6 +1697,9 @@
 
 [class*="appdetailsactivitysection_AddToFeed_"] {
   margin-bottom: 0px !important;
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 [class*="posttextentry_Label_"] {
@@ -1775,7 +1782,7 @@
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   border-radius: 0px !important;
-  margin: 0px 0px 16px 0px !important;
+  margin: 0px !important;
   padding: 0px 16px;
   line-height: 32px !important;
 }
