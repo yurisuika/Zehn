@@ -556,6 +556,10 @@ html:hover [class*="library_LeftListSizableContainer_"] {
 }
 
 /* GAMES LIST FILTER CONTAINER */
+[class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] {
+  grid-gap: 16px !important;
+}
+
 [class*="gamelistsearchbar_Container_"] [class*="gamelistsearchbar_AdvancedSearchContainer_"] [class*="gamelistsearchbar_AdvancedSearchPaneContainer_"] [class*="gamelistsearchbar_AdvancedSearchPane_"] {
   background-color: transparent !important;
   border-radius: 0px !important;
@@ -585,10 +589,11 @@ html:hover [class*="library_LeftListSizableContainer_"] {
 
 [class*="appfilterpane_Container_"] {
   padding: 16px !important;
+  gap: 16px !important;
 }
 
 [class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"] [class*="appfilterpane_FilterBucketBoxes_"] {
-  padding: 8px 8px 8px 0px !important;
+  padding: 0px !important;
   display: grid !important;
   gap: 8px !important;
 }
@@ -597,6 +602,7 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   color: rgb(var(--color-text)) !important;
+  line-height: 24px !important;
 }
 
 [class*="appfilterpane_SaveButton_"] svg {
@@ -634,6 +640,61 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   color: rgb(var(--color-white)) !important;
 }
 
+/* DROP DOWN */
+[class*="appfilterpane_SteamDeckCompatDropDown_"] {
+  margin-top: 16px !important;
+  font-size: var(--size-14) !important;
+}
+
+/* APP FILTER FRIENDS SEARCH */
+[class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"] .DialogInput_Wrapper {
+  border-radius: 0px !important;
+  margin-top: 0px !important;
+}
+
+[class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"][class*="appfilterpane_SearchResultsBox_"] [class*="appfilterpane_FilterBucketBoxes_"] {
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+  top: calc(32px + 24px) !important;
+  border-radius: 0px !important;
+}
+
+[class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"][class*="appfilterpane_SearchResultsBox_"] [class*="appfilterpane_FilterBucketBoxes_"] [class*="appfilterpane_Row_"] {
+  padding: 0px 16px !important;
+  line-height: 32px !important;
+}
+
+[class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"][class*="appfilterpane_SearchResultsBox_"] [class*="appfilterpane_FilterBucketBoxes_"] [class*="appfilterpane_Row_"] [class*="appfilterpane_Checkbox_"] {
+  font-size: var(--size-14) !important;
+  line-height: 32px !important;
+}
+
+[class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"][class*="appfilterpane_SearchResultsBox_"] [class*="appfilterpane_FilterBucketBoxes_"] {
+  gap: 0px !important;
+}
+
+[class*="appfilterpane_Container_"] [class*="appfilterpane_FilterArea_"] [class*="appfilterpane_FilterBucket_"][class*="appfilterpane_SearchResultsBox_"] [class*="appfilterpane_FilterBucketBoxes_"] [class*="appfilterpane_Row_"] [class*="appfilterpane_Checkbox_"] .DialogCheckbox {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] img {
+  border-radius: 0px !important;
+  margin-right: 8px !important;
+  height: 16px !important;
+  width: 16px !important;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] [class*="gamelistsearchbar_FiltertagUsername_"] {
+  height: 32px !important;
+  line-height: 32px !important;
+  max-width: unset !important;
+}
+
 /* SAVE DYNAMIC COLLECTION */
 [class*="savecollectiondialog_DynamicHeader_"] svg {
   margin: 0px !important;
@@ -661,6 +722,10 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   margin-left: 16px !important;
 }
 
+[class*="appfilterpane_Container_"] [class*="gamelistsearchbar_SearchFilterInput_"] {
+  margin-left: 0px !important;
+}
+
 [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] {
   background-color: rgba(var(--color-white), 0.1) !important;
   border-radius: 0px !important;
@@ -674,10 +739,21 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   width: calc(100% - 56px) !important;
 }
 
+[class*="appfilterpane_Container_"] [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] {
+  width: 100% !important;
+}
+
 [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] > div:nth-of-type(3) {
   width: calc(100% - 32px) !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+}
+
+[class*="collectionview_DynamicCollectionSubHeader_"] [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] > div:nth-of-type(3) {
+  width: fit-content !important;
+}
+[class*="collectionview_DynamicCollectionSubHeader_"] [class*="gamelistsearchbar_SearchFilterInput_"][class*="gamelistsearchbar_Disabled_"] [class*="gamelistsearchbar_FilterTag_"] {
+  padding: 0px 8px !important;
 }
 
 [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] > div:nth-of-type(4) {
@@ -695,13 +771,18 @@ html:hover [class*="library_LeftListSizableContainer_"] {
   left: 0 !important;
   top: 0 !important;
   bottom: 0 !important;
+  transition: opacity: 0.2s ease-out !important;
+}
+
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"]:not(:hover) svg {
+  opacity: 0 !important;
 }
 
 [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] svg line {
   stroke: rgba(var(--color-white), 0.4) !important;
 }
 
-[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"]:hover svg line, [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"]:active svg line {
+[class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] svg:hover line, [class*="gamelistsearchbar_SearchFilterInput_"] [class*="gamelistsearchbar_FilterTag_"] svg:active line {
   stroke: rgb(var(--color-white)) !important;
 }
 
