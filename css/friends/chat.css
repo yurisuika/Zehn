@@ -433,6 +433,9 @@
   padding: 8px 0px !important;
 }
 
+.MultiUserChat .msg[class*="messages_MsgWithAddons_"] {
+}
+
 [class*="messages_MsgWithAddons_"]:hover {
   background-color: rgba(var(--color-white), 0.1) !important;
 }
@@ -448,7 +451,7 @@
 .msgText {
   color: rgb(var(--color-sub)) !important;
   padding-left: 32px !important;
-  padding-right: 16px !important;
+  padding-right: 32px !important;
 }
 
 /* INVITE */
@@ -805,11 +808,169 @@ div:hover > .inviteAnotherFriendButton {
   fill: transparent !important;
   margin-left: 0px !important;
   margin-top: 0px !important;
-  /* opacity: 0 !important; */
-  /* display: none !important; */
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPklEQVRYhe2XTUoDQRBGvxFEZpc7CBJEF1GX5gA5QfAEEvQSOUQ8hxvjOTQoJBOXXkAXbpTnYiobsZ10NThB+0EzdNVQ/eg/ZgpAm8hW2wIhslgsWSyWLBZLFosli8WSKlZKupB0L+lN0sz6ZWJdCfC2EpgCFXAGHNmzAm4t766fInYJLIDOl3jH4qO2xGbAMJAbWt5dP2WP7UmqArlK0m5C7SSxhaRuINeVNE+onbSU58BTYI8tLd/KHtsBbqhP4anF+iY1pcVTKeAYeKXmwZ4vwEliXbfYNjAG3oEroGexHjABPuw9fltsDDwD+4H8Ku4WKyD69+1A0p2kQ0mPTWdLUuE4ky6xieprZvSDTHC8dQfx3GMDSdcNg6/ad/218MxYDO6l/LPfY024Zkv6xzPmJovFksViyWKxbKzYJ0Kqw6D1qjX2AAAAAElFTkSuQmCC') !important;
+}
+
+/* UPLOAD FILE */
+.chatFileUploadPreviewContainer {
+  bottom: 38px !important;
+  left: unset !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+  padding: 32px !important;
+  gap: 16px !important;
+  border-radius: 0px !important;
+  max-height: calc(100vh - 144px) !important;
+  border: 1px solid rgb(var(--color-primary)) !important;
+}
+
+.chatFileUploadPreviewContainer img {
+  border-radius: 0px !important;
+  min-height: 0px !important;
+  object-fit: contain !important;
+}
+
+.chatFileUploadFileName {
+  padding: 0px !important;
+  font-size: var(--size-12) !important;
+  color: rgb(var(--color-sub)) !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+.chatFileUploadCancel {
+  border-radius: 0px !important;
+  width: 32px !important;
+  height: 32px !important;
+  top: 0px !important;
+  right: 0px !important;
+  background-color: transparent !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  padding: 0px !important;
+}
+
+.chatFileUploadCancel:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.chatFileUploadCancel:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+.chatFileUploadCancel svg {
+  display: none !important;
+}
+
+.chatFileUploadBtn {
+  flex-shrink: 0 !important;
+}
+
+.spoilerCheckBox {
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+}
+
+/* UPLOAD PROGRESS */
+.chatFileUploadProgressContainer {
+  border-radius: 0px !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+  padding: 16px !important;
+  width: 250px !important;
+  bottom: calc(38px + 16px) !important;
+  gap: 16px !important;
+  border: 1px solid rgb(var(--color-primary)) !important;
+}
+
+.chatFileUploadProgressName {
+  padding: 0px !important;
+  font-size: var(--size-12) !important;
+  color: rgb(var(--color-sub)) !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+.chatFileUploadErrorDescription {
+  padding: 0px !important;
+  font-size: var(--size-12) !important;
+  color: rgb(var(--color-secondary)) !important;
+  text-align: center !important;
+}
+
+._DialogColLayout {
+  gap: 16px !important;
+  justify-content: center !important;
+}
+
+.DialogTwoColLayout>._DialogLayout {
+  max-width: unset !important;
+}
+
+.DialogProgressBar_ProgressBarContainer {
+  border: unset !important;
+  border-radius: 0px !important;
+  height: 2px !important;
+  background: rgba(var(--color-white), 0.2) !important
+}
+
+.DialogProgressBar_Value {
+  background: rgb(var(--color-primary)) !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  transition: width .2s linear !important;
+}
+
+/* IMAGE CONTAINER */
+.chatImageContainer {
+  padding: 8px 0px !important;
+}
+
+.BBCodeImageWrapper {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.BBCodeCollapseControl {
+  right: 0 !important;
+  top: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  stroke: transparent !important;
+  padding: 0px !important;
+  background-color: transparent !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: auto !important;
+}
+
+.BBCodeCollapseControl:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.BBCodeCollapseControl:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+.BBCodeCollapseControl .SVGIcon_Button {
+  top: 0px !important;
+  right: 0px !important;
+  display: none !important;
+}
+
+.BBCodeCollapseControl .SVGIcon_Button, .chatImageURL .SVGIcon_Button, .BBCodeResizeControl .SVGIcon_Button {
+  width: 32px !important;
+  height: 32px !important;
+  bottom: 0px !important;
+  right: 0px !important;
 }
 
 /* CHAT ENTRY */
