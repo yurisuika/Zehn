@@ -48,6 +48,6 @@ Because Steam has chosen to not give unique classes or ids to some things, you m
 - [FluentReveal](https://github.com/aleversn/FluentReveal) - Provides the Reveal effect (not yet implemented).
 
 #### Previews
-![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1169769999368462338/zehn.png)
+![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1194342527868874883/zehn.png)
 
 ![zehn chat](https://cdn.discordapp.com/attachments/729991202778251317/1128813573045506198/zehn-chat.gif)
