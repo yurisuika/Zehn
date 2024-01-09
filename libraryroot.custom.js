@@ -1,6 +1,21 @@
 import { RevealEffects } from './js/revealDirect.js';
 import { RevealEffectsMasked } from './js/revealMasked.js';
 
+function waitForElement(selector) {
+  return new Promise(resolve => {
+    if (document.querySelector(selector)) {
+      return resolve(document.querySelector(selector));
+    }
+    const observer = new MutationObserver(mutations => {
+      if (document.querySelector(selector)) {
+        observer.disconnect();
+        resolve(document.querySelector(selector));
+      }
+    });
+    observer.observe(document.body, {childList: true, subtree: true});
+  });
+}
+
 function addButtonSidebar() {
   var btn = document.createElement("button");
   btn.classList.add("ZehnButton");
@@ -35,7 +50,9 @@ function addButtonSidebar() {
   document.getElementById("toggleSidebar").append(icon);
 }
 
-addButtonSidebar()
+waitForElement('[class*="gamelistbar_HomeBox_"]').then((element) => {
+  addButtonSidebar()
+});
 
 function addButtonLibrary() {
   var btn = document.createElement("button");
@@ -72,7 +89,9 @@ function addButtonLibrary() {
   document.getElementById("toggleLibrary").append(icon);
 }
 
-addButtonLibrary()
+waitForElement('[class*="library_AppDetailsMain_"]').then((element) => {
+  addButtonLibrary()
+});
 
 function moveElements(target, classes) {
   classes.forEach((name) => {
@@ -86,21 +105,20 @@ function moveChildElements(target, classes) {
   });
 }
 
-moveElements(
-  '[class*="steamdesktop_TitleBarControls_"]',
-  [
-    // '[class*="titlebarcontrols_AccountMenu_"]',
-    '[class*="titlebarcontrols_NotificationButtonContainer_"]',
-    '[class*="bottombar_FriendsButton_"]',
-    '[class*="bottombar_DownloadStatus_"]',
-    '[class*="bottombar_AddGameButton_"]',
-    '[class*="titlebarcontrols_AnnouncementsButton_"]',
-    '[class*="titlebarcontrols_VRToggle_"]',
-    '[class*="titlebarcontrols_GamepadUIToggle_"]'
-    // '[class*="titlebarcontrols_WalletBalance_"]',
-    // '[class*="bottombar_Status_"]'
-  ]
-)
+waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) => {
+  moveElements(
+    '[class*="steamdesktop_TitleBarControls_"]',
+    [
+      '[class*="titlebarcontrols_NotificationButtonContainer_"]',
+      '[class*="bottombar_FriendsButton_"]',
+      '[class*="bottombar_DownloadStatus_"]',
+      '[class*="bottombar_AddGameButton_"]',
+      '[class*="titlebarcontrols_AnnouncementsButton_"]',
+      '[class*="titlebarcontrols_VRToggle_"]',
+      '[class*="titlebarcontrols_GamepadUIToggle_"]'
+    ]
+  )
+});
 
 // moveChildElements(
 //   '[class*="libraryhome_LibraryHome_"]',

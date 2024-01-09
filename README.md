@@ -16,7 +16,7 @@ The live version references the static version, so each time Steam is started or
 5. Enable JavaScript support in your patcher of choice.
 6. Select the skin in the patcher.
 
-Currently this skin works fine on [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases). I have yet to resolve some patching issues with [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases), including JS seemingly not loading and some menus not being skinned.
+Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
 #### Customization
 In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for settings windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
@@ -24,9 +24,7 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
 #### Things of Note
-The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If the JS has failed to inject, then this button will not appear. As such, if you switch from the library to the downloads page, it will unload. I have yet to resolve this.
-
-If things crash because of the class moving or fail to load, press F5 to refresh the client (this may require dev mode enabled).
+The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If you switch from the library to the downloads page, it will unload, but you may get it back by pressing F5 to reload the client (this may require dev mode enabled).
 
 Because Steam has chosen to not give unique classes or ids to some things, you may notice repeated icons in some areas.
 
@@ -34,7 +32,7 @@ Because Steam has chosen to not give unique classes or ids to some things, you m
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
 - Implement Reveal effects
 - Figure out to implement Reveal on stuff that isn't initially loaded
-- Figure out why text rendering is so much blurrier than in UWP apps???
+- Figure out why Webkit text rendering is so much blurrier than in UWP apps???
 - Figure out how to get JS to move classes again when reloaded and not just on initial load
 - Maybe do browser content?
 - Anything I haven't come across from daily use
