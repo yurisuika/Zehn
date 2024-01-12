@@ -158,6 +158,8 @@
 
 [class*="mediamanagerutils_Text_"][class*="mediamanagerutils_Truncate_"] {
   line-height: 38px !important;
+  max-width: unset !important;
+  min-width: 192px !important;
 }
 
 [class*="mediamanagerutils_Combobox_"] svg {
@@ -168,6 +170,7 @@
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVRYhe3WQQ6CMBRF0YsrcCegm6E7QVag22NFdWB1ghJeWyIh705g8ENOfpqGJsbIHjv9G/Arw9QMUzNMzTA1w9QMUzsc7LzR7Kdc2AiEFXMhzcrlwgbgAvQLMwFo06xcyRkbgI7vuJ4XPGtbUH74R+abC8CVzE29ayr989+BKb13wK30g7VgAI/0LEZBXVjVDnfBbp5haoapGaZmmJphaoap7Rb2BHQqFv3+qvBdAAAAAElFTkSuQmCC') !important;
+  margin-left: 0px !important;
 }
 
 [class*="mediamanagerutils_ComboboxSelector_"] {
@@ -305,16 +308,74 @@
 }
 
 /* SCREENSHOT GRID */
+[class*="mediamanagerutils_ScreenshotListItemRow_"] {
+  gap: 8px !important;
+}
+
+[class*="mediamanagerutils_ScreenshotList_"] > div {
+  gap: 8px !important;
+  height: unset !important;
+}
+
+[class*="mediamanagerutils_ScreenshotList_"] > div > [class*="mediamanagerutils_ScreenshotListItemRow_"] {
+  width: 300px !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"] {
+  border: unset !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"]::after {
+  content: "" !important; /* FIX FOR STEAM DISPLAYING ELEMENTS WITH TRANSFORM TO GET GRID ZOOM TO WORK LIKE DESIRED */
+  position: absolute !important;
+  background: rgb(var(--color-settings)) !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 8px !important;
+}
+
 [class*="mediamanagerutils_ScreenshotListItem_"]:hover {
   border-color: rgba(var(--color-white), 0.65) !important;
+  border: unset !important;
 }
 
 [class*="mediamanagerutils_ScreenshotListItem_"][class*="mediamanagerutils_Selected_"] {
   border-color: rgb(var(--color-white)) !important;
+  border: unset !important;
 }
 
 [class*="mediamanagerutils_ScreenshotListItem_"] [class*="mediamanagerutils_ScreenshotListItemImg_"] {
   background: transparent !important;
+  transform: scale(1.0) !important;
+  transition: filter 0.5s, transform 0.5s !important;
+  object-fit: cover !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"] [class*="mediamanagerutils_ScreenshotListItemImg_"]:not([class*="mediamanagerutils_Small_"]) {
+  height: 156px !important;
+  width: 300px !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"] [class*="mediamanagerutils_ScreenshotListItemImg_"][class*="mediamanagerutils_Small_"] {
+  width: calc((300px - 16px) / 3) !important;
+  height: 52px !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"]:hover [class*="mediamanagerutils_ScreenshotListItemImg_"] {
+  transform: scale(1.05) !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"]:hover [class*="mediamanagerutils_ScreenshotListItemImg_"][class*="mediamanagerutils_Small_"] {
+  transform: scale(1.15) !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"]:not([class*="mediamanagerutils_Selected_"]) [class*="mediamanagerutils_ScreenshotListItemImg_"] {
+  filter: saturate(0) brightness(0.5) !important;
+}
+
+[class*="mediamanagerutils_ScreenshotListItem_"]:not([class*="mediamanagerutils_Selected_"]):hover [class*="mediamanagerutils_ScreenshotListItemImg_"] {
+  filter: unset !important;
 }
 
 [class*="mediamanagerutils_Skeleton_"] {
@@ -322,10 +383,23 @@
   animation: none !important;
 }
 
+/* ERROR */
+[class*="mediamanagerutils_ListItemErrorScreenshotContainer_"] {
+  border: unset !important;
+}
+
+[class*="mediamanagerutils_ListItemErrorScreenshot_"]:not([class*="mediamanagerutils_Mini_"]) {
+  height: 156px !important;
+}
+
+[class*="mediamanagerutils_ListItemErrorScreenshot_"][class*="mediamanagerutils_Mini_"] {
+  height: 52px !important;
+}
+
 /* CLOUD ICON */
 [class*="mediamanagerutils_ScreenshotListItem_"] [class*="mediamanagerutils_ScreenshotListItemCloudIconContainer_"] {
   right: 0px !important;
-  bottom: 0px !important;
+  bottom: 8px !important;
   height: 24px !important;
   width: 24px !important;
   background-repeat: no-repeat !important;

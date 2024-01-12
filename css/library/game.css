@@ -1820,6 +1820,18 @@
   margin-bottom: 0px !important;
   border: unset !important;
   border-radius: 0px !important;
+  min-height: unset !important;
+}
+
+/* NON STEAM GAME */
+[class*="appdetailssectionnonsteam_Body_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  margin-bottom: 0px !important;
+  border: unset !important;
+  border-radius: 0px !important;
+  min-height: unset !important;
 }
 
 /* FEATURED EVENT */
@@ -1969,11 +1981,13 @@
 
 [class*="appactivityday_ScreenshotCarousel_"] [class*="appactivityday_ActiveScreenshot_"] {
   margin: 0px !important;
+  width: 100% !important;
 }
 
 [class*="appactivityday_ScreenshotCarousel_"] [class*="appactivityday_ActiveScreenshot_"] img {
   max-width: 100% !important;
   max-height: unset !important;
+  width: 100% !important;
 }
 
 [class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] {
@@ -1985,22 +1999,42 @@
   max-height: unset !important;
   flex-direction: row !important;
   justify-content: center !important;
+  gap: 8px !important;
+  flex-grow: 1 !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
 }
 
 [class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] [class*="appactivityday_CarouselThumb_"] {
-  margin: 0px 8px 8px 0px !important;
+  margin: 0px !important;
   background: rgba(var(--color-white), 0.1) !important;
   transform: none !important;
   border: unset !important;
   opacity: 1 !important;
+  width: 100% !important;
 }
 
-[class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] [class*="appactivityday_CarouselThumb_"]:not([class*="appactivityday_Active_"]) {
-  filter: saturate(0) brightness(0.5) !important;
+[class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] [class*="appactivityday_CarouselThumb_"] [class*="appactivityday_ImageWrapper_"] {
+  width: 100% !important;
 }
 
 [class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] [class*="appactivityday_CarouselThumb_"][class*="appactivityday_Active_"] {
   border: unset !important;
+}
+
+[class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] [class*="appactivityday_CarouselThumb_"] img {
+  transition: filter 0.5s, transform 0.5s !important;
+  transform: scale(1) !important;
+  min-width: 100% !important;
+}
+
+[class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] [class*="appactivityday_CarouselThumb_"]:not([class*="appactivityday_Active_"]) img {
+  filter: saturate(0) brightness(0.5) !important;
+}
+
+[class*="appactivityday_ScreenshotCarousel"] [class*="appactivityday_CarouselThumbs"] [class*="appactivityday_CarouselThumb_"]:hover img {
+  transform: scale(1.05) !important;
+  filter: unset !important;
 }
 
 [class*="appactivityday_ScreenshotCarousel_"] [class*="appactivityday_ActiveScreenshot_"] [class*="appactivityday_TimeStamp_"] {
@@ -2673,10 +2707,21 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 [class*="appdetailsscreenshotssection_ScreenshotsSection_"] [class*="appdetailsscreenshotssection_Screenshots_"] {
   margin-bottom: 0px !important;
   grid-gap: 8px 8px !important;
+  grid-auto-rows: unset !important;
+  grid-template-columns: 1fr !important;
 }
 
 [class*="appdetailsscreenshotssection_ScreenshotsSection_"] [class*="appdetailsscreenshotssection_Thumbnail_"] {
   background-color: rgba(var(--color-white), 0.1) !important
+}
+
+[class*="appdetailsscreenshotssection_ScreenshotsSection_"] [class*="appdetailsscreenshotssection_Thumbnail_"] [class*="screenshots_ClickableScreenshotImg_"] {
+  transform: scale(1.0) !important;
+  transition: transform 0.5s !important;
+}
+
+[class*="appdetailsscreenshotssection_ScreenshotsSection_"] [class*="appdetailsscreenshotssection_Thumbnail_"]:hover [class*="screenshots_ClickableScreenshotImg_"] {
+  transform: scale(1.0) !important;
 }
 
 [class*="sharedialog_ShareIcon_"][class*="screenshots_ScreenshotShareIcon_"] {
