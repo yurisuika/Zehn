@@ -4,7 +4,18 @@
 }
 
 [class*="libraryhomenewupdates_WhatsNewSettingsContent_"] {
-  padding: 38px 38px 0px 38px !important
+  padding: 38px 16px 0px 16px !important
+}
+
+/* HEADER */
+[class*="libraryhomenewupdates_WhatsNewSettingsContainer_"] .DialogHeader {
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px !important;
+    padding: 0px 12px !important;
+    line-height: 38px !important;
+    font-size: var(--size-12) !important;
+    margin-bottom: 0px !important;
 }
 
 [class*="libraryhomenewupdates_WhatsNewSettings_"] div:last-child {
@@ -12,15 +23,14 @@
 }
 
 [class*="libraryhomenewupdates_WhatsNewSettings_"] {
-  padding-bottom: 38px !important;
+  padding: 16px 0px !important;
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .DialogToggleField_NewUIContainer [class*="toggle_Toggle_"] {
   margin-right: 16px !important;
-}
-
-[class*="libraryhomenewupdates_WhatsNewSettings_"] > [class*="libraryhomenewupdates_DialogLabelSoft_"], .displayColumn > [class*="libraryhomenewupdates_DialogLabelSoft_"] {
-  margin-bottom: 16px !important;
 }
 
 ._DialogInputContainer [class*="libraryhomenewupdates_DialogLabelSoft_"], .DialogLabel[class*="libraryhomenewupdates_DialogLabelSoft_"] {
@@ -30,44 +40,102 @@
   line-height: 16px !important;
 }
 
-.DialogToggle_Description {
+.displayColumn > [class*="libraryhomenewupdates_DialogLabelSoft_"] {
   color: rgb(var(--color-text)) !important;
+}
+
+[class*="libraryhomenewupdates_WhatsNewSettings_"] > [class*="libraryhomenewupdates_DialogLabelSoft_"], .displayColumn > [class*="libraryhomenewupdates_DialogLabelSoft_"] {
+  margin-bottom: 0px !important;
+}
+
+.DialogToggle_Description {
+  color: rgb(var(--color-sub)) !important;
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
   padding-top: 0px !important;
   line-height: 22px !important;
 }
 
+[class*="libraryhomenewupdates_WhatsNewGameListSection_"] [class*="libraryhomenewupdates_WhatsNewGameListRow_"] .DialogToggle_Description {
+  color: rgb(var(--color-text)) !important;
+  line-height: 32px !important;
+  padding: 0px 8px !important;
+}
+
 [class*="libraryhomenewupdates_WhatsNewGameListSection_"] [class*="libraryhomenewupdates_WhatsNewSettingsUndoButton_"] {
   margin-top: 0px !important;
-  width: 14px !important;
-  height: 22px !important;
+  width: 32px !important;
+  height: 32px !important;
   padding: 0px !important;
-  opacity: 0.4 !important;
-  margin-left: 16px !important;
-  margin-right: 16px !important;
+  opacity: 1 !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
   border-radius: 0px !important;
+  background-size: 32px 32px !important;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==) !important;
+  background-position: right !important;
+  background-repeat: no-repeat !important;
   background-color: transparent !important;
 }
 
 [class*="libraryhomenewupdates_WhatsNewGameListSection_"] [class*="libraryhomenewupdates_WhatsNewSettingsUndoButton_"]:hover {
-  background: transparent !important;
+  background-color: rgba(var(--color-white), 0.1) !important;
   opacity: 1.0 !important;
+}
+
+[class*="libraryhomenewupdates_WhatsNewGameListSection_"] [class*="libraryhomenewupdates_WhatsNewSettingsUndoButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
 }
 
 [class*="libraryhomenewupdates_WhatsNewGameListSection_"] [class*="libraryhomenewupdates_WhatsNewSettingsUndoButton_"] svg line {
   stroke-width: 26px !important;
+  display: none !important;
 }
 
-[class*="libraryhomenewupdates_WhatsNewSettings_"] {
+/* VISIBILITY SETTINGS */
+[class*="libraryhomenewupdates_WhatsNewSettingsContent_"] ._DialogInputContainer:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField) {
+  background: transparent !important;
+  padding: 0px !important;
+  outline: unset !important;
+}
+
+.DialogTextInputBase, ._DialogInputContainer {
+  background: transparent !important;
+}
+
+/* PRIORITY SETTINGS */
+[class*="libraryhomenewupdates_WhatsNewPriorityContainer_"] {
+  outline: unset !important;
+  background: transparent !important;
+  padding: 0px !important;
 }
 
 [class*="libraryhomenewupdates_WhatsNewGameListSection_"] {
   padding: 0px !important;
   margin-top: 0px !important;
   max-height: unset !important;
-  overflow-y: unset !important;
-  overflow-x: hidden !important;
+  overflow: visible !important;
+  line-height: 32px !important;
+  gap: 8px !important;
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
 }
+
+ [class*="libraryhomenewupdates_WhatsNewPriorityContainer_"] > .displayColumn {
+   gap: 16px !important;
+   display: flex !important;
+   flex-direction: column !important;
+ }
+
+ [class*="libraryhomenewupdates_WhatsNewGameListSection_"]  [class*="libraryhomenewupdates_WhatsNewGameListRow_"] {
+   background-color: rgba(var(--color-white), 0.1) !important;
+ }
+
+ [class*="libraryhomenewupdates_WhatsNewGameListSection_"]  [class*="libraryhomenewupdates_WhatsNewGameListRow_"]:hover {
+   background-color: rgba(var(--color-white), 0.2) !important;
+ }
+
+ [class*="libraryhomenewupdates_WhatsNewGameListSection_"]  [class*="libraryhomenewupdates_WhatsNewGameListRow_"]:active {
+   background-color: rgba(var(--color-white), 0.4) !important;
+ }
