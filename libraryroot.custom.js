@@ -16,6 +16,33 @@ function waitForElement(selector) {
   });
 }
 
+waitForElement('[class*="appproperties_AppProperties_"]').then((element) => {
+  let cells = document.querySelectorAll('[class*="pagedsettings_PagedSettingsDialog_PageListItem_"]');
+  console.log(cells);
+  [].forEach.call(cells, function (el) {
+    if(el.innerText.indexOf("Privacy") !== -1) {
+      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVQ4jcWT0Q3DIAxEDRvQEbICK2SFrJBZsgIZoStkBVboCqzw+mO3CJGKKh85CSHMnc+2wAFyBf6SugdgBV5A4YuisfWXMCqxABsQm7utuo+teFGnNFBhUu5igWCuf7Rp1QTLmBtCAHI1gwyEhpOB5EVkFpG9MXnq/tBVxwy7iMxC5yGo61SdpzOed865kb57ONUCh/VdzeMYzjwyxE8Vt/+F+xO8AY8A2x0G9QFzAAAAAElFTkSuQmCC')";
+      console.log(el)
+    }
+    if(el.innerText.indexOf("Workshop") !== -1) {
+      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAg0lEQVQ4je2TXQ2AMAyErwQDIAFPaMETGpCABTQg4eOlg8L4Ca+EL1l2zS7tZdkEKAFUwMjGFPQIVMErQIX29L7XvmZJg+t4vnFIANCEusENUccEWYOTAVxoAbI0IIv2jElSuVZmducGSJ6Y5HiJr/kbfKsB0D6ZgTbz+ZvueEeX/sICJzSyl2iBYIMAAAAASUVORK5CYII=')";
+      console.log(el)
+    }
+    if(el.innerText.indexOf("DLC") !== -1) {
+      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAgElEQVQ4je2T0Q2AIAxEr8YFnMUVXIEV2H+D80PQWg6MiZ9e0kC46wM+aiQBAGaGKJI0YdQeAJiarpf6AV8DSK6jsPRJ1tp4KDmPbp+Kv7meCxBCyQPEuQbEcFzFq1tACWTelTvf1oAAycJ7BpTg0jk/y0bT2JO/cA6GfopTHO8dqCLgMZAfyWYAAAAASUVORK5CYII=')";
+      console.log(el)
+    }
+    if(el.innerText.indexOf("Controller") !== -1) {
+      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAABA0lEQVQ4jaWTMU7DQBBF36ZCUAAnoEBCiIYWfApEB+fgEnCIVKkdXyDp4rTQgEJPEwmBKEi6R+GxZaIokGSkX+zMn7+a/bNJZZvobNW9ROAOKIEBkLXyWeTGwWkitUYYA2fAM7ALnAA7UZsDr8A3cApMgAsAVNRMnasPcV6F++BmaiPQVydLyH01X5J/iVoj8KZ2/3F7ja46rQVu1NkazTU+1duklsAecL6mg49A6gDHQG/BsjzsHAdKoL9gbQ84SlY+plZzAXwA71R7UtcPgEPgGhgFX2L+LDBVixVz58Gp+bOkPgH78Q4j4OqP2Qvgkmqpvmrl4QY2DtRfq7xRbP0bfwC7VGWrQHGArgAAAABJRU5ErkJggg==')";
+      console.log(el)
+    }
+    if(el.innerText.indexOf("Betas") !== -1) {
+      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkElEQVQ4jd2TQQ6DMAwENxWPax8CX+Md8BS499jr9FCnMpaBVL2xkuVktdmspUSAXA3AygcL0Bvv4fVSIFZgNuFsJnIHTw2q4Bn2L2C0fmiw2M0CJktUR8ONtGvQh7hDkm5TBVAAkorrkd/gFolf8bdB16AhWX9HaUlQdnqzwSEubPBIuHuqTJ5n/Y3TCSdAb0ZzR8TLe04OAAAAAElFTkSuQmCC')";
+      console.log(el)
+    }
+  });
+});
+
 function addButtonSidebar() {
   var btn = document.createElement("button");
   btn.classList.add("ZehnButton");
