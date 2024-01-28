@@ -130,7 +130,7 @@
 
 [class*="apppartnereventspage_PartnerEvent_"] {
   max-width: 848px !important;
-  min-width: 848px !important;
+  width: 100% !important;
   margin: 0px auto 0px auto !important;
   border-radius: 0px !important;
   border: 0x solid transparent !important;
@@ -139,6 +139,7 @@
   font-size: var(--size-14) !important;
   background-color: rgb(var(--color-background)) !important;
   background-image: url() !important;
+  border: unset !important;
 }
 
 [class*="partnereventdisplay_InLibraryView_"] [class*="partnereventdisplay_EventCoverImage_"], [class*="partnereventdisplay_InLibraryView_"] [class*="partnereventdisplay_EventCoverImageBackground_"] {
@@ -372,9 +373,14 @@
 
 /* ACHIEVEMENTS OVERLAY */
 [class*="library_AchievementsOverlayContainer_"] [class*="library_AchievementsPageContainer_"] {
-  width: 75%;
-  max-width: 848px;
-  margin: 56px auto 0px auto;
+  width: 100% !important;
+  max-width: 848px !important;
+  margin: 54px auto 16px !important;
+}
+
+div.NarrowWindow [class*="library_AchievementsOverlayContainer_"] [class*="library_AchievementsPageContainer_"] {
+  margin: 38px auto 0px !important;
+  max-width: 100% !important;
 }
 
 [class*="library_AchievementsOverlayContainer_"] [class*="library_AchievementsPageContainer_"]>div {
@@ -385,7 +391,6 @@
 
 [class*="achievementspage_Page_"] {
   background-color: rgb(var(--color-background)) !important;
-  margin-bottom: 16px !important;
 }
 
 [class*="achievementspage_Background_"] [class*="achievementspage_Blur_"] {
@@ -401,9 +406,22 @@
   margin-right: 8px !important;
 }
 
+div.NarrowWindow [class*="library_AchievementsOverlayContainer_"] [class*="libraryassetimage_Image_"][class*="libraryassetimage_Visibility_"][class*="libraryassetimage_Visible_"] {
+  max-height: 207px !important;
+  object-fit: cover !important;
+}
+
 /* HEADER SPACING */
 [class*="library_AchievementsOverlayContainer_"] [class*="achievementspage_HeaderContainer_"] {
+  margin-top: calc(38px + 171px) !important;
+}
+
+div.NarrowWindow [class*="library_AchievementsOverlayContainer_"] [class*="achievementspage_HeaderContainer_"] {
   margin-top: calc(38px + 145px) !important;
+}
+
+div.NarrowWindow:not(:has(div.NarrowRightPanel)) [class*="library_AchievementsOverlayContainer_"] [class*="achievementspage_HeaderContainer_"] {
+  margin-top: calc(38px + 104px) !important;
 }
 
 /* PROGRESS BAR */
@@ -422,5 +440,12 @@
 /* ACHIEVEMENTS OVERLAY CONTROLS */
 [class*="library_AchievementsOverlayContainer_"] [class*="library_AchievementsPageContainer_"] [class*="library_CloseButton_"] {
   top: 0px !important;
-  right: calc(-16px - 38px) !important
+  right: 0px !important;
+  transform: translateX(calc(16px + 38px)) !important;
+  transition: transform 0.2s ease-out !important;
+}
+
+div.NarrowWindow [class*="library_AchievementsOverlayContainer_"] [class*="library_AchievementsPageContainer_"] [class*="library_CloseButton_"] {
+  transform: translateY(16px) translateX(-16px) !important;
+  transition: transform 0.2s ease-out !important;
 }
