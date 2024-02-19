@@ -44,6 +44,7 @@ If you are using Linux, you will want to install [some form of Segoe UI](https:/
 - [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) - For allowing this skin to work at all!
 - [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher) - Another great skin patcher!
 - [FluentReveal](https://github.com/aleversn/FluentReveal) - Provides the Reveal effect (not yet implemented).
+- [Micon](https://github.com/xtoolkit/Micon) - Brings Segoe MDL2 assets to a web font!
 
 #### Previews
 ![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1194342527868874883/zehn.png)
