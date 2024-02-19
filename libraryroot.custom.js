@@ -120,20 +120,26 @@ waitForElement('[class*="library_AppDetailsMain_"]').then((element) => {
   addButtonLibrary()
 });
 
-function moveElements(target, classes) {
+function appendElements(target, classes) {
   classes.forEach((name) => {
     document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`));
   });
 }
 
-function moveChildElements(target, classes) {
+function prependElements(target, classes) {
+  classes.forEach((name) => {
+    document.querySelector(`${target}`).prepend(document.querySelector(`${name}`));
+  });
+}
+
+function appendChildElements(target, classes) {
   classes.forEach((name) => {
     document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
   });
 }
 
 waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) => {
-  moveElements(
+  appendElements(
     '[class*="steamdesktop_TitleBarControls_"]',
     [
       '[class*="titlebarcontrols_NotificationButtonContainer_"]',
@@ -147,14 +153,32 @@ waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) => {
   )
 });
 
-// moveChildElements(
+waitForElement('.OverlayBrowser_Browser .TitleBar.title-area').then((element) => {
+  prependElements(
+    '.OverlayBrowser_Browser .TitleBar.title-area',
+    [
+      '[class*="desktopbrowser_BrowserTabs_"]'
+    ]
+  )
+});
+
+waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) => {
+  prependElements(
+    '.TabbedPopupBrowser .TitleBar.title-area',
+    [
+      '[class*="desktopbrowser_BrowserTabs_"]'
+    ]
+  )
+});
+
+// appendChildElements(
 //   '[class*="libraryhome_LibraryHome_"]',
 //   [
 //     '[class*="libraryhomeshowcases_AddShowcaseRow_"]'
 //   ]
 // )
 
-// moveElements(
+// appendElements(
 //   '[class*="steamdesktop_DragArea_"]',
 //   [
 //     '[class*="bottombar_DetailedDownloadProgress_"]'

@@ -19,19 +19,22 @@
 }
 
 [class*="steamdesktopoverlay_OverlayPopupBody_"].DesktopUI [class*="steamdesktopoverlay_OverlayPopup_"].TabbedPopupBrowser [class*="steamdesktopoverlay_WindowControls_"] {
-  width: calc(38px * 4) !important;
+  position: relative !important;
+  width: auto !important;
 }
 
 /* TITLEBAR */
+.ModalDialogPopup:not([class*="steamdesktopoverlay_NoTitlebarSpacer_"]) [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser [class*="steamdesktopoverlay_WindowControls_"] {
+  position: relative !important;
+  width: auto !important;
+}
+
 .OverlayBrowser_Browser [class*="steamdesktopoverlay_OverlayPopup_"] .title-area-children, .OverlayBrowser_Guides [class*="steamdesktopoverlay_OverlayPopup_"] .title-area-children, .OverlayBrowser_Discussions [class*="steamdesktopoverlay_OverlayPopup_"] .title-area-children, .OverlayBrowser_DLC [class*="steamdesktopoverlay_OverlayPopup_"] .title-area-children {
   line-height: 38px !important;
 }
 
 [class*="steamdesktopoverlay_OverlayPopupBody_"].DesktopUI [class*="steamdesktopoverlay_OverlayPopup_"] .title-area-children {
   display: none !important;
-}
-
-.OverlayBrowser_Browser [class*="steamdesktopoverlay_WindowControls_"] {
 }
 
 .OverlayBrowser_Discussions .title-area-children, .OverlayBrowser_Guides .title-area-children, .OverlayBrowser_Browser .title-area-children, .OverlayBrowser_DLC .title-area-children {
@@ -41,15 +44,26 @@
   text-align: left !important;
 }
 
-.OverlayBrowser_Browser .title-area-children {
+.OverlayBrowser_Browser .title-area, .TabbedPopupBrowser .title-area {
+}
+
+.OverlayBrowser_Browser .title-area-children, .TabbedPopupBrowser .title-area-children {
   display: none !important;
+}
+
+.OverlayBrowser_Browser .title-area-highlight, .TabbedPopupBrowser .title-area-highlight {
+  position: relative !important;
+  height: 38px !important;
+  width: auto !important;
+  flex-grow: 1 !important;
 }
 
 /* TAB */
 [class*="desktopbrowser_BrowserTabs_"] {
   margin-top: 0px !important;
-  max-width: calc(100% - calc(4 * 38px)) !important;
+  width: fit-content !important;
   overflow: hidden !important;
+  -webkit-app-region: no-drag !important;
 }
 
 [class*="desktopbrowser_BrowserTabs_"] > div:not(:last-child) {
