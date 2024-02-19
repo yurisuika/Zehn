@@ -28,21 +28,21 @@ The library games list sidebar can be toggled by an added button. You will find 
 
 Because Steam has chosen to not give unique classes or ids to some things, you may notice repeated icons in some areas.
 
+If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
+
 #### To-Do
 - Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
 - Implement Reveal effects
 - Figure out to implement Reveal on stuff that isn't initially loaded
-- Figure out why Webkit text rendering is so much blurrier than in UWP apps???
 - Figure out how to get JS to move classes again when reloaded and not just on initial load
-- Maybe do browser content?
+- Maybe do browser content? (probably not)
 - Anything I haven't come across from daily use
-- Wait for Steam to one day support :has selector so I may target unclassed SVGs
 
 #### Thanks
 - [Metro](https://steamcommunity.com/groups/metroskin) - The OG skin that brought Windows design language to Steam skinning!
-- [RoseTheFlower](https://github.com/RoseTheFlower/MetroSteam) - For bringing Metro back to Friends when Valve started to move away from VGUI.
 - [AikoMidori](https://github.com/AikoMidori/SteamSkins) - I wrote my first lines of JS code learning from your skin.
 - [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) - For allowing this skin to work at all!
+- [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher) - Another great skin patcher!
 - [FluentReveal](https://github.com/aleversn/FluentReveal) - Provides the Reveal effect (not yet implemented).
 
 #### Previews
