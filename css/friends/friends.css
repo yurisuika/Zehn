@@ -835,6 +835,18 @@
   display: none !important;
 }
 
+.groupName .groupCount {
+  color: rgb(var(--color-sub)) !important;
+}
+
+.groupName .groupCount.collapsed {
+  opacity: !important;
+}
+
+.groupName .groupCount:not(.collapsed) {
+  opacity: 0 !important;
+}
+
 .friendGroup.offlineFriends .groupName .groupCount, .friendGroup.onlineFriends .groupName .groupCount, .friendGroup .groupName .groupCount.collapsed {
   color: rgb(var(--color-sub)) !important;
 }
@@ -868,6 +880,88 @@
 
 .CompactFriendsList .friend .avatarHolder {
   padding-right: 0px !important;
+}
+
+/* GAME GROUP */
+.friendGroup.taggedGroup, .friendGroup.gameGroup {
+  margin-top: 0px !important;
+}
+
+.gameGroup:not(.OtherGamesGroup):not(.NonSteamGamesGroup) .gameGroupContainer {
+  background-color: transparent !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0px 8px 0px 0px !important;
+  display: none !important;
+}
+
+.friendGroup .groupName {
+  border-top: unset !important;
+}
+
+.friend.firstInGroup .SteamPlayerGroupLines, .friend.inGroup .SteamPlayerGroupLines, .friend.lastInGroup .SteamPlayerGroupLines, .SteamPlayerGroupFooter .SteamPlayerGroupLines {
+  border-width: 0px !important;
+  margin: 0px !important;
+  width: 0px !important;
+}
+
+.friend.firstInGroup .SteamPlayerGroupLines {
+  height: 0px !important;
+  margin-top: 0px;
+  border-left: unset !important;
+  border-top: unset !important;
+  border-top-left-radius: 0 !important;
+}
+
+.friendGroup.gameGroup:not(.OtherGamesGroup) .SteamPlayerGroupFooter, .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
+  padding: 8px 0px 8px 16px !important;
+}
+
+/* GROUP FOOTER */
+.SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
+  height: fit-content !important;
+  border: unset !important;
+  width: 32px !important;
+  margin: 0px !important;
+  transform: none !important;
+}
+
+.SteamPlayerGroupFooterCount .count {
+  width: 100% !important;
+  display: table-cell !important;
+  line-height: 16px !important;
+  font-weight: 400 !important;
+  font-size: var(--size-16) !important;
+  text-align: center !important'
+  color: rgb(var(--color-ingame)) !important;
+  margin-top: 0px !important;
+}
+
+/* GROUPED FRIENDS */
+.FriendInGameIcon {
+  line-height: 54px !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  margin: 0px 8px 0px 0px !important;
+  background-color: transparent !important;
+  display: none !important;
+}
+
+.groupName .gameGroupContainer .groupIcon, .FriendInGameIcon img {
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+  border: unset !important;
+}
+
+.friendGroup .groupName .groupCount {
+  margin-left: 4px !important;
+  transform: none !important;
 }
 
 /* INVITES */
@@ -1422,9 +1516,9 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 /* USER LIST AFTER REFRESH */
 .VoiceChannelParticipants.CompactFriendsList .friend {
-    margin-top: 0px !important;
-    height: 38px !important;
-    padding: 8px 16px !important;
+  margin-top: 0px !important;
+  height: 38px !important;
+  padding: 8px 16px !important;
 }
 
 .VoiceChannelParticipants.CompactFriendsList:hover {
