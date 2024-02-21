@@ -142,6 +142,7 @@
   width: fit-content !important;
   padding-left: 0px !important;
   line-height: 38px !important;
+  max-width: calc(100% - (3 * 38px)) !important;
 }
 
 .titleBarContainer .currentUserContainer .ContextMenuButton {
@@ -843,7 +844,7 @@
   margin-bottom: auto !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-  padding-right: 16px !important;
+  padding-right: 0px !important;
 }
 
 .ExpandPlusMinus {
@@ -893,7 +894,7 @@
 
 .friendGroup .friend, .friendGroup .SteamPlayerGroupFooter {
   margin: 0px !important;
-  padding: 8px 0px 8px 16px;
+  padding: 8px 16px 8px 16px;
 }
 
 .friendlistListContainer .friend .avatarHolder {
@@ -944,7 +945,7 @@
 }
 
 .friendGroup.gameGroup:not(.OtherGamesGroup) .SteamPlayerGroupFooter, .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
-  padding: 8px 0px 8px 16px !important;
+  padding: 8px 16px 8px 16px !important;
 }
 
 /* GROUP FOOTER */
@@ -962,9 +963,25 @@
   line-height: 16px !important;
   font-weight: 400 !important;
   font-size: var(--size-16) !important;
-  text-align: center !important'
-  color: rgb(var(--color-ingame)) !important;
+  text-align: center !important;
+  color: rgb(var(--color-sub)) !important;
   margin-top: 0px !important;
+}
+
+.SteamPlayerGroupFooterLabel {
+  align-self: center !important;
+  padding: 0px !important;
+  vertical-align: middle !important;
+  height: initial !important;
+  margin-left: 8px !important;
+  font-size: var(--size-14) !important;
+  text-align: left !important;
+  color: rgb(var(--color-sub)) !important;
+  -webkit-mask: none !important;
+  width: calc(100% - 72px) !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
 }
 
 /* GROUPED FRIENDS */
@@ -1127,7 +1144,7 @@
 
 .ChatRoomListGroupItem_header {
   margin: 0px !important;
-  padding: 8px 0px 8px 16px;
+  padding: 8px 16px 8px 16px;
 }
 
 .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel:not(.ActiveVoiceChannel):hover {
