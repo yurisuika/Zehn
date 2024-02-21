@@ -171,6 +171,12 @@ waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) => {
   )
 });
 
+if (navigator.userAgent.includes("Linux")) {
+  document.documentElement.classList.add("Linux");
+} else if (navigator.userAgent.includes("Windows")) {
+  document.documentElement.classList.add("Windows");
+}
+
 // appendChildElements(
 //   '[class*="libraryhome_LibraryHome_"]',
 //   [
