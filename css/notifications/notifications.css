@@ -1,10 +1,15 @@
+/* DESKTOP TOAST */
 [class*="desktoptoasts_DesktopToastContainer_"] {
-  /* width: 283px; */
-  /* height: 70px; */
+  /* width: 283px !important; */
+  /* height: 70px !important; */
   /* overflow: hidden; */
   background-color: transparent !important;
   /* width: 364px !important; */
   /* height: 215px !important; */
+}
+
+[class*="desktoptoasts_DesktopToastPopup_"][class*="desktoptoasts_Middle_"] {
+  --toast-duration: 50000000000ms !important;
 }
 
 [class*="desktoptoasts_DesktopToastPopup_"] {
@@ -35,7 +40,9 @@
 
 [class*="standardtemplates_AllNotificationsTemplate_"], [class*="standardtemplates_StandardTemplateDesktop_"], [class*="standardtemplates_DesktopToastTemplate_"], [class*="standardtemplates_PinnedTemplateWeb_"], [class*="standardtemplates_PinnedTemplateDesktop_"] {
   /* line-height: 16px !important; */
-  height: 44px !important;
+  /* height: 44px !important; */
+  height: 70px !important;
+  padding: 0px 16px !important;
 }
 
 [class*="standardtemplates_DesktopToastTemplate_"] {
@@ -126,4 +133,45 @@
   font-size: var(--size-14) !important;
   color: rgb(var(--color-text)) !important;
   line-height: 24px !important;
+}
+
+/* AVATAR */
+[class*="notificationcontent_StandardLogoDimensions_"] {
+  background: transparent !important;
+  border: 0px solid rgb(var(--color-primary)) !important;
+  border-radius: var(--option-round-avatars) !important;
+}
+
+/* FRIEND ONLINE */
+[class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_OnlineTitle_"] {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-online)) !important;
+  letter-spacing: normal !important;
+}
+
+[class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_Body_"] {
+  font-size: var(--size-12) !important;
+  display: flex !important;
+  gap: 4px !important;
+}
+
+[class*="notificationcontent_FriendOnlineColor_"] {
+  color: rgb(var(--color-online)) !important;
+}
+
+/* FRIEND IN-GAME */
+[class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_IngameTitle_"]  {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-ingame)) !important;
+  letter-spacing: normal !important;
+}
+
+[class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_FriendInGameAppColor_"] {
+  font-size: var(--size-12) !important;
+  color: rgb(var(--color-ingame)) !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
 }
