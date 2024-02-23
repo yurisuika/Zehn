@@ -305,16 +305,17 @@
 
 .quickAccessFriends {
   margin-left: 0px !important;
-  width: calc(100% - 16px) !important;
-  padding: 0px 8px !important;
+  width: 100% !important;
+  padding: 0px !important;
+  background-color: transparent !important;
+}
+
+.quickAccessFriends:not(.emptyQuickAccess) {
+  justify-content: center !important;
 }
 
 .quickAccessFriends .favoriteElement:hover .friend .avatarHolder {
   transform: scale(1.2) !important;
-}
-
-.quickAccessFriends  {
-  background-color: transparent !important;
 }
 
 .quickAccessFriends::before, .quickAccessFriends::after {
@@ -382,6 +383,27 @@
 .quickAccessFriend .clanName {
   display: none !important;
   color: rgb(var(--color-text)) !important;
+}
+
+/* QUICK ACCESS SNOOZE */
+.quickAccessFriends .friend .SnoozeContainer {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+/* QUICK ACCESS COMPACT */
+.compactQuickAccess .friend.quickAccessFriend {
+  width: 32px !important;
+  margin: 3px !important;
+}
+
+.compactQuickAccess .friend.quickAccessFriend [class*="steamavatar_avatarHolder_"]{
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.compactQuickAccess .favoriteElement {
+  height: 38px !important;
 }
 
 /* ACTIVE VOICE CONTROLS */
