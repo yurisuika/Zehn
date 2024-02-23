@@ -4,8 +4,6 @@
   box-shadow: none !important;
   font-family: var(--font-family) !important;
   text-shadow: 0px 0px 0px transparent !important;
-  /* text-rendering: optimizeLegibility !important; */
-  /* -webkit-font-smoothing: none !important; */
   letter-spacing: normal !important;
 }
 
@@ -887,10 +885,10 @@ input[type="radio" i]:checked:after:active {
 
 .DialogToggleField_Control {
   background-color: transparent !important;
-  width: 44px !important;
   height: 20px !important;
   position: relative !important;
   margin: 6px 0px !important;
+  width: 100% !important;
 }
 
 .DialogToggleField_Control:disabled {
@@ -955,21 +953,18 @@ input[type="radio" i]:checked:after:active {
   line-height: 32px !important;
   color: transparent !important;
   text-transform: none !important;
-  position: fixed !important;
+  position: absolute !important;
 }
 
-.DialogToggleField_Option.On::after {
-  margin-left: calc(12px) !important;
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after {
+  margin-left: calc(44px - 2px + 12px) !important;
   color: rgb(var(--color-text)) !important;
   position: absolute !important;
   line-height: 16px !important;
-}
-
-.DialogToggleField_Option.On::after {
   content: "Off" !important;
 }
 
-.DialogToggleField_Option.On.Active::after {
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On.Active)::after {
   content: "On" !important;
 }
 
@@ -1024,7 +1019,7 @@ input[type="radio" i]:checked:after:active {
 /* TOGGLE */
 [class*="toggle_Toggle_"] {
   background-color: transparent !important;
-  width: 44px !important;
+  width: 100% !important;
   height: 20px !important;
   position: relative !important;
   margin: 6px 0px !important;
@@ -1102,7 +1097,7 @@ input[type="radio" i]:checked:after:active {
 [class*="toggle_Toggle_"]::after {
   margin-left: calc(44px + 12px) !important;
   transform: translateY(2px) !important;
-  position: fixed !important;
+  position: absolute !important;
   line-height: 16px !important;
 }
 
@@ -1215,9 +1210,9 @@ input[type="radio" i]:checked:after:active {
 }
 
 [class*="gamepaddialog_Toggle_"]::after {
-  margin-left: calc(44px + 12px) !important;
-  transform: translateY(-2px) !important;
-  position: fixed !important;
+  margin-left: calc(44px - 2px + 12px) !important;
+  position: absolute !important;
+  line-height: 16px !important;
 }
 
 [class*="gamepaddialog_Toggle_"]:not([class*="gamepaddialog_On_"])::after {
