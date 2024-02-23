@@ -260,6 +260,20 @@ table, th, td, tbody, thead, tr {
   display: none !important;
 }
 
+[class*="personanameandstatus_playerNickname_="] {
+  padding-left: unset !important;
+  color: rgb(var(--color-disabled)) !important;
+  font-size: var(--size-14) !important;
+}
+
+[class*="personanameandstatus_playerNickname_="]::before {
+  content: "\00a0" !important;
+}
+
+[class*="personanameandstatus_compactView_"] [class*="personanameandstatus_playerName_"], [class*="personanameandstatus_compactView_"] [class*="personanameandstatus_playerNickname_"] {
+  font-size: var(--size-14) !important;
+}
+
 /* ICON */
 .ModalPosition_Content {
   color: rgb(var(--color-white)) !important;
@@ -578,8 +592,15 @@ img[class*="emoticon_emoticon_"] {
 }
 
 /* LIST ITEM */
+.DialogListBuilderInput_List {
+  display: flex !important;
+  line-height: 32px !important;
+  padding: 0px !important;
+  align-items: baseline !important;
+}
+
 .DialogListBuilderInput_ListItem {
-  margin-right: 8px !important;
+  margin: 3px !important;
 }
 
 /* LINK */
@@ -1157,7 +1178,7 @@ option:active {
   line-height: 32px !important;
 }
 
-.DialogTextInputBase, ._DialogInputContainer:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not( .DialogSlider_Container) {
+.DialogTextInputBase, ._DialogInputContainer:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container) {
   color: rgb(var(--color-text)) !important;
   background: transparent !important;
   border-radius: 0px !important;
@@ -1168,13 +1189,13 @@ option:active {
   line-height: 32px !important;
 }
 
-.DialogTextInputBase:hover, ._DialogInputContainer:hover:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not( .DialogSlider_Container)  {
+.DialogTextInputBase:hover, ._DialogInputContainer:hover:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container)  {
   background: transparent !important;
   outline: 2px solid rgba(var(--color-white), 0.65) !important;
   outline-offset: -2px !important;
 }
 
-.DialogTextInputBase:active, ._DialogInputContainer:active:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not( .DialogSlider_Container)  {
+.DialogTextInputBase:active, ._DialogInputContainer:active:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container)  {
   background: rgba(var(--color-white), 0.3) !important;
   outline: 2px solid rgba(var(--color-white), 0.5) !important;
   outline-offset: -2px !important;

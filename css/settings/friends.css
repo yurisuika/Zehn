@@ -179,21 +179,30 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
   color: rgb(var(--color-sub)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
-  /* display: none !important; */
+  text-align: left !important;
 }
 
 .DialogSlider_Slider {
   background: rgba(var(--color-white), 0.4) !important;
   border-radius: 0px !important;
   height: 2px !important;
+  margin: 11px 0px !important;
   border: unset !important;
   margin-right: 8px !important;
+  border-left: 4px solid rgb(var(--color-primary)) !important;
+  border-right: 4px solid rgba(var(--color-white), 0.4) !important;
 }
 
-.DialogSlider_Slider::after {
+.DialogSlider_Slider:hover {
+  background: rgba(var(--color-white), 0.6) !important;
+  border-left: 4px solid rgb(var(--color-primary)) !important;
+  border-right: 4px solid rgba(var(--color-white), 0.6) !important;
+}
+
+.DialogSlider_Slider:active {
   background: rgba(var(--color-white), 0.4) !important;
-  width: 8px !important;
-  height: 2px !important;
+  border-left: 4px solid rgb(var(--color-primary)) !important;
+  border-right: 4px solid rgba(var(--color-white), 0.4) !important;
 }
 
 .DialogSlider_Value {
@@ -204,12 +213,20 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
 .DialogSlider_Grabber {
   top: -10px !important;
   bottom: 0px !important;
-  right: 8px !important;
-  margin-left: 0px !important;
+  /* right: 8px !important; */
+  margin-left: -4px !important;
   width: 8px !important;
   height: 24px !important;
   background: rgb(var(--color-primary)) !important;
   border-radius: 1337px !important;
   width: 8px !important;
   height: 24px !important;
+}
+
+.DialogSlider_Slider:hover .DialogSlider_Grabber {
+  background: rgb(var(--color-white)) !important;
+}
+
+.DialogSlider_Slider:active .DialogSlider_Grabber {
+  background: rgb(var(--color-contextmenu-border)) !important;
 }
