@@ -1,5 +1,6 @@
 import { RevealEffects } from './js/revealDirect.js';
 import { RevealEffectsMasked } from './js/revealMasked.js';
+import Zehn from './js/Zehn.js';
 
 let FR_NOTIFICATION = new RevealEffects("body", {
     selector: document.querySelectorAll('[class*="desktoptoasts_DesktopToastPopup_"]')[0],

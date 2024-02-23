@@ -908,8 +908,33 @@
   display: none !important;
 }
 
+/* COMPACT */
+.CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount, .CompactFriendsList .friend .avatarHolder {
+  width: 30px !important;
+  height: 30px !important;
+}
+
 .CompactFriendsList .friend .avatarHolder {
   padding-right: 0px !important;
+}
+
+.CompactFriendsList .friend, .CompactFriendsList .friendGroup .friend, .CompactFriendsList .friendGroup .SteamPlayerGroupFooter, .CompactFriendsList .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
+  height: 32px !important;
+  margin: 0px !important;
+  padding: 3px 16px !important;
+}
+
+.CompactFriendsList .friend.speaking .avatarHolder img.avatar {
+  filter: none !important;
+}
+
+[class*="personanameandstatus_compactView_"] [class*="personanameandstatus_playerName_"], [class*="personanameandstatus_compactView_"] [class*="personanameandstatus_playerNickname_"] {
+  margin-bottom: unset !important;
+}
+
+.CompactFriendsList .friend .labelHolder {
+  margin-top: 0px !important;
+  height: 32px !important;
 }
 
 /* GAME GROUP */
@@ -1118,6 +1143,8 @@
 
 .ChatRoomListGroupItem_header {
   background-color: transparent !important;
+  margin: 0px !important;
+  padding: 8px 16px !important;
 }
 
 .ChatRoomListGroupItem_header:hover {
@@ -1132,6 +1159,10 @@
   padding-top: 0px !important;
 }
 
+.ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName {
+  margin-left: 0px !important;
+}
+
 .ChatRoomListGroupItem:not(.NonGroupHovered) .ChatRoomListGroupItem_header:hover .chatRoomName {
   color: rgb(var(--color-text)) !important;
   font-size: var(--size-14) !important;
@@ -1142,11 +1173,6 @@
   color: rgb(var(--color-text)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
-}
-
-.ChatRoomListGroupItem_header {
-  margin: 0px !important;
-  padding: 8px 16px 8px 16px;
 }
 
 .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel:not(.ActiveVoiceChannel):hover {
@@ -1203,6 +1229,10 @@
   margin-left: 8px !important;
 }
 
+.HasLinkedBroadcast .groupNameStatusContainer {
+  margin-left: 4px !important;
+}
+
 .ChatRoomListGroupItem .openGroupButton {
   background-color: transparent !important;
   border-radius: 0px !important;
@@ -1239,13 +1269,28 @@
   stroke: rgb(var(--color-white)) !important;
 }
 
+.ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
   color: rgb(var(--color-text)) !important;
   margin-left: 30px !important;
+  font-size: var(--size-14) !important;
+  margin-left: 8px !important;
+  left: unset !important;
+  top: unset !important;
+  position: relative !important;
 }
 
-.ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle:before {
-  content: "STEAM TV" !important;
+.ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::before {
+  content: "(STEAM TV" !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+.ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::after {
+  content: ")" !important;
   color: rgb(var(--color-text)) !important;
 }
 
@@ -1285,6 +1330,44 @@
 }
 
 .ChatRoomListGroupItem.ShowAllChannels .detailsView:active {
+}
+
+/* COMPACT */
+.compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar.Small {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials {
+  width: 30px !important;
+  height: 30px !important;
+  padding-top: 0px !important;
+  border-width: 0px !important;
+  line-height: 30px !important;
+}
+
+.compactView .ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName {
+  margin-left: 0px !important;
+}
+
+.compactView .ChatRoomListGroupItem_header {
+  padding: 3px 16px !important;
+}
+
+.compactView .ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
+  margin-bottom: 0px !important;
+}
+
+.compactView .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
+  left: unset !important;
+  top: unset !important;
+  margin-left: 8px !important;
+  position: relative !important;
 }
 
 /* CHAT ROOM DROP DOWN */
@@ -1404,21 +1487,6 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 .chatRoomVoiceChannelName, .chatRoomTextChannelName, .chatRoomGroupName {
   margin-top: 0px !important;
   margin-right: 0px !important;
-}
-
-.CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount, .CompactFriendsList .friend .avatarHolder {
-  height: 36px !important;
-  width: 36px !important;
-}
-
-.CompactFriendsList .friend, .CompactFriendsList .friendGroup .friend, .CompactFriendsList .friendGroup .SteamPlayerGroupFooter, .CompactFriendsList .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
-  height: 36px !important;
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
-.CompactFriendsList .friend.speaking .avatarHolder img.avatar {
-  filter: none !important;
 }
 
 .emptyChannelNotice.Visible {

@@ -1,22 +1,8 @@
 import { RevealEffects } from './js/revealDirect.js';
 import { RevealEffectsMasked } from './js/revealMasked.js';
+import Zehn from './js/Zehn.js';
 
-function waitForElement(selector) {
-  return new Promise(resolve => {
-    if (document.querySelector(selector)) {
-      return resolve(document.querySelector(selector));
-    }
-    const observer = new MutationObserver(mutations => {
-      if (document.querySelector(selector)) {
-        observer.disconnect();
-        resolve(document.querySelector(selector));
-      }
-    });
-    observer.observe(document.body, {childList: true, subtree: true});
-  });
-}
-
-waitForElement('[class*="appproperties_AppProperties_"]').then((element) => {
+Zehn.waitForElement('[class*="appproperties_AppProperties_"]').then((element) => {
   let cells = document.querySelectorAll('[class*="pagedsettings_PagedSettingsDialog_PageListItem_"]');
   console.log(cells);
   [].forEach.call(cells, function (el) {
@@ -38,26 +24,6 @@ waitForElement('[class*="appproperties_AppProperties_"]').then((element) => {
     }
     if(el.innerText.indexOf("Betas") !== -1) {
       el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkElEQVQ4jd2TQQ6DMAwENxWPax8CX+Md8BS499jr9FCnMpaBVL2xkuVktdmspUSAXA3AygcL0Bvv4fVSIFZgNuFsJnIHTw2q4Bn2L2C0fmiw2M0CJktUR8ONtGvQh7hDkm5TBVAAkorrkd/gFolf8bdB16AhWX9HaUlQdnqzwSEubPBIuHuqTJ5n/Y3TCSdAb0ZzR8TLe04OAAAAAElFTkSuQmCC')";
-      console.log(el)
-    }
-    if(el.innerText.indexOf("Betas") !== -1) {
-      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkElEQVQ4jd2TQQ6DMAwENxWPax8CX+Md8BS499jr9FCnMpaBVL2xkuVktdmspUSAXA3AygcL0Bvv4fVSIFZgNuFsJnIHTw2q4Bn2L2C0fmiw2M0CJktUR8ONtGvQh7hDkm5TBVAAkorrkd/gFolf8bdB16AhWX9HaUlQdnqzwSEubPBIuHuqTJ5n/Y3TCSdAb0ZzR8TLe04OAAAAAElFTkSuQmCC')";
-      console.log(el)
-    }
-    if(el.innerText.indexOf("Installed Files") !== -1) {
-      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAP0lEQVQ4jWP8////fwYoYGRkZGQgEbDANCIbhMwmBBgpdQHFgGIXkB0GMMtGYhigWzISwwDdMopdwEhCxsMKAM4qQxMCLDGbAAAAAElFTkSuQmCC')";
-      console.log(el)
-    }
-    if(el.innerText.indexOf("Updates") !== -1) {
-      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5klEQVQ4jaWTMU4DQQxF3yJaehrK7C3ScAsOQHouAMehoU0OgEQHVTYNkIJtWBqSmualiEfMDkFsyJeske0/tmfkj0phN+pc/fQba7VRr0t+7tTqi7pSZ+oky00itlJfg9srUKud+rhjorJJE9yRaqUCvAEtMGYYFsAJcIZ6q7Z/dN5lneoxcA7cDewMYO5Uag0871Ggh/QH/8bRQbcPLDBKBSxsKK6ArnL7CR/A6Z4TtMBDesIX2+UYivs4LwixpFWe53v+iz2p74lX7vkyBDMtxHQZsXUI7oeYSjk3Qc7lvIhcj78B/FuTIUnKDtMAAAAASUVORK5CYII=')";
-      console.log(el)
-    }
-    if(el.innerText.indexOf("Compatibility") !== -1) {
-      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2UlEQVQ4jZ2TURGDMBBElzrAAhZiAQtYaCVgIZXQSsBCLKQSqAQsvH700smkEBh2Jh+Zu9u97F2kAkALeCACCzADAejL3D8AE3Usq0SmGneKcwwlQagkz0BvIqN1AdCl4n6nuLPuAvAABovFI+re4q3lehNMXbiLJFfx9bnj+3CR9NoI3pumeUu6SQpAkNRmR5J+PrT2vtRa3JhUbiLA9CdriRMwZvctn7xMeUxGZUQBcIViCVeO8Qq4jKC2mbFUg+/cR7v7SjGkRcreeX6VM6Jzn2llCoe/8wdNO3uLaMgCuQAAAABJRU5ErkJggg==')";
-      console.log(el)
-    }
-    if(el.innerText.indexOf("General") !== -1) {
-      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVQ4jcWT0Q2AIAwFxbgRK7BCV2D/Dc4fiQ3SUjXGl/DRNndpICRg+SxABeQpLJy5J1FwPU5comBRvZhkBIclHjyVRGBTApR21TNYSVpKa+ReQJfBLF+sVu3N1ujaVv4XbLrwXsKapbffeQdjv9KgCXk0WQAAAABJRU5ErkJggg==)";
       console.log(el)
     }
   });
@@ -97,7 +63,7 @@ function addButtonSidebar() {
   document.getElementById("toggleSidebar").append(icon);
 }
 
-waitForElement('[class*="gamelistbar_HomeBox_"]').then((element) => {
+Zehn.waitForElement('[class*="gamelistbar_HomeBox_"]').then((element) => {
   addButtonSidebar()
 });
 
@@ -136,30 +102,12 @@ function addButtonLibrary() {
   document.getElementById("toggleLibrary").append(icon);
 }
 
-waitForElement('[class*="library_AppDetailsMain_"]').then((element) => {
+Zehn.waitForElement('[class*="library_AppDetailsMain_"]').then((element) => {
   addButtonLibrary()
 });
 
-function appendElements(target, classes) {
-  classes.forEach((name) => {
-    document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`));
-  });
-}
-
-function prependElements(target, classes) {
-  classes.forEach((name) => {
-    document.querySelector(`${target}`).prepend(document.querySelector(`${name}`));
-  });
-}
-
-function appendChildElements(target, classes) {
-  classes.forEach((name) => {
-    document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
-  });
-}
-
-waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) => {
-  appendElements(
+Zehn.waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) => {
+  Zehn.appendElements(
     '[class*="steamdesktop_TitleBarControls_"]',
     [
       '[class*="titlebarcontrols_NotificationButtonContainer_"]',
@@ -173,8 +121,8 @@ waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) => {
   )
 });
 
-waitForElement('.OverlayBrowser_Browser .TitleBar.title-area').then((element) => {
-  prependElements(
+Zehn.waitForElement('.OverlayBrowser_Browser .TitleBar.title-area').then((element) => {
+  Zehn.prependElements(
     '.OverlayBrowser_Browser .TitleBar.title-area',
     [
       '[class*="desktopbrowser_BrowserTabs_"]'
@@ -182,20 +130,14 @@ waitForElement('.OverlayBrowser_Browser .TitleBar.title-area').then((element) =>
   )
 });
 
-waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) => {
-  prependElements(
+Zehn.waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) => {
+  Zehn.prependElements(
     '.TabbedPopupBrowser .TitleBar.title-area',
     [
       '[class*="desktopbrowser_BrowserTabs_"]'
     ]
   )
 });
-
-if (navigator.userAgent.includes("Linux")) {
-  document.documentElement.classList.add("Linux");
-} else if (navigator.userAgent.includes("Windows")) {
-  document.documentElement.classList.add("Windows");
-}
 
 // appendChildElements(
 //   '[class*="libraryhome_LibraryHome_"]',

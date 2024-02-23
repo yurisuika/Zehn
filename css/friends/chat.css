@@ -198,6 +198,10 @@
   margin-left: 8px !important;
 }
 
+.ChatTabs.compactView .labelHolder {
+  margin-top: 0px !important;
+}
+
 [class*="chattabs_ChatTab_"] .friend {
   padding-left: 0px !important;
 }
@@ -338,6 +342,8 @@
 .ChatRoomSpeaker .speaker {
   margin-left: 16px !important;
   color: rgb(var(--color-text)) !important;
+  padding-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 /* CHAT USER NAMES */
@@ -377,6 +383,32 @@
   font-size: var(--size-14) !important;
 }
 
+/* SCALING */
+.smallChatFont .msg.serverMsg .msgText, .smallChatFont .nameWidthLabel, .ChatHistoryContainer.smallChatFont .ChatSpeaker .speaker, .smallChatFont .msg {
+  line-height: 12px !important;
+}
+
+.largeChatFont .nameWidthLabel, .ChatHistoryContainer.largeChatFont .ChatSpeaker .speaker, .largeChatFont .msg {
+  line-height: 16px !important;
+}
+
+.smallChatFont .chatTextarea, .smallChatFont .msg.serverMsg .msgText, .FriendsSettingsChatFontSizeSection_ButtonRow .smallFontSetting, .smallChatFont .ChatMessageOpenGraph_Title, .smallChatFont .nameWidthLabel, .ChatHistoryContainer.smallChatFont .ChatSpeaker .speaker, .smallChatFont  {
+  font-size: var(--size-12) !important;
+}
+
+.largeChatFont .chatTextarea, .largeChatFont .msg.serverMsg .msgText, .FriendsSettingsChatFontSizeSection_ButtonRow .largeFontSetting, .largeChatFont .ChatMessageOpenGraph_Title, .largeChatFont .nameWidthLabel, .ChatHistoryContainer.largeChatFont .ChatSpeaker .speaker, .largeChatFont {
+  font-size: var(--size-16) !important;
+}
+
+/* SPEAKER */
+.ChatRoomSpeaker {
+  margin-top: 0px !important;
+}
+
+.compactView .ChatRoomSpeaker {
+  margin-top: 0px !important;
+}
+
 /* TIMESTAMPS */
 .speakerTimeStamp {
   color: rgb(var(--color-sub)) !important;
@@ -411,6 +443,9 @@
   font-size: var(--size-10) !important;
   width: 100% !important;
   display: var(--option-display-time-division) !important;
+  margin: 0px !important;
+  height: 32px !important;
+  line-height: 32px !important;
 }
 
 .timeDivision.time_passes .preHorizDivider {
@@ -442,6 +477,10 @@
 .MultiUserChat .msg {
   margin-right: 0px !important;
   padding: 8px 0px !important;
+}
+
+.MultiUserChat.compactView .msg {
+  padding: 0px 0px !important;
 }
 
 .MultiUserChat .msg[class*="messages_MsgWithAddons_"] {
@@ -1070,6 +1109,10 @@ div:hover > .inviteAnotherFriendButton {
   max-height: 38px !important;
 }
 
+.chatWindow .chatEntry.compactView>.compactableHeight {
+  height: 38px !important;
+}
+
 [class*="chatentry_chatEntryActionsGroup_"] {
   padding: 0px !important;
   margin: 0px !important;
@@ -1223,7 +1266,7 @@ div:hover > .inviteAnotherFriendButton {
 }
 
 /* CHAT ROOM HEADER */
-.namedGroup .chatRoomGroupHeader {
+.namedGroup .chatRoomGroupHeader, .chatRoomGroupHeader {
   padding: 0px !important;
   height: 54px !important;
 }
@@ -1544,7 +1587,9 @@ div:hover > .inviteAnotherFriendButton {
   min-width: 38px !important;
   max-width: 38px !important;
   position: fixed !important;
-  margin-bottom: 38px !important;
+  margin-bottom: 0px !important;
+  position: absolute !important;
+  max-height: calc(100% - 38px) !important;
 }
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
@@ -1768,9 +1813,15 @@ div:hover > .inviteAnotherFriendButton {
   margin: 3px !important;
 }
 
+.MemberListViewCompact .CompactFriendsList .friend {
+  height: 32px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
 /* MEMBER AVATAR OPEN */
 .MemberListColumn:not(.MemberListViewCompact ) .chatroomBucket_regular.Panel.Focusable {
-  padding: 8px 16px !important;
+  padding: 0px !important;
   background-color: transparent !important;
 }
 
