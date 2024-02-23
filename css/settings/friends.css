@@ -3,6 +3,12 @@
   padding-bottom: 0px !important;
 }
 
+.FriendSettingsContainer .DialogBody {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
 /* PAGELIST */
 .FriendSettingsContainer [class*="pagedsettings_PagedSettingsDialog_PageListItem_"] {
   padding: 0px 0px 0px 48px !important;
@@ -50,6 +56,12 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAiklEQVQ4je2TWwqDMBRET6RL0DXoauPq3ERLUbuB6U8Rc50g/fDPgcDNZTLkdZBEGFle2XhJkggS0ALvXa8DnkCK5lrAwVjrN8b4l+6AMuDwHBUVvsuO0J7MNz129Qr0wAi8jDcDA/ApuoGBSVLv/vyvP0UmHEhzBabFAeVYKDaI58LeQVwYaxv0BUr/uAMs4C7eAAAAAElFTkSuQmCC') !important;
 }
 
+/* FRIENDS */
+.friendSettingsFakeFriend {
+  margin-top: 0px !important;
+  margin-bottom: 16px !important;
+}
+
 /* CHAT */
 .DialogToggle_Description {
   color: rgb(var(--color-sub)) !important;
@@ -65,12 +77,6 @@
 
 .FriendSettingsContainer .SettingsGroup > ._DialogInputContainer._DialogLayout:not(.DialogToggleField):hover, .FriendSettingsContainer .SettingsGroup > ._DialogInputContainer._DialogLayout:not(.DialogToggleField):active {
   outline: unset !important;
-}
-
-.DialogToggleField._DialogInputContainer._DialogLayout {
-  display: flex !important;
-  flex-direction: row !important;
-  gap: 16px !important;
 }
 
 /* SCALING */
@@ -231,4 +237,106 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
   border: unset !important;
   padding-bottom: 0px !important;
   gap: 16px !important;
+}
+
+[class*="voicesettings_TransmissionTypeSettings_"]>* {
+  margin-bottom: 0px !important;
+}
+
+[class*="voicesettings_TransmissionTypeSettings_"] [class*="voicesettings_HotkeySettingDescription_"] {
+  margin-right: 0px !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="voicesettings_TransmissionTypeSettings_"] [class*="voicesettings_HotkeySettingRow_"] {
+  justify-content: flex-start !important;
+  align-items: center !important;
+  text-align: left !important;
+  padding: 0px !important;
+  gap: 16px !important;
+}
+
+._DialogSection {
+  margin-bottom: 0px !important;
+}
+
+[class*="voicesettings_HotkeyClearButton_"] {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+[class*="voicesettings_HotkeyClearButton_"] svg > * {
+  fill: transparent !important;
+  stroke: transparent !important;
+}
+
+[class*="voicesettings_HotkeyClearButton_"] svg {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 32px 32px !important;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+/* THRESHOLD */
+.VoiceSettings .DialogLabelStrong {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="voicesettings_TransmissionTypeSettings_"] [class*="voicesettings_HotkeySettingRow_"]>* {
+  margin-left: 0px !important;
+}
+
+[class*="voicesettings_RecommendedNote_"] {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+  text-transform: none !important;
+}
+
+/* ADVANCED */
+.VoiceSettings .advancedSettings {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+.VoiceSettings .advancedSettings.showAdvanced {
+  opacity: 1 !important;
+  display: inherit !important;
+}
+
+._DialogSection.pushToTalkSection .pushToKeyAssignContainer, ._DialogSection.pushToTalkSection .pushtoTalkKeyAssignContainer, .VoiceSettings .advancedSettings {
+  background-color: transparent !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+[class*="voicesettings_VoiceSettings_"] [class*="voicesettings_ToggleRow_"] {
+  margin-bottom: 0px !important;
+}
+
+.scrollToRef {
+  width: 0px !important;
+  height: 0px !important;
+  display: none !important;
+}
+
+.VoiceSettings .advancedSettingsButton {
+}
+
+[class*="voicesettings_VoiceSettings_"] [class*="voicesettings_AdvancedSettingsButton_"] svg {
+  margin-left: 0px !important;
+  fill: transparent !important;
+  vertical-align: middle !important;
+  display: none !important;
 }

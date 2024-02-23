@@ -381,7 +381,8 @@
 [class*="friendssettings_FakeFriend_"] {
   font-weight: 400 !important;
   gap: 8px !important;
-  margin-top: 8px !important;
+  margin-top: 0px !important;
+  margin-bottom: 16px !important;
 }
 
 /* DEFERRED SETTING */
@@ -403,6 +404,7 @@
 
 [class*="deferredsettinglabel_DeferredSettingLabel_"] {
   gap: 8px !important;
+  direction: rtl !important;
 }
 
 /* NOTIFICATION SETTINGS */
@@ -456,6 +458,16 @@
   color: rgb(var(--color-text)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
+}
+
+.DialogToggleField._DialogInputContainer._DialogLayout {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0px !important;
+}
+
+.alignSelfCenter {
+  align-self: baseline !important;
 }
 
 .DialogContent .DialogControlsSection {
@@ -1105,6 +1117,15 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 }
 
 /* VOICE */
+[class*="gamepaddialog_Field_"][class*="gamepaddialog_ChildrenWidthGrow_"] [class*="gamepaddialog_FieldChildrenWithIcon_"] {
+  width: 100% !important;
+}
+
+[class*="voicesettings_MicrophoneTest_"] {
+  gap: 16px !important;
+  display: flex !important;
+}
+
 [class*="voicesettings_MicrophoneTest_"] [class*="voicesettings_MicrophoneTestButton_"] {
   width: auto !important;
   min-width: fit-content !important;
@@ -1112,7 +1133,10 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 }
 
 [class*="voicesettings_MicrophoneTest_"] [class*="voicesettings_VolumeBar_"] {
-  background: transparent !important;
+  background: rgba(var(--color-white), 0.2) !important;
+  height: 4px !important;
+  display: flex !important;
+  order: 2 !important;
 }
 
 [class*="progressbar_ProgressBar_"] {
@@ -1128,6 +1152,18 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 [class*="keycapture_Capturing_"][class*="keycapture_Capturing_"][class*="keycapture_Capturing_"] {
   outline: 2px solid rgb(var(--color-primary)) !important;
   outline-offset: -2px !important;
+}
+
+[class*="voicesettings_HotKeyField_"] button[class*="voicesettings_ClearButton_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 32px 32px !important;
+  height: 32px !important;
+  width: 32px !important;
+  max-width: 32px !important;
+  padding: 0px !important;
+  color: transparent !important;
 }
 
 [class*="gamepaddialog_Field_"].DesktopUI [class*="gamepaddialog_FieldChildrenInner_"], .DesktopUI [class*="gamepaddialog_Field_"] [class*="gamepaddialog_FieldChildrenInner_"] {
@@ -1147,6 +1183,30 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
   margin-bottom: 0px !important;
 }
 
+/* VOICE SLIDER */
+[class*="gamepadslider_SliderControlPanelGroup_"] {
+  display: flex !important;
+}
+
+ [class*="settings_SettingsDialogBodyFade_"] > [class*="gamepaddialog_Field_"] [class*="gamepadslider_SliderControlPanelGroup_"]::before {
+  content: "" !important;
+  display: block !important;
+  margin-right: 8px !important;
+  height: 24px !important;
+  width: 24px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+0lEQVRIie2UPW7CQBCFP+cCNHTuUi0noKJGnMDp6DhDWiqOwBXgCDTpAUGNBDdwitzgpWAsrZa12fAnpDCSpbfz1vOt7JnNJHHPeLtr9RfgUYBPYFrrSjr3OEllg9+StJLUj/kpxfc6RuhNJBWmu7bvT4COveRqABU8t/VM0kcKoIrSilQ5/+TO0xPThUGSAE25kVfISVqazmOfKdPpVSEga8i1gB9vrRoNPOkcFMDctAPWpnPgkAoQUFqBMN6Bsekh8GW6B2xPK13Xpt9BmxbhvnODVkFigJHX9xcNWnjSi66KlJ+8A9oN/gDYAIuYGZuDm8ZTzsE/A/wCqEd4EXyLcmcAAAAASUVORK5CYII=') !important;
+}
+
+ [class*="settings_SettingsDialogBodyFade_"] > [class*="gamepaddialog_Field_"]:nth-of-type(5) [class*="gamepadslider_SliderControlPanelGroup_"]::before {
+   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAo0lEQVRIie2UYQoCIRCFP6MjbGew006n6xJFtHWB158Cd9HZCVoS6sGAOvI+dXCSJNbUZlX3nwEYoEpYBJACRRYwAJdibQecgPQpQM2otT5RFzX4A74HiDYpd183TzQszJvaOrkbkIEDcK7kDdgDd5cgqRUm6SgpN/L5mTfHwwW8IFfVNS6ZSwr1osmFCfSfUl4N5sbzcQgUBbx16lLd/IN+AQ+TmLsULZzhWQAAAABJRU5ErkJggg==') !important;
+ }
+
+[class*="gamepadslider_SliderControlAndNotches_"] {
+  flex-grow: 1 !important;
+}
+
 /* REMOTE PLAY */
 [class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_FullWidth_"] {
   gap: 16px !important;
@@ -1158,11 +1218,12 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 
 /* MUSIC */
 [class*="gamepaddialog_Field_"][class*="gamepaddialog_WithFirstRow_"][class*="gamepaddialog_WithChildrenBelow_"][class*="gamepaddialog_ExtraPaddingOnChildrenBelow_"] [class*="gamepaddialog_FieldChildrenWithIcon_"] {
-  padding-top: 16px !important;
+  padding-top: 0px !important;
 }
 
 [class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_BeforeChildren_"] {
   padding-right: 8px !important;
+  display: none !important;
 }
 
 [class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_BeforeChildren_"] svg {
@@ -1190,6 +1251,10 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
   height: 32px !important;
   width: 32px !important;
   margin: 0px !important;
+}
+
+[class*="accountsettings_AvatarAndLabel_"] {
+  margin-bottom: 16px !important;
 }
 
 /* FUNDS */

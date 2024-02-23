@@ -886,31 +886,91 @@ input[type="radio" i]:checked:after:active {
 }
 
 .DialogToggleField_Control {
-  border-radius: 0px !important;
-  line-height: 32px !important;
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--size-14) !important;
-  font-weight: 400 !important;
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: transparent !important;
+  width: 44px !important;
+  height: 20px !important;
+  position: relative !important;
+  margin: 6px 0px !important;
+}
+
+.DialogToggleField_Control:disabled {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+.DialogToggleField_OptionPanel {
+  width: 40px !important;
+  height: 16px !important;
+  left: 0px !important;
+  top: 0px !important;
+  border: 2px solid rgba(var(--color-white), 0.84) !important;
+  border-radius: 9001px !important;
+  background-color: transparent !important;
+}
+
+.DialogToggleField_OptionPanel:hover {
+  border-color: rgb(var(--color-white)) !important;
+}
+
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)) {
+  border-color: rgb(var(--color-primary)) !important;
+  background: rgb(var(--color-primary)) !important;
+}
+
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+  background: rgba(var(--color-white), 0.67) !important;
+}
+
+.DialogToggleField_Option.Off {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 5px !important;
+  background: rgba(var(--color-white), 0.84) !important;
+  border-radius: 50% !important;
+}
+
+.DialogToggleField_Control:hover .DialogToggleField_Option.Off, .DialogToggleField_Control:active .DialogToggleField_Option.Off {
+  background: rgb(var(--color-white)) !important;
+}
+
+.DialogToggleField_Control .DialogToggleField_Option.Off.Active {
+  transform: translateX(0px);
+  transition: transform 0.25s !important;
+}
+
+.DialogToggleField_Control .DialogToggleField_Option.Off:not(.Active) {
+  transform: translateX(24px);
+  transition: transform 0.25s !important;
+  color: transparent !important;
+}
+
+.DialogToggleField_Option.Off {
+  margin: 3px !important;
+  color: transparent !important;
+}
+
+.DialogToggleField_Option.On {
+  background-color: transparent !important;
   margin-left: 0px !important;
+  line-height: 32px !important;
+  color: transparent !important;
+  text-transform: none !important;
+  position: fixed !important;
 }
 
-.DialogToggleField_Option.Off.Active {
+.DialogToggleField_Option.On::after {
+  margin-left: calc(12px) !important;
   color: rgb(var(--color-text)) !important;
-  background-color: rgba(var(--color-white), 0.2) !important;
+  position: absolute !important;
+  line-height: 16px !important;
 }
 
-.DialogToggleField_Option.Active {
-  color: rgb(var(--color-text)) !important;
-  background-color: rgb(var(--color-primary)) !important;
+.DialogToggleField_Option.On::after {
+  content: "Off" !important;
 }
 
-.DialogToggleField_Option:hover:not(.Active) {
-  background-color: rgba(var(--color-white), 0.3) !important;
-}
-
-.DialogToggleField_Option:active:not(.Active) {
-  background-color: rgba(var(--color-white), 0.4) !important;
+.DialogToggleField_Option.On.Active::after {
+  content: "On" !important;
 }
 
 /* CLEAR ACTION */
@@ -964,6 +1024,10 @@ input[type="radio" i]:checked:after:active {
 /* TOGGLE */
 [class*="toggle_Toggle_"] {
   background-color: transparent !important;
+  width: 44px !important;
+  height: 20px !important;
+  position: relative !important;
+  margin: 6px 0px !important;
 }
 
 [class*="toggle_Toggle_"][class*="toggle_Disabled_"] {
@@ -1019,6 +1083,35 @@ input[type="radio" i]:checked:after:active {
   transform: translateX(24px);
   transition: transform 0.25s !important;
   color: rgb(var(--color-white)) !important;
+}
+
+[class*="toggle_ToggleRow_"] {
+  padding: 0px !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+}
+
+[class*="toggle_ToggleRow_"] [class*="toggle_Label_"] {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+  line-height: 32px !important;
+}
+
+/* LABEL ROWS */
+[class*="toggle_Toggle_"]::after {
+  margin-left: calc(44px + 12px) !important;
+  transform: translateY(2px) !important;
+  position: fixed !important;
+  line-height: 16px !important;
+}
+
+[class*="toggle_Toggle_"]:has([class*="toggle_ToggleRail_"]:not([class*="toggle_On_"]))::after {
+  content: "Off" !important;
+}
+
+[class*="toggle_Toggle_"]:has([class*="toggle_ToggleRail_"][class*="toggle_On_"])::after {
+  content: "On" !important;
 }
 
 /* GAMEPAD TOGGLE */
@@ -1112,6 +1205,27 @@ input[type="radio" i]:checked:after:active {
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"] [class*="gamepaddialog_ToggleSwitch_"] {
   background: rgb(var(--color-white)) !important;
+}
+
+/* LABEL ROWS */
+[class*="gamepaddialog_FieldLabelRow_"] {
+  flex-direction: column !important;
+  gap: 0px !important;
+  align-items: baseline !important;
+}
+
+[class*="gamepaddialog_Toggle_"]::after {
+  margin-left: calc(44px + 12px) !important;
+  transform: translateY(-2px) !important;
+  position: fixed !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:not([class*="gamepaddialog_On_"])::after {
+  content: "Off" !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]::after {
+  content: "On" !important;
 }
 
 /* SELECT */

@@ -68,14 +68,28 @@
   background: rgba(var(--color-white), 0.2) !important;
 }
 
+/* TABS */
 [class*="gamepadtabbedpage_TabHeaderRowWrapper_"] {
   padding: 0px 16px !important;
+}
+
+[class*="gamepadtabbedpage_TabsRowScroll_"] {
+  -webkit-mask-image: none !important;
 }
 
 [class*="gamepadtabbedpage_FixCenterAlignScroll_"] {
   padding: 0px 0px !important;
   column-gap: 0px !important;
   overflow-x: hidden !important;
+}
+
+[class*="gamepadtabbedpage_FixCenterAlignScroll_"] > div {
+  min-width: 0px !important;
+}
+
+[class*="gamepadtabbedpage_TabTitle_"] {
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
 }
 
 [class*="gamepadtabbedpage_TabHeaderRowWrapper_"], [class*="gamepadtabbedpage_TabContents_"] {
@@ -89,6 +103,16 @@
 [class*="gamepadtabbedpage_Tab_"][class*="gamepadtabbedpage_Selected_"] {
   color: rgb(var(--color-text)) !important;
   background-color: rgb(var(--color-primary)) !important;
+  min-width: auto !important;
+  flex-shrink: 0 !important;
+}
+
+[class*="gamepadtabbedpage_Tab_"] [class*="gamepadtabbedpage_TabIcon_"] {
+  display: none !important;
+}
+
+[class*="gamepadtabbedpage_Tab_"]:not([class*="gamepadtabbedpage_Selected_"]) [class*="gamepadtabbedpage_TabIcon_"] {
+  display: none !important;
 }
 
 [class*="gamepadtabbedpage_Tab_"] {
