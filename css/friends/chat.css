@@ -152,7 +152,7 @@
   z-index: -1 !important;
 }
 
-.chattabs_UnreadCircle_52cn_ {
+[class*="chattabs_UnreadCircle_"] {
   bottom: 4px !important;
   right: 4px !important;
   width: 4px !important;
@@ -1524,10 +1524,14 @@ div:hover > .inviteAnotherFriendButton {
   font-style: normal !important;
   font-weight: 400 !important;
   line-height: 38px !important;
-  padding-left: 16px !important;
+  padding-left: 0px !important;
 }
 
-.chatRoomVoiceChannelName, .chatRoomTextChannel, .chatRoomDirectMessageEntry {
+.chatRoomVoiceChannelName, .chatRoomTextChannelName, .chatRoomDirectMessageEntry {
+  padding-left: 0px !important;
+}
+
+.chatRoomTextChannel, .chatRoomVoiceChannel {
   padding-left: 16px !important;
 }
 
@@ -1550,19 +1554,20 @@ div:hover > .inviteAnotherFriendButton {
 }
 
 .chatRoomTextChannel.ActiveTextChannel::before  {
-  position: relative !important;
+  position: absolute !important;
   display: block !important;
   width: 0px !important;
   height: 20px !important;
   outline: 2px solid rgb(var(--color-primary)) !important;
   content: "" !important;
-  left: -10px !important;
+  left: 2px !important;
   top: 9px !important;
   background: rgb(var(--color-primary)) !important;
 }
 
 .chatRoomVoiceChannelNameContainer, .chatRoomTextChannelNameContainer {
   height: 38px !important;
+  padding-left: 0px !important;
 }
 
 .chatRoomGroupNavColumn div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:hover {
@@ -1571,6 +1576,40 @@ div:hover > .inviteAnotherFriendButton {
 
 .chatRoomGroupNavColumn div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   background-color: transparent !important;
+}
+
+/* UNREAD */
+.chatRoomTextChannel .ChatUnreadMessageIndicator {
+  top: 0px !important;
+}
+
+.chatTab .chatTabUnreadBadge, .FriendMessageCount, .ChatUnreadMessageIndicator {
+  line-height: 32px !important;
+  height: 38px !important;
+  width: 100% !important;
+  border-radius: 0px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  text-align: right !important;
+  position: absolute !important;
+  background: transparent !important;
+  top: 0px !important;
+  left: 0px !important;
+  bottom: 0px !important;
+  right: 0px !important;
+}
+
+.ChatUnreadMessageIndicator .chatUnreadCircle {
+  width: 4px !important;
+  height: 4px !important;
+  background-color: rgb(var(--color-primary)) !important;
+  border-radius: 50% !important;
+  left: unset !important;
+  top: 4px !important;
+  right: 4px !important;
 }
 
 /* CHANNEL LIST ICONS */
@@ -1598,6 +1637,10 @@ div:hover > .inviteAnotherFriendButton {
   max-width: 38px !important;
   max-height: 38px !important;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABOklEQVRYhe2WMUrEUBCGv3iBbezSWT1rCyvrxUKwy3Z2W3kAW6s9wl5BQbC2sbDTZbcO6A208Aa/RSYQQhKZxKwL+354MO9NMvMxL/wkkcQu6uC/AdoUwbyKYF5FMK8imFcRzKuxwW6AZZ8Xh4IF4LMjvwROgKm7sqS+K0h6V6F6biEps/jUnnPV7wt1bM1CC1gJndr+TtLM08N7lbL1AlwAeS2/oLjeHHgAru38Ebgc8yqbplM9m9t0yqm9Wpx6rzNx/sEKSDrOJsB3Za+W+FftjY9lwL3FAVhZnAIfnkJ9wEThXaEhdwTcWnwFPFt8Bmx8Xcazi6+aXWSeHkMMtoRrAptXfGurBlufTFt+IulN0tRbe+jHnwOHHflzYA08eQt7fWxr2hsf+zNFMK8imFcRzKsI5tXOgv0AYBzkbVIkS34AAAAASUVORK5CYII=') !important;
+}
+
+.chatRoomVoiceChannelIcon {
+  margin: 0px !important;
 }
 
 /* CHAT ROOM LIST COLLAPSED */
