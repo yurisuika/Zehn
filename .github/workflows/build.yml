@@ -17,7 +17,7 @@ jobs:
         env:
           DATE: ${{ steps.date.outputs.DATE }}
         with:
-          directory: "./static"
+          path: "./static"
           type: 'zip'
           filename: 'zehn-$DATE.zip'
       - name: Create Archive
@@ -25,7 +25,7 @@ jobs:
         env:
           DATE: ${{ steps.date.outputs.DATE }}
         with:
-          directory: "./live"
+          path: "./live"
           type: 'zip'
           filename: 'zehn-live-$DATE.zip'
       - name: Create Release
@@ -36,4 +36,4 @@ jobs:
           commit: master
           name: ${{ steps.date.outputs.date }}
           tag: ${{ steps.date.outputs.date }}
-          artifacts: "*"
+          artifacts: "*.zip"
