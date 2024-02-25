@@ -30,12 +30,10 @@ jobs:
           filename: 'zehn-live-$DATE.zip'
       - name: Create Release
         uses: ncipollo/release-action@v1
-        env:
-          DATE: ${{ steps.date.outputs.DATE }}
         with:
           allowUpdates: true
           replacesArtifacts: true
           commit: master
           name: ${{ steps.date.outputs.date }}
           tag: ${{ steps.date.outputs.date }}
-          artifacts: "zehn-$DATE.zip,zehn-live-$DATE.zip"
+          artifacts: "*"
