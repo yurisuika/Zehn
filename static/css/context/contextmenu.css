@@ -1,3 +1,25 @@
+/* CONTEXT MENU POPUP */
+[class*="contextmenu_contextMenu_"] {
+  border: 1px solid rgb(var(--color-contextmenu-border)) !important;
+  box-sizing: border-box !important;
+}
+
+[class*="contextmenu_contextMenu_"]:has([class*="supernav_MenuPopup_"]), [class*="contextmenu_contextMenu_"]:has([class*="menu_MenuPopup_"]) {
+  border-top: unset !important;
+}
+
+[class*="contextmenu_contextMenuContents_"], [class*="contextmenu_contextMenuContents_"][class*="titlebarcontrols_AccountMenuPopup_"] {
+  width: 200px !important;
+}
+
+[class*="contextmenu_contextMenuContents_"]:has([class*="titlebarcontrols_NotificationHeader_"]) {
+  width: 400px !important;
+}
+
+[class*="contextmenu_contextMenuContents_"]:has([class*="soundtrackcontrols_ControlBlock_"]) {
+  width: 400px !important;
+}
+
 /* MENU */
 .GreenEnvelopeMenu, [class*="contextmenu_contextMenu_"] {
   background: transparent !important;
@@ -6,10 +28,17 @@
 [class*="menu_MenuPopup_"] {
   background: rgb(var(--color-contextmenu-background)) !important;
   min-width: 0px !important;
-  border-bottom: 1px solid rgb(var(--color-contextmenu-border)) !important;
-  border-left: 1px solid rgb(var(--color-contextmenu-border)) !important;
-  border-right: 1px solid rgb(var(--color-contextmenu-border)) !important;
+  border: unset !important;
   padding-bottom: 8px !important;
+}
+
+[class*="menu_MenuItem_"] {
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+  min-width: 0px !important;
+  box-sizing: border-box !important;
 }
 
 [class*="menu_MenuItem_"][class*="menu_Separator_"] {
@@ -18,7 +47,6 @@
 
 [class*="menu_MenuItem_"][class*="menu_Item_"] {
   width: 100% !important;
-  min-width: fit-content !important;
 }
 
 [class*="menu_MenuItem_"][class*="menu_Item_"]:hover {
@@ -77,7 +105,6 @@
 }
 
 [class*="contextmenu_contextMenuContents_"]:not([class*="menu_MenuPopup_"]) {
-  border: 1px solid rgb(var(--color-contextmenu-border)) !important;
   padding: 4px 0px !important;
 }
 
@@ -93,19 +120,27 @@
   display: none !important;
 }
 
-[class*="contextmenu_contextMenuItem_"] {
-  color: rgb(var(--color-text)) !important;
-  border: unset !important;
-  padding: 0px 16px !important;
-  font-size: rgb(var(--color-text)) !important;
-}
-
 [class*="contextmenu_contextMenuContents_"]:not([class*="menu_MenuPopup_"]) [class*="contextmenu_contextMenuItem_"] {
   margin: 0px !important;
 }
 
 [class*="contextmenu_contextMenuItem_"] {
+  color: rgb(var(--color-text)) !important;
+  border: unset !important;
+  padding: 0px 16px !important;
+  font-size: rgb(var(--color-text)) !important;
   line-height: 32px !important;
+  display: block !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  max-width: 200px !important;
+  min-width: 0px !important;
+  box-sizing: border-box !important;
+}
+
+[class*="contextmenu_Label_"] {
+  flex-shrink: 1 !important;
 }
 
 [class*="contextmenu_contextMenuItem_"]:hover {
@@ -121,13 +156,17 @@
 }
 
 [class*="contextmenu_contextMenuItem_"][class*="contextmenu_SubMenu_"] [class*="contextmenu_Arrow_"] {
-  margin: 0px -16px 0px 0px !important;
+  margin: 0px !important;
   width: 32px !important;
   height: 32px !important;
+  top: 0px !important;
+  right: 0px !important;
+  position: absolute !important;
 }
 
 [class*="contextmenu_contextMenuItem_"][class*="contextmenu_SubMenu_"] .SVGIcon_DownArrowContextMenu {
   fill: transparent !important;
+  margin: 0px !important;
 }
 
 /* SCREENSHOTS */
@@ -789,6 +828,8 @@
 /* ACCOUNT MENU */
 [class*="titlebarcontrols_AccountMenuPopup_"] [class*="titlebarcontrols_AccountName_"], [class*="titlebarcontrols_AccountMenuPopup_"] [class*="titlebarcontrols_WalletBalance_"] {
   color: rgb(var(--color-text)) !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
 }
 
 [class*="titlebarcontrols_AccountMenuPopup_"] [class*="titlebarcontrols_WalletBalance_"] {
