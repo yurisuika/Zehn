@@ -4,9 +4,11 @@ Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design lang
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2. It isn't quite the Metro of Windows 8 or the Fluent of Windows 11. Rather, it is a transitional design language that merges the sharp lines and minimalistic icons of Metro with effects such as Acrylic and Reveal that would later stay in Fluent. Unfortunately, some iconography of Fluent came into Windows 10 over the years through updates. If you're like me, you've managed to stop those updates from happening yet still be on 22H2. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
 #### Downloading
-Zehn now features both a [static](https://github.com/yurisuika/Zehn/releases/latest/download/zehn.zip) and a [live](https://github.com/yurisuika/Zehn/releases/latest/download/zehn-live.zip) version! Use these links to directly download their archives from the releases page!
+Zehn now features both a static and a live version! You can download both versions from the [latest release](https://github.com/yurisuika/Zehn/releases/latest)! A new release is created every day a commit is pushed and is updated every subsequent push for that day.
 
-The live version references the static version, so each time Steam is started or reloaded you will have the latest changes and fixes applied! Unless config options are added or renamed, you should not need to install an update again!
+The static version contains the whole skin. You will need to download the latest release for any updates.
+
+The live version references the static version, so each time Steam is started or reloaded you will have the latest changes and fixes applied! You will be able to receive the latest updates while not having to overwrite your config. This version is recommended for most users.
 
 #### Installation
 1. Download your preferred version.
