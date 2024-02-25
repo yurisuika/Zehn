@@ -91,6 +91,8 @@
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+  min-height: 64px !important;
+  box-sizing: border-box !important;
 }
 
 [class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogHeader.DesktopUI, .DesktopUI [class*="pagedsettings_PagedSettingsDialog_PageContent_"] .DialogHeader {
@@ -377,10 +379,15 @@
 }
 
 /* DESCRIPTION */
-[class*="gamepaddialog_FieldDescription_"].DesktopUI, .DesktopUI [class*="gamepaddialog_FieldDescription_"] {
+[class*="gamepaddialog_FieldDescription_"].DesktopUI, .DesktopUI [class*="gamepaddialog_FieldDescription_"], [class*="gamepaddialog_FieldDescription_"] {
   color: rgb(var(--color-sub)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
+  margin-top: 0px !important;
+  width: 100% !important;
+  gap: 8px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 [class*="gamepaddialog_FieldLabel_"] {
@@ -540,14 +547,6 @@
   margin-bottom: 0px !important;
 }
 
-[class*="gamepaddialog_FieldDescription_"] {
-  margin-top: 0px !important;
-  width: 75% !important;
-  gap: 8px 16px !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
 [class*="gamepaddialog_Field_"][class*="gamepaddialog_ExtraPaddingOnChildrenBelow_"] {
   gap: 8px 16px !important;
   display: flex !important;
@@ -648,6 +647,10 @@ div:not(:first-child) > .DialogSubHeader {
 
 /* INTERFACE */
 [class*="settings_SettingsDialogBodyFade_"]>div {
+}
+
+[class*="gamepaddialog_Field_"][class*="gamepaddialog_ChildrenWidthFixed_"] [class*="gamepaddialog_FieldChildrenInner_"].DesktopUI, .DesktopUI [class*="gamepaddialog_Field_"][class*="gamepaddialog_ChildrenWidthFixed_"] [class*="gamepaddialog_FieldChildrenInner_"] {
+  min-width: 300px !important;
 }
 
 /* LIBRARY */
@@ -1142,6 +1145,9 @@ div:not(:first-child) > .DialogSubHeader {
 [class*="settings_SettingsDialogButton_"].DesktopUI, .DesktopUI [class*="settings_SettingsDialogButton_"] {
   padding: 0px 16px !important;
   line-height: 32px !important;
+  box-sizing: border-box !important;
+  min-width: 32px !important;
+  max-width: fit-content !important;
 }
 
 [class*="settings_BuiltInLayoutButton_"].DialogButton {

@@ -54,10 +54,11 @@
 }
 
 .InviteLinksTable .DialogInput {
-  padding: 0px 16px !important;
+  padding: 0px 12px !important;
   margin: 0px !important;
-  margin-right: 16px !important;
   height: 32px !important;
+  min-width: calc(100% - 16px) !important;
+  max-width: calc(100% - 16px) !important;
 }
 
 .DialogSpanningTable td.dateCell {
@@ -83,6 +84,7 @@
 
 .inviteLinkContainer .DialogInputLabelGroup .DialogInput {
   margin: 0px !important;
+  min-width: 300px !important;
 }
 
 .DialogHeader .ChatRoomGroupAvatar.Small {
@@ -97,16 +99,19 @@
   margin-left: unset !important;
   justify-content: flex-start !important;
   display: flex !important;
-  flex-direction: row !important;
-  gap: 16px !important;
+  flex-direction: column !important;
+  gap: 0px 16px !important;
+  align-self: baseline !important;
 }
 
 .expireLinkInContainer .DialogLabel._DialogLayout {
   font-size: var(--size-14) !important;
+  line-height: 32px !important;
 }
 
 .inviteLinkContainer .DialogInputLabelGroup.inviteLinkDropDown {
   margin: 0px 0px 0px auto !important;
+  min-width: 300px !important;
 }
 
 .inviteLinkContainer .DialogDropDown._DialogInputContainer {
@@ -170,6 +175,16 @@
   padding: 0px !important;
 }
 
+.ChatRoomGroupInviteDialog  .DialogListBuilderInput > label {
+  min-width: 100% !important;
+}
+
+.FriendPicker .DialogListBuilderInput .DialogListBuilderInput_Input {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
 .FriendPicker .DialogListBuilderInput_List {
   max-height: 128px !important;
+  min-width: 100% !important;
 }

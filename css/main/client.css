@@ -80,6 +80,7 @@ a, h1, h2, h3, h4, h5, p {
 /* TEXT INPUT */
 .DialogInput_Wrapper>input.DialogInput {
   padding: 0px 12px !important;
+  min-width: 300px !important;
 }
 
 .DialogInput_Wrapper>input.DialogInput:hover {
@@ -478,8 +479,8 @@ img[class*="emoticon_emoticon_"] {
   border-radius: 50% !important;
   border: 3px solid rgb(var(--color-background)) !important;
   box-sizing: content-box !important;
-  right: 0px !important;
-  bottom: 0px !important;
+  right: -3px !important;
+  bottom: -3px !important;
   left: unset !important;
   top: unset !important;
   z-index: 999 !important;
@@ -489,6 +490,8 @@ img[class*="emoticon_emoticon_"] {
   width: 8px !important;
   height: 8px !important;
   border-width: 2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
 }
 
 /* OTHER AVATAR */
@@ -1315,6 +1318,8 @@ option:active {
   line-height: 32px !important;
   display: flex !important;
   max-width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .DialogTextInputBase:hover, ._DialogInputContainer:hover:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container)  {
@@ -1330,15 +1335,13 @@ option:active {
 }
 
 .DialogDropDown_Arrow {
-  /* align-self: center !important; */
-  /* width: unset !important; */
-  /* height: unset !important; */
   top: 0px !important;
   right: 0px !important;
   align-self: flex-end !important;
   position: relative !important;
   width: 32px !important;
   height: 32px !important;
+  margin-left: auto !important;
 }
 
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu {
@@ -1379,6 +1382,12 @@ option:active {
   margin: 1px !important;
   padding: 0px 16px !important;
   line-height: 32px !important;
+}
+
+[class*="dropdown_DialogDropDownMenu_Item_"] > div {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 [class*="dropdown_DialogDropDownMenu_Item_"]:hover {
