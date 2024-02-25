@@ -16,18 +16,18 @@ jobs:
         uses: thedoctor0/zip-release@0.7.6
         with:
           directory: "static"
-          path: "*"
+          path: "."
           type: 'zip'
-          custom: -r
-          filename: '../zehn-${{ steps.date.outputs.DATE }}.zip'
+          custom: -r -j
+          filename: 'zehn-${{ steps.date.outputs.DATE }}.zip'
       - name: Create Archive
         uses: thedoctor0/zip-release@0.7.6
         with:
           directory: "live"
-          path: "*"
+          path: "."
           type: 'zip'
-        custom: -r
-          filename: '../zehn-live-${{ steps.date.outputs.DATE }}.zip'
+          custom: -r -j
+          filename: 'zehn-live-${{ steps.date.outputs.DATE }}.zip'
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
