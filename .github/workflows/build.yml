@@ -8,20 +8,22 @@ jobs:
     steps:
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y.%-m.%-d')"
+        run: echo "DATE=$(date +'%Y.%-m.%-d')" >> $GITHUB_OUTPUT
+        env:
+          DATE: ${{ steps.date.outputs.DATE }}
       - uses: actions/checkout@master
       - name: Create Archive
         uses: thedoctor0/zip-release@0.7.6
         with:
           directory: "./static"
           type: 'zip'
-          filename: 'zehn-${{ steps.date.outputs.date }}.zip'
+          filename: 'zehn-$DATE.zip'
       - name: Create Archive
         uses: thedoctor0/zip-release@0.7.6
         with:
           directory: "./live"
           type: 'zip'
-          filename: 'zehn-live-${{ steps.date.outputs.date }}.zip'
+          filename: 'zehn-live-$DATE.zip'
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
@@ -29,4 +31,4 @@ jobs:
           replacesArtifacts: true
           name: ${{ steps.date.outputs.date }}
           tag: ${{ steps.date.outputs.date }}
-          artifacts: "*"
+          artifacts: "zehn-$DATE.zip,zehn-live-$DATE.zip"

@@ -47,4 +47,4 @@ If you are using Linux, you will want to install [some form of Segoe UI](https:/
 - [Micon](https://github.com/xtoolkit/Micon) - Brings Segoe MDL2 assets to a web font!
 
 #### Previews
-![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/src/main/resources/assets/zehn.png)
+![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/zehn.png?raw=true)
