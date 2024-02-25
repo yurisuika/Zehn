@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Get current date
         id: date
@@ -29,6 +31,7 @@ jobs:
         with:
           allowUpdates: true
           replacesArtifacts: true
+          commit: master
           name: ${{ steps.date.outputs.date }}
           tag: ${{ steps.date.outputs.date }}
           artifacts: "zehn-$DATE.zip,zehn-live-$DATE.zip"
