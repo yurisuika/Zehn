@@ -9,6 +9,14 @@
   gap: 16px !important;
 }
 
+.FriendSettingsContainer .DialogLabel, .FriendSettingsContainer .DialogLabelStrong {
+  font-size: var(--size-20) !important;
+}
+
+.DialogSlider_Container .DialogLabel {
+  font-size: var(--size-14) !important;
+}
+
 /* PAGELIST */
 .FriendSettingsContainer [class*="pagedsettings_PagedSettingsDialog_PageListItem_"] {
   padding: 0px 0px 0px 48px !important;
@@ -60,6 +68,7 @@
 .friendSettingsFakeFriend {
   margin-top: 0px !important;
   margin-bottom: 16px !important;
+  display: none !important;
 }
 
 /* CHAT */
@@ -68,6 +77,7 @@
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   padding-top: 0px !important;
+  padding-bottom: 8px !important;
 }
 
 .FriendSettingsContainer .SettingsGroup > ._DialogInputContainer._DialogLayout:not(.DialogToggleField) {
@@ -80,10 +90,6 @@
 }
 
 /* SCALING */
-.friendSettingsSubheader {
-  margin-top: 0px !important;
-}
-
 .FriendSettingsContainer .SettingsGroup>* {
   margin-bottom: 0px !important;
 }
@@ -97,7 +103,12 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
 }
 
 .friendSettingsSubheader {
-  line-height: 18px !important;
+  margin-top: 0px !important;
+  line-height: unset !important;
+  font-size: var(--size-14) !important;
+}
+
+.FriendSettingsContainer .friendSettingsSubheader {
   font-size: var(--size-14) !important;
 }
 
@@ -118,7 +129,11 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
 }
 
 .FriendsSettingsFlashSection_Header {
-  line-height: 18px !important;
+  line-height: unset !important;
+  font-size: var(--size-14) !important;
+}
+
+.FriendSettingsContainer .FriendsSettingsFlashSection_Header {
   font-size: var(--size-14) !important;
 }
 
@@ -144,10 +159,13 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
   border-bottom-right-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
   padding: 0px !important;
+  gap: 16px !important;
+  align-items: center !important;
 }
 
 .voiceSelfDirections .friend {
-  margin-right: auto !important;
+  margin-right: 0px !important;
+  width: 100% !important;
 }
 
 .LocalMicTestButton {
@@ -159,9 +177,11 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
 }
 
 .voiceSelfHeader .friend .avatarHolder .avatarStatus {
-  width: 100% !important;
-  right: unset !important;
-  left: 0px !important;
+  width: 4px !important;
+  right: 0px !important;
+  top: unset !important;
+  bottom: 0px !important;
+  left: unset !important;
   background: rgb(var(--color-primary)) !important;
 }
 
@@ -169,15 +189,18 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
   flex-direction: column !important;
 }
 
-.DialogSlider_Container {
-  padding: 0px !important;
-  gap: 16px !important;
+/* DROPDOWN */
+.DialogInputLabelGroup {
   display: flex !important;
-  flex-direction: column !important;;
+  flex-direction: column !important;
+  align-items: baseline !important;
 }
 
-.DialogSlider_Container .DialogLabel {
-  font-size: var(--size-14) !important;
+/* SLIDER */
+.DialogSlider_Container {
+  padding: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;;
 }
 
 .DialogLabelExplainer {
@@ -274,6 +297,8 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
   color: rgb(var(--color-text)) !important;
+  line-height: 32px !important;
+  min-width: 100% !important;
 }
 
 [class*="voicesettings_TransmissionTypeSettings_"] [class*="voicesettings_HotkeySettingRow_"] {
@@ -281,11 +306,15 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
   align-items: center !important;
   text-align: left !important;
   padding: 0px !important;
-  gap: 16px !important;
+  gap: 0px 16px !important;
+  flex-wrap: wrap !important;
 }
 
 ._DialogSection {
   margin-bottom: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
 }
 
 [class*="voicesettings_TransmissionTypeSettings_"] [class*="voicesettings_HotkeySettingRow_"] [class*="voicesettings_HotkeyButton_"][class*="voicesettings_Capturing_"] {
@@ -320,7 +349,21 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
 }
 
 /* THRESHOLD */
+.VoiceSettings .DialogLabel:not(.DialogLabelStrong) {
+  line-height: 32px !important;
+}
+
+.VoiceSettings .DialogLabel._DialogLayout:not(.DialogLabelStrong) {
+  margin-top: 16px !important;
+}
+
 .VoiceSettings .DialogLabelStrong {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+.VoiceSettings .DialogLabel:not(._DialogLayout) {
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
   color: rgb(var(--color-text)) !important;

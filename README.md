@@ -24,9 +24,9 @@ In the `~/Zehn/css/config.css` file you will find several configurable options, 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
 #### Things of Note
-The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If you switch from the library to the downloads page, it will unload, but you may get it back by pressing F5 to reload the client (this may require dev mode enabled).
+As of 2024, Steam has updated Chromium in the beta branch. This is has brought sorely needed support for some selectors that vastly improve skinning the client. As such, development for the time being will be on the Steam beta branch. If your client is not on the branch, you may notice repeated icons in some areas, icons that don't seem right, and other abnormalities.
 
-Because Steam has chosen to not give unique classes or ids to some things, you may notice repeated icons in some areas.
+The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If you switch from the library to the downloads page, it will unload, but you may get it back by pressing F5 to reload the client (this may require dev mode enabled). Possibly in the future I may figure out how to fix this.
 
 If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
 

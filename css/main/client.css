@@ -66,7 +66,7 @@ a, h1, h2, h3, h4, h5, p {
 }
 
 .DialogTextInputBase:disabled, .DialogTextInputBase:read-only {
-  background: rgba(var(--color-white), 0.1) !important;
+  background: transparent !important;
 }
 
 .DialogInputRequirementLabel {
@@ -105,7 +105,7 @@ a, h1, h2, h3, h4, h5, p {
 .DialogHeader {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
-  font-size: var(--size-24) !important;
+  font-size: var(--size-28) !important;
   margin-bottom: 0px !important;
   margin-right: 0px !important;
   line-height: 32px !important;
@@ -125,7 +125,7 @@ a, h1, h2, h3, h4, h5, p {
 .DialogSubHeader {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
-  font-size: var(--size-18) !important;
+  font-size: var(--size-20) !important;
   text-transform: none !important;
   letter-spacing: normal !important;
   margin-right: 0px !important;
@@ -135,9 +135,12 @@ a, h1, h2, h3, h4, h5, p {
 .DialogLabel, .DialogLabelStrong {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
-  font-size: var(--size-16) !important;
+  font-size: var(--size-14) !important;
   text-transform: none !important;
   margin-bottom: 0px !important;
+}
+
+label > .DialogLabel {
   line-height: 32px !important;
 }
 
@@ -409,10 +412,6 @@ img[class*="emoticon_emoticon_"] {
 }
 
 /* AVATAR STATUS BAR */
-[class*="steamavatar_avatarHolder_"] [class*="steamavatar_avatarStatus_"].right, [class*="steamavatar_avatarHolder_"] [class*="steamavatar_avatarStatus_"].bottom {
-  display: none !important;
-}
-
 [class*="standardtemplates_StandardTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_AllNotificationsTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_StandardTemplateDesktop_"] [class*="standardtemplates_AvatarStatus_"] {
   height: 44px !important;
   width: 44px !important;
@@ -436,21 +435,33 @@ img[class*="emoticon_emoticon_"] {
 /* AVATAR */
 [class*="steamavatar_avatarHolder_"] {
   transform: none !important;
-  height: 30px !important;
-  width: 30px !important;
+  height: 32px !important;
+  width: 32px !important;
   border-radius: var(--option-round-avatars) !important;
+  position: relative !important;
+}
+
+[class*="steamavatar_avatarHolder_"].X-Small {
+  height: 32px !important;
+  width: 32px !important;
 }
 
 [class*="steamavatar_avatarHolder_"].Medium {
   transform: none !important;
-  height: 36px !important;
-  width: 36px !important;
+  height: 38px !important;
+  width: 38px !important;
 }
 
 [class*="steamavatar_avatarHolder_"].Large {
   transform: none !important;
-  height: 36px !important;
-  width: 36px !important;
+  height: 54px !important;
+  width: 54px !important;
+}
+
+[class*="steamavatar_avatarHolder_"].X-Large {
+  transform: none !important;
+  height: 54px !important;
+  width: 54px !important;
 }
 
 [class*="steamavatar_avatar_"] {
@@ -460,29 +471,31 @@ img[class*="emoticon_emoticon_"] {
   border-radius: var(--option-round-avatars) !important;
 }
 
-[class*="steamavatar_avatarStatus_"].bottom {
-  display: none !important;
-  height: 0px !important;
+[class*="steamavatar_avatarStatus_"], [class*="steamavatar_avatarStatus_"].bottom, [class*="steamavatar_avatarStatus_"].right {
+  position: absolute !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  border: 3px solid rgb(var(--color-background)) !important;
+  box-sizing: content-box !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: unset !important;
+  top: unset !important;
+  z-index: 999 !important;
 }
 
-[class*="steamavatar_avatarHolder_"].ingame, .ingame [class*="steamavatar_avatarHolder_"] {
-  border: 1px solid rgb(var(--color-ingame)) !important;
-}
-
-[class*="steamavatar_avatarHolder_"].online, .online [class*="steamavatar_avatarHolder_"] {
-  border: 1px solid rgb(var(--color-online)) !important;
-}
-
-[class*="steamavatar_avatarHolder_"].offline, .offline [class*="steamavatar_avatarHolder_"] {
-  border: 1px solid rgb(var(--color-offline)) !important;
+[class*="steamavatar_avatarHolder_"].X-Small [class*="steamavatar_avatarStatus_"], [class*="steamavatar_avatarHolder_"].Small [class*="steamavatar_avatarStatus_"] {
+  width: 8px !important;
+  height: 8px !important;
+  border-width: 2px !important;
 }
 
 /* OTHER AVATAR */
 [class*="steamtemplates_StandardLogoDimensions_"] {
   border-radius: var(--option-round-avatars) !important;
-  margin: 1px !important;
-  height: 42px !important;
-  width: 42px !important;
+  height: 44px !important;
+  width: 44px !important;
 }
 
 [class*="standardtemplates_AllNotificationsTemplate_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_StandardTemplateDesktop_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_PinnedTemplateWeb_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_PinnedTemplateDesktop_"] [class*="standardtemplates_StandardLogoDimensions_"] {
@@ -587,6 +600,10 @@ img[class*="emoticon_emoticon_"] {
 
 .offline [class*="steamavatar_avatarStatus_"] {
   background: rgb(var(--color-offline)) !important;
+}
+
+.awayOrSnooze [class*="steamavatar_avatarStatus_"] {
+  -webkit-mask: none !important;
 }
 
 /* LIST ITEM */
@@ -1296,6 +1313,8 @@ option:active {
   border-radius: 0px !important;
   font-size: var(--size-14) !important;
   line-height: 32px !important;
+  display: flex !important;
+  max-width: 100% !important;
 }
 
 .DialogTextInputBase:hover, ._DialogInputContainer:hover:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container)  {
@@ -1311,11 +1330,15 @@ option:active {
 }
 
 .DialogDropDown_Arrow {
-  align-self: center !important;
-  width: unset !important;
-  height: unset !important;
+  /* align-self: center !important; */
+  /* width: unset !important; */
+  /* height: unset !important; */
   top: 0px !important;
   right: 0px !important;
+  align-self: flex-end !important;
+  position: relative !important;
+  width: 32px !important;
+  height: 32px !important;
 }
 
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu {
@@ -1454,6 +1477,15 @@ option:active {
   width: 5px !important;
   height: 5px !important;
   border-radius: 50% !important;
+}
+
+/* COPIED */
+.copiedAnimation {
+  font-size: var(--size-14) !important;
+  letter-spacing: normal !important;
+  color: rgb(var(--color-primary)) !important;
+  opacity: 0 !important;
+  display: none !important;
 }
 
 /* INJECTED BUTTON */

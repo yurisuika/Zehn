@@ -3,8 +3,94 @@
   border: 1px solid rgb(var(--color-primary)) !important;
 }
 
+.chat_main.singlewindow .multiChatDialog {
+  border: none !important;
+}
+
 .chatTitleBar .title-area-highlight {
   -webkit-mask: none !important;
+}
+
+/* SINGLE WINDOW */
+.singleWindowDivider {
+  background-color: transparent !important;
+  width: 8px !important;
+  margin-right: -4px !important;
+  z-index: 999 !important;
+  position: relative !important;
+  min-width: 0px !important;
+  border: unset !important;
+}
+
+.singleWindowDivider:hover {
+  background-color: transparent !important;
+}
+
+.friendListCollapse, .friendListButtons {
+  right: 0px !important;
+  top: 0px !important;
+}
+
+.friendListButton:last-child:not(.addFriendButton) {
+  margin-right: 0px !important;
+}
+
+.friendCollapseButton, .friendSettingsButton {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.friendListButton {
+  margin: 0px !important;
+}
+
+.friendCollapseButton:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.friendCollapseButton:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+.friendCollapseButton .SVGIcon_DoubleArrow {
+  opacity: 1 !important;
+  transform: none !important;
+  margin: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  background: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqUlEQVRYhe3WMQ7CMBBE0W9K3wBoiRRx/9sAJTmCW1M5HcVoxwIp+w8werKSOKX3zj92+jXgWwlTS5hawtQSppYwtcPBGrBGBsqEv4sGbMAtMuI+sQa8CaLACxuoxTHmgllR4IHZUeA7sWLa2XPAKnABHoatPdeJVeCKEed8Kwfu5Rhzf8cqcAae0aEZV9J45u6RkRlXkqXD/V2ES5hawtQSppYwtYSpfQCpARit2WxqiAAAAABJRU5ErkJggg==') !important;
+}
+
+.friendCollapseButton .SVGIcon_DoubleArrow * {
+  stroke: transparent !important;
+  fill: transparent !important;
+}
+
+.chatTabOpenFriendsList {
+  height: 38px !important;
+  width: 38px !important;
+  font-size: var(--size-14) !important;
+  line-height: 38px !important;
+  padding: 0px !important;
+  color: transparent !important;
+  background-color: transparent !important;
+  margin: 0px !important;
+  transition: none !important;
+  background: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAoUlEQVRYhe3WOwrCQBRG4ROxcglamoC4/91oa9xB2rEUBIuLZzCE/yxg+Mg8cofWGmts92/AtwKrFli1wKoFVi2wapuFXYHFgHw2CNPFHTgCh98574ytHIEn8pezztgZeCDizMM/IeLsWzkBMwKux3OhzOo27AacEG6oCdNQ4MFUFMBeWGOVD+yFDihwfkld2ux00a3AqgVWLbBqgVULrNoL9OkYrhxD8p0AAAAASUVORK5CYII=') !important;
+}
+
+.chatTabOpenFriendsList:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.chatTabOpenFriendsList:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
 }
 
 /* TITLEBAR */
@@ -60,11 +146,6 @@
 }
 
 /* TABS */
-[class*="chattabs_ChatTabContent_Friend_"] .friend .avatarHolder .avatarStatus {
-  display: none !important;
-  width: 0px !important;
-}
-
 [class*="chattabs_ChatTab_"]:before, [class*="chattabs_ChatTab_"]:last-of-type:after {
   width: 0px !important;
 }
@@ -138,6 +219,10 @@
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVRYhe2VfQoCIRBH30ZH2M6wndZO1yWK6OMCv/4pMHBpZ3QpZB4I6uDwGNQZJPGPbH4tMEeIWQkxKyFmJcSsdCuWABVGqszLUNkrBYzAJdvbASdgqEncQqwkMLe/mG7v2GqEmJXuxJY+ZfeT765iOeOXtYut89wdmIADcC7EE7AHHs78IMkzkqSjpGkmPr3iyZnfLfaWu6rMrUZKUnWv/Cg+lf0xx3vHclSYVwu2EGtWpZyu/7FVCDErIWYlxKyEmJUnHvMO61G9/O0AAAAASUVORK5CYII=') !important;
 }
 
+[class*="chattabs_ChatTab_"] [class*="chattabs_MicStatus_"][title="Microphone is muted"] svg {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVRYhe3Y6wnCMBRA4VtxA3UGnaFdRGdwiS5g93AQR3ACF1Ac4PjHgMZEuObRIvdAwMYQPtIixQaQKTYbGxDLYNoMps1g2gym7W9hg4gQGIO3rhWRo2pnIGUALLy51XPeXbfABeg0e+eAheb7FFRJWBKqJKxLQZWCJaNKwLKgcsOyoVJgDtRHUL23rjosdlIE1lWBxU5KgOWYMIe68377XAdgA9xqw9xJ7SLfr4EzMNSEhR50v2sK6hfYt58EUiD+mCtfc/YishWR0+sLSuBzo9z3owbsLwJVBtNmMG0G02YwbZOFPQCDy3enNg6pewAAAABJRU5ErkJggg==') !important;
+}
+
 [class*="chattabs_ChatTab_"] .SVGIcon_Microphone {
   margin: 0px !important;
   opacity: 0 !important;
@@ -206,17 +291,22 @@
   padding-left: 0px !important;
 }
 
-[class*="chattabs_ChatTab_"] [class*="steamavatar_avatarHolder_"].X-Small, [class*="chattabs_ChatTab_"] .ChatRoomGroupAvatar.Smaller {
-  height: 30px !important;
-  width: 30px !important;
+.ChatRoomGroupAvatar.Smaller {
+  height: 32px !important;
+  width: 32px !important;
 }
 
 [class*="chattabs_ChatTab_"] .ChatRoomGroupAvatar_initials {
-  width: 30px !important;
-  height: 30px !important;
+  width: 32px !important;
+  height: 32px !important;
   padding-top: 0px !important;
   border-width: 0px !important;
-  line-height: 30px !important;
+  line-height: 32px !important;
+}
+
+/* TAB NAME */
+.ChatTabs [class*="personanameandstatus_compactView_"] [class*="personanameandstatus_playerNickname_"] {
+  color: rgb(var(--color-disabled)) !important;
 }
 
 /* NON-ACTIVE TAB */
@@ -631,8 +721,10 @@
 }
 
 .ChatRoomGroupAvatar_initials {
+  color: rgb(var(--color-white)) !important;
   font-weight: 700 !important;
-  background-image: -webkit-linear-gradient(top, rgb(var(--color-white)), rgb(var(--color-white))) !important;
+  background-image: none !important;
+  background-color: rgb(var(--color-white)) !important;
 }
 
 .ChatMessageInvite.Inviter .ChatRoomGroupAvatar.Small {
@@ -1532,7 +1624,7 @@ div:hover > .inviteAnotherFriendButton {
 }
 
 .chatRoomTextChannel, .chatRoomVoiceChannel {
-  padding-left: 16px !important;
+  padding-left: 0px !important;
 }
 
 .chatRoomTextChannel.ActiveTextChannel, .chatRoomVoiceChannel.ActiveVoiceChannel {
@@ -1586,7 +1678,7 @@ div:hover > .inviteAnotherFriendButton {
 .chatTab .chatTabUnreadBadge, .FriendMessageCount, .ChatUnreadMessageIndicator {
   line-height: 32px !important;
   height: 38px !important;
-  width: 100% !important;
+  width: 38px !important;
   border-radius: 0px !important;
   color: rgb(var(--color-primary)) !important;
   font-weight: 400 !important;
@@ -1653,12 +1745,6 @@ div:hover > .inviteAnotherFriendButton {
   max-height: calc(100% - 38px) !important;
 }
 
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
-  height: 38px !important;
-  width: 38px !important;
-  margin-left: 36px !important;
-}
-
 .ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
   stroke: transparent !important;
   opacity: 0 !important;
@@ -1674,6 +1760,7 @@ div:hover > .inviteAnotherFriendButton {
 }
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
+  margin-left: 38px !important;
   height: 38px !important;
   width: 38px !important;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVRYhe3V0QnAIAwAUS3df+V0gggXAg149yviQwnuiFgTe/4GZAmjCaMJowmjCaN1wlo/3SturDVhtLGwt7DnNH3Z2qaHVGDZIVEBZI19SmE0YbROWNtErnXJjbUmjCaMJowmjCaM9gEr2QdNVEhqwAAAAABJRU5ErkJggg==') !important;
@@ -1743,12 +1830,6 @@ div:hover > .inviteAnotherFriendButton {
   margin-bottom: 38px !important;
 }
 
-.friendGroup .groupName {
-  color: rgb(var(--color-text)) !important;
-  font-size: var(--size-14) !important;
-  text-transform: uppercase !important;
-}
-
 .friendGroup .groupName .groupIcon .SVGIcon_Group {
   fill: rgb(var(--color-white)) !important;
   stroke: rgb(var(--color-white)) !important;
@@ -1789,7 +1870,6 @@ div:hover > .inviteAnotherFriendButton {
 }
 
 .MemberListOptionsContainer {
-  /* width: 38px !important; */
   height: 38px !important;
 }
 
@@ -1869,8 +1949,8 @@ div:hover > .inviteAnotherFriendButton {
 }
 
 .MemberListViewCompact .CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount, .MemberListViewCompact .CompactFriendsList .friend .avatarHolder {
-  width: 30px !important;
-  height: 30px !important;
+  width: 32px !important;
+  height: 32px !important;
   margin: 3px !important;
 }
 
@@ -1954,4 +2034,38 @@ div:hover > .inviteAnotherFriendButton {
 .MemberListOptionsContainer .friendSearchClear {
   width: 38px !important;
   height: 38px !important;
+}
+
+/* USER VOICE STATUS */
+.voiceStatusIconsContainer {
+  margin-right: 0px !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0px !important;
+}
+
+.no_mic_for_session .voicestatusIcon.voiceStatusMic, .output_muted_self .voicestatusIcon.voiceStatusOutput, .output_muted_remotely .voicestatusIcon.voiceStatusOutput, .mic_muted_self .voicestatusIcon.voiceStatusMic, .mic_muted_remotely .voicestatusIcon.voiceStatusMic {
+  width: 32px !important;
+  height: 32px !important;
+  opacity: 1 !important;
+  color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 32px 32px !important;
+}
+
+.voicestatusIcon.voiceStatusOutput.disabled {
+  color: transparent !important;
+}
+
+.voicestatusIcon.voiceStatusOutput {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABIklEQVRYhe2VPU7DQBCFP3OBNHTuqDZ1CirqiAKJznTpUuUAaalyhFwBJCRqGop0gJLaErlBKLjBS5GxZFn+WYOtSNaOtNLbfdbbNx7POJLEOePirLcHA8FAMDBUA0tg3acBBxxq+DUwAaZeapLaLCfpW6cocitJieFre65Rs83lYxN1FQYyc7HtnyQ9NOn6lEC2NsAdkBb4lZUlBV6AhZ2/AvddlKAs2/zZ3LLN3sKH4dinDJHH71hAVHM2An5ze1Xg0hjEHEiAZ8MO+DIcA/uuDIhT77sS7gp4NDwD3g3fALtm5W7b8KfQhkmTbttBlJkoMzDP9X0vg6iYaRU/kvQpaeqj95ePMAUua/hbYAu8+Yj5zIFeYxBzIBgIBoKBf8URTHR4zZhriVQAAAAASUVORK5CYII=') !important;
+}
+
+.voicestatusIcon.voiceStatusOutput.disabled {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzUlEQVRYhe2WzQ3CMAxGXxEjMAKHdhhmaDsZnQEW4MAA3BmhQ3wcSKQIQZtWRhHIliwljhQ/f/mtJFHSNkWzO4ADOIADrASogbEUQA2cgV0JgCYkP1glB0DSnEcbJdVJLI4Pkrqk34ZYztxsMzmribELcIz1AAPQWyswF+sTpdrc6iWZHcP0UzGl1lcU6EK/C9XHdpYCFpvw9pKwDzEzgOiNpHuAeKfKKq+07E/YACdgv3itP9hSAHjehleMbsM1AKb2k6+hAziAA/wXwAOv1gzUh0q7oQAAAABJRU5ErkJggg==') !important;
+}
+
+.voicestatusIcon.voiceStatusMic {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyElEQVRYhe3XwQ3CMAyFYZcVgBlghnYStskCdAwkBmICFgAxwM+FXEJC6+DQA7aUQ90o73PVHtoBsmStFk13gAMcUAkYRYTMGpN9vYicJ08DtAtgnfS2r3687oErMEydVwvI9YM23BqgDrcGDNpwS0BVuBWgOtwC8FW4FhCDQyE88A5sAihNTmafKaA0uQCbXwBi+CN57LGOwB64twLEyQ+F+zvgAowtALkXLq2bNnwu4NOnhjawBnDKhOeqCtCB/xc4wAF/DngCowbeecaFszUAAAAASUVORK5CYII=') !important;
 }

@@ -140,6 +140,7 @@ Zehn.waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) 
       '[class*="bottombar_FriendsButton_"]',
       '[class*="bottombar_DownloadStatus_"]',
       '[class*="bottombar_AddGameButton_"]',
+      '[class*="titlebarcontrols_SoundtrackControls_"]',
       '[class*="titlebarcontrols_AnnouncementsButton_"]',
       '[class*="titlebarcontrols_VRToggle_"]',
       '[class*="titlebarcontrols_GamepadUIToggle_"]'

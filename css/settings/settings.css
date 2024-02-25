@@ -68,6 +68,16 @@
   margin-bottom: 0px !important;
 }
 
+[class*="gamepaddialog_WithBottomSeparatorStandard_"] {
+   display: flex !important;
+   gap: 16px !important;
+   flex-direction: column !important;
+ }
+
+[class*="gamepaddialog_WithBottomSeparatorStandard_"][class*="gamepaddialog_WithFirstRow_"] {
+  gap: 0px !important;
+}
+
 /* TITLE */
 [class*="pagedsettings_PagedSettingsDialog_Title_"] {
   color: rgb(var(--color-text)) !important;
@@ -90,16 +100,26 @@
 [class*="settings_SettingsDialogSubHeader_"].DesktopUI, .DesktopUI [class*="settings_SettingsDialogSubHeader_"] {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
-  font-size: var(--size-18) !important;
+  font-size: var(--size-20) !important;
   text-transform: none !important;
   margin-bottom: 0px !important;
+}
+
+[class*="notificationssettings_NotificationListSection_"] [class*="notificationssettings_Subheader_"] {
+  text-transform: none !important;
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-20) !important;
+  padding-top: 0px !important;
+  margin-top: 16px !important;
 }
 
 [class*="remoteplaysettings_TableHeader_"].DesktopUI, .DesktopUI [class*="remoteplaysettings_TableHeader_"] {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
-  font-size: var(--size-18) !important;
+  font-size: var(--size-20) !important;
   text-transform: none !important;
+  margin-top: 16px !important;
 }
 
 [class*="remoteplaysettings_TableHeader_"] {
@@ -383,6 +403,7 @@
   gap: 8px !important;
   margin-top: 0px !important;
   margin-bottom: 16px !important;
+  display: none !important;
 }
 
 /* DEFERRED SETTING */
@@ -408,18 +429,35 @@
 }
 
 /* NOTIFICATION SETTINGS */
+[class*="notificationssettings_NotificationSection_"] {
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+
 [class*="notificationssettings_NotificationSection_"] [class*="notificationssettings_NotificationFeedToggle_"] {
   margin-right: 8px !important;
+  display: flex !important;
+  order: 2 !important;
 }
 
 [class*="gamepaddialog_Field_"][class*="gamepaddialog_CompactPadding_"] {
   padding: 0px !important;
 }
 
+[class*="notificationssettings_NotificationListSection_"] {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
 [class*="notificationssettings_NotificationDescription_"] {
   color: rgb(var(--color-text)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
+  order: 1 !important;
+  margin: 0px !important;
+  line-height: 32px !important;
+  min-width: 100% !important;
 }
 
 [class*="notificationssettings_NotificationGroupExpanded_"] {
@@ -435,6 +473,10 @@
   height: 38px !important;
   width: 38px !important;
   background-color: transparent !important;
+}
+
+[class*="notificationssettings_PrefDetailsToggle_"] {
+  order: 3 !important;
 }
 
 [class*="notificationssettings_PrefDetailsToggle_"].DialogButton {
@@ -477,7 +519,7 @@
 }
 
 .DialogContent .DialogControlsSection > .Panel:not([class*="radio_Group_"]) {
-  gap: 16px !important;
+  gap: 8px 16px !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -501,6 +543,20 @@
 [class*="gamepaddialog_FieldDescription_"] {
   margin-top: 0px !important;
   width: 75% !important;
+  gap: 8px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[class*="gamepaddialog_Field_"][class*="gamepaddialog_ExtraPaddingOnChildrenBelow_"] {
+  gap: 8px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* SUB HEADER */
+div:not(:first-child) > .DialogSubHeader {
+  margin-top: 16px !important;
 }
 
 /* SLIDER */
@@ -1175,12 +1231,22 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
   width: auto !important;
 }
 
+[class*="settings_SettingsDialogBodyFade_"] [class*="voicesettings_HotKeyField_"] button:not([class*="voicesettings_ClearButton_"]) {
+  min-width: 120px !important;
+  padding: 0px !important;
+}
+
 [class*="voicesettings_Advanced_"] {
   padding-top: 0px !important;
 }
 
 [class*="settings_SettingsDialogBodyText_"], [class*="settings_SettingsDialogDescriptionText_"] {
   margin-bottom: 0px !important;
+}
+
+[class*="settings_SettingsDialogBodyText_"] {
+  font-size: var(--size-18) !important;
+  line-height: 32px !important;
 }
 
 /* VOICE SLIDER */
@@ -1216,6 +1282,14 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
   margin-left: 0px !important;
 }
 
+[class*="remoteplaysettings_Advanced_"] .Panel>div {
+  padding-left: 0px !important;
+}
+
+[class*="remoteplaysettings_SubSetting_"] .Panel>div {
+  padding-left: 0px !important;
+}
+
 /* MUSIC */
 [class*="gamepaddialog_Field_"][class*="gamepaddialog_WithFirstRow_"][class*="gamepaddialog_WithChildrenBelow_"][class*="gamepaddialog_ExtraPaddingOnChildrenBelow_"] [class*="gamepaddialog_FieldChildrenWithIcon_"] {
   padding-top: 0px !important;
@@ -1223,6 +1297,9 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 
 [class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_BeforeChildren_"] {
   padding-right: 8px !important;
+}
+
+[class*="pagedsettings_PagedSettingsDialog_"] [class*="gamepaddialog_FieldIcon_"][class*="gamepaddialog_BeforeChildren_"] {
   display: none !important;
 }
 
@@ -1290,7 +1367,7 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 [class*="accountsettings_AvatarAndLabel_"] [class*="accountsettings_Avatar_"] {
   margin-left: 0px !important;
   margin-right: 8px !important;
-  margin-top: 2px !important;
+  margin-top: 0px !important;
 }
 
 [class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_StandardSpacing_"] {

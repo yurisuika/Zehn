@@ -1,6 +1,6 @@
 /* BACKGROUND */
 [class*="appdetailssoundtrack_SoundtrackContainer_"] {
-  padding: 16px !important;
+  padding: 38px 0px 0px 0px !important;
 }
 
 [class*="appdetailssoundtrack_SoundtrackPanel_"] {
@@ -14,17 +14,58 @@
   background-image: url() !important;
 }
 
-/* HEADER */
+/* COLUMNS */
+[class*="appdetailssoundtrack_Columns_"] {
+  gap: 16px !important;
+}
+
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] {
+  gap: 16px !important;
+}
+
+/* LEFT PANEL */
+[class*="appdetailssoundtrack_AlbumArtAndTitle_"] {
+  margin-bottom: 0px !important;
+  gap: 16px !important;
+}
+
+/* LEFT PANEL ART */
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_LeftColumn_"] {
+  margin-right: 0px !important;
+  margin-top: 16px !important;
+  margin-left: 16px !important;
+  margin-bottom: 126px !important;
+  padding-bottom: 0px !important;
+  gap: 16px !important;
+}
+
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_LeftColumn_"] [class*="appdetailssoundtrack_AlbumArt_"] {
+  border: unset !important;
+  margin-bottom: 0px !important;
+  border-image-width: 0px !important;
+  border-image-source: url() !important;
+  width: 100% !important;
+  height: 254px !important;
+  filter: none !important;
+}
+
+/* LEFT PANEL INFO */
 [class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] {
   border-bottom: unset !important;
   padding-bottom: 0px !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
+}
+
+[class*="appdetailssoundtrack_TitleAndArtist_"] {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0px !important;
 }
 
 [class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_AlbumName_"] {
   color: rgb(var(--color-text)) !important;
   font-weight: 400 !important;
-  font-size: var(--size-24) !important;
+  font-size: var(--size-20) !important;
   letter-spacing: normal !important;
 }
 
@@ -35,41 +76,56 @@
   margin-bottom: 0px !important;
 }
 
-[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_AlbumStats_"] {
+/* LEFT PANEL STATS */
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] {
+  gap: 16px !important;
+  padding-bottom: 0px !important;
+  margin-top: 16px !important;
+  flex-direction: column !important;
+}
+
+[class*="appdetailssoundtrack_ParentGameLinkContainer_"], [class*="appdetailssoundtrack_AlbumStatsContainer_"] {
   color: rgb(var(--color-sub)) !important;
   font-weight: 400 !important;
+  font-size: var(--size-12) !important;
+  line-height: 24px !important;
+}
+
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_AlbumStats_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
   font-size: var(--size-14) !important;
+  line-height: 24px !important;
 }
 
 [class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_ParentGameLink_"] {
+  line-height: 24px !important;
   color: rgb(var(--color-sub)) !important;
   font-weight: 400 !important;
+  font-size: var(--size-12) !important;
+}
+
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_ParentAppName_"] {
+  margin-left: 0px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
   font-size: var(--size-14) !important;
+  line-height: 24px !important;
 }
 
-[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_ParentGameLink_"] [class*="appdetailssoundtrack_ParentAppName_"] {
-  margin-left: 8px !important;
-  color: rgb(var(--color-text)) !important;
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_ParentAppName_"]:hover {
+  color: rgb(var(--color-sub)) !important;
 }
 
-[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_ParentGameLink_"] [class*="appdetailssoundtrack_ParentAppName_"] [class*="appdetailssoundtrack_ParentGameIcon_"] {
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_ParentAppName_"]:disabled {
+  color: rgb(var(--color-disabled)) !important;
+}
+
+[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Header_"] [class*="appdetailssoundtrack_StatsAndParent_"] [class*="appdetailssoundtrack_ParentGameIcon_"] {
   border-radius: 0px !important;
   margin: 0px !important;
   display: none !important;
-}
-
-/* LEFT PANEL ART */
-[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_LeftColumn_"] {
-  margin-right: 16px !important;
-}
-
-[class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_LeftColumn_"] [class*="appdetailssoundtrack_AlbumArt_"] {
-  border: unset !important;
-  margin-bottom: 16px !important;
-  border-image-width: 0px !important;
-  border-image-source: url() !important;
-  width: 254px !important;
-  height: 254px !important;
+  opacity: 1 !important;
 }
 
 /* LEFT PANEL PROGRESS */
@@ -77,7 +133,8 @@
   gap: 8px !important;
   padding: 0px !important;
   border-radius: 0px !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
+  height: 38px !important;
 }
 
 [class*="soundtrackcontrols_ControlBlock_"] [class*="soundtrackcontrols_Progress_"] [class*="soundtrackcontrols_Text_"] {
@@ -97,7 +154,10 @@
 
 [class*="soundtrackcontrols_ControlBlock_"] [class*="soundtrackcontrols_Controls_"] {
   gap: 16px !important;
-  min-width: 0px !important;
+  min-width: fit-content !important;
+  position: relative !important;
+  left: 0px !important;
+  transform: none !important;
 }
 
 [class*="soundtrackcontrols_ControlBlock_"] button.DialogButton, [class*="soundtrackcontrols_ControlBlock_"] button.DialogButton:enabled, [class*="soundtrackcontrols_ControlBlock_"] button.DialogButton:disabled {
@@ -163,9 +223,21 @@ button[class*="soundtrackcontrols_IconButton_"] svg path {
 
 /* LEFT PANEL VOLUME */
 [class*="soundtrackcontrols_ControlBlock_"] [class*="soundtrackcontrols_VolumeControl_"] {
-  padding: 16px 0px !important;
+  padding: 0px !important;
   border-radius: 0px !important;
   gap: 8px !important;
+  right: 0px !important;
+  height: 38px !important;
+  position: relative !important;
+}
+
+[class*="soundtrackcontrols_ControlBlock_"] [class*="soundtrackcontrols_VolumeControl_"] > [class*="gamepaddialog_FieldChildrenWithIcon_"] {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+[class*="soundtrackcontrols_ControlBlock_"] [class*="soundtrackcontrols_VolumeControl_"] .SliderControlPanelGroup {
+  padding: 0px !important;
 }
 
 [class*="soundtrackcontrols_ControlBlock_"] [class*="soundtrackcontrols_VolumeControl_"] .GamepadSliderIcon {
@@ -205,7 +277,8 @@ button[class*="soundtrackcontrols_IconButton_"] svg path {
 }
 
 [class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_LeftColumn_"] [class*="appdetailssoundtrack_PlayButton_"] {
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
+  gap: 16px !important;
 }
 
 /* RIGHT TRACKS PANEL */
@@ -215,17 +288,18 @@ button[class*="soundtrackcontrols_IconButton_"] svg path {
   backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--image-acrylic) !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 126px !important;
+  overflow-y: scroll !important;
 }
 
 [class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_RightColumn_"] [class*="appdetailssoundtrack_TrackListContainer_"] {
-  padding: 16px !important;
+  padding: 0px !important;
   border-radius: 0px !important;
 }
 
 [class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_RightColumn_"] [class*="appdetailssoundtrack_TrackListContainer_"] [class*="appdetailssoundtrack_Disc_"] {
   background: transparent !important;
-  padding-left: 0px !important;
+  padding-left: 16px !important;
   color: rgb(var(--color-sub)) !important;
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
@@ -319,4 +393,71 @@ button[class*="soundtrackcontrols_IconButton_"] svg path {
 
 [class*="appdetailssoundtrack_SoundtrackContainer_"] [class*="appdetailssoundtrack_Content_"] [class*="appdetailssoundtrack_RightColumn_"] [class*="appdetailssoundtrack_TrackListContainer_"] [class*="appdetailssoundtrack_TrackListing_"]:active [class*="appdetailssoundtrack_TrackNumber_"] {
   background: transparent !important;
+}
+
+/* BOTTOM CONTROLS */
+[class*="aappdetailssoundtrack_DesktopControls_"] {
+  position: relative !important;
+  max-width: 100% !important;
+}
+
+[class*="appdetailssoundtrack_DesktopControls_"] {
+  bottom: 0px !important;
+  transform: none !important;
+  left: 0px !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  height: fit-content !important;
+  padding: 0px 16px !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  gap: 0px !important;
+  box-sizing: border-box !important;
+}
+
+[class*="soundtrackcontrols_ControlBlock_"][class*="soundtrackcontrols_FloatingLayout_"] {
+  gap: 16px !important;
+}
+
+[class*="soundtrackcontrols_ControlsAndVolume_"][class*="soundtrackcontrols_Row_"] {
+  height: fit-content !important;
+  align-self: unset !important;
+  gap: 16px !important;
+}
+
+[class*="soundtrackcontrols_VolumeControl_"] > [class*="gamepaddialog_FieldChildrenWithIcon_"] > [class*="gamepaddialog_FieldChildrenInner_"] {
+  flex-shrink: 1 !important;
+}
+
+[class*="soundtrackcontrols_ControlBlock_"] button.DialogButton, [class*="soundtrackcontrols_ControlBlock_"] button.DialogButton:enabled, [class*="soundtrackcontrols_ControlBlock_"] button.DialogButton:disabled {
+  min-width: 38px !important;
+}
+
+[class*="soundtrackcontrols_ControlBlock_"] [class*="soundtrackcontrols_Progress_"] .SliderControlPanelGroup {
+  padding-right: 0px !important;
+}
+
+[class*="appdetailssoundtrack_CurrentTrackContainer_"] {
+  padding-bottom: 0px !important;
+}
+
+[class*="appdetailssoundtrack_CurrentTrackContainer_"] svg {
+  height: 32px !important;
+  width: 32px !important;
+  margin-right: 8px !important;
+  color: transparent !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7UlEQVRYhe2W0Q3CMAwFnxELsEIYAXbrCu0qnYUVmIERjp8GoiglprQgpDzJUpWk9sWu0xigX2r30+gNoAE0gL8BMLOHSUJSSMfmbDWAgkbgsPDdVQAkaVwDQEDVsvUAgZmfyDTXAVeX7yUALwJGxeevAMSAHRCy8arvvbNMB0m9pFtp3syOHj8luQAkXZYGqMmcFxIknSOMJU0OYIWmn0pVPQy8GRj0zMIwS1kpVUmuDOQbzAJ1MQPANVkWtGIGcs19E0FJqVye3m3D6R2A02Qk431yFvSbnAOlQJ9sztsFm+k/7gMNoAE0gC11B/8nthfXPNKoAAAAAElFTkSuQmCC') !important;
+}
+
+[class*="appdetailssoundtrack_CurrentTrack_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
 }

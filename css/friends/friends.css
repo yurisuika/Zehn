@@ -85,10 +85,34 @@
   filter: none !important;
 }
 
+/* AVATAR STATUS */
+.friendlistListContainer .friend .avatarHolder .avatarStatus, .CompactFriendsList .friend .avatarHolder .avatarStatus, .FriendNotificationsDialog .friend .avatarHolder .avatarStatus {
+  top: unset !important;
+}
 
-.ChatTabContent .avatarHolder .avatarStatus, .friend.quickAccessFriend .avatarHolder .avatarStatus {
-  display: none !important;
-  height: 0px !important;
+.CompactFriendsList .avatarHolder .avatarStatus {
+  min-width: 0px !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-width: 2px !important;
+}
+
+.friend.quickAccessFriend .avatarHolder .avatarStatus {
+  height: 10px !important;
+  height: 10px !important;
+  border-width: 3px !important;
+}
+
+.compactQuickAccess .friend.quickAccessFriend .avatarHolder .avatarStatus {
+  width: 8px !important;
+  height: 8px !important;
+  border-width: 2px !important;
+}
+
+.ChatTabContent .avatarHolder .avatarStatus {
+  width: 8px !important;
+  height: 8px !important;
+  border-width: 2px !important;
 }
 
 /* HEADER */
@@ -350,11 +374,11 @@
 }
 
 .favoriteElement .ChatRoomGroupAvatar_initials {
-  width: 36px !important;
-  height: 36px !important;
+  width: 38px !important;
+  height: 38px !important;
   padding-top: 0px !important;
   border-width: 0px !important;
-  line-height: 36px !important;
+  line-height: 38px !important;
   font-size: 16px !important;
 }
 
@@ -391,6 +415,11 @@
   margin: 0px !important;
 }
 
+/* QUICK ACCESS HOVER */
+.quickAccessFriend.friendStatusHover:hover, .quickAccessFriend.friendStatusHover:active {
+  background-color: transparent !important;
+}
+
 /* QUICK ACCESS COMPACT */
 .compactQuickAccess .friend.quickAccessFriend {
   width: 32px !important;
@@ -398,8 +427,8 @@
 }
 
 .compactQuickAccess .friend.quickAccessFriend [class*="steamavatar_avatarHolder_"]{
-  height: 30px !important;
-  width: 30px !important;
+  height: 32px !important;
+  width: 32px !important;
 }
 
 .compactQuickAccess .favoriteElement {
@@ -826,6 +855,17 @@
 /* FRIENDS LIST */
 .friendGroup .groupName {
   margin-top: 0px !important;
+  line-height: 24px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  text-transform: uppercase !important;
+  border-top: unset !important;
+}
+
+.friendGroup .groupName.CompactFriendsList .friendGroup.taggedGroup .groupName, .CompactFriendsList .friendGroup.gameGroup .groupName {
+  font-size: var(--size-14) !important;
+  padding-bottom: 0px !important;
+  line-height: 24px !important;
 }
 
 .FriendsListContent .friendlistListContainer .friendGroup.onlineFriends {
@@ -906,6 +946,7 @@
 .friendGroup .groupName .groupCount {
   font-size: var(--size-14) !important;
   margin-left: 4px !important;
+  transform: none !important;
 }
 
 .friendStatusHover:hover {
@@ -925,18 +966,22 @@
   padding-right: 0px !important;
 }
 
-.friendlistListContainer .friend .avatarHolder .avatarStatus, .CompactFriendsList .friend .avatarHolder .avatarStatus, .FriendNotificationsDialog .friend .avatarHolder .avatarStatus {
-  width: 0px !important;
-  display: none !important;
+/* VOICE METER */
+.VoiceChannelParticipants .friend .avatarHolder .avatarStatus {
+  transform: none !important;
 }
 
 /* COMPACT */
-.CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount, .CompactFriendsList .friend .avatarHolder {
-  width: 30px !important;
-  height: 30px !important;
+.CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
+  width: 32px !important;
+  height: fit-content !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
 .CompactFriendsList .friend .avatarHolder {
+  width: 32px !important;
+  height: 32px !important;
   padding-right: 0px !important;
 }
 
@@ -973,10 +1018,6 @@
   height: 24px !important;
   margin: 0px 8px 0px 0px !important;
   display: none !important;
-}
-
-.friendGroup .groupName {
-  border-top: unset !important;
 }
 
 .friend.firstInGroup .SteamPlayerGroupLines, .friend.inGroup .SteamPlayerGroupLines, .friend.lastInGroup .SteamPlayerGroupLines, .SteamPlayerGroupFooter .SteamPlayerGroupLines {
@@ -1053,10 +1094,6 @@
   border: unset !important;
 }
 
-.friendGroup .groupName .groupCount {
-  margin-left: 4px !important;
-  transform: none !important;
-}
 
 /* INVITES */
 .friendGroup.friendOutgoingRequests .groupName, .friendGroup.friendRequests .groupName {
@@ -1201,49 +1238,51 @@
   background-color: transparent !important;
 }
 
-.ChatRoomMultiFriendAvatar {
-  border-radius: var(--option-round-avatars) !important;
-}
-
 .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar.Small {
-  width: 36px !important;
-  height: 36px !important;
+  width: 38px !important;
+  height: 38px !important;
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
 
 .ChatRoomListGroupItem .ChatRoomGroupAvatar.HasAvatar {
-  width: 36px !important;
-  height: 36px !important;
+  width: 38px !important;
+  height: 38px !important;
 }
 
 .ChatRoomListGroupItem .ChatRoomGroupAvatar {
-  width: 36px !important;
-  height: 36px !important;
+  width: 38px !important;
+  height: 38px !important;
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
 
 .ChatRoomListGroupItem .ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials {
-  width: 36px !important;
-  height: 36px !important;
+  width: 38px !important;
+  height: 38px !important;
   padding-top: 0px !important;
   border-width: 0px !important;
-  line-height: 36px !important;
+  line-height: 38px !important;
+}
+
+.ChatRoomGroupAvatar.Smaller .ChatRoomGroupAvatar_initials {
+  font-size: var(--size-14) !important;
 }
 
 .ChatRoomMultiFriendAvatar {
   margin: 0px !important;
   background: transparent !important;
-  border: 1px solid rgb(var(--color-white)) !important;
+  border: unset !important;
   border-radius: var(--option-round-avatars) !important;
+  background-color: rgba(var(--color-primary), 0.5) !important;
 }
 
 .ChatRoomGroupAvatar {
   margin: 0px !important;
   background: transparent !important;
-  border: 1px solid rgb(var(--color-white)) !important;
   border-radius: var(--option-round-avatars) !important;
+  border: unset !important;
+  background-color: rgba(var(--color-primary), 0.5) !important;
 }
 
 .groupNameStatusContainer {
@@ -1298,7 +1337,7 @@
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
   color: rgb(var(--color-text)) !important;
-  margin-left: 30px !important;
+  margin-left: 32px !important;
   font-size: var(--size-14) !important;
   margin-left: 8px !important;
   left: unset !important;
@@ -1354,23 +1393,34 @@
 .ChatRoomListGroupItem.ShowAllChannels .detailsView:active {
 }
 
+.friendsListContainer .chatRoomVoiceChannelName {
+  margin: 0px 16px !important;
+  text-align: center !important;
+}
+
+.friendsListContainer .CompactFriendsList .chatRoomVoiceChannelNameContainer {
+  height: 32px !important;
+  line-height: 32px !important;
+}
+
 /* COMPACT */
 .compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar {
-  height: 30px !important;
-  width: 30px !important;
+  height: 32px !important;
+  width: 32px !important;
 }
 
 .compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar.Small {
-  height: 30px !important;
-  width: 30px !important;
+  height: 32px !important;
+  width: 32px !important;
+  border-width: 0px !important;
 }
 
 .compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials {
-  width: 30px !important;
-  height: 30px !important;
+  width: 32px !important;
+  height: 32px !important;
   padding-top: 0px !important;
   border-width: 0px !important;
-  line-height: 30px !important;
+  line-height: 32px !important;
 }
 
 .compactView .ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName {
@@ -1652,10 +1702,16 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 /* USER LIST AFTER REFRESH */
-.VoiceChannelParticipants.CompactFriendsList .friend {
+.VoiceChannelParticipants .friend {
   margin-top: 0px !important;
   height: 38px !important;
   padding: 8px 16px !important;
+}
+
+.VoiceChannelParticipants.CompactFriendsList .friend {
+  margin-top: 0px !important;
+  height: 32px !important;
+  padding: 3px 16px !important;
 }
 
 .VoiceChannelParticipants.CompactFriendsList:hover {
