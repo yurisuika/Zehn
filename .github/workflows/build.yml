@@ -14,20 +14,16 @@ jobs:
       - uses: actions/checkout@master
       - name: Create Archive
         uses: thedoctor0/zip-release@0.7.6
-        env:
-          DATE: ${{ steps.date.outputs.DATE }}
         with:
-          path: "./static"
+          path: "./static/*"
           type: 'zip'
-          filename: 'zehn-$DATE.zip'
+          filename: 'zehn-${{ steps.date.outputs.DATE }}.zip'
       - name: Create Archive
         uses: thedoctor0/zip-release@0.7.6
-        env:
-          DATE: ${{ steps.date.outputs.DATE }}
         with:
-          path: "./live"
+          path: "./live/*"
           type: 'zip'
-          filename: 'zehn-live-$DATE.zip'
+          filename: 'zehn-live-${{ steps.date.outputs.DATE }}zip'
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
