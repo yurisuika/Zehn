@@ -1,0 +1,1 @@
+import 'https://zehn.yurisuika.dev/static/notifications.custom.js';

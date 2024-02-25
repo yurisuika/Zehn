@@ -4,7 +4,7 @@ Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design lang
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2. It isn't quite the Metro of Windows 8 or the Fluent of Windows 11. Rather, it is a transitional design language that merges the sharp lines and minimalistic icons of Metro with effects such as Acrylic and Reveal that would later stay in Fluent. Unfortunately, some iconography of Fluent came into Windows 10 over the years through updates. If you're like me, you've managed to stop those updates from happening yet still be on 22H2. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
 #### Downloading
-Zehn now features both a [static](https://github.com/yurisuika/Zehn/archive/refs/heads/master.zip) and a [live](https://github.com/yurisuika/Zehn/archive/refs/heads/live.zip) version! Use these links to directly download their archives from their respective branches!
+Zehn now features both a [static](https://github.com/yurisuika/Zehn/releases/latest/download/zehn.zip) and a [live](https://github.com/yurisuika/Zehn/releases/latest/download/zehn-live.zip) version! Use these links to directly download their archives from the releases page!
 
 The live version references the static version, so each time Steam is started or reloaded you will have the latest changes and fixes applied! Unless config options are added or renamed, you should not need to install an update again!
 
@@ -47,4 +47,4 @@ If you are using Linux, you will want to install [some form of Segoe UI](https:/
 - [Micon](https://github.com/xtoolkit/Micon) - Brings Segoe MDL2 assets to a web font!
 
 #### Previews
-![zehn](https://cdn.discordapp.com/attachments/729991202778251317/1211329073067073566/zehn.png)
+![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/src/main/resources/assets/zehn.png)
