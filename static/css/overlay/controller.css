@@ -951,6 +951,34 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   max-width: 400px !important;
 }
 
+[class*="steamdesktopoverlay_ControllerConfiguratorWrapper_"] .DialogContent:not([class*="pagedsettings_PagedSettingsDialog_PageContent_"]) .DialogHeader {
+  position: relative !important;
+  line-height: 32px !important;
+  font-size: var(--size-20) !important;
+  padding: 0px !important;
+}
+
+[class*="gamepadslider_DescriptionValue_"] {
+  margin-left: auto !important;
+}
+
+[class*="gamepadslider_LabelText_"] {
+  align-self: left !important;
+}
+
+[class*="steamdesktopoverlay_ControllerConfiguratorWrapper_"] [class*="gamepaddialog_FieldLabel_"] {
+  gap: 16px !important;
+}
+
+[class*="controllerconfiguratormapping_SettingMaxWidth_"] [class*="gamepaddialog_FieldLabel_"] {
+  width: 100% !important;
+}
+
+.controllerconfiguratormapping_PageContainer_3y7Oi {
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+}
+
 /* OPTION HIGHLIGHT */
 [class*="gamepaddialog_Field_"][class*="gamepaddialog_HighlightOnFocus_"].gpfocus, [class*="gamepaddialog_Field_"][class*="gamepaddialog_HighlightOnFocus_"].gpfocuswithin, [class*="gamepaddialog_Field_"][class*="gamepaddialog_Clickable_"]:not([class*="gamepaddialog_Disabled_"]):hover {
   background: transparent !important;
@@ -961,8 +989,39 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 }
 
 /* DROPDOWN BUTTON */
+button.DialogButton:has([class*="gamepaddialog_DropDownControlButtonContents_"]) {
+  background: transparent !important;
+  outline: unset !important;
+  border: unset !important;
+}
+
 [class*="gamepaddialog_DropDownControlButtonContents_"] {
   padding-left: 16px !important;
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+  border-radius: 0px !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+  border-radius: 0px !important;
+  font-size: var(--size-14) !important;
+  line-height: 32px !important;
+  display: flex !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+  height: 32px !important;
+}
+
+[class*="gamepaddialog_DropDownControlButtonContents_"]:hover  {
+  background: transparent !important;
+  outline: 2px solid rgba(var(--color-white), 0.65) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="gamepaddialog_DropDownControlButtonContents_"]:active  {
+  background: rgba(var(--color-white), 0.3) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
 }
 
 [class*="gamepaddialog_Button_"].DialogButton, [class*="gamepaddialog_Button_"].DialogButton:enabled, [class*="gamepaddialog_Button_"].DialogButton:active, [class*="gamepaddialog_Button_"].DialogButton:enabled:active:hover {
@@ -970,7 +1029,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 }
 
 [class*="gamepaddialog_Button_"] [class*="dropdownlabel_DropDownLabelTitle_"] {
-  line-height: 38px !important;
+  line-height: 32px !important;
 }
 
 [class*="gamepaddialog_DropDownControlButtonContents_"] [class*="gamepaddialog_Spacer_"] {
@@ -978,11 +1037,13 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 }
 
 [class*="gamepaddialog_DropDownControlButtonContents_"]>svg {
-  height: 38px !important;
-  color: transparent !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfklEQVRYhe3WvQmAMBRF4RN3cIdkNBvdwSVczW2eTdKIiPkjCPfVF85HCtGZGSNvGloXQAABBBAgEzD32OYAdmD7sFvjtjlgAXwMvMVD3DYHJETg+SWy4yWAhPA3RFEcwFX8kBzACVhpvBaQEJTGWwCq71cfIgEEEEAAAbrcBQibGDxU5pISAAAAAElFTkSuQmCC') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVRYhe3WQQ6CMBRF0YsrcCegm6E7QVag22NFdWB1ghJeWyIh705g8ENOfpqGJsbIHjv9G/Arw9QMUzNMzTA1w9QMUzsc7LzR7Kdc2AiEFXMhzcrlwgbgAvQLMwFo06xcyRkbgI7vuJ4XPGtbUH74R+abC8CVzE29ayr989+BKb13wK30g7VgAI/0LEZBXVjVDnfBbp5haoapGaZmmJphaoap7Rb2BHQqFv3+qvBdAAAAAElFTkSuQmCC') !important;
+  background-size: 32px 32px !important;
+  height: 32px !important;
+  width: 32px !important;
+  color: transparent !important;
 }
 
 [class*="gamepaddialog_DropDownControlButtonContents_"] [class*="dropdownlabel_DropDownLabelContainer_"] {
@@ -1059,15 +1120,6 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 }
 
 /* CONTROL SETTINGS SELECTION SIDEBAR */
-[class*="controllerconfiguratormapping_SettingsHeaderContainer_"] {
-  margin-top: 0px !important;
-  gap: 0px !important;
-  line-height: 32px !important;
-  align-items: flex-start !important;
-  align-self: flex-start !important;
-  padding: 16px 0px 16px 16px !important;
-}
-
 [class*="controllerconfiguratormapping_SettingsSource_"] {
   margin-bottom: 0px !important;
   font-weight: 400 !important;
@@ -1077,25 +1129,23 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   text-align: left !important;
 }
 
-[class*="controllerconfiguratormapping_SettingsMode_"] {
-  font-weight: 400 !important;
-  font-size: var(--size-16) !important;
-  color: rgb(var(--color-text)) !important;
-}
-
 [class*="controllerconfiguratormapping_PageListColumn_"] {
   min-width: 200px !important;
   max-width: 200px !important;
   background: transparent !important;
   border-right: unset !important;
   padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 [class*="controllerconfiguratormapping_PageList_"] {
   min-width: 200px !important;
   max-width: 200px !important;
   line-height: 40px !important;
-  padding: 16px 0px !important;
+  padding: 64px 0px 0px 0px !important;
+  background-color: rgba(var(--color-white), 0.1) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
 }
 
 [class*="controllerconfiguratormapping_PageListItem_"] {
@@ -1209,6 +1259,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   font-weight: 400 !important;
   font-size: var(--size-24) !important;
   line-height: 32px !important;
+  margin-bottom: 16px !important;
 }
 
 [class*="controllerconfigurator_interstitial_DialogBody_"] {
@@ -1234,6 +1285,18 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 [class*="controllerconfigurator_interstitial_Highlight_"] {
   color: rgb(var(--color-text)) !important;
   font-weight: 600 !important;
+}
+
+[class*="controllerconfigurator_interstitial_ContainerInner_"][class*="controllerconfigurator_interstitial_DialogStyle_"] {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px !important;
+  background-color: transparent !important;
+  border: unset !important;
+}
+
+[class*="controllerconfigurator_interstitial_DescLabelWithSpace_"] {
+  margin-bottom: 16px !important;
 }
 
 /* INTERSTITIAL DIVIDER */
@@ -1455,16 +1518,21 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
 /* CONTROLLER SETTINGS */
 [class*="controllerconfiguratormapping_RightColumnContainer_"] {
   height: auto !important;
-  margin-top: calc(32px + 16px + 38px) !important;
+  margin-top: calc(16px + 32px + 16px + 38px) !important;
+  margin-bottom: 0px !important;
   padding-left: 0px !important;
   margin-left: 16px !important;
   margin-right: 16px !important;
+  gap: calc(16px + 16px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[class*="controllerconfiguratormapping_RightColumnContainer_"] > div:last-of-type {
+  padding-bottom: 16px !important;
 }
 
 [class*="controllerconfiguratormapping_SettingsHeaderContainer_"] {
-  align-items: flex-start !important;
-  align-self: start !important;
-  padding: 38px 0px 16px 16px !important;
   line-height: 32px !important;
   position: absolute !important;
   margin-left: 200px !important;
@@ -1473,6 +1541,11 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   justify-content: flex-end !important;
   flex-direction: row !important;
   direction: rtl !important;
+  align-items: flex-start !important;
+  align-self: flex-start !important;
+  padding: 0px 16px !important;
+  gap: 8px !important;
+  margin-top: calc(38px + 16px) !important;
 }
 
 [class*="controllerconfiguratormapping_SettingsSource_"] {
@@ -1496,7 +1569,7 @@ button[class*="controllerconfigurator_HelpButton_"].DialogButton {
   font-weight: 400 !important;
   font-size: var(--size-24) !important;
   color: rgb(var(--color-text)) !important;
-  margin-right: 4px !important;
+  margin-right: 0px !important;
 }
 
 [class*="controllerconfiguratormapping_SettingMaxWidth_"] {
@@ -2209,7 +2282,8 @@ button.DialogButton[class*="controllerconfiguratormapping_AddBindingText_"][clas
   margin-bottom: 0px !important;
 }
 
-.DialogContent[class*="gamepadpagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_Field_"][class*="gamepaddialog_ExtraPaddingOnChildrenBelow_"] [class*="gamepaddialog_FieldLabelRow_"] {
+[class*="steamdesktopoverlay_ControllerConfiguratorWrapper_"] .DialogContent[class*="gamepadpagedsettings_PagedSettingsDialog_PageContent_"] [class*="gamepaddialog_Field_"][class*="gamepaddialog_ExtraPaddingOnChildrenBelow_"] [class*="gamepaddialog_FieldLabelRow_"] {
+  flex-direction: row !important;
 }
 
 /* LAYOUT DETAILS */
