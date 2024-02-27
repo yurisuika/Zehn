@@ -1,0 +1,1574 @@
+/* GLOBAL */
+* {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  font-family: var(--font-family) !important;
+  text-shadow: 0px 0px 0px transparent !important;
+  letter-spacing: normal !important;
+}
+
+@font-face {
+  font-family: micon;
+  src: local("micon"), url("https://xtoolkit.github.io/Micon/fonts/micon.ttf");
+}
+
+button {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+:root {
+  --virtualmenu-accent: rgb(var(--color-primary));
+  --virtualmenu-bg: rgba(var(--color-white), 0.1);
+  --virtualmenu-bg-hover: rgba(var(--color-primary), 0.5);
+  --virtualmenu-fg: rgb(var(--color-white));
+  --virtualmenutouchkey-icon-width: 100%;
+  --virtualmenutouchkey-icon-height: 100%;
+  --virtualmenupointer-x: 0%;
+  --virtualmenupointer-y: 0%;
+  --virtualmenupointer-color: rgb(var(--color-primary));
+  --virtualmenutouchkey-midpoint-x: 0%;
+  --virtualmenutouchkey-midpoint-y: 0%;
+  --virtualmenutouchkey-description-width: 0px;
+}
+
+:root {
+  --touchmenuicon-fg: rgb(var(--color-white));
+  --touchmenuicon-bg: rgb(var(--color-background));
+  --touchmenuicon-scale: 1;
+}
+
+body, body[class*="shared_common_v6_"] {
+  color: rgb(var(--color-sub)) !important;
+}
+
+a, h1, h2, h3, h4, h5, p {
+  color: rgb(var(--color-text)) !important;
+}
+
+/* SELECTION */
+::selection {
+  background: rgb(var(--color-primary));
+  text-shadow: 0 0 0 transparent;
+  color: rgb(var(--color-text));
+}
+
+.friendSearchInput::selection {
+  background: rgb(var(--color-primary));
+  text-shadow: 0 0 0 transparent;
+  color: rgb(var(--color-text));
+}
+
+/* INPUT */
+.DialogTextInputBase, .DialogTextInputBase:not(disabled):hover {
+  background: rgba(var(--color-white), 0.1) !important;
+  border-radius: 0px !important;
+}
+
+.DialogTextInputBase:disabled, .DialogTextInputBase:read-only {
+  background: transparent !important;
+}
+
+.DialogInputRequirementLabel {
+  color: rgb(var(--color-text)) !important;
+}
+
+::-webkit-resizer {
+  display: none !important;
+}
+
+/* TEXT INPUT */
+.DialogInput_Wrapper>input.DialogInput {
+  padding: 0px 12px !important;
+  min-width: 300px !important;
+}
+
+.DialogInput_Wrapper>input.DialogInput:hover {
+  background-color: transparent !important;
+  outline: 2px solid rgba(var(--color-white), 0.65) !important;
+  outline-offset: -2px !important;
+}
+
+.DialogInput_Wrapper>input.DialogInput:active {
+  background-color: rgba(var(--color-white), 0.3) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+.DialogInput_Wrapper>input.DialogInput:focus {
+  padding: 0px 12px !important;
+  background-color: rgb(var(--color-white)) !important;
+  outline: 2px solid rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-black)) !important;
+}
+
+/* TITLES */
+.DialogHeader {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-28) !important;
+  margin-bottom: 0px !important;
+  margin-right: 0px !important;
+  line-height: 32px !important;
+  margin-bottom: 0px !important;
+}
+
+.DialogHeaderSubtitle {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-20) !important;
+}
+
+.DialogHighlight {
+  color: rgb(var(--color-primary)) !important;
+}
+
+.DialogSubHeader {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-20) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  margin-right: 0px !important;
+}
+
+/* SUBTITLES */
+.DialogLabel, .DialogLabelStrong {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  text-transform: none !important;
+  margin-bottom: 0px !important;
+}
+
+label > .DialogLabel {
+  line-height: 32px !important;
+}
+
+.ChatRoomNotificationSettingsDialog .DialogFooter {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+}
+
+/* TEXT */
+.DialogBodyText {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  margin-bottom: 0px !important;
+}
+
+.DialogDropDown {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+}
+
+.DialogButton {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+}
+
+.DialogInput {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  padding: 0px 16px !important;
+  line-height: 32px !important;
+}
+
+.DialogBody {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  gap: 16px !important;
+}
+
+.DialogToggle_Label {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  line-height: 32px !important;
+}
+
+button.TextButton {
+  border-bottom: unset !important;
+}
+
+.DialogRequirementLabel {
+  color: rgb(var(--color-secondary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+}
+
+/* TABLES */
+table, th, td, tbody, thead, tr {
+  border-spacing: 0px !important;
+  border-collapse: collapse !important;
+  padding: 0px !important;
+}
+
+.DialogSpanningTable.BannedUsersTable tr.hoverRow, .DialogSpanningTable.InvitedUsersTable tr.hoverRow, .DialogSpanningTable.InviteLinksTable tbody tr {
+  background: rgba(var(--color-white), 0.1) !important;
+}
+
+/* STATUS */
+[class*="personanameandstatus_playerName_"] {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  flex-grow: 1 !important;
+}
+
+.ingame [class*="personanameandstatus_playerName_"] {
+  color: rgb(var(--color-ingame)) !important;
+}
+
+.online [class*="personanameandstatus_playerName_"] {
+  color: rgb(var(--color-online)) !important;
+}
+
+.offline [class*="personanameandstatus_playerName_"] {
+  color: rgb(var(--color-offline)) !important;
+}
+
+.friend {
+  color: rgb(var(--color-offline)) !important;
+}
+
+.friend.ingame {
+  color: rgb(var(--color-ingame)) !important;
+}
+
+.friend.online {
+  color: rgb(var(--color-online)) !important;
+}
+
+.friend.offline {
+  color: rgb(var(--color-offline)) !important;
+}
+
+/* NICKNAME */
+[class*="personanameandstatus_playerNicknameBracket_"] {
+  margin-left: 0px !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+  opacity: 1 !important;
+  display: none !important;
+}
+
+[class*="personanameandstatus_playerNickname_="] {
+  padding-left: unset !important;
+  color: rgb(var(--color-disabled)) !important;
+  font-size: var(--size-14) !important;
+}
+
+[class*="personanameandstatus_playerNickname_="]::before {
+  content: "\00a0" !important;
+}
+
+[class*="personanameandstatus_compactView_"] [class*="personanameandstatus_playerName_"], [class*="personanameandstatus_compactView_"] [class*="personanameandstatus_playerNickname_"] {
+  font-size: var(--size-14) !important;
+  margin-bottom: 0px !important;
+  margin-bottom: unset !important;
+}
+
+/* ICON */
+.ModalPosition_Content {
+  color: rgb(var(--color-white)) !important;
+}
+
+/* EMOTICON */
+img[class*="emoticon_emoticon_"] {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* LABELHOLDER */
+[class*="personanameandstatus_noContextMenu_"] {
+  font-weight: 400 !important;
+}
+
+/* STATUS INFO */
+[class*="personanameandstatus_gameName_"] {
+  font-weight: 400 !important;
+  font-size: var(--size-12) !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"] {
+  margin-right: 0px !important;
+  -webkit-mask: unset !important;
+  line-height: 16px !important;
+}
+
+.ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a, .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:hover, .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:active, .ingame [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:visited, .ingame [class*="personanameandstatus_twoLine_"][class*="personanameandstatus_richPresenceLabel_"] {
+  color: rgb(var(--color-ingame)) !important;
+}
+
+.online [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"], .online [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a, .online [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:hover, .online [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:active, .online [class*="personanameandstatus_gameName_"][class*="personanameandstatus_richPresenceLabel_"] a:visited, .online [class*="personanameandstatus_twoLine_"][class*="personanameandstatus_richPresenceLabel_"] {
+  color: rgb(var(--color-online)) !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"] {
+  font-weight: 400 !important;
+  font-size: var(--size-12) !important;
+  margin-top: 0px !important;
+  line-height: unset !important;
+  display: block !important;
+  text-overflow: ellipsis !important;
+  padding-right: 0px !important;
+}
+
+[class*="personanameandstatus_statusAndName_"] {
+  gap: 8px !important;
+}
+
+[class*="personanameandstatus_richPresenceContainer_"] {
+  flex-direction: row !important;
+  width: 100% !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  line-height: 16px !important;
+}
+
+[class*="personanameandstatus_statusAndName_"][class*="personanameandstatus_threeLines_"] {
+  margin-top: 0px !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"]:nth-child(1) {
+  flex-shrink: 0 !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"]:nth-child(2) {
+  font-size: var(--size-12) !important;
+  line-height: unset !important;
+  flex-shrink: 10 !important;
+  margin-left: 0px !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"]:nth-child(2)::before {
+  content: "\00a0(" !important;
+}
+
+[class*="personanameandstatus_richPresenceLabel_"]:nth-child(2)::after {
+  content: ")" !important;
+  margin-left: -2pt !important; /* FIX EXTRA SPACE */
+}
+
+.ingame.awayOrSnooze [class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_richPresenceLabel_"], .ingame [class*="personanameandstatus_richPresenceLabel_"] a, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:hover, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:active, .ingame [class*="personanameandstatus_richPresenceLabel_"] a:visited {
+  color: rgb(var(--color-ingame)) !important;
+}
+
+.online.awayOrSnooze [class*="personanameandstatus_richPresenceLabel_"], .online [class*="personanameandstatus_richPresenceLabel_"], .online [class*="personanameandstatus_richPresenceLabel_"] a, .online [class*="personanameandstatus_richPresenceLabel_"] a:hover, .online [class*="personanameandstatus_richPresenceLabel_"] a:active, .online [class*="personanameandstatus_richPresenceLabel_"] a:visited {
+  color: rgb(var(--color-online)) !important;
+}
+
+.offline.awayOrSnooze [class*="personanameandstatus_richPresenceLabel_"], .offline [class*="personanameandstatus_richPresenceLabel_"], .offline [class*="personanameandstatus_richPresenceLabel_"] a, .offline [class*="personanameandstatus_richPresenceLabel_"] a:hover, .offline [class*="personanameandstatus_richPresenceLabel_"] a:active, .offline [class*="personanameandstatus_richPresenceLabel_"] a:visited {
+  color: rgb(var(--color-offline)) !important;
+}
+
+/* STATUS SNOOZE */
+[class*="friendsnooze_SnoozeContainer_"] {
+  margin-left: 0px !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"]::after {
+  font-family: micon !important;
+  content: "\EDA5" !important;
+  font-size: var(--size-16) !important;
+  font-weight: 400 !important;
+  line-height: 16px !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"].in-game::after {
+  color: rgb(var(--color-ingame)) !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"].online::after {
+  color: rgb(var(--color-online)) !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"] [class*="friendsnooze_SnoozeZ_"] {
+  display: none !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"].in-game [class*="friendsnooze_SnoozeZ_"] {
+  color: rgb(var(--color-ingame)) !important;
+}
+
+[class*="friendsnooze_SnoozeContainer_"].online [class*="friendsnooze_SnoozeZ_"] {
+  color: rgb(var(--color-online)) !important;
+}
+
+.awayOrSnooze [class*="steamavatar_avatarStatus_"] {
+  opacity: 1 !important;
+}
+
+.friend.awayOrSnooze .labelHolder {
+  opacity: 1 !important;
+}
+
+/* AVATAR STATUS BAR */
+[class*="standardtemplates_StandardTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_AllNotificationsTemplate_"] [class*="standardtemplates_AvatarStatus_"], [class*="standardtemplates_StandardTemplateDesktop_"] [class*="standardtemplates_AvatarStatus_"] {
+  height: 44px !important;
+  width: 44px !important;
+  border-radius: var(--option-round-avatars) !important;
+  position: absolute !important;
+  z-index: -1 !important;
+}
+
+[class*="standardtemplates_AvatarStatus_"].ingame, [class*="standardtemplates_AvatarStatus_"].in-game {
+  background-color: rgb(var(--color-ingame)) !important;
+}
+
+[class*="standardtemplates_AvatarStatus_"].online {
+  background-color: rgb(var(--color-online)) !important;
+}
+
+[class*="standardtemplates_AvatarStatus_"].offline {
+  background-color: rgb(var(--color-offline)) !important;
+}
+
+/* AVATAR */
+[class*="steamavatar_avatarHolder_"] {
+  transform: none !important;
+  height: 32px !important;
+  width: 32px !important;
+  border-radius: var(--option-round-avatars) !important;
+  position: relative !important;
+}
+
+[class*="steamavatar_avatarHolder_"].X-Small {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+[class*="steamavatar_avatarHolder_"].Medium {
+  transform: none !important;
+  height: 38px !important;
+  width: 38px !important;
+}
+
+[class*="steamavatar_avatarHolder_"].Large {
+  transform: none !important;
+  height: 54px !important;
+  width: 54px !important;
+}
+
+[class*="steamavatar_avatarHolder_"].X-Large {
+  transform: none !important;
+  height: 54px !important;
+  width: 54px !important;
+}
+
+[class*="steamavatar_avatar_"] {
+  border: unset !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: var(--option-round-avatars) !important;
+}
+
+[class*="steamavatar_avatarStatus_"], [class*="steamavatar_avatarStatus_"].bottom, [class*="steamavatar_avatarStatus_"].right {
+  position: absolute !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  border: 3px solid rgb(var(--color-background)) !important;
+  box-sizing: content-box !important;
+  right: -3px !important;
+  bottom: -3px !important;
+  left: unset !important;
+  top: unset !important;
+  z-index: 999 !important;
+}
+
+[class*="steamavatar_avatarHolder_"].X-Small [class*="steamavatar_avatarStatus_"], [class*="steamavatar_avatarHolder_"].Small [class*="steamavatar_avatarStatus_"] {
+  width: 8px !important;
+  height: 8px !important;
+  border-width: 2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+}
+
+/* OTHER AVATAR */
+[class*="steamtemplates_StandardLogoDimensions_"] {
+  border-radius: var(--option-round-avatars) !important;
+  height: 44px !important;
+  width: 44px !important;
+}
+
+[class*="standardtemplates_AllNotificationsTemplate_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_StandardTemplateDesktop_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_DesktopToastTemplate_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_PinnedTemplateWeb_"] [class*="standardtemplates_StandardLogoDimensions_"], [class*="standardtemplates_PinnedTemplateDesktop_"] [class*="standardtemplates_StandardLogoDimensions_"] {
+  height: 44px !important;
+  width: 44px !important;
+}
+
+/* STATUS ICONS */
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_MobilePhoneIcon_"], [class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_VRIcon_"],
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_BigPictureIcon_"] {
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+  width: unset !important;
+  height: 16px !important;
+  line-height: 16px !important;
+  display: flex !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_VR, [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_MobilePhone, [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_BigPicture {
+  display: none !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_VR path, [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_MobilePhone path, [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_BigPicture path {
+  fill: rgb(var(--color-ingame)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].online .SVGIcon_VR path, [class*="personastatusicons_PersonaStatusIcon_"].online .SVGIcon_MobilePhone path, [class*="personastatusicons_PersonaStatusIcon_"].online .SVGIcon_BigPicture path {
+  fill: rgb(var(--color-online)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_Button path {
+  fill: rgb(var(--color-ingame)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].online .SVGIcon_Button path {
+  fill: rgb(var(--color-online)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_MobilePhoneIcon_"]::after {
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  font-family: micon !important;
+  content: "\EAAF" !important;
+  font-size: var(--size-16) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_VRIcon_"]::after {
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  font-family: micon !important;
+  content: "\EBE8" !important;
+  font-size: var(--size-16) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_BigPictureIcon_"]::after {
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  font-family: micon !important;
+  content: "\EEA3" !important;
+  font-size: var(--size-16) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].ingame::after {
+  color: rgb(var(--color-ingame)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].online::after {
+  color: rgb(var(--color-online)) !important;
+}
+
+/* STATUS CONTEXT CHEVRON */
+.ContextMenuButton {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.ContextMenuButton .SVGIcon_DownArrowContextMenu {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+:not(.friendInviteContainer) .ingame .ContextMenuButton .SVGIcon_DownArrowContextMenu {
+  fill: transparent !important;
+}
+
+:not(.friendInviteContainer) .online .ContextMenuButton .SVGIcon_DownArrowContextMenu {
+  fill: transparent !important;
+}
+
+:not(.friendInviteContainer) .offline .ContextMenuButton .SVGIcon_DownArrowContextMenu {
+  fill: transparent !important;
+}
+
+/* STATUS LINE */
+.ingame [class*="steamavatar_avatarStatus_"] {
+  background: rgb(var(--color-ingame)) !important;
+}
+
+.online [class*="steamavatar_avatarStatus_"] {
+  background: rgb(var(--color-online)) !important;
+}
+
+.offline [class*="steamavatar_avatarStatus_"] {
+  background: rgb(var(--color-offline)) !important;
+}
+
+.awayOrSnooze [class*="steamavatar_avatarStatus_"] {
+  -webkit-mask: none !important;
+}
+
+/* LIST ITEM */
+.DialogListBuilderInput_List {
+  display: flex !important;
+  line-height: 32px !important;
+  padding: 0px !important;
+  align-items: baseline !important;
+}
+
+.DialogListBuilderInput_ListItem {
+  margin: 3px !important;
+}
+
+/* LINK */
+.DialogBody a {
+  color: rgb(var(--color-primary)) !important;
+}
+
+.DialogBody a:hover {
+  color: rgb(var(--color-sub)) !important;
+}
+
+.DialogBody a:active {
+  color: rgb(var(--color-disabled)) !important;
+}
+
+.textLink {
+  color: rgb(var(--color-text)) !important;
+}
+
+/* BUTTON */
+button.DialogButton.Small {
+  line-height: 32px !important;
+}
+
+button.DialogButton {
+  background: rgba(var(--color-white), 0.2) !important;
+  color: rgb(var(--color-text)) !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+}
+
+button.DialogButton:hover, button.DialogButton.gpfocus {
+  background: rgba(var(--color-white), 0.3) !important;
+  color: rgb(var(--color-text)) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+button.DialogButton:enabled:active, button.DialogButton:enabled:active.gpfocus {
+  background: rgba(var(--color-white), 0.4) !important;
+  color: rgb(var(--color-text)) !important;
+  outline: 2px solid transparent !important;
+  outline-offset: -2px !important;
+}
+
+button.DialogButton::before {
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton.Disabled, button.DialogButton.Disabled:hover {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:hover:active, button.DialogButton.Primary:enabled:active.gpfocus {
+  background: rgba(var(--color-white), 0.4) !important;
+  color: rgb(var(--color-white)) !important;
+}
+
+.DialogButton:disabled .SVGIcon_Button, .DialogButton.Disabled .SVGIcon_Button {
+  opacity: 1 !important;
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+.DesktopUI .DialogThreeColLayout._DialogColLayout {
+  gap: 16px !important;
+}
+
+.DialogButton .SVGIcon_Button {
+  margin-right: 0px !important;
+  vertical-align: unset !important;
+}
+
+/* RADIO */
+input[type="radio" i] {
+  background-color: transparent !important;
+  border: 2px solid rgba(var(--color-white), 0.8) !important;
+  height: 20px !important;
+  width: 20px !important;
+  margin: 0px !important;
+  appearance: unset !important;
+  border-radius: 25px !important;
+}
+
+input[type="radio" i]:hover {
+  border-color: rgb(var(--color-white)) !important;
+}
+
+input[type="radio" i]:active {
+  filter: saturate(0) brightness(0.6) !important;
+}
+
+input[type="radio" i]:focus {
+  outline: unset !important;
+}
+
+input[type="radio" i]:checked {
+  border-color: rgb(var(--color-primary)) !important;
+}
+
+input[type="radio" i]:checked:active {
+  border-color: rgb(var(--color-white)) !important;
+  filter: saturate(0) brightness(0.6) !important;
+}
+
+input[type="radio" i]:checked:after {
+  content: "" !important;
+  background-color: rgba(var(--color-white), 0.8) !important;
+  border-radius: 25px !important;
+  display: block !important;
+  position: relative !important;
+  height: 10px !important;
+  width: 10px !important;
+  left: 3px !important;
+  top: 3px !important;
+}
+
+input[type="radio" i]:checked:after:hover {
+  background-color: rgb(var(--color-white)) !important;
+}
+
+input[type="radio" i]:checked:after:active {
+}
+
+/* RADIO BUTTON */
+[class*="radio_Button_"] {
+  padding: 0px !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  line-height: 16px !important;
+  height: 32px !important;
+  background: rgba(var(--color-white), 0.2) !important;
+  color: rgb(var(--color-text)) !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+[class*="radio_Button_"] span::before {
+  content: "\00a0(" !important;
+}
+
+[class*="radio_Button_"] span::after {
+  content: ")" !important;
+}
+
+[class*="radio_Group_"] {
+  background-color: transparent !important;
+  border-radius: 0px !important;
+  margin-bottom: 0px !important;
+  color: rgb(var(--color-text)) !important;
+  padding: 0px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 16px !important;
+}
+
+[class*="radio_Button_"]:hover {
+  background: rgba(var(--color-white), 0.3) !important;
+  color: rgb(var(--color-text)) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="radio_Button_"]:active {
+  background: rgba(var(--color-white), 0.4) !important;
+  color: rgb(var(--color-white)) !important;
+  outline: 2px solid transparent !important;
+  outline-offset: -2px !important;
+}
+
+[class*="radio_Button_"][class*="radio_Active_"] {
+  background-color: rgb(var(--color-primary)) !important;
+}
+
+/* CHECKBOX */
+.DialogCheckbox_Container {
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  align-items: center !important;
+  display: flex !important;
+}
+
+.DialogBody.useDefaults .useDefaultsCheckBox {
+  color: rgb(var(--color-text)) !important;
+}
+
+.DialogCheckbox_Container.DNDCheckBox .DialogCheckbox {
+  margin-right: 8px !important;
+}
+
+.DialogBody .useDefaultsCheckBox {
+  size: var(--size-14) !important;
+}
+
+.DialogCheckbox {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 0px !important;
+  border: 2px solid rgba(var(--color-white), 0.8) !important;
+  background-color: transparent !important;
+}
+
+.DialogCheckbox:not(.Active):hover {
+  border: 2px solid rgb(var(--color-white)) !important;
+}
+
+.DialogCheckbox:not(.Active):active {
+  border: 2px solid transparent !important;
+  background-color: rgba(var(--color-white), 0.6) !important;
+}
+
+.DialogCheckbox.Active {
+  border: 2px solid rgb(var(--color-primary)) !important;
+  background-color: rgb(var(--color-primary)) !important;
+}
+
+.DialogCheckbox.Active:hover {
+  border: 2px solid rgb(var(--color-white)) !important;
+}
+
+.DialogCheckbox.Active:active {
+  border: 2px solid transparent !important;
+  background-color: rgba(var(--color-white), 0.6) !important;
+}
+
+.DialogCheckbox .SVGIcon_DialogCheck {
+  stroke: transparent !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+  stroke: transparent !important;
+}
+
+.DialogCheckbox.Active {
+  height: 16px !important;
+  width: 16px !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAiElEQVQ4jaWTwQ3CMAxFXxGbNEduLMAILM4kCAkGqB4XIpmipCW25Evi9518J5NKJg4pGjgm2AKcRgUKcAOWacCDCgOcUf/JWX19sqik4CpwjQuNLAGe4x7qY63agX9qtgq6cPSgFj7DETfhtYnRpEvrzj2B2NU9cGuMRb3vmAwqIy/xK9K/8Q2+K9cuaoLzHwAAAABJRU5ErkJggg==') !important;
+  background-repeat: no-repeat !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+}
+
+.DialogCheckbox.Active .SVGIcon_DialogCheck {
+  stroke: transparent !important;
+  height: 16px !important;
+  width: 16px !important;
+  margin: 0px !important;
+}
+
+[class*="gamelistdropdown_DropDown_"] [class*="gamelistdropdown_Row_"][class*="gamelistdropdown_Checkbox_"] svg {
+  width: 16px !important;
+  height: 16px !important;
+  margin-left: 0px !important;
+}
+
+.DialogCheckbox .SVGIcon_DialogCheck path {
+  stroke-width: 20px !important;
+  stroke: transparent !important;
+  color: transparent !important;
+}
+
+.DialogCheckbox.Disabled {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+/* TOGGLE FIELD */
+._DialogInputContainer:not(.DialogToggleField) {
+  margin-bottom: 0px !important;
+  line-height: 16px !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+}
+
+.DialogToggleField._DialogInputContainer {
+  padding-left: 0px !important;
+  padding: 0px !important;
+}
+
+.DialogToggleField_Control {
+  background-color: transparent !important;
+  height: 20px !important;
+  position: relative !important;
+  margin: 6px 0px !important;
+  width: 100% !important;
+}
+
+.DialogToggleField_Control:disabled {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+.DialogToggleField_OptionPanel {
+  width: 40px !important;
+  height: 16px !important;
+  left: 0px !important;
+  top: 0px !important;
+  border: 2px solid rgba(var(--color-white), 0.84) !important;
+  border-radius: 9001px !important;
+  background-color: transparent !important;
+}
+
+.DialogToggleField_OptionPanel:hover {
+  border-color: rgb(var(--color-white)) !important;
+}
+
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)) {
+  border-color: rgb(var(--color-primary)) !important;
+  background: rgb(var(--color-primary)) !important;
+}
+
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+  background: rgba(var(--color-white), 0.67) !important;
+}
+
+.DialogToggleField_Option.Off {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 5px !important;
+  background: rgba(var(--color-white), 0.84) !important;
+  border-radius: 50% !important;
+}
+
+.DialogToggleField_Control:hover .DialogToggleField_Option.Off, .DialogToggleField_Control:active .DialogToggleField_Option.Off {
+  background: rgb(var(--color-white)) !important;
+}
+
+.DialogToggleField_Control .DialogToggleField_Option.Off.Active {
+  transform: translateX(0px);
+  transition: transform 0.25s !important;
+}
+
+.DialogToggleField_Control .DialogToggleField_Option.Off:not(.Active) {
+  transform: translateX(24px);
+  transition: transform 0.25s !important;
+  color: transparent !important;
+}
+
+.DialogToggleField_Option.Off {
+  margin: 3px !important;
+  color: transparent !important;
+}
+
+.DialogToggleField_Option.On {
+  background-color: transparent !important;
+  margin-left: 0px !important;
+  line-height: 32px !important;
+  color: transparent !important;
+  text-transform: none !important;
+  position: absolute !important;
+}
+
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after {
+  margin-left: calc(44px - 2px + 12px) !important;
+  color: rgb(var(--color-text)) !important;
+  position: absolute !important;
+  line-height: 16px !important;
+  content: "Off" !important;
+}
+
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On.Active)::after {
+  content: "On" !important;
+}
+
+/* CLEAR ACTION */
+.DialogInput_ClearAction {
+  width: 32px !important;
+  height: 32px !important;
+  right: 0px !important;
+  top: 0px !important;
+  background-color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-text)) !important;
+  background-size: 32px 32px !important;
+  -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhUlEQVRYhe2WwQoAIQhEbb927f/vs4fdQ0RKGhELIwiB4TxshAoAORnXUXUCEIAABPgjAEREnbp+dwIdgUhWvKGD2u3UzIwCWBCaEc8C9IJp8RWAdhJpcQBLWwDjHOySI28N5xlzyxOM3J6GyJqvOp7YuoaWeA843bMA/JQSgAAEIMDZeAA/UCOVgmDhmwAAAABJRU5ErkJggg==') !important;
+  background-position: right !important;
+  background-repeat: no-repeat !important;
+}
+
+.DialogInput_ClearAction:hover {
+  background-color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+.DialogInput_ClearAction:active {
+  background-color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+.DialogInput_ClearAction svg {
+  width: 12px !important;
+  height: 12px !important;
+  margin: auto !important;
+  position: absolute !important;
+  right: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  display: none !important;
+}
+
+.DialogInput_ClearAction svg line {
+  stroke: rgba(var(--color-white), 0.4) !important;
+}
+
+.DialogInput_ClearAction:hover svg line, .DialogInput_ClearAction:active svg line {
+  stroke: rgb(var(--color-white)) !important;
+}
+
+.DialogInput_ClearAction:not(:hover) {
+  opacity: 1 !important;
+}
+
+/* TOGGLE */
+[class*="toggle_Toggle_"] {
+  background-color: transparent !important;
+  width: 100% !important;
+  height: 20px !important;
+  position: relative !important;
+  margin: 6px 0px !important;
+}
+
+[class*="toggle_Toggle_"][class*="toggle_Disabled_"] {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"] {
+  width: 40px !important;
+  height: 16px !important;
+  left: 0px !important;
+  top: 0px !important;
+  border: 2px solid rgba(var(--color-white), 0.84) !important;
+  border-radius: 9001px !important;
+  background-color: transparent !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"]:hover {
+  border-color: rgb(var(--color-white)) !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"] {
+  background: transparent !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"][class*="toggle_On_"] {
+  border-color: rgb(var(--color-primary)) !important;
+  background: rgb(var(--color-primary)) !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"][class*="toggle_On_"]:active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+  background: rgba(var(--color-white), 0.67) !important;
+}
+
+[class*="toggle_ToggleSwitch_"] {
+  width: 10px !important;
+  height: 10px !important;
+  margin: 5px !important;
+  background: rgba(var(--color-white), 0.84) !important;
+}
+
+[class*="toggle_Toggle_"]:hover [class*="toggle_ToggleSwitch_"], [class*="toggle_Toggle_"]:active [class*="toggle_ToggleSwitch_"] {
+  background: rgb(var(--color-white)) !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleSwitch_"] {
+  transform: translateX(0px);
+  transition: transform 0.25s !important;
+}
+
+[class*="toggle_Toggle_"] [class*="toggle_ToggleSwitch_"][class*="toggle_On_"] {
+  margin: 5px !important;
+  transform: translateX(24px);
+  transition: transform 0.25s !important;
+  color: rgb(var(--color-white)) !important;
+}
+
+[class*="toggle_ToggleRow_"] {
+  padding: 0px !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+}
+
+[class*="toggle_ToggleRow_"] [class*="toggle_Label_"] {
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  color: rgb(var(--color-text)) !important;
+  line-height: 32px !important;
+}
+
+/* LABEL ROWS */
+[class*="toggle_Toggle_"]::after {
+  margin-left: calc(44px + 12px) !important;
+  transform: translateY(2px) !important;
+  position: absolute !important;
+  line-height: 16px !important;
+}
+
+[class*="toggle_Toggle_"]:has([class*="toggle_ToggleRail_"]:not([class*="toggle_On_"]))::after {
+  content: "Off" !important;
+}
+
+[class*="toggle_Toggle_"]:has([class*="toggle_ToggleRail_"][class*="toggle_On_"])::after {
+  content: "On" !important;
+}
+
+/* GAMEPAD TOGGLE */
+[class*="gamepaddialog_ToggleRail_"] {
+  background: transparent !important;
+  border-radius: 0px !important;
+}
+
+[class*="gamepaddialog_ToggleRail_"]::before {
+  content: "" !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+[class*="gamepaddialog_ToggleRail_"]::after {
+  background: transparent !important;
+}
+
+[class*="gamepaddialog_Toggle_"] {
+  width: 40px !important;
+  height: 16px !important;
+  position: relative !important;
+  margin: 6px 0px !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] {
+  background: rgb(var(--color-primary)) !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleRail_"] {
+  background: transparent !important;
+}
+
+[class*="gamepaddialog_Toggle_"], [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"] {
+  border: 2px solid rgba(var(--color-white), 0.84) !important;
+  border-radius: 9001px !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:hover {
+  border-color: rgb(var(--color-white)) !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+  background: rgba(var(--color-white), 0.67) !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:active [class*="gamepaddialog_ToggleRail_"] {
+  background: transparent !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"] {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"], [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"][class*="gamepaddialog_On_"] {
+  border-color: rgb(var(--color-primary)) !important;
+  border-radius: 9001px !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]:active {
+  border-color: rgba(var(--color-white), 0.67) !important;
+}
+
+[class*="gamepaddialog_ToggleSwitch_"] {
+  width: 10px !important;
+  height: 10px !important;
+  margin-top: 3px !important;
+  margin-left: 3px !important;
+  background: rgba(var(--color-white), 0.84) !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:hover [class*="gamepaddialog_ToggleSwitch_"], [class*="gamepaddialog_Toggle_"]:active [class*="gamepaddialog_ToggleSwitch_"] {
+  background: rgb(var(--color-white)) !important;
+}
+
+[class*="gamepaddialog_Toggle_"] [class*="gamepaddialog_ToggleSwitch_"] {
+  transform: translateX(0px);
+  transition: transform 0.25s !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleSwitch_"] {
+  transform: translateX(24px);
+  transition: transform 0.25s !important;
+  color: rgb(var(--color-white)) !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleRail_"]::before {
+  transform: none !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"] [class*="gamepaddialog_ToggleSwitch_"] {
+  background: rgb(var(--color-white)) !important;
+}
+
+/* LABEL ROWS */
+[class*="gamepaddialog_FieldLabelRow_"] {
+  flex-direction: column !important;
+  gap: 0px !important;
+  align-items: baseline !important;
+}
+
+[class*="gamepaddialog_Toggle_"]::after {
+  margin-left: calc(44px - 2px + 12px) !important;
+  position: absolute !important;
+  line-height: 16px !important;
+}
+
+[class*="gamepaddialog_Toggle_"]:not([class*="gamepaddialog_On_"])::after {
+  content: "Off" !important;
+}
+
+[class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]::after {
+  content: "On" !important;
+}
+
+/* SELECT */
+select {
+  color: rgb(var(--color-text)) !important;
+  background-color: transparent !important;
+  border-radius: 0px !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+  appearance: unset !important;
+  line-height: 32px !important;
+  padding: 0px 8px !important;
+  font: 400 var(--size-14) var(--font-family) !important;
+  height: 32px !important;
+}
+
+select:hover {
+  background-color: transparent !important;
+  outline: 2px solid rgba(var(--color-white), 0.65) !important;
+  outline-offset: -2px !important;
+}
+
+select:active {
+  background-color: rgba(var(--color-white), 0.3) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+select * {
+  border-radius: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  border: 1px solid rgba(var(--color-white), 0.05) !important;
+  background: rgb(var(--color-black)) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+}
+
+option {
+  color: rgb(var(--color-white)) !important;
+  line-height: 24px !important;
+  min-height: 24px !important;
+  font: 400 var(--size-14) var(--font-family) !important;
+}
+
+option:hover {
+  background-color: rgba(var(--color-white), 0.1) !important
+}
+
+option:active {
+  background-color: rgba(var(--color-white), 0.2) !important
+}
+
+/* DROPDOWN */
+.DialogTextInputBase, ._DialogInputContainer {
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+}
+
+._DialogInputContainer {
+  margin-bottom: 0px !important;
+  line-height: 32px !important;
+}
+
+.DialogTextInputBase, ._DialogInputContainer:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container) {
+  color: rgb(var(--color-text)) !important;
+  background: transparent !important;
+  border-radius: 0px !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+  border-radius: 0px !important;
+  font-size: var(--size-14) !important;
+  line-height: 32px !important;
+  display: flex !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.DialogTextInputBase:hover, ._DialogInputContainer:hover:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container)  {
+  background: transparent !important;
+  outline: 2px solid rgba(var(--color-white), 0.65) !important;
+  outline-offset: -2px !important;
+}
+
+.DialogTextInputBase:active, ._DialogInputContainer:active:not([class*="dropdown_DialogDropDownMenu_"]):not(.DialogToggleField):not(.DialogSlider_Container)  {
+  background: rgba(var(--color-white), 0.3) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+.DialogDropDown_Arrow {
+  top: 0px !important;
+  right: 0px !important;
+  align-self: flex-end !important;
+  position: relative !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin-left: auto !important;
+}
+
+.DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu {
+  fill: transparent !important;
+}
+
+.SVGIcon_DownArrowContextMenu {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfklEQVRYhe3WvQmAMBRF4RN3cIdkNBvdwSVczW2eTdKIiPkjCPfVF85HCtGZGSNvGloXQAABBBAgEzD32OYAdmD7sFvjtjlgAXwMvMVD3DYHJETg+SWy4yWAhPA3RFEcwFX8kBzACVhpvBaQEJTGWwCq71cfIgEEEEAAAbrcBQibGDxU5pISAAAAAElFTkSuQmCC') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 32px 32px !important;
+  height: 32px !important;
+  width: 32px !important;
+}
+
+.DialogDropDown, [class*="settings_SettingsModal_"].DialogDropDown {
+  height: 32px !important;
+  gap: 8px !important;
+  line-height: 32px !important;
+  padding: 0px 0px 0px 12px !important;
+}
+
+[class*="dropdown_DialogDropDownMenu_"]._DialogInputContainer {
+  background: transparent !important;
+  border-radius: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  border: 1px solid rgba(var(--color-white), 0.05) !important;
+  background-color: rgba(var(--color-white), 0.1) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+}
+
+[class*="dropdown_DialogDropDownMenu_Item_"] {
+  background: transparent !important;
+  margin: 1px !important;
+  padding: 0px 16px !important;
+  line-height: 32px !important;
+}
+
+[class*="dropdown_DialogDropDownMenu_Item_"] > div {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+[class*="dropdown_DialogDropDownMenu_Item_"]:hover {
+  background: rgba(var(--color-white), 0.1) !important
+}
+
+[class*="dropdown_DialogDropDownMenu_Item_"]:active {
+  background: rgba(var(--color-white), 0.2) !important
+}
+
+[class*="dropdown_DialogDropDownMenu_Item_"]:first-child {
+  margin-top: 5px !important;
+}
+
+[class*="dropdown_DialogDropDownMenu_Item_"]:last-child {
+  margin-bottom: 5px !important;
+}
+
+.DialogDropDown_Arrow.DesktopUI, .DesktopUI .DialogDropDown_Arrow {
+  opacity: 1 !important;
+  display: flex !important;
+  top: 0px !important;
+  right: 0px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* LOADING */
+[class*="steamdesktop_FocusBar_"][class*="steamdesktop_Focused"] {
+  background: rgb(var(--color-background)) !important;
+}
+
+[class*="loadingthrobber_Container_"] {
+  background: rgb(var(--color-background)) !important;
+}
+
+[class*="loadingthrobber_Medium_"], [class*="loadingthrobber_Small_"], [class*="loadingthrobber_Large_"] {
+  filter: saturate(0) brightness(5) !important;
+}
+
+/* CONNECTION TROUBLE */
+.ConnectionTrouble .ConnectionTroubleContent {
+  background: rgb(var(--color-primary)) !important;
+}
+
+.ConnectionTroubleContent .ConnectionTroubleMessage, .ConnectionTroubleContent .ConnectionTroubleReconnectMessage {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-16) !important;
+}
+
+.errorDisconnected .friendsListContainer {
+  opacity: 1.0 !important;
+}
+
+.errorDisconnected .multiChatDialog {
+  opacity: 1.0 !important;
+}
+
+.ConnectionTrouble::after {
+  content: "" !important;
+  position: fixed !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  right: 0px !important;
+  z-index: -1 !important;
+  background: rgba(var(--color-black), 0.8) !important;
+}
+
+/* CHAT LOADING */
+[class*="throbber_ThrobberText_"], [class*="throbber_LoadingWrapper_"] [class*="throbber_ThrobberText_"] {
+  color: rgb(var(--color-primary)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+}
+
+[class*="throbber_NewThrobber_"] img {
+  filter: saturate(0) brightness(5);
+}
+
+[class*="throbber_LoadingWrapper_"][class*="SteamLogoThrobber_"][class*="throbber_throbber_large_"][class*="throbber_noString_"] {
+  filter: saturate(0) brightness(5);
+}
+
+/* NEW INDICATOR */
+[class*="emoticon_NewEmoticonIndicator_"] {
+  background: transparent !important;
+  left: unset !important;
+  right: 5px !important;
+  bottom: unset !important;
+  top: 5px !important;
+}
+
+[class*="emoticon_NewEmoticonIndicator_"] [class*="emoticon_NewEmoticonCircle_"] {
+  background-color: rgb(var(--color-primary)) !important;
+  width: 5px !important;
+  height: 5px !important;
+  border-radius: 50% !important;
+}
+
+/* COPIED */
+.copiedAnimation {
+  font-size: var(--size-14) !important;
+  letter-spacing: normal !important;
+  color: rgb(var(--color-primary)) !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* INJECTED BUTTON */
+.ZehnButton {
+  background-color: transparent;
+  border: unset;
+  border-radius: 0px;
+  appearance: unset;
+  padding: 0px;
+  color: rgb(var(--color-text));
+}
+
+.ZehnButton:hover {
+  background-color: rgba(var(--color-white), 0.1);
+  border: unset;
+}
+
+.ZehnButton:active {
+  background-color: rgba(var(--color-white), 0.2);
+  border: unset;
+}
+
+.ZehnButton:focus {
+  border: unset;
+  outline: unset;
+}
+
+.ZehnButton[value="open"] {
+  transform: rotate(270deg);
+}
+
+.ZehnButton[value="close"] {
+  transform: rotate(90deg);
+}
+
+#toggleSidebar {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+}
+
+#toggleLibrary {
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  transition: opacity: 0.25s ease;
+  transition-delay: 1s;
+  display: none;
+  backdrop-filter: blur(var(--option-blur-radius));
+  background-blend-mode: exclusion;
+  background-image: var(--image-acrylic);
+}
+
+html:not(:hover) #toggleLibrary {
+  opacity: 0;
+}
+
+html:hover #toggleLibrary {
+  opacity: 1;
+}
+
+#toggleSidebarIcon {
+  width: 32px;
+  height: 32px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjklEQVRYhe3VMQ4CIRCF4R/LvYHaWmz2/rdBSz3CtmwDzSYob8UQkzclmcz7MiEQUkqMrNPQdAMMMMAAA0TALPQurY1B+IxW4AXcPvTdgQswtQxVNjDlwfFNz0MJVwEFca0gInBWwo8AaoiYz6Rw0O7AvlbgCQTEtfcCFARHw3sAvq6/eogMMMAAAwz4SW1UfBt9bpAZJwAAAABJRU5ErkJggg==');
+}
+
+#toggleLibraryIcon {
+  width: 38px;
+  height: 38px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVRYhe3WsQrCMBSF4T+OeQN1dSi+/9tER32ErnGwQ5GqnJuIpZx/LIH70V5CU62VNbb7N+BdhqkZpmaYmmFqhqkZprY52CCcPUcGpOD/2AjcgdOXcxfgAGR1QPSN5Wlg+XDmGkVB245l4MgyrgD7KAral38JV6ZnYRTEd+y1EbgBiYbPN68XDJ446ICCvrCube6C/XmGqRmmZpiaYWqGqRmmtlrYAwDvG4k2VUlcAAAAAElFTkSuQmCC');
+}

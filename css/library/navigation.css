@@ -1,0 +1,890 @@
+/* TOPBAR */
+[class*="steamdesktop_TopBar_"] {
+  background: transparent !important;
+  height: 38px !important;
+  width: calc(100vw - 2px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 1px 2px 0px 1px;
+  z-index: 999 !important;
+}
+
+[class*="steamdesktop_TopBar_"]::before, [class*="steamdesktop_TopBar_"]::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+[class*="steamdesktop_TopBar_"]::before {
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+}
+
+[class*="steamdesktop_TopBar_"]::after {
+  background-image: var(--image-acrylic) !important;
+}
+
+[class*="steamdesktop_BrowserWrapper_"], [class*="library_LeftListSizableContainer_"], [class*="console_Console_"], [class*="appdetails_PlayBar_"][class*="appdetails_ShowPlayBar_"][class*="appdetailsplaysection_Container_"][class*="appdetailsplaysection_StickyHeader_"], [class*="library_LibraryWindowDivider_"][class*="library_Sizable_"] {
+  margin-top: 38px !important;
+}
+
+[class*="appdetailssoundtrack_SoundtrackContainer_"] {
+  max-height: 100% !important;
+  padding-top: 38px !important;
+}
+
+[class*="downloads_DownloadsPage_"] {
+  margin-top: 38px !important; /* NOT BEING HAPPY SOMETIMES */
+  overflow-y: hidden !important;
+}
+
+[class*="libraryhome_InnerContainer_"] > div:first-of-type {
+  margin-top: 38px !important;
+}
+
+[class*="libraryhome_UpdatesContainer_"] {
+
+}
+
+[class*="library_AppDetailsMain_"] {
+  border-top: unset !important;
+}
+
+[class*="smartscrollcontainer_Container_"][class*="libraryhome_Container_"], [class*="libraryhome_LibraryHome_"] {
+}
+
+/* TITLEBAR */
+[class*="steamdesktop_TitleBar_"] {
+  height: 38px !important;
+  max-height: 38px !important;
+  background: transparent !important;
+}
+
+/* NAVBAR */
+[class*="steamdesktop_SuperNavBar_"] {
+  margin-top: -38px !important;
+  height: 38px !important;
+  min-height: 0px !important;
+  padding: 0px 0px 0px 0px !important;
+  width: 40% !important;
+  margin-left: 38px !important;
+}
+
+/* FOCUSBAR */
+[class*="steamdesktop_FocusBar_"] [class*="steamdesktop_Focused_"], [class*="steamdesktop_FocusBar_"] {
+  display: none !important;
+  height: 0px !important;
+  background-color: transparent !important;
+}
+
+/* URLBAR */
+[class*="steamdesktop_URLBar_"] {
+  display: var(--option-display-urlbar) !important;
+  background: transparent !important;
+  height: 38px !important;
+  max-height: 38px !important;
+  padding: 0px !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+}
+
+/* RELOAD BUTTON */
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"] {
+  background-color: transparent !important;
+  color: rgb(var(--color-white)) !important;
+  border-radius: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZklEQVRYhe3Wv0odQRiG8d8RhGMhiBLRRiIWklswxOKk0law8RbM1ah3YCNegJWVKARSpwvIEVTwDzaKojAWO4EQPWa/ETXIPjDF7s4737Ozs7PbSin5H+l7a4FeNGJRGrEojViURizKuxNLf7U/GcEGFp7hVSzWxndcPXLtGncque3C8YvFfuACnx65dokljGEShyUFWgV/FzuYxmg+Tmg90f8UPzEbqpJSirROqmgHMgM504nUis7YDo6wGLp7NlWP9kvdQHSNTWAtmIHVnK1NdMaOcoHbSAj96GK8biA6Yy0P9606/OsFeUBU7AYzwYycuYkEomJdLAczcqYbSgS3i68F20X7NbYL2MWU6vWvwzF+4XOkSIkYnOFctXZOevT5gD0Mqz7sIUq/lSM4UK2bdcxhMLf5fK6b+4SlKJ+x38zhGz5iKJ+7wD5WsFU68HPFXox39wf74jRiURqxKI1YlEYsyj0GETIGnImhmAAAAABJRU5ErkJggg==') !important;
+  padding: 0px !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"] svg {
+  display: none !important;
+  padding: 0px !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+  color: rgb(var(--color-white)) !important;
+  border-radius: 0px !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_ReloadButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+/* URL */
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] {
+  background: transparent !important;
+  border-radius: 0px !important;
+  line-height: 38px !important;
+  padding: 0px !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover {
+  background: transparent !important;
+  border-radius: 0px !important;
+  padding: 0px !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_StatusIcon_"] {
+  color: transparent !important;
+  line-height: 38px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  width: 38px !important;
+  height: 38px !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_LockIcon_"] {
+  padding-bottom: 0px !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPklEQVRYhe2WMU7DQBBFnxEXoKOigJoj0Mc1XCHmDLkA3IScg1wBU9NSOdAk5U+RsVgFO/asbYGifdLI9u7Yeh57R5tJ4j9y9tcCbSQxL0nMSxLzksS8nJxYDpTABpAdSxsfhRixpUUF3AMZ8ACsgRebG44kT+SS1pKKlvnC5nPnc39F5txdlFaZO+DTxi4PclbABXA7pGDeT3kNPAXXTW/1DNxEGxneion9PzVWXiveim2BWUfODPiO0/nBK/YBLDpyrthXrIgyqolclY8deYWkrx55rRFz01JSJWkVtIVc0qukzYFcdaS1jC5Wi7yZiOz4budNlXPLDWqCDRFSj81jKje2WCgYXs8lbT3P8Pax3msqOM+Csd69baptT+aRaOJ8JJFjRH2SqcWiq3ZyO9jJSWJekpiXJOYliXnZASg97Cz79cRIAAAAAElFTkSuQmCC') !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover [class*="steamdesktop_StatusIcon_"] {
+  color: transparent !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_StatusIcon_"] svg {
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"] [class*="steamdesktop_URL_"] {
+  padding: 0px 3px 0px 0px !important;
+  color: rgb(var(--color-sub)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+}
+
+[class*="steamdesktop_URLBar_"] [class*="steamdesktop_URLBarText_"]:hover [class*="steamdesktop_URL_"] {
+  color: rgb(var(--color-sub)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+}
+
+/* URL COPIED */
+[class*="steamdesktop_URLBarCopied_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-12) !important;
+  font-weight: 400 !important;
+  background-color: rgb(var(--color-primary)) !important;
+  padding: 4px 8px !important;
+  border-radius: 0px !important;
+}
+
+/* URLBAR PLACEHOLDER */
+[class*="steamdesktop_LocalContentContainer_"] [class*="steamdesktop_URLBarReplacement_"] {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* ROOTMENU */
+[class*="rootmenu_RootMenuButton_"] {
+  min-width: 38px !important;
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0px !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAXElEQVRYhe3VwQkAIAzFUBX3X7lOIDR48B/yzkUCLTiraiRavwNuDKMMowyjDKMMo2LDNpx//fFnd5CGtR9+FbtKwyiPn4pdpWGUx0/FrtIwyjDKMMowyjDKMOoATH4GWGtUqnsAAAAASUVORK5CYII=') !important;
+}
+
+[class*="rootmenu_RootMenuBar_"] {
+  padding-left: 0px !important;
+}
+
+[class*="steamdesktop_TitleBar_"] [class*="steamdesktop_RootMenuBar_"] {
+  margin-top: 0px !important;
+  width: 38px !important;
+}
+
+[class*="steamdesktop_TitleBar_"] [class*="steamdesktop_RootMenuBar_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="steamdesktop_TitleBar_"] [class*="steamdesktop_RootMenuBar_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+/* ROOTMENU BUTTONS */
+[class*="rootmenu_SteamButton_"]::before {
+  display: none !important;
+}
+
+[class*="rootmenu_SteamButton_"] {
+  content: none !important;
+  display: none !important;
+}
+
+[class*="steamdesktop_RootMenuBar_"] > [class*="rootmenu_RootMenuButton_"]:not(:first-child) {
+  display: none !important;
+}
+
+/* NAVMENU ARROWS */
+[class*="supernav_Arrow_"] {
+  background-repeat: no-repeat !important;
+  color: transparent !important;
+  background-size: auto !important;
+  height: 38px !important;
+  width: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+[class*="supernav_Arrow_"]:not([class*="supernav_Disabled_"]):hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="supernav_Arrow_"]:not([class*="supernav_Disabled_"]):active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+/* NAVMENU ARROW ENABLED */
+[class*="supernav_Arrow_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVRYhe2WUQrCMBBEJ+J99FJWSK5j/fFS8UTjRyNWqcIk3VroPggTSLp5bChtIIk1svu3wDdcTMXFVFxMxcVUXExlM2IJQAYQWwvtm1Xe6UueS15rC80tBgxyAUBXsv+9fRoLMQC4ACCAU0m5c1ZiwKtTXUlJLlT8weapOqP5Z8Hn2kE5pKZjR2FvxNCxm3wKSasRSd5JpprnraQSyVwrZSXWLGUhllqubzxq3spF2MxHfDZcTMXFVFxMxcVUXExltWIPrsbjpfdiH/4AAAAASUVORK5CYII=') !important;
+}
+
+[class*="supernav_Arrow_"][class*="supernav_Enabled_"] {
+  filter: none !important;
+}
+
+/* NAVMENU ARROW DISABLED */
+[class*="supernav_Arrow_"][class*="supernav_Disabled_"] {
+  filter: saturate(0.0) brightness(0.5) !important;
+}
+
+/* NAVMENU SELECTOR */
+[class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"]:not([class*="supernav_Disabled_"]) [class*="supernav_MenuButton_"]::after {
+  background: rgb(var(--color-primary)) !important;
+  width: calc(100% + 20px) !important;
+  height: 2px !important;
+  margin-left: -10px !important;
+  margin-top: -2px !important;
+  border-radius: 0px !important;
+}
+
+/* NAVMENU LINKS */
+[class*="supernav_SuperNavMenu_"] {
+  font-size: var(--size-14) !important;
+  font-weight: 500 !important;
+}
+
+[class*="supernav_SuperNavMenu_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="supernav_SuperNavMenu_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="supernav_SuperNavMenu_"]:last-child {
+  padding-right: 10px !important;
+}
+
+[class*="supernav_MenuButton_"] span {
+  white-space: nowrap !important;
+}
+
+/* NAVMENU LINK ACTIVE */
+[class*="supernav_SuperNavMenu_"][class*="supernav_Selected_"]:not([class*="supernav_Disabled_"]) [class*="supernav_MenuButton_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 500 !important;
+}
+
+/* NAVMENU LINK INACTIVE */
+[class*="supernav_SuperNavMenu_"] [class*="supernav_MenuButton_"] {
+  position: relative !important;
+  line-height: 38px !important;
+}
+
+[class*="supernav_SuperNavMenu_"]:not([class*="menu_MenuOpen_"]) [class*="supernav_MenuButton_"] {
+  color: rgb(var(--color-sub)) !important;
+  font-weight: 500 !important;
+}
+
+[class*="supernav_SuperNavMenu_"][class*="menu_MenuOpen_"] [class*="supernav_MenuButton_"] {
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="supernav_SuperNavMenu_"]:hover > [class*="supernav_MenuButton_"], [class*="supernav_SuperNavMenu_"]:active > [class*="supernav_MenuButton_"] {
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="supernav_SuperNavMenu_"] [class*="supernav_Selected_"]:not([class*="supernav_Disabled_"]) [class*="supernav_MenuButton_"] {
+  text-shadow: 0px 0px 0px transparent !important;
+}
+
+/* NAVMENU LINK OPEN */
+[class*="menu_MenuWrapper_"] {
+  height: 38px !important;
+}
+
+[class*="menu_MenuWrapper_"][class*="menu_MenuOpen_"] {
+  background-color: rgba(var(--color-white), 0.1) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="menu_MenuWrapper_"][class*="menu_MenuOpen_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+/* TITLEBAR CONTROLS */
+[class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_BranchBar_"], [class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_SupportAlertsButton_"], [class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_OSEndOfLifeAlertsButton_"], [class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_ParentalToggleButton_"], [class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_AnnouncementsButton_"], [class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_NotificationButtonContainer_"], [class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_AccountMenu_"], [class*="titlebarcontrols_TitleBarControls_"] [class*="titlebarcontrols_SoundtrackControls_"] {
+  margin-right: 0px !important;
+}
+
+/* ACCOUNT AVATAR */
+[class*="titlebarcontrols_AccountMenu_"] [class*="steamavatar_avatar_"] {
+  border-radius: 0px !important;
+  height: 32px !important;
+  width: 32px !important;
+  display: none !important;
+}
+
+/* ACCOUNT AVATAR STATUS */
+.ingame [class*="steamavatar_avatarStatus_"], .ingame [class*="steamavatar_avatarStatus_"], .ingame [class*="steamavatar_avatarStatus_"] {
+  display: none !important;
+}
+
+[class*="titlebarcontrols_AccountMenu_"] [class*="steamavatar_avatarHolder_"] { /* for some reason showing up on right side of game page */
+  display: none !important;
+  margin: 0 !important;
+}
+
+/* ACCOUNT NAME */
+[class*="titlebarcontrols_AccountMenu_"] [class*="titlebarcontrols_Chevron_"] {
+  display: none !important;
+}
+
+[class*="titlebarcontrols_AccountMenu_"] > div:nth-child(2) {
+  display: none !important;
+}
+
+/* ACCOUNT BALANCE */
+[class*="titlebarcontrols_AccountMenu_"] [class*="titlebarcontrols_WalletBalance_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  display: none !important;
+}
+
+[class*="titlebarcontrols_WalletBalance_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  float: right !important;
+  line-height: 38px !important;
+  padding: 0px 8px !important;
+}
+
+/* ACCOUNT BUTTON */
+[class*="titlebarcontrols_AccountMenu_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  line-height: 38px !important;
+  float: right !important;
+  max-height: 38px !important;
+  height: 38px !important;
+  margin-right: 0px !important;
+  width: 38px !important;
+  gap: 0px !im  ;
+  border-radius: 0px !important;
+  padding-right: 0px !important;
+  background: transparent !important;
+  text-transform: uppercase !important;
+  font-size: var(--size-14) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA2UlEQVRYhe2WwQ2DMBAEd9OBKYFaoDdaSAtpgRaoJSlh88BIKAnIG0Hix410H2N7R/hkmZJQI5d/C2wRYi4h5hJiLiHmEmIuIeZiiZEEgARgBKBcE4BEcvmunTpHLHPLck2uZWyR38RKkVRceb4ktav1rQofdU5WtT1G5wVLEpJGzEfZ5+ERwINkD8x/dG+L4rAvjrLTO93hWc7kldQgKeW6lsqdKTZJGj4EDpKmI8WsHsN8FzUkHy+BCcCdJI/qMVfsZ1R7XYSYS4i5hJhLiLmEmEuIuVQr9gSl/oJ/MAKSyQAAAABJRU5ErkJggg==') !important;
+  display: var(--option-display-account) !important;
+}
+
+[class*="titlebarcontrols_AccountMenu_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="titlebarcontrols_AccountMenu_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+/* BOTTOMBAR */
+[class*="bottombar_BottomBar_"] {
+  background: transparent !important;
+  right: 0px !important;
+  top: 0px !important;
+  border-radius: 0px !important;
+  position: absolute !important;
+}
+
+/* BOTTOMBAR TEXT */
+[class*="bottombar_AddGameButton_"] [class*="bottombar_Text_"], [class*="bottombar_FriendsButton_"] [class*="bottombar_Text_"], [class*="bottombar_DownloadStatusContent_"] [class*="bottombar_Queue_"] {
+  display: none !important;
+}
+
+[class*="bottombar_DownloadStatusContent_"] [class*="bottombar_Status_"] {
+  font-size: var(--size-14) !important;
+}
+
+/* BUTTONS */
+[class*="titlebarcontrols_Button_"] {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+}
+
+[class*="bottombar_AddGameButton_"] [class*="bottombar_Icon_"], [class*="bottombar_Icon_"], [class*="bottombar_FriendsButton_"] [class*="bottombar_Text_"] {
+  margin-bottom: 0px !important;
+}
+
+[class*="titlebarcontrols_TitleBarControls_"] {
+  margin-right: 0px !important;
+  margin-top: 0px !important;
+}
+
+/* VR BUTTON */
+[class*="titlebarcontrols_VRToggle_"] {
+  display: var(--option-display-vr) !important;
+  background: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABI0lEQVRYhe2X4Y3CMAyFXxELdIVbgRVYAVaBEW6FdgRuhDLCMQIdAUZ4/KgjhXAUP9S76w8/yWqdOvHXOEqbiiTmqMV/AzxTgKkKMFUBpirAVAWYqtmCLZ1xU3/pq1cBXjDXYE65XlIt5RnApWjbWLKd+Y35yc4APsU8MlgLoDaYHAwAvorYvVmPAVqDI+kx2vXD7g/m1+Z3WWyTxef9O96PNWrqjPUAjjZLNYC1tbcjfdKM9koiZfEntQa0sesVj2UE7hf5FePwP/TWSpnsQvLb2pviWSrlzkpexrhK+S5YSk6SqyfPkt8Vcb+yxvJyAsO6Ob2I3WIoZaMkqOg7vhHTbrCT7vx/egD1gk01W27N9u8iwFQFmKoAUxVgqgJM1WzBbkZqlgGbXYYqAAAAAElFTkSuQmCC') !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 0px !important;
+}
+
+[class*="titlebarcontrols_VRToggle_"][class*="titlebarcontrols_Running_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABDElEQVRYhe2X7Q2CMBCGX4wL4AgwgiuwgivUFRxBV5EVHMEVXEFHOH/0mlS+2tdg7I97koYcPdKHOwqhEhGUyObfAnOYGIuJsZgYi4mxmBhLsWLbzLy1v/RVKqHYirFiLYDd4FwPX4GLxkeNw2gBnH4t5gC8VCYWA4DDIPeso4GX5uREJGcEHhofNH5q3EU5bnCNTOQk12Qr1gDotEovADc97xauCRVtmIVyd2WMU6FejzXGbQQ+d16NZfkxZCsDtYjsdc4N5kIrz9ryqZzkmt+KuWjuPjMX6CbyVn/G4nYC/rnZJ3Kv8K08MgtUkvf7Zm/+QO6uTN7h2hRbMRNjMTEWE2MxMRYTYylW7A2UepS+va1NBAAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="titlebarcontrols_VRToggle_"]:not([class*="titlebarcontrols_Disabled_"]):hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="titlebarcontrols_VRToggle_"]:not([class*="titlebarcontrols_Disabled_"]):active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="titlebarcontrols_VRToggle_"] [class*="titlebarcontrols_Icon_"] {
+  color: transparent !important;
+  display: none !important;
+}
+
+/* BIGPICTURE BUTTON */
+[class*="titlebarcontrols_GamepadUIToggle_"] {
+  display: var(--option-display-bigpicture) !important;
+  background-color: transparent !important;
+  padding: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABqElEQVRYhe2WoUsDYRjGf5OBCwuChtkWDBMMC5o0GGwWQUVNBi12i00ZRpN/gFGDzSooWISFBQcKCipMFDQYDArCY9gNP8+b+14VXfgeOPju4d57frzf3XuXkkQ7quO/AZopgFkVwKwKYFYFMKsCmFXpb9RkgVGg6Fl/AewAr5YQa8fyQBmYBzo9ayaBE6BgSpJkObYllYw1SFqUVJGU9q2x3HxE0rmkjOM1FL82yT+QNOubZ9nKBWADeG402218bJ2KDtdfB2Z8w1KGH8VbYAioJcAQgbhg8XUGuAd6gadWYb4dKwIPDpQLkrRWDArqna4Cgz6BvmAF4CrBb2yZr1/F8+30nWN90U3jygIl6h111QXsAyt8nF83QO43wdLAS4K/BTwCazF/nM+wJvmC1YDhmLcM9ABzfJ7qh8AesAksOX43cO2V6DlX8pIunfNVSaeScl/UZCUdRUO5MVjL0TxsmWkZFxXgGBiIzqeBuxY1GerbXYi6OAH08z4Lm8oClgOmgLMoxPJRHqP+zO2S/Hb/COxP1bb/YwHMqgBmVQCzKoBZFcCsegNgG6a93BgzHAAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="titlebarcontrols_GamepadUIToggle_"][class*="titlebarcontrols_Running_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcklEQVRYhe2WL08DQRBHX0kF4gSyuIqKkiAqkBUVdVgIHwDFdyJBEUhoguALNMGQICqLIAFBAgKBQCBIfojbJsf2/sxAAhX7kk33pjc3r7ub6bUksYqs/bdAFUnMSxLzksS8JDEvScxL+wc5GTACBsb8e+Ac+HRVkeQZXUlzSReycxly+p5aXrEzh1DMTFLbWstzxobAThRrhRFTFn8D9qzFPGKHQC8qXjVXGMX4CDiwFmvJ/qL4DHQqZAgiRbF4DvAObIbPWqwrNoikiiJl88VWxr86Y/k4/EqsXxFfbJk1Xvesb1j7WK/h+2l0vUG+ymXEK1+KVazuvmPgNIrtAq/A2Ph8V8EiTxXxKXDEclefAlcVOY0HHzA32K6kh6hhziV1anIySddRU76VNLTU9LSLGXADbIfrfeClIWcdOCE/8APgEdgCPpqKecQ65J37jnyrPH/K4yA2CXKNeMT+lJV9H0tiXpKYlyTmJYl5SWJevgDa7bUi7zX4CAAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="titlebarcontrols_GamepadUIToggle_"]:not([class*="titlebarcontrols_Disabled_"]):hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="titlebarcontrols_GamepadUIToggle_"]:not([class*="titlebarcontrols_Disabled_"]):active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="titlebarcontrols_GamepadUIToggle_"] [class*="titlebarcontrols_Icon_"] {
+  color: transparent !important;
+  display: none !important;
+}
+
+/* ADD GAME BUTTON */
+[class*="bottombar_AddGameButton_"] {
+  background-color: transparent !important;
+  padding: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  float: right !important;
+  -webkit-app-region: no-drag !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVRYhe3V0QnAIAwAUS3df+V0gggXAg149yviQwnuiFgTe/4GZAmjCaMJowmjCaN1wlo/3SturDVhtLGwt7DnNH3Z2qaHVGDZIVEBZI19SmE0YbROWNtErnXJjbUmjCaMJowmjCaM9gEr2QdNVEhqwAAAAABJRU5ErkJggg==') !important;
+  display: var(--option-display-add-game) !important;
+}
+
+[class*="bottombar_AddGameButton_"]:not([class*="bottombar_Disabled_"]):hover, [class*="bottombar_AddGameButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="bottombar_AddGameButton_"]:not([class*="bottombar_Disabled_"]):active, [class*="bottombar_AddGameButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="bottombar_AddGameButton_"] [class*="bottombar_Icon_"], [class*="bottombar_AddGameButton_"]:not([class*="bottombar_Disabled_"]):hover [class*="bottombar_Icon_"] {
+  color: transparent !important;
+  display: none !important;
+}
+
+/* FRIENDS BUTTON */
+[class*="bottombar_FriendsButton_"] {
+  background-color: transparent !important;
+  padding: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  float: right !important;
+  -webkit-app-region: no-drag !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABM0lEQVRYhe2XTUrDUBRGvwiCHdk1OFGKDoo40wW4guoKpHYX7RbUdehE91EU1BRnbkAHDiwcB7kDkUZ638WkyDsQQr77cjkk7+WnALSKrLUtUEcW85LFvGQxL1nMSxbzEhXrSBpJmkr6sP255TGA1K0D3AIlcArsAyd2fGf15P4RsRHwBHR/5JuWD9sSmwKDmtoAuI+IRebYtqRZTa2UtBXoHRJ7ViW3iB1Jj4HeoVt5BrwsmGNdYGb1VubYBtXqK4Ejyw5NqtVVKeAAeKfiwfZvlod6p564DoyBT+AC6FvWBy4tn1jWqNgYeAV6NfWe1SdNiu0B81+kvsvNgd0UsQLc/5VXkgpJwyXHStX700XKc+xY0vWSY29svJuUK9YI//Z77M/IYl6ymJcs5iWLeVlZsS8UyjHHWFfo1gAAAABJRU5ErkJggg==') !important;
+}
+
+[class*="bottombar_FriendsButton_"]:not([class*="bottombar_Disabled_"]):hover,
+[class*="bottombar_FriendsButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="bottombar_FriendsButton_"]:not([class*="bottombar_Disabled_"]):active,
+[class*="bottombar_FriendsButton_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="bottombar_FriendsButton_"] [class*="bottombar_Icon_"], [class*="bottombar_FriendsButton_"]:not([class*="bottombar_Disabled_"]):hover [class*="bottombar_Icon_"] {
+  color: transparent !important;
+  display: none !important;
+}
+
+/* ALERT BUTTON */
+[class*="titlebarcontrols_NotificationButtonContainer_"] {
+  right: 0px !important;
+  float: right !important;
+  -webkit-app-region: no-drag !important;
+}
+
+[class*="titlebarcontrols_NotificationsButton_"] {
+  padding: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+}
+
+[class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_WasNew_"], [class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_NoNew_"],
+[class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_HasNew_"] {
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAn0lEQVRYhe2XUQqAIBBE1+iw2YHquNOPlUghswpJzANB0vQ1K0UBgI3I9LXAGxJjkRiLxFgkxiIxltlxj/fjGpjJHjF6E3M8zK9KmVNLgk32olXMvXENJcbSO7FuosMmNuzrwiuGosVsbHkYp/GUsizfamZb6sPM9nRt9whdAOjRVtzEHmu2Hv6TLeu3JZUI+hMnkRiLxFgkxiIxFomxHBH2jUcsjcj8AAAAAElFTkSuQmCC') !important;
+}
+
+[class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_HasNew_"] {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAjElEQVRYhe2XSwqAMAxEjXhZ6330uONKLFKRSSMGmQeBLtLySEo/BmDIyPi1wB0SY5EYi8RYJMYiMZbJMcd7uRqTnLZiacU8rax5ao/7TdUr9tpjThVjia5YmGjaiqU9Ln4lZpdYGjmlkccBICIKTuaINXs3/8FajbeIBU0/cRKJsUiMRWIsEmORGMsO6j+DuVFqwLYAAAAASUVORK5CYII=') !important;
+}
+
+[class*="titlebarcontrols_NotificationsButton_"]:hover:not([class*="titlebarcontrols_Disabled_"]) {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="titlebarcontrols_NotificationsButton_"]:active:not([class*="titlebarcontrols_Disabled_"]) {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_WasNew_"] [class*="titlebarcontrols_Icon_"], [class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_NoNew_"] [class*="titlebarcontrols_Icon_"], [class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_WasNew_"]:not([class*="titlebarcontrols_Disabled_"]):hover [class*="titlebarcontrols_Icon_"], [class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_NoNew_"]:not([class*="titlebarcontrols_Disabled_"]):hover [class*="titlebarcontrols_Icon_"],
+[class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_HasNew_"]:not([class*="titlebarcontrols_Disabled_"]):hover [class*="titlebarcontrols_Icon_"],
+[class*="titlebarcontrols_NotificationsButton_"][class*="titlebarcontrols_HasNew_"] [class*="titlebarcontrols_Icon_"] {
+  color: transparent !important;
+  display: none !important;
+}
+
+/* ANNOUNCEMENT BUTTON */
+[class*="titlebarcontrols_AnnouncementsButton_"] {
+  display: var(--option-display-announcements) !important;
+  background-color: transparent !important;
+  padding: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  float: right !important;
+  -webkit-app-region: no-drag !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAs0lEQVRYhe2WwQ3DIBAE9yLXSgt2LSkyKWH94eEk4LA4sXnsSHzgDkZwIIIkRuR2tUANi6lYTMViKhZTsZiKxVQmMf7oVyRaA3t27AlgiUYALDlHg6TSSHIm+cht3pn3JS7nNq8li20WTiXBN6G06T9HrCL4IdQrFuLXmrluSkeXACAi7pVxQij+n4l9TRTFhn3HhhVTH9jiBfgHqlhXffUw7FFaTMViKhZTsZiKxVQsprIC9Z1NrUBfxL4AAAAASUVORK5CYII=') !important;
+}
+
+[class*="titlebarcontrols_AnnouncementsButton_"]:not([class*="titlebarcontrols_Disabled_"]):hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="titlebarcontrols_AnnouncementsButton_"]:not([class*="titlebarcontrols_Disabled_"]):active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="titlebarcontrols_AnnouncementsButton_"] [class*="titlebarcontrols_Icon_"] {
+  color: transparent !important;
+  display: none !important;
+}
+
+[class*="titlebarcontrols_AnnouncementWaveSVG_"] {
+  display: none !important;
+}
+
+/* MUSIC BUTTON */
+[class*="titlebarcontrols_SoundtrackControls_"] {
+  background-color: transparent !important;
+  padding: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  float: right !important;
+  -webkit-app-region: no-drag !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/klEQVRYhe2W/w2CMBCF3xkXYIW6gruxAqzCLK7gDI7w/AekNlR8UIGY+5ImTX9+uYNLjSSOyGlvgRwupuJiKi6m4mIqLqYii5nZqwEggBCP5drPxSboSFYFznmjVCq7QueMkJRaspckAzNvp36uJnmX71kr9kFkYOjvKjaI1CRDMi7dc16Q+gpAA+AxNW9mF/XMKWQxALcSF89hC978BHDt+zeLihRJ2kTR6lMuFbMlEWsxRq3NLZpL+RxyxNKAJAL1EDGS92hZwAYRS8l9cwFRytVDS4jlBL5KeZY1dazf30TFtCl1z5K/chP+5z22FS6m4mIqLqbiYiqHFXsCXGmtu846LQEAAAAASUVORK5CYII=') !important;
+}
+
+[class*="titlebarcontrols_SoundtrackControls_"][class*="titlebarcontrols_Playing_"] {
+  background-color: transparent !important;
+}
+
+[class*="titlebarcontrols_SoundtrackControls_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="titlebarcontrols_SoundtrackControls_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="titlebarcontrols_SoundtrackControls_"] svg {
+  color: transparent !important;
+  display: none !important;
+}
+
+/* DOWNLOAD BUTTON */
+[class*="bottombar_DownloadStatus_"] {
+  background-color: transparent !important;
+  padding: 0px !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  right: 0px !important;
+  float: right !important;
+  -webkit-app-region: no-drag !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvElEQVRYhe2W0Q3DIAxE66oLdJaukBVYgfU7wvWjfFBqlNyRpijyk1AQVrgnEskYgMuMXP8t0CPEWEKMJcRYQoxlWrGb8pKZfa0BgDkFteVNe2IhxhJiLOcTA/AYqW8JUMaCN6naB9U8lfoi7q+JNeGpFnPWjxVrJdrn4BcZEyvBGZ/kHX6VcbFGLjs1aZgXtEanid/N7OmJKewm1kMVk649JXA10bsGbUU6sSM4X0v6NSHGEmIsIcYSYiwv3S0kLmBo4rgAAAAASUVORK5CYII=') !important;
+}
+
+[class*="bottombar_DownloadStatusContent_"] {
+  padding: 0px !important;
+  width: 38px !important;
+}
+
+[class*="bottombar_DownloadStatusContent_"]:not([class*="bottombar_Disabled_"]):hover, [class*="bottombar_DownloadStatusContent_"]:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+[class*="bottombar_DownloadStatusContent_"]:not([class*="bottombar_Disabled_"]):active, [class*="bottombar_DownloadStatusContent_"]:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
+}
+
+[class*="bottombar_DownloadStatusContent_"] [class*="bottombar_Icon_"], [class*="bottombar_DownloadStatusContent_"]:not([class*="bottombar_Disabled_"]):hover [class*="bottombar_Icon_"] {
+  color: transparent !important;
+  display: none !important;
+}
+
+/* DOWNLOAD BAR */
+[class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_StatusLine_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+}
+
+[class*="bottombar_DownloadStatusContent_"] [class*="bottombar_Status_"] {
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="steamdesktop_DragArea_"] > [class*="bottombar_Status_"] {
+  margin-right: 16px !important;
+  line-height: 38px !important;
+  float: right !important;
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  width: 200px !important;
+}
+
+[class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_ProgressBar_"] {
+  height: 2px !important;
+  margin-top: -4px !important;
+  background-color: rgb(var(--color-white), 0.2) !important;
+}
+
+[class*="progressbar_ProgressBar_"][class*="progressbar_AnimateProgress_"]::after {
+  background-image: none !important;
+  background-color: rgb(var(--color-ingame)) !important;
+}
+
+[class*="progressbar_ProgressBar_"] {
+  background-color: transparent !important;
+}
+
+[class*="steamdesktop_DragArea_30vB9"] > [class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_ProgressBarWrapper_"] [class*="bottombar_Status_"] {
+  text-transform: uppercase !important;
+  line-height: 38px !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+[class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_IconBevel_"] {
+  background-image: none !important;
+  display: none !important;
+}
+
+#SteamDesktop > div[class*="steamdesktop_Wrapper_"] > div[class*="steamdesktop_OuterFrame_"] > div[class*="steamdesktop_TopBar_"] > div[class*="steamdesktop_TitleBar_"] > div[class*="steamdesktop_DragArea_"] > div[class*="bottombar_DownloadStatus_"] > div > div > div[class*="bottombar_Icon_"] > div[class*="libraryassetimage_Container_"][class*="libraryassetimage_GreyBackground_"] {
+  display: none !important;
+}
+
+[class*="bottombar_ProgressBarWrapper_"] {
+  max-width: 200px !important;
+  width: 200px !important;
+  height: 38px !important;
+  float: right !important;
+  margin-top: 0px !important;
+  margin-left: calc(-324px - 16px) !important;
+  line-height: 38px !important;
+}
+
+[class*="steamdesktop_DragArea_"] > [class*="bottombar_DetailedDownloadProgress_"] {
+  max-width: 200px !important;
+  display: flex !important;
+  float: right !important;
+}
+
+[class*="bottombar_DownloadStatus_"] > [class*="bottombar_DownloadStatusContent_"] > [class*="bottombar_Status_"] {
+  margin-left: -322px !important;
+  line-height: 38px !important;
+  max-width: 200px !important;
+  width: 200px !important;
+  height: 38px !important;
+  float: right !important;
+}
+
+[class*="bottombar_BottomBar_"] > [class*="bottombar_DownloadStatus_"] > [class*="bottombar_DownloadStatusContent_"] > [class*="bottombar_Status_"] {
+}
+
+[class*="bottombar_DetailedDownloadProgress_"] [class*="bottombar_Icon_"] {
+  display: none !important; /* WHEN INJECTING DETAILEDDOWNLOADPROGRESS */
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* UPDATE ALERT */
+[class*="updatealert_Alert_"] {
+  background-color: rgba(var(--color-primary), 0.5) !important;
+  border-radius: 0px !important;
+  padding: 16px 16px !important;
+}
+
+[class*="updatealert_ActionAlert_"] {
+  gap: 16px !important;
+  min-height: 0px !important;
+}
+
+[class*="updatealert_PrimaryMessage_"] {
+  font-size: var(--size-16) !important;
+  font-weight: 400 !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="updatealert_PatchNotesLink_"] {
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  color: rgb(var(--color-text)) !important;
+  text-decoration: underline !important;
+}
+
+[class*="updatealert_ActionAlert_"] [class*="updatealert_Actions_"] {
+  gap: 16px !important;
+}
+
+[class*="updatealert_AlertButton_"] {
+  background-color: rgba(var(--color-white), 0.2) !important;
+  color: rgb(var(--color-text)) !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  padding: 0px 16px !important;
+  line-height: 38px !important;
+}
+
+[class*="updatealert_AlertButton_"]:hover {
+  background-color: rgba(var(--color-white), 0.3) !important;
+  color: rgb(var(--color-text)) !important;
+  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline-offset: -2px !important;
+}
+
+[class*="updatealert_AlertButton_"]active {
+  background-color: rgba(var(--color-white), 0.4) !important;
+  color: rgb(var(--color-text)) !important;
+  outline: 2px solid transparent !important;
+  outline-offset: -2px !important;
+}
