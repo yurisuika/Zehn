@@ -15,19 +15,12 @@ jobs:
       - name: Create Archive
         uses: thedoctor0/zip-release@0.7.6
         with:
-          directory: "static"
-          path: "."
-          type: 'zip'
-          custom: -r
-          filename: 'zehn-${{ steps.date.outputs.DATE }}.zip'
-      - name: Create Archive
-        uses: thedoctor0/zip-release@0.7.6
-        with:
-          directory: "live"
+          directory: "."
           path: "."
           type: 'zip'
           custom: -r
           filename: 'zehn-live-${{ steps.date.outputs.DATE }}.zip'
+          exclusions: '*.git*'
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
@@ -36,4 +29,4 @@ jobs:
           commit: master
           name: ${{ steps.date.outputs.date }}
           tag: ${{ steps.date.outputs.date }}
-          artifacts: "static/*.zip,live/*.zip"
+          artifacts: "*.zip"
