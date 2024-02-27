@@ -116,18 +116,6 @@
   margin-top: 16px !important;
 }
 
-[class*="remoteplaysettings_TableHeader_"].DesktopUI, .DesktopUI [class*="remoteplaysettings_TableHeader_"] {
-  color: rgb(var(--color-text)) !important;
-  font-weight: 400 !important;
-  font-size: var(--size-20) !important;
-  text-transform: none !important;
-  margin-top: 16px !important;
-}
-
-[class*="remoteplaysettings_TableHeader_"] {
-  color: rgb(var(--color-text)) !important;
-}
-
 [class*="pagedsettings_PagedSettingsDialog_PageListItem_"] [class*="pagedsettings_PageListItem_Title_"] {
   font-weight: 400 !important;
   line-height: 40px !important;
@@ -1280,6 +1268,22 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 }
 
 /* REMOTE PLAY */
+[class*="remoteplaysettings_TableHeader_"].DesktopUI, .DesktopUI [class*="remoteplaysettings_TableHeader_"] {
+  color: rgb(var(--color-text)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  text-transform: none !important;
+  margin-top: 0px !important;
+}
+
+[class*="remoteplaysettings_TableHeader_"] {
+  color: rgb(var(--color-text)) !important;
+}
+
+[class*="remoteplaysettings_TableHeader_"] [class*="gamepaddialog_FieldLabel_"] {
+  line-height: unset !important;
+}
+
 [class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_FullWidth_"] {
   gap: 16px !important;
 }
@@ -1294,6 +1298,33 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
 
 [class*="remoteplaysettings_SubSetting_"] .Panel>div {
   padding-left: 0px !important;
+}
+
+[class*="gamepaddialog_ControlsListOuterPanel_"][class*="gamepaddialog_FullWidth_"] [class*="settings_SettingsDialogButton_"] {
+  min-width: 100% !important;
+}
+
+.DialogControlsSection > div:has([class*="remoteplaysettings_Advanced_"]) {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[class*="remoteplaysettings_Advanced_"] {
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* BROADCAST */
+[class*="gamepaddialog_FieldLabel_"]:has([class*="broadcastsettings_ConfigureMic_"]) {
+  flex-direction: column !important;
+}
+
+[class*="broadcastsettings_ConfigureMic_"] {
+  justify-content: left !important;
+  line-height: 19px !important;
+  margin-bottom: 8px !important;
 }
 
 /* MUSIC */
