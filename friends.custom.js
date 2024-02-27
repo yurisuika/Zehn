@@ -1,1 +1,1 @@
-import 'https://zehn.yurisuika.dev/static/friends.custom.js';
+import 'https://zehn.yurisuika.dev/friends.custom.js';

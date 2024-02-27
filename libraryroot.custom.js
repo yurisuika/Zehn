@@ -1,1 +1,1 @@
-import 'https://zehn.yurisuika.dev/static/libraryroot.custom.js';
+import 'https://zehn.yurisuika.dev/libraryroot.custom.js';

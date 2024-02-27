@@ -1,1 +1,1 @@
-import 'https://zehn.yurisuika.dev/static/notifications.custom.js';
+import 'https://zehn.yurisuika.dev/notifications.custom.js';

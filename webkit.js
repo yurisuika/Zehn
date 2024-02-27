@@ -1,1 +1,1 @@
-import 'https://zehn.yurisuika.dev/static/webkit.js';
+import 'https://zehn.yurisuika.dev/webkit.js';
