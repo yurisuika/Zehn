@@ -376,6 +376,7 @@ img[class*="emoticon_emoticon_"] {
 /* STATUS SNOOZE */
 [class*="friendsnooze_SnoozeContainer_"] {
   margin-left: 0px !important;
+  display: none !important;
 }
 
 [class*="friendsnooze_SnoozeContainer_"]::after {
@@ -404,10 +405,6 @@ img[class*="emoticon_emoticon_"] {
 
 [class*="friendsnooze_SnoozeContainer_"].online [class*="friendsnooze_SnoozeZ_"] {
   color: rgb(var(--color-online)) !important;
-}
-
-.awayOrSnooze [class*="steamavatar_avatarStatus_"] {
-  opacity: 1 !important;
 }
 
 .friend.awayOrSnooze .labelHolder {
@@ -471,29 +468,84 @@ img[class*="emoticon_emoticon_"] {
   border: unset !important;
   width: 100% !important;
   height: 100% !important;
-  border-radius: var(--option-round-avatars) !important;
+  /* border-radius: var(--option-round-avatars) !important; */
+  border-radius: 0px !important;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 0 512 a 512 512 0 0 0 1024 0 a 1 1 0 0 0 -1024 0'/></svg>") !important;
+}
+
+[class*="steamavatar_avatarHolder_"]:has([class*="steamavatar_avatarStatus_"]) [class*="steamavatar_avatar_"] {
+  /* -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 1005 650 a 512 512 0 1 0 -355 355 a 256 256 0 1 1 355 -355'/></svg>") !important; */
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 1005 651 a 512 512 0 1 0 -354 354 c -144 -242 112 -498 354 -354'/></svg>") !important;
+}
+
+.AvatarAndUser:has([class*="personastatusicons_MobilePhoneIcon_"]) [class*="steamavatar_avatarHolder_"]:has([class*="steamavatar_avatarStatus_"]) [class*="steamavatar_avatar_"], .friendCategoryContainer:has([class*="personastatusicons_MobilePhoneIcon_"]) [class*="steamavatar_avatarHolder_"]:has([class*="steamavatar_avatarStatus_"]) [class*="steamavatar_avatar_"] {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 640 576 a 96 96 0 0 1 96 -96 h 287 a 512 512 0 1 0 -383 528 v -432'/></svg>") !important;
 }
 
 [class*="steamavatar_avatarStatus_"], [class*="steamavatar_avatarStatus_"].bottom, [class*="steamavatar_avatarStatus_"].right {
   position: absolute !important;
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
-  border: 3px solid rgb(var(--color-background)) !important;
+  /* width: 10px !important; */
+  /* height: 10px !important; */
+  width: 100% !important;
+  height: 100% !important;
+  /* border-radius: 50% !important; */
+  border-radius: 0px !important;
+  /* border: 3px solid rgb(var(--color-background)) !important; */
+  border: unset !important;
   box-sizing: content-box !important;
-  right: -3px !important;
-  bottom: -3px !important;
+  /* right: -3px !important; */
+  /* bottom: -3px !important; */
+  right: 0px !important;
+  bottom: 0px !important;
   left: unset !important;
   top: unset !important;
   z-index: 999 !important;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 864 704 a 1 1 0 0 0 0 320 a 1 1 0 0 0 0 -320'/></svg>") !important;
 }
 
 [class*="steamavatar_avatarHolder_"].X-Small [class*="steamavatar_avatarStatus_"], [class*="steamavatar_avatarHolder_"].Small [class*="steamavatar_avatarStatus_"] {
-  width: 8px !important;
+  /* width: 8px !important;
   height: 8px !important;
   border-width: 2px !important;
   right: -2px !important;
-  bottom: -2px !important;
+  bottom: -2px !important; */
+  width: 100% !important;
+  height: 100% !important;
+  border: unset !important;
+  right: 0px !important;
+  bottom: 0px !important;
+}
+
+/* SNOOZE */
+.awayOrSnooze [class*="steamavatar_avatarStatus_"] {
+  opacity: 1 !important;
+  /* -webkit-mask: none !important; */
+  -webkit-mask-size: auto !important;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 704 864 a 160 160 0 1 0 160 -160 a 1 1 0 0 1 -160 160'/></svg>") !important;
+}
+
+.offline [class*="steamavatar_avatarStatus_"] {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 864 704 a 1 1 0 0 1 0 320 a 1 1 0 0 1 0 -320 l 1 64 a 1 1 0 0 0 0 192 a 1 1 0 0 0 0 -192 v 0 Z'/></svg>") !important;
+}
+
+/* DO NOT DISTURB */
+.AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="steamavatar_avatarStatus_"], .friendCategoryContainer:has([class*="personanameandstatus_DNDContainer_"]) [class*="steamavatar_avatarStatus_"] {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 864 704 a 1 1 0 0 1 0 320 a 1 1 0 0 1 0 -320 l 1 128 h -96 v 64 h 192 v -64 h -96 Z'/></svg>") !important;
+}
+
+/* MOBILE */
+.AvatarAndUser:has([class*="personastatusicons_MobilePhoneIcon_"]) [class*="steamavatar_avatarStatus_"], .friendCategoryContainer:has([class*="personastatusicons_MobilePhoneIcon_"]) [class*="steamavatar_avatarStatus_"] {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 1024 992 v -416 a 32 32 0 0 0 -32 -32 h -256 a 32 32 0 0 0 -32 32 v 416 a 32 32 0 0 0 32 32 h 128 v -64 h -32 v -32 h 32 v -64 h -96 v -256 h 196 v 256 h -100 v 64 h 32 v 32 h -32 v 64 h 128 a 32 32 0 0 0 32 -32'/></svg>") !important;
+}
+
+/* VR */
+.AvatarAndUser:has([class*="personastatusicons_VRIcon_"]) [class*="steamavatar_avatarStatus_"], .friendCategoryContainer:has([class*="personastatusicons_VRIcon_"]) [class*="steamavatar_avatarStatus_"] {
+  /* -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 864 704 a 1 1 0 0 1 0 320 a 1 1 0 0 1 0 -320 l 1 128 h -96 v 64 h 192 v -64 h -96 Z'/></svg>") !important; */
+}
+
+/* BIG PICTURE */
+.AvatarAndUser:has([class*="personastatusicons_BigPictureIcon_"]) [class*="steamavatar_avatarStatus_"], .friendCategoryContainer:has([class*="personastatusicons_BigPictureIcon_"]) [class*="steamavatar_avatarStatus_"] {
+  /* -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='auto' height='auto' viewBox='0 0 1024 1024' preserveAspectRatio='none'><path d='M 864 704 a 1 1 0 0 1 0 320 a 1 1 0 0 1 0 -320 l 1 128 h -96 v 64 h 192 v -64 h -96 Z'/></svg>") !important; */
 }
 
 /* OTHER AVATAR */
@@ -509,14 +561,14 @@ img[class*="emoticon_emoticon_"] {
 }
 
 /* STATUS ICONS */
-[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_MobilePhoneIcon_"], [class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_VRIcon_"],
-[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_BigPictureIcon_"] {
+[class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_MobilePhoneIcon_"], [class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_VRIcon_"], [class*="personastatusicons_PersonaStatusIcon_"][class*="personastatusicons_BigPictureIcon_"] {
   margin-top: 0px !important;
   margin-left: 0px !important;
   width: unset !important;
   height: 16px !important;
   line-height: 16px !important;
   display: flex !important;
+  display: none !important;
 }
 
 [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_VR, [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_MobilePhone, [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_BigPicture {
@@ -605,10 +657,6 @@ img[class*="emoticon_emoticon_"] {
 
 .offline [class*="steamavatar_avatarStatus_"] {
   background: rgb(var(--color-offline)) !important;
-}
-
-.awayOrSnooze [class*="steamavatar_avatarStatus_"] {
-  -webkit-mask: none !important;
 }
 
 /* LIST ITEM */
