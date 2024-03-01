@@ -590,13 +590,76 @@
 
 .msgText {
   color: rgb(var(--color-sub)) !important;
-  padding-left: 32px !important;
-  padding-right: 32px !important;
+  padding: 0px 32px !important;
+}
+
+/* TRADE OFFER */
+.msg.isCurrentUser .TradeOfferInvite, .TradeOfferInvite {
+  background: transparent !important;
+  display: flex !important;
+}
+
+.ChatMessageInvite .inviteURLContainer {
+  margin-bottom: 0px !important;
+}
+
+.ChatMessageInvite .inviteURLLinkDesc {
+  color: rgb(var(--color-sub)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  margin: 0px 4px 0px 0px !important;
+}
+
+.ChatMessageInvite .inviteURLContainer .inviteURLAndCopy {
+  margin: 0px !important;
+}
+
+.ChatMessageInvite .inviteURLLink {
+  border-radius: 0px !important;
+  padding: 0px !important;
+  background-color: transparent !important;
+  color: rgb(var(--color-primary)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  border: unset !important;
+  margin-right: 4px !important;
+  text-overflow: ellipsis !important;
+  min-width: 0px !important;
+}
+
+.ChatMessageInvite .inviteURLLink:hover {
+  color: rgb(var(--color-sub)) !important;
+}
+
+.ChatMessageInvite .inviteURLLink:active {
+  color: rgb(var(--color-disabled)) !important;
+}
+
+.inviteURLContainer .copyInviteLink {
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0px !important;
+}
+
+.friendsui-container .SVGIcon_Button.SVGIcon_CopyToClipboard {
+  stroke: transparent !important;
+  fill: transparent !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-position: center !important;
+  background-size: 16px !important;
+  background-repeat: no-repeat !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' style='fill:white' viewBox='0 0 16 16'><path d='M 15 6.2891 v 9.7109 h -10 v -3 h -4 v -13 h 6.7109 l 3 3 h 1 z m -3 -0.2891 h 1.2891 l -1.2891 -1.2891 z m -7 -3 h 4.2891 l -2 -2 h -5.2891 v 11 h 3 z m 9 4 h -3 v -3 h -5 v 11 h 8 Z'/></svg>") !important;
+}
+
+.OpenGraphFooter .OpenGraphURLButton:active .SVGIcon_CopyToClipboard polygon, .copyInviteLink:active .SVGIcon_CopyToClipboard polygon, .OpenGraphFooter .OpenGraphURLButton:active .SVGIcon_CopyToClipboard polyline, .copyInviteLink:active .SVGIcon_CopyToClipboard polyline {
+  fill: transparent !important;
 }
 
 /* INVITE */
 .msg .gameInviteDismissed, .msg .gameInviteSelf, .msg .gameInviteAccepted {
   color: rgb(var(--color-sub)) !important;
+  display: flex !important;
 }
 
 .msg .gameInviteDismissed:hover, .msg .gameInviteSelf:hover, .msg .gameInviteAccepted:hover {
@@ -615,6 +678,8 @@
   font-weight: 400 !important;
   margin-bottom: 0px !important;
   border-radius: 0px !important;
+  background: transparent !important;
+  display: flex !important;
 }
 
 .msg.ChatMessageInvite.gameInviteMsg.Panel.Focusable {
@@ -710,7 +775,8 @@
 }
 
 .ChatMessageInvite .leftInviteContainer {
-  padding: 16px 0px !important;
+  padding: 0px !important;
+  align-self: center !important;
 }
 
 .ChatMessageInvite.Inviter .ChatRoomGroupAvatar.Small .ChatRoomGroupAvatar_initials {
@@ -732,8 +798,9 @@
   height: 38px !important;
 }
 
-.ChatMessageInvite .rightInviteContainer {
+.ChatMessageInvite .rightInviteContainer, .ChatMessageInvite.NoBGSplitInvite .rightInviteContainer {
   padding: 16px !important;
+  box-sizing: border-box !important;
 }
 
 .ChatMessageInvite .rightInviteContainer .rightInviteContainerContent {
@@ -1333,7 +1400,7 @@ div:hover > .inviteAnotherFriendButton {
   width: 38px !important;
   left: 0px !important;
   top: 0px !important;
-  display: none !important;
+  /* display: none !important; */
 }
 
 .friendsui-container .SVGIcon_TextRoom, .friendsui-container .SVGIcon_Button.SVGIcon_TextRoom, .friendsui-container .SVGIcon_VoiceRoom, .friendsui-container .SVGIcon_Button.SVGIcon_VoiceRoom {
@@ -1343,13 +1410,21 @@ div:hover > .inviteAnotherFriendButton {
   stroke: transparent !important;
   fill: transparent !important;
   opacity: 0 !important;
-  display: none !important;
+  /* display: none !important; */
 }
 
 .VoiceToggleIconCtn .SVGIcon_VoiceRoom .Microphone {
   fill: transparent !important;
   opacity: 0 !important;
-  display: none !important;
+  /* display: none !important; */
+}
+
+.VoiceToggle.Active:focus svg, .VoiceToggle.Active:hover svg {
+  color: transparent !important;
+}
+
+.VoiceToggle.Active svg {
+  color: transparent !important;
 }
 
 [class*="chatentry_chatSubmitButton_"]:not([class*="chatentry_EmoticonPickerButton_"]):not([class*="chatentry_EmbedButton_"]) {
@@ -1359,21 +1434,27 @@ div:hover > .inviteAnotherFriendButton {
 }
 
 [class*="chatentry_EmoticonPickerButton_"] {
+  background-size: 16px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAABW0lEQVRYhe2W4W2DMBCF33UDZklGICOwAit0lqyQjEBHICOwgjPC1x+cEa2owhEljSI/yRI+7umez/BsA/SK+PhvAX+hCIuiCIuiCIuiCIviPYSZ2Y8hqZbUS0qS8JE8Vi/kP0ZYBlABvaRO0kXSwRySDh7rgB6ottQQsHrMRA23imbxnltFa1nkdmFm8k7JzPYrFz7lh24ykVUADZAi2+OdS85dXSv6jbWSzmZ29aIDMCyImeKee3buakSF7SR9BTlyzi5CCH1jkrDof5+JY6HV3PcwWElXoMmTW3Yxe24kXR8p7KLR7QV8ShqWxHls8Bw55xKqdI9dACeft24LlT8n4JRFbrGLLc7fZdP0eev2kDEA7ex9D3TRJrzskRT+K90w83GUgCMweRSwA44abxmStM+GHEK0Y7+4tXclzbYyeay+p1bUYJ+GtzHYp6EIi6IIi6IIi6IIi+IbqDTEJ2jHubkAAAAASUVORK5CYII=') !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' style='fill:white' viewBox='0 0 16 16'><path d='M 5 7 q -0.2109 0 -0.3906 -0.0781 q -0.1797 -0.0781 -0.3203 -0.2109 q -0.1328 -0.1406 -0.2109 -0.3203 q -0.0781 -0.1797 -0.0781 -0.3906 q 0 -0.2109 0.0781 -0.3906 q 0.0781 -0.1797 0.2109 -0.3125 q 0.1406 -0.1406 0.3203 -0.2188 q 0.1797 -0.0781 0.3906 -0.0781 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 q 0.0781 0.1797 0.0781 0.3906 q 0 0.2109 -0.0781 0.3906 q -0.0781 0.1797 -0.2188 0.3203 q -0.1328 0.1328 -0.3125 0.2109 q -0.1797 0.0781 -0.3906 0.0781 Z M 11 7 q -0.2109 0 -0.3906 -0.0781 q -0.1797 -0.0781 -0.3203 -0.2109 q -0.1328 -0.1406 -0.2109 -0.3203 q -0.0781 -0.1797 -0.0781 -0.3906 q 0 -0.2109 0.0781 -0.3906 q 0.0781 -0.1797 0.2109 -0.3125 q 0.1406 -0.1406 0.3203 -0.2188 q 0.1797 -0.0781 0.3906 -0.0781 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 q 0.0781 0.1797 0.0781 0.3906 q 0 0.2109 -0.0781 0.3906 q -0.0781 0.1797 -0.2188 0.3203 q -0.1328 0.1328 -0.3125 0.2109 q -0.1797 0.0781 -0.3906 0.0781 Z M 8 0 q 1.1016 0 2.125 0.2891 q 1.0234 0.2813 1.9141 0.8047 q 0.8906 0.5156 1.6172 1.25 q 0.7344 0.7266 1.25 1.6172 q 0.5234 0.8906 0.8047 1.9141 q 0.2891 1.0234 0.2891 2.125 q 0 1.1016 -0.2891 2.125 q -0.2813 1.0234 -0.8047 1.9141 q -0.5156 0.8906 -1.25 1.625 q -0.7266 0.7266 -1.6172 1.25 q -0.8906 0.5156 -1.9141 0.8047 q -1.0234 0.2813 -2.125 0.2813 q -1.1016 0 -2.125 -0.2813 q -1.0234 -0.2891 -1.9141 -0.8047 q -0.8906 -0.5234 -1.625 -1.25 q -0.7266 -0.7344 -1.25 -1.625 q -0.5156 -0.8906 -0.8047 -1.9062 q -0.2813 -1.0234 -0.2813 -2.125 q 0 -1.1094 0.2813 -2.1328 q 0.2891 -1.0234 0.8047 -1.9141 q 0.5234 -0.8906 1.25 -1.6172 q 0.7344 -0.7344 1.625 -1.25 q 0.8906 -0.5234 1.9063 -0.8047 q 1.0234 -0.2891 2.1328 -0.2891 Z M 8 15 q 0.9609 0 1.8516 -0.25 q 0.8984 -0.25 1.6719 -0.7031 q 0.7813 -0.4609 1.4219 -1.1016 q 0.6406 -0.6406 1.0938 -1.4141 q 0.4609 -0.7813 0.7109 -1.6719 q 0.25 -0.8906 0.25 -1.8516 q 0 -0.9688 -0.25 -1.8594 q -0.25 -0.8984 -0.7109 -1.6719 q -0.4531 -0.7813 -1.0938 -1.4219 q -0.6406 -0.6406 -1.4219 -1.0938 q -0.7734 -0.4609 -1.6719 -0.7109 q -0.8906 -0.25 -1.8516 -0.25 q -0.9609 0 -1.8594 0.25 q -0.8906 0.25 -1.6719 0.7109 q -0.7734 0.4531 -1.4141 1.0938 q -0.6406 0.6406 -1.1016 1.4219 q -0.4531 0.7734 -0.7031 1.6719 q -0.25 0.8906 -0.25 1.8516 q 0 0.9609 0.25 1.8594 q 0.25 0.8906 0.7031 1.6719 q 0.4609 0.7734 1.1016 1.4141 q 0.6406 0.6406 1.4141 1.1016 q 0.7813 0.4531 1.6719 0.7031 q 0.8906 0.25 1.8594 0.25 Z M 8 12 q 0.5703 0 1.1016 -0.1563 q 0.5391 -0.1563 1 -0.4453 q 0.4609 -0.2891 0.8281 -0.7031 q 0.375 -0.4141 0.6328 -0.9219 l 0.8984 0.4531 q -0.3203 0.6328 -0.7891 1.1484 q -0.4688 0.5156 -1.0469 0.875 q -0.5781 0.3594 -1.25 0.5547 q -0.6641 0.1953 -1.3828 0.1953 q -0.7109 0 -1.375 -0.1953 q -0.6641 -0.1953 -1.2422 -0.5547 q -0.5781 -0.3594 -1.0469 -0.875 q -0.4688 -0.5156 -0.7891 -1.1484 l 0.8984 -0.4531 q 0.2578 0.5078 0.625 0.9219 q 0.375 0.4141 0.8359 0.7031 q 0.4609 0.2891 0.9922 0.4453 Q 7.4219 12 8 12 Z'/></svg>") !important;
 }
 
 [class*="chatentry_EmbedButton_"] {
+  background-size: 16px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAo0lEQVRYhe3VwQ2DMAyF4edu0BW6Qldgls7CLDBCmQlG+DlgUK9xokZItoSQL8+fpUAMUM96dJ2egAQkoALwlrRKwt8vM5OZ/Q0wSZrtmDhL+gZzZME/IfazLnD1pXlNzwCBbaoAkYFNAS0qAQlIQDUAePYAbMBH0qLjMlq834qTgMgzAisweMbg/ViaFQL40BPBOTyyUPQ2bFb3/woSkIDbA3ZLEOreUiK0uQAAAABJRU5ErkJggg==') !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' style='fill:white' viewBox='0 0 16 16'><path d='M 11 3 v 9.5 q 0 0.7266 -0.2813 1.3672 q -0.2734 0.6328 -0.75 1.1094 q -0.4688 0.4688 -1.1094 0.75 q -0.6328 0.2734 -1.3594 0.2734 q -0.7266 0 -1.3672 -0.2734 q -0.6328 -0.2813 -1.1094 -0.75 q -0.4688 -0.4766 -0.75 -1.1094 q -0.2734 -0.6406 -0.2734 -1.3672 v -10 q 0 -0.5156 0.1953 -0.9688 q 0.2031 -0.4531 0.5391 -0.7891 q 0.3438 -0.3438 0.7969 -0.5391 q 0.4531 -0.2031 0.9688 -0.2031 q 0.5156 0 0.9688 0.2031 q 0.4531 0.1953 0.7891 0.5391 q 0.3438 0.3359 0.5391 0.7891 q 0.2031 0.4531 0.2031 0.9688 v 10 q 0 0.3125 -0.1172 0.5859 q -0.1172 0.2734 -0.3203 0.4766 q -0.2031 0.2031 -0.4766 0.3203 q -0.2734 0.1172 -0.5859 0.1172 q -0.3125 0 -0.5859 -0.1172 q -0.2734 -0.1172 -0.4766 -0.3203 q -0.2031 -0.2031 -0.3203 -0.4766 q -0.1172 -0.2734 -0.1172 -0.5859 v -8.5 h 1 v 8.5 q 0 0.2031 0.1484 0.3516 q 0.1484 0.1484 0.3516 0.1484 q 0.2031 0 0.3516 -0.1484 q 0.1484 -0.1484 0.1484 -0.3516 v -10 q 0 -0.3125 -0.1172 -0.5859 q -0.1172 -0.2734 -0.3203 -0.4766 q -0.2031 -0.2031 -0.4766 -0.3203 q -0.2734 -0.1172 -0.5859 -0.1172 q -0.3125 0 -0.5859 0.1172 q -0.2734 0.1172 -0.4766 0.3203 q -0.2031 0.2031 -0.3203 0.4766 q -0.1172 0.2734 -0.1172 0.5859 v 10 q 0 0.5156 0.1953 0.9688 q 0.2031 0.4531 0.5391 0.7969 q 0.3438 0.3359 0.7969 0.5391 q 0.4531 0.1953 0.9688 0.1953 q 0.5156 0 0.9688 -0.1953 q 0.4531 -0.2031 0.7891 -0.5391 q 0.3438 -0.3438 0.5391 -0.7969 q 0.2031 -0.4531 0.2031 -0.9688 v -9.5 Z'/></svg>") !important;
 }
 
 .VoiceToggle {
+  background-size: 16px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVRYhe2V4QkDIQxGP8sN4k18I0gn6gZtJ2ivE3z944EFpZfEo0XyQFCD4RHUBJL4R06/FmjhYlJcTIqLSXExKcOKJQCsjGTMi2DslQQwA7gXezOAK4BgSdxDrCbQ2t/NsHfsMFxMynBie5+y+skPV7GS+GWtYlKeW7PAGcCtEk85/lLmB0hqxkLyQjI24jHHF2V+tdgm92Sdh0WKpLlXfhQfxv5Yor1jJazMzYI9xLpVqWTof+wQXEyKi0lxMSkuJuUNjh8PExmHXc0AAAAASUVORK5CYII=') !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' style='fill:white' viewBox='0 0 16 16'><path d='M5.5 12q-.3125 0-.5859-.1172-.2734-.1172-.4766-.3203-.2031-.2031-.3203-.4766-.1172-.2734-.1172-.5859v-9q0-.3125.1172-.5859.1172-.2734.3203-.4766.2031-.2031.4766-.3203.2734-.1172.5859-.1172h4q.3125 0 .5859.1172.2734.1172.4766.3203.2031.2031.3203.4766.1172.2734.1172.5859v9q0 .3125-.1172.5859-.1172.2734-.3203.4766-.2031.2031-.4766.3203-.2734.1172-.5859.1172zm-.5-1.5q0 .2031.1484.3516.1484.1484.3516.1484h4q.2031 0 .3516-.1484.1484-.1484.1484-.3516v-9q0-.2031-.1484-.3516-.1484-.1484-.3516-.1484h-4q-.2031 0-.3516.1484-.1484.1484-.1484.3516zm8-2.5v2.8281q0 .6563-.25 1.2344-.25.5781-.6797 1.0078-.4297.4297-1.0078.6797-.5781.25-1.2344.25h-1.8281v1h2v1h-5v-1h2v-1h-1.8281q-.6563 0-1.2344-.25-.5781-.25-1.0078-.6797-.4297-.4297-.6797-1.0078-.25-.5781-.25-1.2344v-2.8281h1v2.8281q0 .4453.1719.8438.1718.3984.4609.6953.2968.2891.6953.4609.3984.1719.8437.1719h4.6563q.4453 0 .8438-.1719.3984-.1719.6875-.4609.2969-.2969.4688-.6953.1719-.3984.1719-.8438v-2.8281Z'/></svg>") !important; !important;
+}
+
+.VoiceToggle .SVGIcon_VoiceRoom {
 }
 
 /* CHAT ROOM HEADER */
