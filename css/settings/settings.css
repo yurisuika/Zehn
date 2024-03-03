@@ -10,12 +10,20 @@
 
 /* BORDER */
 .PopupFullWindow .ModalPosition_Content > div:not(.ModalPosition_TopBar):not(.ModalPosition_Dismiss):not(.DialogContent) {
-  border: 1px solid rgb(var(--color-primary)) !important;
+  border: 1px solid rgba(var(--color-white), 0.2) !important;
   min-height: 0px !important;
   min-width: 0px !important;
 }
 
+html:focus-within .PopupFullWindow .ModalPosition_Content > div:not(.ModalPosition_TopBar):not(.ModalPosition_Dismiss):not(.DialogContent) {
+  border: 1px solid rgb(var(--color-primary)) !important;
+}
+
 .ModalPosition .ModalPosition_Content .DialogContent._DialogLayout:not([class*="pagedsettings_PagedSettingsDialog_PageContent_"]) {
+  border: 1px solid rgba(var(--color-white), 0.2) !important;
+}
+
+html:focus-within .ModalPosition .ModalPosition_Content .DialogContent._DialogLayout:not([class*="pagedsettings_PagedSettingsDialog_PageContent_"]) {
   border: 1px solid rgb(var(--color-primary)) !important;
 }
 
@@ -1467,7 +1475,7 @@ button[class*="settings_BuiltInLayoutButton_"].DialogButton {
   padding-left: 16px !important;
   padding-right: 16px !important;
   display: inline-flex !important;
-  font-size: 13px !important;
+  font-size: var(--size-14) !important;
 }
 
 .DialogBody .activeVoiceButtons {
