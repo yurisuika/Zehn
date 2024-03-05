@@ -32,10 +32,6 @@ Zehn.waitForElement('[class*="appproperties_AppProperties_"]').then((element) =>
       el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkElEQVQ4jd2TQQ6DMAwENxWPax8CX+Md8BS499jr9FCnMpaBVL2xkuVktdmspUSAXA3AygcL0Bvv4fVSIFZgNuFsJnIHTw2q4Bn2L2C0fmiw2M0CJktUR8ONtGvQh7hDkm5TBVAAkorrkd/gFolf8bdB16AhWX9HaUlQdnqzwSEubPBIuHuqTJ5n/Y3TCSdAb0ZzR8TLe04OAAAAAElFTkSuQmCC')";
       console.log(el)
     }
-    if(el.innerText.indexOf("Betas") !== -1) {
-      el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkElEQVQ4jd2TQQ6DMAwENxWPax8CX+Md8BS499jr9FCnMpaBVL2xkuVktdmspUSAXA3AygcL0Bvv4fVSIFZgNuFsJnIHTw2q4Bn2L2C0fmiw2M0CJktUR8ONtGvQh7hDkm5TBVAAkorrkd/gFolf8bdB16AhWX9HaUlQdnqzwSEubPBIuHuqTJ5n/Y3TCSdAb0ZzR8TLe04OAAAAAElFTkSuQmCC')";
-      console.log(el)
-    }
     if(el.innerText.indexOf("Installed Files") !== -1) {
       el.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAP0lEQVQ4jWP8////fwYoYGRkZGQgEbDANCIbhMwmBBgpdQHFgGIXkB0GMMtGYhigWzISwwDdMopdwEhCxsMKAM4qQxMCLDGbAAAAAElFTkSuQmCC')";
       console.log(el)
