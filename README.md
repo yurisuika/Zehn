@@ -21,7 +21,7 @@ The live version references the static version, so each time Steam is started or
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
 #### Customization
-In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for settings windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
+In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for dialog windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
 
 In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
 
@@ -33,8 +33,6 @@ The library games list sidebar can be toggled by an added button. You will find 
 If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
 
 #### To-Do
-- Replace PNG icons with Segoe MDL2 Assets font glyphs or SVG maybe?
-- Implement Reveal effects
 - Figure out to implement Reveal on stuff that isn't initially loaded
 - Figure out how to get JS to move classes again when reloaded and not just on initial load
 - Maybe do browser content? (probably not)
@@ -46,7 +44,6 @@ If you are using Linux, you will want to install [some form of Segoe UI](https:/
 - [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) - For allowing this skin to work at all!
 - [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher) - Another great skin patcher!
 - [FluentReveal](https://github.com/aleversn/FluentReveal) - Provides the Reveal effect (not yet implemented).
-- [Micon](https://github.com/xtoolkit/Micon) - Brings Segoe MDL2 assets to a web font!
 
 #### Previews
 ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/zehn.png?raw=true)

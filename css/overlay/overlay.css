@@ -371,26 +371,24 @@ body:not(.WindowFocus) [class*="steamdesktopoverlay_PinWindowButton_"], body:not
 .ModalDialogPopup:not([class*="steamdesktopoverlay_NoTitlebarSpacer_"]) [class*="steamdesktopoverlay_OverlayPopup_"] [class*="steamdesktopoverlay_WindowControls_"] {
   height: 38px !important;
   position: absolute !important;
-  top: 0px !important;
-  right: 0px !important;
+  top: 1px !important;
+  right: 1px !important;
   width: calc(100% - 2px) !important;
   z-index: 6 !important;
-  margin: 1px !important;
+  margin: 0px !important;
   box-sizing: border-box !important;
 }
 
-.ModalDialogPopup:not([class*="steamdesktopoverlay_NoTitlebarSpacer_"]) [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser [class*="steamdesktopoverlay_WindowControls_"] {
-  width: calc(38px * 4) !important;
-}
-
-[class*="steamdesktopoverlay_OverlayPopup_"].GameOverview, [class*="steamdesktopoverlay_OverlayPopup_"].Players, [class*="steamdesktopoverlay_OverlayPopup_"].GameNotes, [class*="steamdesktopoverlay_OverlayPopup_"].ScreenshotManager, [class*="steamdesktopoverlay_OverlayPopup_"].Achievements, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Guides, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Discussions,
-[class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_DLC, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser,
-[class*="gamepadui_GamepadUIPopupWindowBody_"] [class*="steamdesktopoverlay_OverlayPopup_"] {
+[class*="steamdesktopoverlay_OverlayPopup_"].GameOverview, [class*="steamdesktopoverlay_OverlayPopup_"].Players, [class*="steamdesktopoverlay_OverlayPopup_"].GameNotes, [class*="steamdesktopoverlay_OverlayPopup_"].ScreenshotManager, [class*="steamdesktopoverlay_OverlayPopup_"].Achievements, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Guides, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Discussions, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_DLC, [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser {
   border: 1px solid rgba(var(--color-white), 0.1) !important;
   width: calc(100% - 2px) !important;
 }
 
-.WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].GameOverview, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].Players, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].GameNotes, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].ScreenshotManager, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].Achievements, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Guides, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Discussions, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_DLC, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser, .WindowFocus [class*="gamepadui_GamepadUIPopupWindowBody_"] [class*="steamdesktopoverlay_OverlayPopup_"] {
+[class*="gamepadui_GamepadUIPopupWindowBody_"] {
+  border: 1px solid rgba(var(--color-white), 0.1) !important;
+}
+
+.WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].GameOverview, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].Players, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].GameNotes, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].ScreenshotManager, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].Achievements, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Guides, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Discussions, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_DLC, .WindowFocus [class*="steamdesktopoverlay_OverlayPopup_"].OverlayBrowser_Browser, .WindowFocus[class*="gamepadui_GamepadUIPopupWindowBody_"] {
   border: 1px solid rgb(var(--color-primary)) !important;
 }
 
@@ -411,9 +409,12 @@ body:not(.WindowFocus) [class*="steamdesktopoverlay_PinWindowButton_"], body:not
 }
 
 [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].GameNotes,
-[class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].ScreenshotManager,
-[class*="gamepadui_GamepadUIPopupWindowBody_"] [class*="steamdesktopoverlay_OverlayPopup_"] {
+[class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"].ScreenshotManager {
   height: calc(100% - 2px) !important;
+}
+
+[class*="gamepadui_GamepadUIPopupWindowBody_"] [class*="steamdesktopoverlay_OverlayPopup_"] {
+  height: 100% !important;
 }
 
 [class*="steamdesktopoverlay_OverlayPopup_"][class*="steamdesktopoverlay_Resizable_"] {
