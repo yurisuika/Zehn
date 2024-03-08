@@ -899,9 +899,44 @@
   height: 58px !important;
 }
 
-[class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Download_"] svg, [class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Update_"] svg,
+[class*="appportrait_LibraryItemActionButton_"] svg {
+  color: transparent !important;
+  background-size: 32px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+[class*="appportrait_LibraryItemActionButton_"] svg * {
+  fill: transparent !important;
+  stroke: transparent !important;
+}
+
+[class*="appportrait_HoversEnabled_"] [class*="appportrait_LibraryItemActionButton_"]:hover:not([class*="appportrait_Disabled_"]) * {
+  fill: transparent !important;
+  transform: none !important;
+}
+
+[class*="appportrait_LibraryItemActionButton_"]:hover:not([class*="appportrait_Disabled_"]) * {
+  fill: transparent !important;
+  transform: none !important;
+}
+
+[class*="appportrait_LibraryItemActionButton_"] * {
+  width: 38x !important;
+  height: 38px !important;
+  margin: 0px !important;
+}
+
+[class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Download_"] svg {
+  background-image: var(--icon-download) !important;
+}
+
+[class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Update_"] svg {
+  background-image: var(--icon-update) !important;
+}
+
 [class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Play_"] svg {
-  display: none !important;
+  background-image: var(--icon-play) !important;
 }
 
 [class*="appportrait_FeaturedCapsule_"] [class*="appportrait_LibraryItemActionButton_"] {
@@ -909,27 +944,6 @@
   width: 38px !important;
   height: 38px !important;
   border-radius: 0px !important;
-}
-
-[class*="appportrait_LibraryItemActionButton_"]::before {
-  font-family: micon !important;
-  font-size: 16px !important;
-  line-height: 32px !important;
-}
-
-/* DOWNLOAD */
-[class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Landscape_"][class*="appportrait_Download_"]::before {
-  content: "\EB68" !important;
-}
-
-/* UPDATE */
-[class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Landscape_"][class*="appportrait_Update_"]::before {
-  content: "\EDB8" !important;
-}
-
-/* PLAY */
-[class*="appportrait_LibraryItemActionButton_"][class*="appportrait_Landscape_"][class*="appportrait_Play_"]::before {
-  content: "\ED6C" !important;
 }
 
 [class*="appportrait_FeaturedCapsule_"] [class*="appportrait_LibraryItemActionButton_"]:hover {
