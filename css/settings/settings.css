@@ -594,7 +594,7 @@ div:not(:first-child) > .DialogSubHeader {
 }
 
 [class*="gamepadslider_DefaultValueTickContainer_"] {
-  transform: translateX(calc(-100% * var(--inverse-normalized-default-value) + 8px * var(--inverse-normalized-default-value))) !important;
+  transform: translateX(calc(-100% * var(--inverse-normalized-default-value) + 4px * var(--inverse-normalized-default-value))) translateY(17px) !important;
 }
 
 [class*="gamepadslider_SliderControlAndNotches_"][class*="gamepadslider_WithDefaultValue_"] {
@@ -602,14 +602,25 @@ div:not(:first-child) > .DialogSubHeader {
 }
 
 [class*="gamepadslider_DefaultValueTick_"] {
-  width: 8px !important;
-  height: 8px !important;
+  width: 1px !important;
+  height: 4px !important;
+}
+
+[class*="gamepadslider_DefaultValueTick_"]::before {
+  position: absolute !important;
+  content: "" !important;
+  left: 0px !important;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  background: rgba(var(--color-white), 0.4) !important;
 }
 
 [class*="gamepadslider_DefaultValueTick_"]>svg {
-  width: 16px !important;
-  margin-top: -12px !important;
+  width: 1px !important;
+  margin-top: 0px !important;
   color: rgba(var(--color-white), 0.4) !important;
+  opacity: 0px !important;
 }
 
 /* FADE */
