@@ -1510,6 +1510,9 @@ button.DialogButton[class*="appdetailsplaysection_ClickablePlayBarItem_"]:active
 [class*="comment_thread_RatingBar_"] [class*="comment_thread_LikeIcon_"] svg, [class*="comment_thread_RatingBar_"] [class*="comment_thread_LikeIcon_"] path, [class*="comment_thread_RatingBar_"] [class*="comment_thread_CommentIcon_"] svg, [class*="comment_thread_RatingBar_"] [class*="comment_thread_CommentIcon_"] path, [class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg, [class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] path {
   fill: transparent !important;
   stroke: transparent !important;
+  background-size: 16px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 [class*="comment_thread_RatingBar_"] [class*="comment_thread_LikeButton_"][class*="comment_thread_CanClick_"]:hover [class*="comment_thread_RatingIcon_"], [class*="comment_thread_RatingBar_"] [class*="comment_thread_CommentButton_"][class*="comment_thread_CanClick_"]:hover [class*="comment_thread_RatingIcon_"], [class*="comment_thread_RatingBar_"] [class*="comment_thread_Reactions_"][class*="comment_thread_CanClick_"]:hover [class*="comment_thread_RatingIcon_"] {
@@ -1543,18 +1546,6 @@ button.DialogButton[class*="appdetailsplaysection_ClickablePlayBarItem_"]:active
   background-position: center !important;
 }
 
-[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg {
-  width: 24px !important;
-  height: 24px !important;
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
-[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg path {
-  stroke: transparent !important;
-  fill: transparent !important;
-}
-
 [class*="comment_thread_RatingBar_"] [class*="comment_thread_LikeIcon_"] [class*="comment_thread_RatingIcon_"] {
   background-image: var(--icon-thumb-up) !important;
 }
@@ -1564,7 +1555,19 @@ button.DialogButton[class*="appdetailsplaysection_ClickablePlayBarItem_"]:active
 }
 
 [class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg {
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  background-size: 16px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
   background-image: var(--icon-emoticon) !important;
+}
+
+[class*="comment_thread_RatingBar_"] [class*="comment_thread_ReactionIcon_"] svg path {
+  stroke: transparent !important;
+  fill: transparent !important;
 }
 
 [class*="comment_thread_RatingBar_"] [class*="comment_thread_LikeIcon_"] [class*="comment_thread_RatingIcon_"][class*="comment_thread_UserRated_"] {
@@ -1595,7 +1598,89 @@ button.DialogButton[class*="appdetailsplaysection_ClickablePlayBarItem_"]:active
 }
 
 [class*="comment_thread_AddReply_"] {
+  padding: 16px 0px 0px 0px !important;
+}
+
+/* USER REVIEW */
+[class*="appactivityday_ActivityRecommendedGame_"] {
   padding: 0px !important;
+}
+
+[class*="appactivityday_ReviewMetadata_"] {
+  padding-bottom: 16px !important;
+}
+
+[class*="appactivityday_ReviewIcon_"] {
+  width: 32px !important;
+  height: 32px !important;
+  margin-right: 16px !important;
+  border-radius: 0px !important;
+}
+
+[class*="appactivityday_ReviewIconThumbsDownBox_"] {
+  background: transparent !important;
+}
+
+[class*="appactivityday_ReviewIconThumbsUpBox_"] {
+  background: transparent !important;
+}
+
+[class*="appactivityday_ReviewIconThumbsDownColor_"] {
+  fill: transparent !important;
+}
+
+[class*="appactivityday_ReviewIconThumbsUpColor_"] {
+  fill: transparent !important;
+}
+
+[class*="appactivityday_ThumbsDown_"] {
+  width: 32px !important;
+  height: 32px !important;
+  transform: none !important;
+  background-size: 32x !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: var(--icon-thumb-down) !important;
+}
+
+[class*="appactivityday_ThumbsUp_"] {
+  width: 32px !important;
+  height: 32px !important;
+  transform: none !important;
+  background-size: 32px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-image: var(--icon-thumb-up) !important;
+}
+
+[class*="appactivityday_ReviewDescription_"] {
+  line-height: 16px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+[class*="appactivityday_ReviewDescriptionRecommended_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
+  padding-top: 0px !important;
+}
+
+[class*="appactivityday_PlayedForTime_"] {
+  color: rgb(var(--color-sub)) !important;
+  font-size: var(--size-12) !important;
+  font-weight: 400 !important;
+  padding-bottom: 0px !important;
+}
+
+[class*="appactivityday_ReviewTextContainer_"] {
+  padding-bottom: 0px !important;
+}
+
+[class*="appactivityday_ReviewText_"] {
+  color: rgb(var(--color-text)) !important;
+  font-size: var(--size-14) !important;
+  font-weight: 400 !important;
 }
 
 /* ACTIVITY COMMENT THREAD */
@@ -2863,8 +2948,8 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 
 /* SIDEBAR REVIEW */
 [class*="appdetailsreviewsection_ReviewIcon_"] {
-  width: 38px !important;
-  height: 38px !important;
+  width: 32px !important;
+  height: 32px !important;
   border-radius: 0px !important;
   margin-right: 16px !important;
 }
@@ -2883,7 +2968,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 
 [class*="appdetailsreviewsection_ReviewIconThumbsDownColor_"] {
   fill: transparent !important;
-  background-size: 16px !important;
+  background-size: 32px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-image: var(--icon-thumb-down) !important;
@@ -2891,7 +2976,7 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 
 [class*="appdetailsreviewsection_ReviewIconThumbsUpColor_"] {
   fill: transparent !important;
-  background-size: 16px !important;
+  background-size: 32px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-image: var(--icon-thumb-down) !important;
@@ -2899,8 +2984,8 @@ button.DialogButton[class*="appdetailsbutton_AppDetailsButton_"][class*="appdeta
 
 [class*="appdetailsreviewsection_ReviewDescription_"] {
   line-height: 16px !important;
-  margin-top: 3px !important;
-  margin-bottom: 3px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
 [class*="appdetailsreviewsection_PlayedForTime_"] {
