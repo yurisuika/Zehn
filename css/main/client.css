@@ -13,21 +13,18 @@ button {
 }
 
 :root {
-  --virtualmenu-accent: rgb(var(--color-primary));
+  --virtualmenu-accent: rgb(var(--color-accent));
   --virtualmenu-bg: rgba(var(--color-white), 0.1);
-  --virtualmenu-bg-hover: rgba(var(--color-primary), 0.5);
+  --virtualmenu-bg-hover: rgba(var(--color-accent), 0.5);
   --virtualmenu-fg: rgb(var(--color-white));
   --virtualmenutouchkey-icon-width: 100%;
   --virtualmenutouchkey-icon-height: 100%;
   --virtualmenupointer-x: 0%;
   --virtualmenupointer-y: 0%;
-  --virtualmenupointer-color: rgb(var(--color-primary));
+  --virtualmenupointer-color: rgb(var(--color-accent));
   --virtualmenutouchkey-midpoint-x: 0%;
   --virtualmenutouchkey-midpoint-y: 0%;
   --virtualmenutouchkey-description-width: 0px;
-}
-
-:root {
   --touchmenuicon-fg: rgb(var(--color-white));
   --touchmenuicon-bg: rgb(var(--color-background));
   --touchmenuicon-scale: 1;
@@ -43,13 +40,13 @@ a, h1, h2, h3, h4, h5, p {
 
 /* SELECTION */
 ::selection {
-  background: rgb(var(--color-primary));
+  background: rgb(var(--color-accent));
   text-shadow: 0 0 0 transparent;
   color: rgb(var(--color-text));
 }
 
 .friendSearchInput::selection {
-  background: rgb(var(--color-primary));
+  background: rgb(var(--color-accent));
   text-shadow: 0 0 0 transparent;
   color: rgb(var(--color-text));
 }
@@ -93,7 +90,7 @@ a, h1, h2, h3, h4, h5, p {
 .DialogInput_Wrapper>input.DialogInput:focus {
   padding: 0px 12px !important;
   background-color: rgb(var(--color-white)) !important;
-  outline: 2px solid rgb(var(--color-primary)) !important;
+  outline: 2px solid rgb(var(--color-accent)) !important;
   color: rgb(var(--color-black)) !important;
 }
 
@@ -115,7 +112,7 @@ a, h1, h2, h3, h4, h5, p {
 }
 
 .DialogHighlight {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-accent)) !important;
 }
 
 .DialogSubHeader {
@@ -193,7 +190,7 @@ button.TextButton {
 }
 
 .DialogRequirementLabel {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-accent)) !important;
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
 }
@@ -211,7 +208,7 @@ table, th, td, tbody, thead, tr {
 
 /* STATUS */
 [class*="personanameandstatus_playerName_"] {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
   font-size: var(--size-14) !important;
   padding-right: 0px !important;
   margin-right: 0px !important;
@@ -221,31 +218,47 @@ table, th, td, tbody, thead, tr {
 }
 
 .ingame [class*="personanameandstatus_playerName_"] {
-  color: rgb(var(--color-ingame)) !important;
+  color: rgb(var(--color-text)) !important;
 }
 
 .online [class*="personanameandstatus_playerName_"] {
-  color: rgb(var(--color-online)) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+.awayOrSnooze [class*="personanameandstatus_playerName_"] {
+  color: rgb(var(--color-text)) !important;
+}
+
+.AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="personanameandstatus_playerName_"] {
+  color: rgb(var(--color-text)) !important;
 }
 
 .offline [class*="personanameandstatus_playerName_"] {
-  color: rgb(var(--color-offline)) !important;
+  color: rgb(var(--color-sub)) !important;
 }
 
 .friend {
-  color: rgb(var(--color-offline)) !important;
+  color: rgb(var(--color-sub)) !important;
 }
 
 .friend.ingame {
-  color: rgb(var(--color-ingame)) !important;
+  color: rgb(var(--color-text)) !important;
 }
 
 .friend.online {
-  color: rgb(var(--color-online)) !important;
+  color: rgb(var(--color-text)) !important;
+}
+
+.friend.awayOrSnooze {
+  color: rgb(var(--color-text)) !important;
+}
+
+.AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) .friend {
+  color: rgb(var(--color-text)) !important;
 }
 
 .friend.offline {
-  color: rgb(var(--color-offline)) !important;
+  color: rgb(var(--color-sub)) !important;
 }
 
 /* NICKNAME */
@@ -332,6 +345,18 @@ img[class*="emoticon_emoticon_"] {
   line-height: 16px !important;
 }
 
+.friend:not(.ingame) [class*="personanameandstatus_richPresenceContainer_"] {
+  display: none !important;
+}
+
+.friend.ingame [class*="personanameandstatus_richPresenceContainer_"]::before {
+  content: var(--translation-playing) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-12) !important;
+  color: rgb(var(--color-sub)) !important;
+  line-height: 16px !important;
+}
+
 [class*="personanameandstatus_statusAndName_"][class*="personanameandstatus_threeLines_"] {
   margin-top: 0px !important;
 }
@@ -405,6 +430,14 @@ img[class*="emoticon_emoticon_"] {
 
 [class*="standardtemplates_AvatarStatus_"].online {
   background-color: rgb(var(--color-online)) !important;
+}
+
+[class*="standardtemplates_AvatarStatus_"].awayOrSnooze {
+  background-color: rgb(var(--color-away)) !important;
+}
+
+.AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="standardtemplates_AvatarStatus_"] {
+  background-color: rgb(var(--color-disturb)) !important;
 }
 
 [class*="standardtemplates_AvatarStatus_"].offline {
@@ -546,12 +579,36 @@ img[class*="emoticon_emoticon_"] {
   fill: rgb(var(--color-online)) !important;
 }
 
+[class*="personastatusicons_PersonaStatusIcon_"].ingame.awayOrSnooze .SVGIcon_VR path, [class*="personastatusicons_PersonaStatusIcon_"].ingame.awayOrSnooze .SVGIcon_MobilePhone path, [class*="personastatusicons_PersonaStatusIcon_"].ingame.awayOrSnooze .SVGIcon_BigPicture path {
+  fill: rgb(var(--color-away)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].online.awayOrSnooze .SVGIcon_VR path, [class*="personastatusicons_PersonaStatusIcon_"].online.awayOrSnooze .SVGIcon_MobilePhone path, [class*="personastatusicons_PersonaStatusIcon_"].online.awayOrSnooze .SVGIcon_BigPicture path {
+  fill: rgb(var(--color-away)) !important;
+}
+
+.AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_VR path, .AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_MobilePhone path, .AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_BigPicture path {
+  fill: rgb(var(--color-disturb)) !important;
+}
+
 [class*="personastatusicons_PersonaStatusIcon_"].ingame .SVGIcon_Button path {
   fill: rgb(var(--color-ingame)) !important;
 }
 
 [class*="personastatusicons_PersonaStatusIcon_"].online .SVGIcon_Button path {
   fill: rgb(var(--color-online)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].ingame.awayOrSnooze .SVGIcon_Button path {
+  fill: rgb(var(--color-away)) !important;
+}
+
+[class*="personastatusicons_PersonaStatusIcon_"].online.awayOrSnooze .SVGIcon_Button path {
+  fill: rgb(var(--color-away)) !important;
+}
+
+.AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="personastatusicons_PersonaStatusIcon_"] .SVGIcon_Button path {
+  fill: rgb(var(--color-disturb)) !important;
 }
 
 /* STATUS CONTEXT CHEVRON */
@@ -586,6 +643,14 @@ img[class*="emoticon_emoticon_"] {
   background: rgb(var(--color-online)) !important;
 }
 
+.awayOrSnooze [class*="steamavatar_avatarStatus_"] {
+  background: rgb(var(--color-away)) !important;
+}
+
+.AvatarAndUser:has([class*="personanameandstatus_DNDContainer_"]) [class*="steamavatar_avatarStatus_"] {
+  background: rgb(var(--color-disturb)) !important;
+}
+
 .offline [class*="steamavatar_avatarStatus_"] {
   background: rgb(var(--color-offline)) !important;
 }
@@ -604,7 +669,7 @@ img[class*="emoticon_emoticon_"] {
 
 /* LINK */
 .DialogBody a {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-accent)) !important;
 }
 
 .DialogBody a:hover {
@@ -700,7 +765,7 @@ input[type="radio" i]:focus {
 }
 
 input[type="radio" i]:checked {
-  border-color: rgb(var(--color-primary)) !important;
+  border-color: rgb(var(--color-accent)) !important;
 }
 
 input[type="radio" i]:checked:active {
@@ -779,7 +844,7 @@ input[type="radio" i]:checked:after:active {
 }
 
 [class*="radio_Button_"][class*="radio_Active_"] {
-  background-color: rgb(var(--color-primary)) !important;
+  background-color: rgb(var(--color-accent)) !important;
 }
 
 /* CHECKBOX */
@@ -820,8 +885,8 @@ input[type="radio" i]:checked:after:active {
 }
 
 .DialogCheckbox.Active {
-  border: 2px solid rgb(var(--color-primary)) !important;
-  background-color: rgb(var(--color-primary)) !important;
+  border: 2px solid rgb(var(--color-accent)) !important;
+  background-color: rgb(var(--color-accent)) !important;
 }
 
 .DialogCheckbox.Active:hover {
@@ -915,8 +980,8 @@ input[type="radio" i]:checked:after:active {
 }
 
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)) {
-  border-color: rgb(var(--color-primary)) !important;
-  background: rgb(var(--color-primary)) !important;
+  border-color: rgb(var(--color-accent)) !important;
+  background: rgb(var(--color-accent)) !important;
 }
 
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):active {
@@ -966,11 +1031,11 @@ input[type="radio" i]:checked:after:active {
   color: rgb(var(--color-text)) !important;
   position: absolute !important;
   line-height: 16px !important;
-  content: "Off" !important;
+  content: var(--translation-off) !important;
 }
 
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On.Active)::after {
-  content: "On" !important;
+  content: var(--translation-on) !important;
 }
 
 /* CLEAR ACTION */
@@ -1053,8 +1118,8 @@ input[type="radio" i]:checked:after:active {
 }
 
 [class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"][class*="toggle_On_"] {
-  border-color: rgb(var(--color-primary)) !important;
-  background: rgb(var(--color-primary)) !important;
+  border-color: rgb(var(--color-accent)) !important;
+  background: rgb(var(--color-accent)) !important;
 }
 
 [class*="toggle_Toggle_"] [class*="toggle_ToggleRail_"][class*="toggle_Highlight_"][class*="toggle_On_"]:active {
@@ -1107,11 +1172,11 @@ input[type="radio" i]:checked:after:active {
 }
 
 [class*="toggle_Toggle_"]:has([class*="toggle_ToggleRail_"]:not([class*="toggle_On_"]))::after {
-  content: "Off" !important;
+  content: var(--translation-off) !important;
 }
 
 [class*="toggle_Toggle_"]:has([class*="toggle_ToggleRail_"][class*="toggle_On_"])::after {
-  content: "On" !important;
+  content: var(--translation-on) !important;
 }
 
 /* GAMEPAD TOGGLE */
@@ -1138,7 +1203,7 @@ input[type="radio" i]:checked:after:active {
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] {
-  background: rgb(var(--color-primary)) !important;
+  background: rgb(var(--color-accent)) !important;
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"] [class*="gamepaddialog_ToggleRail_"] {
@@ -1168,7 +1233,7 @@ input[type="radio" i]:checked:after:active {
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"], [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_Disabled_"][class*="gamepaddialog_On_"] {
-  border-color: rgb(var(--color-primary)) !important;
+  border-color: rgb(var(--color-accent)) !important;
   border-radius: 9001px !important;
 }
 
@@ -1221,11 +1286,11 @@ input[type="radio" i]:checked:after:active {
 }
 
 [class*="gamepaddialog_Toggle_"]:not([class*="gamepaddialog_On_"])::after {
-  content: "Off" !important;
+  content: var(--translation-off) !important;
 }
 
 [class*="gamepaddialog_Toggle_"][class*="gamepaddialog_On_"]::after {
-  content: "On" !important;
+  content: var(--translation-on) !important;
 }
 
 /* SELECT */
@@ -1417,7 +1482,7 @@ option:active {
 
 /* CONNECTION TROUBLE */
 .ConnectionTrouble .ConnectionTroubleContent {
-  background: rgb(var(--color-primary)) !important;
+  background: rgb(var(--color-accent)) !important;
 }
 
 .ConnectionTroubleContent .ConnectionTroubleMessage, .ConnectionTroubleContent .ConnectionTroubleReconnectMessage {
@@ -1446,7 +1511,7 @@ option:active {
 
 /* CHAT LOADING */
 [class*="throbber_ThrobberText_"], [class*="throbber_LoadingWrapper_"] [class*="throbber_ThrobberText_"] {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-accent)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
@@ -1469,7 +1534,7 @@ option:active {
 }
 
 [class*="emoticon_NewEmoticonIndicator_"] [class*="emoticon_NewEmoticonCircle_"] {
-  background-color: rgb(var(--color-primary)) !important;
+  background-color: rgb(var(--color-accent)) !important;
   width: 5px !important;
   height: 5px !important;
   border-radius: 50% !important;
@@ -1479,7 +1544,7 @@ option:active {
 .copiedAnimation {
   font-size: var(--size-14) !important;
   letter-spacing: normal !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-accent)) !important;
   opacity: 0 !important;
   display: none !important;
 }
