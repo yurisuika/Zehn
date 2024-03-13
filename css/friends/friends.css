@@ -31,7 +31,7 @@
   background-color: transparent !important;
 }
 
-body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButton {
+body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   filter: brightness(0.5) !important;
 }
 
@@ -43,13 +43,17 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   transition: none !important;
 }
 
+.friendListHeaderContainer .title-area {
+  margin-left: 38px !important;
+}
+
 /* SETTINGS PICKER */
 .FriendPicker_ChosenFriend span {
   color: rgba(var(--color-white), 0.75) !important;
 }
 
 .FriendPicker_ChosenFriend:hover span {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 .FriendPicker_ChosenFriend {
@@ -64,7 +68,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .FriendPicker_ChosenFriend:hover .SVGIcon_X_Line line, .FriendPicker_ChosenFriend:active .SVGIcon_X_Line line {
-  stroke: rgb(var(--color-text)) !important;
+  stroke: rgb(var(--color-primary)) !important;
 }
 
 .FriendPicker_Focus .FriendPicker_SuggestedFriend.Focus {
@@ -140,34 +144,21 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 /* HEADER */
 .friendListHeaderContainer {
   min-height: 0px !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-image: var(--image-acrylic) !important;
 }
 
 /* CURRENT USER */
 .currentUserContainer {
   border-bottom: unset !important;
-  height: 38px !important;
-  padding-right: 0px !important;
-}
-
-.currentUserContainer::before, .currentUserContainer::after {
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  height: 38px !important;
-}
-
-.currentUserContainer::before {
-  background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
-  background-blend-mode: exclusion !important;
-}
-
-.currentUserContainer::after {
-  background-image: var(--image-acrylic) !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  padding: 0px 16px !important;
+  align-items: center !important;
+  display: flex !important;
+  margin-top: 38px !important;
+  transition: all 0.25s ease-in-out !important;
 }
 
 .statusHeaderGlow {
@@ -176,10 +167,10 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .currentUserAvatar {
-  display: none !important;
   border-radius: 0px !important;
-  width: 38px !important;
-  height: 38px !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin-right: 16px !important;
 }
 
 .currentUserAvatar:hover {
@@ -200,35 +191,40 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   width: fit-content !important;
   padding-left: 0px !important;
   line-height: 38px !important;
-  max-width: calc(100% - (3 * 38px)) !important;
+  max-width: 100% !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
 }
 
-.titleBarContainer .currentUserContainer .ContextMenuButton {
+.friendlist .ContextMenuButton {
+  margin-left: 0px !important;
+  opacity: 1 !important;
   position: absolute !important;
-  margin-left: -38px !important;
+  left: 0px !important;
+  top: 0px !important;
+  display: none !important;
 }
 
 .currentUserContainer [class*="personanameandstatus_playerName_"], .currentUserContainer [class*="personanameandstatus_playerNickname_"] {
-  line-height: 38px !important;
+  line-height: 16px !important;
 }
 
 .currentUserContainer [class*="personanameandstatus_statusAndName_"] {
   margin-bottom: 0px !important;
-  margin-left: 38px !important;
+  margin-left: 0px !important;
 }
 
 .currentUserContainer [class*="personanameandstatus_statusAndName_"], .currentUserContainer [class*="personanameandstatus_playerName_"]  {
   font-size: var(--size-14) !important;
-  text-transform: uppercase !important;
   font-weight: 500 !important;
 }
 
 .currentUserContainer [class*="personanameandstatus_playerName_"] {
-  margin-left: 8px !important;
+  margin-left: 0px !important;
 }
 
 .currentUserContainer [class*="personanameandstatus_richPresenceContainer_"] {
-  display: none !important;
+  margin: 0px !important;
 }
 
 [class*="personastatusicons_PersonaStatusIcon_"] {
@@ -268,7 +264,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   margin: 0px !important;
 }
 
-.currentUserContainer .ContextMenuButton {
+.friendlist .ContextMenuButton {
   opacity: 1 !important;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
@@ -278,7 +274,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   height: 38px !important;
 }
 
-.currentUserContainer .ContextMenuButton .SVGIcon_DownArrowContextMenu {
+.friendlist .ContextMenuButton .SVGIcon_DownArrowContextMenu {
   padding-left: 0px !important;
   margin-bottom: 0px !important;
   padding: 0px !important;
@@ -290,6 +286,10 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   filter: none !important;
   height: 38px !important;
   width: 38px !important;
+}
+
+.friendlist .ContextMenuButton .SVGIcon_DownArrowContextMenu * {
+  fill: transparent !important;
 }
 
 .currentUserContainer .ContextMenuButton:hover {
@@ -320,7 +320,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .online .SVGIcon_DoNotDisturb circle, .online .SVGIcon_DoNotDisturb line {
-  stroke: rgb(var(--color-sub)) !important;
+  stroke: rgb(var(--color-secondary)) !important;
 }
 
 /* QUICK ACCESS */
@@ -329,7 +329,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .quickAccessFriendsMessage {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   text-transform: uppercase !important;
   border-radius: 0 !important;
   border: unset !important;
@@ -347,7 +347,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 .quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss {
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   padding: 0px 8px !important;
   border-radius: 0px !important;
   background: rgb(var(--color-accent)) !important;
@@ -358,7 +358,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   top: 0 !important;
   line-height: 48px !important;
   opacity: 0 !important;
-  transition: opacity 0.2s ease-out !important;
+  transition: opacity 0.2s ease-in-out !important;
 }
 
 .quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss:hover {
@@ -371,10 +371,11 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   width: 100% !important;
   padding: 0px !important;
   background-color: transparent !important;
+  min-height: fit-content !important;
 }
 
 .quickAccessFriends:not(.emptyQuickAccess) {
-  justify-content: center !important;
+  justify-content: space-evenly !important;
 }
 
 .quickAccessFriends .favoriteElement:hover .friend .avatarHolder {
@@ -402,28 +403,28 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .favoriteElement {
-  height: 54px !important;
+  height: 38px !important;
 }
 
 .favoriteElement .ChatRoomGroupAvatar {
   padding: 0px !important;
-  width: 38px !important;
-  height: 38px !important;
-  margin: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 3px !important;
 }
 
 .favoriteElement .ChatRoomGroupAvatar_initials {
-  width: 38px !important;
-  height: 38px !important;
+  width: 32px !important;
+  height: 32px !important;
   padding-top: 0px !important;
   border-width: 0px !important;
-  line-height: 38px !important;
+  line-height: 32px !important;
   font-size: 16px !important;
 }
 
 .friend.quickAccessFriend {
-  width: 38px !important;
-  margin: 8px !important;
+  width: 32px !important;
+  margin: 3px !important;
 }
 
 .FavoriteFriend_GameIcon {
@@ -440,12 +441,12 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 
 .playerNameQuickAccessContainer {
   display: none !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 .quickAccessFriend .clanName {
   display: none !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 /* QUICK ACCESS SNOOZE */
@@ -477,6 +478,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 /* ACTIVE VOICE CONTROLS */
 .friendListHeaderContainer .activeVoiceControls {
   height: 32px !important;
+  transition: all 0.25s ease-in-out !important;
 }
 
 .friendListHeaderContainer .activeVoiceControls:before {
@@ -495,55 +497,34 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   border-image: url() !important;
 }
 
-.friendListHeaderContainer .activeVoiceFlexBox::before, .friendListHeaderContainer .activeVoiceFlexBox::after {
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  height: 32px !important;
-  margin-top: 38px !important;
-}
-
-.friendListHeaderContainer .activeVoiceFlexBox::before {
-  background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
-  background-blend-mode: exclusion !important;
-}
-
-.friendListHeaderContainer .activeVoiceFlexBox::after {
-  background-image: var(--image-acrylic) !important;
-}
-
 .activeVoiceControls .connectionStatusLabels, .chatRoomVoiceChannel .connectionStatusLabels {
   font-size: var(--size-12) !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 .friendListHeaderContainer .activeVoiceLabels {
-  padding-left: 16px !important;
-  padding-right: 16px !important;
   display: inline-flex !important;
-  font-size: 13px !important;
+  font-size: var(--size-14) !important;
+  line-height: 32px !important;
+  padding: 0px 16px !important;
 }
 
 .activeVoiceLabels .activeVoiceHeader {
   letter-spacing: normal !important;
-  color: rgb(var(--color-text)) !important;
-  font-size: 13px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-size: var(--size-14) !important;
 }
 
 .activeVoiceLabels .activeVoiceName {
-  color: rgb(var(--color-text)) !important;
-  font-size: 13px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-size: var(--size-14) !important;
   line-height: inherit !important;
+  max-height: 32px !important;
 }
 
 .activeVoiceLabels .activeVoiceName::before {
   content: "\00a0" !important;
-  font-size: 13px !important;
+  font-size: var(--size-14) !important;
 }
 
 .friendListHeaderContainer .activeVoiceButtons {
@@ -624,14 +605,18 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 /* SEARCH */
+.socialTabSearchContainer {
+  background: rgb(var(--color-background)) !important;
+}
+
 .activeTab {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   background-color: transparent !important;
 }
 
 .TabSearchButton .ColorSelector {
-  stroke: rgb(var(--color-text)) !important;
-  fill: rgb(var(--color-text)) !important;
+  stroke: rgb(var(--color-primary)) !important;
+  fill: rgb(var(--color-primary)) !important;
 }
 
 .socialListTab {
@@ -642,7 +627,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 .socialListTab .tabLabel {
   cursor: pointer !important;
   font-weight: 400 !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
 }
 
@@ -718,7 +703,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .friendSearchInput[type=text] {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   background-color: rgba(var(--color-white), 0.1) !important;
   font-size: var(--size-14) !important;
   background-size: 12px !important;
@@ -733,7 +718,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .friendSearchInput::placeholder {
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
   text-transform: uppercase !important;
   font-size: var(--size-14) !important;
 }
@@ -745,7 +730,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .friendSearchNoResultsContainer {
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
 }
 
 .friendSearchNoResultsContainer a {
@@ -753,7 +738,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .friendSearchNoResultsContainer a:hover {
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
 }
 
 .friendSearchNoResultsContainer a:active {
@@ -865,7 +850,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   margin-top: 0px !important;
   margin-right: 0px !important;
   border-radius: 0px !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
@@ -875,14 +860,14 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   line-height: 24px !important;
   height: 24px !important;
   width: 24px !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
 
 .unreadMessageViolator {
   background: rgb(var(--color-accent)) !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   border-bottom-right-radius: 0px !important;
@@ -904,7 +889,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 .friendGroup .groupName {
   margin-top: 0px !important;
   line-height: 24px !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   text-transform: uppercase !important;
   border-top: unset !important;
@@ -933,7 +918,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .FriendsListContent .friendlistListContainer .friendGroup.onlineFriends .groupName, .FriendsListContent .friendlistListContainer .friendGroup.offlineFriends .groupName {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   text-transform: uppercase !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
@@ -976,7 +961,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .groupName .groupCount {
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
 }
 
 .groupName .groupCount.collapsed {
@@ -988,7 +973,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .friendGroup.offlineFriends .groupName .groupCount, .friendGroup.onlineFriends .groupName .groupCount, .friendGroup .groupName .groupCount.collapsed {
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
 }
 
 .friendGroup .groupName .groupCount {
@@ -1007,7 +992,8 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 
 .friendGroup .friend, .friendGroup .SteamPlayerGroupFooter {
   margin: 0px !important;
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px 8px 16px !important;
+  align-items: center !important;
 }
 
 .friendlistListContainer .friend .avatarHolder {
@@ -1098,7 +1084,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   font-weight: 400 !important;
   font-size: var(--size-16) !important;
   text-align: center !important;
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
   margin-top: 0px !important;
 }
 
@@ -1110,7 +1096,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   margin-left: 8px !important;
   font-size: var(--size-14) !important;
   text-align: left !important;
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
   -webkit-mask: none !important;
   width: calc(100% - 72px) !important;
   white-space: nowrap !important;
@@ -1146,7 +1132,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 
 /* GROUP CHATS HEADER */
 .friendsListSectionTitle {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 .ToggleGroupChatList {
@@ -1192,7 +1178,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px !important;
-  background-image: var(--icon-add) !important;
+  background-image: var(--icon-add-list) !important;
 }
 
 .createChatRoomButton, .createChatRoomButton:hover, .createChatRoomButton:active {
@@ -1275,13 +1261,13 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .ChatRoomListGroupItem:not(.NonGroupHovered) .ChatRoomListGroupItem_header:hover .chatRoomName {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
 
 .ChatRoomListGroupItem .ChatRoomListGroupItem_header .chatRoomName {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
@@ -1389,7 +1375,7 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   margin-left: 32px !important;
   font-size: var(--size-14) !important;
   margin-left: 12px !important;
@@ -1400,12 +1386,12 @@ body:not(.WindowFocus) .titleBarContainer .currentUserContainer .ContextMenuButt
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::before {
   content: "(STEAM TV" !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::after {
   content: ")" !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .SVGIcon_SteamTV {
@@ -1603,7 +1589,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .ChatRoomListGroupItem .chatRoomVoiceChannelName {
   font-size: var(--size-14) !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
 }
 
 .chatRoomVoiceChannelName, .chatRoomTextChannel, .chatRoomDirectMessageEntry {
@@ -1623,7 +1609,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .emptyChannelNotice {
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
   font-size: var(--size-10) !important;
   margin-left: 16px !important;
   font-weight: 400 !important;
@@ -1805,6 +1791,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 /* FOOTER */
 .friendListFooter {
   background-color: transparent !important;
+  min-height: 0px !important;
   display: none !important;
 }
 
@@ -1819,7 +1806,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 [class*="friendslist_OfflineMessage_"] [class*="friendslist_summaryText_"] {
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
   line-height: 24px !important;
@@ -1827,7 +1814,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 [class*="friendslist_OfflineMessage_"] [class*="friendslist_detailText_"] {
-  color: rgb(var(--color-sub)) !important;
+  color: rgb(var(--color-secondary)) !important;
   font-weight: 400 !important;
   font-size: var(--size-12) !important;
   line-height: 16px !important;
@@ -1837,7 +1824,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 [class*="friendslist_OfflineMessage_"] [class*="friendslist_retryButton_"] {
   background: transparent !important;
   background-color: rgba(var(--color-white), 0.2) !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   border-radius: 0px !important;
   margin: 0px !important;
   height: 32px !important;
@@ -1847,14 +1834,14 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 [class*="friendslist_OfflineMessage_"] [class*="friendslist_retryButton_"]:hover {
   background-color: rgba(var(--color-white), 0.3) !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   outline: 2px solid rgba(var(--color-white), 0.5) !important;
   outline-offset: -2px !important;
 }
 
 [class*="friendslist_OfflineMessage_"] [class*="friendslist_retryButton_"]:active {
   background-color: rgba(var(--color-white), 0.4) !important;
-  color: rgb(var(--color-text)) !important;
+  color: rgb(var(--color-primary)) !important;
   outline: 2px solid transparent !important;
   outline-offset: -2px !important;
 }

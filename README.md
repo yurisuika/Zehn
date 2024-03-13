@@ -28,6 +28,8 @@ In default colors, the in-game is styled to match the accent. If you haven't alr
 #### Things of Note
 As of 2024, Steam has updated Chromium in the beta branch. This is has brought sorely needed support for some selectors that vastly improve skinning the client. As such, development for the time being will be on the Steam beta branch. If your client is not on the branch, you may notice repeated icons in some areas, icons that don't seem right, and other abnormalities.
 
+You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
+
 The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If you switch from the library to the downloads page, it will unload, but you may get it back by pressing F5 to reload the client (this may require dev mode enabled). Possibly in the future I may figure out how to fix this.
 
 If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
