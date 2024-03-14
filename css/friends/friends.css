@@ -121,6 +121,10 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   border-width: 2px !important;
 }
 
+.friend.quickAccessFriend .avatarHolder {
+  margin: 0px auto !important;
+}
+
 .friend.quickAccessFriend .avatarHolder .avatarStatus {
   height: inherit !important;
   width: inherit !important;
@@ -357,9 +361,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   bottom: 0 !important;
   right: 0 !important;
   top: 0 !important;
-  line-height: 48px !important;
+  line-height: 38px !important;
   opacity: 0 !important;
   transition: opacity 0.2s ease-in-out !important;
+}
+
+.quickAccessFriends.emptyQuickAccess.compactQuickAccess .quickAccessFriendsMessageDismiss {
+  line-height: 30px !important;
 }
 
 .quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss:hover {
@@ -406,6 +414,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .favoriteElement {
   height: 38px !important;
+  width: 38px !important;
+}
+
+.compactQuickAccess .favoriteElement {
+  width: 32px !important;
+  height: 38px !important;
 }
 
 .favoriteElement .ChatRoomGroupAvatar {
@@ -427,6 +441,24 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friend.quickAccessFriend {
   width: 32px !important;
   margin: 3px !important;
+  height: 32px !important;
+  align-items: center !important;
+}
+
+.compactQuickAccess .friend.quickAccessFriend {
+  width: 24px !important;
+  height: 32px !important;
+  margin: 4px !important;
+}
+
+.compactQuickAccess .friend.quickAccessFriend [class*="steamavatar_avatarHolder_"] {
+  height: 24px !important;
+  width: 24px !important;
+}
+
+.quickAccessFriends.compactQuickAccess [class*="steamavatar_avatarHolder_"].Medium {
+  width: 24px !important;
+  height: 24px !important;
 }
 
 .FavoriteFriend_GameIcon {
@@ -434,7 +466,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   display: none !important;
 }
 
-.dropTargetBox  {
+.dropTargetBox {
   border-radius: 0 !important;
   border: unset !important;
   transform: none !important;
@@ -442,8 +474,39 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .playerNameQuickAccessContainer {
-  display: none !important;
   color: rgb(var(--color-primary)) !important;
+  line-height: 16px !important;
+  width: fit-content !important;
+  position: absolute !important;
+  display: none !important;
+}
+
+.compactQuickAccess .playerNameQuickAccessContainer {
+  display: none !important;
+}
+
+.quickAccessFriend .clanName, .friend.quickAccessFriend .playerName {
+  width: fit-content !important;
+  margin: 0px !important;
+  font-size: var(--size-14) !important;
+  bottom: 0px !important;
+  text-overflow: ellipsis !important;
+  -webkit-mask: none !important;
+  padding: 0px !important;
+  opacity: 0 !important;
+  transition: opacity 0.25s ease-in-out !important;
+}
+
+.quickAccessFriends .favoriteElement:hover .friend .playerName {
+  color: rgb(var(--color-primary)) !important;
+}
+
+.favoriteElement:hover .quickAccessFriend .clanName, .favoriteElement:hover .friend.quickAccessFriend .playerName {
+  opacity: 1 !important;
+}
+
+.friend.awayOrSnooze .playerNameQuickAccessContainer {
+  opacity: 1 !important;
 }
 
 .quickAccessFriend .clanName {
@@ -460,21 +523,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 /* QUICK ACCESS HOVER */
 .quickAccessFriend.friendStatusHover:hover, .quickAccessFriend.friendStatusHover:active {
   background-color: transparent !important;
-}
-
-/* QUICK ACCESS COMPACT */
-.compactQuickAccess .friend.quickAccessFriend {
-  width: 32px !important;
-  margin: 3px !important;
-}
-
-.compactQuickAccess .friend.quickAccessFriend [class*="steamavatar_avatarHolder_"] {
-  height: 32px !important;
-  width: 32px !important;
-}
-
-.compactQuickAccess .favoriteElement {
-  height: 38px !important;
 }
 
 /* ACTIVE VOICE CONTROLS */
