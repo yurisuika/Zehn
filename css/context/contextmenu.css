@@ -122,6 +122,7 @@
 
 [class*="contextmenu_contextMenuContents_"]:not([class*="menu_MenuPopup_"]) [class*="contextmenu_contextMenuItem_"] {
   margin: 0px !important;
+  display: flex !important;
 }
 
 [class*="contextmenu_contextMenuItem_"] {
@@ -167,6 +168,12 @@
 [class*="contextmenu_contextMenuItem_"][class*="contextmenu_SubMenu_"] .SVGIcon_DownArrowContextMenu {
   fill: transparent !important;
   margin: 0px !important;
+  background-size: 12px !important;
+  background-image: var(--icon-chevron-right) !important;
+  transform: none !important;
+  height: 32px !important;
+  width: 32px !important;
+  filter: none !important;
 }
 
 /* SCREENSHOTS */
@@ -495,18 +502,22 @@
 }
 
 /* ICONS */
-.contextMenuGameOptions .SVGIcon_Play {
-  border: 1px solid transparent !important;
+[class*="contextmenu_contextMenuItem_"] .SVGIcon_Play {
+  border: unset !important;
   margin: 0px !important;
-  width: 0px !important;
-  height: 0px !important;
-  opacity: 0 !important;
-  display: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  opacity: 1 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px !important;
+  background-image: var(--icon-play) !important;
+  line-height: 32px !important;
 }
 
 .playTriangle {
   fill: transparent !important;
-  stroke: white !important;
+  stroke: transparent !important;
   stroke-width: 20px !important;
 }
 
@@ -520,6 +531,12 @@
 
 [class*="contextmenu_contextMenuItem_"] .SVGIcon_PlusCircle line {
   stroke: rgb(var(--color-white)) !important;
+}
+
+[class*="contextmenu_contextMenuItem_"] .SVGIcon_Button {
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 8px !important;
 }
 
 /* TRAY */
