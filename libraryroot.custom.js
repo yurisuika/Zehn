@@ -132,15 +132,30 @@ Zehn.waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) 
   Zehn.appendElements(
     '[class*="steamdesktop_TitleBarControls_"]',
     [
-      '[class*="titlebarcontrols_NotificationButtonContainer_"]',
+      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_NotificationButtonContainer_"])',
       '[class*="bottombar_FriendsButton_"]',
       '[class*="bottombar_DownloadStatus_"]',
       '[class*="bottombar_AddGameButton_"]',
-      '[class*="titlebarcontrols_AnnouncementsButton_"]',
-      '[class*="titlebarcontrols_SoundtrackControls_"]',
-      '[class*="titlebarcontrols_AnnouncementsButton_"]',
-      '[class*="titlebarcontrols_GamepadUIToggle_"]',
-      '[class*="titlebarcontrols_VRToggle_"]'
+      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_AnnouncementsButton_"])',
+      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_GamepadUIToggle_"])'
+    ]
+  )
+});
+
+Zehn.waitForElement('[class*="titlebarcontrols_VRToggle_"]').then((element) => {
+  Zehn.appendElements(
+    '[class*="steamdesktop_TitleBarControls_"]',
+    [
+      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_VRToggle_"])'
+    ]
+  )
+});
+
+Zehn.waitForElement('[class*="titlebarcontrols_SoundtrackControls_"]').then((element) => {
+  Zehn.appendElements(
+    '[class*="steamdesktop_TitleBarControls_"]',
+    [
+      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_SoundtrackControls_"])'
     ]
   )
 });

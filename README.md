@@ -21,13 +21,13 @@ The live version references the static version, so each time Steam is started or
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
 #### Customization
-In the `~/Zehn/css/config.css` file you will find several configurable options, such as those to remove certain buttons like the Big Picture, VR, Add Game, Announcements, and such. As well, you can configure some colors. Zehn has separate background colors for dialog windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
+In the `~/css/config.css` file you will find several configurable options, such as those to remove certain titlebar control buttons for a more minimal appearance. As well, you can configure some colors. Zehn has separate background colors for dialog windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
 
-In default colors, the in-game is styled to match the accent. If you haven't already noticed, this is themed after [fauux's site](https://fauux.neocities.org/).
+On Windows, the accent color will take your system's accent color. If you are on a system that does not support this variable, please manually enter the value.
+
+Zehn has added some text to the client, and as such the translatable strings are present in the config for your editing.
 
 #### Things of Note
-As of 2024, Steam has updated Chromium in the beta branch. This is has brought sorely needed support for some selectors that vastly improve skinning the client. As such, development for the time being will be on the Steam beta branch. If your client is not on the branch, you may notice repeated icons in some areas, icons that don't seem right, and other abnormalities.
-
 You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
 
 The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If you switch from the library to the downloads page, it will unload, but you may get it back by pressing F5 to reload the client (this may require dev mode enabled). Possibly in the future I may figure out how to fix this.
