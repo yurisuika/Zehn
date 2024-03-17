@@ -30,12 +30,12 @@ function addButtonUser() {
     }
     else if (btnUser.value = "open") {
       btnUser.value = "close";
-      user.style.setProperty("transform", "none", "important");
-      user.style.setProperty("min-height", "54px", "important");
-      user.style.setProperty("max-height", "54px", "important");
+      user.style.setProperty("transform", "none");
+      user.style.setProperty("min-height", "48px");
+      user.style.setProperty("height", "48px");
       voice.style.setProperty("transform", "none", "important");
       voice.style.setProperty("min-height", "32px", "important");
-      voice.style.setProperty("max-height", "32px", "important");
+      voice.style.setProperty("height", "32px", "important");
     }
   };
   document.querySelector(`.currentUserContainer`).before(btn);
