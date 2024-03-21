@@ -51,6 +51,89 @@ Zehn.waitForElement('[class*="appproperties_AppProperties_"]').then((element) =>
   });
 });
 
+function fuckValve() {
+  var bg = document.createElement("div");
+  bg.id = "fade";
+  bg.style.setProperty("background", "rgba(0, 0, 0, 0.5)");
+  bg.style.setProperty("z-index", "9999");
+  bg.style.setProperty("position", "absolute");
+  bg.style.setProperty("width", "100%");
+  bg.style.setProperty("height", "100%");
+  bg.style.setProperty("left", "0px");
+  bg.style.setProperty("top", "0px");
+  var div = document.createElement("div");
+  div.id = "hatedChinee";
+  div.style.setProperty("background", "red");
+  div.style.setProperty("position", "relative");
+  div.style.setProperty("width", "50%");
+  div.style.setProperty("margin", "auto");
+  div.style.setProperty("min-height", "fit-content");
+  div.style.setProperty("transform", "translateY(50%)");
+  var btn = document.createElement("button");
+  btn.classList.add("ZehnButton");
+  btn.id = "close";
+  btn.type = "button";
+  btn.value = "close";
+  btn.name = "button";
+  btn.innerHTML = "";
+  btn.style.setProperty("height", "38px");
+  btn.style.setProperty("width", "38px");
+  btn.style.setProperty("position", "absolute");
+  btn.style.setProperty("right", "0px");
+  btn.style.setProperty("top", "0px");
+  var icon = document.createElement("div");
+  icon.id = "close";
+  icon.style.setProperty("background-image", "var(--icon-window-close)");
+  icon.style.setProperty("background-size", "16px");
+  icon.style.setProperty("background-repeat", "no-repeat");
+  icon.style.setProperty("background-position", "center");
+  icon.style.setProperty("width", "38px");
+  icon.style.setProperty("height", "38px");
+  var text = document.createElement("div");
+  text.style.setProperty("color", "white");
+  text.style.setProperty("font-size", "16px");
+  text.style.setProperty("text-align", "center");
+  text.style.setProperty("padding", "38px");
+  text.style.setProperty("font-weight", "500");
+  var p1 = document.createElement("h1");
+  var p2 = document.createElement("h4");
+  var p3 = document.createElement("li");
+  var p4 = document.createElement("li");
+  var p5 = document.createElement("li");
+  var p6 = document.createElement("h4");
+  p1.innerHTML = "VALVE IS SCREWING WITH SKINNING";
+  p2.innerHTML = "Currently in Beta and likely coming to your desktop, Valve has obfuscated all HTML classnames. This makes skinning not only extremely difficult, but breaks all skins. It will take a long time to convert this skin to the new classnames, so in the meantime I suggest you take these steps if you wish to use this skin or any other that has not been fixed:";
+  p3.innerHTML = "Back up your Steam folder, minus the \"steamapps\" games directory.";
+  p4.innerHTML = "Create a file \"steam.cfg\" in your Steam directory."
+  p5.innerHTML = "Edit the file and add the line \"BootStrapperInhibitAll=Enable\" and save."
+  p6.innerHTML = "This will stop Steam from updating itself. When Zehn has been remapped to the new classnames, this notice will be removed."
+  btn.onclick = function () {
+    if (btn.value == "close") {
+      btn.value = "open";
+      bg.style.setProperty("visibility", "hidden");
+    }
+    else if (btn.value = "open") {
+      btn.value = "close";
+      bg.style.setProperty("visibility", "visible");
+    }
+  };
+  document.querySelector(`[class*="steamdesktop_Wrapper_"]`).after(bg);
+  bg.append(div);
+  div.append(text);
+  text.append(p1);
+  text.append(p2);
+  text.append(p3);
+  text.append(p4);
+  text.append(p5);
+  text.append(p6);
+  div.append(btn);
+  btn.append(icon);
+}
+
+Zehn.waitForElement('[class*="steamdesktop_Wrapper_"]').then((element) => {
+  fuckValve()
+});
+
 function addButtonSidebar() {
   var btn = document.createElement("button");
   btn.classList.add("ZehnButton");
