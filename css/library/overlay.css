@@ -230,7 +230,7 @@ color: rgb(var(--color-accent)) !important;
   font-size: var(--size-14) !important;
 }
 
-[class*="partnereventdisplay_EventDetailsBody_"] a:not(.LinkButton) {
+[class*="partnereventdisplay_EventDetailsBody_"] a:not(.LinkButton):not([class*="salepreviewwidgets_AppTag_"]) {
   color: rgb(var(--color-accent)) !important;
 }
 
@@ -481,4 +481,161 @@ div.NarrowWindow:not(:has(div.NarrowRightPanel)) [class*="library_AchievementsOv
 div.NarrowWindow [class*="library_AchievementsOverlayContainer_"] [class*="library_AchievementsPageContainer_"] [class*="library_CloseButton_"] {
   transform: translateY(16px) translateX(-16px) !important;
   transition: transform 0.2s ease-in-out !important;
+}
+
+/* SALE PREVIEW */
+[class*="salepreviewwidgets_CapsuleDecorators_"] {
+  row-gap: 8px !important;
+  left: 0px !important;
+  top: 0px !important;
+  width: 100% !important;
+}
+
+[class*="salepreviewwidgets_Banner_"] {
+  height: 32px !important;
+  padding: 0px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  line-height: 32px !important;
+  place-content: center !important;
+}
+
+[class*="salepreviewwidgets_Banner_"][class*="salepreviewwidgets_Blue_"], [class*="salepreviewwidgets_Banner_"][class*="salepreviewwidgets_Green_"] {
+  background-color: rgba(var(--color-black), 0.25) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+}
+
+[class*="salepreviewwidgets_Banner_"] [class*="salepreviewwidgets_LinesImg_"] {
+  margin-right: 4px !important;
+  height: 10px !important;
+  display: none !important;
+}
+
+/* SALE PREVIEW INFO */
+[class*="salepreviewwidgets_StoreSaleWidgetRight_"] {
+  padding: 16px !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleWidgetTitle_"] {
+  margin-top: 0px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-24) !important;
+  line-height: 32px !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleWidgetTitle_"]:hover {
+  text-decoration: none !important;
+}
+
+.AppSummaryWidgetCtn [class*="salepreviewwidgets_StoreSaleWidgetReleaseAndTags_"] {
+  display: flex !important;
+  gap: 0px !important;
+  flex-direction: column !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleWidgetTags_"] {
+  height: fit-content !important;
+  min-height: 24px !important;
+  margin-top: 0px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+}
+
+[class*="salepreviewwidgets_AppTag_"] {
+  background-color: rgba(var(--color-white), 0.2) !important;
+  padding: 0px 8px !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-12) !important;
+  line-height: 24px !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleWidgetRelease_"] {
+  color: rgb(var(--color-secondary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  margin-right: 8px !important;
+  line-height: 24px !important;
+}
+
+[class*="salepreviewwidgets_CapsulePlatform_"] {
+  height: 24px !important;
+}
+
+/* SALE PREVIEW PRICE */
+[class*="salepreviewwidgets_StoreActionWidgetContainer_"] {
+  right: 0px !important;
+  bottom: 0px !important;
+  min-height: 38px !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+}
+
+[class*="addtocartbutton_Action_"] {
+  background-image: none !important;
+  background-color: rgb(var(--color-accent)) !important;
+  padding: 0px 16px !important;
+  line-height: 38px !important;
+  height: 38px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  border-radius: 0px !important;
+}
+
+[class*="salepreviewwidgets_Discounted_"] {
+  background: rgba(var(--color-black), 0.25) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+}
+
+[class*="salepreviewwidgets_StoreSalePriceWidgetContainer_"] {
+  height: 38px !important;
+  min-width: fit-content !important;
+  z-index: -1 !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleWidgetContainer_"] [class*="salepreviewwidgets_StoreSaleDiscountBox_"] {
+  font-size: var(--size-24) !important;
+  padding: 0px 16px !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleDiscountBox_"] {
+  line-height: 38px !important;
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  background: transparent !important;
+}
+
+[class*="salepreviewwidgets_StoreOriginalPrice_"] {
+  margin: 0px !important;
+  color: rgb(var(--color-secondary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-12) !important;
+  line-height: 12px !important;
+}
+
+[class*="salepreviewwidgets_StoreOriginalPrice_"]::before {
+  border-bottom: 1px solid rgb(var(--color-secondary)) !important;
+}
+
+[class*="salepreviewwidgets_Discounted_"] [class*="salepreviewwidgets_StoreSalePriceBox_"] {
+  color: rgb(var(--color-accent)) !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleDiscountedPriceCtn_"] {
+  padding: 0px 16px !important;
+}
+
+[class*="salepreviewwidgets_StoreSaleDiscountedPriceCtn_"] [class*="salepreviewwidgets_StoreSalePriceBox_"] {
+  font-size: var(--size-16) !important;
+  line-height: 16px !important;
 }
