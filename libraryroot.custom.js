@@ -61,6 +61,7 @@ function fuckValve() {
   bg.style.setProperty("height", "100%");
   bg.style.setProperty("left", "0px");
   bg.style.setProperty("top", "0px");
+  bg.style.setProperty("visibility", "var(--option-display-warning-notice)");
   var div = document.createElement("div");
   div.id = "hatedChinee";
   div.style.setProperty("background", "red");
