@@ -32,11 +32,11 @@ export class RevealHelper {
         let borderLight;
         let backgroundLight;
 
-        borderLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${borderLightColor}, rgba(255,255,255,0)) 25% 25% 25% 25%`;
+        borderLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${borderLightColor}, transparent) 25% 25% 25% 25%`;
         if (clickEffect === false) {
-            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, rgba(255,255,255,0))`;
+            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), var(--image-acrylic)`;
         } else {
-            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, rgba(255,255,255,0)), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, rgba(255,255,255,0), ${backgroundLightColor}, rgba(255,255,255,0), rgba(255,255,255,0))`;
+            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, transparent, ${backgroundLightColor}, transparent, transparent), var(--image-acrylic)`;
         }
 
         if(mode == 'background') {
@@ -45,13 +45,13 @@ export class RevealHelper {
                 element.clickWave = setInterval(() => {
                     try {
                         let cur = element.wave;
-                        let step = cur / 200 + 1;
+                        let step = cur / 200 + 5;
                         cur += step;
                         if(cur >= 1000) {
                             clearInterval(element.clickWave);
                         } else {
                             element.wave = cur;
-                            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, rgba(255,255,255,0)), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, rgba(255,255,255,0), ${backgroundLightColor}, rgba(255,255,255,0), rgba(255,255,255,0))`;
+                            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, transparent, ${backgroundLightColor}, transparent, transparent), var(--image-acrylic)`;
                             element.el.style.backgroundImage = backgroundLight;
                         }
                     }
@@ -60,7 +60,7 @@ export class RevealHelper {
             } else {
                 clearInterval(element.clickWave);
                 element.wave = 0;
-                backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, rgba(255,255,255,0))`;
+                backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), var(--image-acrylic)`;
                 element.el.style.backgroundImage = backgroundLight;
             }
         } else if(mode == 'border') {
@@ -213,7 +213,7 @@ export class RevealEffects {
         c.el.addEventListener("mouseup", e => {
             let x = e.pageX - RevealHelper.getOffset(c).left - window.scrollX;
             let y = e.pageY - RevealHelper.getOffset(c).top - window.scrollY;
-            RevealHelper.drawEffectBackground(c, x, y, this.options.backgroundLightColor, this.options.borderLightColor, this.options.backgroundGradientSize);
+            RevealHelper.drawEffectBackground(c, x, y, this.options.backgroundLightColor, this.options.borderLightColor, this.options.backgroundGradientSizek);
         });
 
         parent.el.addEventListener("mouseleave", (e) => {

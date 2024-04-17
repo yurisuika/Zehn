@@ -51,9 +51,9 @@ Zehn.waitForElement('[class*="appproperties_AppProperties_"]').then((element) =>
   });
 });
 
-function fuckValve() {
+function valveNotice() {
   var bg = document.createElement("div");
-  bg.id = "fade";
+  bg.classList.add("noticeFade");
   bg.style.setProperty("background", "rgba(0, 0, 0, 0.5)");
   bg.style.setProperty("z-index", "9999");
   bg.style.setProperty("position", "absolute");
@@ -63,8 +63,8 @@ function fuckValve() {
   bg.style.setProperty("top", "0px");
   bg.style.setProperty("visibility", "var(--option-display-warning-notice)");
   var div = document.createElement("div");
-  div.id = "hatedChinee";
-  div.style.setProperty("background", "red");
+  div.classList.add("noticeContainer");
+  div.style.setProperty("background", "black");
   div.style.setProperty("position", "relative");
   div.style.setProperty("width", "50%");
   div.style.setProperty("margin", "auto");
@@ -96,18 +96,23 @@ function fuckValve() {
   text.style.setProperty("text-align", "center");
   text.style.setProperty("padding", "38px");
   text.style.setProperty("font-weight", "500");
+  var list = document.createElement("div");
+  list.style.setProperty("text-align", "left");
   var p1 = document.createElement("h1");
   var p2 = document.createElement("h4");
-  var p3 = document.createElement("li");
-  var p4 = document.createElement("li");
-  var p5 = document.createElement("li");
-  var p6 = document.createElement("h4");
+  var l1 = document.createElement("li");
+  var l2 = document.createElement("li");
+  var l3 = document.createElement("li");
+  var p3 = document.createElement("h4");
+  var p4 = document.createElement("h4");
   p1.innerHTML = "VALVE IS SCREWING WITH SKINNING";
   p2.innerHTML = "Currently in Beta and likely coming to your desktop, Valve has obfuscated all HTML classnames. This makes skinning not only extremely difficult, but breaks all skins. It will take a long time to convert this skin to the new classnames, so in the meantime I suggest you take these steps if you wish to use this skin or any other that has not been fixed:";
-  p3.innerHTML = "Back up your Steam folder, minus the \"steamapps\" games directory.";
-  p4.innerHTML = "Create a file \"steam.cfg\" in your Steam directory."
-  p5.innerHTML = "Edit the file and add the line \"BootStrapperInhibitAll=Enable\" and save."
-  p6.innerHTML = "This will stop Steam from updating itself. When Zehn has been remapped to the new classnames, this notice will be removed."
+  l1.innerHTML = "Back up your Steam folder, minus the \"steamapps\" games directory.";
+  l2.innerHTML = "Create a file \"steam.cfg\" in your Steam directory."
+  l3.innerHTML = "Edit the file and add the line \"BootStrapperInhibitAll=Enable\" and save."
+  p3.innerHTML = "This will stop Steam from updating itself. When Zehn has been remapped to the new classnames, this notice will be removed."
+  p4.innerHTML = "You may permanently disable this notice by changing the \"--option-display-warning-notice\" option in the config!"
+  p4.style.setProperty("color", "red", "important");
   btn.onclick = function () {
     if (btn.value == "close") {
       btn.value = "open";
@@ -123,16 +128,29 @@ function fuckValve() {
   div.append(text);
   text.append(p1);
   text.append(p2);
+  text.append(list);
+  list.append(l1);
+  list.append(l2);
+  list.append(l3);
   text.append(p3);
   text.append(p4);
-  text.append(p5);
-  text.append(p6);
   div.append(btn);
   btn.append(icon);
 }
 
 Zehn.waitForElement('[class*="steamdesktop_Wrapper_"]').then((element) => {
-  fuckValve()
+  valveNotice()
+});
+
+Zehn.waitForElement('.noticeContainer').then((element) => {
+  document.querySelector(".noticeContainer").style.border = "1px solid transparent";
+  let NOTICE = new RevealEffects("body", {
+      selector: document.querySelectorAll('.noticeContainer')[0],
+      backgroundGradientSize: 600,
+      borderGradientSize: 600,
+      borderLightColor: "rgba(255, 255, 255, 0.3)",
+      backgroundLightColor: "rgba(255, 255, 255, 0.1)"
+  });
 });
 
 function addButtonSidebar() {
