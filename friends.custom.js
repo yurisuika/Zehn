@@ -56,12 +56,3 @@ Zehn.waitForElement('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerW
     ]
   )
 });
-
-// Zehn.waitForElement('.friendlist').then((element) => {
-//   Zehn.appendElements(
-//     '.friendlist',
-//     [
-//       '.DropTarget.quickAccessFriends'
-//     ]
-//   )
-// });
