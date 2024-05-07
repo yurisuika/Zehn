@@ -1,6 +1,6 @@
 import { RevealEffects } from './js/revealDirect.js';
 import { RevealEffectsMasked } from './js/revealMasked.js';
-import Zehn from './js/Zehn.js';
+import Zehn from './js/zehn.js';
 
 if (navigator.userAgent.includes("Linux")) {
   document.documentElement.classList.add("Linux");
