@@ -32,9 +32,9 @@ export class RevealHelper {
         let backgroundLight;
 
         if (clickEffect === false) {
-            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), var(--image-acrylic)`;
+            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, transparent), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='0' height='0'><filter id='grainy' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.537'></feTurbulence><feColorMatrix type='saturate' values='0'></feColorMatrix><feBlend mode='darken' in='SourceGraphic'></feBlend></filter></svg>")`;
         } else {
-            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, transparent, ${backgroundLightColor}, transparent, transparent), var(--image-acrylic)`;
+            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, transparent), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, transparent, ${backgroundLightColor}, transparent, transparent), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='0' height='0'><filter id='grainy' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.537'></feTurbulence><feColorMatrix type='saturate' values='0'></feColorMatrix><feBlend mode='darken' in='SourceGraphic'></feBlend></filter></svg>")`;
         }
 
         if (clickEffect == true) {
@@ -48,7 +48,7 @@ export class RevealHelper {
                         clearInterval(element.clickWave);
                     } else {
                         element.wave = cur;
-                        backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, transparent, ${backgroundLightColor}, transparent, transparent), var(--image-acrylic)`;
+                        backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, transparent), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, transparent, ${backgroundLightColor}, transparent, transparent), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='0' height='0'><filter id='grainy' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.537'></feTurbulence><feColorMatrix type='saturate' values='0'></feColorMatrix><feBlend mode='darken' in='SourceGraphic'></feBlend></filter></svg>")`;
                         element.el.style.backgroundImage = backgroundLight;
                     }
                 }
@@ -57,7 +57,7 @@ export class RevealHelper {
         } else {
             clearInterval(element.clickWave);
             element.wave = 0;
-            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, black), var(--image-acrylic)`;
+            backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, transparent), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='0' height='0'><filter id='grainy' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.537'></feTurbulence><feColorMatrix type='saturate' values='0'></feColorMatrix><feBlend mode='darken' in='SourceGraphic'></feBlend></filter></svg>")`;
             element.el.style.backgroundImage = backgroundLight;
         }
     }

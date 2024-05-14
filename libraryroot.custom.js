@@ -155,7 +155,7 @@ Zehn.waitForElement('.Utdt7JrpIm5JlpQmqyj1v').then((element) => {
   Zehn.appendElements(
     '._3cykd-VfN_xBxf3Qxriccm',
     [
-      '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(.Utdt7JrpIm5JlpQmqyj1v)'
+      '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(.Utdt7JrpIm5JlpQmqyj1v)' // SOUNDTRACK
     ]
   )
 });
@@ -164,7 +164,7 @@ Zehn.waitForElement('.OverlayBrowser_Browser .TitleBar.title-area').then((elemen
   Zehn.prependElements(
     '.OverlayBrowser_Browser .TitleBar.title-area',
     [
-      '.aqvbkhC1ejt4s8QvWA-c5'
+      '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
     ]
   )
 });
@@ -173,7 +173,7 @@ Zehn.waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) =
   Zehn.prependElements(
     '.TabbedPopupBrowser .TitleBar.title-area',
     [
-      '.aqvbkhC1ejt4s8QvWA-c5'
+      '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
     ]
   )
 });
