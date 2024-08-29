@@ -21,7 +21,7 @@ The live version references the static version, so each time Steam is started or
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
 #### Customization
-In the `~/css/config.css` file you will find several configurable options, such as those to remove certain titlebar control buttons for a more minimal appearance. As well, you can configure some colors. Zehn has separate background colors for dialog windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
+In the `~/config.css` file you will find several configurable options, such as those to remove certain titlebar control buttons for a more minimal appearance. As well, you can configure some colors. Zehn has separate background colors for dialog windows and main client windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
 
 On Windows, the accent color will take your system's accent color. If you are on a system that does not support this variable, please manually enter the value.
 

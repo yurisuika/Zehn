@@ -1,6 +1,6 @@
 import { RevealEffects } from './js/revealDirect.js';
 import { RevealEffectsMasked } from './js/revealMasked.js';
-import Zehn from './js/Zehn.js';
+import Zehn from './js/zehn.js';
 
 if (navigator.userAgent.includes("Linux")) {
   document.documentElement.classList.add("Linux");
@@ -8,8 +8,8 @@ if (navigator.userAgent.includes("Linux")) {
   document.documentElement.classList.add("Windows");
 }
 
-Zehn.waitForElement('[class*="appproperties_AppProperties_"]').then((element) => {
-  let cells = document.querySelectorAll('[class*="pagedsettings_PagedSettingsDialog_PageListItem_"]');
+Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
+  let cells = document.querySelectorAll('.bkfjn0yka2uHNqEvWZaTJ');
   console.log(cells);
   [].forEach.call(cells, function (el) {
     if(el.innerText.indexOf("Privacy") !== -1) {
@@ -61,7 +61,7 @@ function addButtonSidebar() {
   btn.onclick = function () {
     var btnSidebar = document.getElementById("toggleSidebar");
     var btnLibrary = document.getElementById("toggleLibrary");
-    var sidebar = document.querySelector(`[class*="library_LeftListSizableContainer_"]`);
+    var sidebar = document.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`);
     if (btnSidebar.value == "close") {
       btnSidebar.value = "open";
       btnLibrary.value = "open";
@@ -79,13 +79,13 @@ function addButtonSidebar() {
       sidebar.style.setProperty("max-width", "calc(min(50%, 100% - 400px))", "important");
     }
   };
-  document.querySelector(`[class*="gamelistbar_HomeBox_"]`).after(btn);
+  document.querySelector(`._3AhYljPF4e4E8LaBt-FoY0`).after(btn);
   var icon = document.createElement("div");
   icon.id = "toggleSidebarIcon";
   document.getElementById("toggleSidebar").append(icon);
 }
 
-Zehn.waitForElement('[class*="gamelistbar_HomeBox_"]').then((element) => {
+Zehn.waitForElement('._3AhYljPF4e4E8LaBt-FoY0').then((element) => {
   addButtonSidebar()
 });
 
@@ -100,7 +100,7 @@ function addButtonLibrary() {
   btn.onclick = function () {
     var btnSidebar = document.getElementById("toggleSidebar");
     var btnLibrary = document.getElementById("toggleLibrary");
-    var sidebar = document.querySelector(`[class*="library_LeftListSizableContainer_"]`);
+    var sidebar = document.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`);
     if (btnLibrary.value == "close") {
       btnSidebar.value = "open";
       btnLibrary.value = "open";
@@ -118,44 +118,44 @@ function addButtonLibrary() {
       sidebar.style.setProperty("max-width", "calc(min(50%, 100% - 400px))", "important");
     }
   };
-  document.querySelector(`[class*="library_AppDetailsMain_"]`).append(btn);
+  document.querySelector(`._2Nq6ov7A1hGcHXVOXNt_OE`).append(btn);
   var icon = document.createElement("div");
   icon.id = "toggleLibraryIcon";
   document.getElementById("toggleLibrary").append(icon);
 }
 
-Zehn.waitForElement('[class*="library_AppDetailsMain_"]').then((element) => {
+Zehn.waitForElement('._2Nq6ov7A1hGcHXVOXNt_OE').then((element) => {
   addButtonLibrary()
 });
 
-Zehn.waitForElement('[class*="steamdesktop_TitleBarControls_"]').then((element) => {
+Zehn.waitForElement('._3cykd-VfN_xBxf3Qxriccm').then((element) => {
   Zehn.appendElements(
-    '[class*="steamdesktop_TitleBarControls_"]',
+    '._3cykd-VfN_xBxf3Qxriccm',
     [
-      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_NotificationButtonContainer_"])',
-      '[class*="bottombar_FriendsButton_"]',
-      '[class*="bottombar_DownloadStatus_"]',
-      '[class*="bottombar_AddGameButton_"]',
-      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_AnnouncementsButton_"])',
-      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_GamepadUIToggle_"])'
+      '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3mGEzzp18imtSzGPkduedi)', // NOTIFICATIONS
+      '._1TdaAqMFadi0UTqilrkelR', // FRIENDS
+      '._2EQ7ghgqIdjKv9jsQC0Zq9', // DOWNLOADS
+      '._2foCkpRXhqq0UGVE50BWqj', // ADD GAME
+      '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._5wILZhsLODVwGfcJ0hKmJ)', // ANNOUNCEMENTS
+      '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3LKQ3S_yqrebeNLF6aeiog)' // BIG PICTURE
     ]
   )
 });
 
-Zehn.waitForElement('[class*="titlebarcontrols_VRToggle_"]').then((element) => {
+Zehn.waitForElement('._3lRfTo8Wo3phXfE1DvK6QW').then((element) => {
   Zehn.appendElements(
-    '[class*="steamdesktop_TitleBarControls_"]',
+    '._3cykd-VfN_xBxf3Qxriccm',
     [
-      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_VRToggle_"])'
+      '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3lRfTo8Wo3phXfE1DvK6QW)' // VR
     ]
   )
 });
 
-Zehn.waitForElement('[class*="titlebarcontrols_SoundtrackControls_"]').then((element) => {
+Zehn.waitForElement('.Utdt7JrpIm5JlpQmqyj1v').then((element) => {
   Zehn.appendElements(
-    '[class*="steamdesktop_TitleBarControls_"]',
+    '._3cykd-VfN_xBxf3Qxriccm',
     [
-      '[class*="steamdesktop_TitleBarControls_"] .Focusable:has([class*="titlebarcontrols_SoundtrackControls_"])'
+      '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(.Utdt7JrpIm5JlpQmqyj1v)' // SOUNDTRACK
     ]
   )
 });
@@ -164,7 +164,7 @@ Zehn.waitForElement('.OverlayBrowser_Browser .TitleBar.title-area').then((elemen
   Zehn.prependElements(
     '.OverlayBrowser_Browser .TitleBar.title-area',
     [
-      '[class*="desktopbrowser_BrowserTabs_"]'
+      '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
     ]
   )
 });
@@ -173,59 +173,7 @@ Zehn.waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) =
   Zehn.prependElements(
     '.TabbedPopupBrowser .TitleBar.title-area',
     [
-      '[class*="desktopbrowser_BrowserTabs_"]'
+      '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
     ]
   )
 });
-
-// document.querySelector(".rootmenu_RootMenuButton_2UyOB").style.border = "1px solid transparent";
-// document.querySelector(".DialogButton").style.border = "1px solid transparent";
-
-// let FR1 = new RevealEffects("body", {
-//     selector: document.querySelectorAll('.rootmenu_RootMenuButton_2UyOB')[0],
-//     backgroundGradientSize: 150,
-//     borderGradientSize: 80,
-//     borderLightColor: "rgba(255, 255, 255, 0.25)",
-//     backgroundLightColor: "rgba(255, 255, 255, 0.25)"
-// });
-
-// let FR2 = new RevealEffects("body", {
-//     // selector: document.getElementById('.testOne').querySelectorAll('.testTwo')[0],
-//     selector: document.querySelectorAll('.contextmenu_contextMenuItem_pFo3k')[0],
-//     backgroundGradientSize: 150,
-//     borderGradientSize: 80,
-//     borderLightColor: "rgba(255, 255, 255, 0.25)",
-//     backgroundLightColor: "rgba(255, 255, 255, 0.25)"
-// });
-
-// let FR3 = new RevealEffects(".contextmenu_contextMenuContents_2y2tU", {
-//     selector: document.querySelectorAll('.contextmenu_contextMenuItem_pFo3kS')[1],
-//     backgroundGradientSize: 150,
-//     borderGradientSize: 80,
-//     borderLightColor: "rgba(255, 255, 255, 0.75)",
-//     backgroundLightColor: "rgba(255, 255, 255, 0.75)"
-// });
-
-// let FR4 = new RevealEffects("body", {
-//     selector: document.querySelectorAll('.menu_MenuItem_2jXHP')[1],
-//     backgroundGradientSize: 150,
-//     borderGradientSize: 80,
-//     borderLightColor: "rgba(255, 255, 255, 0.75)",
-//     backgroundLightColor: "rgba(255, 255, 255, 0.75)"
-// });
-
-// let FR_ROOT = new RevealEffects("body", {
-//     selector: document.querySelectorAll('.rootmenu_RootMenuButton_2UyOB')[0],
-//     backgroundGradientSize: 150,
-//     borderGradientSize: 80,
-//     borderLightColor: "rgba(255, 255, 255, 0.25)",
-//     backgroundLightColor: "rgba(255, 255, 255, 0.25)"
-// });
-
-// let FR_BUTTON = new RevealEffects("body", {
-//     selector: document.querySelectorAll('.DialogButton')[0],
-//     backgroundGradientSize: 150,
-//     borderGradientSize: 80,
-//     borderLightColor: "rgba(255, 255, 255, 0.25)",
-//     backgroundLightColor: "rgba(255, 255, 255, 0.25)"
-// });

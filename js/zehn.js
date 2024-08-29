@@ -30,6 +30,6 @@ const Zehn = {
     classes.forEach((name) => {
       document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
     });
-  },
+  }
 };
 export default Zehn;
