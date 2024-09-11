@@ -1100,7 +1100,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   backdrop-filter: blur(var(--option-blur-radius)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--image-acrylic) !important;
-  padding: 32px !important;
+  padding: 38px 0px 16px !important;
   gap: 16px !important;
   border-radius: 0px !important;
   max-height: calc(100vh - 144px) !important;
@@ -1115,50 +1115,87 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   border-radius: 0px !important;
   min-height: 0px !important;
   object-fit: contain !important;
+  margin: 0px !important;
+}
+
+.chatFileUploadPreview {
+  max-width: 260px !important;
 }
 
 .chatFileUploadFileName {
-  padding: 0px !important;
+  padding: 0px 12px !important;
   font-size: var(--size-12) !important;
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-primary)) !important;
   font-weight: 400 !important;
-  line-height: 24px !important;
+  line-height: 38px !important;
+  position: absolute !important;
+  top: 0px !important;
+  left: 0px !important;
 }
 
 .chatFileUploadCancel {
   border-radius: 0px !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: 38px !important;
+  height: 38px !important;
   top: 0px !important;
   right: 0px !important;
   background-color: transparent !important;
-  background-image: var(--icon-close) !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 16px !important;
   padding: 0px !important;
 }
 
+.chatFileUploadCancel:active {
+  /* background-image: var(--icon-window-close-active) !important; */
+  filter: brightness(0) !important;
+}
+
 .chatFileUploadCancel:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgb(var(--color-close-hover)) !important;
 }
 
 .chatFileUploadCancel:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgb(var(--color-close-pressed)) !important;
 }
 
 .chatFileUploadCancel svg {
+  width: 38px !important;
+  height: 38px !important;
+  background-image: var(--icon-window-close) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px !important;
+}
+
+.chatFileUploadCancel:active svg {
+  filter: brightness(0) !important;
+}
+
+.chatFileUploadCancel svg * {
+  fill: transparent !important;
+  stroke: transparent !important;
   display: none !important;
 }
 
 .chatFileUploadBtn {
-  flex-shrink: 0 !important;
+  flex-shrink: 1 !important;
+  width: calc(100% - 32px) !important;
 }
 
 .spoilerCheckBox {
   font-size: var(--size-14) !important;
   color: rgb(var(--color-primary)) !important;
   font-weight: 400 !important;
+  place-content: center !important;
+}
+
+/* VIDEO UPLOAD */
+.chatFileUploadPreviewContainer .SVGIcon_Video {
+  fill: transparent !important;
+  background-color: rgba(var(--color-accent), 0.5) !important;
+  border-radius: 0px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 32px !important;
+  background-image: var(--icon-video) !important;
 }
 
 /* UPLOAD PROGRESS */
