@@ -1183,7 +1183,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 32px !important;
-  background-image: var(--icon-video) !important;
+  background-image: var(--icon-movie) !important;
 }
 
 /* UPLOAD PROGRESS */
@@ -1879,12 +1879,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   transition: none !important;
 }
 
-.ChannelTypeTitle:hover {
-  color: rgb(var(--color-primary)) !important;
+.chatRoomTextChannel.ActiveTextChannel, .chatRoomVoiceChannel.ActiveVoiceChannel {
+  background-color: transparent !important;
 }
 
-.ChannelTypeTitle:active {
+.ChannelTypeTitle:hover, .chatRoomTextChannel:hover, .chatRoomVoiceChannel:hover, .chatRoomTextChannel.ActiveTextChannel:hover, .chatRoomVoiceChannel.ActiveVoiceChannel:hover {
   color: rgb(var(--color-primary)) !important;
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.ChannelTypeTitle:active, .chatRoomTextChannel:active, .chatRoomVoiceChannel:active, .chatRoomTextChannel.ActiveTextChannel:active, .chatRoomVoiceChannel.ActiveVoiceChannel:active {
+  color: rgb(var(--color-primary)) !important;
+  background-color: rgba(var(--color-white), 0.2) !important;
 }
 
 .ChannelTypeTitle .ChannelTypeLabel:hover:not(.NoPermission) {
@@ -1933,22 +1939,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding-left: 0px !important;
 }
 
-.chatRoomTextChannel.ActiveTextChannel, .chatRoomVoiceChannel.ActiveVoiceChannel {
-  background-color: transparent !important;
-}
-
 .chatRoomTextChannel, .chatRoomVoiceChannel {
   background-color: transparent !important;
   border: unset !important;
   padding-bottom: 0px !important;
-}
-
-.chatRoomTextChannel:hover, .chatRoomVoiceChannel:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
-}
-
-.chatRoomTextChannel:active, .chatRoomVoiceChannel:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
 }
 
 .chatRoomTextChannel.ActiveTextChannel::before  {
@@ -2070,14 +2064,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   display: flex !important;
   order: 1 !important;
   color: transparent !important;
-}
-
-.ChatRoomAddRoomBtn:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
-}
-
-.ChatRoomAddRoomBtn:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
 }
 
 .ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
