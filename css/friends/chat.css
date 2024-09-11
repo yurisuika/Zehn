@@ -1876,6 +1876,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 38px !important;
   line-height: 38px !important;
   margin-left: 0px !important;
+  transition: none !important;
 }
 
 .ChannelTypeTitle:hover {
@@ -1900,13 +1901,20 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   margin-right: 0px !important;
   padding: 0px !important;
   border-radius: 0px !important;
-  margin-left: 38px !important;
+  margin-left: 0px !important;
+  order: 2 !important;
 }
 
 .ChannelTypeLabel {
   color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
+  text-align: left !important;
+  transition: none !important;
+}
+
+.ChannelTypeTitle .ChannelTypeLabel:active:not(.NoPermission) {
+  transform: none !important;
 }
 
 .ActiveTextChannel .chatRoomTextChannelName.IsCommonsChannel, .ActiveVoiceChannel .chatRoomVoiceChannelName, .chatRoomTextChannelName, .chatRoomVoiceChannelName {
@@ -2057,6 +2065,19 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-position: center !important;
   background-size: 16px !important;
   background-image: var(--icon-add-list) !important;
+  position: relative !important;
+  transition: none !important;
+  display: flex !important;
+  order: 1 !important;
+  color: transparent !important;
+}
+
+.ChatRoomAddRoomBtn:hover {
+  background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.ChatRoomAddRoomBtn:active {
+  background-color: rgba(var(--color-white), 0.2) !important;
 }
 
 .ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
@@ -2073,12 +2094,23 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   width: 38px !important;
 }
 
+.chatRoomGroupNavCollapsed .ChannelTypeTitle .ChannelTypeLabel, .chatRoomGroupNavCollapsed .chatRoomTextChannelName {
+  top: 0px !important;
+  left: 38px !important;
+  position: absolute !important;
+  transform: none !important;
+}
+
 .chatRoomGroupNavCollapsed .ChannelTypeTitle {
   transform: none !important;
 }
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
   margin-left: 0px !important;
+}
+
+.chatRoomGroupNavCollapsed .ChannelTypeTitle .ChatRoomAddRoomBtn {
+  flex: unset !important;
 }
 
 .chatRoomGroupNavCollapsed .chatRoomTextChannel, .chatRoomGroupNavCollapsed .chatRoomVoiceChannel {
@@ -2573,4 +2605,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   margin: auto !important;
   border: unset !important;
   background: transparent !important;
+}
+
+/* STEAM TV YULE LOG */
+.doGxCBJrGimabHm365bOV {
+  width: 54px !important;
+  height: 54px !important;
+  background-size: 32px !important;
+  background-image: var(--icon-fire) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  margin-right: 0px !important;
 }
