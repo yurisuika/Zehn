@@ -1684,9 +1684,11 @@ option:active {
 }
 
 #toggleSidebar {
-  width: 48px;
+  width: auto;
+  min-width: 48px;
   height: 48px;
   line-height: 48px;
+  flex-grow: 1;
 }
 
 #toggleLibrary {
@@ -1698,7 +1700,7 @@ option:active {
   right: 48px;
   transition: opacity: 0.25s ease;
   transition-delay: 1s;
-  display: none;
+  display: none;\
   backdrop-filter: blur(var(--option-blur-radius));
   background-blend-mode: exclusion;
   background-image: var(--image-acrylic);
@@ -1723,6 +1725,7 @@ body:not(.WindowFocus) #toggleLibrary {
   background-position: center;
   background-size: 16px;
   background-image: var(--icon-chevron-left);
+  margin: auto !important;
 }
 
 #toggleLibraryIcon {

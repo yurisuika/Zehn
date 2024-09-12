@@ -79,13 +79,13 @@ function addButtonSidebar() {
       sidebar.style.setProperty("max-width", "calc(min(50%, 100% - 400px))", "important");
     }
   };
-  document.querySelector(`._3AhYljPF4e4E8LaBt-FoY0`).after(btn);
+  document.querySelector(`._2TKEazUUS3TlniZfpc8OOe`).prepend(btn);
   var icon = document.createElement("div");
   icon.id = "toggleSidebarIcon";
   document.getElementById("toggleSidebar").append(icon);
 }
 
-Zehn.waitForElement('._3AhYljPF4e4E8LaBt-FoY0').then((element) => {
+Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
   addButtonSidebar()
 });
 
