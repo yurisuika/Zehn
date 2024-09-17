@@ -85,8 +85,14 @@ function addButtonSidebar() {
   document.getElementById("toggleSidebar").append(icon);
 }
 
-Zehn.waitForElement('._3AhYljPF4e4E8LaBt-FoY0').then((element) => {
-  addButtonSidebar()
+Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+      if (document.querySelector('.RGNMWtyj73_-WdhflrmuY').querySelector("#toggleSidebar") == null) {
+        console.log('A child node has been added or removed.');
+          addButtonSidebar();
+      }
+  });
+  observer.observe(document, {subtree: true, attributes: true});
 });
 
 function addButtonLibrary() {
@@ -125,7 +131,12 @@ function addButtonLibrary() {
 }
 
 Zehn.waitForElement('._2Nq6ov7A1hGcHXVOXNt_OE').then((element) => {
-  addButtonLibrary()
+  var observer = new MutationObserver(function(mutations, observer) {
+      if (document.querySelector('._2Nq6ov7A1hGcHXVOXNt_OE').querySelector("#toggleLibrary") == null) {
+          addButtonLibrary();
+      }
+  });
+  observer.observe(document, {subtree: true, attributes: true});
 });
 
 Zehn.waitForElement('._3cykd-VfN_xBxf3Qxriccm').then((element) => {

@@ -35,8 +35,7 @@ The library games list sidebar can be toggled by an added button. You will find 
 If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
 
 #### To-Do
-- Figure out to implement Reveal on stuff that isn't initially loaded
-- Figure out how to get JS to move classes again when reloaded and not just on initial load
+- Implement Reveal
 - Maybe do browser content? (probably not)
 - Anything I haven't come across from daily use
 
