@@ -75,11 +75,11 @@ function addButtonSidebar() {
       btnLibrary.value = "close";
       btnLibrary.style.display = "none";
       sidebar.style.setProperty("transform", "none", "important");
-      sidebar.style.setProperty("min-width", "256px", "important");
+      sidebar.style.setProperty("min-width", "288px", "important");
       sidebar.style.setProperty("max-width", "calc(min(50%, 100% - 400px))", "important");
     }
   };
-  document.querySelector(`._2TKEazUUS3TlniZfpc8OOe`).prepend(btn);
+  document.querySelector(`._2WgQEFvIzJw_SHNGbjtRFU`).prepend(btn);
   var icon = document.createElement("div");
   icon.id = "toggleSidebarIcon";
   document.getElementById("toggleSidebar").append(icon);
@@ -92,7 +92,6 @@ Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
           addButtonSidebar();
       }
   });
-
   observer.observe(document, {subtree: true, attributes: true});
 });
 
@@ -137,7 +136,6 @@ Zehn.waitForElement('._2Nq6ov7A1hGcHXVOXNt_OE').then((element) => {
           addButtonLibrary();
       }
   });
-
   observer.observe(document, {subtree: true, attributes: true});
 });
 
@@ -196,6 +194,15 @@ Zehn.waitForElement('.fi6UDkxJq66MLo2z9wabQ').then((element) => {
     '.fi6UDkxJq66MLo2z9wabQ',
     [
       '._1EI98QaSW75zbVd3gxgBfS' // OVERLAY BUTTONS
+    ]
+  )
+});
+
+Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
+  Zehn.appendElements(
+    '._2WgQEFvIzJw_SHNGbjtRFU',
+    [
+      '._2TKEazUUS3TlniZfpc8OOe' // SIDEBAR BUTTONS
     ]
   )
 });
