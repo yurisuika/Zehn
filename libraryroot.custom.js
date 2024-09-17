@@ -86,7 +86,14 @@ function addButtonSidebar() {
 }
 
 Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
-  addButtonSidebar()
+  var observer = new MutationObserver(function(mutations, observer) {
+      if (document.querySelector('.RGNMWtyj73_-WdhflrmuY').querySelector("#toggleSidebar") == null) {
+        console.log('A child node has been added or removed.');
+          addButtonSidebar();
+      }
+  });
+
+  observer.observe(document, {subtree: true, attributes: true});
 });
 
 function addButtonLibrary() {
@@ -125,7 +132,13 @@ function addButtonLibrary() {
 }
 
 Zehn.waitForElement('._2Nq6ov7A1hGcHXVOXNt_OE').then((element) => {
-  addButtonLibrary()
+  var observer = new MutationObserver(function(mutations, observer) {
+      if (document.querySelector('._2Nq6ov7A1hGcHXVOXNt_OE').querySelector("#toggleLibrary") == null) {
+          addButtonLibrary();
+      }
+  });
+
+  observer.observe(document, {subtree: true, attributes: true});
 });
 
 Zehn.waitForElement('._3cykd-VfN_xBxf3Qxriccm').then((element) => {
@@ -177,3 +190,29 @@ Zehn.waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) =
     ]
   )
 });
+
+Zehn.waitForElement('.fi6UDkxJq66MLo2z9wabQ').then((element) => {
+  Zehn.prependElements(
+    '.fi6UDkxJq66MLo2z9wabQ',
+    [
+      '._1EI98QaSW75zbVd3gxgBfS' // OVERLAY BUTTONS
+    ]
+  )
+});
+
+// function setListSize() {
+//   var panels = document.querySelector('.ReactVirtualized__Grid__innerScrollContainer').children;
+//   for (var index = 0; index < panels.length; index++) {
+//     var panel = panels[index];
+//     if (parseInt(panel.style.height) == 26) {
+//       panel.style.setProperty("height", "32px", "important");
+//       panel.style.setProperty("line-height", "32px", "important");
+//       panel.style.setProperty("top", ((parseInt(panel.style.top, 10) / 26) * 32) + "px", "important");
+//     }
+//   }
+// }
+//
+// Zehn.waitForElement('.ReactVirtualized__Grid__innerScrollContainer').then((element) => {
+//     setListSize()
+//     new MutationObserver(() => setListSize()).observe(document.querySelector('.ReactVirtualized__Grid__innerScrollContainer'), {childList: true, subtree: true});
+// });
