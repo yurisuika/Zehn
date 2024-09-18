@@ -88,7 +88,6 @@ function addButtonSidebar() {
 Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
   var observer = new MutationObserver(function(mutations, observer) {
       if (document.querySelector('.RGNMWtyj73_-WdhflrmuY').querySelector("#toggleSidebar") == null) {
-        console.log('A child node has been added or removed.');
           addButtonSidebar();
       }
   });
@@ -120,7 +119,7 @@ function addButtonLibrary() {
       btnLibrary.value = "close";
       btnLibrary.style.display = "none";
       sidebar.style.setProperty("transform", "none", "important");
-      sidebar.style.setProperty("min-width", "256px", "important");
+      sidebar.style.setProperty("min-width", "288px", "important");
       sidebar.style.setProperty("max-width", "calc(min(50%, 100% - 400px))", "important");
     }
   };
