@@ -88,7 +88,6 @@ function addButtonSidebar() {
 Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
   var observer = new MutationObserver(function(mutations, observer) {
       if (document.querySelector('.RGNMWtyj73_-WdhflrmuY').querySelector("#toggleSidebar") == null) {
-        console.log('A child node has been added or removed.');
           addButtonSidebar();
       }
   });
