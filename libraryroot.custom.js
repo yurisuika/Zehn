@@ -198,12 +198,15 @@ Zehn.waitForElement('.fi6UDkxJq66MLo2z9wabQ').then((element) => {
 });
 
 Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
-  Zehn.appendElements(
-    '._2WgQEFvIzJw_SHNGbjtRFU',
-    [
-      '._2TKEazUUS3TlniZfpc8OOe' // SIDEBAR BUTTONS
-    ]
-  )
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.appendElements(
+      '._2WgQEFvIzJw_SHNGbjtRFU',
+      [
+        '._2TKEazUUS3TlniZfpc8OOe' // SIDEBAR BUTTONS
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
 });
 
 // function setListSize() {
