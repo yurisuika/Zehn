@@ -8,13 +8,13 @@ Zehn.setAvatarShape();
 
 var root = document.querySelector(':root');
 console.log(getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim());
-if (getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim() == "square") {
-  console.log("It is square");
+if (getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim() == 'square') {
+  console.log('It is square');
   root.style.setProperty('--mask-avatar', '--mask-avatar-square');
   root.style.setProperty('--mask-avatar-status', '--mask-avatar-square-status');
   root.style.setProperty('--mask-avatar-status-mobile', '--mask-avatar-square-status-mobile');
 } else {
-  console.log("It is round");
+  console.log('It is round');
   root.style.setProperty('--mask-avatar', '--mask-avatar-round');
   root.style.setProperty('--mask-avatar-status', '--mask-avatar-round-status');
   root.style.setProperty('--mask-avatar-status-mobile', '--mask-avatar-round-status-mobile');
@@ -24,82 +24,82 @@ Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   let cells = document.querySelectorAll('.bkfjn0yka2uHNqEvWZaTJ');
   console.log(cells);
   [].forEach.call(cells, function (el) {
-    if(el.innerText.indexOf("Privacy") !== -1) {
-      el.style.backgroundImage = "var(--icon-privacy)";
+    if(el.innerText.indexOf('Privacy') !== -1) {
+      el.style.backgroundImage = 'var(--icon-privacy)';
       console.log(el)
     }
-    if(el.innerText.indexOf("Workshop") !== -1) {
-      el.style.backgroundImage = "var(--icon-store)";
+    if(el.innerText.indexOf('Workshop') !== -1) {
+      el.style.backgroundImage = 'var(--icon-store)';
       console.log(el)
     }
-    if(el.innerText.indexOf("DLC") !== -1) {
-      el.style.backgroundImage = "var(--icon-shop)";
+    if(el.innerText.indexOf('DLC') !== -1) {
+      el.style.backgroundImage = 'var(--icon-shop)';
       console.log(el)
     }
-    if(el.innerText.indexOf("Controller") !== -1) {
-      el.style.backgroundImage = "var(--icon-controller)";
+    if(el.innerText.indexOf('Controller') !== -1) {
+      el.style.backgroundImage = 'var(--icon-controller)';
       console.log(el)
     }
-    if(el.innerText.indexOf("Betas") !== -1) {
-      el.style.backgroundImage = "var(--icon-update-dev)";
+    if(el.innerText.indexOf('Betas') !== -1) {
+      el.style.backgroundImage = 'var(--icon-update-dev)';
       console.log(el)
     }
-    if(el.innerText.indexOf("Installed Files") !== -1) {
-      el.style.backgroundImage = "var(--icon-apps-all)";
+    if(el.innerText.indexOf('Installed Files') !== -1) {
+      el.style.backgroundImage = 'var(--icon-apps-all)';
       console.log(el)
     }
-    if(el.innerText.indexOf("Updates") !== -1) {
-      el.style.backgroundImage = "var(--icon-update)";
+    if(el.innerText.indexOf('Updates') !== -1) {
+      el.style.backgroundImage = 'var(--icon-update)';
       console.log(el)
     }
-    if(el.innerText.indexOf("Compatibility") !== -1) {
-      el.style.backgroundImage = "var(--icon-switch)";
+    if(el.innerText.indexOf('Compatibility') !== -1) {
+      el.style.backgroundImage = 'var(--icon-switch)';
       console.log(el)
     }
-    if(el.innerText.indexOf("General") !== -1) {
-      el.style.backgroundImage = "var(--icon-home)";
+    if(el.innerText.indexOf('General') !== -1) {
+      el.style.backgroundImage = 'var(--icon-home)';
       console.log(el)
     }
   });
 });
 
 function addButtonSidebar() {
-  var btn = document.createElement("button");
-  btn.classList.add("ZehnButton");
-  btn.id = "toggleSidebar";
-  btn.type = "button";
-  btn.value = "close";
-  btn.name = "button";
+  var btn = document.createElement('button');
+  btn.classList.add('ZehnButton');
+  btn.id = 'toggleSidebar';
+  btn.type = 'button';
+  btn.value = 'close';
+  btn.name = 'button';
   btn.onclick = function () {
-    var btnSidebar = document.getElementById("toggleSidebar");
-    var btnLibrary = document.getElementById("toggleLibrary");
+    var btnSidebar = document.getElementById('toggleSidebar');
+    var btnLibrary = document.getElementById('toggleLibrary');
     var sidebar = document.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`);
-    if (btnSidebar.value == "close") {
-      btnSidebar.value = "open";
-      btnLibrary.value = "open";
-      btnLibrary.style.display = "block";
-      sidebar.style.setProperty("transform", "scaleX(0)", "important");
-      sidebar.style.setProperty("min-width", "0px", "important");
-      sidebar.style.setProperty("max-width", "0px", "important");
+    if (btnSidebar.value == 'close') {
+      btnSidebar.value = 'open';
+      btnLibrary.value = 'open';
+      btnLibrary.style.display = 'block';
+      sidebar.style.setProperty('transform', 'scaleX(0)', 'important');
+      sidebar.style.setProperty('min-width', '0px', 'important');
+      sidebar.style.setProperty('max-width', '0px', 'important');
     }
-    else if (btnSidebar.value = "open") {
-      btnSidebar.value = "close";
-      btnLibrary.value = "close";
-      btnLibrary.style.display = "none";
-      sidebar.style.setProperty("transform", "none", "important");
-      sidebar.style.setProperty("min-width", "288px", "important");
-      sidebar.style.setProperty("max-width", "calc(min(50%, 100% - 400px))", "important");
+    else if (btnSidebar.value = 'open') {
+      btnSidebar.value = 'close';
+      btnLibrary.value = 'close';
+      btnLibrary.style.display = 'none';
+      sidebar.style.setProperty('transform', 'none', 'important');
+      sidebar.style.setProperty('min-width', '288px', 'important');
+      sidebar.style.setProperty('max-width', 'calc(min(50%, 100% - 400px))', 'important');
     }
   };
   document.querySelector(`._2WgQEFvIzJw_SHNGbjtRFU`).prepend(btn);
-  var icon = document.createElement("div");
-  icon.id = "toggleSidebarIcon";
-  document.getElementById("toggleSidebar").append(icon);
+  var icon = document.createElement('div');
+  icon.id = 'toggleSidebarIcon';
+  document.getElementById('toggleSidebar').append(icon);
 }
 
 Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
   var observer = new MutationObserver(function(mutations, observer) {
-      if (document.querySelector('.RGNMWtyj73_-WdhflrmuY').querySelector("#toggleSidebar") == null) {
+      if (document.querySelector('.RGNMWtyj73_-WdhflrmuY').querySelector('#toggleSidebar') == null) {
           addButtonSidebar();
       }
   });
@@ -107,43 +107,43 @@ Zehn.waitForElement('._2TKEazUUS3TlniZfpc8OOe').then((element) => {
 });
 
 function addButtonLibrary() {
-  var btn = document.createElement("button");
-  btn.classList.add("ZehnButton");
-  btn.classList.add("DialogButton");
-  btn.id = "toggleLibrary";
-  btn.type = "button";
-  btn.value = "close";
-  btn.name = "button";
+  var btn = document.createElement('button');
+  btn.classList.add('ZehnButton');
+  btn.classList.add('DialogButton');
+  btn.id = 'toggleLibrary';
+  btn.type = 'button';
+  btn.value = 'close';
+  btn.name = 'button';
   btn.onclick = function () {
-    var btnSidebar = document.getElementById("toggleSidebar");
-    var btnLibrary = document.getElementById("toggleLibrary");
+    var btnSidebar = document.getElementById('toggleSidebar');
+    var btnLibrary = document.getElementById('toggleLibrary');
     var sidebar = document.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`);
-    if (btnLibrary.value == "close") {
-      btnSidebar.value = "open";
-      btnLibrary.value = "open";
-      btnLibrary.style.display = "block";
-      sidebar.style.setProperty("transform", "scaleX(0)", "important");
-      sidebar.style.setProperty("min-width", "0px", "important");
-      sidebar.style.setProperty("max-width", "0px", "important");
+    if (btnLibrary.value == 'close') {
+      btnSidebar.value = 'open';
+      btnLibrary.value = 'open';
+      btnLibrary.style.display = 'block';
+      sidebar.style.setProperty('transform', 'scaleX(0)', 'important');
+      sidebar.style.setProperty('min-width', '0px', 'important');
+      sidebar.style.setProperty('max-width', '0px', 'important');
     }
-    else if (btnLibrary.value = "open") {
-      btnSidebar.value = "close";
-      btnLibrary.value = "close";
-      btnLibrary.style.display = "none";
-      sidebar.style.setProperty("transform", "none", "important");
-      sidebar.style.setProperty("min-width", "288px", "important");
-      sidebar.style.setProperty("max-width", "calc(min(50%, 100% - 400px))", "important");
+    else if (btnLibrary.value = 'open') {
+      btnSidebar.value = 'close';
+      btnLibrary.value = 'close';
+      btnLibrary.style.display = 'none';
+      sidebar.style.setProperty('transform', 'none', 'important');
+      sidebar.style.setProperty('min-width', '288px', 'important');
+      sidebar.style.setProperty('max-width', 'calc(min(50%, 100% - 400px))', 'important');
     }
   };
   document.querySelector(`._2Nq6ov7A1hGcHXVOXNt_OE`).append(btn);
-  var icon = document.createElement("div");
-  icon.id = "toggleLibraryIcon";
-  document.getElementById("toggleLibrary").append(icon);
+  var icon = document.createElement('div');
+  icon.id = 'toggleLibraryIcon';
+  document.getElementById('toggleLibrary').append(icon);
 }
 
 Zehn.waitForElement('._2Nq6ov7A1hGcHXVOXNt_OE').then((element) => {
   var observer = new MutationObserver(function(mutations, observer) {
-      if (document.querySelector('._2Nq6ov7A1hGcHXVOXNt_OE').querySelector("#toggleLibrary") == null) {
+      if (document.querySelector('._2Nq6ov7A1hGcHXVOXNt_OE').querySelector('#toggleLibrary') == null) {
           addButtonLibrary();
       }
   });
@@ -229,9 +229,9 @@ Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
 //   for (var index = 0; index < panels.length; index++) {
 //     var panel = panels[index];
 //     if (parseInt(panel.style.height) == 26) {
-//       panel.style.setProperty("height", "32px", "important");
-//       panel.style.setProperty("line-height", "32px", "important");
-//       panel.style.setProperty("top", ((parseInt(panel.style.top, 10) / 26) * 32) + "px", "important");
+//       panel.style.setProperty('height', '32px', 'important');
+//       panel.style.setProperty('line-height', '32px', 'important');
+//       panel.style.setProperty('top', ((parseInt(panel.style.top, 10) / 26) * 32) + 'px', 'important');
 //     }
 //   }
 // }

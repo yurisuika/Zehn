@@ -6,10 +6,10 @@ Zehn.addUserAgent();
 
 Zehn.setAvatarShape();
 
-let FR_NOTIFICATION = new RevealEffects("body", {
-    selector: document.querySelectorAll("._1OOQPJx0nCNP9ME9toCmV7")[0],
+let FR_NOTIFICATION = new RevealEffects('body', {
+    selector: document.querySelectorAll('._1OOQPJx0nCNP9ME9toCmV7')[0],
     backgroundGradientSize: 150,
     borderGradientSize: 80,
-    borderLightColor: "rgba(255, 255, 255, 0.25)",
-    backgroundLightColor: "rgba(255, 255, 255, 0.25)"
+    borderLightColor: 'rgba(255, 255, 255, 0.25)',
+    backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
 });
