@@ -2,10 +2,22 @@ import { RevealEffects } from './js/revealDirect.js';
 import { RevealEffectsMasked } from './js/revealMasked.js';
 import Zehn from './js/zehn.js';
 
-if (navigator.userAgent.includes("Linux")) {
-  document.documentElement.classList.add("Linux");
-} else if (navigator.userAgent.includes("Windows")) {
-  document.documentElement.classList.add("Windows");
+Zehn.addUserAgent();
+
+Zehn.setAvatarShape();
+
+var root = document.querySelector(':root');
+console.log(getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim());
+if (getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim() == "square") {
+  console.log("It is square");
+  root.style.setProperty('--mask-avatar', '--mask-avatar-square');
+  root.style.setProperty('--mask-avatar-status', '--mask-avatar-square-status');
+  root.style.setProperty('--mask-avatar-status-mobile', '--mask-avatar-square-status-mobile');
+} else {
+  console.log("It is round");
+  root.style.setProperty('--mask-avatar', '--mask-avatar-round');
+  root.style.setProperty('--mask-avatar-status', '--mask-avatar-round-status');
+  root.style.setProperty('--mask-avatar-status-mobile', '--mask-avatar-round-status-mobile');
 }
 
 Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
@@ -188,13 +200,16 @@ Zehn.waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) =
   )
 });
 
-Zehn.waitForElement('.fi6UDkxJq66MLo2z9wabQ').then((element) => {
-  Zehn.prependElements(
-    '.fi6UDkxJq66MLo2z9wabQ',
-    [
-      '._1EI98QaSW75zbVd3gxgBfS' // OVERLAY BUTTONS
-    ]
-  )
+Zehn.waitForElement('.fbu3l7kPiBeb3EKCjIb8n').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.prependElements(
+      '.fi6UDkxJq66MLo2z9wabQ',
+      [
+        '.fbu3l7kPiBeb3EKCjIb8n' // OVERLAY BUTTONS
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
 });
 
 Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
