@@ -33,25 +33,27 @@ const Zehn = {
   },
 
   addUserAgent() {
-    if (navigator.userAgent.includes("Linux")) {
-      document.documentElement.classList.add("Linux");
-    } else if (navigator.userAgent.includes("Windows")) {
-      document.documentElement.classList.add("Windows");
+    if (navigator.userAgent.includes('Linux')) {
+      document.documentElement.classList.add('Linux');
+    } else if (navigator.userAgent.includes('Windows')) {
+      document.documentElement.classList.add('Windows');
     }
   },
 
   setAvatarShape() {
     var root = document.querySelector(':root');
-    if (getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim() == "square") {
-      console.log("Avatars set to square.");
+    if (getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim() == 'square') {
+      console.log('Avatars set to square.');
       root.style.setProperty('--mask-avatar', 'var(--mask-avatar-square)');
       root.style.setProperty('--mask-avatar-status', 'var(--mask-avatar-square-status)');
       root.style.setProperty('--mask-avatar-status-mobile', 'var(--mask-avatar-square-status-mobile)');
+      root.style.setProperty('--group-radius', '0');
     } else {
-      console.log("Avatars set to round.");
+      console.log('Avatars set to round.');
       root.style.setProperty('--mask-avatar', 'var(--mask-avatar-round)');
       root.style.setProperty('--mask-avatar-status', 'var(--mask-avatar-round-status)');
       root.style.setProperty('--mask-avatar-status-mobile', 'var(--mask-avatar-round-status-mobile)');
+      root.style.setProperty('--group-radius', '50%');
     }
   }
 };
