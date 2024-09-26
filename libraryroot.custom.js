@@ -2,11 +2,9 @@ import { RevealEffects } from './js/revealDirect.js';
 import { RevealEffectsMasked } from './js/revealMasked.js';
 import Zehn from './js/zehn.js';
 
-if (navigator.userAgent.includes("Linux")) {
-  document.documentElement.classList.add("Linux");
-} else if (navigator.userAgent.includes("Windows")) {
-  document.documentElement.classList.add("Windows");
-}
+Zehn.addUserAgent();
+
+Zehn.setAvatarShape();
 
 Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   let cells = document.querySelectorAll('.bkfjn0yka2uHNqEvWZaTJ');
