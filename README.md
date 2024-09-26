@@ -40,6 +40,9 @@ If you are using Linux, you will want to install [some form of Segoe UI](https:/
 - Maybe do browser content? (probably not)
 - Anything I haven't come across from daily use
 
+#### Discussion
+If you have inquires, you can use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) or come by my [Discord](https://discord.gg/0zdNEkQle7Qg9C1H).
+
 #### Thanks
 - [Metro](https://steamcommunity.com/groups/metroskin) - The OG skin that brought Windows design language to Steam skinning!
 - [AikoMidori](https://github.com/AikoMidori/SteamSkins) - I wrote my first lines of JS code learning from your skin.
