@@ -6,20 +6,6 @@ Zehn.addUserAgent();
 
 Zehn.setAvatarShape();
 
-var root = document.querySelector(':root');
-console.log(getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim());
-if (getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim() == 'square') {
-  console.log('It is square');
-  root.style.setProperty('--mask-avatar', '--mask-avatar-square');
-  root.style.setProperty('--mask-avatar-status', '--mask-avatar-square-status');
-  root.style.setProperty('--mask-avatar-status-mobile', '--mask-avatar-square-status-mobile');
-} else {
-  console.log('It is round');
-  root.style.setProperty('--mask-avatar', '--mask-avatar-round');
-  root.style.setProperty('--mask-avatar-status', '--mask-avatar-round-status');
-  root.style.setProperty('--mask-avatar-status-mobile', '--mask-avatar-round-status-mobile');
-}
-
 Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   let cells = document.querySelectorAll('.bkfjn0yka2uHNqEvWZaTJ');
   console.log(cells);
