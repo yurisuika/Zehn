@@ -57,4 +57,5 @@ const Zehn = {
     }
   }
 };
+
 export default Zehn;

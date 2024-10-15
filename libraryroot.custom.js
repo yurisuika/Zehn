@@ -73,11 +73,11 @@ function addButtonSidebar() {
       btnLibrary.value = 'close';
       btnLibrary.style.display = 'none';
       sidebar.style.setProperty('transform', 'none', 'important');
-      sidebar.style.setProperty('min-width', '256px', 'important');
+      sidebar.style.setProperty('min-width', '288px', 'important');
       sidebar.style.setProperty('max-width', 'calc(min(50%, 100% - 400px))', 'important');
     }
   };
-  document.querySelector(`._3AhYljPF4e4E8LaBt-FoY0`).after(btn);
+  document.querySelector(`._2WgQEFvIzJw_SHNGbjtRFU`).prepend(btn);
   var icon = document.createElement('div');
   icon.id = 'toggleSidebarIcon';
   document.getElementById('toggleSidebar').append(icon);
@@ -117,7 +117,7 @@ function addButtonLibrary() {
       btnLibrary.value = 'close';
       btnLibrary.style.display = 'none';
       sidebar.style.setProperty('transform', 'none', 'important');
-      sidebar.style.setProperty('min-width', '256px', 'important');
+      sidebar.style.setProperty('min-width', '288px', 'important');
       sidebar.style.setProperty('max-width', 'calc(min(50%, 100% - 400px))', 'important');
     }
   };
@@ -184,4 +184,46 @@ Zehn.waitForElement('.TabbedPopupBrowser .TitleBar.title-area').then((element) =
       '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
     ]
   )
+});
+
+Zehn.waitForElement('.fbu3l7kPiBeb3EKCjIb8n').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.prependElements(
+      '.fi6UDkxJq66MLo2z9wabQ',
+      [
+        '.fbu3l7kPiBeb3EKCjIb8n' // OVERLAY BUTTONS
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
+});
+
+Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.appendElements(
+      '._2WgQEFvIzJw_SHNGbjtRFU',
+      [
+        '._2TKEazUUS3TlniZfpc8OOe' // SIDEBAR BUTTONS
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
+});
+
+// function setListSize() {
+//   var panels = document.querySelector('.ReactVirtualized__Grid__innerScrollContainer').children;
+//   for (var index = 0; index < panels.length; index++) {
+//     var panel = panels[index];
+//     if (parseInt(panel.style.height) == 26) {
+//       panel.style.setProperty('height', '32px', 'important');
+//       panel.style.setProperty('line-height', '32px', 'important');
+//       panel.style.setProperty('top', ((parseInt(panel.style.top, 10) / 26) * 32) + 'px', 'important');
+//     }
+//   }
+// }
+//
+// Zehn.waitForElement('.ReactVirtualized__Grid__innerScrollContainer').then((element) => {
+//     setListSize()
+//     new MutationObserver(() => setListSize()).observe(document.querySelector('.ReactVirtualized__Grid__innerScrollContainer'), {childList: true, subtree: true});
+// });
 });
