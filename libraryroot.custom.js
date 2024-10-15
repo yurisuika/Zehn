@@ -226,3 +226,4 @@ Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
 //     setListSize()
 //     new MutationObserver(() => setListSize()).observe(document.querySelector('.ReactVirtualized__Grid__innerScrollContainer'), {childList: true, subtree: true});
 // });
+});
