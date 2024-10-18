@@ -210,6 +210,18 @@ Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
   observer.observe(document, {subtree: true, attributes: true});
 });
 
+Zehn.waitForElement('.DKXVRVBokaW_Xxo6kyKq0').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.appendElements(
+      '.DKXVRVBokaW_Xxo6kyKq0',
+      [
+        '._3-jI6bR_mj4JCTwXNFFuuL' // SCREENSHOT CAPTION
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
+});
+
 // function setListSize() {
 //   var panels = document.querySelector('.ReactVirtualized__Grid__innerScrollContainer').children;
 //   for (var index = 0; index < panels.length; index++) {
