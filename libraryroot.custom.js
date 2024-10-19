@@ -7,7 +7,7 @@ Zehn.addUserAgent();
 Zehn.setAvatarShape();
 
 Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
-  let cells = document.querySelectorAll('.bkfjn0yka2uHNqEvWZaTJ');
+  let cells = document.querySelectorAll('._1-vlriAtKYDViAEunue4VO');
   console.log(cells);
   [].forEach.call(cells, function (el) {
     if(el.innerText.indexOf('Privacy') !== -1) {
@@ -44,6 +44,10 @@ Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
     }
     if(el.innerText.indexOf('General') !== -1) {
       el.style.backgroundImage = 'var(--icon-home)';
+      console.log(el)
+    }
+    if(el.innerText.indexOf('Game Recording') !== -1) {
+      el.style.backgroundImage = 'var(--icon-record)';
       console.log(el)
     }
   });
