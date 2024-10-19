@@ -4,7 +4,7 @@ import Zehn from './js/zehn.js';
 
 Zehn.addUserAgent();
 
-Zehn.setAvatarShape();
+Zehn.setOptions();
 
 Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   let cells = document.querySelectorAll('._1-vlriAtKYDViAEunue4VO');

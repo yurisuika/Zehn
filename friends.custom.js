@@ -4,7 +4,7 @@ import Zehn from './js/zehn.js';
 
 Zehn.addUserAgent();
 
-Zehn.setAvatarShape();
+Zehn.setOptions();
 
 function addButtonUser() {
   var btn = document.createElement('button');

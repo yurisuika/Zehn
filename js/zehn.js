@@ -40,7 +40,7 @@ const Zehn = {
     }
   },
 
-  setAvatarShape() {
+  setOptions() {
     var root = document.querySelector(':root');
     if (getComputedStyle(root).getPropertyValue('--option-avatar-shape').trim() == 'square') {
       console.log('Avatars set to square.');
