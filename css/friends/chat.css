@@ -436,16 +436,16 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 /* SERVER MESSAGE */
 .msg.serverMsg .msgText span:last-of-type {
-  margin-right: calc(38px + 16px) !important;
+  margin-right: calc(32px + 16px) !important;
 }
 
 /* COLLAPSED SIDEBAR CHAT */
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed ~ .ChatRoomGroup_MainAndChatEntry .chatHistoryScroll {
-  margin: 0px 0px 0px 38px !important;
+  margin: 0px !important;
 }
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed ~ .ChatRoomGroup_MainAndChatEntry .ScrollToBottomButton {
-  margin: 0px 0px 0px 38px !important;
+  margin: 0px !important;
 }
 
 /* CHAT AVATARS */
@@ -995,6 +995,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   color: rgb(var(--color-primary)) !important;
   border-radius: 0px !important;
   background: rgb(var(--color-accent)) !important;
+  font-size: var(--size-14) !important;
   padding-top: 0px !important;
   height: 24px !important;
   opacity: 0 !important;
@@ -1441,14 +1442,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 ._113iuw_HlE_qSgt9cGWCSv {
   font-size: var(--size-14) !important;
-  height: 48px !important;
-  max-height: 48px !important;
+  height: unset !important;
+  max-height: 96px !important;
   min-height: 48px !important;
   color: rgb(var(--color-primary)) !important;
   margin-right: 16px !important;
   margin-left: 16px !important;
   padding: 0px !important;
   line-height: 24px !important;
+  field-sizing: content !important;
 }
 
 .chatWindow .chatEntry::before, .chatWindow .chatEntry::after {
@@ -1813,25 +1815,13 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: transparent !important;
 }
 
-.chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed)::before, .chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed)::after {
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-}
-
-.chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed)::before {
+.chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed) {
   background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
+  background-image: var(--image-acrylic) !important;
   background-blend-mode: exclusion !important;
 }
 
-.chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed)::after {
-  background-image: var(--image-acrylic) !important;
-}
 
 .chatRoomGroupNavColumn .chatRoomGroupNavCollapseExpand {
   margin-right: 0px !important;
@@ -1879,8 +1869,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   padding: 0px !important;
-  height: 38px !important;
-  line-height: 38px !important;
+  height: 32px !important;
+  line-height: 32px !important;
   margin-left: 0px !important;
   transition: none !important;
 }
@@ -1933,7 +1923,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   color: rgb(var(--color-white)) !important;
   font-style: normal !important;
   font-weight: 400 !important;
-  line-height: 38px !important;
+  line-height: 32px !important;
   padding-left: 0px !important;
 }
 
@@ -1959,12 +1949,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   outline: 2px solid rgb(var(--color-accent)) !important;
   content: "" !important;
   left: 2px !important;
-  top: 9px !important;
+  top: 6px !important;
   background: rgb(var(--color-accent)) !important;
 }
 
 .chatRoomVoiceChannelNameContainer, .chatRoomTextChannelNameContainer {
-  height: 38px !important;
+  height: 32px !important;
   padding-left: 0px !important;
 }
 
@@ -2018,12 +2008,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatDialogs .chatRoomTextChannelIcon {
   margin: 0px !important;
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  min-height: 38px !important;
-  max-width: 38px !important;
-  max-height: 38px !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px !important;
@@ -2031,12 +2021,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatDialogs .chatRoomVoiceChannelIcon {
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  min-height: 38px !important;
-  max-width: 38px !important;
-  max-height: 38px !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px !important;
@@ -2049,18 +2039,17 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHAT ROOM LIST COLLAPSED */
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
-  min-width: 38px !important;
-  max-width: 38px !important;
-  position: fixed !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
   margin-bottom: 0px !important;
-  position: absolute !important;
-  max-height: calc(100% - 38px) !important;
+  /* position: absolute !important; */
+  /* max-height: calc(100% - 48px) !important; */
 }
 
 .ChatRoomAddRoomBtn {
   opacity: 1 !important;
-  height: 38px !important;
-  width: 38px !important;
+  height: 32px !important;
+  width: 32px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px !important;
@@ -2082,13 +2071,13 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   stroke: transparent !important;
   opacity: 1 !important;
   display: none !important;
-  height: 38px !important;
-  width: 38px !important;
+  height: 32px !important;
+  width: 32px !important;
 }
 
 .chatRoomGroupNavCollapsed .ChannelTypeTitle .ChannelTypeLabel, .chatRoomGroupNavCollapsed .chatRoomTextChannelName {
   top: 0px !important;
-  left: 38px !important;
+  left: 32px !important;
   position: absolute !important;
   transform: none !important;
 }
@@ -2116,7 +2105,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatRoomGroupNavCollapsed .DropTarget.chatRoomVoiceChannel.ActiveVoiceChannel.Panel.Focusable {
-  height: 38px !important;
+  height: 32px !important;
 }
 
 .chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed) .chatRoomVoiceChannelsGroup .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannel:hover {
@@ -2166,7 +2155,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .ChatRoomMemberScrollList_List {
   border-right: unset !important;
   margin-top: 0px !important;
-  margin-bottom: 38px !important;
+  margin-bottom: 48px !important;
 }
 
 .friendGroup .groupName .groupIcon .SVGIcon_Group {
