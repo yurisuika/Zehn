@@ -30,7 +30,7 @@ Zehn has added some text to the client, and as such the translatable strings are
 #### Things of Note
 You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
 
-The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered. If you switch from the library to the downloads page, it will unload, but you may get it back by pressing F5 to reload the client (this may require dev mode enabled). Possibly in the future I may figure out how to fix this.
+The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is hovered.
 
 If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
 

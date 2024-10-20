@@ -1,5 +1,41 @@
 {
+  "Conditions": {
+    "Display Announcements Button": {
+      "description": "Toggles the Announcements button on the navbar.",
+      "default": "Hide",
+      "values": {
+        "Hide": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "css/config/navbar/announcements.css"
+          }
+        },
+        "Show": {}
+      }
+    }
+  },
+  "Configuration": [
+    {
+      "Name": "Display Announcements Button",
+      "ToolTip": "Toggles the Announcements button on the navbar.",
+      "Type": "Checkbox",
+      "Value": false
+    }
+  ],
   "Patches": [
+    {
+      "MatchRegexString": ".*",
+      "Statement": [
+        {
+          "If": "Display Announcements Button",
+          "Equals": false,
+          "False": {
+            "src": "/css/config/navbar/announcements.css"
+          },
+          "True": {}
+        }
+      ]
+    },
     {
       "MatchRegexString": ".*SP Overlay:.*",
       "TargetCss": "libraryroot.custom.css",
@@ -27,6 +63,7 @@
     }
   ],
   "UseDefaultPatches": true,
+  "Steam-WebKit": "webkit.css",
   "name": "Zehn",
   "author": "yurisuika",
   "description": "A Steam skin based on Windows 10's Metro/Fluent transitional design language.",
@@ -41,7 +78,8 @@
     "Dark",
     "Metro",
     "Fluent",
-    "Windows 10"
+    "Windows 10",
+    "MDL2"
   ],
   "header_image": "https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/header.png?raw=true",
   "splash_image": "https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/splash.png?raw=true"
