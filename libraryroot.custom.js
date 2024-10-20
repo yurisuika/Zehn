@@ -226,6 +226,18 @@ Zehn.waitForElement('.DKXVRVBokaW_Xxo6kyKq0').then((element) => {
   observer.observe(document, {subtree: true, attributes: true});
 });
 
+// Zehn.waitForElement('._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX').then((element) => {
+//   var observer = new MutationObserver(function(mutations, observer) {
+//     Zehn.appendElements(
+//       '._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX',
+//       [
+//         '._2q70uOe6xM3-c5XIVfBLe6 ._1tBzypb5E2AwNuBuVns9Hl' // SHOWCASE DROPDOWN
+//       ]
+//     )
+//   });
+//   observer.observe(document, {subtree: true, attributes: true});
+// });
+
 // function setListSize() {
 //   var panels = document.querySelector('.ReactVirtualized__Grid__innerScrollContainer').children;
 //   for (var index = 0; index < panels.length; index++) {
