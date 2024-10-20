@@ -26,11 +26,6 @@
 }
 
 /* TITLEBAR */
-.friendListHeaderContainer {
-  border: unset !important;
-  background-color: transparent !important;
-}
-
 body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   filter: brightness(0.5) !important;
 }
@@ -143,9 +138,10 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 /* HEADER */
 .friendListHeaderContainer {
+  border: unset !important;
   min-height: 0px !important;
   background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
   background-image: var(--image-acrylic) !important;
 }
 
@@ -189,7 +185,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   transform: none !important;
   height: 32px !important;
   width: 32px !important;
-  margin: auto !important;
+  margin: 0px !important;
 }
 
 .AvatarAndUser {
@@ -402,26 +398,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   transform: scale(1.2) !important;
 }
 
-.quickAccessFriends::before, .quickAccessFriends::after {
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-}
-
-.quickAccessFriends::before {
-  background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
-  background-blend-mode: exclusion !important;
-}
-
-.quickAccessFriends::after {
-  background-image: var(--image-acrylic) !important;
-}
-
 .favoriteElement {
   height: 38px !important;
   width: 38px !important;
@@ -429,7 +405,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .compactQuickAccess .favoriteElement {
   width: 32px !important;
-  height: 38px !important;
+  height: 32px !important;
 }
 
 .favoriteElement .ChatRoomGroupAvatar {
@@ -457,7 +433,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .compactQuickAccess .friend.quickAccessFriend {
   width: 24px !important;
-  height: 32px !important;
+  height: 24px !important;
   margin: 4px !important;
 }
 
@@ -955,7 +931,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 /* FRIENDS LIST */
 .friendGroup .groupName {
   margin-top: 0px !important;
-  line-height: 24px !important;
+  line-height: 32px !important;
   color: rgb(var(--color-primary)) !important;
   font-size: var(--size-14) !important;
   text-transform: uppercase !important;
@@ -965,7 +941,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendGroup .groupName.CompactFriendsList .friendGroup.taggedGroup .groupName, .CompactFriendsList .friendGroup.gameGroup .groupName {
   font-size: var(--size-14) !important;
   padding-bottom: 0px !important;
-  line-height: 24px !important;
+  line-height: 32px !important;
 }
 
 .FriendsListContent .friendlistListContainer .friendGroup.onlineFriends {
@@ -1074,23 +1050,33 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 /* COMPACT */
+.compactView .currentUserAvatar, .compactView .currentUserAvatar .avatarHolder {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.compactView .currentUserAvatar .nibodjvvrm86uCfnnAn4g {
+  width: 24px !important;
+  height: 24px !important;
+}
+
 .CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
-  width: 32px !important;
+  width: 24px !important;
   height: fit-content !important;
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
 
 .CompactFriendsList .friend .avatarHolder {
-  width: 32px !important;
-  height: 32px !important;
+  width: 24px !important;
+  height: 24px !important;
   padding-right: 0px !important;
 }
 
 .CompactFriendsList .friend, .CompactFriendsList .friendGroup .friend, .CompactFriendsList .friendGroup .SteamPlayerGroupFooter, .CompactFriendsList .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
   height: 32px !important;
   margin: 0px !important;
-  padding: 3px 16px !important;
+  padding: 0px 16px !important;
 }
 
 .CompactFriendsList .friend.speaking .avatarHolder img.avatar {
@@ -1100,6 +1086,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .CompactFriendsList .friend .labelHolder {
   margin-top: 0px !important;
   height: 32px !important;
+}
+
+.CompactFriendsList ._3sxE7F1LV2IcSX68YsH9dI {
+  display: none !important;
 }
 
 /* GAME GROUP */
@@ -1429,9 +1419,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .ChatRoomListGroupItem .openGroupButton {
   background-color: transparent !important;
   border-radius: 0px !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: 48px !important;
+  height: 48px !important;
   margin: 0px !important;
+  position: absolute !important;
+  right: 0px !important;
+  top: 0px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px !important;
@@ -1439,7 +1432,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomListGroupItem.ShowAllChannels .openGroupButton {
-  transform: rotateZ(180deg) !important;
+  transform: none !important;
+  background-image: var(--icon-chevron-up) !important;
 }
 
 .ChatRoomListGroupItem .openGroupButton:hover {
@@ -1537,22 +1531,22 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* COMPACT */
 .compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar {
-  height: 32px !important;
-  width: 32px !important;
+  height: 24px !important;
+  width: 24px !important;
 }
 
 .compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar.Small {
-  height: 32px !important;
-  width: 32px !important;
+  height: 24px !important;
+  width: 24px !important;
   border-width: 0px !important;
 }
 
 .compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials {
-  width: 32px !important;
-  height: 32px !important;
+  width: 24px !important;
+  height: 24px !important;
   padding-top: 0px !important;
   border-width: 0px !important;
-  line-height: 32px !important;
+  line-height: 24px !important;
 }
 
 .compactView .ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName {
@@ -1560,7 +1554,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .compactView .ChatRoomListGroupItem_header {
-  padding: 3px 16px !important;
+  padding: 4px 16px !important;
 }
 
 .compactView .ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
@@ -1572,6 +1566,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   top: unset !important;
   margin-left: 8px !important;
   position: relative !important;
+}
+
+.compactView .ChatRoomListGroupItem .openGroupButton {
+  width: 32px !important;
+  height: 32px !important;
 }
 
 /* CHAT ROOM DROP DOWN */
