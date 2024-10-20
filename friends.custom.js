@@ -36,7 +36,7 @@ function addButtonUser() {
       voice.style.setProperty('height', '32px', 'important');
     }
   };
-  document.querySelector(`.currentUserContainer`).before(btn);
+  document.querySelector('.currentUserContainer').before(btn);
   var icon = document.createElement('div');
   icon.id = 'toggleUserIcon';
   document.getElementById('toggleUser').append(icon);
