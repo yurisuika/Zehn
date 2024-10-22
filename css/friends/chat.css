@@ -1317,7 +1317,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   opacity: 1 !important;
 }
 
-.msg .chatVideoContainer .SVGIcon_Button {
+.msg .SVGIcon_Button {
   width: 32px !important;
   height: 32px !important;
   color: transparent !important;
@@ -1326,23 +1326,23 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-size: 16px !important;
 }
 
-.msg .chatVideoContainer .SVGIcon_Button * {
+.msg .SVGIcon_Button * {
   display: none !important;
 }
 
-.msg .chatVideoContainer .SVGIcon_Button:hover {
+.msg .SVGIcon_Button:hover, .restoreSize:hover {
   background-color: rgba(var(--color-white), 0.1) !important;
 }
 
-.msg .chatVideoContainer .SVGIcon_Button:active {
+.msg .SVGIcon_Button:active, .restoreSize:active {
   background-color: rgba(var(--color-white), 0.2) !important;
 }
 
-.msg .chatVideoContainer .SVGIcon_Button.SVGIcon_Popout {
+.msg .SVGIcon_Button.SVGIcon_Popout {
   background-image: var(--icon-window-fullscreen) !important;
 }
 
-.msg .chatVideoContainer .SVGIcon_Button.SVGIcon_ResizeIcon {
+.msg  .SVGIcon_Button.SVGIcon_ResizeIcon {
   background-image: var(--icon-arrow-down-right) !important;
 }
 
@@ -1355,6 +1355,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: 0px !important;
   opacity: 1 !important;
   stroke: transparent !important;
+}
+
+.BBCodeYouTubeComponent .BBCodeResizeControl {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.BBCodeResizableComponent.BBCodeYouTubeComponent.Resized.Minimized {
+  width: inherit !important;
 }
 
 .BBCodeRestoreControl {
@@ -1412,6 +1421,35 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeImageWrapper {
   background-color: rgba(var(--color-white), 0.1) !important;
+}
+
+.BBCodeYouTubeComponent_Sizer {
+  margin-top: 32px !important;
+}
+
+.BBCodeResizableComponent.BBCodeYouTubeComponent {
+  max-width: 100% !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
+  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--image-acrylic) !important;
+  border-radius: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.BBCodeTitle {
+  color: rgb(var(--color-primary)) !important;
+  font-weight: 400 !important;
+  font-size: var(--size-14) !important;
+  padding: 0px 16px !important;
+  margin: 0px !important;
+  width: calc(100% - 32px) !important;
+  line-height: 32px !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .BBCodeResizableComponent.Minimized {
