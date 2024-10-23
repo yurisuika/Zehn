@@ -172,6 +172,30 @@ Zehn.waitForElement('.Utdt7JrpIm5JlpQmqyj1v').then((element) => {
   )
 });
 
+Zehn.waitForElement('._39oUCO1OuizVPwcnnv88no').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.appendElements(
+      '._39oUCO1OuizVPwcnnv88no',
+      [
+        '._3Z3ohQ8-1NKnCZkbS6fvy' // NAV
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
+});
+
+Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.appendElements(
+      '._2WgQEFvIzJw_SHNGbjtRFU',
+      [
+        '._2TKEazUUS3TlniZfpc8OOe' // SIDEBAR BUTTONS
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
+});
+
 Zehn.waitForElement('.OverlayBrowser_Browser .TitleBar.title-area').then((element) => {
   Zehn.prependElements(
     '.OverlayBrowser_Browser .TitleBar.title-area',
@@ -196,18 +220,6 @@ Zehn.waitForElement('.fbu3l7kPiBeb3EKCjIb8n').then((element) => {
       '.fi6UDkxJq66MLo2z9wabQ',
       [
         '.fbu3l7kPiBeb3EKCjIb8n' // OVERLAY BUTTONS
-      ]
-    )
-  });
-  observer.observe(document, {subtree: true, attributes: true});
-});
-
-Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
-  var observer = new MutationObserver(function(mutations, observer) {
-    Zehn.appendElements(
-      '._2WgQEFvIzJw_SHNGbjtRFU',
-      [
-        '._2TKEazUUS3TlniZfpc8OOe' // SIDEBAR BUTTONS
       ]
     )
   });
