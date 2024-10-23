@@ -21,13 +21,11 @@ The live version references the static version, so each time Steam is started or
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
 #### Customization
-In the `~/config.css` file you will find several configurable options, such as those to remove certain navbar control buttons for a more minimal appearance. As well, you can configure some colors. Zehn has separate background colors for dialog windows and main primary windows. As well, there is an overall accent color and the standard in-game and online colors which you may wish to change.
-
-On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, please manually enter the value.
-
-Zehn has added some text to the client in an effort to emulate MDL2 stylings most accurately, and as such the translatable strings are present in the config for your editing.
+Zehn now supports Millennium's built-in configuration screen! You may select both config options and use the color editor from it. Some variables deemed not necessary to be turned into options may still be found in the `~/css/variables/` folder.
 
 #### Things of Note
+On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, please manually enter the values in `~/css/variables/colors.css`.
+
 You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
 
 The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is focused and hovered.
