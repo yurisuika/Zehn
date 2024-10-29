@@ -30,6 +30,8 @@ You can toggle the visibility of the current user container on the friends windo
 
 The library games list sidebar can be toggled by an added button. You will find this button on the sidebar when opened, and when closed in the bottom-right corner when the window is focused and hovered.
 
+There is an added button on the game page menu bar to show the details section. This section is hidden by default for a cleaner look.
+
 If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
 
 #### To-Do
