@@ -16,19 +16,25 @@ const Zehn = {
 
   appendElements(target, classes) {
     classes.forEach((name) => {
-      document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`));
+      if (document.querySelector(`${target}`) != null) {
+        document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`));
+      }
     });
   },
 
   prependElements(target, classes) {
     classes.forEach((name) => {
-      document.querySelector(`${target}`).prepend(document.querySelector(`${name}`));
+      if (document.querySelector(`${target}`) != null) {
+        document.querySelector(`${target}`).prepend(document.querySelector(`${name}`));
+      }
     });
   },
 
   appendChildElements(target, classes) {
     classes.forEach((name) => {
-      document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
+      if (document.querySelector(`${target}`) != null) {
+        document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
+      }
     });
   },
 
