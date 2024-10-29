@@ -4,8 +4,6 @@ import Zehn from './js/zehn.js';
 
 Zehn.addUserAgent();
 
-Zehn.setOptions();
-
 function addButtonUser() {
   var btn = document.createElement('button');
   btn.classList.add('ZehnButton');
@@ -22,18 +20,22 @@ function addButtonUser() {
       user.style.setProperty('transform', 'scaleY(0)', 'important');
       user.style.setProperty('min-height', '0px', 'important');
       user.style.setProperty('height', '0px', 'important');
-      voice.style.setProperty('transform', 'scaleY(0)', 'important');
-      voice.style.setProperty('min-height', '0px', 'important');
-      voice.style.setProperty('height', '0px', 'important');
+      if (voice != null) {
+        voice.style.setProperty('transform', 'scaleY(0)', 'important');
+        voice.style.setProperty('min-height', '0px', 'important');
+        voice.style.setProperty('height', '0px', 'important');
+      }
     }
     else if (btnUser.value = 'open') {
       btnUser.value = 'close';
       user.style.setProperty('transform', 'none');
       user.style.setProperty('min-height', '48px');
       user.style.setProperty('height', '48px');
-      voice.style.setProperty('transform', 'none', 'important');
-      voice.style.setProperty('min-height', '32px', 'important');
-      voice.style.setProperty('height', '32px', 'important');
+      if (voice != null) {
+        voice.style.setProperty('transform', 'none', 'important');
+        voice.style.setProperty('min-height', '32px', 'important');
+        voice.style.setProperty('height', '32px', 'important');
+      }
     }
   };
   document.querySelector('.currentUserContainer').before(btn);
@@ -42,9 +44,7 @@ function addButtonUser() {
   document.getElementById('toggleUser').append(icon);
 }
 
-Zehn.waitForElement('.currentUserContainer').then((element) => {
-  addButtonUser()
-});
+Zehn.createButton('.currentUserContainer', '#toggleUser', addButtonUser);
 
 Zehn.waitForElement('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader').then((element) => {
   Zehn.appendElements(

@@ -4,8 +4,6 @@ import Zehn from './js/zehn.js';
 
 Zehn.addUserAgent();
 
-Zehn.setOptions();
-
 Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   let cells = document.querySelectorAll('._1-vlriAtKYDViAEunue4VO');
   console.log(cells);
@@ -87,16 +85,7 @@ function addButtonSidebar() {
   document.getElementById('toggleSidebar').append(icon);
 }
 
-Zehn.waitForElement('._2WgQEFvIzJw_SHNGbjtRFU').then((element) => {
-  var observer = new MutationObserver(function(mutations, observer) {
-    if (document.querySelector('._2WgQEFvIzJw_SHNGbjtRFU') != null) {
-      if (document.querySelector('._2WgQEFvIzJw_SHNGbjtRFU').querySelector('#toggleSidebar') == null) {
-          addButtonSidebar();
-      }
-    }
-  });
-  observer.observe(document, {subtree: true, attributes: true});
-});
+Zehn.createButton('._2WgQEFvIzJw_SHNGbjtRFU', '#toggleSidebar', addButtonSidebar);
 
 function addButtonLibrary() {
   var btn = document.createElement('button');
@@ -133,16 +122,7 @@ function addButtonLibrary() {
   document.getElementById('toggleLibrary').append(icon);
 }
 
-Zehn.waitForElement('._2Nq6ov7A1hGcHXVOXNt_OE').then((element) => {
-  var observer = new MutationObserver(function(mutations, observer) {
-    if (document.querySelector('._2Nq6ov7A1hGcHXVOXNt_OE') != null) {
-      if (document.querySelector('._2Nq6ov7A1hGcHXVOXNt_OE').querySelector('#toggleLibrary') == null) {
-          addButtonLibrary();
-      }
-    }
-  });
-  observer.observe(document, {subtree: true, attributes: true});
-});
+Zehn.createButton('._2Nq6ov7A1hGcHXVOXNt_OE', '#toggleLibrary', addButtonLibrary);
 
 function addButtonDetails(element) {
   var btn = document.createElement('button');
@@ -179,21 +159,8 @@ function addButtonDetails(element) {
   document.querySelector(element).querySelector('#toggleDetails').append(icon);
 }
 
-function details(target) {
-  Zehn.waitForElement(`${target}`).then((element) => {
-    var observer = new MutationObserver(function(mutations, observer) {
-      if (document.querySelector(`${target}`) != null) {
-        if (document.querySelector(`${target}`).querySelector('#toggleDetails') == null) {
-            addButtonDetails(`${target}`);
-        }
-      }
-    });
-    observer.observe(document, {subtree: true, attributes: true});
-  });
-}
-
-details('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV');
-details('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV');
+Zehn.createButton('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
+Zehn.createButton('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 
 Zehn.waitForElement('._3cykd-VfN_xBxf3Qxriccm').then((element) => {
   Zehn.appendElements(

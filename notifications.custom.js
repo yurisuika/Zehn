@@ -4,8 +4,6 @@ import Zehn from './js/zehn.js';
 
 Zehn.addUserAgent();
 
-Zehn.setOptions();
-
 let FR_NOTIFICATION = new RevealEffects('body', {
     selector: document.querySelectorAll('._1OOQPJx0nCNP9ME9toCmV7')[0],
     backgroundGradientSize: 150,
