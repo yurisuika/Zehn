@@ -90,9 +90,15 @@ function toggleSidebar() {
       btnLibrary.value = 'close';
       btnLibrary.style.display = 'none';
       sidebar.style.setProperty('visibility', 'visible', 'important');
-      sidebar.style.setProperty('min-width', '288px', 'important');
-      sidebar.style.setProperty('max-width', 'calc(min(50%, 100% - 400px))', 'important');
-      buttons.style.setProperty('min-width', '192px', 'important');
+      if (navigator.userAgent.includes('Linux')) {
+        sidebar.style.setProperty('min-width', 'calc(48px * 7)', 'important');
+        sidebar.style.setProperty('max-width', 'calc(max(50%, 100% - (48px * 7)))', 'important');
+      }
+      else {
+        sidebar.style.setProperty('min-width', 'calc(48px * 6)', 'important');
+        sidebar.style.setProperty('max-width', 'calc(max(50%, 100% - (48px * 6)))', 'important');
+      }
+      buttons.style.setProperty('min-width', 'calc(48px * 4)', 'important');
     }
   }
 };
