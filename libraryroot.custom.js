@@ -280,3 +280,60 @@ Zehn.waitForElement('.LCeIT0gmFTY8fdfaVgk4j').then((element) => {
 //     setListSize()
 //     new MutationObserver(() => setListSize()).observe(document.querySelector('.ReactVirtualized__Grid__innerScrollContainer'), {childList: true, subtree: true});
 // });
+
+// Zehn.waitForElement('._1ZS_xta5HMXzR8JgxDH6n7').then((element) => {
+//   var observer = new MutationObserver(function(mutations, observer) {
+//     if (document.querySelector('._1ZS_xta5HMXzR8JgxDH6n7') != null) {
+//       let FR1 = new RevealEffectsMasked("body", {
+//         selector: document.querySelectorAll('._1ZS_xta5HMXzR8JgxDH6n7')[0],
+//         backgroundGradientSize: 80,
+//         borderGradientSize: 80,
+//         borderLightColor: 'rgba(255, 255, 255, 0.25)',
+//         backgroundLightColor: 'rgba(255, 255, 255, 0.25)',
+//         childrenSelector: document.querySelectorAll('.ZehnButton')[0]
+//       });
+//       document.querySelectorAll('._1ZS_xta5HMXzR8JgxDH6n7 .ZehnButton')[0].style.setProperty('border', '1px solid transparent', 'important');
+//       let FR2 = new RevealEffects('body', {
+//           selector: document.querySelectorAll('._2PF_m-I5yte3WnQhpcz8RC')[0],
+//           backgroundGradientSize: 80,
+//           borderGradientSize: 80,
+//           borderLightColor: 'rgba(255, 255, 255, 0)',
+//           backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
+//       });
+//       document.querySelectorAll('._1ZS_xta5HMXzR8JgxDH6n7 ._2PF_m-I5yte3WnQhpcz8RC')[0].style.setProperty('border', '1px solid transparent', 'important');
+//       let FR3 = new RevealEffects('body', {
+//           selector: document.querySelectorAll('._3AhYljPF4e4E8LaBt-FoY0')[0],
+//           backgroundGradientSize: 80,
+//           borderGradientSize: 80,
+//           borderLightColor: 'rgba(255, 255, 255, 0)',
+//           backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
+//       });
+//       document.querySelectorAll('._1ZS_xta5HMXzR8JgxDH6n7 ._3AhYljPF4e4E8LaBt-FoY0')[0].style.setProperty('border', '1px solid transparent', 'important');
+//       let FR4 = new RevealEffects('body', {
+//           selector: document.querySelectorAll('._2CEKFex6JMsAse2lqMMjUp')[0],
+//           backgroundGradientSize: 80,
+//           borderGradientSize: 80,
+//           borderLightColor: 'rgba(255, 255, 255, 0)',
+//           backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
+//       });
+//       document.querySelectorAll('._1ZS_xta5HMXzR8JgxDH6n7 ._2CEKFex6JMsAse2lqMMjUp')[0].style.setProperty('border', '1px solid transparent', 'important');
+//       let FR5 = new RevealEffects('body', {
+//           selector: document.querySelectorAll('._3mzKdQXht__YHo6PX1LmB6')[0],
+//           backgroundGradientSize: 80,
+//           borderGradientSize: 80,
+//           borderLightColor: 'rgba(255, 255, 255, 0)',
+//           backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
+//       });
+//       document.querySelectorAll('._1ZS_xta5HMXzR8JgxDH6n7 ._3mzKdQXht__YHo6PX1LmB6')[0].style.setProperty('border', '1px solid transparent', 'important');
+//       let FR6 = new RevealEffects('body', {
+//           selector: document.querySelectorAll('._3mzKdQXht__YHo6PX1LmB6')[1],
+//           backgroundGradientSize: 80,
+//           borderGradientSize: 80,
+//           borderLightColor: 'rgba(255, 255, 255, 0)',
+//           backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
+//       });
+//       document.querySelectorAll('._1ZS_xta5HMXzR8JgxDH6n7 ._3mzKdQXht__YHo6PX1LmB6')[1].style.setProperty('border', '1px solid transparent', 'important');
+//     }
+//   });
+//   observer.observe(document, {subtree: true, attributes: true});
+// });
