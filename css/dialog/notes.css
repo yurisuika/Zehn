@@ -9,7 +9,7 @@
 
 ._1AL7l2CN6z-vuLfp1iCLa {
   margin: 0px !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   margin-bottom: 0px !important;
@@ -17,10 +17,10 @@
 }
 
 ._1Ve4VFO2EEkeNZdel_Asky {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   background: transparent !important;
   border-radius: 0px !important;
-  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  outline: 2px solid rgba(var(--color-negative), 0.5) !important;
   outline-offset: -2px !important;
   outline: none !important;
 }
@@ -31,7 +31,7 @@
 }
 
 p._3lnqGBzYap-Z2T81XBiBUU {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   margin: 0px !important;
@@ -57,12 +57,12 @@ p._3lnqGBzYap-Z2T81XBiBUU {
 
 ._1AL7l2CN6z-vuLfp1iCLa ._1fu6xumTI1nCY5wc6FG_N2 .DialogButton:hover {
   outline: none !important;
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 ._1AL7l2CN6z-vuLfp1iCLa ._1fu6xumTI1nCY5wc6FG_N2 .DialogButton:active {
   outline: none !important;
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 ._1AL7l2CN6z-vuLfp1iCLa ._1fu6xumTI1nCY5wc6FG_N2 .DialogButton svg {
@@ -129,14 +129,30 @@ p._3lnqGBzYap-Z2T81XBiBUU {
 
 /* BUTTONS */
 .gdKTXjvFuMeVN2qa6o8EL {
-  background-color: rgba(var(--color-white), 0.05) !important;
-  background-blend-mode: exclusion !important;
-  background-image: var(--image-acrylic) !important;
-  transition: background-color 0.1s ease-in-out !important;
+  background: var(--color-acrylic) !important;
+  transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
 }
 
 .WindowFocus .gdKTXjvFuMeVN2qa6o8EL {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: var(--color-acrylic-focus-dialog) !important;
+  background-blend-mode: exclusion !important;
+}
+
+.gdKTXjvFuMeVN2qa6o8EL::after {
+  content: "" !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  opacity: 0 !important;
+  background-image: var(--image-acrylic) !important;
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+.WindowFocus .gdKTXjvFuMeVN2qa6o8EL::after {
+  opacity: 1 !important;
 }
 
 .gdKTXjvFuMeVN2qa6o8EL button.DialogButton {
@@ -148,12 +164,12 @@ p._3lnqGBzYap-Z2T81XBiBUU {
 
 .gdKTXjvFuMeVN2qa6o8EL button.DialogButton:hover {
   outline: none !important;
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .gdKTXjvFuMeVN2qa6o8EL button.DialogButton:active {
   outline: none !important;
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 /* SPACE BREAK */

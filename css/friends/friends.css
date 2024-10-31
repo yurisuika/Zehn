@@ -1,6 +1,6 @@
 /* BORDER */
 .chat_main_flex {
-  border: 1px solid rgba(var(--color-white), 0.1) !important;
+  border: 1px solid var(--color-border) !important;
 }
 
 .WindowFocus .chat_main_flex {
@@ -22,16 +22,17 @@
 }
 
 .friendsui-container {
-  background-color: rgb(var(--color-window-background)) !important;
+  background-color: rgb(var(--color-background-window)) !important;
 }
 
 /* TITLEBAR */
 body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
-  filter: brightness(0.5) !important;
+  filter: var(--filter-focus) !important;
 }
 
 .friendlist>* {
-  transition: all 0.25s ease-in-out !important;
+  /* transition: all 0.25s ease-in-out !important; */
+  transition: unset !important;
 }
 
 .friendlist .friendListHeaderContainer .friendListCollapse {
@@ -44,11 +45,11 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 /* SETTINGS PICKER */
 .FriendPicker_ChosenFriend span {
-  color: rgba(var(--color-white), 0.75) !important;
+  color: rgba(var(--color-negative), 0.75) !important;
 }
 
 .FriendPicker_ChosenFriend:hover span {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 .FriendPicker_ChosenFriend {
@@ -59,15 +60,15 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .FriendPicker_ChosenFriend .SVGIcon_X_Line line {
-  stroke: rgba(var(--color-white), 0.75) !important;
+  stroke: rgba(var(--color-negative), 0.75) !important;
 }
 
 .FriendPicker_ChosenFriend:hover .SVGIcon_X_Line line, .FriendPicker_ChosenFriend:active .SVGIcon_X_Line line {
-  stroke: rgb(var(--color-primary)) !important;
+  stroke: rgb(var(--color-text-primary)) !important;
 }
 
 .FriendPicker_Focus .FriendPicker_SuggestedFriend.Focus {
-  background: rgba(var(--color-white), 0.1) !important;
+  background: rgba(var(--color-negative), 0.1) !important;
 }
 
 .insetShadow {
@@ -80,7 +81,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .FriendPicker_SuggestedFriend:hover, .FriendPicker_SuggestedFriend:active {
-  background: rgba(var(--color-white), 0.1) !important;
+  background: rgba(var(--color-negative), 0.1) !important;
 }
 
 ._30XroGinE5bsVSmgAzXIFf {
@@ -140,9 +141,31 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 .friendListHeaderContainer {
   border: unset !important;
   min-height: 0px !important;
-  background-color: rgba(var(--color-black), 0.75) !important;
+  background: var(--color-acrylic) !important;
+  transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
+}
+
+.WindowFocus .friendListHeaderContainer {
+  background-color: var(--color-acrylic-focus-window) !important;
   /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
+  background-blend-mode: exclusion !important;
+}
+
+.friendListHeaderContainer::after {
+  content: "" !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  opacity: 0 !important;
   background-image: var(--image-acrylic) !important;
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+.WindowFocus .friendListHeaderContainer::after {
+  opacity: 1 !important;
 }
 
 /* CURRENT USER */
@@ -299,15 +322,15 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .currentUserContainer .ContextMenuButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .currentUserContainer .ContextMenuButton:focus {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .currentUserContainer .ContextMenuButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .FriendsListContent .ContextMenuButton, .MemberListColumn .ContextMenuButton, .VoiceChannelParticipants .ContextMenuButton {
@@ -326,7 +349,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .online .SVGIcon_DoNotDisturb circle, .online .SVGIcon_DoNotDisturb line {
-  stroke: rgb(var(--color-secondary)) !important;
+  stroke: rgb(var(--color-text-secondary)) !important;
 }
 
 /* QUICK ACCESS */
@@ -335,7 +358,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .quickAccessFriendsMessage {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   text-transform: uppercase !important;
   border-radius: 0 !important;
   border: unset !important;
@@ -358,7 +381,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss {
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   padding: 0px 8px !important;
   border-radius: 0px !important;
   background: rgb(var(--color-accent)) !important;
@@ -460,7 +483,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .playerNameQuickAccessContainer {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   line-height: 16px !important;
   width: fit-content !important;
   position: absolute !important;
@@ -484,7 +507,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .quickAccessFriends .favoriteElement:hover .friend .playerName {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 .favoriteElement:hover .quickAccessFriend .clanName, .favoriteElement:hover .friend.quickAccessFriend .playerName {
@@ -497,7 +520,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .quickAccessFriend .clanName {
   display: none !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 /* QUICK ACCESS SNOOZE */
@@ -532,7 +555,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .activeVoiceControls .connectionStatusLabels, .chatRoomVoiceChannel .connectionStatusLabels {
   font-size: var(--size-12) !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 .friendListHeaderContainer .activeVoiceLabels {
@@ -544,12 +567,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .activeVoiceLabels .activeVoiceHeader {
   letter-spacing: normal !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
 }
 
 .activeVoiceLabels .activeVoiceName {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   line-height: inherit !important;
   max-height: 32px !important;
@@ -575,11 +598,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .VoiceControlPanelButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .VoiceControlPanelButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .activeVoiceFlexBox .activeVoiceButtons button {
@@ -619,7 +642,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .activeVoiceButtons .SVGIcon_Button {
-  fill: rgb(var(--color-white)) !important;
+  fill: rgb(var(--color-negative)) !important;
   display: none !important;
 }
 
@@ -639,24 +662,24 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* SEARCH */
 .socialTabSearchContainer {
-  background: rgb(var(--color-window-background)) !important;
+  background: rgb(var(--color-background-window)) !important;
 }
 
 .activeTab {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   background-color: transparent !important;
 }
 
 .TabSearchButton .ColorSelector {
-  stroke: rgb(var(--color-primary)) !important;
-  fill: rgb(var(--color-primary)) !important;
+  stroke: rgb(var(--color-text-primary)) !important;
+  fill: rgb(var(--color-text-primary)) !important;
 }
 
 .socialListTab {
   margin-top: 0px !important;
   height: 32px !important;
   font-weight: 400 !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   line-height: 32px !important;
   text-transform: uppercase !important;
@@ -666,7 +689,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .socialListTab .tabLabel {
   cursor: pointer !important;
   font-weight: 400 !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   line-height: 32px !important;
 }
@@ -692,11 +715,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .searchIconButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .searchIconButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .TabSearchButton .searchIconButton {
@@ -744,8 +767,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendSearchInput[type="text"] {
-  color: rgb(var(--color-primary)) !important;
-  background-color: rgba(var(--color-white), 0.1) !important;
+  color: rgb(var(--color-text-primary)) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
   font-size: var(--size-14) !important;
   background-size: 12px !important;
   background-image: var(--icon-search) !important;
@@ -759,7 +782,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendSearchInput::placeholder {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
   text-transform: uppercase !important;
   font-size: var(--size-14) !important;
 }
@@ -771,7 +794,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendSearchNoResultsContainer {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
 }
 
 .friendSearchNoResultsContainer a {
@@ -779,11 +802,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendSearchNoResultsContainer a:hover {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
 }
 
 .friendSearchNoResultsContainer a:active {
-  color: rgb(var(--color-tertiary)) !important;
+  color: rgb(var(--color-text-tertiary)) !important;
 }
 
 /* FRIENDS ADD */
@@ -805,11 +828,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .addFriendButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .addFriendButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .friendRequestButton {
@@ -830,11 +853,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendRequestButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .friendRequestButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .friendRequestButton .SVGIcon_FriendRequest, .addFriendButton .SVGIcon_AddFriend {
@@ -843,11 +866,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendRequestButton .SVGIcon_FriendRequest .friendBodyFull, .friendRequestButton .SVGIcon_FriendRequest .friendHead, .friendRequestButton .SVGIcon_FriendRequest .friendArm, .friendRequestButton .SVGIcon_FriendRequest .friendBody, .addFriendButton .SVGIcon_AddFriend .friendHead, .addFriendButton .SVGIcon_AddFriend .friendBody {
-  fill: rgb(var(--color-white)) !important;
+  fill: rgb(var(--color-negative)) !important;
 }
 
 .addFriendButton .SVGIcon_AddFriend .plusCircle {
-  fill: rgb(var(--color-white)) !important;
+  fill: rgb(var(--color-negative)) !important;
 }
 
 .friendRequestButton .requestsNumber {
@@ -903,14 +926,14 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   line-height: 24px !important;
   height: 24px !important;
   width: 24px !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
 
 .unreadMessageViolator {
   background: rgb(var(--color-accent)) !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
   border-bottom-right-radius: 0px !important;
@@ -932,7 +955,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendGroup .groupName {
   margin-top: 0px !important;
   line-height: 32px !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   text-transform: uppercase !important;
   border-top: unset !important;
@@ -961,7 +984,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .FriendsListContent .friendlistListContainer .friendGroup.onlineFriends .groupName, .FriendsListContent .friendlistListContainer .friendGroup.offlineFriends .groupName {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   text-transform: uppercase !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
@@ -1004,7 +1027,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .groupName .groupCount {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
 }
 
 .groupName .groupCount.collapsed {
@@ -1016,7 +1039,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendGroup.offlineFriends .groupName .groupCount, .friendGroup.onlineFriends .groupName .groupCount, .friendGroup .groupName .groupCount.collapsed {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
 }
 
 .friendGroup .groupName .groupCount {
@@ -1026,11 +1049,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendStatusHover:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .friendStatusHover:active, .friendStatusHover.Friend_ContextMenuActive {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .friendGroup .friend, .friendGroup .SteamPlayerGroupFooter {
@@ -1142,7 +1165,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   font-weight: 400 !important;
   font-size: var(--size-16) !important;
   text-align: center !important;
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
   margin-top: 0px !important;
 }
 
@@ -1154,7 +1177,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   margin-left: 8px !important;
   font-size: var(--size-14) !important;
   text-align: left !important;
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
   -webkit-mask: none !important;
   width: calc(100% - 72px) !important;
   white-space: nowrap !important;
@@ -1190,7 +1213,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* GROUP CHATS HEADER */
 .friendsListSectionTitle {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 .ToggleGroupChatList {
@@ -1199,13 +1222,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .FriendsListChatSection.ChatRoomListContainerParent.Collapsed .ToggleGroupChatList .SVGIcon_DoubleArrow, .ToggleGroupChatList .SVGIcon_DoubleArrow {
-  color: rgb(var(--color-white)) !important;
+  color: rgb(var(--color-negative)) !important;
   opacity: 0 !important;
   display: none !important;
 }
 
 .ToggleGroupChatList .SVGIcon_DoubleArrow polyline {
-  stroke: rgb(var(--color-white)) !important;
+  stroke: rgb(var(--color-negative)) !important;
 }
 
 .groupChatSectionTitle {
@@ -1221,7 +1244,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .createChatRoomButton {
-  color: rgb(var(--color-white)) !important;
+  color: rgb(var(--color-negative)) !important;
   margin-top: 0px !important;
   padding: 0px !important;
   width: 32px !important;
@@ -1244,22 +1267,22 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .createChatRoomButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .createChatRoomButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .friendsListSectionTitle .SVGIcon_NewChatGroup line {
   display: none !important;
-  stroke: rgb(var(--color-white)) !important;
+  stroke: rgb(var(--color-negative)) !important;
 }
 
 .friendsListSectionTitle .SVGIcon_NewChatGroup {
   display: none !important;
   fill: transparent !important;
-  stroke: rgb(var(--color-white)) !important;
+  stroke: rgb(var(--color-negative)) !important;
 }
 
 .friendsListSectionTitle.chatSectionTitle {
@@ -1303,11 +1326,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomListGroupItem_header:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .ChatRoomListGroupItem_header:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .ChatRoomList {
@@ -1319,13 +1342,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomListGroupItem:not(.NonGroupHovered) .ChatRoomListGroupItem_header:hover .chatRoomName {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
 
 .ChatRoomListGroupItem .ChatRoomListGroupItem_header .chatRoomName {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-size: var(--size-14) !important;
   font-weight: 400 !important;
 }
@@ -1354,12 +1377,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomGroupAvatar_initials {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   background: transparent !important;
   /* -webkit-background-clip: unset !important; */
   font-weight: 700 !important;
   background-image: none !important;
-  -webkit-text-fill-color: rgb(var(--color-primary)) !important;
+  -webkit-text-fill-color: rgb(var(--color-text-primary)) !important;
 }
 
 .ChatRoomListGroupItem .ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials {
@@ -1437,11 +1460,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomListGroupItem .openGroupButton:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .ChatRoomListGroupItem .openGroupButton:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .openGroupButton .SVGIcon_DoubleArrow {
@@ -1453,7 +1476,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomListGroupItem .openGroupButton .SVGIcon_DoubleArrow polyline {
-  stroke: rgb(var(--color-white)) !important;
+  stroke: rgb(var(--color-negative)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
@@ -1462,7 +1485,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   margin-left: 32px !important;
   font-size: var(--size-14) !important;
   margin-left: 12px !important;
@@ -1473,12 +1496,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::before {
   content: "(STEAM TV" !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::after {
   content: ")" !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .SVGIcon_SteamTV {
@@ -1487,20 +1510,20 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .SVGIcon_SteamTV .logoBG {
   fill: transparent !important;
-  stroke: rgb(var(--color-white)) !important;
+  stroke: rgb(var(--color-negative)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .SVGIcon_SteamTV .logo g path {
   fill: transparent !important;
-  stroke: rgb(var(--color-white)) !important;
+  stroke: rgb(var(--color-negative)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .SVGIcon_SteamTV .steam path {
-  fill: rgb(var(--color-white)) !important;
+  fill: rgb(var(--color-negative)) !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .SVGIcon_SteamTV .tv path {
-  fill: rgb(var(--color-white)) !important;
+  fill: rgb(var(--color-negative)) !important;
 }
 
 .ChatRoomListGroupItem .detailsView {
@@ -1591,26 +1614,31 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel {
   background-color: transparent !important;
   border-radius: 0px !important;
+  background: var(--color-acrylic) !important;
+  transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
 }
 
-.ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel::before, .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel::after {
-  content: "" !important;
-  position: absolute !important;
-  z-index: -1 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-}
-
-.ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel::before {
-  background-color: rgba(var(--color-black), 0.75) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
+.WindowFocus .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel {
+  background-color: var(--color-acrylic-focus-window) !important;
+  /* backdrop-filter: blur(var(--option-blur-radius)) !important; */
   background-blend-mode: exclusion !important;
 }
 
 .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel::after {
+  content: "" !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  opacity: 0 !important;
   background-image: var(--image-acrylic) !important;
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+.WindowFocus .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel::after {
+  opacity: 1 !important;
 }
 
 .chatRoomVoiceChannelNameContainer {
@@ -1619,11 +1647,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
@@ -1648,7 +1676,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton .SVGIcon_Button {
-  fill: rgb(var(--color-white)) !important;
+  fill: rgb(var(--color-negative)) !important;
   display: none !important;
 }
 
@@ -1681,7 +1709,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .ChatRoomListGroupItem .chatRoomVoiceChannelName {
   font-size: var(--size-14) !important;
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 .chatRoomVoiceChannelName, .chatRoomTextChannel, .chatRoomDirectMessageEntry {
@@ -1701,7 +1729,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .emptyChannelNotice {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
   font-size: var(--size-10) !important;
   margin-left: 16px !important;
   font-weight: 400 !important;
@@ -1785,11 +1813,11 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomVoiceChannel .chatRoomTextChannel:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .chatRoomVoiceChannel .chatRoomTextChannel:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .ScratchPadConnect {
@@ -1848,11 +1876,11 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 /* USER LIST AFTER REFRESH */
@@ -1869,11 +1897,11 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .VoiceChannelParticipants.CompactFriendsList:hover {
-  background-color: rgba(var(--color-white), 0.1) !important;
+  background-color: rgba(var(--color-negative), 0.1) !important;
 }
 
 .VoiceChannelParticipants.CompactFriendsList:active {
-  background-color: rgba(var(--color-white), 0.2) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .VoiceChannelParticipants .friend {
@@ -1898,7 +1926,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 ._3t-tVOpu2n074cjZsygYfm ._2MByvWz7Ec6CRwKDWFmHrS {
-  color: rgb(var(--color-primary)) !important;
+  color: rgb(var(--color-text-primary)) !important;
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
   line-height: 24px !important;
@@ -1906,7 +1934,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 ._3t-tVOpu2n074cjZsygYfm .rORRrCcMO9z86bopxDvrH {
-  color: rgb(var(--color-secondary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
   font-weight: 400 !important;
   font-size: var(--size-12) !important;
   line-height: 16px !important;
@@ -1915,8 +1943,8 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 ._3t-tVOpu2n074cjZsygYfm .hL2FPh5NpOjzuylSWv4GY {
   background: transparent !important;
-  background-color: rgba(var(--color-white), 0.2) !important;
-  color: rgb(var(--color-primary)) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
+  color: rgb(var(--color-text-primary)) !important;
   border-radius: 0px !important;
   margin: 0px !important;
   height: 32px !important;
@@ -1925,15 +1953,15 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 ._3t-tVOpu2n074cjZsygYfm .hL2FPh5NpOjzuylSWv4GY:hover {
-  background-color: rgba(var(--color-white), 0.3) !important;
-  color: rgb(var(--color-primary)) !important;
-  outline: 2px solid rgba(var(--color-white), 0.5) !important;
+  background-color: rgba(var(--color-negative), 0.3) !important;
+  color: rgb(var(--color-text-primary)) !important;
+  outline: 2px solid rgba(var(--color-negative), 0.5) !important;
   outline-offset: -2px !important;
 }
 
 ._3t-tVOpu2n074cjZsygYfm .hL2FPh5NpOjzuylSWv4GY:active {
-  background-color: rgba(var(--color-white), 0.4) !important;
-  color: rgb(var(--color-primary)) !important;
+  background-color: rgba(var(--color-negative), 0.4) !important;
+  color: rgb(var(--color-text-primary)) !important;
   outline: 2px solid transparent !important;
   outline-offset: -2px !important;
 }

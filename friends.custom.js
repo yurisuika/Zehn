@@ -44,7 +44,7 @@ function addButtonUser() {
   document.getElementById('toggleUser').append(icon);
 }
 
-Zehn.createButton('.currentUserContainer', '#toggleUser', addButtonUser);
+Zehn.createButton('.friendListHeaderContainer', '.ZehnButton', addButtonUser);
 
 Zehn.waitForElement('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader').then((element) => {
   Zehn.appendElements(
