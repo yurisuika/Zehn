@@ -161,9 +161,12 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   background-position: center !important;
 }
 
+.closeButton:hover .title-area-icon-inner svg, .closeButton:not(._1JXI4j2_xSpVK1YjyEuebr):hover .title-area-icon-inner svg {
+  filter: var(--filter-light) !important;
+}
+
 .closeButton:active .title-area-icon-inner svg, .closeButton:not(._1JXI4j2_xSpVK1YjyEuebr):active .title-area-icon-inner svg {
-  /* background-image: var(--icon-window-close-active) !important; */
-  filter: var(--filter-toggle) !important;
+  filter: var(--filter-dark) !important;
 }
 
 /* DIV MODAL DISMISS */
@@ -193,9 +196,14 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   background-position: center !important;
 }
 
-.ModalPosition_Dismiss .closeButton:active svg {
-  filter: var(--filter-toggle) !important;
+.ModalPosition_Dismiss .closeButton:active:hover svg {
+  filter: var(--filter-light) !important;
 }
+
+.ModalPosition_Dismiss .closeButton:active:active svg {
+  filter: var(--filter-dark) !important;
+}
+
 
 .ModalPosition_Dismiss .closeButton svg * {
   display: none !important;

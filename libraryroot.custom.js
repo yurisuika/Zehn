@@ -45,7 +45,7 @@ Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
       console.log(el)
     }
     if(el.innerText.indexOf('Game Recording') !== -1) {
-      el.style.backgroundImage = 'var(--icon-record)';
+      el.style.backgroundImage = 'var(--icon-film)';
       console.log(el)
     }
   });

@@ -1,11 +1,17 @@
 :root {
   --color-accent: var(--SystemAccentColor-RGB, 210, 115, 138);
-  --color-accent-positive-light: var(--SystemAccentColorDark1-RGB, 203, 95, 121);
-  --color-accent-positive-medium: var(--SystemAccentColorDark2-RGB, 204, 69, 102);
-  --color-accent-positive-heavy: var(--SystemAccentColorDark3-RGB, 181, 56, 86);
-  --color-accent-negative-light: var(--SystemAccentColorLight1-RGB, 215, 135, 154);
-  --color-accent-negative-medium: var(--SystemAccentColorLight2-RGB, 218, 157, 172);
-  --color-accent-negative-heavy: var(--SystemAccentColorLight3-RGB, 225, 186, 195);
+  --color-accent-lighten-light: var(--SystemAccentColorLight1-RGB, 215, 135, 154);
+  --color-accent-lighten-medium: var(--SystemAccentColorLight2-RGB, 218, 157, 172);
+  --color-accent-lighten-heavy: var(--SystemAccentColorLight3-RGB, 225, 186, 195);
+  --color-accent-darken-light: var(--SystemAccentColorDark1-RGB, 203, 95, 121);
+  --color-accent-darken-medium: var(--SystemAccentColorDark2-RGB, 204, 69, 102);
+  --color-accent-darken-heavy: var(--SystemAccentColorDark3-RGB, 181, 56, 86);
+  --color-accent-positive-light: var(--color-accent-darken-light);
+  --color-accent-positive-medium: var(--color-accent-darken-medium);
+  --color-accent-positive-heavy: var(--color-accent-darken-heavy);
+  --color-accent-negative-light: var(--color-accent-lighten-light);
+  --color-accent-negative-medium: var(--color-accent-lighten-medium);
+  --color-accent-negative-heavy: var(--color-accent-lighten-heavy);
 
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -18,9 +24,15 @@
 
   --color-border: rgba(var(--color-negative), 0.1);
 
-  --color-text-primary: 255, 255, 255;
-  --color-text-secondary: 153, 153, 153;
-  --color-text-tertiary: 127, 127, 127;
+  --color-text-primary: var(--color-text-dark-primary);
+  --color-text-secondary: var(--color-text-dark-secondary);
+  --color-text-tertiary: var(--color-text-dark-tertiary);
+  --color-text-light-primary: 0, 0, 0;
+  --color-text-light-secondary: 102, 102, 102;
+  --color-text-light-tertiary: 153, 153, 153;
+  --color-text-dark-primary: 255, 255, 255;
+  --color-text-dark-secondary: 153, 153, 153;
+  --color-text-dark-tertiary: 127, 127, 127;
 
   --color-close-hover: 232, 18, 35;
   --color-close-pressed: 241, 112, 121;
@@ -34,14 +46,16 @@
   --color-input: var(--color-acrylic);
 
   --color-acrylic-overlay-dark: rgba(var(--color-positive), 0.5);
-  --color-acrylic-overlay-medium: rgba(var(--color-positive), 0.25);
+  --color-acrylic-overlay-medium: rgba(var(--color-positive), 0.5);
   --color-acrylic-overlay-light: rgba(var(--color-negative), 0.05);
 
   --color-acrylic: rgb(31, 31, 31);
-  --color-acrylic-focus-window: rgba(var(--color-positive), 0.15);
+  --color-acrylic-focus-window: rgba(var(--color-positive), 0.5);
   --color-acrylic-focus-dialog: rgba(var(--color-negative), 0.15);
 
   --filter-focus: opacity(0.5);
-  --filter-toggle: brightness(0);
+  --filter-toggle: invert();
   --filter-negative: brightness(5);
+  --filter-light: var(--filter-negative);
+  --filter-dark: var(--filter-toggle);
 }

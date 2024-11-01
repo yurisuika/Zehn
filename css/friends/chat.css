@@ -1135,17 +1135,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatFileUploadCancel {
   border-radius: 0px !important;
-  width: 32px !important;
+  width: 48px !important;
   height: 32px !important;
   top: 0px !important;
   right: 0px !important;
   background-color: transparent !important;
   padding: 0px !important;
-}
-
-.chatFileUploadCancel:active {
-  /* background-image: var(--icon-window-close-active) !important; */
-  filter: var(--filter-toggle) !important;
 }
 
 .chatFileUploadCancel:hover {
@@ -1156,8 +1151,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: rgb(var(--color-close-pressed)) !important;
 }
 
+.chatFileUploadCancel:hover svg {
+  filter: var(--filter-light) !important;
+}
+
+.chatFileUploadCancel:active svg {
+  filter: var(--filter-dark) !important;
+}
+
 .chatFileUploadCancel svg {
-  width: 32px !important;
+  width: 48px !important;
   height: 32px !important;
   background-image: var(--icon-window-close) !important;
   background-repeat: no-repeat !important;
@@ -1165,8 +1168,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-size: 16px !important;
 }
 
+.chatFileUploadCancel:hover svg {
+  filter: var(--filter-light) !important;
+}
+
 .chatFileUploadCancel:active svg {
-  filter: var(--filter-toggle) !important;
+  filter: var(--filter-dark) !important;
 }
 
 .chatFileUploadCancel svg * {
@@ -1637,6 +1644,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatWindow .chatEntry {
   padding: 0px !important;
   background-color: var(--color-input) !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
 }
 
 .WindowFocus .chatWindow .chatEntry {
@@ -1905,7 +1916,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   font-size: var(--size-14) !important;
   color: rgb(var(--color-text-secondary)) !important;
   font-weight: 400 !important;
-  margin-left: 16px !important;
+  margin-left: 200px !important;
+  text-align: right !important;
 }
 
 .chatRoomGroupHeader {
@@ -2006,6 +2018,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* CHAT ROOM NAV COLUMN */
 .chatRoomGroupNavColumn {
   background-color: transparent !important;
+  margin-top: -48px !important;
+  position: absolute !important;
+  height: 100% !important;
+  transition: none !important;
 }
 
 .chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed) {
@@ -2039,6 +2055,19 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatRoomGroupNavColumn .chatRoomGroupNavCollapseExpand {
   margin-right: 0px !important;
   right: 0px !important;
+}
+
+.ChatRoomGroupDialog_history {
+  margin-left: 200px !important;
+  transition: margin 0.2s ease-in-out, width: 0.2s ease-in-out !important;
+}
+
+.ChatRoomGroupDialog_contents:has(.chatRoomGroupNavCollapsed) .ChatRoomGroupDialog_history {
+  margin-left: 32px !important;
+}
+
+.ChatHistoryContainer {
+  transition: none !important;
 }
 
 .friendsui-container .SVGIcon_Pin.Pinned .head {
@@ -2099,6 +2128,14 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .ChannelTypeTitle:active, .chatRoomTextChannel:active, .chatRoomVoiceChannel:active, .chatRoomTextChannel.ActiveTextChannel:active, .chatRoomVoiceChannel.ActiveVoiceChannel:active {
   color: rgb(var(--color-text-primary)) !important;
+  background-color: rgba(var(--color-negative), 0.2) !important;
+}
+
+.chatRoomGroupNavCollapsed .chatRoomTextChannel.ActiveTextChannel:hover, .chatRoomGroupNavCollapsed .chatRoomVoiceChannel.ActiveVoiceChannel:hover {
+  background-color: rgba(var(--color-negative), 0.1) !important;
+}
+
+.chatRoomGroupNavCollapsed .chatRoomTextChannel.ActiveTextChannel:active, .chatRoomGroupNavCollapsed .chatRoomVoiceChannel.ActiveVoiceChannel:active {
   background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
@@ -2341,6 +2378,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: transparent !important;
 }
 
+.MemberListColumn {
+  transition: none !important;
+}
+
 .MemberListColumn:not(.MemberListViewCompact) {
   background: var(--color-acrylic) !important;
   transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
@@ -2436,6 +2477,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 32px !important;
   opacity: 1 !important;
   padding: 0px !important;
+  transition: none !important;
 }
 
 .MemberListOption:hover {
@@ -2455,11 +2497,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOption .SVGIcon_DoubleArrow {
-  transform: rotateZ(270deg) !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .MemberListColumn.MemberListViewCompact .MemberListOption .SVGIcon_DoubleArrow {
-  transform: rotateZ(90deg) !important;
+  transform: none !important;
 }
 
 .MemberListOption .SVGIcon_DoubleArrow {
@@ -2469,7 +2512,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px !important;
-  background-image: var(--icon-chevron-down) !important;
+  background-image: var(--icon-chevron-left) !important;
+}
+
+.MemberListColumn.MemberListViewCompact .MemberListOption .SVGIcon_DoubleArrow {
+  background-image: var(--icon-chevron-right) !important;
 }
 
 .MemberListOption .SVGIcon_DoubleArrow polyline {
@@ -2762,6 +2809,14 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-repeat: no-repeat !important;
   background-position: center !important;
   fill: transparent !important;
+}
+
+.VoiceRoomChatTitle .MinimizeTextChat:hover svg {
+  filter: var(--filter-light) !important;
+}
+
+.VoiceRoomChatTitle .MinimizeTextChat:active svg {
+  filter: var(--filter-dark) !important;
 }
 
 .VoiceRoomChatTitle .MinimizeTextChat line {
