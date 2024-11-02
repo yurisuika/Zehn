@@ -7,12 +7,16 @@ Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a s
 
 <details>
   <summary>Dark Mode Previews</summary>
+
   ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/zehn-dark.png?raw=true)
+
 </details>
 
 <details>
   <summary>Light Mode Previews</summary>
+
   ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/zehn-light.png?raw=true)
+  
 </details>
 
 #### Versions
