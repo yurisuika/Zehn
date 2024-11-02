@@ -214,10 +214,11 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   font-size: var(--size-14) !important;
   margin-left: 12px !important;
   font-weight: 500 !important;
+  line-height: 24px !important;
 }
 
 ._21I8pyEfvklCsrYIcsBtYY, ._3hCFlMxf40SP2WVNOubSvf {
-  padding: 3px 0px 3px 3px !important;
+  padding: 4px !important;
 }
 
 /* MIC STATUS */
@@ -296,20 +297,32 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   opacity: 0 !important;
 }
 
+._2XZq-_f6npaQdAgeRzKIkz:hover ._1JXI4j2_xSpVK1YjyEuebr .SVGIcon_X_Line {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 12px !important;
+  background-image: var(--icon-close) !important;
+}
+
 ._2XZq-_f6npaQdAgeRzKIkz:hover ._1JXI4j2_xSpVK1YjyEuebr .SVGIcon_X_Line line {
   stroke: rgba(var(--color-negative), 0.4) !important;
+  display: none !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz:hover ._1JXI4j2_xSpVK1YjyEuebr:hover .SVGIcon_X_Line line {
   stroke: rgb(var(--color-negative)) !important;
+    display: none !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz:hover ._1JXI4j2_xSpVK1YjyEuebr:active .SVGIcon_X_Line line {
   stroke: rgb(var(--color-negative)) !important;
+    display: none !important;
 }
 
 ._1JXI4j2_xSpVK1YjyEuebr {
-  margin-right: 8px !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 12px !important;
 }
 
 ._1JXI4j2_xSpVK1YjyEuebr svg {
@@ -375,10 +388,19 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
   background: transparent !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 16px !important;
-  background-image: var(--icon-chevron-down) !important;
+  filter: var(--filter-focus) !important;
+}
+
+.WindowFocus .chatTabSelector {
+  filter: none !important;
+}
+
+.chatTabSelector:hover {
+  background-color: rgba(var(--color-negative), 0.1) !important;
+}
+
+.chatTabSelector:active {
+  background-color: rgba(var(--color-negative), 0.2) !important;
 }
 
 .chatTabSelector .SVGIcon_DownArrowContextMenu {
@@ -392,7 +414,13 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   border: unset !important;
   border-radius: 0px !important;
   margin: 0px !important;
-  background-size: 32px 32px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px !important;
+  background-image: var(--icon-chevron-down) !important;
+}
+
+.chatTabSelector .SVGIcon_DownArrowContextMenu * {
   opacity: 0 !important;
   display: none !important;
 }
@@ -1905,6 +1933,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   color: rgb(var(--color-text-primary)) !important;
   margin-bottom: 0px !important;
   margin-top: 0px !important;
+  display: none !important;
 }
 
 .namedGroup .chatRoomGroupHeaderName {
