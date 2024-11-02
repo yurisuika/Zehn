@@ -469,8 +469,15 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 /* SERVER MESSAGE */
+.msg.serverMsg .msgText {
+  box-sizing: border-box !important;
+  font-size: var(--size-12) !important;
+  color: rgb(var(--color-text-secondary)) !important;
+  font-weight: 400 !important;
+}
+
 .msg.serverMsg .msgText span:last-of-type {
-  margin-right: calc(32px + 16px) !important;
+  margin-right: 0px !important;
 }
 
 /* COLLAPSED SIDEBAR CHAT */
@@ -484,7 +491,16 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 /* CHAT AVATARS */
 .ChatRoomSpeaker .speaker .speakerStatus, .ChatMsgSlashEmote .speaker .speakerStatus {
-  background-color: color: rgb(var(--color-offline)) !important;
+  background-color: rgb(var(--color-offline)) !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  margin-right: 8px !important;
+  display: none !important;
+}
+
+.chatWindow.compactView .ChatRoomSpeaker .speaker .speakerStatus, .chatWindow.compactView .ChatMsgSlashEmote .speaker .speakerStatus  {
+  display: block !important;
 }
 
 .speaker .speakerStatus {
@@ -492,21 +508,35 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 .speaker.ingame .speakerStatus {
-  background-color: color: rgb(var(--color-ingame)) !important;
+  background-color: rgb(var(--color-ingame)) !important;
 }
 
 .speaker.online .speakerStatus {
-  background-color: color: rgb(var(--color-online)) !important;
+  background-color: rgb(var(--color-online)) !important;
 }
 
 .speaker.offline .speakerStatus {
-  background-color: color: rgb(var(--color-offline)) !important;
+  background-color: rgb(var(--color-offline)) !important;
+}
+
+.nibodjvvrm86uCfnnAn4g {
+  transition: none !important;
 }
 
 .ChatRoomSpeaker .speaker .speakerAvatar, .ChatMsgSlashEmote .speaker .speakerAvatar {
   width: 32px !important;
   height: 32px !important;
+  /* display: none !important; */
+  margin-right: 16px !important;
+  transform: translateY(8px) !important;
+}
+
+.chatWindow.compactView .speakerAvatar {
   display: none !important;
+}
+
+.ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame, .ChatMsgSlashEmote .speaker .speakerAvatar.hasAvatarFrame {
+  margin-right: 8px !important;
 }
 
 .ChatRoomSpeaker .speaker {
@@ -518,10 +548,6 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 .ChatRoomSpeaker .speaker .speakerName {
   margin-top: 0px !important;
-  line-height: 32px !important;
-}
-
-.speakerTimeStamp {
   line-height: 32px !important;
 }
 
@@ -592,13 +618,16 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 .speakerTimeStamp {
   color: rgb(var(--color-text-secondary)) !important;
   font-size: var(--size-12) !important;
+  line-height: 32px !important;
+  margin-left: 16px !important;
 }
 
 .msg .FriendChatTimeStamp {
   color: rgb(var(--color-text-secondary)) !important;
   font-size: var(--size-12) !important;
   border: unset !important;
-  top: 4px !important;
+  top: 0px !important;
+  line-height: 32px !important;
 }
 
 .FriendChatTimeStamp.ingame {
@@ -679,7 +708,11 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 .msgText {
   color: rgb(var(--color-text-primary)) !important;
-  padding: 0px 32px !important;
+  padding: 0px 32px 0px 64px !important;
+}
+
+.chatWindow.compactView .msgText {
+padding: 0px 32px !important;
 }
 
 /* TRADE OFFER */
@@ -1673,10 +1706,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatWindow .chatEntry {
   padding: 0px !important;
   background-color: var(--color-input) !important;
-  position: absolute !important;
-  bottom: 0 !important;
-  right: 0 !important;
-  left: 0 !important;
+  /* position: absolute !important; */
+  /* bottom: 0 !important; */
+  /* right: 0 !important; */
+  /* left: 0 !important; */
 }
 
 .WindowFocus .chatWindow .chatEntry {
