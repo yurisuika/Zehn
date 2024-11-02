@@ -47,10 +47,13 @@ function addButtonUser() {
 Zehn.createButton('.friendListHeaderContainer', '.ZehnButton', addButtonUser);
 
 Zehn.waitForElement('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader').then((element) => {
-  Zehn.appendElements(
-    '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader',
-    [
-      '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout'
-    ]
-  )
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.appendElements(
+      '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader',
+      [
+        '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout'
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
 });

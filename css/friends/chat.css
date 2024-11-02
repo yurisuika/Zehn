@@ -1920,10 +1920,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .namedGroup .chatRoomGroupHeader, .chatRoomGroupHeader {
   padding: 0px !important;
   height: 48px !important;
+  gap: 16px !important;
 }
 
 .chatRoomHeader {
   height: 48px !important;
+  padding-left: 16px !important;
 }
 
 .chatRoomGroupHeaderName {
@@ -1946,7 +1948,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   font-size: var(--size-14) !important;
   color: rgb(var(--color-text-secondary)) !important;
   font-weight: 400 !important;
-  margin-left: 200px !important;
   text-align: right !important;
 }
 
@@ -1966,13 +1967,19 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 /* CHAT ROOM OPTIONS */
+.chatRoomGroupControls {
+  flex-direction: row !important;
+  gap: 16px !important;
+}
+
 .chatRoomOptions {
   margin-right: 0px !important;
+  order: 2 !important;
 }
 
 .chatRoomButton {
-  height: 32px !important;
-  width: 32px !important;
+  height: 48px !important;
+  width: 48px !important;
   margin: 0px !important;
   background-color: transparent !important;
   background-repeat: no-repeat !important;
@@ -2015,14 +2022,20 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 /* CHAT ROOM STATS */
+.chatRoomGroupStats {
+  line-height: 48px !important;
+  gap: 8px !important;
+}
+
 .statMemberStat {
   font-size: var(--size-text-sub) !important;
-  line-height: 16px !important;
+  margin: 0px !important;
 }
 
 .statMemberStat.statMembersTotal {
   color: rgb(var(--color-text-secondary)) !important;
-  line-height: 16px !important;
+  line-height: 48px !important;
+  margin: 0px !important;
 }
 
 .statCircle {
@@ -2087,12 +2100,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   right: 0px !important;
 }
 
-.chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly)) .ChatRoomGroupDialog_history {
+.chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .ChatRoomGroupDialog_history, .chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .chatRoomGroupHeaderTagline {
   margin-left: 200px !important;
   transition: margin 0.2s ease-in-out, width 0.2s ease-in-out !important;
 }
 
-.ChatRoomGroupDialog_contents:has(.chatRoomGroupNavCollapsed) .ChatRoomGroupDialog_history {
+.ChatRoomGroupDialog_contents:has(.chatRoomGroupNavCollapsed) .ChatRoomGroupDialog_history, .chatDialogs:has(.chatRoomGroupNavCollapsed) .chatRoomGroupHeaderTagline {
   margin-left: 32px !important;
 }
 
