@@ -46,6 +46,18 @@ function addButtonUser() {
 
 Zehn.createButton('.friendListHeaderContainer', '.ZehnButton', addButtonUser);
 
+Zehn.waitForElement('.doGxCBJrGimabHm365bOV').then((element) => {
+  var observer = new MutationObserver(function(mutations, observer) {
+    Zehn.prependElements(
+      '.chatRoomOptions',
+      [
+        '.doGxCBJrGimabHm365bOV' // YULE LOG
+      ]
+    )
+  });
+  observer.observe(document, {subtree: true, attributes: true});
+});
+
 Zehn.waitForElement('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader').then((element) => {
   var observer = new MutationObserver(function(mutations, observer) {
     Zehn.appendElements(
