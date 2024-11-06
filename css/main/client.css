@@ -880,9 +880,11 @@ input[type="radio" i]:checked::after:active {
 /* CHECKBOX */
 .DialogCheckbox_Container {
   padding: 0px !important;
-  margin-bottom: 0px !important;
+  margin: 0px !important;
   align-items: center !important;
   display: flex !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
 }
 
 .DialogBody.useDefaults .useDefaultsCheckBox {
@@ -1520,7 +1522,6 @@ option:active {
   border-radius: 0px !important;
   outline: 2px solid rgba(var(--color-negative), 0.5) !important;
   outline-offset: -2px !important;
-  border-radius: 0px !important;
   font-size: var(--size-14) !important;
   line-height: 32px !important;
   display: flex !important;
@@ -1766,6 +1767,16 @@ option:active {
   flex: 1;
   justify-content: center;
   display: flex;
+  border: var(--option-reveal-border);
+  background-color: transparent;
+}
+
+#toggleSidebar:hover {
+background-color: var(--option-reveal-background-hover);
+}
+
+#toggleSidebar:active {
+background-color: var(--option-reveal-background-active);
 }
 
 #toggleLibrary {
@@ -1803,11 +1814,12 @@ body:not(.WindowFocus) #toggleLibrary {
   background-size: 16px;
   background-image: var(--icon-chevron-left);
   margin: auto !important;
+  background-color: transparent;
 }
 
 #toggleLibraryIcon {
-  width: 48px;
-  height: 48px;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px;
@@ -1824,8 +1836,8 @@ body:not(.WindowFocus) #toggleLibrary {
 }
 
 #toggleUserIcon {
-  width: 48px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px;
@@ -1840,11 +1852,21 @@ body:not(.WindowFocus) #toggleUserIcon {
   width: 48px;
   height: 48px;
   line-height: 48px;
+  border: var(--option-reveal-border);
+  background-color: transparent;
+}
+
+#toggleDetails:hover {
+  background-color: var(--option-reveal-background-hover);
+}
+
+#toggleDetails:active {
+  background-color: var(--option-reveal-background-active);
 }
 
 #toggleDetailsIcon {
-  width: 48px;
-  height: 48px;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px;

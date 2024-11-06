@@ -49,7 +49,7 @@ export class RevealHelper {
                     } else {
                         element.wave = cur;
                         backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, transparent), radial-gradient(circle ${element.wave}px at ${x}px ${y}px, transparent, ${backgroundLightColor}, transparent, transparent), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='0' height='0'><filter id='grainy' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.537'></feTurbulence><feColorMatrix type='saturate' values='0'></feColorMatrix><feBlend mode='darken' in='SourceGraphic'></feBlend></filter></svg>")`;
-                        element.el.style.backgroundImage = backgroundLight;
+                        element.el.style.setProperty('background-image', backgroundLight, 'important');
                     }
                 }
                 catch (e) {}
@@ -58,7 +58,7 @@ export class RevealHelper {
             clearInterval(element.clickWave);
             element.wave = 0;
             backgroundLight = `radial-gradient(circle ${gradientSize}px at ${x}px ${y}px, ${backgroundLightColor}, transparent), url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='0' height='0'><filter id='grainy' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.537'></feTurbulence><feColorMatrix type='saturate' values='0'></feColorMatrix><feBlend mode='darken' in='SourceGraphic'></feBlend></filter></svg>")`;
-            element.el.style.backgroundImage = backgroundLight;
+            element.el.style.setProperty('border-image', borderLight, 'important');
         }
     }
 
@@ -104,7 +104,7 @@ export class RevealHelper {
     }
 }
 
-export class RevealEffectsMasked {
+export class RevealHeader {
     constructor(selector, options) {
         this.options = {
             selector: ".eff-reveal-border",
@@ -118,7 +118,7 @@ export class RevealEffectsMasked {
         this.options = Object.assign(this.options, options);
 
         this.childrenRefresh(selector, this.options);
-        RevealEffectsMasked.clearUselessElements();
+        RevealHeader.clearUselessElements();
         this.applyCommonEffects(selector, options);
 
         this.timer = setInterval(() => {
@@ -186,7 +186,7 @@ export class RevealEffectsMasked {
                             RevealHelper.drawEffectBasic(child, x, y, c.backgroundLightColor, c.backgroundGradientSize);
                         }
                     } else {
-                        RevealEffectsMasked.clearBackground(child);
+                        RevealHeader.clearBackground(child);
                     }
                 }
             }
@@ -220,8 +220,8 @@ export class RevealEffectsMasked {
         });
 
         c.el.addEventListener("mouseleave", (e) => {
-            RevealEffectsMasked.clearBackground(child);
-            RevealEffectsMasked.clearBorder(child);
+            RevealHeader.clearBackground(child);
+            RevealHeader.clearBorder(child);
         });
     }
 

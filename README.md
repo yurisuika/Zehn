@@ -40,7 +40,7 @@ Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/
 Zehn now supports Millennium's built-in configuration screen! You may select both config options and use the color editor from it. Some variables deemed not necessary to be turned into options may still be found in the `~/css/variables/` folder.
 
 #### Features
-On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/css/config/theme/<theme>/colors.css`.
+On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/<theme>/colors.css`.
 
 Zehn features several added buttons for an improved experience:
 * You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
@@ -48,6 +48,8 @@ Zehn features several added buttons for an improved experience:
 * The game page details panel is hidden by default. A button has been added to the playbar to toggle it.
 
 Zehn uses Windows 10's Segoe UI for the most seamless experience. If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
+
+Zehn features optional [Fluent Reveal](https://github.com/aleversn/FluentReveal) effects. If enabled, certain buttons are given the reactive background and border effect. This may perform poorly on some systems.
 
 #### Discussion
 If you have inquires, you can use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) or come by my [Discord](https://discord.gg/0zdNEkQle7Qg9C1H).

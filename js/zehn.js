@@ -1,3 +1,6 @@
+import { Reveal } from './reveal.js';
+import { RevealHeader } from './revealHeader.js';
+
 const Zehn = {
   waitForElement(selector) {
     return new Promise(resolve => {
@@ -11,6 +14,15 @@ const Zehn = {
         }
       });
       observer.observe(document.body, {childList: true, subtree: true});
+    });
+  },
+
+  waitAndObserve(wait, target, classes, callback) {
+    Zehn.waitForElement(wait).then((element) => {
+      var observer = new MutationObserver(function(mutations, observer) {
+        callback();
+      });
+      observer.observe(document, {subtree: true, attributes: true});
     });
   },
 
@@ -38,6 +50,18 @@ const Zehn = {
     });
   },
 
+  moveAppend(wait, target, classes) {
+    Zehn.waitAndObserve(wait, target, classes, () => Zehn.appendElements(target, classes));
+  },
+
+  movePrepend(wait, target, classes) {
+    Zehn.waitAndObserve(wait, target, classes, () => Zehn.prependElements(target, classes));
+  },
+
+  moveAppendChild(wait, target, classes) {
+    Zehn.waitAndObserve(wait, target, classes, () => Zehn.appendChildElements(target, classes));
+  },
+
   addUserAgent() {
     if (navigator.userAgent.includes('Linux')) {
       document.documentElement.classList.add('Linux');
@@ -46,16 +70,56 @@ const Zehn = {
     }
   },
 
-  createButton(target, addition, callback) {
-    Zehn.waitForElement(`${target}`).then((element) => {
-      var observer = new MutationObserver(function(mutations, observer) {
-        if (document.querySelector(`${target}`) != null) {
-          if (document.querySelector(`${target}`).querySelector(`${addition}`) == null) {
-              callback(`${target}`);
-          }
-        }
+  createReveal(target, button) {
+    Zehn.waitAndObserve(target, button, [], () => {
+      document.querySelectorAll(`${button}`).forEach((element) => {
+        let FR = new Reveal('body', {
+            selector: element,
+            backgroundGradientSize: 150,
+            borderGradientSize: 80,
+            borderLightColor: 'rgba(255, 255, 255, 0.5)',
+            backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
+        });
       });
-      observer.observe(document, {subtree: true, attributes: true});
+    });
+  },
+
+  createRevealBorder(target, button) {
+    Zehn.waitAndObserve(target, button, [], () => {
+      document.querySelectorAll(`${button}`).forEach((element) => {
+        let FR = new Reveal('body', {
+            selector: element,
+            backgroundGradientSize: 150,
+            borderGradientSize: 80,
+            borderLightColor: 'rgba(255, 255, 255, 0.5)',
+            backgroundLightColor: 'transparent'
+        });
+      });
+    });
+  },
+
+  createRevealHeader(target, button) {
+    Zehn.waitAndObserve(target, button, [], () => {
+      document.querySelectorAll(`${button}`).forEach((element) => {
+        let FR = new RevealHeader('body', {
+            selector: document.querySelectorAll(`${target}`),
+            backgroundGradientSize: 150,
+            borderGradientSize: 80,
+            borderLightColor: 'rgba(255, 255, 255, 0.5)',
+            backgroundLightColor: 'rgba(255, 255, 255, 0.25)',
+            childrenSelector: element
+        });
+      });
+    });
+  },
+
+  createButton(target, button, callback) {
+    Zehn.waitAndObserve(target, button, [], () => {
+      if (document.querySelector(`${target}`) != null) {
+        if (document.querySelector(`${target}`).querySelector(`${button}`) == null) {
+            callback(target);
+        }
+      }
     });
   }
 };

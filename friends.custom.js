@@ -1,5 +1,3 @@
-import { RevealEffects } from './js/revealDirect.js';
-import { RevealEffectsMasked } from './js/revealMasked.js';
 import Zehn from './js/zehn.js';
 
 Zehn.addUserAgent();
@@ -44,28 +42,11 @@ function addButtonUser() {
   document.getElementById('toggleUser').append(icon);
 }
 
-Zehn.createButton('.friendListHeaderContainer', '.ZehnButton', addButtonUser);
+Zehn.createButton('.chatTitleBar', '.ZehnButton', addButtonUser);
 
-Zehn.waitForElement('.doGxCBJrGimabHm365bOV').then((element) => {
-  var observer = new MutationObserver(function(mutations, observer) {
-    Zehn.prependElements(
-      '.chatRoomOptions',
-      [
-        '.doGxCBJrGimabHm365bOV' // YULE LOG
-      ]
-    )
-  });
-  observer.observe(document, {subtree: true, attributes: true});
-});
-
-Zehn.waitForElement('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader').then((element) => {
-  var observer = new MutationObserver(function(mutations, observer) {
-    Zehn.appendElements(
-      '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader',
-      [
-        '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout'
-      ]
-    )
-  });
-  observer.observe(document, {subtree: true, attributes: true});
-});
+Zehn.movePrepend('.doGxCBJrGimabHm365bOV', '.chatRoomOptions', [
+  '.doGxCBJrGimabHm365bOV' // YULE LOG
+]);
+Zehn.moveAppend('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
+  '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayoutL' // FORGOT WHAT THIS WAS
+]);
