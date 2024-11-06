@@ -1,0 +1,1 @@
+import 'https://zehn.yurisuika.dev/config/client/reveal/enable.js';
