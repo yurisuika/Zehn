@@ -71,27 +71,29 @@ const Zehn = {
   },
 
   createReveal(target, button) {
+    var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
     Zehn.waitAndObserve(target, button, [], () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new Reveal('body', {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderLightColor: 'rgba(255, 255, 255, 0.5)',
-            backgroundLightColor: 'rgba(255, 255, 255, 0.25)'
+            borderLightColor: 'rgba(var(--color-negative), 0.25)',
+            backgroundLightColor: 'rgba(var(--color-negative), 0.1)'
         });
       });
     });
   },
 
   createRevealBorder(target, button) {
+    var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
     Zehn.waitAndObserve(target, button, [], () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new Reveal('body', {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderLightColor: 'rgba(255, 255, 255, 0.5)',
+            borderLightColor: 'rgba(var(--color-negative), 0.25)',
             backgroundLightColor: 'transparent'
         });
       });
@@ -99,14 +101,15 @@ const Zehn = {
   },
 
   createRevealHeader(target, button) {
+    var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
     Zehn.waitAndObserve(target, button, [], () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new RevealHeader('body', {
             selector: document.querySelectorAll(`${target}`),
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderLightColor: 'rgba(255, 255, 255, 0.5)',
-            backgroundLightColor: 'rgba(255, 255, 255, 0.25)',
+            borderLightColor: 'rgba(var(--color-negative), 0.25)',
+            backgroundLightColor: 'rgba(var(--color-negative), 0.1)',
             childrenSelector: element
         });
       });
