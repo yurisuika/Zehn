@@ -119,7 +119,7 @@ const Zehn = {
   createButton(target, button, callback) {
     Zehn.waitAndObserve(target, button, [], () => {
       if (document.querySelector(`${target}`) != null) {
-        if (document.querySelector(`${target}`).querySelector(`${button}`) == null) {
+        if (document.querySelector(`${target} ${button}`) == null) {
             callback(target);
         }
       }

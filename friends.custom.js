@@ -36,7 +36,7 @@ function addButtonUser() {
       }
     }
   };
-  document.querySelector('.currentUserContainer').before(btn);
+  document.querySelector('.chatTitleBar').prepend(btn);
   var icon = document.createElement('div');
   icon.id = 'toggleUserIcon';
   document.getElementById('toggleUser').append(icon);
