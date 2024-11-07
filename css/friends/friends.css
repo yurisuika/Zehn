@@ -49,6 +49,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 .friendListHeaderContainer .title-area {
   margin-left: 0px !important;
+  position: relative !important;
 }
 
 /* SETTINGS PICKER */
@@ -176,6 +177,13 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   opacity: 1 !important;
 }
 
+/* FRIENDS */
+.FriendsListContent {
+  margin-top: 0px !important;
+  overflow-y: overlay !important;
+  height: fit-content !important;
+}
+
 /* CURRENT USER */
 .currentUserContainer {
   border-bottom: unset !important;
@@ -185,7 +193,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   padding: 0px 16px !important;
   align-items: center !important;
   display: flex !important;
-  margin-top: 32px !important;
+  margin-top: 0px !important;
   transition: all 0.2s ease-in-out !important;
 }
 
@@ -426,12 +434,15 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .quickAccessFriends .favoriteElement:hover .friend .avatarHolder {
-  transform: scale(1.2) !important;
+  /* transform: scale(1.2) !important; */
+  transform: none !important;
 }
 
 .favoriteElement {
   height: 48px !important;
   width: 48px !important;
+  min-width: 48px !important;
+  flex-grow: 1 !important;
 }
 
 .compactQuickAccess .favoriteElement {
@@ -457,15 +468,15 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .friend.quickAccessFriend {
   width: 32px !important;
-  margin: 8px !important;
-  height: 32px !important;
+  margin: auto !important;
+  height: 100% !important;
   align-items: center !important;
 }
 
 .compactQuickAccess .friend.quickAccessFriend {
   width: 24px !important;
-  height: 24px !important;
-  margin: 4px !important;
+  height: 100% !important;
+  margin: auto !important;
 }
 
 .compactQuickAccess .friend.quickAccessFriend .nibodjvvrm86uCfnnAn4g {
@@ -500,6 +511,14 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .compactQuickAccess .playerNameQuickAccessContainer {
   display: none !important;
+}
+
+.quickAccessFriends .favoriteElement:hover {
+  background: rgba(var(--color-negative), 0.1) !important
+}
+
+.quickAccessFriends .favoriteElement:active {
+  background: rgba(var(--color-negative), 0.2) !important
 }
 
 .quickAccessFriend .clanName, .friend.quickAccessFriend .playerName {
@@ -674,7 +693,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .socialTabSearchContainer {
-  background: rgb(var(--color-background-window)) !important;
+  /* background: rgb(var(--color-background-window)) !important; */
 }
 
 .activeTab {
@@ -975,6 +994,14 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 /* FRIENDS LIST */
+.FriendsListContent .friendlistListContainer .friendGroup .groupHeaderContainer:hover, .FriendsListContent .friendlistListContainer .friendGroup.gameGroup .groupName:hover  {
+  background-color: rgba(var(--color-negative), 0.1) !important;
+}
+
+.FriendsListContent .friendlistListContainer .friendGroup .groupHeaderContainer:active, .FriendsListContent .friendlistListContainer .friendGroup.gameGroup .groupName:active {
+  background-color: rgba(var(--color-negative), 0.2) !important;
+}
+
 .friendGroup .groupName {
   margin-top: 0px !important;
   line-height: 32px !important;
@@ -982,6 +1009,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   font-size: var(--size-14) !important;
   text-transform: uppercase !important;
   border-top: unset !important;
+  transition: none !important;
+  padding: 0px !important;
 }
 
 .friendGroup .groupName.CompactFriendsList .friendGroup.taggedGroup .groupName, .CompactFriendsList .friendGroup.gameGroup .groupName {
@@ -1004,6 +1033,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .friendlistListContainer {
   background: transparent !important;
+  min-height: fit-content !important;
+  height: fit-content !important;
+  overflow-y: visible !important;
+  overflow: visible !important;
 }
 
 .FriendsListContent .friendlistListContainer .friendGroup.onlineFriends .groupName, .FriendsListContent .friendlistListContainer .friendGroup.offlineFriends .groupName {
@@ -1014,11 +1047,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .groupName.Panel.Focusable {
-  margin-left: 16px !important;
+  margin-left: 0px !important;
+  padding-left: 16px !important;
 }
 
 .friend .labelHolder {
- margin-left: 16px !important;
+ margin-left: 0px !important;
+ padding-left: 16px !important;
  height: 32px !important;
  display: grid !important;
  align-content: center !important;
@@ -1071,6 +1106,14 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   transform: none !important;
 }
 
+.friendGroup:has(.Collapsed) .groupList, .friendGroup:has(.Collapsed) .friendsContainer {
+  display: none !important;
+}
+
+.friendStatusHover {
+  transition: none !important;
+}
+
 .friendStatusHover:hover {
   background-color: rgba(var(--color-negative), 0.1) !important;
 }
@@ -1088,6 +1131,45 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .friendlistListContainer .friend .avatarHolder {
   padding-right: 0px !important;
+}
+
+/* DRAG GHOST */
+.friend.dragOriginGhost {
+  opacity: 1 !important;
+}
+
+/* SORT BY */
+.groupHeaderContainer .SortByRecent {
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0px !important;
+  transition: none !important;
+}
+
+.groupHeaderContainer .SortByRecent:hover {
+  background-color: rgba(var(--color-negative), 0.1) !important;
+}
+
+.groupHeaderContainer .SortByRecent:active {
+  background-color: rgba(var(--color-negative), 0.2) !important;
+}
+
+.groupHeaderContainer .SortByRecent svg {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px !important;
+  background-image: var(--icon-switch-vertical) !important;
+  width: 100% !important;
+  height: 100% !important;
+  fill: transparent !important;
+}
+
+.groupHeaderContainer .SortByRecent.Recent svg {
+  background-image: var(--icon-clock) !important;
+}
+
+.groupHeaderContainer .SortByRecent svg * {
+  display: none !important;
 }
 
 /* VOICE METER */
@@ -1235,13 +1317,29 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 /* GROUP CHATS HEADER */
+.friendsListSectionTitle.chatSectionTitle {
+  height: 32px !important;
+  border: unset !important;
+  background-color: transparent !important;
+}
+
 .friendsListSectionTitle {
   color: rgb(var(--color-text-primary)) !important;
 }
 
+.FriendsListChatSection .friendsListSectionTitle:hover {
+  background-color: rgba(var(--color-negative), 0.1) !important;
+}
+
+.FriendsListChatSection .friendsListSectionTitle:active {
+  background-color: rgba(var(--color-negative), 0.2) !important;
+}
+
 .ToggleGroupChatList {
-  width: 0px !important;
+  width: calc(100% - 32px) !important;
   padding: 0px !important;
+  position: absolute !important;
+  z-index: 999 !important;
 }
 
 .FriendsListChatSection.ChatRoomListContainerParent.Collapsed .ToggleGroupChatList .SVGIcon_DoubleArrow, .ToggleGroupChatList .SVGIcon_DoubleArrow {
@@ -1308,17 +1406,9 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   stroke: rgb(var(--color-negative)) !important;
 }
 
-.friendsListSectionTitle.chatSectionTitle {
-  height: 32px !important;
-  border: unset !important;
-}
-
-.friendsListSectionTitle.chatSectionTitle, .friendsListSectionTitle.chatSectionTitle:hover {
-  background-color: transparent !important;
-}
-
 .voiceRoomDragBar {
   align-items: center !important;
+  cursor: pointer !important;
 }
 
 /* UNREAD INDICATOR */
@@ -1336,10 +1426,26 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .chatRoomListContainer {
   background: transparent !important;
+  transition: none !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+  max-height: fit-content !important;
+  overflow-y: visible !important;
+}
+
+.FriendsListChatSection.ChatRoomListContainerParent.Collapsed .chatRoomListContainer {
+  height: 0px !important;
+  min-height: 0px !important;
+  max-height: 0px !important;
+}
+
+.FriendsListChatSection.ChatRoomListContainerParent.Collapsed .chatRoomListContainer .ChatRoomList > div {
+  display: none !important;
 }
 
 .ChatRoomListGroupItem {
   background-color: transparent !important;
+  transition: none !important;
 }
 
 .ChatRoomListGroupItem_header {

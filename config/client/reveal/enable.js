@@ -1,5 +1,7 @@
 import Zehn from './../../../js/zehn.js';
 
+document.documentElement.classList.add('Reveal');
+
 // LIBRARY SIDEBAR BUTTONS
 Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '.ZehnButton');
 Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '._2PF_m-I5yte3WnQhpcz8RC');
@@ -29,7 +31,7 @@ Zehn.createReveal('._3fLo166MlaNqP8r8tTyRz', '.ZehnButton');
 Zehn.createReveal('._3fLo166MlaNqP8r8tTyRz', '._3qDWQGB0rtwM3qpXTb11Q-');
 
 // NOTIFICATIONS
-Zehn.createRevealBorder('._1OOQPJx0nCNP9ME9toCmV7', '._1OOQPJx0nCNP9ME9toCmV7');
+Zehn.createRevealBorder('.zXrpABNQHpWKgSzqnGlL', '.zXrpABNQHpWKgSzqnGlL');
 
 // SCREENSHOTS
 Zehn.createReveal('._3Zt3xepNpVmZ386yS84vGH ._3nWSY9HJwc9HWeByKWggV6', '._3Zt3xepNpVmZ386yS84vGH:not(._2t7bHbQbMEKjaMXLdaSO8I) ._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy:not(._36CGU2t5Vavx0_9dwem6kb)');

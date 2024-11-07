@@ -45,7 +45,7 @@ const Zehn = {
   appendChildElements(target, classes) {
     classes.forEach((name) => {
       if (document.querySelector(`${target}`) != null) {
-        document.querySelector(`${target}`).firstChild.appendChild(document.querySelector(`${name}`));
+        document.querySelector(`${target}`).before(document.querySelector(`${name}`));
       }
     });
   },
@@ -58,8 +58,8 @@ const Zehn = {
     Zehn.waitAndObserve(wait, target, classes, () => Zehn.prependElements(target, classes));
   },
 
-  moveAppendChild(wait, target, classes) {
-    Zehn.waitAndObserve(wait, target, classes, () => Zehn.appendChildElements(target, classes));
+  moveBefore(wait, target, classes) {
+    Zehn.waitAndObserve(wait, target, classes, () => Zehn.beforeElements(target, classes));
   },
 
   addUserAgent() {

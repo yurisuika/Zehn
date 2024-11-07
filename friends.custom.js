@@ -50,3 +50,6 @@ Zehn.movePrepend('.doGxCBJrGimabHm365bOV', '.chatRoomOptions', [
 Zehn.moveAppend('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
   '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayoutL' // FORGOT WHAT THIS WAS
 ]);
+// Zehn.movePrepend('.currentUserContainer', '.chatTitleBar .title-area-children', [
+//   '.currentUserContainer' // CURRENT USER
+// ]);
