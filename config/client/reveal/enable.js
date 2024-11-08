@@ -20,8 +20,8 @@ Zehn.createReveal('._23SnllqT_AqZ1C_QHcNQ4Z', '._23SnllqT_AqZ1C_QHcNQ4Z ._3sz4Ld
 
 // WHAT'S NEW
 Zehn.createReveal('._2o5c89vAnrXN8C60QTSMqO', '._1eFe5VbyACJE4RVGpOWKMC');
-Zehn.createReveal('._2o5c89vAnrXN8C60QTSMqO', '._14b-hQsLwSwYcELtknxCUX:not(._16nHYucq6xgfe67DrVWLCI)');
-Zehn.createReveal('._2o5c89vAnrXN8C60QTSMqO', '._3IIEUTw03Vm3Mk54jlnUaT:not(._16nHYucq6xgfe67DrVWLCI)');
+Zehn.createReveal('._2o5c89vAnrXN8C60QTSMqO', '._23SnllqT_AqZ1C_QHcNQ4Z ._14b-hQsLwSwYcELtknxCUX:not(._16nHYucq6xgfe67DrVWLCI)');
+Zehn.createReveal('._2o5c89vAnrXN8C60QTSMqO', '._23SnllqT_AqZ1C_QHcNQ4Z ._3IIEUTw03Vm3Mk54jlnUaT:not(._16nHYucq6xgfe67DrVWLCI)');
 
 // PLAY BAR
 Zehn.createReveal('._3fLo166MlaNqP8r8tTyRz', '._3ydigb6zZAjJ0JCDgHwSYA');
@@ -31,7 +31,7 @@ Zehn.createReveal('._3fLo166MlaNqP8r8tTyRz', '.ZehnButton');
 Zehn.createReveal('._3fLo166MlaNqP8r8tTyRz', '._3qDWQGB0rtwM3qpXTb11Q-');
 
 // NOTIFICATIONS
-Zehn.createRevealBorder('.zXrpABNQHpWKgSzqnGlL', '.zXrpABNQHpWKgSzqnGlL');
+Zehn.createRevealBorder('.zXrpABNQHpWKgSzqnGlL', '._1OOQPJx0nCNP9ME9toCmV7');
 
 // SCREENSHOTS
 Zehn.createReveal('._3Zt3xepNpVmZ386yS84vGH ._3nWSY9HJwc9HWeByKWggV6', '._3Zt3xepNpVmZ386yS84vGH:not(._2t7bHbQbMEKjaMXLdaSO8I) ._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy:not(._36CGU2t5Vavx0_9dwem6kb)');
