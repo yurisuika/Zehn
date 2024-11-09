@@ -42,7 +42,7 @@ function addButtonUser() {
   document.getElementById('toggleUser').append(icon);
 }
 
-Zehn.createButton('.chatTitleBar', '.ZehnButton', addButtonUser);
+Zehn.createButton('.friendListHeaderContainer .chatTitleBar', '.ZehnButton', addButtonUser);
 
 Zehn.movePrepend('.doGxCBJrGimabHm365bOV', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
