@@ -150,17 +150,23 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 .friendListHeaderContainer {
   border: unset !important;
   min-height: 0px !important;
+  background: transparent !important;
+}
+
+.chatTitleBar {
+  border: unset !important;
+  min-height: 0px !important;
   background: var(--color-acrylic) !important;
   transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
 }
 
-.WindowFocus .friendListHeaderContainer {
+.WindowFocus .chatTitleBar {
   background-color: var(--color-acrylic-focus-window) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  backdrop-filter: blur(var(--option-blur-radius, 25px)) !important;
   background-blend-mode: exclusion !important;
 }
 
-.friendListHeaderContainer::after {
+.chatTitleBar::after {
   content: "" !important;
   z-index: -1 !important;
   position: absolute !important;
@@ -173,7 +179,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   transition: opacity 0.2s ease-in-out !important;
 }
 
-.WindowFocus .friendListHeaderContainer::after {
+.WindowFocus .chatTitleBar::after {
   opacity: 1 !important;
 }
 
@@ -1542,7 +1548,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .ChatRoomMultiFriendAvatar {
   margin: 0px !important;
   background: transparent !important;
-  border-radius: var(--option-avatar-roundness) !important;
+  border-radius: var(--option-avatar-roundness, 50%) !important;
   background: rgba(var(--color-accent), 0.5) !important;
   border: none !important;
 }
@@ -1550,7 +1556,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .ChatRoomGroupAvatar {
   margin: 0px !important;
   background: transparent !important;
-  border-radius: var(--option-avatar-roundness) !important;
+  border-radius: var(--option-avatar-roundness, 50%) !important;
   background: rgba(var(--color-accent), 0.5) !important;
   border: none !important;
 }
@@ -1758,7 +1764,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .WindowFocus .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel {
   background-color: var(--color-acrylic-focus-window) !important;
-  backdrop-filter: blur(var(--option-blur-radius)) !important;
+  backdrop-filter: blur(var(--option-blur-radius, 25px)) !important;
   background-blend-mode: exclusion !important;
 }
 
