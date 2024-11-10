@@ -179,6 +179,9 @@ Zehn.moveAppend('.DKXVRVBokaW_Xxo6kyKq0', '.DKXVRVBokaW_Xxo6kyKq0', [
 Zehn.moveAppend('.LCeIT0gmFTY8fdfaVgk4j', '.LCeIT0gmFTY8fdfaVgk4j', [
   '._1fu6xumTI1nCY5wc6FG_N2' // NOTES DELETE
 ]);
+Zehn.moveAppend('._1gvujtNl7v7FpJK6kaMeKZ', '._1gvujtNl7v7FpJK6kaMeKZ', [
+  '._2yt71EY8-YdWa8dBEE1DAW' // ARTWORK DESCRIPTION
+]);
 
 // Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '.ZehnButton', 0);
 // Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '._2PF_m-I5yte3WnQhpcz8RC', 0);
