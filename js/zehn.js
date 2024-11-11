@@ -78,8 +78,8 @@ const Zehn = {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderLightColor: 'rgba(var(--color-negative), 0.25)',
-            backgroundLightColor: 'rgba(var(--color-negative), 0.1)'
+            borderAcrylicColor: 'rgba(var(--color-negative), 0.25)',
+            backgroundAcrylicColor: 'rgba(var(--color-negative), 0.1)'
         });
       });
     });
@@ -93,8 +93,8 @@ const Zehn = {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderLightColor: 'rgba(var(--color-negative), 0.25)',
-            backgroundLightColor: 'transparent'
+            borderAcrylicColor: 'rgba(var(--color-negative), 0.25)',
+            backgroundAcrylicColor: 'transparent'
         });
       });
     });
@@ -108,8 +108,8 @@ const Zehn = {
             selector: document.querySelectorAll(`${target}`),
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderLightColor: 'rgba(var(--color-negative), 0.25)',
-            backgroundLightColor: 'rgba(var(--color-negative), 0.1)',
+            borderAcrylicColor: 'rgba(var(--color-negative), 0.25)',
+            backgroundAcrylicColor: 'rgba(var(--color-negative), 0.1)',
             childrenSelector: element
         });
       });
