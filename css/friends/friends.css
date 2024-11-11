@@ -1,10 +1,10 @@
 /* BORDER */
 .chat_main_flex {
-  border: 1px solid var(--color-border) !important;
+  /* border: 1px solid var(--color-border) !important; */
 }
 
 .WindowFocus .chat_main_flex {
-  border: 1px solid rgb(var(--color-accent)) !important;
+  /* border: 1px solid rgb(var(--color-accent)) !important; */
 }
 
 .singleWindowFocusBar {
@@ -156,17 +156,20 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 .titleBarContainer {
   border: unset !important;
   min-height: 0px !important;
+}
+
+.titleBarContainer:not(.chatHeader) {
   background: var(--color-acrylic) !important;
   transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
 }
 
-.WindowFocus .titleBarContainer {
+.WindowFocus .titleBarContainer:not(.chatHeader) {
   background-color: var(--color-acrylic-focus-window) !important;
   backdrop-filter: blur(var(--blur-radius)) !important;
   background-blend-mode: exclusion !important;
 }
 
-.titleBarContainer::after {
+.titleBarContainer:not(.chatHeader)::after {
   content: "" !important;
   z-index: -1 !important;
   position: absolute !important;
@@ -179,14 +182,14 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   transition: opacity 0.2s ease-in-out !important;
 }
 
-.WindowFocus .titleBarContainer::after {
+.WindowFocus .titleBarContainer:not(.chatHeader)::after {
   opacity: 1 !important;
 }
 
 /* FRIENDS */
 .FriendsListContent {
   margin-top: 0px !important;
-  overflow-y: auto !important; // SCROLL
+  overflow-y: auto !important; /* SCROLL */
   height: fit-content !important;
 }
 
