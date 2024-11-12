@@ -45,10 +45,13 @@ function addButtonUser() {
 Zehn.createButton('.friendListHeaderContainer .chatTitleBar', '.ZehnButton', addButtonUser);
 
 Zehn.movePrepend('.doGxCBJrGimabHm365bOV', '.chatRoomOptions', [
-  '.doGxCBJrGimabHm365bOV' // YULE LOG
+  '.doGxCBJrGimabHm365bOV', // YULE LOG
 ]);
+// Zehn.movePrepend('.BroadcastChatExpander', '.chatRoomOptions', [
+//   '.BroadcastChatExpander ' // CHAT EXPANDER
+// ]);
 Zehn.moveAppend('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
-  '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayoutL' // FORGOT WHAT THIS WAS
+  '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // FORGOT WHAT THIS WAS
 ]);
 // Zehn.movePrepend('.currentUserContainer', '.chatTitleBar .title-area-children', [
 //   '.currentUserContainer' // CURRENT USER
