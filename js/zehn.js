@@ -29,7 +29,7 @@ const Zehn = {
   appendElements(target, classes) {
     classes.forEach((name) => {
       if (document.querySelector(`${target}`) != null) {
-        document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`));
+        document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`) || '');
       }
     });
   },
@@ -37,7 +37,7 @@ const Zehn = {
   prependElements(target, classes) {
     classes.forEach((name) => {
       if (document.querySelector(`${target}`) != null) {
-        document.querySelector(`${target}`).prepend(document.querySelector(`${name}`));
+        document.querySelector(`${target}`).prepend(document.querySelector(`${name}`) || '');
       }
     });
   },
@@ -45,7 +45,7 @@ const Zehn = {
   appendChildElements(target, classes) {
     classes.forEach((name) => {
       if (document.querySelector(`${target}`) != null) {
-        document.querySelector(`${target}`).before(document.querySelector(`${name}`));
+        document.querySelector(`${target}`).before(document.querySelector(`${name}`) || '');
       }
     });
   },
