@@ -49,7 +49,7 @@ Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   });
 });
 
-function addButton(target, button, buttonIcon, library, callback) {
+function addButton(target, button, buttonIcon, position, callback) {
   var btn = document.createElement('button');
   btn.classList.add('ZehnButton');
   btn.id = `${button}`;
@@ -57,8 +57,7 @@ function addButton(target, button, buttonIcon, library, callback) {
   btn.value = 'close';
   btn.name = 'button';
   btn.onclick = callback;
-  if (library) {
-    btn.classList.add('DialogButton');
+  if (position) {
     document.querySelector(`${target}`).append(btn);
   } else {
     document.querySelector(`${target}`).prepend(btn);
@@ -68,6 +67,33 @@ function addButton(target, button, buttonIcon, library, callback) {
   document.querySelector(`${target}`).querySelector(`#${button}`).append(icon);
 };
 
+function toggleNavigation() {
+  if (document.getElementById('toggleNavigation') != null) {
+    var btnNavigation = document.getElementById('toggleNavigation');
+    var navigation = document.querySelectorAll(`._2UyOBeiSdBayaFdRa39N2O`);
+    if (btnNavigation.value == 'close') {
+      btnNavigation.value = 'open';
+      navigation.forEach((element) => {
+        // element.style.setProperty('visibility', 'visible', 'important');
+        element.style.setProperty('width', 'fit-content', 'important');
+        element.style.setProperty('padding', '0px 8px', 'important');
+        element.style.setProperty('max-width', 'fit-content', 'important');
+        element.style.setProperty('color', 'rgb(var(--color-text-primary))', 'important');
+      });
+    }
+    else if (btnNavigation.value = 'open') {
+      btnNavigation.value = 'close';
+      navigation.forEach((element) => {
+        // element.style.setProperty('visibility', 'hidden', 'important');
+        element.style.setProperty('width', '0px', 'important');
+        element.style.setProperty('padding', '0px', 'important');
+        element.style.setProperty('max-width', '0px', 'important');
+        element.style.setProperty('color', 'transparent', 'important');
+      });
+    }
+  }
+};
+
 function toggleSidebar() {
   if (document.getElementById('toggleSidebar') != null && document.getElementById('toggleLibrary') != null) {
     var btnSidebar = document.getElementById('toggleSidebar');
@@ -75,6 +101,7 @@ function toggleSidebar() {
     var sidebar = document.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`);
     var buttons = document.querySelector(`._1ZS_xta5HMXzR8JgxDH6n7 ._2WgQEFvIzJw_SHNGbjtRFU`);
     btnSidebar.classList.add('RevealButton');
+    btnLibrary.classList.add('DialogButton');
     if (btnSidebar.value == 'close') {
       btnSidebar.value = 'open';
       btnLibrary.value = 'open';
@@ -127,6 +154,10 @@ function toggleDetails() {
   }
 };
 
+function addButtonNavigation(target) {
+  addButton(target, 'toggleNavigation', 'toggleNavigationIcon', false, toggleNavigation);
+};
+
 function addButtonSidebar(target) {
   addButton(target, 'toggleSidebar', 'toggleSidebarIcon', false, toggleSidebar);
 };
@@ -139,6 +170,7 @@ function addButtonDetails(target) {
   addButton(target, 'toggleDetails', 'toggleDetailsIcon', false, toggleDetails);
 };
 
+Zehn.createButton('._39oUCO1OuizVPwcnnv88no ._3s0lkohH8wU2do0K1il28Y', '#toggleNavigation', addButtonNavigation);
 Zehn.createButton('._2WgQEFvIzJw_SHNGbjtRFU', '#toggleSidebar', addButtonSidebar);
 Zehn.createButton('._2Nq6ov7A1hGcHXVOXNt_OE', '#toggleLibrary', addButtonLibrary);
 Zehn.createButton('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
