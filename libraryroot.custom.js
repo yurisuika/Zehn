@@ -74,7 +74,6 @@ function toggleNavigation() {
     if (btnNavigation.value == 'close') {
       btnNavigation.value = 'open';
       navigation.forEach((element) => {
-        // element.style.setProperty('visibility', 'visible', 'important');
         element.style.setProperty('width', 'fit-content', 'important');
         element.style.setProperty('padding', '0px 8px', 'important');
         element.style.setProperty('max-width', 'fit-content', 'important');
@@ -84,7 +83,6 @@ function toggleNavigation() {
     else if (btnNavigation.value = 'open') {
       btnNavigation.value = 'close';
       navigation.forEach((element) => {
-        // element.style.setProperty('visibility', 'hidden', 'important');
         element.style.setProperty('width', '0px', 'important');
         element.style.setProperty('padding', '0px', 'important');
         element.style.setProperty('max-width', '0px', 'important');
