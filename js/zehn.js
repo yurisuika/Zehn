@@ -74,7 +74,6 @@ const Zehn = {
         var removable = document.querySelectorAll(`${target} ${selector}`);
         if (removable != null) {
           if (removable.length > 1) {
-            console.log(removable.length);
             removable[0].remove();
           }
         }
