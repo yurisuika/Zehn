@@ -70,24 +70,37 @@ function addButton(target, button, buttonIcon, position, callback) {
 function toggleNavigation() {
   if (document.getElementById('toggleNavigation') != null) {
     var btnNavigation = document.getElementById('toggleNavigation');
-    var navigation = document.querySelectorAll(`._2UyOBeiSdBayaFdRa39N2O`);
+    var root = document.querySelectorAll(`._2UyOBeiSdBayaFdRa39N2O`);
+    var nav = document.querySelector(`._3Z3ohQ8-1NKnCZkbS6fvy`);
     if (btnNavigation.value == 'close') {
       btnNavigation.value = 'open';
-      navigation.forEach((element) => {
+      root.forEach((element) => {
         element.style.setProperty('width', 'fit-content', 'important');
         element.style.setProperty('padding', '0px 8px', 'important');
+        element.style.setProperty('min-width', 'fit-content', 'important');
         element.style.setProperty('max-width', 'fit-content', 'important');
         element.style.setProperty('color', 'rgb(var(--color-text-primary))', 'important');
       });
+      nav.style.setProperty('width', '0px', 'important');
+      nav.style.setProperty('min-width', '0px', 'important');
+      nav.style.setProperty('max-width', '0px', 'important');
+      nav.style.setProperty('opacity', '0', 'important');
+      nav.style.setProperty('visibility', 'hidden', 'important');
     }
     else if (btnNavigation.value = 'open') {
       btnNavigation.value = 'close';
-      navigation.forEach((element) => {
+      root.forEach((element) => {
         element.style.setProperty('width', '0px', 'important');
         element.style.setProperty('padding', '0px', 'important');
+        element.style.setProperty('min-width', '0px', 'important');
         element.style.setProperty('max-width', '0px', 'important');
         element.style.setProperty('color', 'transparent', 'important');
       });
+      nav.style.setProperty('width', 'fit-content', 'important');
+      nav.style.setProperty('min-width', 'fit-content', 'important');
+      nav.style.setProperty('max-width', 'fit-content', 'important');
+      nav.style.setProperty('opacity', '1', 'important');
+      nav.style.setProperty('visibility', 'visible', 'important');
     }
   }
 };
@@ -168,12 +181,15 @@ function addButtonDetails(target) {
   addButton(target, 'toggleDetails', 'toggleDetailsIcon', false, toggleDetails);
 };
 
-Zehn.createButton('._39oUCO1OuizVPwcnnv88no ._3s0lkohH8wU2do0K1il28Y', '#toggleNavigation', addButtonNavigation);
+Zehn.createButton('._3s0lkohH8wU2do0K1il28Y', '#toggleNavigation', addButtonNavigation);
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2WgQEFvIzJw_SHNGbjtRFU', '#toggleSidebar', addButtonSidebar);
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2Nq6ov7A1hGcHXVOXNt_OE', '#toggleLibrary', addButtonLibrary);
 Zehn.createButton('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 Zehn.createButton('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 
+// Zehn.moveBefore('._2D64jIEK7wpUR_NlObDW76', '._30vB9DdsPK7VrZAbb5Q1Av', [
+//   '._2D64jIEK7wpUR_NlObDW76' // NAV
+// ]);
 Zehn.moveAppend('._3cykd-VfN_xBxf3Qxriccm', '._3cykd-VfN_xBxf3Qxriccm', [
   '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3mGEzzp18imtSzGPkduedi)', // NOTIFICATIONS
   '._1TdaAqMFadi0UTqilrkelR', // FRIENDS
@@ -182,14 +198,11 @@ Zehn.moveAppend('._3cykd-VfN_xBxf3Qxriccm', '._3cykd-VfN_xBxf3Qxriccm', [
   '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._5wILZhsLODVwGfcJ0hKmJ)', // ANNOUNCEMENTS
   '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3LKQ3S_yqrebeNLF6aeiog)' // BIG PICTURE
 ]);
-Zehn.moveAppend('._3lRfTo8Wo3phXfE1DvK6QW', '._3cykd-VfN_xBxf3Qxriccm', [
+Zehn.moveAppend('._3cykd-VfN_xBxf3Qxriccm .Focusable:has(.Utdt7JrpIm5JlpQmqyj1v)', '._3cykd-VfN_xBxf3Qxriccm', [
   '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(.Utdt7JrpIm5JlpQmqyj1v)' // VR
 ]);
-Zehn.moveAppend('.Utdt7JrpIm5JlpQmqyj1v', '._3cykd-VfN_xBxf3Qxriccm', [
+Zehn.moveAppend('._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3lRfTo8Wo3phXfE1DvK6QW)', '._3cykd-VfN_xBxf3Qxriccm', [
   '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3lRfTo8Wo3phXfE1DvK6QW)' // SOUNDTRACK
-]);
-Zehn.moveAppend('._39oUCO1OuizVPwcnnv88no', '._39oUCO1OuizVPwcnnv88no', [
-  '._3Z3ohQ8-1NKnCZkbS6fvy' // NAV
 ]);
 Zehn.moveAppend('._2WgQEFvIzJw_SHNGbjtRFU', '._2WgQEFvIzJw_SHNGbjtRFU', [
   '._3AhYljPF4e4E8LaBt-FoY0' // SIDEBAR BUTTON LIBRARY
@@ -212,10 +225,3 @@ Zehn.moveAppend('.LCeIT0gmFTY8fdfaVgk4j', '.LCeIT0gmFTY8fdfaVgk4j', [
 Zehn.moveAppend('._1gvujtNl7v7FpJK6kaMeKZ', '._1gvujtNl7v7FpJK6kaMeKZ', [
   '._2yt71EY8-YdWa8dBEE1DAW' // ARTWORK DESCRIPTION
 ]);
-
-// Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '.ZehnButton', 0);
-// Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '._2PF_m-I5yte3WnQhpcz8RC', 0);
-// Zehn.createReveal('._3AhYljPF4e4E8LaBt-FoY0', '._3AhYljPF4e4E8LaBt-FoY0', 0);
-// Zehn.createReveal('._2CEKFex6JMsAse2lqMMjUp', '._2CEKFex6JMsAse2lqMMjUp', 0);
-// Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '._3mzKdQXht__YHo6PX1LmB6', 0);
-// Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '._3mzKdQXht__YHo6PX1LmB6', 1);

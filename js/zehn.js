@@ -42,7 +42,7 @@ const Zehn = {
     });
   },
 
-  appendChildElements(target, classes) {
+  beforeElements(target, classes) {
     classes.forEach((name) => {
       if (document.querySelector(`${target}`) != null) {
         document.querySelector(`${target}`).before(document.querySelector(`${name}`) || '');
