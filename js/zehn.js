@@ -17,7 +17,7 @@ const Zehn = {
     });
   },
 
-  waitAndObserve(wait, target, classes, callback) {
+  waitAndObserve(wait, callback) {
     Zehn.waitForElement(wait).then((element) => {
       var observer = new MutationObserver(function(mutations, observer) {
         callback();
@@ -27,39 +27,59 @@ const Zehn = {
   },
 
   appendElements(target, classes) {
-    classes.forEach((name) => {
+    classes.forEach((selector) => {
       if (document.querySelector(`${target}`) != null) {
-        document.querySelector(`${target}`).appendChild(document.querySelector(`${name}`) || '');
+        document.querySelectorAll(`${selector}`).forEach((sub) => {
+        document.querySelector(`${target}`).appendChild(sub || '');
+        })
       }
     });
   },
 
   prependElements(target, classes) {
-    classes.forEach((name) => {
+    classes.forEach((selector) => {
       if (document.querySelector(`${target}`) != null) {
-        document.querySelector(`${target}`).prepend(document.querySelector(`${name}`) || '');
+        document.querySelectorAll(`${selector}`).forEach((sub) => {
+        document.querySelector(`${target}`).prepend(sub || '');
+        })
       }
     });
   },
 
   beforeElements(target, classes) {
-    classes.forEach((name) => {
+    classes.forEach((selector) => {
       if (document.querySelector(`${target}`) != null) {
-        document.querySelector(`${target}`).before(document.querySelector(`${name}`) || '');
+        document.querySelectorAll(`${selector}`).forEach((sub) => {
+        document.querySelector(`${target}`).before(sub || '');
+        })
       }
     });
   },
 
   moveAppend(wait, target, classes) {
-    Zehn.waitAndObserve(wait, target, classes, () => Zehn.appendElements(target, classes));
+    Zehn.waitAndObserve(wait, () => Zehn.appendElements(target, classes));
   },
 
   movePrepend(wait, target, classes) {
-    Zehn.waitAndObserve(wait, target, classes, () => Zehn.prependElements(target, classes));
+    Zehn.waitAndObserve(wait, () => Zehn.prependElements(target, classes));
   },
 
   moveBefore(wait, target, classes) {
-    Zehn.waitAndObserve(wait, target, classes, () => Zehn.beforeElements(target, classes));
+    Zehn.waitAndObserve(wait, () => Zehn.beforeElements(target, classes));
+  },
+
+  removeOld(wait, target, classes) {
+    Zehn.waitAndObserve(wait, () => {
+      classes.forEach((selector) => {
+        var removable = document.querySelectorAll(`${target} ${selector}`);
+        if (removable != null) {
+          if (removable.length > 1) {
+            console.log(removable.length);
+            removable[0].remove();
+          }
+        }
+      });
+    });
   },
 
   addUserAgent() {
@@ -72,7 +92,7 @@ const Zehn = {
 
   createReveal(target, button) {
     var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
-    Zehn.waitAndObserve(target, button, [], () => {
+    Zehn.waitAndObserve(target, () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new Reveal('body', {
             selector: element,
@@ -87,7 +107,7 @@ const Zehn = {
 
   createRevealBorder(target, button) {
     var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
-    Zehn.waitAndObserve(target, button, [], () => {
+    Zehn.waitAndObserve(target, () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new Reveal('body', {
             selector: element,
@@ -102,7 +122,7 @@ const Zehn = {
 
   createRevealHeader(target, button) {
     var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
-    Zehn.waitAndObserve(target, button, [], () => {
+    Zehn.waitAndObserve(target, () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new RevealHeader('body', {
             selector: document.querySelectorAll(`${target}`),
@@ -116,8 +136,8 @@ const Zehn = {
     });
   },
 
-  createButton(target, button, callback) {
-    Zehn.waitAndObserve(target, button, [], () => {
+  createElement(target, button, callback) {
+    Zehn.waitAndObserve(target, () => {
       if (document.querySelector(`${target}`) != null) {
         if (document.querySelector(`${target} ${button}`) == null) {
             callback(target);
