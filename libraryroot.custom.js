@@ -169,8 +169,8 @@ function addButtonDetails(target) {
 };
 
 Zehn.createButton('._39oUCO1OuizVPwcnnv88no ._3s0lkohH8wU2do0K1il28Y', '#toggleNavigation', addButtonNavigation);
-Zehn.createButton('._2WgQEFvIzJw_SHNGbjtRFU', '#toggleSidebar', addButtonSidebar);
-Zehn.createButton('._2Nq6ov7A1hGcHXVOXNt_OE', '#toggleLibrary', addButtonLibrary);
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2WgQEFvIzJw_SHNGbjtRFU', '#toggleSidebar', addButtonSidebar);
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2Nq6ov7A1hGcHXVOXNt_OE', '#toggleLibrary', addButtonLibrary);
 Zehn.createButton('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 Zehn.createButton('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 
