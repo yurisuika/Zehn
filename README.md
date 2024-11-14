@@ -43,6 +43,7 @@ Zehn now supports Millennium's built-in configuration screen! You may select bot
 On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/<theme>/colors.css`.
 
 Zehn features several added buttons for an improved experience:
+* The library window's menu button toggles the visibility of the root menu bar and the navigation menu bar.
 * You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
 * The library sidebar can be toggled by an added button. You will find this button on the sidebar when opened and in the bottom-right corner when closed while the window is focused and hovered.
 * The game page details panel is hidden by default. A button has been added to the playbar to toggle it.
