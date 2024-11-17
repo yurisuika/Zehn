@@ -179,18 +179,18 @@ function toggleDetails() {
     var activity = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
     if (btnDetails.value == 'close') {
       btnDetails.value = 'open';
-      featured.style.setProperty('min-width', '66%', 'important');
-      featured.style.setProperty('max-width', '66%', 'important');
-      activity.style.setProperty('min-width', '66%', 'important');
-      activity.style.setProperty('max-width', '66%', 'important');
+      // featured.style.setProperty('min-width', '66%', 'important');
+      // featured.style.setProperty('max-width', '66%', 'important');
+      // activity.style.setProperty('min-width', '66%', 'important');
+      // activity.style.setProperty('max-width', '66%', 'important');
       details.style.setProperty('display', 'flex', 'important');
     }
     else if (btnDetails.value = 'open') {
       btnDetails.value = 'close';
-      featured.style.setProperty('min-width', '100%', 'important');
-      featured.style.setProperty('max-width', '100%', 'important');
-      activity.style.setProperty('min-width', '100%', 'important');
-      activity.style.setProperty('max-width', '100%', 'important');
+      // featured.style.setProperty('min-width', '100%', 'important');
+      // featured.style.setProperty('max-width', '100%', 'important');
+      // activity.style.setProperty('min-width', '100%', 'important');
+      // activity.style.setProperty('max-width', '100%', 'important');
       details.style.setProperty('display', 'none', 'important');
     }
   }
