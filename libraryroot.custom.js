@@ -162,7 +162,9 @@ function toggleActivity() {
     }
     else if (btnActivity.value = 'open') {
       btnActivity.value = 'close';
-      featured.style.setProperty('display', 'block', 'important');
+      if (featured.hasChildNodes()) {
+        featured.style.setProperty('display', 'block', 'important');
+      }
       event.style.setProperty('display', 'block', 'important');
       community.style.setProperty('display', 'none', 'important');
     }
