@@ -47,6 +47,7 @@ Zehn features several added buttons for an improved experience:
 * You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
 * The library sidebar can be toggled by an added button. You will find this button on the sidebar when opened and in the bottom-right corner when closed while the window is focused and hovered.
 * The game page details panel is hidden by default. A button has been added to the playbar to toggle it.
+* The game event and community content feeds can be toggled, with the event feed displayed by default. The button is also in the playbar.
 
 Zehn uses Windows 10's Segoe UI for the most seamless experience. If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
 

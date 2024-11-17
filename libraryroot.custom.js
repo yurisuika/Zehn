@@ -148,6 +148,27 @@ function toggleSidebar() {
   }
 };
 
+function toggleActivity() {
+  if (document.getElementById('toggleActivity') != null) {
+    var btnActivity = document.getElementById('toggleActivity');
+    var featured = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
+    var event = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
+    var community = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)`);
+    if (btnActivity.value == 'close') {
+      btnActivity.value = 'open';
+      featured.style.setProperty('display', 'none', 'important');
+      event.style.setProperty('display', 'none', 'important');
+      community.style.setProperty('display', 'block', 'important');
+    }
+    else if (btnActivity.value = 'open') {
+      btnActivity.value = 'close';
+      featured.style.setProperty('display', 'block', 'important');
+      event.style.setProperty('display', 'block', 'important');
+      community.style.setProperty('display', 'none', 'important');
+    }
+  }
+};
+
 function toggleDetails() {
   if (document.getElementById('toggleDetails') != null) {
     var btnDetails = document.getElementById('toggleDetails');
@@ -177,6 +198,10 @@ function addButtonNavigation(target) {
   addButton(target, 'toggleNavigation', 'toggleNavigationIcon', false, toggleNavigation);
 };
 
+function addButtonActivity(target) {
+  addButton(target, 'toggleActivity', 'toggleActivityIcon', false, toggleActivity);
+};
+
 function addButtonSidebar(target) {
   addButton(target, 'toggleSidebar', 'toggleSidebarIcon', false, toggleSidebar);
 };
@@ -192,6 +217,8 @@ function addButtonDetails(target) {
 Zehn.createElement('._3s0lkohH8wU2do0K1il28Y', '#toggleNavigation', addButtonNavigation);
 Zehn.createElement('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2WgQEFvIzJw_SHNGbjtRFU', '#toggleSidebar', addButtonSidebar);
 Zehn.createElement('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2Nq6ov7A1hGcHXVOXNt_OE', '#toggleLibrary', addButtonLibrary);
+Zehn.createElement('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleActivity', addButtonActivity);
+Zehn.createElement('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '#toggleActivity', addButtonActivity);
 Zehn.createElement('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 Zehn.createElement('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 
