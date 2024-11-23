@@ -1,12 +1,9 @@
 /* BACKGROUND */
 .OverlayTimeline {
   background-color: transparent !important;
-  /* height: calc(100vh - 48px) !important; */
-  /* top: 48px !important; */
-}
-
-html:has(.OverlayTimeline) {
-  background-color: transparent !important;
+  height: calc(100vh - 48px) !important;
+  top: 48px !important;
+  bottom: 0px !important;
 }
 
 .GameOverlayPlayer {
@@ -77,14 +74,21 @@ html:has(.OverlayTimeline) {
 /* START RECORDING */
 ._2_v1BiFUpGfxhBQ1QIIJfB {
   margin-top: 0px !important;
-  /* background: var(--color-acrylic-overlay-dark) !important; */
-  /* backdrop-filter: blur(var(--blur-radius)) !important; */
-  /* background-blend-mode: exclusion !important; */
-  /* background-image: var(--acrylic) !important; */
+  position: relative !important;
 }
 
-._2_v1BiFUpGfxhBQ1QIIJfB > div {
-  /* height: 48px !important; */
+._2_v1BiFUpGfxhBQ1QIIJfB::before {
+  height: 48px !important;
+  position: absolute !important;
+  content: "" !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: -1 !important;
+  background: var(--color-acrylic-overlay-dark) !important;
+  backdrop-filter: blur(var(--blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--acrylic) !important;
 }
 
 /* CONTROLS */
@@ -101,17 +105,13 @@ html:has(.OverlayTimeline) {
   display: flex !important;
   grid-template-columns: unset !important;
   margin: 0px !important;
-  top: 48px !important;
+  top: 0px !important;
   bottom: unset !important;
   height: 48px !important;
-  z-index: 999 !important;
   position: absolute !important;
   width: 100% !important;
   left: 0px !important;
-  background: var(--color-acrylic-overlay-dark) !important;
-  backdrop-filter: blur(var(--blur-radius)) !important;
-  background-blend-mode: exclusion !important;
-  background-image: var(--acrylic) !important;
+  background: transparent !important;
 }
 
 ._3QLt_cnTY9p8pNOj9jxTxR, ._2AtQdZFU-mOGE-_3SuQKkw {
@@ -202,7 +202,7 @@ html:has(.OverlayTimeline) {
   bottom: 0px !important;
   height: 96px !important;
   background: var(--color-acrylic-overlay-dark) !important;
-  backdrop-filter: blur(var(--blur-radius)) !important;
+  /* backdrop-filter: blur(var(--blur-radius)) !important; */
   background-blend-mode: exclusion !important;
   background-image: var(--acrylic) !important;
 }
@@ -327,7 +327,7 @@ html:has(.OverlayTimeline) {
 
 /* VIDEO */
 ._2fP0tlgegInERiBXbtZN_z {
-  margin: 96px auto !important;
+  margin: 48px auto 96px auto !important;
   width: 100% !important;
   background-color: rgb(var(--color-positive)) !important;
   transition: none !important;
