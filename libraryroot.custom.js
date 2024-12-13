@@ -264,7 +264,7 @@ Zehn.movePrepend('.TabbedPopupBrowser .TitleBar.title-area', '.TabbedPopupBrowse
   '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
 ]);
 Zehn.movePrepend('.fbu3l7kPiBeb3EKCjIb8n', '.fi6UDkxJq66MLo2z9wabQ', [
-  '.fbu3l7kPiBeb3EKCjIb8n' // OVERLAY BUTTONS
+  '_3OzkVrQFFPv0aV41N4MrHV' // OVERLAY BUTTONS
 ]);
 Zehn.moveAppend('.DKXVRVBokaW_Xxo6kyKq0', '.DKXVRVBokaW_Xxo6kyKq0', [
   '._3-jI6bR_mj4JCTwXNFFuuL' // SCREENSHOT CAPTION
