@@ -263,6 +263,9 @@ Zehn.moveAppend('._2WgQEFvIzJw_SHNGbjtRFU', '._2WgQEFvIzJw_SHNGbjtRFU', [
 Zehn.movePrepend('.TabbedPopupBrowser .TitleBar.title-area', '.TabbedPopupBrowser .TitleBar.title-area', [
   '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
 ]);
+Zehn.movePrepend('.OverlayBrowser_Browser .TitleBar.title-area', '.OverlayBrowser_Browser .TitleBar.title-area', [
+  '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
+]);
 Zehn.movePrepend('.fbu3l7kPiBeb3EKCjIb8n', '.fi6UDkxJq66MLo2z9wabQ', [
   '_3OzkVrQFFPv0aV41N4MrHV' // OVERLAY BUTTONS
 ]);
