@@ -143,6 +143,13 @@ const Zehn = {
         }
       }
     });
+  },
+
+  blendSVG(svg) {
+    // document.getElementById(`${svg}`).setAttribute("fill", "red")
+    // svg.style.fill.'yellow';
+    const svgElement = document.getElementById('icon-contact-info');
+    svgElement.setAttribute("fill", "red");
   }
 };
 

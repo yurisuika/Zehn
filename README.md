@@ -37,10 +37,12 @@ The [live version](https://github.com/yurisuika/Zehn/tree/live) references the l
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
 #### Customization
-Zehn now supports Millennium's built-in configuration screen! You may select both config options and use the color editor from it. Some variables deemed not necessary to be turned into options may still be found in the `~/css/variables/` folder.
+Zehn now supports Millennium's built-in configuration screen! You may select various options and use the color editor from it.
+
+Choose from both dark and light modes! You can now also blend a color into the window! See the `Theme` tab in the settings for these options.
 
 #### Features
-On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/<theme>/colors.css`.
+On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/mode/<theme>/colors.css`.
 
 Zehn features several added buttons for an improved experience:
 * The library window's menu button toggles the visibility of the root menu bar and the navigation menu bar.
@@ -54,4 +56,4 @@ Zehn uses Windows 10's Segoe UI for the most seamless experience. If you are usi
 Zehn features optional [Fluent Reveal](https://github.com/aleversn/FluentReveal) effects. If enabled, certain buttons are given the reactive background and border effect. This may perform poorly on some systems.
 
 #### Discussion
-If you have inquires, you can use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) or come by my [Discord](https://discord.gg/0zdNEkQle7Qg9C1H).
+If you have inquires, you may use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) or join my modding [Discord](https://discord.gg/0zdNEkQle7Qg9C1H) server.

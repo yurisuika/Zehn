@@ -1,4 +1,10 @@
 :root {
+  --color-ingame: var(--option-color-ingame, 35, 165, 90);
+  --color-online: var(--option-color-online, 35, 165, 90);
+  --color-away: var(--option-color-away, 240, 178, 50);
+  --color-disturb: var(--option-color-disturb, 242, 63, 67);
+  --color-offline: var(--option-color-offline, 128, 132, 142);
+
   --color-accent: var(--option-color-accent, var(--SystemAccentColor-RGB, 210, 115, 138));
   --color-accent-lighten-light: var(--option-color-accent-lighten-light, var(--SystemAccentColorLight1-RGB, 215, 135, 154));
   --color-accent-lighten-medium: var(--option-color-accent-lighten-medium, var(--SystemAccentColorLight2-RGB, 218, 157, 172));
@@ -20,20 +26,34 @@
   --color-negative: var(--option-color-negative, var(--color-white));
   --color-positive: var(--option-color-positive, var(--color-black));
 
-  --color-background-window: var(--option-color-background-window, 34, 34, 34);
-  --color-background-dialog: var(--option-color-background-dialog, 0, 0, 0);
-
   --color-border: var(--option-color-border, rgba(var(--color-negative), 0.17));
 
-  --color-text-primary: var(--option-color-text-primary, var(--color-text-dark-primary));
-  --color-text-secondary: var(--option-color-text-secondary, var(--color-text-dark-secondary));
-  --color-text-tertiary: var(--option-color-text-tertiary, var(--color-text-dark-tertiary));
-  --color-text-light-primary: var(--option-color-text-light-primary, 0, 0, 0);
-  --color-text-light-secondary: var(--option-color-text-light-secondary, 102, 102, 102);
-  --color-text-light-tertiary: var(--option-color-text-light-tertiary, 153, 153, 153);
-  --color-text-dark-primary: var(--option-color-text-dark-primary, 255, 255, 255);
-  --color-text-dark-secondary: var(--option-color-text-dark-secondary, 153, 153, 153);
-  --color-text-dark-tertiary: var(--option-color-text-dark-tertiary, 127, 127, 127);
+  --color-acrylic-rating: var(--option-color-acrylic-rating, rgba(var(--option-color-positive), 0.5));
+  --color-acrylic-overlay-dark: var(--option-color-acrylic-overlay-dark, rgba(var(--color-positive), 0.65));
+  --color-acrylic-overlay-medium: var(--option-color-acrylic-overlay-medium, rgba(var(--color-positive), 0.5));
+  --color-acrylic-overlay-light: var(--option-color-acrylic-overlay-light, rgba(var(--color-negative), 0.05));
+  --color-acrylic-focus-window: var(--option-color-acrylic-focus-window, rgba(var(--color-positive), 0.15));
+  --color-acrylic-focus-dialog: var(--option-color-acrylic-focus-dialog, rgba(var(--color-negative), 0.15));
+
+  --color-background-primary: var(--option-color-background-primary, 34, 34, 34);
+  --color-background-secondary: var(--option-color-background-secondary, 31, 31, 31);
+  --color-background-tertiary: var(--option-color-background-tertiary, 0, 0, 0);
+
+  --color-window-client: var(--option-color-window-client, rgb(var(--color-background-primary)));
+  --color-window-acrylic: var(--option-color-window-acrylic, rgb(var(--color-background-secondary)));
+  --color-window-dialog: var(--option-color-window-dialog, rgb(var(--color-background-tertiary)));
+
+  --color-foreground-primary: var(--option-color-foreground-primary, 255, 255, 255);
+  --color-foreground-secondary: var(--option-color-foreground-secondary, 153, 153, 153);
+  --color-foreground-tertiary: var(--option-color-foreground-tertiary, 127, 127, 127);
+
+  --color-text-primary: var(--option-color-text-primary, rgb(var(--color-foreground-primary)));
+  --color-text-secondary: var(--option-color-text-secondary, rgb(var(--color-foreground-secondary)));
+  --color-text-tertiary: var(--option-color-text-tertiary, rgb(var(--color-foreground-tertiary)));
+
+  --color-icon-primary: var(--option-color-icon-primary, rgb(var(--color-foreground-primary)));
+  --color-icon-secondary: var(--option-color-icon-secondary, rgb(var(--color-foreground-secondary)));
+  --color-icon-tertiary: var(--option-color-icon-tertiary, rgb(var(--color-foreground-tertiary)));
 
   --color-close-hover: var(--option-color-close-hover, 232, 18, 35);
   --color-close-pressed: var(--option-color-close-pressed, 241, 112, 121);
@@ -44,15 +64,5 @@
   --color-switch-border-active: var(--option-color-switch-border-active, 215, 215, 215);
   --color-switch-fill-active: var(--option-color-switch-fill-active, 162, 162, 162);
 
-  --color-input: var(--option-color-input, var(--color-acrylic));
-
-  --color-acrylic-rating: var(--option-color-acrylic-rating, rgba(var(--option-color-positive), 0.5));
-
-  --color-acrylic-overlay-dark: var(--option-color-acrylic-overlay-dark, rgba(var(--color-positive), 0.65));
-  --color-acrylic-overlay-medium: var(--option-color-acrylic-overlay-medium, rgba(var(--color-positive), 0.5));
-  --color-acrylic-overlay-light: var(--option-color-acrylic-overlay-light, rgba(var(--color-negative), 0.05));
-
-  --color-acrylic: var(--option-color-acrylic, rgb(31, 31, 31));
-  --color-acrylic-focus-window: var(--option-color-acrylic-focus-window, rgba(var(--color-positive), 0.15));
-  --color-acrylic-focus-dialog: var(--option-color-acrylic-focus-dialog, rgba(var(--color-negative), 0.15));
+  --color-input: var(--option-color-input, var(--color-window-acrylic));
 }

@@ -1,4 +1,4 @@
-import Zehn from './js/zehn.js';
+import Zehn from './../js/zehn.js';
 
 Zehn.addUserAgent();
 
@@ -7,43 +7,43 @@ Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   console.log(cells);
   [].forEach.call(cells, function (el) {
     if(el.innerText.indexOf('Privacy') !== -1) {
-      el.style.backgroundImage = 'var(--icon-privacy)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-privacy)');
       console.log(el)
     }
     if(el.innerText.indexOf('Workshop') !== -1) {
-      el.style.backgroundImage = 'var(--icon-store)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-store)');
       console.log(el)
     }
     if(el.innerText.indexOf('DLC') !== -1) {
-      el.style.backgroundImage = 'var(--icon-shop)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-shop)');
       console.log(el)
     }
     if(el.innerText.indexOf('Controller') !== -1) {
-      el.style.backgroundImage = 'var(--icon-controller)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-controller)');
       console.log(el)
     }
     if(el.innerText.indexOf('Betas') !== -1) {
-      el.style.backgroundImage = 'var(--icon-update-dev)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-update-dev)');
       console.log(el)
     }
     if(el.innerText.indexOf('Installed Files') !== -1) {
-      el.style.backgroundImage = 'var(--icon-apps-all)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-apps-all)');
       console.log(el)
     }
     if(el.innerText.indexOf('Updates') !== -1) {
-      el.style.backgroundImage = 'var(--icon-update)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-update)');
       console.log(el)
     }
     if(el.innerText.indexOf('Compatibility') !== -1) {
-      el.style.backgroundImage = 'var(--icon-switch)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-switch)');
       console.log(el)
     }
     if(el.innerText.indexOf('General') !== -1) {
-      el.style.backgroundImage = 'var(--icon-home)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-home)');
       console.log(el)
     }
     if(el.innerText.indexOf('Game Recording') !== -1) {
-      el.style.backgroundImage = 'var(--icon-film)';
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-film)');
       console.log(el)
     }
   });
@@ -79,7 +79,7 @@ function toggleNavigation() {
         element.style.setProperty('padding', '0px 8px', 'important');
         element.style.setProperty('min-width', 'fit-content', 'important');
         element.style.setProperty('max-width', 'fit-content', 'important');
-        element.style.setProperty('color', 'rgb(var(--color-text-primary))', 'important');
+        element.style.setProperty('color', 'var(--color-text-primary)', 'important');
         element.classList.add('rootShown');
         element.classList.toggle('rootHidden');
       });
@@ -224,6 +224,32 @@ Zehn.createElement('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ
 Zehn.createElement('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 Zehn.createElement('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);
 
+function createBackwardsWrapper() {
+  var wrapper = document.createElement('div');
+  wrapper.classList.add('backwardsWrapper');
+  if (document.querySelector(`.backwardsWrapper`) == null) {
+    document.querySelector(`._25lBLzuVeYAUG279up4xP8`).before(wrapper || '');
+  }
+};
+
+function createForwardsWrapper() {
+  var wrapper = document.createElement('div');
+  wrapper.classList.add('forwardsWrapper');
+  if (document.querySelector(`.forwardsWrapper`) == null) {
+    document.querySelector(`._25lBLzuVeYAUG279up4xP8`).before(wrapper || '');
+  }
+};
+
+Zehn.createElement('._25lBLzuVeYAUG279up4xP8', '.backwardsWrapper', createBackwardsWrapper);
+Zehn.createElement('._25lBLzuVeYAUG279up4xP8', '.forwardsWrapper', createForwardsWrapper);
+
+Zehn.moveAppend('._25lBLzuVeYAUG279up4xP8', '.forwardsWrapper', [
+  '._2D64jIEK7wpUR_NlObDW76 > ._25lBLzuVeYAUG279up4xP8:nth-of-type(2)' // FORWARDS
+]);
+Zehn.moveAppend('._25lBLzuVeYAUG279up4xP8', '.backwardsWrapper', [
+  '._2D64jIEK7wpUR_NlObDW76 > ._25lBLzuVeYAUG279up4xP8' // BACKWARDS
+]);
+
 function createWrapper() {
   var wrapper = document.createElement('div');
   wrapper.classList.add('navWrapper');
@@ -272,8 +298,8 @@ Zehn.movePrepend('.fbu3l7kPiBeb3EKCjIb8n', '.fi6UDkxJq66MLo2z9wabQ', [
 Zehn.moveAppend('.DKXVRVBokaW_Xxo6kyKq0', '.DKXVRVBokaW_Xxo6kyKq0', [
   '._3-jI6bR_mj4JCTwXNFFuuL' // SCREENSHOT CAPTION
 ]);
-Zehn.moveAppend('.LCeIT0gmFTY8fdfaVgk4j', '.LCeIT0gmFTY8fdfaVgk4j', [
-  '._1fu6xumTI1nCY5wc6FG_N2' // NOTES DELETE
+Zehn.movePrepend('._1fu6xumTI1nCY5wc6FG_N2', '.LCeIT0gmFTY8fdfaVgk4j', [
+  '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
 ]);
 Zehn.moveAppend('._1gvujtNl7v7FpJK6kaMeKZ', '._1gvujtNl7v7FpJK6kaMeKZ', [
   '._2yt71EY8-YdWa8dBEE1DAW' // ARTWORK DESCRIPTION
