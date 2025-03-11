@@ -1,1 +1,0 @@
-import 'https://zehn.yurisuika.dev/friends.custom.js';

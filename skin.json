@@ -1,283 +1,400 @@
 {
   "Conditions": {
-    "Theme: Color Mode": {
+    "Color Mode": {
       "description": "Choose between dark mode or light mode.",
+      "tab": "Theme",
       "default": "Dark",
       "values": {
         "Dark": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/dark/theme.css"
+            "src": "config/theme/mode/dark/theme.css"
           },
           "TargetJs": {
             "affects": [".*"],
-            "src": "config/theme/dark/theme.js"
+            "src": "config/theme/mode/dark/theme.js"
           }
         },
         "Light": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/light/theme.css"
+            "src": "config/theme/mode/light/theme.css"
           },
           "TargetJs": {
             "affects": [".*"],
-            "src": "config/theme/light/theme.js"
+            "src": "config/theme/mode/light/theme.js"
           }
         }
       }
     },
-    "Client: Fluent Reveal": {
+    "Background Color Tint": {
+      "description": "Blends a color into the background. This includes window backgrounds and acrylic effects. You may select this color from the Colors tab.",
+      "tab": "Theme",
+      "default": "no",
+      "values": {
+        "no": {},
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/background/tint/enable.css"
+          }
+        }
+      }
+    },
+    "Background Color Blend": {
+      "description": "Sets how much tint is blended into the background. Lower values produce a better blend, but higher values produce a truer color.",
+      "tab": "Theme",
+      "default": "50%",
+      "values": {
+        "0%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/background/blend/0%.css"
+          }
+        },
+        "25%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/background/blend/25%.css"
+          }
+        },
+        "50%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/background/blend/50%.css"
+          }
+        },
+        "75%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/background/blend/75%.css"
+          }
+        },
+        "100%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/background/blend/100%.css"
+          }
+        }
+      }
+    },
+    "Foreground Color Tint": {
+      "description": "Blends a color into the foreground. This includes text, buttons, and other foreground elements. You may select this color from the Colors tab.",
+      "tab": "Theme",
+      "default": "no",
+      "values": {
+        "no": {},
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/foreground/tint/enable.css"
+          }
+        }
+      }
+    },
+    "Foreground Color Blend": {
+      "description": "Sets how much tint is blended into the foreground. Lower values produce a better blend, but higher values produce a truer color.",
+      "tab": "Theme",
+      "default": "50%",
+      "values": {
+        "0%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/foreground/blend/0%.css"
+          }
+        },
+        "25%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/foreground/blend/25%.css"
+          }
+        },
+        "50%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/foreground/blend/50%.css"
+          }
+        },
+        "75%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/foreground/blend/75%.css"
+          }
+        },
+        "100%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/color/foreground/blend/100%.css"
+          }
+        }
+      }
+    },
+    "Fluent Reveal": {
       "description": "Enables Fluent Reveal effect for supported buttons. May cause undesired persistence of some windows.",
+      "tab": "General",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/reveal/disable.css"
+            "src": "config/general/reveal/disable.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/reveal/enable.css"
+            "src": "config/general/reveal/enable.css"
           },
           "TargetJs": {
             "affects": [".*"],
-            "src": "config/client/reveal/enable.js"
+            "src": "config/general/reveal/enable.js"
           }
         }
       }
     },
-    "Client: Avatar Shape": {
+    "Avatar Shape": {
       "description": "Selects the avatar shape.",
+      "tab": "General",
       "default": "Round",
       "values": {
         "Round": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/avatar/round.css"
+            "src": "config/general/avatar/round.css"
           }
         },
         "Square": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/avatar/square.css"
+            "src": "config/general/avatar/square.css"
           }
         }
       }
     },
-    "Client: Blur": {
+    "Blur": {
       "description": "Selects the amount of blur.",
+      "tab": "General",
       "default": "Normal",
       "values": {
         "Light": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/blur/light.css"
+            "src": "config/general/blur/light.css"
           }
         },
         "Normal": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/blur/normal.css"
+            "src": "config/general/blur/normal.css"
           }
         },
         "Heavy": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/blur/heavy.css"
+            "src": "config/general/blur/heavy.css"
           }
         }
       }
     },
-    "Client: Display Scrollbars": {
+    "Display Scrollbars": {
       "description": "Toggles displaying scrollbars on the client. Disables several transparency effects.",
+      "tab": "General",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/scrollbars/hide.css"
+            "src": "config/general/scrollbars/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/scrollbars/show.css"
+            "src": "config/general/scrollbars/show.css"
           }
         }
       }
     },
-    "Client: Display Tooltips": {
+    "Display Tooltips": {
       "description": "Toggles displaying tooltips on the client.",
+      "tab": "General",
       "default": "yes",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/tooltips/hide.css"
+            "src": "config/general/tooltips/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/tooltips/show.css"
+            "src": "config/general/tooltips/show.css"
           }
         }
       }
     },
-    "Client: Display Miniprofiles": {
+    "Display Miniprofiles": {
       "description": "Toggles displaying miniprofiles on the client.",
+      "tab": "General",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/miniprofiles/hide.css"
+            "src": "config/general/miniprofiles/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/client/miniprofiles/show.css"
+            "src": "config/general/miniprofiles/show.css"
           }
         }
       }
     },
-    "Navbar: Display Account Avatar": {
+    "Display Account Avatar": {
       "description": "Toggles displaying the account avatar on the navbar.",
+      "tab": "Navigation",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/account avatar/hide.css"
+            "src": "config/navigation/account avatar/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/account avatar/show.css"
+            "src": "config/navigation/account avatar/show.css"
           }
         }
       }
     },
-    "Navbar: Display Announcements Button": {
+    "Display Announcements Button": {
       "description": "Toggles displaying the announcements button on the navbar.",
+      "tab": "Navigation",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/announcements/hide.css"
+            "src": "config/navigation/announcements/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/announcements/show.css"
+            "src": "config/navigation/announcements/show.css"
           }
         }
       }
     },
-    "Navbar: Display Add Game Button": {
+    "Display Add Game Button": {
       "description": "Toggles displaying the add game button on the navbar.",
+      "tab": "Navigation",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/add game/hide.css"
+            "src": "config/navigation/add game/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/add game/show.css"
+            "src": "config/navigation/add game/show.css"
           }
         }
       }
     },
-    "Navbar: Display VR Button": {
+    "Display VR Button": {
       "description": "Toggles displaying the VR button on the navbar.",
+      "tab": "Navigation",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/vr/hide.css"
+            "src": "config/navigation/vr/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/vr/show.css"
+            "src": "config/navigation/vr/show.css"
           }
         }
       }
     },
-    "Navbar: Display Big Picture Button": {
+    "Display Big Picture Button": {
       "description": "Toggles displaying the Big Picture button on the navbar.",
+      "tab": "Navigation",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/big picture/hide.css"
+            "src": "config/navigation/big picture/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/big picture/show.css"
+            "src": "config/navigation/big picture/show.css"
           }
         }
       }
     },
-    "Navbar: Display URL Bar": {
+    "Display URL Bar": {
       "description": "Toggles displaying the URL bar on the navbar.",
+      "tab": "Navigation",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/url bar/hide.css"
+            "src": "config/navigation/url bar/hide.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/url bar/show.css"
+            "src": "config/navigation/url bar/show.css"
           }
         }
       }
     },
-    "Navbar: Download Bar Width": {
+    "Download Bar Width": {
       "description": "Selects the download bar width on the navbar.",
+      "tab": "Navigation",
       "default": "Normal",
       "values": {
         "Narrow": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/download bar/narrow.css"
+            "src": "config/navigation/download bar/narrow.css"
           }
         },
         "Normal": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/download bar/normal.css"
+            "src": "config/navigation/download bar/normal.css"
           }
         },
         "Wide": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navbar/download bar/wide.css"
+            "src": "config/navigation/download bar/wide.css"
           }
         }
       }
     },
-    "Library: Display Add Shelf Button": {
+    "Display Add Shelf Button": {
       "description": "Toggles displaying the add shelf button on the library.",
+      "tab": "Library",
       "default": "no",
       "values": {
         "no": {
@@ -294,8 +411,9 @@
         }
       }
     },
-    "Library: Display What's New Section": {
+    "Display What's New Section": {
       "description": "Toggles displaying the What's New section on the library.",
+      "tab": "Library",
       "default": "no",
       "values": {
         "no": {
@@ -312,8 +430,9 @@
         }
       }
     },
-    "Chat: Display Time Divisions": {
+    "Display Time Divisions": {
       "description": "Toggles displaying time divisions on the chat.",
+      "tab": "Chat",
       "default": "yes",
       "values": {
         "no": {
@@ -333,39 +452,99 @@
   },
   "Patches": [
     {
-      "MatchRegexString": ".*SP Overlay:.*",
-      "TargetCss": "libraryroot.custom.css",
-      "TargetJs": "libraryroot.custom.js"
-    },
-    {
-      "MatchRegexString": ".*Supernav$",
-      "TargetCss": "libraryroot.custom.css",
-      "TargetJs": "libraryroot.custom.js"
-    },
-    {
-      "MatchRegexString": ".*Menu$",
-      "TargetCss": "libraryroot.custom.css",
-      "TargetJs": "libraryroot.custom.js"
-    },
-    {
-      "MatchRegexString": ".*notificationtoasts_.*",
-      "TargetCss": "notifications.custom.css",
-      "TargetJs": "notifications.custom.js"
-    },
-    {
       "MatchRegexString": "Sign in to Steam",
-      "TargetCss": "libraryroot.custom.css",
-      "TargetJs": "libraryroot.custom.js"
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
     },
     {
       "MatchRegexString": "Steam Games List",
-      "TargetCss": "libraryroot.custom.css",
-      "TargetJs": "libraryroot.custom.js"
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": "https://.*.steampowered.com",
+      "TargetCss": "patches/webkit.css",
+      "TargetJs": "patches/webkit.js"
+    },
+    {
+      "MatchRegexString": "https://steamcommunity.com",
+      "TargetCss": "patches/webkit.css",
+      "TargetJs": "patches/webkit.js"
+    },
+    {
+      "MatchRegexString": "^Steam$",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": "^OverlayBrowser_Browser$",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": "^SP Overlay:",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": "Supernav$",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": "^notificationtoasts_",
+      "TargetCss": "patches/notifications.css",
+      "TargetJs": "patches/notifications.js"
+    },
+    {
+      "MatchRegexString": "^SteamBrowser_Find$",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": "^OverlayTab\\d+_Find$",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": "^Steam Big Picture Mode$",
+      "TargetCss": "patches/bigpicture.css",
+      "TargetJs": "patches/bigpicture.js"
+    },
+    {
+      "MatchRegexString": "^QuickAccess_",
+      "TargetCss": "patches/bigpicture.css",
+      "TargetJs": "patches/bigpicture.js"
+    },
+    {
+      "MatchRegexString": "^MainMenu_",
+      "TargetCss": "patches/bigpicture.css",
+      "TargetJs": "patches/bigpicture.js"
+    },
+    {
+      "MatchRegexString": ".friendsui-container",
+      "TargetCss": "patches/friends.css",
+      "TargetJs": "patches/friends.js"
+    },
+    {
+      "MatchRegexString": "Menu$",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": ".ModalDialogPopup",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
+    },
+    {
+      "MatchRegexString": ".FullModalOverlay",
+      "TargetCss": "patches/library.css",
+      "TargetJs": "patches/library.js"
     }
   ],
-  "UseDefaultPatches": true,
-  "Steam-WebKit": "webkit.css",
-  "RootColors": "colors.css",
+  "UseDefaultPatches": false,
+  "Steam-WebKit": "patches/webkit.css",
+  "RootColors": "config/colors.css",
   "name": "Zehn (Live)",
   "author": "yurisuika",
   "description": "A Steam skin based on Windows 10's Metro/Fluent transitional design language.",
@@ -374,7 +553,7 @@
     "owner": "yurisuika",
     "repo_name": "Zehn"
   },
-  "version": "2025.2.20",
+  "version": "2025.3.11",
   "tags": [
     "Minimal",
     "Dark",
