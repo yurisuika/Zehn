@@ -440,14 +440,6 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   margin-bottom: 24px !important;
 }
 
-.ChatMessageBlock:hover {
-  background-color: rgba(var(--color-negative), 0.025) !important;
-}
-
-.ChatMessageBlock:active {
-  background-color: rgba(var(--color-negative), 0.1) !important;
-}
-
 /* SERVER MESSAGE */
 .msg.serverMsg .msgText {
   box-sizing: border-box !important;
@@ -639,8 +631,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 .timeDivision.time_passes .preHorizDivider {
   height: 1px !important;
   border: unset !important;
-  /* background-color: linear-gradient(270deg, transparent, rgba(var(--color-negative), 0.2)) !important; */
-  background: rgba(var(--color-negative), 0.2) !important;
+  background: var(--color-seperator) !important;
   flex-grow: 1 !important;
   margin: auto 0 auto 16px !important;
   width: unset !important;
@@ -649,15 +640,13 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 .timeDivision.time_passes .horizDivider {
   height: 1px !important;
   border: unset !important;
-  /* background-color: rgba(var(--color-negative), 0.0) !important; */
-  background: rgba(var(--color-negative), 0.2) !important;
+  background: var(--color-seperator) !important;
   flex-grow: 1 !important;
   margin: auto 16px auto 0 !important;
 }
 
 .timeDivision .preHorizDivider {
-  /* background: linear-gradient(90deg, transparent, rgba(var(--color-negative), 0.2)) !important; */
-  background: rgba(var(--color-negative), 0.2) !important;
+  background: var(--color-seperator) !important;
   flex-grow: 1 !important;
   margin: auto 16px !important;
   height: 1px !important;
@@ -665,10 +654,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 .timeDivision .horizDivider {
-  /* background-color: rgba(var(--color-negative), 0.2) !important; */
-  /* flex-grow: 0 !important; */
-  /* width: 0% !important; */
-  background: rgba(var(--color-negative), 0.2) !important;
+  background: var(--color-seperator) !important;
   flex-grow: 1 !important;
   margin: auto 16px !important;
   height: 1px !important;
@@ -686,12 +672,16 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 .MultiUserChat .msg._3qYm9oxf8MdyvQDJgbfCrF {}
 
-._3qYm9oxf8MdyvQDJgbfCrF:hover {
-  background-color: rgba(var(--color-negative), 0.0) !important;
+._3qYm9oxf8MdyvQDJgbfCrF, .ChatMessageBlock:has(.msg:nth-of-type(2):hover) > .ChatSpeaker {
+  background-color: var(--color-chat-background) !important;
 }
 
-._3qYm9oxf8MdyvQDJgbfCrF:active {
-  background-color: rgba(var(--color-negative), 0.0) !important;
+._3qYm9oxf8MdyvQDJgbfCrF:hover, .ChatMessageBlock:has(.msg:nth-of-type(2):hover) > .ChatSpeaker {
+  background-color: var(--color-chat-background-hover) !important;
+}
+
+._3qYm9oxf8MdyvQDJgbfCrF:active, .ChatMessageBlock:has(.msg:nth-of-type(2):active) > .ChatSpeaker {
+  background-color: var(--color-chat-background-active) !important;
 }
 
 .MultiUserChat .isCurrentUser .msgText {
@@ -1278,7 +1268,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* VIDEO UPLOAD */
 .chatFileUploadPreviewContainer .SVGIcon_Video {
   fill: transparent !important;
-  background-color: rgba(var(--color-accent), 0.5) !important;
+  background-color: var(--color-window-acrylic) !important;
   border-radius: 0 !important;
   background-color: var(--color-icon-primary) !important;
   mask-repeat: no-repeat !important;
@@ -1426,12 +1416,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   display: none !important;
 }
 
-.msg .SVGIcon_Button:hover, .restoreSize:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+.BBCodeResizeControl:hover, .BBCodeRestoreControl:hover {
+  background-color: var(--color-button-client-background) !important;
 }
 
-.msg .SVGIcon_Button:active, .restoreSize:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+.BBCodeResizeControl:hover, .BBCodeRestoreControl:hover {
+  background-color: var(--color-button-client-background-hover) !important;
+}
+
+.BBCodeResizeControl:active, .BBCodeRestoreControl:active {
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .msg .SVGIcon_Button.SVGIcon_Popout {
@@ -1518,11 +1512,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeImageWrapper {
-  background-color: rgba(var(--color-accent), 0.5) !important;
+  background-color: var(--color-window-acrylic) !important;
 }
 
 .BBCodeAlreadyCollapsed {
-  background: rgba(var(--color-accent), 0.5) !important;
+  background: var(--color-window-acrylic) !important;
 }
 
 .BBCodeAlreadyCollapsed.Minimized:hover .BBCodeAlreadyCollapsedText, .BBCodeResizableComponent.Minimized:hover .BBCodeCollapsed {
@@ -1553,7 +1547,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeResizableComponent.BBCodeYouTubeComponent {
   max-width: 100% !important;
-  background: rgba(var(--color-accent), 0.5) !important;
+  background: var(--color-window-acrylic) !important;
   border-radius: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -1596,12 +1590,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 32px !important;
   stroke: transparent !important;
   padding: 0 !important;
-  background-color: var(--color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: 16px !important;
-  -webkit-mask-image: var(--icon-close) !important;
   opacity: 1 !important;
+  background-color: var(--color-button-client-background) !important;
 }
 
 .BBCodeResizableComponent:hover .BBCodeCollapseControl:hover, .BBCodeCollapseControl:hover, div:hover>.BBCodeCollapseControl {
@@ -1609,16 +1599,26 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeCollapseControl:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .BBCodeCollapseControl:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .BBCodeCollapseControl .SVGIcon_Button {
   top: 0 !important;
   right: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+  -webkit-mask-image: var(--icon-close) !important;
+}
+
+.BBCodeCollapseControl .SVGIcon_Button * {
   display: none !important;
 }
 
@@ -1795,7 +1795,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHAT BUTTONS */
 .RVIs84dAE6wHcjH9tkinc.jaQN2IyN4P8LZXJ6P11qy {
-  background-color: transparent !important;
+  background-color: var(--color-button-client-background) !important;
   color: rgb(var(--color-negative)) !important;
   width: 0 !important;
   max-width: 0 !important;
@@ -1804,11 +1804,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .RVIs84dAE6wHcjH9tkinc:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .RVIs84dAE6wHcjH9tkinc:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .RVIs84dAE6wHcjH9tkinc {
@@ -1917,15 +1917,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .ChatMessageEntryVoice.Inactive, .ChatMessageEntryVoice.Active {
-  background-color: transparent !important;
+  background-color: var(--color-button-client-background) !important;
 }
 
 .ChatMessageEntryVoice.Inactive:hover, .ChatMessageEntryVoice.Active:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .ChatMessageEntryVoice.Inactive:active, .ChatMessageEntryVoice.Active:active  {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .VoiceToggle.Active {
@@ -2634,14 +2634,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   opacity: 1 !important;
   padding: 0 !important;
   transition: none !important;
+  background-color: var(--color-button-client-background) !important;
 }
 
 .MemberListOption:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .MemberListOption:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .MemberListOption.ToggleMemberListView {
@@ -2956,14 +2957,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   opacity: 1 !important;
   height: 32px !important;
   width: 32px !important;
+  background-color: var(--color-button-client-background) !important;
 }
 
 .VoiceRoomChatTitle .MinimizeTextChat:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .VoiceRoomChatTitle .MinimizeTextChat:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .VoiceRoomChatTitle .MinimizeTextChat svg {
@@ -3060,18 +3062,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 48px !important;
   max-width: 48px !important;
   color: transparent !important;
-  background-color: transparent !important;
+  background-color: var(--color-button-client-background) !important;
   margin-right: 0 !important;
   background-image: none !important;
   position: relative !important;
 }
 
 .doGxCBJrGimabHm365bOV:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .doGxCBJrGimabHm365bOV:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .doGxCBJrGimabHm365bOV::after {
@@ -3109,7 +3111,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .videoSrc {
   transition: filter 0.2s ease-in-out !important;
   border: none !important;
-  background-color: rgba(var(--color-accent), 0.5) !important;
+  background-color: var(--color-window-acrylic) !important;
 }
 
 .videoContainer:hover.HidePlayerControls .videoControls, .videoContainer:hover.HidePlayerControls .STV_BroadcastClose {
@@ -3128,16 +3130,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: 0 !important;
   width: 32px !important;
   height: 32px !important;
-  background-color: transparent !important;
+  background-color: var(--color-button-client-background) !important;
   border-radius: 0 !important;
 }
 
 .STV_BroadcastClose:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .STV_BroadcastClose:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .STV_BroadcastClose svg {
@@ -3240,18 +3242,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   right: 0 !important;
   width: 48px !important;
   height: 48px !important;
-  background-color: transparent !important;
+  background-color: var(--color-button-client-background) !important;
   padding: 0 !important;
   opacity: 1 !important;
   transition: opacity 0.2s !important;
 }
 
 .BroadcastChatExpander:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .BroadcastChatExpander:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 .chatRoomOptions .BroadcastChatExpander {
@@ -3308,16 +3310,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   width: 48px !important;
   height: 48px !important;
   transition: none !important;
-  background: transparent !important;
+  background: var(--color-button-client-background) !important;
   fill: transparent !important;
 }
 
 .chatBody .ChatBodyControls .showBothTabs:hover, .chatBody .ChatBodyControls .Close:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .chatBody .ChatBodyControls .showBothTabs:active, .chatBody .ChatBodyControls .Close:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-button-client-background-active) !important;
 }
 
 /* CHANNELS */
@@ -3336,15 +3338,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab:not(.Active){
-  background-color: transparent !important;
+  background-color: var(--color-list-background) !important;
 }
 
 .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab:not(.Active):hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-list-background-hover) !important;
 }
 
 .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab:not(.Active):active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: var(--color-list-background-active) !important;
 }
 
 .chatBody .InnerChatTab, .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab {
