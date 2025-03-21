@@ -116,6 +116,11 @@ p:last-of-type {
   color: var(--color-input-dialog-text-placeholder) !important;
 }
 
+input[type="text" i] {
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
+}
+
 /* TITLES */
 .DialogHeader {
   color: var(--color-text-primary) !important;
@@ -1018,48 +1023,68 @@ input[type="radio" i]:checked::after:active {}
   height: 16px !important;
   left: 0 !important;
   top: 0 !important;
-  border: 2px solid rgb(var(--color-switch-border-active)) !important;
+  border: 2px solid var(--color-switch-border-off) !important;
+  background: var(--color-switch-background-off) !important;
   border-radius: 9001px !important;
-  background-color: transparent !important;
 }
 
 .DialogToggleField_OptionPanel:hover {
-  border-color: rgb(var(--color-negative)) !important;
+  border-color: var(--color-switch-border-off-hover) !important;
+  background: var(--color-switch-background-off-hover) !important;
+}
+
+.DialogToggleField_OptionPanel:active {
+  border-color: var(--color-switch-border-off-active) !important;
+  background: var(--color-switch-background-off-active) !important;
 }
 
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)) {
-  border-color: rgb(var(--color-accent)) !important;
-  background: rgb(var(--color-accent)) !important;
+  border-color: var(--color-switch-border-on) !important;
+  background: var(--color-switch-background-on) !important;
 }
 
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):hover {
-  border-color: rgb(var(--color-accent-positive-medium)) !important;
-  background: rgb(var(--color-accent-positive-medium)) !important;
+  border-color: var(--color-switch-border-on-hover) !important;
+  background: var(--color-switch-background-on-hover) !important;
 }
 
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):active {
-  border-color: rgb(var(--color-switch-fill-active)) !important;
-  background: rgb(var(--color-switch-fill-active)) !important;
+  border-color: var(--color-switch-border-on-active) !important;
+  background: var(--color-switch-background-on-active) !important;
 }
 
 .DialogToggleField_Option.Off {
   width: 10px !important;
   height: 10px !important;
-  margin: 5px !important;
-  background: rgb(var(--color-switch-border-active)) !important;
+  margin: 3px !important;
+  background: var(--color-switch-toggle-off) !important;
   border-radius: 50% !important;
-}
-
-.DialogToggleField_Control:hover .DialogToggleField_Option.On, .DialogToggleField_Control:active .DialogToggleField_Option.On {
-  background: rgb(var(--color-white)) !important;
+  color: transparent !important;
 }
 
 .DialogToggleField_Control:hover .DialogToggleField_Option.Off {
-  background: rgb(var(--color-negative)) !important;
+  background: var(--color-switch-toggle-off-hover) !important;
 }
 
 .DialogToggleField_Control:active .DialogToggleField_Option.Off {
-  background: rgb(var(--color-white)) !important;
+  background: var(--color-switch-toggle-off-active) !important;
+}
+
+.DialogToggleField_Option.On {
+  background: var(--color-switch-toggle-on) !important;
+  margin-left: 0 !important;
+  line-height: 32px !important;
+  color: transparent !important;
+  text-transform: none !important;
+  position: absolute !important;
+}
+
+.DialogToggleField_Control:hover .DialogToggleField_Option.On {
+  background: var(--color-switch-toggle-on-hover) !important;
+}
+
+.DialogToggleField_Control:active .DialogToggleField_Option.On {
+  background: var(--color-switch-toggle-on-active) !important;
 }
 
 .DialogToggleField_Control .DialogToggleField_Option.Off.Active {
@@ -1071,20 +1096,6 @@ input[type="radio" i]:checked::after:active {}
   transform: translateX(24px);
   transition: transform 0.25s !important;
   color: transparent !important;
-}
-
-.DialogToggleField_Option.Off {
-  margin: 3px !important;
-  color: transparent !important;
-}
-
-.DialogToggleField_Option.On {
-  background-color: transparent !important;
-  margin-left: 0 !important;
-  line-height: 32px !important;
-  color: transparent !important;
-  text-transform: none !important;
-  position: absolute !important;
 }
 
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after {
@@ -1159,26 +1170,26 @@ input[type="radio" i]:checked::after:active {}
 }
 
 .DialogSlider_Slider {
-  background: rgba(var(--color-negative), 0.4) !important;
+  background: var(-color-slider-background) !important;
   border-radius: 0 !important;
   height: 2px !important;
   margin: 11px 0 !important;
   border: unset !important;
   margin-right: 0 !important;
-  border-left: 4px solid rgb(var(--color-accent)) !important;
+  border-left: 4px solid var(--color-slider-track) !important;
   border-right: 4px solid transparent !important;
 }
 
 .DialogSlider_Slider:hover {
-  background: rgba(var(--color-negative), 0.6) !important;
+  background: var(-color-slider-background-hover) !important;
 }
 
 .DialogSlider_Slider:active {
-  background: rgba(var(--color-negative), 0.4) !important;
+  background: var(-color-slider-background-active) !important;
 }
 
 .DialogSlider_Value {
-  background: rgb(var(--color-accent)) !important;
+  background: var(--color-slider-track) !important;
   border-radius: 0 !important;
 }
 
@@ -1188,18 +1199,18 @@ input[type="radio" i]:checked::after:active {}
   margin-left: -4px !important;
   width: 8px !important;
   height: 24px !important;
-  background: rgb(var(--color-accent)) !important;
+  background: var(--color-slider-handle) !important;
   border-radius: 1337px !important;
   width: 8px !important;
   height: 24px !important;
 }
 
 .DialogSlider_Slider:hover .DialogSlider_Grabber {
-  background: rgb(var(--color-negative)) !important;
+  background: var(--color-slider-handle-hover) !important;
 }
 
 .DialogSlider_Slider:active .DialogSlider_Grabber {
-  background: rgb(var(--color-context-border)) !important;
+  background: var(--color-slider-handle-active) !important;
 }
 
 .DialogSlider_Container {
@@ -1248,8 +1259,8 @@ input[type="radio" i]:checked::after:active {}
 }
 
 ._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw._317lekDG36odwSaDLtFQgd:active {
-  border-color: rgb(var(--color-switch-fill-active)) !important;
-  background: rgb(var(--color-switch-fill-active)) !important;
+  border-color: rgb(var(--color-switch-background-active)) !important;
+  background: rgb(var(--color-switch-background-active)) !important;
 }
 
 ._3IWp5BnnsY_aMKCxhCjShP {
@@ -1329,6 +1340,10 @@ input[type="radio" i]:checked::after:active {}
   background: transparent !important;
 }
 
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._2bl0iQ9xigbq4Zd1NI6NZl::before {
+  transform: none !important;
+}
+
 ._9Ql-oVe_j8E-vsDdyVdWo {
   width: 40px !important;
   height: 16px !important;
@@ -1337,26 +1352,40 @@ input[type="radio" i]:checked::after:active {}
   margin: 0 !important;
 }
 
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS {
-  background: rgb(var(--color-accent)) !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._2bl0iQ9xigbq4Zd1NI6NZl {
-  background: transparent !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_ {
-  border: 2px solid rgb(var(--color-switch-border-active)) !important;
+._9Ql-oVe_j8E-vsDdyVdWo, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_:hover, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_:active {
+  border: 2px solid var(--color-switch-border-off) !important;
+  background: var(--color-switch-background-off) !important;
   border-radius: 9001px !important;
 }
 
 ._9Ql-oVe_j8E-vsDdyVdWo:hover {
-  border-color: rgb(var(--color-negative)) !important;
+  border-color: var(--color-switch-border-off-hover) !important;
+  background: var(--color-switch-background-off-hover) !important;
 }
 
 ._9Ql-oVe_j8E-vsDdyVdWo:active {
-  border-color: rgb(var(--color-switch-fill-active)) !important;
-  background: rgb(var(--color-switch-fill-active)) !important;
+  border-color: var(--color-switch-border-off-active) !important;
+  background: var(--color-switch-background-off-active) !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_.yLrDAetGoWx0GYqA6ShfS,._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_.yLrDAetGoWx0GYqA6ShfS:hover, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_.yLrDAetGoWx0GYqA6ShfS:active {
+  border-color: var(--color-switch-border-on) !important;
+  background: var(--color-switch-background-on) !important;
+  border-radius: 9001px !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:hover {
+  border-color: var(--color-switch-border-on-hover) !important;
+  background: var(--color-switch-background-on-hover) !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:active {
+  border-color: var(--color-switch-border-on-active) !important;
+  background: var(--color-switch-background-on-active) !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._2bl0iQ9xigbq4Zd1NI6NZl {
+  background: transparent !important;
 }
 
 ._9Ql-oVe_j8E-vsDdyVdWo:active ._2bl0iQ9xigbq4Zd1NI6NZl {
@@ -1367,58 +1396,41 @@ input[type="radio" i]:checked::after:active {}
   filter: saturate(0.0) var(--filter-focus) !important;
 }
 
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_.yLrDAetGoWx0GYqA6ShfS {
-  border-color: rgb(var(--color-accent)) !important;
-  border-radius: 9001px !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:hover, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_.yLrDAetGoWx0GYqA6ShfS:hover {
-  border-color: rgb(var(--color-accent-positive-medium)) !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:active {
-  border-color: rgb(var(--color-switch-fill-active)) !important;
-}
-
 ._1PQppcgkuXQAiFPar9AGi- {
   width: 10px !important;
   height: 10px !important;
   margin-top: 3px !important;
   margin-left: 3px !important;
-  background: rgb(var(--color-switch-border-active)) !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:hover ._1PQppcgkuXQAiFPar9AGi-, ._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:active ._1PQppcgkuXQAiFPar9AGi- {
-  background: rgb(var(--color-white)) !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo:hover ._1PQppcgkuXQAiFPar9AGi- {
-  background: rgb(var(--color-negative)) !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo:active ._1PQppcgkuXQAiFPar9AGi- {
-  background: rgb(var(--color-white)) !important;
+  background: var(--color-switch-toggle-off) !important;
 }
 
 ._9Ql-oVe_j8E-vsDdyVdWo ._1PQppcgkuXQAiFPar9AGi- {
   transform: translateX(0px);
   transition: transform 0.25s !important;
-  color: rgb(var(--color-negative)) !important;
+  color: var(--color-switch-toggle-off) !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo:hover ._1PQppcgkuXQAiFPar9AGi-, ._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_ ._1PQppcgkuXQAiFPar9AGi- {
+  background: var(--color-switch-toggle-off-hover) !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo:active ._1PQppcgkuXQAiFPar9AGi- {
+  background: var(--color-switch-toggle-off-active) !important;
 }
 
 ._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._1PQppcgkuXQAiFPar9AGi- {
   transform: translateX(24px);
   transition: transform 0.25s !important;
-  color: rgb(var(--color-white)) !important;
-  background: rgb(var(--color-white)) !important;
+  color: var(--color-switch-toggle-on) !important;
+  background: var(--color-switch-toggle-on) !important;
 }
 
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._2bl0iQ9xigbq4Zd1NI6NZl::before {
-  transform: none !important;
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:hover ._1PQppcgkuXQAiFPar9AGi- {
+  background: var(--color-switch-toggle-on-hover) !important;
 }
 
-._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_ ._1PQppcgkuXQAiFPar9AGi- {
-  background: rgb(var(--color-negative)) !important;
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:active ._1PQppcgkuXQAiFPar9AGi- {
+  background: var(--color-switch-toggle-on-active) !important;
 }
 
 /* LABEL ROWS */
@@ -1702,9 +1714,9 @@ option:active {
 ._3O2gRFANfKKg3mYONXvlcL {
   background: transparent !important;
   left: unset !important;
-  right: 4px !important;
+  right: 12px !important;
   bottom: unset !important;
-  top: 4px !important;
+  top: 12px !important;
 }
 
 ._3O2gRFANfKKg3mYONXvlcL .JRMFrrhowzfdWhJcPIMB1 {
@@ -1821,15 +1833,15 @@ option:active {
   justify-content: center;
   display: flex;
   border: var(--reveal-border);
-  background-color: transparent;
+  background-color: var(--color-button-client-background);
 }
 
 #toggleSidebar:hover {
-background-color: var(--reveal-background-hover);
+  background-color: var(--reveal-background-hover);
 }
 
 #toggleSidebar:active {
-background-color: var(--reveal-background-active);
+  background-color: var(--reveal-background-active);
 }
 
 #toggleLibrary {
@@ -1839,8 +1851,8 @@ background-color: var(--reveal-background-active);
   position: absolute;
   bottom: 48px;
   right: 48px;
-  transition: opacity 0.25s ease;
-  transition-delay: 1s;
+  transition: opacity 0.25s ease !important;
+  transition-delay: 1s !important;
   display: none;
   backdrop-filter: blur(var(--blur-radius));
   background-blend-mode: exclusion;
@@ -1910,7 +1922,7 @@ body:not(.WindowFocus) #toggleUserIcon {
   height: 48px;
   line-height: 48px;
   border: var(--reveal-border);
-  background-color: transparent;
+  background-color: var(--color-button-client-background);
 }
 
 #toggleDetails:hover, #toggleActivity:hover {

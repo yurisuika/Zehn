@@ -7,7 +7,7 @@ function addButtonUser() {
   btn.classList.add('ZehnButton');
   btn.id = 'toggleUser';
   btn.type = 'button';
-  btn.value = 'close';
+  btn.value = 'open';
   btn.name = 'button';
   btn.onclick = function () {
     var btnUser = document.getElementById('toggleUser');
@@ -26,9 +26,9 @@ function addButtonUser() {
     }
     else if (btnUser.value = 'open') {
       btnUser.value = 'close';
-      user.style.setProperty('transform', 'none');
-      user.style.setProperty('min-height', '48px');
-      user.style.setProperty('height', '48px');
+      user.style.setProperty('transform', 'none', 'important');
+      user.style.setProperty('min-height', '48px', 'important');
+      user.style.setProperty('height', '48px', 'important');
       if (voice != null) {
         voice.style.setProperty('transform', 'none', 'important');
         voice.style.setProperty('min-height', '32px', 'important');
@@ -56,3 +56,6 @@ Zehn.moveAppend('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth
 // Zehn.movePrepend('.currentUserContainer', '.chatTitleBar .title-area-children', [
 //   '.currentUserContainer' // CURRENT USER
 // ]);
+Zehn.moveAppend('.tabSearchTransitionGroup', '.socialTabContainer', [
+  '.tabSearchTransitionGroup', // FRIENDS SEARCH
+]);

@@ -148,6 +148,8 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   border: unset !important;
   min-height: 0 !important;
   background: transparent !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .titleBarContainer {
@@ -193,14 +195,16 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 /* CURRENT USER */
 .currentUserContainer {
   border-bottom: unset !important;
-  height: 48px !important;
-  min-height: 48px !important;
+  height: 0 !important;
+  min-height: 0 !important;
   max-height: 48px !important;
   padding: 0 16px !important;
   align-items: center !important;
   display: flex !important;
   margin-top: 0 !important;
   transition: all 0.2s ease-in-out !important;
+  transform: scaleY(0) !important;
+  order: 999 !important;
 }
 
 .compactView .currentUserContainer {
@@ -676,7 +680,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* ACTIVE VOICE CONTROLS */
 .friendListHeaderContainer .activeVoiceControls {
-  height: 32px !important;
+  height: 0px !important;
   transition: all 0.25s ease-in-out !important;
   background-color: transparent !important;
   border: unset !important;
@@ -812,6 +816,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 /* SEARCH */
+.socialTabContainer {
+  flex-direction: column !important;
+}
+
 .tabSearchTransitionGroup, .tabSearchTransition {
   transition: none !important;
 }
@@ -832,13 +840,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .socialListTab {
   margin-top: 0 !important;
-  height: 32px !important;
+  height: 48px !important;
   font-weight: 400 !important;
   color: var(--color-text-primary) !important;
   font-size: var(--size-14) !important;
-  line-height: 32px !important;
+  line-height: 48px !important;
   text-transform: uppercase !important;
-  padding-left: 16px !important;
+  padding: 0 !important;
   transition: none !important;
 }
 
@@ -847,67 +855,95 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   font-weight: 400 !important;
   color: var(--color-text-primary) !important;
   font-size: var(--size-14) !important;
-  line-height: 32px !important;
-  transition: opacity 0.0s !important;
+  line-height: 48px !important;
+  transition: none !important;
+  display: none !important;
 }
 
 .socialListTab.TabSearchActive .tabLabel {
-  transition-duration: 0.0s !important;
+  transition: none !important;
   width: 0 !important;
 }
 
 .socialListTab.TabSearchActive {
-  padding-left: 0 !important;
+  padding: 0 !important;
 }
 
 .TabSearchButton {
   background-color: transparent !important;
   padding: 0 !important;
-  height: 32px !important;
+  height: 48px !important;
+  width: 48px !important;
   border-radius: 0 !important;
   margin: 0 !important;
   transition: none !important;
+}
+
+.TabSearchButton:not(:has(.socialSearchContainer)) {
+  background-color: var(--color-button-client-background) !important;
+}
+
+.TabSearchButton:not(:has(.socialSearchContainer)):hover {
+  background-color: var(--color-button-client-background-hover) !important;
+}
+
+
+.TabSearchButton:not(:has(.socialSearchContainer)):active {
+  background-color: var(--color-button-client-background-hover) !important;
 }
 
 .searchIconButton {
   background-color: transparent !important;
 }
 
-.searchIconButton:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+.searchIconButton {
+  background-color: transparent !important;
 }
 
 .searchIconButton:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+  background-color: transparent !important;
 }
 
 .TabSearchButton .searchIconButton {
   cursor: pointer !important;
-  height: 32px !important;
-  width: 32px !important;
-  margin-top: 0 !important;
-  margin-right: 0 !important;
+  height: 48px !important;
+  width: 100% !important;
+  margin: 0 !important;
   transition: none !important;
+  flex-grow: 1 !important;
+  justify-content: center !important;
+  display: flex !important;
 }
 
 .TabSearchActive .TabSearchButton .searchIconButton {
-  width: 0 !important;
-  opacity: 0 !important;
+  width: 48px !important;
+  opacity: 1 !important;
+}
+
+.tabSearchTransitionGroup {
+  height: 0px !important;
+  transform: scaleY(0) !important;
+  transition: height,transform 0.2s ease-in-out !important;
+}
+
+.socialTabContainer:has(.TabSearchActive) .tabSearchTransitionGroup {
+  height: 48px !important;
+  transform: none !important;
 }
 
 .friendsTabButtonsContainer {
-  padding-right: 0 !important;
+  padding: 0 !important;
   transition: none !important;
 }
 
 .friendsTabButtonsContainer .TabSearchButton .SVGIcon_MagnifyingGlass {
-  height: 32px !important;
-  width: 32px !important;
+  height: 48px !important;
+  width: 48px !important;
   margin: 0 !important;
   background-color: var(--color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
-  mask-size: 12px !important;
+  mask-size: 16px !important;
   -webkit-mask-image: var(--icon-search) !important;
 }
 
@@ -924,7 +960,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .socialInputContainer.SearchActive {
-  max-height: 32px !important;
+  max-height: 48px !important;
 }
 
 .socialInputContainer .inputContainer {
@@ -932,7 +968,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .socialInputContainer .inputContainer.no-drag {
-  height: 32px !important;
+  height: 48px !important;
   border-radius: 0 !important;
   background-color: transparent !important;
 }
@@ -941,12 +977,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   color: var(--color-text-primary) !important;
   /* background-color: rgba(var(--color-negative), 0.1) !important; */
   font-size: var(--size-14) !important;
-  padding: 0 0 0 32px !important;
+  padding: 0 16px !important;
   transition: none !important;
   background-image: none !important;
 }
 
-.inputContainer:has(.friendSearchInput[type="text"])::after {
+/* .inputContainer:has(.friendSearchInput[type="text"])::after {
   content: "" !important;
   position: absolute !important;
   bottom: 0 !important;
@@ -959,12 +995,16 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   mask-position: 10px center !important;
   mask-size: 12px !important;
   -webkit-mask-image: var(--icon-search) !important;
-}
+} */
 
 .socialInputContainer .friendSearchInput[type="text"] {
-  padding-right: 0 !important;
   background-color: transparent !important;
 }
+
+.socialInputContainer .DialogInput_Wrapper>input.DialogInput {
+  padding: 0 16px !important;
+}
+
 
 .friendSearchInput::placeholder {
   color: var(--color-text-secondary) !important;
@@ -973,8 +1013,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendsTabButtonsContainer .friendSearchClear {
-  width: 32px !important;
-  height: 32px !important;
+  width: 48px !important;
+  height: 48px !important;
   right: 0 !important;
   transition: opacity 0.2s ease-in-out !important;
 }
@@ -998,18 +1038,24 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   color: var(--color-text-tertiary) !important;
 }
 
+.friendsTabButtonsContainer > div, .friendsTabButtonsContainer > a {
+  flex-grow: 1 !important;
+  display: flex !important;
+}
+
 /* FRIENDS ADD */
 .addFriendButton {
   background-color: var(--color-button-client-background) !important;
   padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  /* max-width: 32px !important; */
+  max-height: 48px !important;
   border-radius: 0 !important;
   margin: 0 !important;
+  flex-grow: 1 !important;
 }
 
 .addFriendButton:hover {
@@ -1023,12 +1069,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendRequestButton {
   background-color: var(--color-button-client-background) !important;
   padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  /* max-width: 48px !important; */
+  max-height: 48px !important;
   border-radius: 0 !important;
   margin: 0 !important;
 }
@@ -1072,8 +1118,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendRequestButton .requestsNumber {
   color: transparent !important;
   position: absolute !important;
-  top: 5px !important;
-  right: 5px !important;
+  top: calc(4px + 8px) !important;
+  right: calc(50% - 16px + 4px) !important;
   left: unset !important;
   bottom: unset !important;
   display: flex !important;

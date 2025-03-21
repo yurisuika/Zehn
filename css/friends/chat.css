@@ -2788,14 +2788,27 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .MemberListColumn .friendSearchInput[type="text"] {
   color: var(--color-text-primary) !important;
   font-size: var(--size-14) !important;
-  /* background-color: var(--color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: 11px center !important;
-  mask-size: 12px !important;
-  -webkit-mask-image: var(--icon-search) !important; */
-  padding-left: 32px !important;
+  padding: 0 16px !important;
   width: 100% !important;
   height: 32px !important;
+}
+
+.MemberListColumn .inputContainer::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 12px !important;
+  -webkit-mask-image: var(--icon-search) !important;
+  opacity: 0 !important;
+}
+
+.MemberListColumn .inputContainer:has(input:placeholder-shown)::after {
+  opacity: 1 !important;
 }
 
 .friendSearchInput::placeholder {
@@ -2814,9 +2827,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .friendSearchClear {
   right: 0 !important;
   top: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
 }
 
-.SearchActive .friendSearchClear {
+.SearchActive .inputContainer:not(:has(input:placeholder-shown)) .friendSearchClear {
   opacity: 1 !important;
 }
 
@@ -2834,8 +2849,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   filter: var(--filter-focus) !important;
 }
 
-.friendSearchClear .SVGIcon_X_Line line {
-  stroke: transparent !important;
+.friendSearchClear .SVGIcon_X_Line * {
+  display: none !important;
 }
 
 /* USER VOICE STATUS */
