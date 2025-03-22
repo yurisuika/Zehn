@@ -100,8 +100,37 @@
 }
 
 /* REFRESH BUTTON */
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX button._2KYMMVVayBKt9_rEg88mBZ {
+  padding: 0 !important;
+}
+
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX button._2KYMMVVayBKt9_rEg88mBZ > svg {
   -webkit-mask-image: var(--icon-refresh) !important;
+  width: 48px !important;
+  max-width: 48px !important;
+  min-width: 48px !important;
+}
+
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX button._2KYMMVVayBKt9_rEg88mBZ ._3k3ZJ5nBY_vPiH5o0RYbJW {
+  -webkit-mask-image: var(--icon-close) !important;
+}
+
+._2LckfdnTZ2C3_fPpV8W0Vp._3m_2lh1eA4HcHpt48En7kr {
+  display: none !important;
+}
+
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX ._2KYMMVVayBKt9_rEg88mBZ.B0KOfNkg7hq7nxHumDWOJ ._3k3ZJ5nBY_vPiH5o0RYbJW {
+  display: block !important;
+}
+
+/* SPACER */
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX ._1NK30zB5fwxWklsE1mJeJT {
+  flex: 1 !important;
+}
+
+/* DROPDOWN */
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown {
+  flex: 1 !important;
 }
 
 /* SERVER PANE */
@@ -190,14 +219,17 @@
 }
 
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._2_4_nZy-T2C3pHa81tGH76 ._3mCrTKGesl-jD-k-buQ13_ {
+  color: var(--color-text-primary) !important;
   background: var(--color-button-client-background) !important;
 }
 
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._2_4_nZy-T2C3pHa81tGH76 ._3mCrTKGesl-jD-k-buQ13_:hover {
+  color: var(--color-text-primary) !important;
   background-color: var(--color-button-client-background-hover) !important;
 }
 
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._2_4_nZy-T2C3pHa81tGH76 ._3mCrTKGesl-jD-k-buQ13_:active {
+  color: var(--color-text-primary) !important;
   background-color: var(--color-button-client-background-active) !important;
 }
 
@@ -291,44 +323,67 @@
 
 .DialogRoundCheckboxField_OuterCircle {
   background: transparent !important;
-  border: 2px solid rgba(var(--color-negative), 0.8) !important;
+  border: 2px solid var(--color-radio-border-off) !important;
   height: 20px !important;
   width: 20px !important;
   margin: 0 !important;
   appearance: unset !important;
   border-radius: 50% !important;
   box-sizing: border-box !important;
+  transition: none !important;
 }
 
 .DialogRoundCheckboxField_OuterCircle:hover {
-  border-color: rgb(var(--color-negative)) !important;
+  border-color: var(--color-radio-border-off-hover) !important;
 }
 
 .DialogRoundCheckboxField_OuterCircle:active {
-  filter: saturate(0) brightness(0.6) !important;
+  border-color: var(--color-radio-border-off-active) !important;
+  filter: none !important;
 }
 
 .DialogRoundCheckboxField_Control.Active .DialogRoundCheckboxField_OuterCircle {
-  border-color: rgb(var(--color-accent)) !important;
+  border-color: var(--color-radio-border-on) !important;
+}
+
+.DialogRoundCheckboxField_Control.Active .DialogRoundCheckboxField_OuterCircle:hover {
+  border-color: var(--color-radio-border-on-hover) !important;
 }
 
 .DialogRoundCheckboxField_Control.Active .DialogRoundCheckboxField_OuterCircle:active {
-  border-color: rgb(var(--color-negative)) !important;
-  filter: saturate(0) brightness(0.6) !important;
+  border-color: var(--color-radio-border-on-active) !important;
+  filter: none !important;
 }
 
-.DialogRoundCheckboxField_Control.Active .DialogRoundCheckboxField_InnerCircle {
+.DialogRoundCheckboxField_Control .DialogRoundCheckboxField_InnerCircle {
   content: "" !important;
-  background: rgba(var(--color-negative), 0.8) !important;
+  background: var(--color-radio-background-off) !important;
   border-radius: 25px !important;
   display: block !important;
   position: relative !important;
   height: 10px !important;
   width: 10px !important;
+  transition: none !important;
+}
+
+.DialogRoundCheckboxField_Control .DialogRoundCheckboxField_InnerCircle:hover {
+  background-color: var(--color-radio-background-off-hover) !important;
+}
+
+.DialogRoundCheckboxField_Control .DialogRoundCheckboxField_InnerCircle:active {
+  background-color: var(--color-radio-background-off-active) !important;
+}
+
+.DialogRoundCheckboxField_Control.Active .DialogRoundCheckboxField_InnerCircle {
+  background: var(--color-radio-background-on) !important;
 }
 
 .DialogRoundCheckboxField_Control.Active .DialogRoundCheckboxField_InnerCircle:hover {
-  background-color: rgb(var(--color-negative)) !important;
+  background-color: var(--color-radio-background-on-hover) !important;
+}
+
+.DialogRoundCheckboxField_Control.Active .DialogRoundCheckboxField_InnerCircle:active {
+  background-color: var(--color-radio-background-on-active) !important;
 }
 
 /* ICONS */
@@ -497,6 +552,17 @@
   height: 48px !important;
   gap: 16px !important;
   padding-top: 0 !important;
+}
+
+/* ADD FAVORITE BY IP */
+.DialogFooter .Lm4rP-OZQvm74XsUuD544 svg {
+  width: 32px !important;
+  height: 32px !important;
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+  -webkit-mask-image: var(--icon-add) !important;
 }
 
 /* FILTER BUTTON */

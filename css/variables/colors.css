@@ -78,6 +78,17 @@
   --color-button-client-background-hover: var(--option-color-button-client-background-hover, rgba(var(--color-negative), 0.1));
   --color-button-client-background-active: var(--option-color-button-client-background-active, rgba(var(--color-negative), 0.2));
 
+  --color-dropdown-dialog-background: var(--option-color-dropdown-dialog-background, transparent);
+  --color-dropdown-dialog-background-hover: var(--option-color-dropdown-dialog-background-hover, transparent);
+  --color-dropdown-dialog-background-active: var(--option-color-dropdown-dialog-background-active, rgba(var(--color-negative), 0.3));
+  --color-dropdown-dialog-border: var(--option-color-dropdown-dialog-border, rgba(var(--color-negative), 0.5));
+  --color-dropdown-dialog-border-hover: var(--option-color-dropdown-dialog-border-hover, rgba(var(--color-negative), 0.65));
+  --color-dropdown-dialog-border-active: var(--option-color-dropdown-dialog-border-active, rgba(var(--color-negative), 0.5));
+
+  --color-dropdown-client-background: var(--option-color-dropdown-client-background, transparent);
+  --color-dropdown-client-background-hover: var(--option-color-dropdown-client-background-hover, rgba(var(--color-negative), 0.1));
+  --color-dropdown-client-background-active: var(--option-color-dropdown-client-background-active, rgba(var(--color-negative), 0.2));
+
   --color-input-dialog-background: var(--option-color-input-dialog-background, transparent);
   --color-input-dialog-background-hover: var(--option-color-input-dialog-background-hover, transparent);
   --color-input-dialog-background-active: var(--option-color-input-dialog-background-active, rgba(var(--color-negative), 0.3));
@@ -116,10 +127,18 @@
   --color-seperator: var(--option-color-seperator, rgba(var(--color-negative), 0.2));
   --color-seperator-context: var(--option-color-seperator-context, rgba(var(--color-negative), 0.4));
 
+  --color-placeholder: var(--option-color-placeholder, rgba(var(--color-negative), 0.1));
+
   --color-tag: var(--option-color-tag, rgba(var(--color-negative), 0.1));
 
   --color-progress-empty: var(--option-color-progress-empty, rgba(var(--color-negative), 0.2));
-  --color-progress-done: var(--option-color-progress-done, rgb(var(--color-accent)));
+  --color-progress-filled: var(--option-color-progress-filled, rgb(var(--color-accent)));
+
+  --color-timeline-empty: var(--option-color-timeline-empty, rgba(var(--color-negative), 0.4));
+  --color-timeline-filled: var(--option-color-timeline-filled, rgb(var(--color-accent)));
+  --color-timeline-handle: var(--option-color-timeline-handle, rgb(var(--color-accent)));
+  --color-timeline-handle-hover: var(--option-color-timeline-handle-hover, rgb(var(--color-negative)));
+  --color-timeline-handle-active: var(--option-color-timeline-handle-active, rgba(var(--color-negative), 0.5));
 
   --color-slider-background: var(--option-color-slider-background, rgba(var(--color-negative), 0.4));
   --color-slider-background-hover: var(--option-color-slider-background-hover, rgba(var(--color-negative), 0.6));
@@ -130,8 +149,46 @@
   --color-slider-track: var(--option-color-slider-track, rgb(var(--color-accent)));
   --color-slider-default: var(--option-color-slider-default, rgba(var(--color-negative), 0.4));
 
+  --color-checkbox-background-off: var(--option-color-checkbox-background-off, transparent);
+  --color-checkbox-background-off-hover: var(--option-color-checkbox-background-off-hover, transparent);
+  --color-checkbox-background-off-active: var(--option-color-checkbox-background-off-active, rgba(var(--color-negative), 0.6));
+  --color-checkbox-background-off-disabled: var(--option-color-checkbox-background-off-disabled, transparent);
+  --color-checkbox-background-on: var(--option-color-checkbox-background-on, rgb(var(--color-accent)));
+  --color-checkbox-background-on-hover: var(--option-color-checkbox-background-on-hover, rgb(var(--color-accent)));
+  --color-checkbox-background-on-active: var(--option-color-checkbox-background-on-active, rgba(var(--color-negative), 0.6));
+  --color-checkbox-background-on-disabled: var(--option-color-checkbox-background-on-disabled, transparent);
+  --color-checkbox-border-off: var(--option-color-checkbox-border-off, rgba(var(--color-negative), 0.8));
+  --color-checkbox-border-off-hover: var(--option-color-checkbox-border-off-hover, rgb(var(--color-negative)));
+  --color-checkbox-border-off-active: var(--option-color-checkbox-border-off-active, transparent);
+  --color-checkbox-border-off-disabled: var(--option-color-checkbox-border-off-disabled, rgba(var(--color-negative), 0.6));
+  --color-checkbox-border-on: var(--option-color-checkbox-border-on, transparent);
+  --color-checkbox-border-on-hover: var(--option-color-checkbox-border-on-hover, rgb(var(--color-negative)));
+  --color-checkbox-border-on-active: var(--option-color-checkbox-border-on-active, transparent);
+  --color-checkbox-border-on-disabled: var(--option-color-checkbox-border-on-disabled, rgba(var(--color-negative), 0.6));
+  --color-checkbox-toggle-off: var(--option-color-checkbox-toggle-off, transparent);
+  --color-checkbox-toggle-off-hover: var(--option-color-checkbox-toggle-off-hover, transparent);
+  --color-checkbox-toggle-off-active: var(--option-color-checkbox-toggle-off-active, transparent);
+  --color-checkbox-toggle-off-disabled: var(--option-color-checkbox-toggle-off-disabled, transparent);
+  --color-checkbox-toggle-on: var(--option-color-checkbox-toggle-on, rgb(var(--color-negative)));
+  --color-checkbox-toggle-on-hover: var(--option-color-checkbox-toggle-on-hover, rgb(var(--color-negative)));
+  --color-checkbox-toggle-on-active: var(--option-color-checkbox-toggle-on-active, rgb(var(--color-negative)));
+  --color-checkbox-toggle-on-disabled: var(--option-color-checkbox-toggle-on-disabled, rgba(var(--color-negative), 0.6));
+
+  --color-radio-background-off: var(--option-color-radio-background-off, transparent);
+  --color-radio-background-off-hover: var(--option-color-radio-background-off-hover, transparent);
+  --color-radio-background-off-active: var(--option-color-radio-background-off-active, transparent);
+  --color-radio-background-on: var(--option-color-radio-background-on, rgba(var(--color-negative), 0.8));
+  --color-radio-background-on-hover: var(--option-color-radio-background-on-hover, rgb(var(--color-negative)));
+  --color-radio-background-on-active: var(--option-color-radio-background-on-active, rgba(var(--color-negative), 0.6));
+  --color-radio-border-off: var(--option-color-radio-border-off, rgba(var(--color-negative), 0.8));
+  --color-radio-border-off-hover: var(--option-color-radio-border-off-hover, rgb(var(--color-negative)));
+  --color-radio-border-off-active: var(--option-color-radio-border-off-active, rgba(var(--color-negative), 0.6));
+  --color-radio-border-on: var(--option-color-radio-border-on, rgb(var(--color-accent)));
+  --color-radio-border-on-hover: var(--option-color-radio-border-on-hover, rgb(var(--color-accent)));
+  --color-radio-border-on-active: var(--option-color-radio-border-on-active, rgba(var(--color-negative), 0.6));
+
   --color-switch-inner: var(--option-color-switch-inner, 162, 162, 162);
-  --color-switch-outer: var(--option-color-switch-outer, 215, 215, 215);
+  --color-switch-outer: var(--option-color-switch-border, 215, 215, 215);
 
   --color-switch-background-off: var(--option-color-switch-background-off, transparent);
   --color-switch-background-off-hover: var(--option-color-switch-background-off-hover, transparent);
@@ -151,6 +208,11 @@
   --color-switch-toggle-on: var(--option-color-switch-toggle-on, rgb(var(--color-white)));
   --color-switch-toggle-on-hover: var(--option-color-switch-toggle-on-hover, rgb(var(--color-white)));
   --color-switch-toggle-on-active: var(--option-color-switch-toggle-on-active, rgb(var(--color-white)));
+
+  --color-reveal-background: var(--option-color-reveal-background, rgba(var(--color-negative), 0.1));
+  --color-reveal-border: var(--option-color-reveal-border, rgba(var(--color-negative), 0.25));
+  --color-reveal-notification-background: var(--option-color-reveal-notification-background, transparent);
+  --color-reveal-notification-border: var(--option-color-reveal-notification-border, rgba(var(--color-negative), 0.25));
 
   --color-tooltip-background: var(--option-color-tooltip-background, rgba(var(--color-negative), 0.17));
   --color-tooltip-border: var(--option-color-tooltip-border, rgba(var(--color-negative), 0.35));

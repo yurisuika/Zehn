@@ -3,7 +3,7 @@ import Zehn from './../../../js/zehn.js';
 document.documentElement.classList.add('Reveal');
 
 // LIBRARY SIDEBAR BUTTONS
-Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '.ZehnButton');
+Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '._1ZS_xta5HMXzR8JgxDH6n7 .ZehnButton');
 Zehn.createReveal('._1ZS_xta5HMXzR8JgxDH6n7', '._2PF_m-I5yte3WnQhpcz8RC');
 Zehn.createReveal('._3AhYljPF4e4E8LaBt-FoY0', '._3AhYljPF4e4E8LaBt-FoY0');
 Zehn.createReveal('._2CEKFex6JMsAse2lqMMjUp', '._2CEKFex6JMsAse2lqMMjUp');

@@ -787,7 +787,7 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
 /* RADIO */
 input[type="radio" i] {
   background-color: transparent !important;
-  border: 2px solid rgba(var(--color-negative), 0.8) !important;
+  border: 2px solid var(--color-radio-border-off) !important;
   height: 20px !important;
   width: 20px !important;
   margin: 0 !important;
@@ -796,11 +796,12 @@ input[type="radio" i] {
 }
 
 input[type="radio" i]:hover {
-  border-color: rgb(var(--color-negative)) !important;
+  border-color: var(--color-radio-border-off-hover) !important;
 }
 
 input[type="radio" i]:active {
-  filter: saturate(0) brightness(0.6) !important;
+  border-color: var(--color-radio-border-off-active) !important;
+  filter: none !important;
 }
 
 input[type="radio" i]:focus {
@@ -808,17 +809,21 @@ input[type="radio" i]:focus {
 }
 
 input[type="radio" i]:checked {
-  border-color: rgb(var(--color-accent)) !important;
+  border-color: var(--color-radio-border-on) !important;
+}
+
+input[type="radio" i]:checked:hover {
+  border-color: var(--color-radio-border-on-hover) !important;
 }
 
 input[type="radio" i]:checked:active {
-  border-color: rgb(var(--color-negative)) !important;
-  filter: saturate(0) brightness(0.6) !important;
+  border-color: var(--color-radio-border-on-active) !important;
+  filter: none !important;
 }
 
-input[type="radio" i]:checked::after {
+input[type="radio" i]::after {
   content: "" !important;
-  background-color: rgba(var(--color-negative), 0.8) !important;
+  background-color: var(--color-radio-background-off) !important;
   border-radius: 25px !important;
   display: block !important;
   position: relative !important;
@@ -828,11 +833,25 @@ input[type="radio" i]:checked::after {
   top: 3px !important;
 }
 
-input[type="radio" i]:checked::after:hover {
-  background-color: rgb(var(--color-negative)) !important;
+input[type="radio" i]:hover::after {
+  background-color: var(--color-radio-background-off-hover) !important;
 }
 
-input[type="radio" i]:checked::after:active {}
+input[type="radio" i]:active::after {
+  background-color: var(--color-radio-background-off-active) !important;
+}
+
+input[type="radio" i]:checked::after {
+  background-color: var(--color-radio-background-on) !important;
+}
+
+input[type="radio" i]:checked:hover::after {
+  background-color: var(--color-radio-background-on-hover) !important;
+}
+
+input[type="radio" i]:checked:active::after {
+  background-color: var(--color-radio-background-on-active) !important;
+}
 
 /* RADIO BUTTON */
 .HijmccPB1BKyhOwhX1EVl {
@@ -920,40 +939,50 @@ input[type="radio" i]:checked::after:active {}
   width: 16px !important;
   height: 16px !important;
   border-radius: 0 !important;
-  border: 2px solid rgba(var(--color-negative), 0.8) !important;
-  background-color: transparent !important;
+  border: 2px solid var(--color-checkbox-border-off) !important;
+  background-color: var(--color-checkbox-background-off) !important;
   min-width: 16px !important;
 }
 
-.DialogCheckbox:not(.Active):hover {
-  border: 2px solid rgb(var(--color-negative)) !important;
+.DialogCheckbox:hover {
+  border-color: var(--color-checkbox-border-off-hover) !important;
+  background-color: var(--color-checkbox-background-off-hover) !important;
 }
 
-.DialogCheckbox:not(.Active):active {
-  border: 2px solid transparent !important;
-  background-color: rgba(var(--color-negative), 0.6) !important;
+.DialogCheckbox:active {
+  border-color: var(--color-checkbox-border-off-active) !important;
+  background-color: var(--color-checkbox-background-off-active) !important;
+}
+
+.DialogCheckbox.Disabled, .DialogCheckbox.Disabled:hover, .DialogCheckbox.Disabled:active {
+  filter: none !important;
+  border-color: var(--color-checkbox-border-off-disabled) !important;
+  background-color: var(--color-checkbox-background-off-disabled) !important;
 }
 
 .DialogCheckbox.Active {
-  border: 2px solid rgb(var(--color-accent)) !important;
-  background-color: rgb(var(--color-accent)) !important;
+  border: 2px solid var(--color-checkbox-border-on) !important;
+  background-color: var(--color-checkbox-background-on) !important;
   height: 16px !important;
   width: 16px !important;
 }
 
 .DialogCheckbox.Active:hover {
-  border: 2px solid rgb(var(--color-negative)) !important;
+  border-color: var(--color-checkbox-border-on-hover) !important;
+  background-color: var(--color-checkbox-background-on-hover) !important;
 }
 
 .DialogCheckbox.Active:active {
-  border: 2px solid transparent !important;
-  background-color: rgba(var(--color-negative), 0.6) !important;
+  border-color: var(--color-checkbox-border-on-active) !important;
+  background-color: var(--color-checkbox-background-on-active) !important;
 }
 
-.DialogCheckbox svg {
-  fill: transparent !important;
-  stroke: transparent !important;
+.DialogCheckbox.Disabled.Active, .DialogCheckbox.Disabled.Active:hover, .DialogCheckbox.Disabled.Active:active {
+  border-color: var(--color-checkbox-border-on-disabled) !important;
+  background-color: var(--color-checkbox-background-on-disabled) !important;
 }
+
+.DialogCheckbox svg {}
 
 .DialogCheckbox svg * {
   display: none !important;
@@ -968,28 +997,49 @@ input[type="radio" i]:checked::after:active {}
   width: 16px !important;
   height: 16px !important;
   margin: 0 !important;
-  background-color: var(--color-icon-primary) !important;
+  background-color: var(--color-checkbox-toggle-off) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: 16px !important;
   -webkit-mask-image: var(--icon-checkmark) !important;
 }
 
+.DialogCheckbox:hover .SVGIcon_DialogCheck {
+  background-color: var(--color-checkbox-toggle-off-hover) !important;
+}
+
+.DialogCheckbox:active .SVGIcon_DialogCheck {
+  background-color: var(--color-checkbox-toggle-off-active) !important;
+}
+
+.DialogCheckbox.Disabled .SVGIcon_DialogCheck, .DialogCheckbox.Disabled:hover .SVGIcon_DialogCheck, .DialogCheckbox.Disabled:active .SVGIcon_DialogCheck {
+  background-color: var(--color-checkbox-toggle-off-disabled) !important;
+}
+
 .DialogCheckbox.Active .SVGIcon_DialogCheck {
+  background-color: var(--color-checkbox-toggle-on) !important;
   stroke: transparent !important;
   height: 16px !important;
   width: 16px !important;
   margin: 0 !important;
 }
 
+.DialogCheckbox.Active:hover .SVGIcon_DialogCheck {
+  background-color: var(--color-checkbox-toggle-on-hover) !important;
+}
+
+.DialogCheckbox.Active:active .SVGIcon_DialogCheck {
+  background-color: var(--color-checkbox-toggle-on-active) !important;
+}
+
+.DialogCheckbox.Active.Disabled .SVGIcon_DialogCheck, .DialogCheckbox.Active.Disabled:hover .SVGIcon_DialogCheck, .DialogCheckbox.Active.Disabled:active .SVGIcon_DialogCheck {
+  background-color: var(--color-checkbox-toggle-on-disabled) !important;
+}
+
 .EDl_mzaY3WxkgmYVD8W4d ._1BAKXmqQdWRWmWX9_CbhuY._2_iY4UJOlWDXNQ21c-a3hD svg {
   width: 16px !important;
   height: 16px !important;
   margin-left: 0 !important;
-}
-
-.DialogCheckbox.Disabled {
-  filter: saturate(0.0) var(--filter-focus) !important;
 }
 
 /* TOGGLE FIELD */
@@ -1547,8 +1597,6 @@ option:active {
 .DialogTextInputBase, .DialogDropDown._DialogInputContainer {
   color: var(--color-text-primary) !important;
   border-radius: 0 !important;
-  background: var(--color-input-dialog-background) !important;
-  outline: 2px solid var(--color-input-dialog-border) !important;
   outline-offset: -2px !important;
   font-size: var(--size-14) !important;
   line-height: 32px !important;
@@ -1558,16 +1606,34 @@ option:active {
   box-sizing: border-box !important;
 }
 
+.DialogTextInputBase {
+  background: var(--color-input-dialog-background) !important;
+  outline: 2px solid var(--color-input-dialog-border) !important;
+}
+
 .DialogTextInputBase:hover, .DialogDropDown._DialogInputContainer:hover {
   background: var(--color-input-dialog-background-hover) !important;
-  outline: 2px solid var(--color-input-dialog-border-hover) !important;
-  outline-offset: -2px !important;
+  outline-color: var(--color-input-dialog-border-hover) !important;
 }
 
 .DialogTextInputBase:active, .DialogDropDown._DialogInputContainer:active {
   background: var(--color-input-dialog-background-active) !important;
-  outline: 2px solid var(--color-input-dialog-border-active) !important;
-  outline-offset: -2px !important;
+  outline-color: var(--color-input-dialog-border-active) !important;
+}
+
+.DialogDropDown._DialogInputContainer {
+  background: var(--color-dropdown-dialog-background) !important;
+  outline: 2px solid var(--color-dropdown-dialog-border) !important;
+}
+
+.DialogDropDown._DialogInputContainer:hover {
+  background: var(--color-dropdown-dialog-background-hover) !important;
+  outline-color: var(--color-dropdown-dialog-border-hover) !important;
+}
+
+.DialogDropDown._DialogInputContainer:active {
+  background: var(--color-dropdown-dialog-background-active) !important;
+  outline-color: var(--color-dropdown-dialog-border-active) !important;
 }
 
 .DialogDropDown_Arrow {

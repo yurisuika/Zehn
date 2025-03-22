@@ -90,45 +90,42 @@ const Zehn = {
   },
 
   createReveal(target, button) {
-    var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
     Zehn.waitAndObserve(target, () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new Reveal('body', {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderAcrylicColor: 'rgba(var(--color-negative), 0.25)',
-            backgroundAcrylicColor: 'rgba(var(--color-negative), 0.1)'
+            borderAcrylicColor: 'var(--color-reveal-border)',
+            backgroundAcrylicColor: 'var(--color-reveal-background)'
         });
       });
     });
   },
 
   createRevealBorder(target, button) {
-    var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
     Zehn.waitAndObserve(target, () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new Reveal('body', {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderAcrylicColor: 'rgba(var(--color-negative), 0.25)',
-            backgroundAcrylicColor: 'transparent'
+            borderAcrylicColor: 'var(--color-reveal-notification-border)',
+            backgroundAcrylicColor: 'var(--color-reveal-notification-background)'
         });
       });
     });
   },
 
   createRevealHeader(target, button) {
-    var color = getComputedStyle(document.body).getPropertyValue('--color-negative');
     Zehn.waitAndObserve(target, () => {
       document.querySelectorAll(`${button}`).forEach((element) => {
         let FR = new RevealHeader('body', {
             selector: document.querySelectorAll(`${target}`),
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderAcrylicColor: 'rgba(var(--color-negative), 0.25)',
-            backgroundAcrylicColor: 'rgba(var(--color-negative), 0.1)',
+            borderAcrylicColor: 'var(--color-reveal-border)',
+            backgroundAcrylicColor: 'var(--color-reveal-background)',
             childrenSelector: element
         });
       });
