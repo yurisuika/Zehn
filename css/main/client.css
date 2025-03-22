@@ -1064,10 +1064,6 @@ input[type="radio" i]:checked:active::after {
   width: 100% !important;
 }
 
-.DialogToggleField_Control:disabled {
-  filter: saturate(0.0) var(--filter-focus) !important;
-}
-
 .DialogToggleField_OptionPanel {
   width: 40px !important;
   height: 16px !important;
@@ -1088,6 +1084,12 @@ input[type="radio" i]:checked:active::after {
   background: var(--color-switch-background-off-active) !important;
 }
 
+.DialogToggleField_OptionPanel:disabled {
+  border-color: var(--color-switch-border-off-disabled) !important;
+  background: var(--color-switch-background-off-disabled) !important;
+  filter: none !important;
+}
+
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)) {
   border-color: var(--color-switch-border-on) !important;
   background: var(--color-switch-background-on) !important;
@@ -1101,6 +1103,11 @@ input[type="radio" i]:checked:active::after {
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):active {
   border-color: var(--color-switch-border-on-active) !important;
   background: var(--color-switch-background-on-active) !important;
+}
+
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):disabled {
+  border-color: var(--color-switch-border-on-disabled) !important;
+  background: var(--color-switch-background-on-disabled) !important;
 }
 
 .DialogToggleField_Option.Off {
@@ -1120,6 +1127,10 @@ input[type="radio" i]:checked:active::after {
   background: var(--color-switch-toggle-off-active) !important;
 }
 
+.DialogToggleField_Control:disabled .DialogToggleField_Option.Off {
+  background: var(--color-switch-toggle-off-disabled) !important;
+}
+
 .DialogToggleField_Option.On {
   background: var(--color-switch-toggle-on) !important;
   margin-left: 0 !important;
@@ -1135,6 +1146,10 @@ input[type="radio" i]:checked:active::after {
 
 .DialogToggleField_Control:active .DialogToggleField_Option.On {
   background: var(--color-switch-toggle-on-active) !important;
+}
+
+.DialogToggleField_Control:disabled .DialogToggleField_Option.On {
+  background: var(--color-switch-toggle-on-disabled) !important;
 }
 
 .DialogToggleField_Control .DialogToggleField_Option.Off.Active {
