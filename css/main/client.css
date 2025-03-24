@@ -67,7 +67,7 @@ p:last-of-type {
 
 /* INPUT */
 .DialogTextInputBase, .DialogTextInputBase:not(disabled):hover {
-  background: rgba(var(--color-negative), 0.1) !important;
+  background: transparent !important;
   border-radius: 0 !important;
 }
 
@@ -91,6 +91,7 @@ p:last-of-type {
   background: var(--color-input-dialog-background) !important;
   outline: 2px solid var(--color-input-dialog-border) !important;
   outline-offset: -2px !important;
+  box-sizing: border-box !important;
 }
 
 .DialogInput_Wrapper>input.DialogInput:hover {
@@ -230,7 +231,16 @@ button.TextButton {
   color: rgb(var(--color-accent)) !important;
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
-  padding: 0 16px !important;
+  /* padding: 0 16px !important; */
+  padding: 0 !important;
+}
+
+.inviteLinkContainer .DialogRequirementLabel, .CreateChatChannelDialog .DialogRequirementLabel {
+  padding: 0 !important;
+}
+
+.DialogRequirementLabel label {
+  min-width: 100% !important;
 }
 
 /* TABLES */
@@ -241,11 +251,13 @@ table, th, td, tbody, thead, tr {
 }
 
 .DialogSpanningTable.BannedUsersTable tr.hoverRow, .DialogSpanningTable.InvitedUsersTable tr.hoverRow, .DialogSpanningTable.InviteLinksTable tbody tr {
-  background: rgba(var(--color-negative), 0.0) !important;
+  background: var(--color-table-odd) !important;
+  height: 48px !important;
+  min-height: 48px !important;
 }
 
-.DialogSpanningTable.BannedUsersTable tr.hoverRow:nth-child(2n+1), .DialogSpanningTable.InvitedUsersTable tr.hoverRow:nth-child(2n+1), .DialogSpanningTable.InviteLinksTable tbody tr:nth-child(2n+1) {
-  background: rgba(var(--color-negative), 0.1) !important;
+.DialogSpanningTable.BannedUsersTable tr.hoverRow:nth-child(2n), .DialogSpanningTable.InvitedUsersTable tr.hoverRow:nth-child(2n), .DialogSpanningTable.InviteLinksTable tbody tr:nth-child(2n) {
+  background: var(--color-table-even) !important;
 }
 
 /* STATUS */
@@ -731,7 +743,7 @@ button.DialogButton.Small {
 
 button.DialogButton {
   background-color: var(--color-button-dialog-background) !important;
-  color: var(--color-text-primary) !important;
+  color: var(--color-button-dialog-text) !important;
   border-radius: 0 !important;
   margin: 0 !important;
   transition: none !important;
@@ -745,14 +757,14 @@ button.DialogButton.Primary {
 
 button.DialogButton:hover, button.DialogButton.gpfocus {
   background-color: var(--color-button-dialog-background-hover) !important;
-  color: var(--color-text-primary) !important;
-  outline: 2px solid var(--color-button-dialog-border-hover) !important;
+  color: var(--color-button-dialog-text) !important;
+  outline-color: var(--color-button-dialog-border-hover) !important;
 }
 
 button.DialogButton:enabled:active, button.DialogButton:enabled:active:hover, button.DialogButton:enabled:active.gpfocus {
   background-color: var(--color-button-dialog-background-active) !important;
-  color: var(--color-text-primary) !important;
-  outline: 2px solid var(--color-button-dialog-border-active) !important;
+  color: var(--color-button-dialog-text) !important;
+  outline-color: var(--color-button-dialog-border-active) !important;
 }
 
 button.DialogButton::before {
@@ -761,18 +773,21 @@ button.DialogButton::before {
   opacity: unset !important;
 }
 
-button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton.Disabled, button.DialogButton.Disabled:hover {
-  filter: var(--filter-focus) !important;
+button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton:disabled:active, button.DialogButton.Disabled, button.DialogButton.Disabled:hover, button.DialogButton.Disabled:active {
+  background-color: var(--color-button-dialog-background-disabled) !important;
+  color: var(--color-button-dialog-text-disabled) !important;
+  outline-color: var(--color-button-dialog-border-disabled) !important;
 }
 
 button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:hover:active, button.DialogButton.Primary:enabled:active.gpfocus {
   background: var(--color-button-dialog-background-active) !important;
-  color: var(--color-text-primary) !important;
+  color: var(--color-button-dialog-text) !important;
 }
 
 .DialogButton:disabled .SVGIcon_Button, .DialogButton.Disabled .SVGIcon_Button {
   opacity: 1 !important;
-  filter: var(--filter-focus) !important;
+  filter: none !important;
+  background: var(--color-icon-tertiary) !important;
 }
 
 .DesktopUI .DialogThreeColLayout._DialogColLayout {
@@ -1628,17 +1643,14 @@ option:active {
 
 /* DROPDOWN */
 .DialogTextInputBase, ._DialogInputContainer {
-  color: var(--color-input-dialog-text) !important;
+  color: var(--color-text-primary) !important;
+  margin-bottom: 0 !important;
+  line-height: 32px !important;
   background: transparent !important;
 }
 
-._DialogInputContainer {
-  margin-bottom: 0 !important;
-  line-height: 32px !important;
-}
-
-.DialogTextInputBase, .DialogDropDown._DialogInputContainer {
-  color: var(--color-text-primary) !important;
+.DialogListBuilderInput_Input, .DialogDropDown._DialogInputContainer {
+  color: var(--color-dropdown-dialog-text) !important;
   border-radius: 0 !important;
   outline-offset: -2px !important;
   font-size: var(--size-14) !important;
@@ -1649,19 +1661,25 @@ option:active {
   box-sizing: border-box !important;
 }
 
-.DialogTextInputBase {
+.DialogListBuilderInput_Input {
+  color: var(--color-input-dialog-text) !important;
   background: var(--color-input-dialog-background) !important;
   outline: 2px solid var(--color-input-dialog-border) !important;
 }
 
-.DialogTextInputBase:hover, .DialogDropDown._DialogInputContainer:hover {
+.DialogListBuilderInput_Input:hover {
   background: var(--color-input-dialog-background-hover) !important;
   outline-color: var(--color-input-dialog-border-hover) !important;
 }
 
-.DialogTextInputBase:active, .DialogDropDown._DialogInputContainer:active {
+.DialogListBuilderInput_Input:active {
   background: var(--color-input-dialog-background-active) !important;
   outline-color: var(--color-input-dialog-border-active) !important;
+}
+
+.DialogListBuilderInput_Input:focus {
+  background: var(--color-input-dialog-background-focus) !important;
+  outline-color: var(--color-input-dialog-border-focus) !important;
 }
 
 .DialogDropDown._DialogInputContainer {
@@ -1677,6 +1695,16 @@ option:active {
 .DialogDropDown._DialogInputContainer:active {
   background: var(--color-dropdown-dialog-background-active) !important;
   outline-color: var(--color-dropdown-dialog-border-active) !important;
+}
+
+.DialogDropDown._DialogInputContainer.Disabled, .DialogDropDown._DialogInputContainer.Disabled:hover, .DialogDropDown._DialogInputContainer.Disabled:active, .DialogDropDown._DialogInputContainer:disabled, .DialogDropDown._DialogInputContainer:disabled:hover, .DialogDropDown._DialogInputContainer:disabled:active {
+  background: var(--color-dropdown-dialog-background-disabled) !important;
+  outline-color: var(--color-dropdown-dialog-border-disabled) !important;
+  color: var(--color-dropdown-dialog-text-disabled) !important;
+}
+
+.DialogDropDown.Disabled {
+  opacity: 1 !important;
 }
 
 .DialogDropDown_Arrow {
@@ -1725,7 +1753,7 @@ option:active {
 }
 
 ._2oAiZidGyUxL-hfupFDQ2m {
-  background: transparent !important;
+  background: var(--color-list-background) !important;
   margin: 1px !important;
   padding: 0 16px !important;
   line-height: 32px !important;
@@ -1738,11 +1766,11 @@ option:active {
 }
 
 ._2oAiZidGyUxL-hfupFDQ2m:hover {
-  background: rgba(var(--color-negative), 0.1) !important
+  background: var(--color-list-background-hover) !important
 }
 
 ._2oAiZidGyUxL-hfupFDQ2m:active {
-  background: rgba(var(--color-negative), 0.2) !important
+  background: var(--color-list-background-active) !important
 }
 
 ._2oAiZidGyUxL-hfupFDQ2m:first-child {

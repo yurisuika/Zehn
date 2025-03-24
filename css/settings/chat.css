@@ -169,6 +169,16 @@
   -webkit-mask-image: var(--icon-lock) !important;
 }
 
+button.DialogButton.roleButton .roleSubtitle {
+  font-size: var(--size-14) !important;
+  color: var(--color-text-secondary) !important;
+  font-weight: 400 !important;
+}
+
+.roleSubtitle {
+  margin: 0 !important;
+}
+
 /* INVITE LINKS */
 .xSTLmzylFJdIfak7ZdhuA .MWzjHR-uqa-svGrdXYfUl ._2YV0m3IRCNOoUV9YhJNFnV:nth-of-type(4)::after {
   -webkit-mask-image: var(--icon-link) !important;
@@ -237,7 +247,7 @@
 
 /* GROUP CHAT CHANNELS */
 .Rv511F1U683LQWJLvan2r {
-  margin-bottom: 16px !important;
+  margin-bottom: 0 !important;
   gap: 16px !important;
 }
 
@@ -248,7 +258,7 @@ button.DialogButton.DialogButtonTall {
 }
 
 .ChatGroupSettingsChannels_Row ._DialogRow {
-  background: rgba(var(--color-negative), 0.1) !important;
+  background: var(--color-table-odd) !important;
   color: var(--color-text-primary) !important;
   margin: 0 0 0 0 !important;
   padding: 0 16px !important;
@@ -258,7 +268,7 @@ button.DialogButton.DialogButtonTall {
 }
 
 .ChatGroupSettingsChannels_Row:nth-child(2n) ._DialogRow {
-  background: rgba(var(--color-negative), 0.2) !important;
+  background: var(--color-table-even) !important;
 }
 
 .ChatGroupSettingsChannels_Row .ChannelDeleteButton {
@@ -294,32 +304,64 @@ button.DialogButton.DialogButtonTall {
 .rolePriorityButton {
   width: 24px !important;
   height: 16px !important;
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-table-odd) !important;
   border-radius: 0 !important;
   margin: 0 !important;
 }
 
+.roleList .roleRow {
+  background-color: var(--color-table-odd) !important;
+}
+
+.roleList .roleRow:nth-of-type(2n) {
+  background-color: var(--color-table-even) !important;
+}
+
+.roleRow:not(:has(.rolePriorityContainer)) .roleSubtitle {
+  margin-right: 24px !important;
+}
+
+.ChatGroupSettingsChannels_Row:nth-child(2n) .rolePriorityButton {
+  background: var(--color-table-even) !important;
+}
+
 .rolePriorityButton.Disabled:active, .rolePriorityButton.Disabled:hover, .rolePriorityButton.Disabled {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+  background-color: var(--color-table-odd) !important;
   opacity: 1 !important;
 }
 
-.rolePriorityButton:hover {
-  background-color: rgba(var(--color-negative), 0.1) !important;
+.ChatGroupSettingsChannels_Row:nth-child(2n) .rolePriorityButton.Disabled:active, .ChatGroupSettingsChannels_Row:nth-child(2n) .rolePriorityButton.Disabled:hover, .ChatGroupSettingsChannels_Row:nth-child(2n) .rolePriorityButton.Disabled {
+  background: var(--color-table-even) !important
 }
 
-.rolePriorityButton:active {
-  background-color: rgba(var(--color-negative), 0.2) !important;
+.roleButton.DialogButton, .roleButton.DialogButton:hover, .roleButton.DialogButton:active, .roleButton.DialogButton:disabled, .roleButton.DialogButton.Disabled, .roleButton.DialogButton:enabled:active {
+  background: transparent !important;
+  outline: none !important;
 }
 
 .rolePriorityButton svg {
   fill: rgb(var(--color-negative)) !important;
-  opacity: 0.6 !important;
+  opacity: 1 !important;
   height: 16px !important;
+  width: 24px !important;
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+  -webkit-mask-image: var(--icon-chevron-up) !important;
 }
 
 .rolePriorityButton:hover svg {
-  opacity: 1.0 !important;
+  opacity: 1 !important;
+}
+
+.rolePriorityButton.Disabled svg {
+  background-color: var(--color-icon-tertiary) !important;
+  display: block !important;
+}
+
+.rolePriorityButton svg *, .rolePriorityButton svg polygon {
+  display: none !important;
 }
 
 .rolePriorityContainer {
@@ -384,7 +426,13 @@ button.DialogButton.roleButton {
 }
 
 .roleButton:last-child {
-  margin-bottom: 16px !important;
+  margin-bottom: 0 !important;
+}
+
+button.DialogButton.createNewRoleButton {
+  margin-top: 16px !important;
+  padding: 0 16px !important;
+  height: 32px !important;
 }
 
 ._29XR1SNMJVrwOTq4Ssc0HJ {
@@ -401,4 +449,9 @@ button.DialogButton.roleButton {
 /* INVITED */
 .InvitedUsersTable .hoverRow {
   height: 32px !important;
+}
+
+/* CREATE CHANNEL */
+.CreateChatChannelDialog .DialogInput_Wrapper>input.DialogInput {
+  min-width: 100% !important;
 }

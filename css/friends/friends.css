@@ -52,7 +52,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 /* SETTINGS PICKER */
 .FriendPicker_ChosenFriend span {
-  color: rgba(var(--color-negative), 0.75) !important;
+  color: var(--color-text-primary) !important;
 }
 
 .FriendPicker_ChosenFriend:hover span {
@@ -60,22 +60,32 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .FriendPicker_ChosenFriend {
-  background: rgb(var(--color-accent)) !important;
+  background: var(--color-tag) !important;
   border-radius: 0 !important;
   margin: 0 !important;
-  padding: 4px 12px !important;
+  padding: 0 12px !important;
+  line-height: 24px !important;
+  gap: 12px !important;
 }
 
-.FriendPicker_ChosenFriend .SVGIcon_X_Line line {
-  stroke: rgba(var(--color-negative), 0.75) !important;
+.FriendPicker_ChosenFriend .SVGIcon_X_Line {
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 12px !important;
+  -webkit-mask-image: var(--icon-clear) !important;
 }
 
-.FriendPicker_ChosenFriend:hover .SVGIcon_X_Line line, .FriendPicker_ChosenFriend:active .SVGIcon_X_Line line {
-  stroke: var(--color-text-primary) !important;
-}
-
-.FriendPicker_Focus .FriendPicker_SuggestedFriend.Focus {
-  background: rgba(var(--color-negative), 0.1) !important;
+.FriendPicker_ChosenFriend .SVGIcon_X_Line * {
+  display: none !important;
 }
 
 .insetShadow {
@@ -84,10 +94,19 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 .FriendPicker_SuggestedFriend {
   padding: 8px 16px !important;
+  background: var(--color-list-background) !important;
 }
 
-.FriendPicker_SuggestedFriend:hover, .FriendPicker_SuggestedFriend:active {
-  background: rgba(var(--color-negative), 0.1) !important;
+.FriendPicker_SuggestedFriend:hover {
+  background: var(--color-list-background-hover) !important;
+}
+
+.FriendPicker_SuggestedFriend:active {
+  background: var(--color-list-background-active) !important;
+}
+
+.FriendPicker_Focus .FriendPicker_SuggestedFriend.Focus {
+  background: var(--color-list-background-active) !important;
 }
 
 ._30XroGinE5bsVSmgAzXIFf {

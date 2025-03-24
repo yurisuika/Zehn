@@ -64,15 +64,19 @@
   --color-input: var(--option-color-input, var(--color-window-acrylic));
 
   --color-button-dialog-background: var(--option-color-button-dialog-background, rgba(var(--color-negative), 0.2));
-  --color-button-dialog-background-hover: var(--option-color-button-dialog-background-hover, rgba(var(--color-negative), 0.3));
+  --color-button-dialog-background-hover: var(--option-color-button-dialog-background-hover, rgba(var(--color-negative), 0.2));
   --color-button-dialog-background-active: var(--option-color-button-dialog-background-active, rgba(var(--color-negative), 0.4));
   --color-button-dialog-background-focus: var(--option-color-button-dialog-background-focus, rgba(var(--color-accent)));
+  --color-button-dialog-background-disabled: var(--option-color-button-dialog-background-disabled, rgba(var(--color-negative), 0.2));
   --color-button-dialog-background-selected: var(--option-color-button-dialog-background-selected, rgba(var(--color-positive), 0.5));
   --color-button-dialog-border: var(--option-color-button-dialog-border, transparent);
   --color-button-dialog-border-hover: var(--option-color-button-dialog-border-hover, rgba(var(--color-negative), 0.5));
   --color-button-dialog-border-active: var(--option-color-button-dialog-border-active, transparent);
   --color-button-dialog-border-focus: var(--option-color-button-dialog-border-focus, transparent);
+  --color-button-dialog-border-disabled: var(--option-color-button-dialog-border-disabled, transparent);
   --color-button-dialog-border-selected: var(--option-color-button-dialog-border-selected, transparent);
+  --color-button-dialog-text: var(--option-color-button-dialog-text, rgb(var(--color-foreground-primary)));
+  --color-button-dialog-text-disabled: var(--option-color-button-dialog-text-disabled, rgb(var(--color-foreground-tertiary)));
 
   --color-button-client-background: var(--option-color-button-client-background, transparent);
   --color-button-client-background-hover: var(--option-color-button-client-background-hover, rgba(var(--color-negative), 0.1));
@@ -81,9 +85,13 @@
   --color-dropdown-dialog-background: var(--option-color-dropdown-dialog-background, transparent);
   --color-dropdown-dialog-background-hover: var(--option-color-dropdown-dialog-background-hover, transparent);
   --color-dropdown-dialog-background-active: var(--option-color-dropdown-dialog-background-active, rgba(var(--color-negative), 0.3));
+  --color-dropdown-dialog-background-disabled: var(--option-color-dropdown-dialog-background-disabled, rgba(var(--color-negative), 0.2));
   --color-dropdown-dialog-border: var(--option-color-dropdown-dialog-border, rgba(var(--color-negative), 0.5));
   --color-dropdown-dialog-border-hover: var(--option-color-dropdown-dialog-border-hover, rgba(var(--color-negative), 0.65));
   --color-dropdown-dialog-border-active: var(--option-color-dropdown-dialog-border-active, rgba(var(--color-negative), 0.5));
+  --color-dropdown-dialog-border-disabled: var(--option-color-dropdown-dialog-border-disabled, transparent);
+  --color-dropdown-dialog-text: var(--option-color-button-dialog-text, rgb(var(--color-foreground-primary)));
+  --color-dropdown-dialog-text-disabled: var(--option-color-button-dialog-text-disabled, rgb(var(--color-foreground-tertiary)));
 
   --color-dropdown-client-background: var(--option-color-dropdown-client-background, transparent);
   --color-dropdown-client-background-hover: var(--option-color-dropdown-client-background-hover, rgba(var(--color-negative), 0.1));
@@ -104,7 +112,7 @@
   --color-list-background: var(--option-color-list-background, transparent);
   --color-list-background-hover: var(--option-color-list-background-hover, rgba(var(--color-negative), 0.1));
   --color-list-background-active: var(--option-color-list-background-active, rgba(var(--color-negative), 0.2));
-  --color-list-background-focus: var(--option-color-list-background-focus, rgba(var(--color-negative), 0.2));
+  --color-list-background-focus: var(--option-color-list-background-focus, rgb(var(--color-accent-positive-heavy)));
 
   --color-table-odd: var(--option-color-table-odd, transparent);
   --color-table-even: var(--option-color-table-even, rgba(var(--color-negative), 0.2));
@@ -125,11 +133,13 @@
   --color-selection-active: var(--option-color-selection-active, rgb(var(--color-negative)));
 
   --color-seperator: var(--option-color-seperator, rgba(var(--color-negative), 0.2));
-  --color-seperator-context: var(--option-color-seperator-context, rgba(var(--color-negative), 0.4));
+  --color-seperator-context: var(--option-color-seperator-context, rgba(var(--color-negative), 0.35));
 
   --color-placeholder: var(--option-color-placeholder, rgba(var(--color-negative), 0.1));
 
   --color-tag: var(--option-color-tag, rgba(var(--color-negative), 0.1));
+  --color-tag-hover: var(--option-color-tag-hover, rgba(var(--color-negative), 0.2));
+  --color-tag-active: var(--option-color-tag-active, rgba(var(--color-negative), 0.4));
 
   --color-progress-empty: var(--option-color-progress-empty, rgba(var(--color-negative), 0.2));
   --color-progress-filled: var(--option-color-progress-filled, rgb(var(--color-accent)));
@@ -219,6 +229,17 @@
   --color-reveal-border: var(--option-color-reveal-border, rgba(var(--color-negative), 0.25));
   --color-reveal-notification-background: var(--option-color-reveal-notification-background, transparent);
   --color-reveal-notification-border: var(--option-color-reveal-notification-border, rgba(var(--color-negative), 0.25));
+
+  --color-scrollbar-track-narrow: var(--option-color-scrollbar-track-narrow, transparent);
+  --color-scrollbar-track-wide: var(--option-color-scrollbar-track-wide, rgba(var(--color-negative), 0.11));
+  --color-scrollbar-thumb-narrow: var(--option-color-scrollbar-thumb-narrow, rgba(var(--color-negative), 0.52));
+  --color-scrollbar-thumb-wide: var(--option-color-scrollbar-thumb-wide, rgba(var(--color-negative), 0.29));
+  --color-scrollbar-thumb-wide-hover: var(--option-color-scrollbar-thumb-wide-hover, rgba(var(--color-negative), 0.46));
+  --color-scrollbar-thumb-wide-active: var(--option-color-scrollbar-thumb-wide-active, rgba(var(--color-negative), 0.65));
+  --color-scrollbar-button-narrow: var(--option-color-scrollbar-button-narrow, transparent);
+  --color-scrollbar-button-wide: var(--option-color-scrollbar-button-wide, rgb(var(--color-negative)));
+  --color-scrollbar-corner-narrow: var(--option-color-scrollbar-corner-narrow, transparent);
+  --color-scrollbar-corner-wide: var(--option-color-scrollbar-corner-wide, transparent);
 
   --color-tooltip-background: var(--option-color-tooltip-background, rgba(var(--color-negative), 0.17));
   --color-tooltip-border: var(--option-color-tooltip-border, rgba(var(--color-negative), 0.35));

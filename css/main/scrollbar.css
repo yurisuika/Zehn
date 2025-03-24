@@ -24,26 +24,30 @@
 
 /* TRACK */
 ::-webkit-scrollbar-track {
-  background: transparent !important;
+  background: var(--color-scrollbar-track-narrow) !important;
   border-radius: 0 !important;
   display: block !important;
 }
 
 .WindowFocus ::-webkit-scrollbar-track {
-  background-color: rgba(var(--color-negative), 0.11) !important;
+  background-color: var(--color-scrollbar-track-wide) !important;
 }
 
 /* CORNER */
 ::-webkit-scrollbar-corner {
   border: none !important;
-  background-color: transparent !important;
+  background-color:  var(--color-scrollbar-corner-wide) !important;
+}
+
+::-webkit-scrollbar-corner:window-inactive {
+  background-color: var(--color-scrollbar-corner-narrow) !important;
 }
 
 /* BUTTON */
 ::-webkit-scrollbar-button:window-inactive {
   border: none !important;
   display: none !important;
-  background-color: transparent !important;
+  background-color: var(--color-scrollbar-button-narrow) !important;
 }
 
 ::-webkit-scrollbar-button:single-button:not(:window-inactive) {
@@ -54,7 +58,7 @@
   max-height: 16px !important;
   max-width: 16px !important;
   opacity: 0.11 !important;
-  background-color: var(--color-icon-primary) !important;
+  background-color: var(--color-scrollbar-button-wide) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: 12px !important;
@@ -90,11 +94,11 @@
 }
 
 body:hover ::-webkit-scrollbar-thumb, body:hover ._3xRRJfD2xy95i9NhJxLTp0 *::-webkit-scrollbar-thumb, body:hover ._1UOkn2fGQ25jnyqcEJbnlo::-webkit-scrollbar-thumb {
-  background-color: rgba(var(--color-negative), 0.52) !important;
+  background-color: var(-color-scrollbar-thumb-narrow) !important;
 }
 
 ::-webkit-scrollbar-thumb:not(:window-inactive), ._3xRRJfD2xy95i9NhJxLTp0 *::-webkit-scrollbar-thumb:not(:window-inactive), ._1UOkn2fGQ25jnyqcEJbnlo::-webkit-scrollbar-thumb:not(:window-inactive) {
-  background-color: rgba(var(--color-negative), 0.29) !important;
+  background-color: var(-color-scrollbar-thumb-wide) !important;
   width: 16px !important;
   height: 16px !important;
   border: 0 !important;
@@ -102,11 +106,11 @@ body:hover ::-webkit-scrollbar-thumb, body:hover ._3xRRJfD2xy95i9NhJxLTp0 *::-we
 }
 
 ::-webkit-scrollbar-thumb:hover:not(:window-inactive), ._3xRRJfD2xy95i9NhJxLTp0 *::-webkit-scrollbar-thumb:hover:not(:window-inactive), ._1UOkn2fGQ25jnyqcEJbnlo::-webkit-scrollbar-thumb:hover:not(:window-inactive) {
-  background-color: rgba(var(--color-negative), 0.46) !important;
+  background-color: var(-color-scrollbar-thumb-wide-hover) !important;
 }
 
 ::-webkit-scrollbar-thumb:active:not(:window-inactive), ._3xRRJfD2xy95i9NhJxLTp0 *::-webkit-scrollbar-thumb:active:not(:window-inactive), ._1UOkn2fGQ25jnyqcEJbnlo::-webkit-scrollbar-thumb:active:not(:window-inactive) {
-  background-color: rgba(var(--color-negative), 0.65) !important;
+  background-color: var(-color-scrollbar-thumb-wide-active) !important;
 }
 
 /* SET OVERFLOWS */
