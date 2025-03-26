@@ -27,6 +27,7 @@
   --color-positive: var(--option-color-positive, var(--color-black));
 
   --color-border: var(--option-color-border, rgba(var(--color-negative), 0.17));
+  --color-border-focus: var(--option-color-border-focus, rgb(var(--color-accent)));
 
   --color-acrylic-rating: var(--option-color-acrylic-rating, rgba(var(--color-positive), 0.5));
   --color-acrylic-overlay-dark: var(--option-color-acrylic-overlay-dark, rgba(var(--color-positive), 0.65));
@@ -55,8 +56,14 @@
   --color-icon-secondary: var(--option-color-icon-secondary, rgb(var(--color-foreground-secondary)));
   --color-icon-tertiary: var(--option-color-icon-tertiary, rgb(var(--color-foreground-tertiary)));
 
+  --color-link: var(--option-color-link, rgb(var(--color-accent)));
+  --color-link-hover: var(--option-color-link-hover, rgb(var(--color-foreground-secondary)));
+  --color-link-active: var(--option-color-link-active, rgb(var(--color-foreground-tertiary)));
+
   --color-close-hover: var(--option-color-close-hover, 232, 18, 35);
   --color-close-pressed: var(--option-color-close-pressed, 241, 112, 121);
+
+  --color-backwards: var(--option-color-backwards, rgb(var(--color-white)));
 
   --color-context-background: var(--option-color-context-background, 43, 43, 43);
   --color-context-border: var(--option-color-context-border, 118, 118, 118);
@@ -68,13 +75,11 @@
   --color-button-dialog-background-active: var(--option-color-button-dialog-background-active, rgba(var(--color-negative), 0.4));
   --color-button-dialog-background-focus: var(--option-color-button-dialog-background-focus, rgba(var(--color-accent)));
   --color-button-dialog-background-disabled: var(--option-color-button-dialog-background-disabled, rgba(var(--color-negative), 0.2));
-  --color-button-dialog-background-selected: var(--option-color-button-dialog-background-selected, rgba(var(--color-positive), 0.5));
   --color-button-dialog-border: var(--option-color-button-dialog-border, transparent);
   --color-button-dialog-border-hover: var(--option-color-button-dialog-border-hover, rgba(var(--color-negative), 0.5));
   --color-button-dialog-border-active: var(--option-color-button-dialog-border-active, transparent);
   --color-button-dialog-border-focus: var(--option-color-button-dialog-border-focus, transparent);
   --color-button-dialog-border-disabled: var(--option-color-button-dialog-border-disabled, transparent);
-  --color-button-dialog-border-selected: var(--option-color-button-dialog-border-selected, transparent);
   --color-button-dialog-text: var(--option-color-button-dialog-text, rgb(var(--color-foreground-primary)));
   --color-button-dialog-text-disabled: var(--option-color-button-dialog-text-disabled, rgb(var(--color-foreground-tertiary)));
 
@@ -90,8 +95,8 @@
   --color-dropdown-dialog-border-hover: var(--option-color-dropdown-dialog-border-hover, rgba(var(--color-negative), 0.65));
   --color-dropdown-dialog-border-active: var(--option-color-dropdown-dialog-border-active, rgba(var(--color-negative), 0.5));
   --color-dropdown-dialog-border-disabled: var(--option-color-dropdown-dialog-border-disabled, transparent);
-  --color-dropdown-dialog-text: var(--option-color-button-dialog-text, rgb(var(--color-foreground-primary)));
-  --color-dropdown-dialog-text-disabled: var(--option-color-button-dialog-text-disabled, rgb(var(--color-foreground-tertiary)));
+  --color-dropdown-dialog-text: var(--option-color-dropdown-dialog-text, rgb(var(--color-foreground-primary)));
+  --color-dropdown-dialog-text-disabled: var(--option-color-dropdown-dialog-text-disabled, rgb(var(--color-foreground-tertiary)));
 
   --color-dropdown-client-background: var(--option-color-dropdown-client-background, transparent);
   --color-dropdown-client-background-hover: var(--option-color-dropdown-client-background-hover, rgba(var(--color-negative), 0.1));
@@ -117,12 +122,20 @@
   --color-table-odd: var(--option-color-table-odd, transparent);
   --color-table-even: var(--option-color-table-even, rgba(var(--color-negative), 0.2));
 
-  --color-music-odd: var(--option-color-music-odd, transparent);
-  --color-music-odd-hover: var(--option-color-music-odd-hover, rgba(var(--color-negative), 0.2));
-  --color-music-odd-active: var(--option-color-music-odd-active, rgba(var(--color-negative), 0.35));
-  --color-music-even: var(--option-color-music-even, rgba(var(--color-negative), 0.1));
-  --color-music-even-hover: var(--option-color-music-even-hover, rgba(var(--color-negative), 0.2));
-  --color-music-even-active: var(--option-color-music-even-active, rgba(var(--color-negative), 0.35));
+  --color-music-list-odd: var(--option-color-music-list-odd, transparent);
+  --color-music-list-odd-hover: var(--option-color-music-list-odd-hover, rgba(var(--color-negative), 0.2));
+  --color-music-list-odd-active: var(--option-color-music-list-odd-active, rgba(var(--color-negative), 0.35));
+  --color-music-list-even: var(--option-color-music-list-even, rgba(var(--color-negative), 0.1));
+  --color-music-list-even-hover: var(--option-color-music-list-even-hover, rgba(var(--color-negative), 0.2));
+  --color-music-list-even-active: var(--option-color-music-list-even-active, rgba(var(--color-negative), 0.35));
+  --color-music-button-background: var(--option-color-music-button-background, rgba(var(--color-negative), 0.2));
+  --color-music-button-background-hover: var(--option-color-music-button-background-hover, rgba(var(--color-negative), 0.2));
+  --color-music-button-background-active: var(--option-color-music-button-background-active, rgba(var(--color-negative), 0.4));
+  --color-music-button-background-focus: var(--option-color-music-button-background-focus, rgba(var(--color-positive), 0.5));
+  --color-music-button-border: var(--option-color-music-button-border, transparent);
+  --color-music-button-border-hover: var(--option-color-music-button-border-hover, rgba(var(--color-negative), 0.5));
+  --color-music-button-border-active: var(--option-color-music-button-border-active, transparent);
+  --color-music-button-border-focus: var(--option-color-music-button-border-focus, transparent);
 
   --color-chat-background: var(--option-color-chat-background, transparent);
   --color-chat-background-hover: var(--option-color-chat-background-hover, rgba(var(--color-negative), 0.025));
@@ -240,6 +253,15 @@
   --color-scrollbar-button-wide: var(--option-color-scrollbar-button-wide, rgb(var(--color-negative)));
   --color-scrollbar-corner-narrow: var(--option-color-scrollbar-corner-narrow, transparent);
   --color-scrollbar-corner-wide: var(--option-color-scrollbar-corner-wide, transparent);
+
+  --color-keyboard-background: var(--option-color-keyboard-background, rgba(var(--color-negative), 0.1));
+  --color-keyboard-key: var(--option-color-keyboard-key, rgba(var(--color-negative), 0.1));
+  --color-keyboard-key-mod: var(--option-color-keyboard-key-mod, rgba(var(--color-negative), 0.2));
+  --color-keyboard-key-focus: var(--option-color-keyboard-key-focus, rgb(var(--color-accent)));
+
+  --color-virtualmenu-background: var(--option-color-virtualmenu-background, rgba(var(--option-color-negative), 0.1));
+  --color-virtualmenu-background-selected: var(--option-color-virtualmenu-background-selected: rgba(var(--option-color-accent), 0.5));
+  --color-virtualmenu-border: var(--option-color-virtualmenu-border: rgb(var(--option-color-accent)));
 
   --color-tooltip-background: var(--option-color-tooltip-background, rgba(var(--color-negative), 0.17));
   --color-tooltip-border: var(--option-color-tooltip-border, rgba(var(--color-negative), 0.35));

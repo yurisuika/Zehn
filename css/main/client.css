@@ -15,9 +15,9 @@ button {
 
 :root {
   --virtualmenu-accent: rgb(var(--color-accent));
-  --virtualmenu-bg: rgba(var(--color-negative), 0.1);
+  --virtualmenu-bg: transparent;
   --virtualmenu-bg-hover: rgba(var(--color-accent), 0.5);
-  --virtualmenu-fg: rgb(var(--color-negative));
+  --virtualmenu-fg: var(--color-text-primary);
   --virtualmenutouchkey-icon-width: 100%;
   --virtualmenutouchkey-icon-height: 100%;
   --virtualmenupointer-x: 0%;
@@ -26,8 +26,8 @@ button {
   --virtualmenutouchkey-midpoint-x: 0%;
   --virtualmenutouchkey-midpoint-y: 0%;
   --virtualmenutouchkey-description-width: 0;
-  --touchmenuicon-fg: rgb(var(--color-negative));
-  --touchmenuicon-bg: var(--color-window-client);
+  --touchmenuicon-fg: var(--color-text-primary);
+  --touchmenuicon-bg: transparent;
   --touchmenuicon-scale: 1;
 }
 
@@ -37,7 +37,6 @@ button {
 
 body, body._2LxgdMcpWJRjkxZKbmeEEb {
   color: var(--color-text-primary) !important;
-  /* background: rgb(var(--color-positive)) !important; */
 }
 
 a, h1, h2, h3, h4, h5, p {
@@ -96,20 +95,18 @@ p:last-of-type {
 
 .DialogInput_Wrapper>input.DialogInput:hover {
   background: var(--color-input-dialog-background-hover) !important;
-  outline: 2px solid var(--color-input-dialog-border-hover) !important;
-  outline-offset: -2px !important;
+  outline-color: var(--color-input-dialog-border-hover) !important;
 }
 
 .DialogInput_Wrapper>input.DialogInput:active {
   background: var(--color-input-dialog-background-active) !important;
-  outline: 2px solid var(--color-input-dialog-border-active) !important;
-  outline-offset: -2px !important;
+  outline-color: var(--color-input-dialog-border-active) !important;
 }
 
 .DialogInput_Wrapper>input.DialogInput:focus {
   padding: 0 12px !important;
   background: var(--color-input-dialog-background-focus) !important;
-  outline: 2px solid var(--color-input-dialog-border-focus) !important;
+  outline-color: var(--color-input-dialog-border-focus) !important;
   color: var(--color-input-dialog-text-focus) !important;
 }
 
@@ -720,20 +717,16 @@ img.AB86vEzEKPL0y5fK_m4pT {
 }
 
 /* LINK */
-.DialogBody a {
-  color: rgb(var(--color-accent)) !important;
+.DialogBody a, .textLink {
+  color: var(--color-link) !important;
 }
 
-.DialogBody a:hover {
-  color: var(--color-text-secondary) !important;
+.DialogBody a:hover, .textLink:hover {
+  color: var(--color-link-hover) !important;
 }
 
-.DialogBody a:active {
-  color: var(--color-text-tertiary) !important;
-}
-
-.textLink {
-  color: var(--color-text-primary) !important;
+.DialogBody a:active, .textLink:active {
+  color: var(--color-link-active) !important;
 }
 
 /* BUTTON */
@@ -966,6 +959,8 @@ input[type="radio" i]:checked:active::after {
   border: 2px solid var(--color-checkbox-border-off) !important;
   background-color: var(--color-checkbox-background-off) !important;
   min-width: 16px !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
 .DialogCheckbox:hover {
@@ -1641,7 +1636,7 @@ option:active {
   background-color: var(--color-button-client-background-active) !important;
 }
 
-/* DROPDOWN */
+/* DROPDOWN AND INPUT */
 .DialogTextInputBase, ._DialogInputContainer {
   color: var(--color-text-primary) !important;
   margin-bottom: 0 !important;
@@ -1680,6 +1675,7 @@ option:active {
 .DialogListBuilderInput_Input:focus {
   background: var(--color-input-dialog-background-focus) !important;
   outline-color: var(--color-input-dialog-border-focus) !important;
+  color: var(--color-input-dialog-text-focus) !important;
 }
 
 .DialogDropDown._DialogInputContainer {
@@ -1799,8 +1795,67 @@ option:active {
   background: var(--color-window-client) !important;
 }
 
-._39-WTtOSEPJqAEjOcNGE3j, ._1DWH_4M4yAq8O2T06-3ckY, .loadingthrobber_Large_ {
-  filter: saturate(0) var(--filter-negative) !important;
+/* LOADING CLIENT, LOGIN */
+._39-WTtOSEPJqAEjOcNGE3j, ._1DWH_4M4yAq8O2T06-3ckY, .loadingthrobber_Large_, ._3sa1NXudhvcc1U7HrlLdNQ > img {
+  /* filter: saturate(0) var(--filter-negative) !important; */
+  opacity: 0 !important;
+}
+
+div:has(>._39-WTtOSEPJqAEjOcNGE3j)::after, div:has(>._1DWH_4M4yAq8O2T06-3ckY)::after, div:has(>.loadingthrobber_Large_)::after, div:has(>._3sa1NXudhvcc1U7HrlLdNQ > img)::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 140px !important;
+  height: 140px !important;
+  margin: auto !important;
+  -webkit-mask-image: url("https://steamloopback.host/images/steam_spinner.png");
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 100% !important;
+}
+
+._3sa1NXudhvcc1U7HrlLdNQ img._39-WTtOSEPJqAEjOcNGE3j {
+  width: 140px !important;
+  height: 140px !important;
+}
+
+/* CHAT LOADING */
+._2CphUsHNDgIWItNIzeIldY, ._2wAKy-0ZkO_vhbiQCP9MgE.SteamLogoThrobber._1x18vR7Qop8v8_G8qSR6CL._1Sy0pXVZOdWbgouFyD2zJj {
+  width: 64px !important;
+  height: 64px !important;
+  justify-content: center;
+}
+
+div:has(._1m8iQOSVziKDHiInrfskv_) {
+  position: relative !important;
+}
+
+._1m8iQOSVziKDHiInrfskv_ img {
+  /* filter: saturate(0) var(--filter-negative); */
+  opacity: 0 !important;
+}
+
+._1m8iQOSVziKDHiInrfskv_::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  -webkit-mask-image: url("https://steamloopback.host/images/steam_spinner.png");
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 100% !important;
+}
+
+.SteamLogoThrobber_ {
+  /* filter: saturate(0) var(--filter-negative); */
+  opacity: 0 !important;
 }
 
 /* CONNECTION TROUBLE */
@@ -1839,21 +1894,13 @@ option:active {
   font-weight: 400 !important;
 }
 
-._1m8iQOSVziKDHiInrfskv_ img {
-  filter: saturate(0) var(--filter-negative);
-}
-
-._2wAKy-0ZkO_vhbiQCP9MgE.SteamLogoThrobber_._1x18vR7Qop8v8_G8qSR6CL._1Sy0pXVZOdWbgouFyD2zJj {
-  filter: saturate(0) var(--filter-negative);
-}
-
 /* NEW INDICATOR */
 ._3O2gRFANfKKg3mYONXvlcL {
   background: transparent !important;
   left: unset !important;
-  right: 12px !important;
+  right: calc(50% - 12px) !important;
   bottom: unset !important;
-  top: 12px !important;
+  top: calc(50% - 12px) !important
 }
 
 ._3O2gRFANfKKg3mYONXvlcL .JRMFrrhowzfdWhJcPIMB1 {
