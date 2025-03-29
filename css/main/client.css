@@ -66,7 +66,6 @@ p:last-of-type {
 
 /* INPUT */
 .DialogTextInputBase, .DialogTextInputBase:not(disabled):hover {
-  background: transparent !important;
   border-radius: 0 !important;
 }
 
@@ -76,6 +75,10 @@ p:last-of-type {
 
 .DialogInputRequirementLabel {
   color: var(--color-text-primary) !important;
+}
+
+.DesktopUI .DialogTextInputBase:focus, .DialogTextInputBase:focus-within {
+  margin: 0 !important;
 }
 
 ::-webkit-resizer {
@@ -207,8 +210,10 @@ label > .DialogLabel {
   color: var(--color-text-primary) !important;
   font-weight: 400 !important;
   font-size: var(--size-14) !important;
-  padding: 0 16px !important;
-  line-height: 32px !important;
+  /* padding: 0 16px !important;
+  line-height: 32px !important; */
+  padding: 0 14px !important;
+  line-height: 28px !important;
 }
 
 .DialogBody {
@@ -1660,6 +1665,12 @@ option:active {
   background: transparent !important;
 }
 
+.DialogTextInputBase {
+  margin: 0 !important;
+  padding: 6px 14px !important;
+  line-height: 16px !important;
+}
+
 .DialogListBuilderInput_Input, .DialogDropDown._DialogInputContainer {
   color: var(--color-dropdown-dialog-text) !important;
   border-radius: 0 !important;
@@ -1672,26 +1683,26 @@ option:active {
   box-sizing: border-box !important;
 }
 
-.DialogListBuilderInput_Input {
+.DialogListBuilderInput_Input, .DialogTextInputBase {
   color: var(--color-input-dialog-text) !important;
   background: var(--color-input-dialog-background) padding-box !important;
   /* outline: 2px solid var(--color-input-dialog-border) !important; */
   border: 2px solid var(--color-input-dialog-border) !important;
 }
 
-.DialogListBuilderInput_Input:hover {
+.DialogListBuilderInput_Input:hover, .DialogTextInputBase:hover {
   background: var(--color-input-dialog-background-hover) padding-box !important;
   /* outline-color: var(--color-input-dialog-border-hover) !important; */
   border-color: var(--color-input-dialog-border-hover) !important;
 }
 
-.DialogListBuilderInput_Input:active {
+.DialogListBuilderInput_Input:active, .DialogTextInputBase:active {
   background: var(--color-input-dialog-background-active) padding-box !important;
   /* outline-color: var(--color-input-dialog-border-active) !important; */
   border-color: var(--color-input-dialog-border-active) !important;
 }
 
-.DialogListBuilderInput_Input:focus {
+.DialogListBuilderInput_Input:focus, .DialogTextInputBase:focus {
   background: var(--color-input-dialog-background-focus) padding-box !important;
   /* outline-color: var(--color-input-dialog-border-focus) !important; */
   border-color: var(--color-input-dialog-border-focus) !important;
