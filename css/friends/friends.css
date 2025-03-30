@@ -511,6 +511,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   margin: auto !important;
 }
 
+.nibodjvvrm86uCfnnAn4g {
+  margin: 0 !important;
+}
+
 .compactQuickAccess .friend.quickAccessFriend .nibodjvvrm86uCfnnAn4g {
   height: 24px !important;
   width: 24px !important;
@@ -1442,6 +1446,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   width: 24px !important;
   height: 24px !important;
   padding-right: 0 !important;
+  top: calc(50% - 12px) !important;
 }
 
 .CompactFriendsList .friend, .CompactFriendsList .friendGroup .friend, .CompactFriendsList .friendGroup .SteamPlayerGroupFooter, .CompactFriendsList .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
@@ -1944,7 +1949,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .friendsListContainer .chatRoomVoiceChannelName {
   margin: 0 16px !important;
-  text-align: center !important;
+  text-align: left !important;
 }
 
 .friendsListContainer .CompactFriendsList .chatRoomVoiceChannelNameContainer {
@@ -2013,30 +2018,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   background-color: transparent !important;
   border-radius: 0 !important;
   background: var(--color-window-acrylic) !important;
-  transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
-  backdrop-filter: blur(var(--blur-radius)) !important;
-  background-blend-mode: exclusion !important;
-}
-
-.WindowFocus .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel {
-  background-color: var(--color-acrylic-focus-window) !important;
-}
-
-.ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel::after {
-  content: "" !important;
-  z-index: -1 !important;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  opacity: 0 !important;
-  background-image: var(--acrylic) !important;
-  transition: opacity 0.2s ease-in-out !important;
-}
-
-.WindowFocus .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel::after {
-  opacity: 1 !important;
 }
 
 .chatRoomVoiceChannelNameContainer {
@@ -2060,11 +2041,33 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   border-radius: 0 !important;
   width: 32px !important;
   height: 32px !important;
+  background: var(--color-button-client-background) !important;
+}
+
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton:hover {
+  background: var(--color-button-client-background-hover) !important;
+}
+
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton:active {
+  background: var(--color-button-client-background-active) !important;
+}
+
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton svg {
+  width: 32px !important;
+  height: 32px !important;
   background-color: var(--color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: 16px !important;
   -webkit-mask-image: var(--icon-navigation) !important;
+}
+
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton svg * {
+  display: none !important;
+}
+
+.VoiceControlPanelButton.chatPinRoom .SVGIcon_Button {
+  transform: none !important;
 }
 
 .VoiceChannelParticipants.CompactFriendsList {}
@@ -2075,11 +2078,6 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .chatRoomGroupNavColumn .DropTarget.chatRoomVoiceChannel.ActiveVoiceChannel.Panel.Focusable .VoiceChannelParticipants.CompactFriendsList {
   margin-top: 0 !important;
-}
-
-.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton .SVGIcon_Button {
-  fill: rgb(var(--color-negative)) !important;
-  display: none !important;
 }
 
 .VoiceControlPanelButton.chatPinRoom {
@@ -2150,13 +2148,6 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   margin-top: 0 !important;
 }
 
-.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat {
-  border-left: unset !important;
-  min-width: 32px !important;
-  width: 32px !important;
-  height: 32px !important;
-}
-
 .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceButtons button .VoiceControlPanelButton, .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceButtons button {
   background-color: transparent !important;
   width: 32px !important;
@@ -2164,16 +2155,6 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   max-width: 32px !important;
   max-height: 32px !important;
   margin: 0 !important;
-}
-
-.chatRoomVoiceChannel .chatRoomTextChannel {
-  min-width: 32px !important;
-  min-height: 32px !important;
-}
-
-.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat {
-  min-width: 32px !important;
-  min-height: 32px !important;
 }
 
 .chatRoomVoiceChannel .chatRoomTextChannel .chatRoomTextChannelIcon .SVGIcon_TextRoom {
@@ -2213,8 +2194,18 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   border-radius: 0 !important;
 }
 
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
+  width: 32px !important;
+  height: 32px !important;
+  opacity: 1 !important;
+}
+
 .chatRoomVoiceChannel .chatRoomTextChannel {
+  min-width: 32px !important;
+  min-height: 32px !important;
+  transition: none !important;
   right: 32px !important;
+  bottom: 0 !important;
   background-color: var(--color-list-background) !important;
 }
 
@@ -2260,30 +2251,14 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 /* END VOICE CHAT BUTTON */
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat {
+  border: unset !important;
   width: 32px !important;
   height: 32px !important;
   margin: 0 !important;
-  background-color: var(--color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: 16px !important;
-  -webkit-mask-image: var(--icon-chat-leave) !important;
   color: transparent !important;
-}
-
-/* VOICE ICONS */
-.VoiceIconCtn, .VoiceIconCtn:hover, .VoiceIconCtn:active {
-  color: transparent !important;
-  width: 32px !important;
-  height: 32px !important;
-}
-
-.VoiceIconCtn:hover SVG, .VoiceIconCtn:active SVG {
-  color: transparent !important;
-}
-
-.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat {
-  background-color: var(--color-button-client-background-hover) !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  background-color: var(--color-button-client-background) !important;
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat:hover {
@@ -2292,6 +2267,28 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat:active {
   background-color: var(--color-button-client-background-active) !important;
+}
+
+
+/* VOICE ICONS */
+.VoiceIconCtn, .VoiceIconCtn:hover, .VoiceIconCtn:active {
+  color: transparent !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat svg {
+  width: 32px !important;
+  height: 32px !important;
+  background-color: var(--color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+  -webkit-mask-image: var(--icon-chat-leave) !important;
+}
+
+.VoiceIconCtn:hover SVG, .VoiceIconCtn:active SVG {
+  color: transparent !important;
 }
 
 /* USER LIST AFTER REFRESH */
