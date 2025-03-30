@@ -7,43 +7,43 @@ Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   console.log(cells);
   [].forEach.call(cells, function (el) {
     if(el.innerText.indexOf('Privacy') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-privacy)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-privacy)');
       console.log(el)
     }
     if(el.innerText.indexOf('Workshop') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-store)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-store)');
       console.log(el)
     }
     if(el.innerText.indexOf('DLC') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-shop)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-shop)');
       console.log(el)
     }
     if(el.innerText.indexOf('Controller') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-controller)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-controller)');
       console.log(el)
     }
     if(el.innerText.indexOf('Betas') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-update-dev)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-update-dev)');
       console.log(el)
     }
     if(el.innerText.indexOf('Installed Files') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-apps-all)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-apps-all)');
       console.log(el)
     }
     if(el.innerText.indexOf('Updates') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-update)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-update)');
       console.log(el)
     }
     if(el.innerText.indexOf('Compatibility') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-switch)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-switch)');
       console.log(el)
     }
     if(el.innerText.indexOf('General') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-home)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-home)');
       console.log(el)
     }
     if(el.innerText.indexOf('Game Recording') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--icon-film)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-film)');
       console.log(el)
     }
   });
@@ -79,7 +79,7 @@ function toggleNavigation() {
         element.style.setProperty('padding', '0px 8px', 'important');
         element.style.setProperty('min-width', 'fit-content', 'important');
         element.style.setProperty('max-width', 'fit-content', 'important');
-        element.style.setProperty('color', 'var(--color-text-primary)', 'important');
+        element.style.setProperty('color', 'var(--zehn-color-text-primary)', 'important');
         element.classList.add('rootShown');
         element.classList.toggle('rootHidden');
       });

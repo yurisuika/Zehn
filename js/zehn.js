@@ -96,8 +96,8 @@ const Zehn = {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderAcrylicColor: 'var(--color-reveal-border)',
-            backgroundAcrylicColor: 'var(--color-reveal-background)'
+            borderAcrylicColor: 'var(--zehn-color-reveal-border)',
+            backgroundAcrylicColor: 'var(--zehn-color-reveal-background)'
         });
       });
     });
@@ -110,8 +110,8 @@ const Zehn = {
             selector: element,
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderAcrylicColor: 'var(--color-reveal-notification-border)',
-            backgroundAcrylicColor: 'var(--color-reveal-notification-background)'
+            borderAcrylicColor: 'var(--zehn-color-reveal-notification-border)',
+            backgroundAcrylicColor: 'var(--zehn-color-reveal-notification-background)'
         });
       });
     });
@@ -124,8 +124,8 @@ const Zehn = {
             selector: document.querySelectorAll(`${target}`),
             backgroundGradientSize: 150,
             borderGradientSize: 80,
-            borderAcrylicColor: 'var(--color-reveal-border)',
-            backgroundAcrylicColor: 'var(--color-reveal-background)',
+            borderAcrylicColor: 'var(--zehn-color-reveal-border)',
+            backgroundAcrylicColor: 'var(--zehn-color-reveal-background)',
             childrenSelector: element
         });
       });

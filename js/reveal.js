@@ -142,8 +142,8 @@ export class Reveal {
       selector: ".eff-reveal-border",
       backgroundGradientSize: 150,
       borderGradientSize: 80,
-      borderAcrylicColor: "var(--color-reveal-border)",
-      backgroundAcrylicColor: "var(--color-reveal-background)"
+      borderAcrylicColor: "var(--zehn-color-reveal-border)",
+      backgroundAcrylicColor: "var(--zehn-color-reveal-background)"
     };
 
     this.options = Object.assign(this.options, options);

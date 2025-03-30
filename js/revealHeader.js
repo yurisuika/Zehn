@@ -128,8 +128,8 @@ export class RevealHeader {
       selector: ".eff-reveal-border",
       backgroundGradientSize: 150,
       borderGradientSize: 80,
-      borderAcrylicColor: "var(--color-reveal-border)",
-      backgroundAcrylicColor: "var(--color-reveal-background)",
+      borderAcrylicColor: "var(--zehn-color-reveal-border)",
+      backgroundAcrylicColor: "var(--zehn-color-reveal-background)",
       childrenSelector: '.eff-reveal'
     };
 
