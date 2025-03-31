@@ -43,6 +43,7 @@
   --zehn-color-window-client: var(--option-color-window-client, rgb(var(--zehn-color-background-primary)));
   --zehn-color-window-panel: var(--option-color-window-panel, rgb(var(--zehn-color-background-secondary)));
   --zehn-color-window-dialog: var(--option-color-window-dialog, rgb(var(--zehn-color-background-tertiary)));
+  --zehn-color-window-overlay: var(--option-color-window-overlay, rgba(var(--zehn-color-positive), 0.6));
 
   --zehn-color-context-border: var(--option-color-context-border, 118, 118, 118);
   --zehn-color-context-background: var(--option-color-context-background, 43, 43, 43);
@@ -51,6 +52,11 @@
   --zehn-color-context-menu-background: var(--option-color-context-menu-background, rgb(var(--zehn-color-context-background)));
   --zehn-color-context-dropdown-background: var(--option-color-context-dropdown-background, rgba(var(--zehn-color-positive), 0.5));
   --zehn-color-context-dropdown-border: var(--option-color-context-dropdown-border, rgba(var(--zehn-color-negative), 0.17));
+
+  --zehn-color-tooltip-background: var(--option-color-tooltip-background, rgb(var(--zehn-color-context-border)));
+  --zehn-color-tooltip-border: var(--option-color-tooltip-border, rgb(var(--zehn-color-context-background)));
+  --zehn-color-tooltip-text-primary: var(--option-color-tooltip-text-primary, rgb(var(--zehn-color-foreground-primary)));
+  --zehn-color-tooltip-text-secondary: var(--option-color-tooltip-text-secondary, rgb(var(--zehn-color-foreground-secondary)));
 
   --zehn-color-foreground-primary: var(--option-color-foreground-primary, 255, 255, 255);
   --zehn-color-foreground-secondary: var(--option-color-foreground-secondary, 153, 153, 153);
@@ -74,9 +80,9 @@
   --zehn-color-backwards: var(--option-color-backwards, rgb(var(--zehn-color-white)));
 
   --zehn-color-sorting-background: var(--option-color-sorting-background, transparent);
-  --zehn-color-sorting-foreground: var(--option-color-sorting-foreground, rgb(var(--option-color-foreground-primary)));
-  --zehn-color-sorting-foreground-hover: var(--option-color-sorting-foreground-hover, rgb(var(--option-color-foreground-secondary)));
-  --zehn-color-sorting-foreground-active: var(--option-color-sorting-foreground-active, rgb(var(--option-color-foreground-tertiary)));
+  --zehn-color-sorting-foreground: var(--option-color-sorting-foreground, rgb(var(--zehn-color-foreground-primary)));
+  --zehn-color-sorting-foreground-hover: var(--option-color-sorting-foreground-hover, rgb(var(--zehn-color-foreground-secondary)));
+  --zehn-color-sorting-foreground-active: var(--option-color-sorting-foreground-active, rgb(var(--zehn-color-foreground-tertiary)));
 
   --zehn-color-button-dialog-background: var(--option-color-button-dialog-background, rgba(var(--zehn-color-negative), 0.2));
   --zehn-color-button-dialog-background-hover: var(--option-color-button-dialog-background-hover, rgba(var(--zehn-color-negative), 0.2));
@@ -207,6 +213,22 @@
   --zehn-color-checkbox-toggle-on-active: var(--option-color-checkbox-toggle-on-active, rgb(var(--zehn-color-white)));
   --zehn-color-checkbox-toggle-on-disabled: var(--option-color-checkbox-toggle-on-disabled, rgba(var(--zehn-color-negative), 0.6));
 
+  --zehn-color-box: var(--option-color-box, 204, 204, 204);
+
+  --zehn-color-photos-checkbox-background-off: var(--option-color-photos-checkbox-background-off, rgba(var(--zehn-color-box), 0.4));
+  --zehn-color-photos-checkbox-background-off-hover: var(--option-color-photos-checkbox-background-off-hover, rgb(var(--zehn-color-box)));
+  --zehn-color-photos-checkbox-background-on: var(--option-color-photos-checkbox-background-on, rgb(var(--zehn-color-accent)));
+  --zehn-color-photos-checkbox-background-on-hover: var(--option-color-photos-checkbox-background-on-hover, rgba(var(--zehn-color-accent), 0.4));
+  --zehn-color-photos-checkbox-border-off: var(--option-color-photos-checkbox-border-off, rgba(var(--zehn-color-black), 0.4));
+  --zehn-color-photos-checkbox-border-off-hover: var(--option-color-photos-checkbox-border-off-hover, rgb(var(--zehn-color-black)));
+  --zehn-color-photos-checkbox-border-on: var(--option-color-photos-checkbox-border-on, rgb(var(--zehn-color-accent)));
+  --zehn-color-photos-checkbox-border-on-hover: var(--option-color-photos-checkbox-border-on-hover, rgba(var(--zehn-color-accent), 0.4));
+  --zehn-color-photos-checkbox-outline-off: var(--option-color-photos-checkbox-outline-off, rgba(var(--zehn-color-gray), 0.4));
+  --zehn-color-photos-checkbox-outline-off-hover: var(--option-color-photos-checkbox-outline-off-hover, rgb(var(--zehn-color-gray)));
+  --zehn-color-photos-checkbox-outline-on: var(--option-color-photos-checkbox-outline-on, rgb(var(--zehn-color-accent)));
+  --zehn-color-photos-checkbox-outline-on-hover: var(--option-color-photos-checkbox-outline-on-hover, rgba(var(--zehn-color-accent), 0.4));
+  --zehn-color-photos-checkbox-toggle: var(--option-color-photos-checkbox-toggle, rgb(var(--zehn-color-white)));
+
   --zehn-color-radio-background-off: var(--option-color-radio-background-off, transparent);
   --zehn-color-radio-background-off-hover: var(--option-color-radio-background-off-hover, transparent);
   --zehn-color-radio-background-off-active: var(--option-color-radio-background-off-active, transparent);
@@ -269,12 +291,7 @@
   --zehn-color-keyboard-key-mod: var(--option-color-keyboard-key-mod, rgba(var(--zehn-color-negative), 0.2));
   --zehn-color-keyboard-key-focus: var(--option-color-keyboard-key-focus, rgb(var(--zehn-color-accent)));
 
-  --zehn-color-virtualmenu-background: var(--option-color-virtualmenu-background, rgba(var(--option-color-negative), 0.1));
-  --zehn-color-virtualmenu-background-selected: var(--option-color-virtualmenu-background-selected: rgba(var(--option-color-accent), 0.5));
-  --zehn-color-virtualmenu-border: var(--option-color-virtualmenu-border: rgb(var(--option-color-accent)));
-
-  --zehn-color-tooltip-background: var(--option-color-tooltip-background, rgba(var(--zehn-color-negative), 0.17));
-  --zehn-color-tooltip-border: var(--option-color-tooltip-border, rgba(var(--zehn-color-negative), 0.35));
-  --zehn-color-tooltip-text-primary: var(--option-color-tooltip-text-primary, rgb(var(--zehn-color-foreground-primary)));
-  --zehn-color-tooltip-text-secondary: var(--option-color-tooltip-text-secondary, rgb(var(--zehn-color-foreground-secondary)));
+  --zehn-color-virtualmenu-background: var(--option-color-virtualmenu-background, rgba(var(--zehn-color-negative), 0.1));
+  --zehn-color-virtualmenu-background-selected: var(--option-color-virtualmenu-background-selected, rgba(var(--zehn-color-accent), 0.5));
+  --zehn-color-virtualmenu-border: var(--option-color-virtualmenu-border, rgb(var(--zehn-color-accent)));
 }

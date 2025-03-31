@@ -2133,7 +2133,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .ChatRoomGroup_MainAndChatEntry, .chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .chatRoomHeader {
   margin-left: 200px !important;
-  transition: margin 0.2s ease-in-out, width 0.2s ease-in-out !important;
+  transition: margin,width 0.2s ease-in-out !important;
+  z-index: 99 !important;
 }
 
 .chatWindow:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry, .chatWindow:has(.chatRoomGroupNavCollapsed) .chatRoomHeader {
@@ -2835,7 +2836,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* VOICE ROOM CHAT */
 .VoiceRoomChatHistory {
-  background-color: rgba(var(--zehn-color-positive), 0.4) !important;
+  /* background-color: var(--zehn-color-window-overlay) !important; */
+  background: transparent !important;
+  /* position: fixed !important; */
+  /* z-index: 999 !important; */
+}
+
+.chatWindow .InsetWindowOpen .chatEntry {
+  z-index: 999 !important;
+  /* position: fixed !important;
+  left: 1px !important;
+  right: 1px !important;
+  bottom: 1px !important; */
 }
 
 .ChatRoomGroupDialog_contents:has(.chatRoomGroupNavCollapsed) .VoiceRoomChatHistory {
@@ -2851,7 +2863,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   left: 32px !important;
   right: 0 !important;
   bottom: calc(32px + 32px) !important;
-  max-height: calc(100% - 64px - 32px) !important;
+  max-height: calc(100% - 64px - 48px) !important;
   max-width: calc(100% - 64px) !important;
 }
 
@@ -2912,16 +2924,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   top: 0 !important;
   opacity: 1 !important;
   height: 32px !important;
-  width: 32px !important;
+  width: 48px !important;
   background-color: var(--zehn-color-button-client-background) !important;
 }
 
 .VoiceRoomChatTitle .MinimizeTextChat:hover {
-  background-color: var(--zehn-color-button-client-background-hover) !important;
+  background-color: rgb(var(--zehn-color-close-hover)) !important;
 }
 
 .VoiceRoomChatTitle .MinimizeTextChat:active {
-  background-color: var(--zehn-color-button-client-background-active) !important;
+  background-color: rgb(var(--zehn-color-close-active)) !important;
 }
 
 .VoiceRoomChatTitle .MinimizeTextChat svg {
@@ -2953,7 +2965,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding-top: 0 !important;
   line-height: 32px !important;
   height: 32px !important;
-  top: 32px !important;
+  top: 0 !important;
 }
 
 ._1osHa9KHOmdCDNrA232z4N {
@@ -2978,12 +2990,24 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   margin: 0 !important;
 }
 
+.VoiceRoomChatHistory .ChatMessageBlock {
+  margin: 0 !important;
+}
+
 /* INVITE DROP */
 ._3EwDM8E1LYILno1QNM0IAv {
-  background: rgba(var(--zehn-color-positive), 0.5) !important;
+  background: var(--zehn-color-window-overlay) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-16) !important;
   font-weight: 400 !important;
+  position: fixed !important;
+}
+
+._3zWGwYIQs01hkEl3N2sICI {
+  height: auto !important;
+  padding: 32px !important;
+  background: rgba(var(--zehn-color-accent), 0.5) !important;
+  border-radius: 0 !important;
 }
 
 ._3Z_AX1_BgHE0otB0eSOd-P {}
