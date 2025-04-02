@@ -56,6 +56,6 @@ Zehn.moveAppend('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth
 // Zehn.movePrepend('.currentUserContainer', '.chatTitleBar .title-area-children', [
 //   '.currentUserContainer' // CURRENT USER
 // ]);
-Zehn.moveAppend('.tabSearchTransitionGroup', '.socialTabContainer', [
-  '.tabSearchTransitionGroup', // FRIENDS SEARCH
-]);
+// Zehn.moveAppend('.tabSearchTransitionGroup', '.socialTabContainer', [
+//   '.tabSearchTransitionGroup', // FRIENDS SEARCH
+// ]);

@@ -870,7 +870,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   line-height: 48px !important;
   text-transform: uppercase !important;
   padding: 0 !important;
-  transition: none !important;
+  transition: height, 0.2s ease-in-out !important;
 }
 
 .socialListTab .tabLabel {
@@ -902,29 +902,16 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   transition: none !important;
 }
 
-.TabSearchButton:not(:has(.socialSearchContainer)) {
+.searchIconButton {
   background-color: var(--zehn-color-button-client-background) !important;
 }
 
-.TabSearchButton:not(:has(.socialSearchContainer)):hover {
+.searchIconButton:hover {
   background-color: var(--zehn-color-button-client-background-hover) !important;
-}
-
-
-.TabSearchButton:not(:has(.socialSearchContainer)):active {
-  background-color: var(--zehn-color-button-client-background-hover) !important;
-}
-
-.searchIconButton {
-  background-color: transparent !important;
-}
-
-.searchIconButton {
-  background-color: transparent !important;
 }
 
 .searchIconButton:active {
-  background-color: transparent !important;
+  background-color: var(--zehn-color-button-client-background-active) !important;
 }
 
 .TabSearchButton .searchIconButton {
@@ -944,12 +931,27 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .tabSearchTransitionGroup {
-  height: 0px !important;
+  height: 0 !important;
   transform: scaleY(0) !important;
   transition: height,transform 0.2s ease-in-out !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  opacity: 0 !important;
 }
 
-.socialTabContainer:has(.TabSearchActive) .tabSearchTransitionGroup {
+.tabSearchTransitionGroup:has(.socialSearchContainer), .tabSearchTransitionGroup:has(.socialSearchContainer.tab-search-anim-exit-active) {
+  opacity: 1 !important;
+  height: 48px !important;
+  transform: scaleY(1) !important;
+}
+
+.socialListTab:has(.socialSearchContainer) {
+  height: 96px !important;
+}
+
+.socialTabContainer:has(.socialSearchContainer) .tabSearchTransitionGroup {
   height: 48px !important;
   transform: none !important;
 }
@@ -976,10 +978,17 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .socialSearchContainer {
   background-color: transparent !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+.tab-search-anim-exit.tab-search-anim-exit-active {
+  opacity: 1 !important;
 }
 
 .socialInputContainer {
   transition: none !important;
+  transform: none !important;
 }
 
 .socialInputContainer.SearchActive {
