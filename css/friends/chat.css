@@ -2097,30 +2097,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatRoomGroupNavColumn {
   background: var(--zehn-color-window-panel) !important;
-  transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
-  /* backdrop-filter: blur(var(--zehn-blur-radius)) !important; */
-  /* background-blend-mode: exclusion !important; */
-}
-
-.WindowFocus .chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed) {
-  /* background-color: var(--zehn-color-acrylic-focus-window) !important; */
-}
-
-.chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed)::after {
-  content: "" !important;
-  z-index: -1 !important;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  opacity: 0 !important;
-  /* background-image: var(--zehn-acrylic) !important; */
-  transition: opacity 0.2s ease-in-out !important;
-}
-
-.WindowFocus .chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed)::after {
-  opacity: 1 !important;
+  transition: none !important;
 }
 
 .chatRoomGroupNavColumn .chatRoomGroupNavCollapseExpand {
@@ -2130,7 +2107,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .ChatRoomGroup_MainAndChatEntry, .chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .chatRoomHeader {
   margin-left: 200px !important;
-  transition: margin,width 0.2s ease-in-out !important;
+  transition: margin 0.2s ease-in-out, width 0.2s ease-in-out !important;
   z-index: 99 !important;
 }
 
@@ -2480,32 +2457,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .MemberListColumn {
   transition: none !important;
   background: var(--zehn-color-window-panel) !important;
-  transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
-  /* backdrop-filter: blur(var(--zehn-blur-radius)) !important; */
-  /* background-blend-mode: exclusion !important; */
+  transition: none !important;
 }
-
-.WindowFocus .MemberListColumn:not(.MemberListViewCompact) {
-  /* background-color: var(--zehn-color-acrylic-focus-window) !important; */
-}
-
-.MemberListColumn:not(.MemberListViewCompact)::after {
-  content: "" !important;
-  z-index: -1 !important;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  opacity: 0 !important;
-  /* background-image: var(--zehn-acrylic) !important; */
-  transition: opacity 0.2s ease-in-out !important;
-}
-
-.WindowFocus .MemberListColumn:not(.MemberListViewCompact)::after {
-  opacity: 1 !important;
-}
-
 .chatRoomMembers {
   border-left: unset !important;
 }
@@ -2875,14 +2828,14 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .VoiceRoomChatTitle {
   padding: 0 !important;
   line-height: 32px !important;
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-window-acrylic) !important;
   transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
   backdrop-filter: blur(var(--zehn-blur-radius)) !important;
   background-blend-mode: exclusion !important;
 }
 
 .WindowFocus .VoiceRoomChatTitle {
-  background-color: var(--zehn-color-acrylic-focus-window) !important;
+  background-color: var(--zehn-color-window-acrylic-focus) !important;
 }
 
 .VoiceRoomChatTitle::after {
