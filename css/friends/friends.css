@@ -227,9 +227,9 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .compactView .currentUserContainer {
-  height: 32px !important;
-  min-height: 32px !important;
-  max-height: 32px !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
 }
 
 .statusHeaderGlow {
@@ -1218,6 +1218,206 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   transform: none !important;
 }
 
+/* FRIEND REQUESTS */
+.friendGroup.friendOutgoingRequests .groupName, .friendGroup.friendRequests .groupName {
+  padding: 0 16px !important;
+  line-height: 32px !important;
+}
+
+/* FRIEND INVITE BUTTONS */
+.friendInviteButtons {
+  padding: 0 !important;
+}
+
+.friendInviteButton {
+  width: 48px !important;
+  height: 48px !important;
+  transition: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background-color: var(--zehn-color-button-client-background) !important;
+  position: relative !important;
+}
+
+.friendInviteButton:hover {
+  background-color: var(--zehn-color-button-client-background-hover) !important;
+}
+
+.friendInviteButton:active {
+  background-color: var(--zehn-color-button-client-background-active) !important;
+}
+
+.friendInviteButton.bright::after {
+  content: "" !important;
+  bottom: 4px !important;
+  left: 4px !important;
+  right: 4px !important;
+  height: 2px !important;
+  background-color: rgb(var(--zehn-color-accent)) !important;
+  display: block !important;
+  position: absolute !important;
+}
+
+.friendlist.compactView .friendInviteButton {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.friendInviteButton.declineFriendInvite, .friendInviteButton.acceptFriendInvite {
+  color: var(--zehn-color-text-primary) !important;
+}
+
+.friendInviteButton .SVGIcon_Check, .declineFriendInvite .SVGIcon_X_Line {
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+}
+
+.friendInviteButton .SVGIcon_Check {
+  -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+}
+
+.declineFriendInvite .SVGIcon_X_Line {
+  -webkit-mask-image: var(--zehn-icon-cancel) !important;
+}
+
+.friendInviteButton svg * {
+  display: none !important;
+}
+
+.friendInviteButton:not(.bright).acceptFriendInvite:hover {
+  border: none !important;
+}
+
+.declineFriendInvite.dim, .acceptFriendInvite.dim {
+  border: none !important;
+}
+
+/* BLOCK COMMUNICATION */
+.friendInviteContainer .friend.dim {
+  filter: none !important;
+  opacity: 0 !important;
+}
+
+.friendInviteBlockContainer {
+  transform: none !important;
+  left: 16px !important;
+  transition: none !important;
+  height: 48px !important;
+}
+
+.compactView .friendInviteBlockContainer {
+  height: 32px !important;
+}
+
+.friendInviteBlockContainer .displayColumn {
+  margin: auto 0 !important;
+}
+
+.friendInviteBlockContainer .blockCommunicationLabel {
+  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  line-height: 16px !important;
+}
+
+.compactView .friendInviteBlockContainer .blockCommunicationLabel {
+  line-height: 16px !important;
+}
+
+.friendInviteBlockContainer .blockCommunicationLabel.subtitle {
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text-secondary) !important;
+  font-weight: 400 !important;
+}
+
+.friendInviteBlockContainer .DialogCheckbox {
+  margin: auto 16px auto 0 !important;
+}
+
+/* CANCEL ADD FRIENDS */
+.confirmInviteRequestContainer .cancelAddFriends {
+  position: relative !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: var(--zehn-color-button-client-background) !important;
+  display: none !important;
+}
+
+.confirmInviteRequestContainer .cancelAddFriends:hover {
+  background: var(--zehn-color-button-client-background-hover) !important;
+}
+
+.confirmInviteRequestContainer .cancelAddFriends:active {
+  background: var(--zehn-color-button-client-background-active) !important;
+}
+
+.confirmInviteRequestContainer .cancelAddFriends svg {
+  transform: none !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+  -webkit-mask-image: var(--zehn-icon-direction-backwards) !important;
+}
+
+.confirmInviteRequestContainer .cancelAddFriends svg * {
+  display: none !important;
+}
+
+/* CONFIRM REQUESTS */
+.confirmInviteRequestContainer {
+  padding: 0 !important;
+}
+
+.friendInviteButtons, .friendInviteContainer {
+  margin: 0 !important;
+}
+
+.confirmInviteRequestActions {
+  margin: 0 !important;
+  gap: 0 !important;
+}
+
+.confirmInviteRequestContainer .confirmInviteButton.dim:hover, .confirmInvites.dim:hover, .confirmInvites.dim {
+  opacity: 1 !important;
+  border: none !important;
+}
+
+.confirmInviteRequestContainer .confirmInviteButton {
+  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  background: var(--zehn-color-button-client-background) !important;
+  transition: none !important;
+  padding: 0 16px !important;
+  margin: 0 !important;
+}
+
+.confirmInviteRequestContainer .confirmInviteButton:hover {
+  background-color: var(--zehn-color-button-client-background-hover) !important;
+  color: var(--zehn-color-text-primary) !important;
+}
+
+.confirmInviteRequestContainer .confirmInviteButton:active {
+  background-color: var(--zehn-color-button-clientbackground-active) !important;
+  color: var(--zehn-color-text-primary) !important;
+}
+
+.confirmInviteRequestContainer .confirmInviteButton.dim, .confirmInviteRequestContainer .confirmInviteButton.dim:hover, .confirmInviteRequestContainer .confirmInviteButton.dim:active {
+  background-color: var(--zehn-color-button-client-background-disabled) !important;
+  color: var(--zehn-color-text-tertiary) !important;
+}
+
 /* UNREAD MESSAGE */
 .recentChatsGroup.unreadChatsGroup .groupName {
   margin-left: 16px !important;
@@ -1596,12 +1796,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   margin: 0 !important;
   border-radius: 0 !important;
   border: unset !important;
-}
-
-/* INVITES */
-.friendGroup.friendOutgoingRequests .groupName, .friendGroup.friendRequests .groupName {
-  padding: 0 !important;
-  line-height: 32px !important;
 }
 
 /* GROUP CHATS HEADER */
