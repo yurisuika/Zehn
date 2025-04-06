@@ -31,8 +31,8 @@ function addButtonUser() {
       user.style.setProperty('height', '48px', 'important');
       if (voice != null) {
         voice.style.setProperty('transform', 'none', 'important');
-        voice.style.setProperty('min-height', '32px', 'important');
-        voice.style.setProperty('height', '32px', 'important');
+        voice.style.setProperty('min-height', '48px', 'important');
+        voice.style.setProperty('height', '48px', 'important');
       }
     }
   };

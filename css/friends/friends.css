@@ -702,12 +702,20 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 /* ACTIVE VOICE CONTROLS */
+.friendListHeaderContainer div:has(>.activeVoiceControls) {
+  order: 4 !important;
+}
+
 .friendListHeaderContainer .activeVoiceControls {
   height: 0px !important;
   transition: all 0.25s ease-in-out !important;
   background-color: transparent !important;
   border: unset !important;
   border-image: url() !important;
+}
+
+.FriendsListContent .buttonsContainer {
+  height: 100% !important;
 }
 
 .friendListHeaderContainer .activeVoiceControls::before {
@@ -717,7 +725,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .activeVoiceFlexBox {
-  height: 32px !important;
+  height: 100% !important;
+}
+
+.activeVoiceButtonsSpacer, .activeVoiceButtonsSpacerAfter {
+  display: none !important;
 }
 
 .activeVoiceControls .connectionStatusLabels, .chatRoomVoiceChannel .connectionStatusLabels {
@@ -728,30 +740,42 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendListHeaderContainer .activeVoiceLabels {
   display: inline-flex !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: 32px !important;
+  line-height: 48px !important;
   padding: 0 16px !important;
+  display: none !important;
+}
+
+.activeVoiceLabels {
+  color: var(--zehn-color-text-secondary) !important;
+  font-weight: 400 !important;
+  font-size: var(--zehn-size-14) !important;
+  padding: 0 !important;
 }
 
 .activeVoiceLabels .activeVoiceHeader {
   letter-spacing: normal !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
+  display: none !important;
 }
 
 .activeVoiceLabels .activeVoiceName {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   line-height: inherit !important;
-  max-height: 32px !important;
+  max-height: 48px !important;
 }
 
 .activeVoiceLabels .activeVoiceName::before {
   content: "\00a0" !important;
   font-size: var(--zehn-size-14) !important;
+  display: none !important;
 }
 
 .friendListHeaderContainer .activeVoiceButtons {
-  min-width: 96px !important;
+  min-width: calc(48px * 3) !important;
+  height: 48px !important;
+  flex: 1 1 calc(48px* 3) !important;
 }
 
 .VoiceControlPanelButton svg {
@@ -759,36 +783,38 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: 16px !important;
+  max-height: 48px !important;
 }
 
 .VoiceControlPanelButton:focus {
   background-color: transparent !important;
 }
 
-.VoiceControlPanelButton, .VoiceIconCtn {
+.VoiceControlPanelButton {
   background-color: var(--zehn-color-button-client-background) !important;
 }
 
-.VoiceControlPanelButton:hover, .VoiceIconCtn:hover {
+.VoiceControlPanelButton:hover {
   background-color: var(--zehn-color-button-client-background-hover) !important;
 }
 
-.VoiceControlPanelButton:active, .VoiceIconCtn:active {
+.VoiceControlPanelButton:active {
   background-color: var(--zehn-color-button-client-background-active) !important;
 }
 
 .activeVoiceFlexBox .activeVoiceButtons button {
   margin-top: 0 !important;
   padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  max-width: 100% !important;
+  max-height: 48px !important;
   border: unset !important;
   border-radius: 0 !important;
   margin: 0 !important;
+  flex: 1 !important;
 }
 
 .VoiceControlPanelButton.ToggleMicrophoneButton.Focusable svg {
@@ -2149,7 +2175,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceFlexBox {
-  height: 32px !important;
+  height: 100% !important;
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceControls {
@@ -2193,6 +2219,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   border-radius: 0 !important;
   width: 32px !important;
   height: 32px !important;
+  justify-content: flex-end !important;
 }
 
 .activeVoiceButtons {
@@ -2278,12 +2305,11 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   background-color: var(--zehn-color-button-client-background-active) !important;
 }
 
-
 /* VOICE ICONS */
 .VoiceIconCtn, .VoiceIconCtn:hover, .VoiceIconCtn:active {
   color: transparent !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat svg {
