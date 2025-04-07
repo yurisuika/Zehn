@@ -1037,9 +1037,9 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   transition: opacity 0.25s ease !important;
   transition-delay: 1s !important;
   opacity: 0 !important;
-  backdrop-filter: blur(var(--zehn-blur-radius));
-  background-blend-mode: exclusion;
-  background-image: var(--zehn-acrylic);
+  backdrop-filter: blur(var(--zehn-blur-radius)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--zehn-texture-acrylic) !important;
   outline: 2px solid var(--zehn-color-button-dialog-border) !important;
   outline-offset: -2px !important;
 }
@@ -1126,7 +1126,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: var(--zehn-color-acrylic-overlay-dark) !important;
   backdrop-filter: blur(var(--zehn-blur-radius)) !important;
   background-blend-mode: exclusion !important;
-  background-image: var(--zehn-acrylic) !important;
+  background-image: var(--zehn-texture-acrylic) !important;
   max-width: unset !important;
   box-sizing: border-box !important;
 }
@@ -1211,7 +1211,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: var(--zehn-color-acrylic-overlay-dark) !important;
   backdrop-filter: blur(var(--zehn-blur-radius)) !important;
   background-blend-mode: exclusion !important;
-  background-image: var(--zehn-acrylic) !important;
+  background-image: var(--zehn-texture-acrylic) !important;
   padding: 16px !important;
   width: 250px !important;
   bottom: calc(32px + 16px) !important;
@@ -1281,6 +1281,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   opacity: 1 !important;
 }
 
+.BBCodeResizableComponent.Minimized.chatVideoContainer {
+  padding-bottom: 0 !important;
+}
+
+.chatVideoContainer {
+  padding-bottom: 32px !important;
+  max-width: 100% !important;
+  background: var(--zehn-color-window-panel) !important;
+}
+
 .chatVideoContainer video {
   max-width: unset !important;
 }
@@ -1311,15 +1321,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   opacity: 0 !important;
   visibility: hidden !important;
   display: none !important;
-}
-
-.BBCodeResizableComponent.Minimized.chatVideoContainer {
-  padding-bottom: 0 !important;
-}
-
-.chatVideoContainer {
-  padding-bottom: 32px !important;
-  max-width: 100% !important;
 }
 
 .msg .chatVideoContainer a.chatImageURL, .msg .chatImageContainer a.chatImageURL {
@@ -1408,27 +1409,46 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 /* VIDEO PLAY CONTROL */
+.chatVideoPlayControl {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
 .chatVideoPlayControl .playButtonContainer {
-  height: 64px !important;
-  width: 64px !important;
-  background-color: var(--zehn-color-acrylic-overlay-medium) !important;
-  background-image: var(--zehn-acrylic) !important;
-  background-blend-mode: exclusion !important;
-  backdrop-filter: blur(var(--zehn-blur-radius)) !important;
-  border-radius: 0 !important;
+  height: 128px !important;
+  width: 128px !important;
   padding: 0 !important;
   margin: auto !important;
+  border-radius: 50% !important;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out !important;
+  background-color: var(--zehn-color-button-acrylic-background) !important;
+  background-image: var(--zehn-texture-acrylic) !important;
+  background-blend-mode: exclusion !important;
+  backdrop-filter: blur(var(--zehn-blur-radius)) !important;
+  opacity: 0 !important;
+  transform: scale(0.5) !important;
+}
+
+.chatVideoPlayControl .playButtonContainer:hover {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  background-color: var(--zehn-color-button-acrylic-background-hover) !important;
+}
+
+.chatVideoPlayControl .playButtonContainer:active {
+  background-color: var(--zehn-color-button-acrylic-background-active) !important;
 }
 
 .msg .chatVideoContainer .chatVideoPlayControl svg {
-  padding: 8px !important;
+  padding: 0 !important;
+  margin: auto !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
-  mask-size: 48px !important;
+  mask-size: 64px !important;
   -webkit-mask-image: var(--zehn-icon-play) !important;
-  width: 48px !important;
-  height: 48px !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .chatVideoPlayControl:hover svg {
@@ -2847,7 +2867,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   left: 0 !important;
   right: 0 !important;
   opacity: 0 !important;
-  background-image: var(--zehn-acrylic) !important;
+  background-image: var(--zehn-texture-acrylic) !important;
   transition: opacity 0.2s ease-in-out !important;
 }
 
