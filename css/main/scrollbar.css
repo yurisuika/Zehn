@@ -58,15 +58,55 @@
   max-height: 16px !important;
   max-width: 16px !important;
   opacity: 0.11 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 12px !important;
   background-color: var(--zehn-color-scrollbar-button-wide) !important;
+}
+
+::-webkit-scrollbar-button:single-button:not(:window-inactive):hover {
+  background-color: var(--zehn-color-scrollbar-button-wide-hover) !important;
+}
+
+::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
+  background-color: var(--zehn-color-scrollbar-button-wide-active) !important;
+}
+
+::-webkit-scrollbar-button:single-button:not(:window-inactive)::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background-color: var(--zehn-color-scrollbar-glyph) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: 12px !important;
-  -webkit-mask-image: var(--zehn-icon-chevron-down-medium) !important;
 }
 
-.WindowFocus ::-webkit-scrollbar-button:single-button:decrement {
+::-webkit-scrollbar-button:single-button:not(:window-inactive):active::after{
+  background-color: var(--zehn-color-scrollbar-glyph-active) !important;
+}
+
+::-webkit-scrollbar-button:single-button:decrement:not(:window-inactive)::after {
   -webkit-mask-image: var(--zehn-icon-chevron-up-medium) !important;
+  /* background-image: var(--zehn-icon-chevron-up-medium) !important; */
+}
+
+::-webkit-scrollbar-button:single-button:increment:not(:window-inactive)::after {
+  -webkit-mask-image: var(--zehn-icon-chevron-down-medium) !important;
+  /* background-image: var(--zehn-icon-chevron-down-medium) !important; */
+}
+
+::-webkit-scrollbar-button:single-button:decrement:horizontal:not(:window-inactive)::after {
+  -webkit-mask-image: var(--zehn-icon-chevron-left-medium) !important;
+  /* background-image: var(--zehn-icon-chevron-left-medium) !important; */
+}
+
+::-webkit-scrollbar-button:single-button:increment:horizontal:not(:window-inactive)::after {
+  -webkit-mask-image: var(--zehn-icon-chevron-right-medium) !important;
+  /* background-image: var(--zehn-icon-chevron-right-medium) !important; */
 }
 
 /* THUMB */
@@ -93,7 +133,7 @@
   border-left: 16px solid transparent !important;
 }
 
-body:hover ::-webkit-scrollbar-thumb, body:hover ._3xRRJfD2xy95i9NhJxLTp0 *::-webkit-scrollbar-thumb, body:hover ._1UOkn2fGQ25jnyqcEJbnlo::-webkit-scrollbar-thumb {
+body:hover ::-webkit-scrollbar-thumb:window-inactive, body:hover ._3xRRJfD2xy95i9NhJxLTp0 *::-webkit-scrollbar-thumb:window-inactive, body:hover ._1UOkn2fGQ25jnyqcEJbnlo::-webkit-scrollbar-thumb:window-inactive {
   background-color: var(--zehn-color-scrollbar-thumb-narrow) !important;
 }
 
