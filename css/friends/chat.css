@@ -2701,7 +2701,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 32px !important;
 }
 
-.MemberListColumn:not(.MemberListViewCompact) .inputContainer::after {
+.MemberListColumn .inputContainer::after {
   content: "" !important;
   position: absolute !important;
   right: 0 !important;
@@ -2712,11 +2712,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   mask-position: center !important;
   mask-size: 12px !important;
   -webkit-mask-image: var(--zehn-icon-search) !important;
-  opacity: 0 !important;
+  opacity: 1 !important;
 }
 
-.MemberListColumn .inputContainer:has(input:placeholder-shown)::after {
-  opacity: 1 !important;
+.MemberListColumn.MemberListViewCompact .inputContainer:has(input:placeholder-shown)::after {
+  opacity: 0 !important;
 }
 
 .friendSearchInput::placeholder {
