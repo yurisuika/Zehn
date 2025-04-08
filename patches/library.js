@@ -35,7 +35,7 @@ Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
       console.log(el)
     }
     if(el.innerText.indexOf('Compatibility') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-switch)');
+      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-compatibility)');
       console.log(el)
     }
     if(el.innerText.indexOf('General') !== -1) {
