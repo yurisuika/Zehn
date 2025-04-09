@@ -244,7 +244,7 @@
 }
 
 ._1aw7cA3mAZfWt8idAlVJWi input.colorPicker:active, ._2o2fXzn99OddeqZMjbDuxQ input.colorPicker:active {
-  outline-color: var(--zehn-color-picker-border-hover) !important;
+  outline-color: var(--zehn-color-picker-border-active) !important;
 }
 
 input[type="color"] {
@@ -260,6 +260,59 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 input[type="color"]::-webkit-color-swatch {
 	border: none !important;
+}
+
+._2o2fXzn99OddeqZMjbDuxQ {
+  position: relative !important;
+}
+
+._2o2fXzn99OddeqZMjbDuxQ:has(.colorPicker) button {
+  order: 2 !important;
+  position: absolute !important;
+  min-height: 20px !important;
+  max-width: 20px !important;
+  opacity: 0 !important;
+  height: 20px !important;
+  width: 20px !important;
+  background-color: green !important;
+  min-height: 20px !important;
+  opacity: 0 !important;
+  z-index: 999 !important;
+  top: 2px !important;
+  right: 2px !important;
+  padding: 0 !important;
+}
+
+.colorPicker {
+  position: relative !important;
+}
+
+._2o2fXzn99OddeqZMjbDuxQ:has(button) .colorPicker {
+  outline-color: var(--zehn-color-picker-border-focus) !important;
+}
+
+._2o2fXzn99OddeqZMjbDuxQ:has(button) .colorPicker::before {
+  content: "" !important;
+  top: 2px !important;
+  right: 2px !important;
+  width: 20px !important;
+  height: 20px !important;
+  position: absolute !important;
+  background-color: var(--zehn-color-picker-border-active) !important;
+}
+
+._2o2fXzn99OddeqZMjbDuxQ:has(button) .colorPicker::after {
+  content: "" !important;
+  top: 2px !important;
+  right: 2px !important;
+  width: 20px !important;
+  height: 20px !important;
+  position: absolute !important;
+  background-color: var(--zehn-color-picker-checkmark) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+  -webkit-mask-image: var(--zehn-icon-checkmark) !important;
 }
 
 /* ZEHN BUTTONS */
