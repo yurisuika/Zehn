@@ -1,12 +1,15 @@
 /* BACKGROUND */
 .OverlayTimeline {
   background-color: transparent !important;
-  -valve-app-region: transparent !important;
+  /* -valve-app-region: pass-through !important; */
 }
 
 .GameOverlayPlayer {
   background-color: transparent !important;
 }
+
+.d4wUvwaSuUb30Amkj7rOb {}
+
 /* TIMELINE START */
 ._1J8umaxlHnD4poewN6r8wp {
   border-radius: 0 !important;
@@ -23,6 +26,7 @@
   color: var(--zehn-color-text-primary) !important;
   background-color: var(--zehn-color-button-client-background) !important;
   transition: none !important;
+  box-sizing: border-box !important;
 }
 
 ._1J8umaxlHnD4poewN6r8wp:hover {
@@ -70,23 +74,10 @@
 
 /* START RECORDING */
 ._2_v1BiFUpGfxhBQ1QIIJfB {
-  margin-top: 48px !important;
-  position: relative !important;
-  height: calc(100% - 48px) !important;
-}
-
-._2_v1BiFUpGfxhBQ1QIIJfB::before {
-  height: 48px !important;
-  position: absolute !important;
-  content: "" !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
+  /* position: relative !important; */
+  min-height: 48px !important;
   z-index: -1 !important;
-  background: var(--zehn-color-acrylic) !important;
-  backdrop-filter: blur(var(--zehn-blur-radius)) !important;
-  background-blend-mode: exclusion !important;
-  background-image: var(--zehn-texture-acrylic) !important;
+  background: transparent !important;
 }
 
 /* CONTROLS */
@@ -103,13 +94,14 @@
   display: flex !important;
   grid-template-columns: unset !important;
   margin: 0 !important;
-  top: 0 !important;
+  top: 48px !important;
   bottom: unset !important;
   height: 48px !important;
   position: absolute !important;
   width: 100% !important;
   left: 0 !important;
   background: transparent !important;
+  background: var(--zehn-color-window-panel) !important;
 }
 
 ._3QLt_cnTY9p8pNOj9jxTxR, ._2AtQdZFU-mOGE-_3SuQKkw {
@@ -181,9 +173,37 @@
   -webkit-mask-image: var(--zehn-icon-video) !important;
 }
 
+._1J8umaxlHnD4poewN6r8wp {
+  width: 100% !important;
+}
+
+._2_v1BiFUpGfxhBQ1QIIJfB:not(:has(.GameOverlayPlayer)) ._1J8umaxlHnD4poewN6r8wp {
+  top: 48px !important;
+  position: absolute !important;
+}
+
+._2_v1BiFUpGfxhBQ1QIIJfB:not(:has(.GameOverlayPlayer)) ._1J8umaxlHnD4poewN6r8wp::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: var(--zehn-color-window-panel) !important;
+  z-index: -1 !important;
+}
+
 ._1J8umaxlHnD4poewN6r8wp._2hoTqlCpHBmfJOfqYJSnjF._2lP-Y8DCwSDGqES_9Yheab {
   border-top: none !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-button-client-background) !important;
+}
+
+._1J8umaxlHnD4poewN6r8wp._2hoTqlCpHBmfJOfqYJSnjF._2lP-Y8DCwSDGqES_9Yheab:hover {
+  background: var(--zehn-color-button-client-background-hover) !important;
+}
+
+._1J8umaxlHnD4poewN6r8wp._2hoTqlCpHBmfJOfqYJSnjF._2lP-Y8DCwSDGqES_9Yheab:active {
+  background: var(--zehn-color-button-client-background-active) !important;
 }
 
 /* TIMELINE */
@@ -202,10 +222,7 @@
   right: 0 !important;
   bottom: 0 !important;
   height: 96px !important;
-  background: var(--zehn-color-acrylic) !important;
-  /* backdrop-filter: blur(var(--zehn-blur-radius)) !important; */
-  background-blend-mode: exclusion !important;
-  background-image: var(--zehn-texture-acrylic) !important;
+  background: var(--zehn-color-window-panel) !important;
 }
 
 .OverlayTimeline .U5rUz_v__RNtvgBIfzYPx {
@@ -327,9 +344,9 @@
 
 /* VIDEO */
 ._2fP0tlgegInERiBXbtZN_z {
-  margin: 48px auto 96px auto !important;
+  margin: 96px auto !important;
   width: 100% !important;
-  background-color: var(--zehn-color-window-dialog) !important;
+  background-color: transparent !important;
   transition: none !important;
 }
 
@@ -338,7 +355,7 @@
 }
 
 ._1AGqAVUQuj81DaUOKJ9Eon._1PKb5jI6E9EN9uLLK030zW video {
-  background-color: var(--zehn-color-window-dialog) !important;
+  background-color: transparent !important;
   transition: none !important;
 }
 
@@ -454,6 +471,10 @@
 ._1lcizT_Nbxsk484XzTtcFf svg {
   width: 16px !important;
   height: 16px !important;
+  display: none !important;
+}
+
+._3SETpnYbAtvmO7w4gpOCtK img {
   display: none !important;
 }
 
