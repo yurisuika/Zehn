@@ -4,14 +4,18 @@
   --zehn-color-away: var(--option-color-away, 240, 178, 50);
   --zehn-color-disturb: var(--option-color-disturb, 242, 63, 67);
   --zehn-color-offline: var(--option-color-offline, 128, 132, 142);
+}
 
+:root {
   --zehn-color-accent: var(--option-color-accent, var(--SystemAccentColor-RGB, 210, 115, 138));
+
   --zehn-color-accent-lighten-light: var(--option-color-accent-lighten-light, var(--SystemAccentColorLight1-RGB, 215, 135, 154));
   --zehn-color-accent-lighten-medium: var(--option-color-accent-lighten-medium, var(--SystemAccentColorLight2-RGB, 218, 157, 172));
   --zehn-color-accent-lighten-heavy: var(--option-color-accent-lighten-heavy, var(--SystemAccentColorLight3-RGB, 225, 186, 195));
   --zehn-color-accent-darken-light: var(--option-color-accent-darken-light, var(--SystemAccentColorDark1-RGB, 203, 95, 121));
   --zehn-color-accent-darken-medium: var(--option-color-accent-darken-medium, var(--SystemAccentColorDark2-RGB, 204, 69, 102));
   --zehn-color-accent-darken-heavy: var(--option-color-accent-darken-heavy, var(--SystemAccentColorDark3-RGB, 181, 56, 86));
+
   --zehn-color-accent-positive-light: var(--option-color-accent-positive-light, var(--zehn-color-accent-darken-light));
   --zehn-color-accent-positive-medium: var(--option-color-accent-positive-medium, var(--zehn-color-accent-darken-medium));
   --zehn-color-accent-positive-heavy: var(--option-color-accent-positive-heavy, var(--zehn-color-accent-darken-heavy));
@@ -308,4 +312,60 @@
   --zehn-color-virtualmenu-background: var(--option-color-virtualmenu-background, rgba(var(--zehn-color-negative), 0.1));
   --zehn-color-virtualmenu-background-selected: var(--option-color-virtualmenu-background-selected, rgba(var(--zehn-color-accent), 0.5));
   --zehn-color-virtualmenu-border: var(--option-color-virtualmenu-border, rgb(var(--zehn-color-accent)));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zehn-color-accent-positive-light: var(--option-color-accent-positive-light, var(--zehn-color-accent-darken-light));
+    --zehn-color-accent-positive-medium: var(--option-color-accent-positive-medium, var(--zehn-color-accent-darken-medium));
+    --zehn-color-accent-positive-heavy: var(--option-color-accent-positive-heavy, var(--zehn-color-accent-darken-heavy));
+    --zehn-color-accent-negative-light: var(--option-color-accent-negative-light, var(--zehn-color-accent-lighten-light));
+    --zehn-color-accent-negative-medium: var(--option-color-accent-negative-medium, var(--zehn-color-accent-lighten-medium));
+    --zehn-color-accent-negative-heavy: var(--option-color-accent-negative-heavy, var(--zehn-color-accent-lighten-heavy));
+
+    --zehn-color-negative: var(--option-color-negative, var(--zehn-color-white));
+    --zehn-color-positive: var(--option-color-positive, var(--zehn-color-black));
+
+    --zehn-color-background-primary: var(--option-color-background-primary, 34, 34, 34);
+    --zehn-color-background-secondary: var(--option-color-background-secondary, 31, 31, 31);
+    --zehn-color-background-tertiary: var(--option-color-background-tertiary, 0, 0, 0);
+
+    --zehn-color-context-border: var(--option-color-context-border, 118, 118, 118);
+    --zehn-color-context-background: var(--option-color-context-background, 43, 43, 43);
+
+    --zehn-color-foreground-primary: var(--option-color-foreground-primary, 255, 255, 255);
+    --zehn-color-foreground-secondary: var(--option-color-foreground-secondary, 153, 153, 153);
+    --zehn-color-foreground-tertiary: var(--option-color-foreground-tertiary, 127, 127, 127);
+
+    --zehn-color-switch-inner: var(--option-color-switch-inner, 162, 162, 162);
+    --zehn-color-switch-outer: var(--option-color-switch-border, 215, 215, 215);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --zehn-color-accent-positive-light: var(--option-color-accent-positive-light, var(--zehn-color-accent-lighten-light));
+    --zehn-color-accent-positive-medium: var(--option-color-accent-positive-medium, var(--zehn-color-accent-lighten-medium));
+    --zehn-color-accent-positive-heavy: var(--option-color-accent-positive-heavy, var(--zehn-color-accent-lighten-heavy));
+    --zehn-color-accent-negative-light: var(--option-color-accent-negative-light, var(--zehn-color-accent-darken-light));
+    --zehn-color-accent-negative-medium: var(--option-color-accent-negative-medium, var(--zehn-color-accent-darken-medium));
+    --zehn-color-accent-negative-heavy: var(--option-color-accent-negative-heavy, var(--zehn-color-accent-darken-heavy));
+
+    --zehn-color-negative: var(--option-color-negative, var(--zehn-color-black));
+    --zehn-color-positive: var(--option-color-positive, var(--zehn-color-white));
+
+    --zehn-color-background-primary: var(--option-color-background-primary, 255, 255, 255);
+    --zehn-color-background-secondary: var(--option-color-background-secondary, 230, 230, 230);
+    --zehn-color-background-tertiary: var(--option-color-background-tertiary, 255, 255, 255);
+
+    --zehn-color-context-border: var(--option-color-context-border, 204, 204, 204);
+    --zehn-color-context-background: var(--option-color-context-background, 242, 242, 242);
+
+    --zehn-color-foreground-primary: var(--option-color-foreground-primary, 20, 0, 0);
+    --zehn-color-foreground-secondary: var(--option-color-foreground-secondary, 102, 102, 102);
+    --zehn-color-foreground-tertiary: var(--option-color-foreground-tertiary, 153, 153, 153);
+
+    --zehn-color-switch-inner: var(--option-color-switch-inner, 102, 102, 10);
+    --zehn-color-switch-outer: var(--option-color-switch-border, 70, 70, 70);
+  }
 }
