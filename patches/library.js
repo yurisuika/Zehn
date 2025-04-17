@@ -1,6 +1,9 @@
 import Zehn from './../js/zehn.js';
+import Options from './../js/options.js';
 
 Zehn.addUserAgent();
+
+Options.setOptions();
 
 Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
   let cells = document.querySelectorAll('._1-vlriAtKYDViAEunue4VO');

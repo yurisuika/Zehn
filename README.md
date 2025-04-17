@@ -39,9 +39,11 @@ Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/
 #### Customization
 Zehn now supports Millennium's built-in configuration screen! You may select various options and use the color editor from it.
 
-Choose from both dark and light modes! See the `Theme` tab in the settings for this and other theming options.
+If using SFP, you may edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do!
 
-Zehn has been completely overhauled to support custom colors across the entire skin! You can optionally blend colors into both the background and foreground elements of Steam. This is presently a Work In Progress, so please be patient as some things may appear broken during this extensive rework.
+Choose from both dark and light modes! See the `Theme` tab in the settings for this and other theming options. Or automatically sync with your system mode!
+
+Zehn has been completely overhauled to support custom colors across the entire skin! You can optionally blend colors into both the background and foreground elements of Steam.
 
 #### Features
 On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/mode/<theme>/colors.css`.
