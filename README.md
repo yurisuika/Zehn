@@ -39,7 +39,7 @@ Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/
 #### Customization
 Zehn now supports Millennium's built-in configuration screen! You may select various options and use the color editor from it.
 
-If using SFP, you may edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do!
+If using SFP, you may edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do. The skin folder must be named `Zehn` for this to work at the present time!
 
 Choose from both dark and light modes! See the `Theme` tab in the settings for this and other theming options. Or automatically sync with your system mode!
 
