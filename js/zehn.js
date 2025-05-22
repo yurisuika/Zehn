@@ -1,6 +1,3 @@
-import { Reveal } from './reveal.js';
-import { RevealHeader } from './revealHeader.js';
-
 const Zehn = {
   waitForElement(selector) {
     return new Promise(resolve => {
@@ -87,49 +84,6 @@ const Zehn = {
     } else if (navigator.userAgent.includes('Windows')) {
       document.documentElement.classList.add('Windows');
     }
-  },
-
-  createReveal(target, button) {
-    Zehn.waitAndObserve(target, () => {
-      document.querySelectorAll(`${button}`).forEach((element) => {
-        let FR = new Reveal('body', {
-            selector: element,
-            backgroundGradientSize: 150,
-            borderGradientSize: 80,
-            borderAcrylicColor: 'var(--zehn-color-reveal-border)',
-            backgroundAcrylicColor: 'var(--zehn-color-reveal-background)'
-        });
-      });
-    });
-  },
-
-  createRevealBorder(target, button) {
-    Zehn.waitAndObserve(target, () => {
-      document.querySelectorAll(`${button}`).forEach((element) => {
-        let FR = new Reveal('body', {
-            selector: element,
-            backgroundGradientSize: 150,
-            borderGradientSize: 80,
-            borderAcrylicColor: 'var(--zehn-color-reveal-notification-border)',
-            backgroundAcrylicColor: 'var(--zehn-color-reveal-notification-background)'
-        });
-      });
-    });
-  },
-
-  createRevealHeader(target, button) {
-    Zehn.waitAndObserve(target, () => {
-      document.querySelectorAll(`${button}`).forEach((element) => {
-        let FR = new RevealHeader('body', {
-            selector: document.querySelectorAll(`${target}`),
-            backgroundGradientSize: 150,
-            borderGradientSize: 80,
-            borderAcrylicColor: 'var(--zehn-color-reveal-border)',
-            backgroundAcrylicColor: 'var(--zehn-color-reveal-background)',
-            childrenSelector: element
-        });
-      });
-    });
   },
 
   createElement(target, button, callback) {

@@ -57,7 +57,5 @@ Zehn features several added buttons for an improved experience:
 
 Zehn uses Windows 10's Segoe UI for the most seamless experience. If you are using Linux, you will want to install [some form of Segoe UI](https://github.com/abhayghatpande/segoe-fonts) for the best experience.
 
-Zehn features optional [Fluent Reveal](https://github.com/aleversn/FluentReveal) effects. If enabled, certain buttons are given the reactive background and border effect. This may perform poorly on some systems.
-
 #### Discussion
 If you have inquires, you may use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) or join my modding [Discord](https://discord.gg/0zdNEkQle7Qg9C1H) server.

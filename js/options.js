@@ -6,10 +6,10 @@ const Options = {
           // THEME -------------------------------------------------------------
           if (options.theme.mode == "dark") {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/dark/theme.css"/>');
-            document.write('<script type="text/javascript" src="https://steamloopback.host/skins/Zehn/config/theme/mode/dark/theme.js"></' + 'script>');
+            document.documentElement.classList.add('ThemeDark');
           } else if (options.theme.mode == "light") {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/light/theme.css"/>');
-            document.write('<script type="text/javascript" src="https://steamloopback.host/skins/Zehn/config/theme/mode/light/theme.js"></' + 'script>');
+            document.documentElement.classList.add('ThemeLight');
           }
 
           if (options.theme.auto) {
@@ -45,13 +45,6 @@ const Options = {
           }
 
           // GENERAL -----------------------------------------------------------
-          if (options.general.reveal) {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/reveal/enable.css"/>');
-            document.write('<script type="text/javascript" src="https://steamloopback.host/skins/Zehn/config/general/reveal/enable.js"></' + 'script>');
-          } else {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/reveal/disable.css"/>');
-          }
-
           if (options.general.avatar == "round") {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/avatar/round.css"/>');
           } else if (options.general.avatar == "square") {

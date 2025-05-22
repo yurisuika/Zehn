@@ -122,7 +122,6 @@ function toggleSidebar() {
     var btnLibrary = document.getElementById('toggleLibrary');
     var sidebar = document.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`);
     var buttons = document.querySelector(`._1ZS_xta5HMXzR8JgxDH6n7 ._2WgQEFvIzJw_SHNGbjtRFU`);
-    btnSidebar.classList.add('RevealButton');
     btnLibrary.classList.add('DialogButton');
     if (btnSidebar.value == 'close') {
       btnSidebar.value = 'open';
