@@ -20,7 +20,12 @@
 .friendsListContainer {}
 
 .friendsui-container {
+  transition: background 0.2s ease-in-out !important;
   background-color: var(--zehn-color-window-client) !important;
+}
+
+.dwmx.friendsui-container {
+  background-color: transparent !important;
 }
 
 /* TITLEBAR */
@@ -191,6 +196,10 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   background-blend-mode: exclusion !important;
 }
 
+.dwmx .titleBarContainer:not(.chatHeader) {
+  backdrop-filter: none !important;
+}
+
 .WindowFocus .titleBarContainer:not(.chatHeader) {
   background-color: var(--zehn-color-window-acrylic-focus) !important;
 }
@@ -208,6 +217,10 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   transition: opacity 0.2s ease-in-out !important;
 }
 
+.dwmx .WindowFocus .titleBarContainer:not(.chatHeader)::after {
+  opacity: 0 !important;
+}
+
 .WindowFocus .titleBarContainer:not(.chatHeader)::after {
   opacity: 1 !important;
 }
@@ -217,6 +230,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   margin-top: 0 !important;
   overflow-y: auto !important; /* SCROLL */
   height: fit-content !important;
+  background-color: var(--zehn-color-window-client) !important;
 }
 
 /* CURRENT USER */
@@ -783,7 +797,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendListHeaderContainer .activeVoiceButtons {
   min-width: calc(48px * 3) !important;
   height: 48px !important;
-  flex: 1 1 calc(48px* 3) !important;
+  flex: 1 1 calc(48px * 3) !important;
 }
 
 .VoiceControlPanelButton svg {
@@ -2567,9 +2581,9 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 /* FOOTER */
 .friendListFooter {
-  background-color: transparent !important;
+  background-color: var(--zehn-color-window-client) !important;
+  flex-grow: 1 !important;
   min-height: 0 !important;
-  display: none !important;
 }
 
 /* OFFLINE CONTAINER */
