@@ -1578,6 +1578,116 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   right: 0 !important;
 }
 
+/* WORKSHOP CONTAINER */
+.SteamPublishedFile_Logo {
+  float: right !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.workshopItemControls {
+  margin-top: 16px !important;
+  padding: 0 !important;
+  line-height: 32px !important;
+}
+
+.workshopItemControlCtn {
+  gap: 8px !important;
+  display: flex !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: 400 !important;
+  font-size: var(--zehn-size-14) !important;
+}
+
+.SteamPublishedFile:hover .workshopItemControlCtn > span {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.SteamPublishedFile > div:has(.workshopItemControls) {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.workshopItemControlCtn > span {
+  transition-property: opacity, transform !important;
+  transition-duration: .16s !important;
+  transition-timing-function: ease-in-out !important;
+  opacity: 0 !important;
+  transform: scale(0.5) !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  background-color: var(--zehn-color-button-acrylic-background) !important;
+  background-image: var(--zehn-texture-acrylic) !important;
+  background-blend-mode: exclusion !important;
+  backdrop-filter: blur(var(--zehn-blur-radius)) !important;
+  gap: 8px !important;
+  display: flex !important;
+  border-radius: 0 !important;
+  background-position: center !important;
+  background-repeat: repeat !important;
+}
+
+.SteamPublishedFile .upvoteCount::before, .SteamPublishedFile .commentCount::before, .SteamPublishedFile .general_btn::before {
+  content: "" !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px !important;
+  float: left !important;
+}
+
+.SteamPublishedFile .upvoteCount {}
+
+.SteamPublishedFile .upvoteCount::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-up) !important;
+}
+
+.SteamPublishedFile .commentCount {}
+
+.SteamPublishedFile .commentCount::before {
+  -webkit-mask-image: var(--zehn-icon-chat-discussion) !important;
+}
+
+.general_btn {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: 400 !important;
+  font-size: var(--zehn-size-14) !important;
+}
+
+.general_btn.voteUp, .general_btn.voteUp:hover {
+  color: var(--zehn-color-text-primary) !important;
+}
+
+.general_btn.voteUp::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-up) !important;
+}
+
+.general_btn.voteUp.toggled::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-up-active) !important;
+}
+
+.general_btn.voteDown {
+  width: 24px !important;
+}
+
+.general_btn.voteDown::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-down) !important;
+}
+
+.general_btn.voteDown.toggled::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-down-active) !important;
+}
+
 /* OPEN GRAPH */
 .msg div.ChatMessageOpenGraph, .msg div.SteamPublishedFile {
   max-width: 100% !important;
