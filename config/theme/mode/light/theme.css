@@ -1,2 +1,343 @@
-@import url('colors.css');
-@import url('textures.css');
+/* COLORS ----------------------------------------------------------------------------------------------------------- */
+
+:root {
+  --option-color-ingame: var(--custom-color-ingame, 35, 165, 90);
+  --option-color-online: var(--custom-color-online, 35, 165, 90);
+  --option-color-away: var(--custom-color-away, 240, 178, 50);
+  --option-color-disturb: var(--custom-color-disturb, 242, 63, 67);
+  --option-color-offline: var(--custom-color-offline, 128, 132, 142);
+}
+
+:root {
+  --option-color-accent: var(--SystemAccentColor-RGB, 210, 115, 138);
+
+  --option-color-accent-lighten-light: var(--SystemAccentColorLight1-RGB, 215, 135, 154);
+  --option-color-accent-lighten-medium: var(--SystemAccentColorLight2-RGB, 218, 157, 172);
+  --option-color-accent-lighten-heavy: var(--SystemAccentColorLight3-RGB, 225, 186, 195);
+  --option-color-accent-darken-light: var(--SystemAccentColorDark1-RGB, 203, 95, 121);
+  --option-color-accent-darken-medium: var(--SystemAccentColorDark2-RGB, 204, 69, 102);
+  --option-color-accent-darken-heavy: var(--SystemAccentColorDark3-RGB, 181, 56, 86);
+
+  --option-color-accent-positive-light: var(--option-color-accent-lighten-light);
+  --option-color-accent-positive-medium: var(--option-color-accent-lighten-medium);
+  --option-color-accent-positive-heavy: var(--option-color-accent-lighten-heavy);
+  --option-color-accent-negative-light: var(--option-color-accent-darken-light);
+  --option-color-accent-negative-medium: var(--option-color-accent-darken-medium);
+  --option-color-accent-negative-heavy: var(--option-color-accent-darken-heavy);
+
+  --option-color-white: 255, 255, 255;
+  --option-color-gray: 127, 127, 127;
+  --option-color-black: 0, 0, 0;
+
+  --option-color-negative: var(--option-color-black);
+  --option-color-positive: var(--option-color-white);
+
+  --option-color-border: rgba(var(--option-color-negative), 0.45);
+  --option-color-border-focus: rgb(var(--option-color-accent));
+
+  --option-color-background-primary: 255, 255, 255;
+  --option-color-background-secondary: 230, 230, 230;
+  --option-color-background-tertiary: 255, 255, 255;
+
+  --option-color-window-client: rgb(var(--option-color-background-primary));
+  --option-color-window-panel: rgb(var(--option-color-background-secondary));
+  --option-color-window-dialog: rgb(var(--option-color-background-tertiary));
+  --option-color-window-overlay: rgba(var(--option-color-positive), 0.6);
+  --option-color-window-acrylic: rgb(var(--option-color-background-secondary));
+  --option-color-window-acrylic-focus: rgba(var(--option-color-positive), 0.5);
+
+  --option-color-acrylic: rgba(var(--option-color-positive), 0.5);
+
+  --option-color-context-border: 204, 204, 204;
+  --option-color-context-background: 242, 242, 242;
+
+  --option-color-context-menu-border: rgb(var(--option-color-context-border));
+  --option-color-context-menu-background: rgb(var(--option-color-context-background));
+  --option-color-context-dropdown-background: rgba(var(--option-color-positive), 0.5);
+  --option-color-context-dropdown-border: rgba(var(--option-color-negative), 0.17);
+
+  --option-color-tooltip-background: rgba(var(--option-color-context-background));
+  --option-color-tooltip-border: rgba(var(--option-color-context-border));
+  --option-color-tooltip-text-primary: rgb(var(--option-color-foreground-primary));
+  --option-color-tooltip-text-secondary: rgb(var(--option-color-foreground-secondary));
+
+  --option-color-foreground-primary: 0, 0, 0;
+  --option-color-foreground-secondary: 102, 102, 102;
+  --option-color-foreground-tertiary: 153, 153, 153;
+
+  --option-color-text-primary: rgb(var(--option-color-foreground-primary));
+  --option-color-text-secondary: rgb(var(--option-color-foreground-secondary));
+  --option-color-text-tertiary: rgb(var(--option-color-foreground-tertiary));
+
+  --option-color-icon-primary: rgb(var(--option-color-foreground-primary));
+  --option-color-icon-secondary: rgb(var(--option-color-foreground-secondary));
+  --option-color-icon-tertiary: rgb(var(--option-color-foreground-tertiary));
+
+  --option-color-link: rgb(var(--option-color-accent));
+  --option-color-link-hover: rgb(var(--option-color-foreground-secondary));
+  --option-color-link-active: rgb(var(--option-color-foreground-tertiary));
+
+  --option-color-close-hover: 232, 18, 35;
+  --option-color-close-pressed: 241, 112, 121;
+
+  --option-color-control-light: rgb(var(--option-color-white));
+  --option-color-control-dark: rgb(var(--option-color-black));
+
+  --option-color-sorting-background: transparent;
+  --option-color-sorting-foreground: rgb(var(--option-color-foreground-primary));
+  --option-color-sorting-foreground-hover: rgb(var(--option-color-foreground-secondary));
+  --option-color-sorting-foreground-active: rgb(var(--option-color-foreground-tertiary));
+
+  --option-color-button-dialog-background: rgba(var(--option-color-negative), 0.2);
+  --option-color-button-dialog-background-hover: rgba(var(--option-color-negative), 0.2);
+  --option-color-button-dialog-background-active: rgba(var(--option-color-negative), 0.4);
+  --option-color-button-dialog-background-focus: rgba(var(--option-color-accent));
+  --option-color-button-dialog-background-disabled: rgba(var(--option-color-negative), 0.2);
+  --option-color-button-dialog-border: transparent;
+  --option-color-button-dialog-border-hover: rgba(var(--option-color-negative), 0.5);
+  --option-color-button-dialog-border-active: transparent;
+  --option-color-button-dialog-border-focus: transparent;
+  --option-color-button-dialog-border-disabled: transparent;
+  --option-color-button-dialog-text: rgb(var(--option-color-foreground-primary));
+  --option-color-button-dialog-text-disabled: rgb(var(--option-color-foreground-tertiary));
+
+  --option-color-button-client-background: transparent;
+  --option-color-button-client-background-hover: rgba(var(--option-color-negative), 0.1);
+  --option-color-button-client-background-active: rgba(var(--option-color-negative), 0.2);
+  --option-color-button-client-background-disabled: transparent;
+
+  --option-color-button-acrylic-background: rgba(var(--option-color-positive), 0.5);
+  --option-color-button-acrylic-background-hover: rgba(var(--option-color-positive), 0.5);
+  --option-color-button-acrylic-background-active: rgba(var(--option-color-positive), 0.5);
+
+  --option-color-dropdown-dialog-background: rgba(var(--option-color-positive), 0.4);
+  --option-color-dropdown-dialog-background-hover: rgba(var(--option-color-positive), 0.6);
+  --option-color-dropdown-dialog-background-active: rgba(var(--option-color-negative), 0.3);
+  --option-color-dropdown-dialog-background-disabled: rgba(var(--option-color-negative), 0.2);
+  --option-color-dropdown-dialog-border: rgba(var(--option-color-negative), 0.4);
+  --option-color-dropdown-dialog-border-hover: rgba(var(--option-color-negative), 0.6);
+  --option-color-dropdown-dialog-border-active: rgba(var(--option-color-negative), 0.5);
+  --option-color-dropdown-dialog-border-disabled: rgba(var(--option-color-negative), 0.2);
+  --option-color-dropdown-dialog-text: rgb(var(--option-color-foreground-primary));
+  --option-color-dropdown-dialog-text-disabled: rgb(var(--option-color-foreground-tertiary));
+
+  --option-color-dropdown-client-background: transparent;
+  --option-color-dropdown-client-background-hover: rgba(var(--option-color-negative), 0.1);
+  --option-color-dropdown-client-background-active: rgba(var(--option-color-negative), 0.2);
+  --option-color-dropdown-client-border: transparent;
+  --option-color-dropdown-client-border-hover: transparent;
+  --option-color-dropdown-client-border-active: transparent;
+
+  --option-color-input-dialog-background: rgba(var(--option-color-positive), 0.4);
+  --option-color-input-dialog-background-hover: rgba(var(--option-color-positive), 0.6);
+  --option-color-input-dialog-background-active: rgba(var(--option-color-negative), 0.3);
+  --option-color-input-dialog-background-focus: rgb(var(--option-color-white));
+  --option-color-input-dialog-background-disabled: rgba(var(--option-color-negative), 0.2);
+  --option-color-input-dialog-border: rgba(var(--option-color-negative), 0.4);
+  --option-color-input-dialog-border-hover: rgba(var(--option-color-negative), 0.6);
+  --option-color-input-dialog-border-active: rgba(var(--option-color-negative), 0.5);
+  --option-color-input-dialog-border-focus: rgb(var(--option-color-accent));
+  --option-color-input-dialog-border-disabled: rgba(var(--option-color-negative), 0.2);
+  --option-color-input-dialog-text: rgb(var(--option-color-foreground-primary));
+  --option-color-input-dialog-text-placeholder: rgb(var(--option-color-foreground-secondary));
+  --option-color-input-dialog-text-focus: rgb(var(--option-color-black));
+  --option-color-input-dialog-text-disabled: rgb(var(--option-color-foreground-tertiary));
+
+  --option-color-list-background: transparent;
+  --option-color-list-background-hover: rgba(var(--option-color-negative), 0.1);
+  --option-color-list-background-active: rgba(var(--option-color-negative), 0.2);
+  --option-color-list-background-focus: rgb(var(--option-color-accent-positive-heavy));
+
+  --option-color-table-odd: transparent;
+  --option-color-table-even: rgba(var(--option-color-negative), 0.2);
+
+  --option-color-music-list-odd: transparent;
+  --option-color-music-list-odd-hover: rgba(var(--option-color-negative), 0.2);
+  --option-color-music-list-odd-active: rgba(var(--option-color-negative), 0.35);
+  --option-color-music-list-even: rgba(var(--option-color-negative), 0.1);
+  --option-color-music-list-even-hover: rgba(var(--option-color-negative), 0.2);
+  --option-color-music-list-even-active: rgba(var(--option-color-negative), 0.35);
+  --option-color-music-button-background: rgba(var(--option-color-negative), 0.2);
+  --option-color-music-button-background-hover: rgba(var(--option-color-negative), 0.2);
+  --option-color-music-button-background-active: rgba(var(--option-color-negative), 0.4);
+  --option-color-music-button-background-focus: rgba(var(--option-color-positive), 0.5);
+  --option-color-music-button-border: transparent;
+  --option-color-music-button-border-hover: rgba(var(--option-color-negative), 0.5);
+  --option-color-music-button-border-active: transparent;
+  --option-color-music-button-border-focus: transparent;
+
+  --option-color-chat-background: transparent;
+  --option-color-chat-background-hover: rgba(var(--option-color-negative), 0.025);
+  --option-color-chat-background-active: rgba(var(--option-color-negative), 0.025);
+
+  --option-color-placeholder: rgba(var(--option-color-negative), 0.1);
+
+  --option-color-selection: transparent;
+  --option-color-selection-hover: rgba(var(--option-color-negative), 0.65);
+  --option-color-selection-active: rgb(var(--option-color-negative));
+
+  --option-color-seperator: rgba(var(--option-color-negative), 0.2);
+  --option-color-seperator-context: rgba(var(--option-color-negative), 0.4);
+
+  --option-color-tag: rgba(var(--option-color-negative), 0.1);
+  --option-color-tag-hover: rgba(var(--option-color-negative), 0.2);
+  --option-color-tag-active: rgba(var(--option-color-negative), 0.35);
+
+  --option-color-progress-empty: rgba(var(--option-color-negative), 0.2);
+  --option-color-progress-filled: rgb(var(--option-color-accent));
+
+  --option-color-timeline-empty: rgba(var(--option-color-negative), 0.4);
+  --option-color-timeline-filled: rgb(var(--option-color-accent));
+  --option-color-timeline-handle: rgb(var(--option-color-accent));
+  --option-color-timeline-handle-hover: rgb(var(--option-color-negative));
+  --option-color-timeline-handle-active: rgba(var(--option-color-negative), 0.5);
+  --option-color-timeline-selection: rgb(var(--option-color-foreground-primary));
+
+  --option-color-handle: 204, 204, 204;
+
+  --option-color-slider-background: rgba(var(--option-color-negative), 0.4);
+  --option-color-slider-background-hover: rgba(var(--option-color-negative), 0.6);
+  --option-color-slider-background-active: rgba(var(--option-color-negative), 0.4);
+  --option-color-slider-handle: rgb(var(--option-color-accent));
+  --option-color-slider-handle-hover: rgb(var(--option-color-negative));
+  --option-color-slider-handle-active: rgb(var(--option-color-handle));
+  --option-color-slider-track: rgb(var(--option-color-accent));
+  --option-color-slider-default: rgba(var(--option-color-negative), 0.4);
+
+  --option-color-checkbox-background-off: transparent;
+  --option-color-checkbox-background-off-hover: transparent;
+  --option-color-checkbox-background-off-active: rgba(var(--option-color-negative), 0.6);
+  --option-color-checkbox-background-off-disabled: transparent;
+  --option-color-checkbox-background-on: rgb(var(--option-color-accent));
+  --option-color-checkbox-background-on-hover: rgb(var(--option-color-accent));
+  --option-color-checkbox-background-on-active: rgba(var(--option-color-negative), 0.6);
+  --option-color-checkbox-background-on-disabled: transparent;
+  --option-color-checkbox-border-off: rgba(var(--option-color-negative), 0.8);
+  --option-color-checkbox-border-off-hover: rgb(var(--option-color-negative));
+  --option-color-checkbox-border-off-active: transparent;
+  --option-color-checkbox-border-off-disabled: rgba(var(--option-color-negative), 0.6);
+  --option-color-checkbox-border-on: transparent;
+  --option-color-checkbox-border-on-hover: rgb(var(--option-color-negative));
+  --option-color-checkbox-border-on-active: transparent;
+  --option-color-checkbox-border-on-disabled: rgba(var(--option-color-negative), 0.6);
+  --option-color-checkbox-toggle-off: transparent;
+  --option-color-checkbox-toggle-off-hover: transparent;
+  --option-color-checkbox-toggle-off-active: transparent;
+  --option-color-checkbox-toggle-off-disabled: transparent;
+  --option-color-checkbox-toggle-on: rgb(var(--option-color-white));
+  --option-color-checkbox-toggle-on-hover: rgb(var(--option-color-white));
+  --option-color-checkbox-toggle-on-active: rgb(var(--option-color-white));
+  --option-color-checkbox-toggle-on-disabled: rgba(var(--option-color-negative), 0.6);
+
+  --option-color-box: 204, 204, 204;
+
+  --option-color-photos-checkbox-background-off: rgba(var(--option-color-box), 0.4);
+  --option-color-photos-checkbox-background-off-hover: rgb(var(--option-color-box));
+  --option-color-photos-checkbox-background-on: rgb(var(--option-color-accent));
+  --option-color-photos-checkbox-background-on-hover: rgba(var(--option-color-accent), 0.4);
+  --option-color-photos-checkbox-border-off: rgba(var(--option-color-black), 0.4);
+  --option-color-photos-checkbox-border-off-hover: rgb(var(--option-color-black));
+  --option-color-photos-checkbox-border-on: rgb(var(--option-color-accent));
+  --option-color-photos-checkbox-border-on-hover: rgba(var(--option-color-accent), 0.4);
+  --option-color-photos-checkbox-outline-off: rgba(var(--option-color-gray), 0.4);
+  --option-color-photos-checkbox-outline-off-hover: rgb(var(--option-color-gray));
+  --option-color-photos-checkbox-outline-on: rgb(var(--option-color-accent));
+  --option-color-photos-checkbox-outline-on-hover: rgba(var(--option-color-accent), 0.4);
+  --option-color-photos-checkbox-toggle: rgb(var(--option-color-white));
+
+  --option-color-radio-background-off: transparent;
+  --option-color-radio-background-off-hover: transparent;
+  --option-color-radio-background-off-active: transparent;
+  --option-color-radio-background-on: rgba(var(--option-color-negative), 0.8);
+  --option-color-radio-background-on-hover: rgb(var(--option-color-negative));
+  --option-color-radio-background-on-active: rgba(var(--option-color-negative), 0.6);
+  --option-color-radio-border-off: rgba(var(--option-color-negative), 0.8);
+  --option-color-radio-border-off-hover: rgb(var(--option-color-negative));
+  --option-color-radio-border-off-active: rgba(var(--option-color-negative), 0.6);
+  --option-color-radio-border-on: rgb(var(--option-color-accent));
+  --option-color-radio-border-on-hover: rgb(var(--option-color-accent));
+  --option-color-radio-border-on-active: rgba(var(--option-color-negative), 0.6);
+
+  --option-color-switch-inner: 102, 102, 102;
+  --option-color-switch-outer: 70, 70, 70;
+
+  --option-color-switch-background-off: transparent;
+  --option-color-switch-background-off-hover: transparent;
+  --option-color-switch-background-off-active: rgb(var(--option-color-switch-inner));
+  --option-color-switch-background-off-disabled: transparent;
+  --option-color-switch-background-on: rgb(var(--option-color-accent));
+  --option-color-switch-background-on-hover: rgb(var(--option-color-accent-positive-light));
+  --option-color-switch-background-on-active: rgb(var(--option-color-switch-inner));
+  --option-color-switch-background-on-disabled: rgba(var(--option-color-negative), 0.2);
+  --option-color-switch-border-off: rgb(var(--option-color-switch-outer));
+  --option-color-switch-border-off-hover: rgb(var(--option-color-negative));
+  --option-color-switch-border-off-active: transparent;
+  --option-color-switch-border-off-disabled: rgba(var(--option-color-negative), 0.4);
+  --option-color-switch-border-on: transparent;
+  --option-color-switch-border-on-hover: transparent;
+  --option-color-switch-border-on-active: transparent;
+  --option-color-switch-border-on-disabled: transparent;
+  --option-color-switch-toggle-off: rgb(var(--option-color-switch-outer));
+  --option-color-switch-toggle-off-hover: rgb(var(--option-color-negative));
+  --option-color-switch-toggle-off-active: rgb(var(--option-color-white));
+  --option-color-switch-toggle-off-disabled: rgba(var(--option-color-negative), 0.4);
+  --option-color-switch-toggle-on: rgb(var(--option-color-white));
+  --option-color-switch-toggle-on-hover: rgb(var(--option-color-white));
+  --option-color-switch-toggle-on-active: rgb(var(--option-color-white));
+  --option-color-switch-toggle-on-disabled: rgba(var(--option-color-negative), 0.2);
+
+  --option-color-picker-border: transparent;
+  --option-color-picker-border-hover: rgb(var(--option-color-negative));
+  --option-color-picker-border-active: rgb(var(--option-color-negative));
+  --option-color-picker-border-focus: rgb(var(--option-color-negative));
+  --option-color-picker-checkmark: rgb(var(--option-color-positive));
+
+  --option-color-scrollbar-track-narrow: transparent;
+  --option-color-scrollbar-track-wide: rgba(var(--option-color-negative), 0.11);
+  --option-color-scrollbar-thumb-narrow: rgba(var(--option-color-negative), 0.52);
+  --option-color-scrollbar-thumb-wide: rgba(var(--option-color-negative), 0.2);
+  --option-color-scrollbar-thumb-wide-hover: rgba(var(--option-color-negative), 0.4);
+  --option-color-scrollbar-thumb-wide-active: rgba(var(--option-color-negative), 0.6);
+  --option-color-scrollbar-button-narrow: transparent;
+  --option-color-scrollbar-button-wide: rgba(var(--option-color-negative), 0.11);
+  --option-color-scrollbar-button-wide-hover: rgba(var(--option-color-negative), 0.19);
+  --option-color-scrollbar-button-wide-active: rgba(var(--option-color-negative), 0.64);
+  --option-color-scrollbar-button-glyph: rgb(var(--option-color-negative));
+  --option-color-scrollbar-button-glyph-active: rgb(var(--option-color-positive));
+  --option-color-scrollbar-corner-narrow: transparent;
+  --option-color-scrollbar-corner-wide: transparent;
+
+  --option-color-keyboard-background: rgba(var(--option-color-negative), 0.1);
+  --option-color-keyboard-key: rgba(var(--option-color-negative), 0.1);
+  --option-color-keyboard-key-mod: rgba(var(--option-color-negative), 0.2);
+  --option-color-keyboard-key-focus: rgb(var(--option-color-accent));
+
+  --option-color-virtualmenu-background: rgba(var(--option-color-negative), 0.1);
+  --option-color-virtualmenu-background-selected: rgba(var(--option-color-accent), 0.5);
+  --option-color-virtualmenu-border: rgb(var(--option-color-accent));
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --option-color-background-secondary: 255, 255, 255;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* TEXTURES --------------------------------------------------------------------------------------------------------- */
+
+:root {
+  --option-texture-acrylic: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='grainy' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.537' stitchTiles='stitch'></feTurbulence><feColorMatrix type='saturate' values='0'></feColorMatrix><feBlend mode='darken' in='SourceGraphic'></feBlend></filter><rect width='100%' height='100%' filter='url(#grainy)' fill='transparent'/></svg>");
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
