@@ -5,57 +5,6 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
-Zehn.waitForElement('._1FyBL6obxHQ2Z2CsaV2Gbz').then((element) => {
-  let cells = document.querySelectorAll('._1-vlriAtKYDViAEunue4VO');
-  console.log(cells);
-  [].forEach.call(cells, function (el) {
-    if(el.innerText.indexOf('Customization') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-picture)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Privacy') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-privacy)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Game Recording') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-film)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Workshop') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-store)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('DLC') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-shop)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Controller') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-controller)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Betas') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-update-dev)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Installed Files') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-apps-all)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Updates') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-update)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('Compatibility') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-compatibility)');
-      console.log(el)
-    }
-    if(el.innerText.indexOf('General') !== -1) {
-      el.style.setAttribute('-webkit-mask-box-image', 'var(--zehn-icon-home)');
-      console.log(el)
-    }
-  });
-});
-
 function addButton(target, button, buttonIcon, position, callback) {
   var btn = document.createElement('button');
   btn.classList.add('ZehnButton');
