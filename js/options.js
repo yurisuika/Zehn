@@ -4,36 +4,54 @@ const Options = {
       fetch('https://steamloopback.host/skins/Zehn/config/options.json').then((response) => response.json()).then(
         (options) => {
           // THEME -------------------------------------------------------------
-          if (options.theme.mode == "dark") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/dark/theme.css"/>');
-            document.documentElement.classList.add('ThemeDark');
+          if (options.theme.mode == "auto") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/auto.css"/>');
+          } else if (options.theme.mode == "dark") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/dark.css"/>');
           } else if (options.theme.mode == "light") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/light/theme.css"/>');
-            document.documentElement.classList.add('ThemeLight');
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/light.css"/>');
           }
 
-          if (options.theme.auto) {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/auto/enable.css"/>');
+          if (options.theme.accent.borders) {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/accent/borders/enable.css"/>');
+          } else {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/accent/borders/disable.css"/>');
           }
 
-          if (options.theme.blend.color.background) {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/color/background/enable.css"/>');
+          if (options.theme.accent.blend.background) {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/accent/blend/background/enable.css"/>');
+          } else {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/accent/blend/background/disable.css"/>');
           }
 
-          if (options.theme.blend.color.foreground) {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/color/foreground/enable.css"/>');
+          if (options.theme.accent.blend.foreground) {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/accent/blend/foreground/enable.css"/>');
+          } else {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/accent/blend/foreground/disable.css"/>');
           }
 
-          if (options.theme.blend.amount == "0%") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/0%.css"/>');
-          } else if (options.theme.blend.amount == "25%") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/25%.css"/>');
-          } else if (options.theme.blend.amount == "50%") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/50%.css"/>');
-          } else if (options.theme.blend.amount == "75%") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/75%.css"/>');
-          } else if (options.theme.blend.amount == "100%") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/100%.css"/>');
+          if (options.theme.blend.amount.background == "0%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/background/0%.css"/>');
+          } else if (options.theme.blend.amount.background == "25%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/background/25%.css"/>');
+          } else if (options.theme.blend.amount.background == "50%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/background/50%.css"/>');
+          } else if (options.theme.blend.amount.background == "75%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/background/75%.css"/>');
+          } else if (options.theme.blend.amount.background == "100%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/background/100%.css"/>');
+          }
+
+          if (options.theme.blend.amount.foreground == "0%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/foreground/0%.css"/>');
+          } else if (options.theme.blend.amount.foreground == "25%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/foreground/25%.css"/>');
+          } else if (options.theme.blend.amount.foreground == "50%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/foreground/50%.css"/>');
+          } else if (options.theme.blend.amount.foreground == "75%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/foreground/75%.css"/>');
+          } else if (options.theme.blend.amount.foreground == "100%") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/foreground/100%.css"/>');
           }
 
           if (options.theme.blend.space == "srgb") {
