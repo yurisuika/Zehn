@@ -1,107 +1,157 @@
 {
   "Conditions": {
     "Color Mode": {
-      "description": "Choose between dark mode or light mode.",
+      "description": "Choose your color.\n\nAuto mode will select either light or dark mode based on your system settings.",
       "tab": "Theme",
-      "default": "Dark",
+      "default": "Auto",
       "values": {
+        "Auto": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/mode/auto.css"
+          }
+        },
         "Dark": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/mode/dark/theme.css"
-          },
-          "TargetJs": {
-            "affects": [".*"],
-            "src": "config/theme/mode/dark/theme.js"
+            "src": "config/theme/mode/dark.css"
           }
         },
         "Light": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/mode/light/theme.css"
-          },
-          "TargetJs": {
-            "affects": [".*"],
-            "src": "config/theme/mode/light/theme.js"
+            "src": "config/theme/mode/light.css"
           }
         }
       }
     },
-    "Automatic Mode": {
-      "description": "Automatically sets the color mode based on your system setting. Overrides the Color Mode setting.",
+    "Accent Color (Window Borders)": {
+      "description": "Show accent color on window borders.",
       "tab": "Theme",
-      "default": "no",
+      "default": "yes",
       "values": {
-        "no": {},
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/accent/borders/disable.css"
+          }
+        },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/auto/enable.css"
+            "src": "config/theme/accent/borders/enable.css"
           }
         }
       }
     },
-    "Background Color Blend": {
-      "description": "Blends a color into the background. This includes window backgrounds and acrylic effects. You may select this color from the Colors tab.",
+    "Accent Color (Background Color Blend)": {
+      "description": "Use accent color for the background color blend.\n\nOverrides the color chosen in the Colors section.",
       "tab": "Theme",
-      "default": "no",
+      "default": "yes",
       "values": {
-        "no": {},
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/accent/blend/background/disable.css"
+          }
+        },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/blend/color/background/enable.css"
+            "src": "config/theme/accent/blend/background/enable.css"
           }
         }
       }
     },
-    "Foreground Color Blend": {
-      "description": "Blends a color into the foreground. This includes text, buttons, and other foreground elements. You may select this color from the Colors tab.",
+    "Accent Color (Foreground Color Blend)": {
+      "description": "Use accent color for the foreground color blend.\n\nOverrides the color chosen in the Colors section.",
       "tab": "Theme",
-      "default": "no",
+      "default": "yes",
       "values": {
-        "no": {},
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/accent/blend/foreground/disable.css"
+          }
+        },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/blend/color/foreground/enable.css"
+            "src": "config/theme/accent/blend/foreground/enable.css"
           }
         }
       }
     },
-    "Color Blend Amount": {
-      "description": "Sets how much color is blended into the theme. Lower values produce a better blend contrast, but higher values produce a truer color.",
+    "Color Blend Amount (Background)": {
+      "description": "Sets how much color is blended into the theme's background. This includes window backgrounds and acrylic effects.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
       "tab": "Theme",
-      "default": "50%",
+      "default": "0%",
       "values": {
         "0%": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/blend/amount/0%.css"
+            "src": "config/theme/blend/amount/background/0%.css"
           }
         },
         "25%": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/blend/amount/25%.css"
+            "src": "config/theme/blend/amount/background/25%.css"
           }
         },
         "50%": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/blend/amount/50%.css"
+            "src": "config/theme/blend/amount/background/50%.css"
           }
         },
         "75%": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/blend/amount/75%.css"
+            "src": "config/theme/blend/amount/background/75%.css"
           }
         },
         "100%": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/theme/blend/amount/100%.css"
+            "src": "config/theme/blend/amount/background/100%.css"
+          }
+        }
+      }
+    },
+    "Color Blend Amount (Foreground)": {
+      "description": "Sets how much color is blended into the theme's foreground. This includes text, buttons, and other foreground elements.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
+      "tab": "Theme",
+      "default": "0%",
+      "values": {
+        "0%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/blend/amount/foreground/0%.css"
+          }
+        },
+        "25%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/blend/amount/foreground/25%.css"
+          }
+        },
+        "50%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/blend/amount/foreground/50%.css"
+          }
+        },
+        "75%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/blend/amount/foreground/75%.css"
+          }
+        },
+        "100%": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/blend/amount/foreground/100%.css"
           }
         }
       }

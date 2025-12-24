@@ -1,1 +1,0 @@
-import 'https://zehn.yurisuika.dev/config/theme/mode/light/theme.js';
