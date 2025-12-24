@@ -5,12 +5,16 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
-function addButton(target, button, buttonIcon, position, callback) {
+function addButton(target, button, buttonIcon, position, state, callback) {
   var btn = document.createElement('button');
   btn.classList.add('ZehnButton');
   btn.id = `${button}`;
   btn.type = 'button';
-  btn.value = 'close';
+  if (state) {
+    btn.value = 'close';
+  } else {
+    btn.value = 'open';
+  }
   btn.name = 'button';
   btn.onclick = callback;
   if (position) {
@@ -103,6 +107,23 @@ function toggleSidebar() {
   }
 };
 
+function toggleWhatsNew() {
+  if (document.getElementById('toggleWhatsNew') != null) {
+    var btnWhatsNew = document.getElementById('toggleWhatsNew');
+    var whatsNew = document.querySelector(`._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i > div:last-child`);
+    if (btnWhatsNew.value == 'close') {
+      btnWhatsNew.value = 'open';
+      whatsNew.style.setProperty('max-height', '300px', 'important');
+      whatsNew.style.setProperty('opacity', '1', 'important');
+    }
+    else if (btnWhatsNew.value = 'open') {
+      btnWhatsNew.value = 'close';
+      whatsNew.style.setProperty('max-height', '0', 'important');
+      whatsNew.style.setProperty('opacity', '0', 'important');
+    }
+  }
+};
+
 function toggleActivity() {
   if (document.getElementById('toggleActivity') != null) {
     var btnActivity = document.getElementById('toggleActivity');
@@ -152,28 +173,33 @@ function toggleDetails() {
 };
 
 function addButtonNavigation(target) {
-  addButton(target, 'toggleNavigation', 'toggleNavigationIcon', false, toggleNavigation);
+  addButton(target, 'toggleNavigation', 'toggleNavigationIcon', false, true, toggleNavigation);
 };
 
 function addButtonActivity(target) {
-  addButton(target, 'toggleActivity', 'toggleActivityIcon', false, toggleActivity);
+  addButton(target, 'toggleActivity', 'toggleActivityIcon', false, true, toggleActivity);
+};
+
+function addButtonWhatsNew(target) {
+  addButton(target, 'toggleWhatsNew', 'toggleWhatsNewIcon', true, false, toggleWhatsNew);
 };
 
 function addButtonSidebar(target) {
-  addButton(target, 'toggleSidebar', 'toggleSidebarIcon', false, toggleSidebar);
+  addButton(target, 'toggleSidebar', 'toggleSidebarIcon', false, true, toggleSidebar);
 };
 
 function addButtonLibrary(target) {
-  addButton(target, 'toggleLibrary', 'toggleLibraryIcon', true, toggleSidebar);
+  addButton(target, 'toggleLibrary', 'toggleLibraryIcon', true, true, toggleSidebar);
 };
 
 function addButtonDetails(target) {
-  addButton(target, 'toggleDetails', 'toggleDetailsIcon', false, toggleDetails);
+  addButton(target, 'toggleDetails', 'toggleDetailsIcon', false, true, toggleDetails);
 };
 
 Zehn.createElement('._3s0lkohH8wU2do0K1il28Y', '#toggleNavigation', addButtonNavigation);
 Zehn.createElement('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2WgQEFvIzJw_SHNGbjtRFU', '#toggleSidebar', addButtonSidebar);
 Zehn.createElement('.QsvsRVwbsApgKt1MhM0fz:has(._3Z3ohQ8-1NKnCZkbS6fvy) ._2Nq6ov7A1hGcHXVOXNt_OE', '#toggleLibrary', addButtonLibrary);
+Zehn.createElement('._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO > div:nth-child(2)', '#toggleWhatsNew', addButtonWhatsNew);
 Zehn.createElement('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleActivity', addButtonActivity);
 Zehn.createElement('._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '#toggleActivity', addButtonActivity);
 Zehn.createElement('._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '#toggleDetails', addButtonDetails);

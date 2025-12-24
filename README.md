@@ -38,6 +38,7 @@ Zehn features several added buttons for an improved experience:
 * The library window's menu button toggles the visibility of the root menu bar and the navigation menu bar.
 * You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
 * The library sidebar can be toggled by an added button. You will find this button on the sidebar when opened and in the bottom-right corner when closed while the window is focused and hovered.
+* The What's New container in the library can be collpased.
 * The game page details panel is hidden by default. A button has been added to the playbar to toggle it.
 * The game event and community content feeds can be toggled, with the event feed displayed by default. The button is also in the playbar.
 
