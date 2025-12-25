@@ -13,27 +13,43 @@
 }
 
 :root {
-  --zehn-color-blend-background: var(--option-accent-blend-background, var(--custom-color-background));
-  --zehn-color-blend-foreground: var(--option-accent-blend-foreground, var(--custom-color-foreground));
-}
-
-:root {
-  --zehn-color-accent: var(--SystemAccentColor-RGB, 210, 115, 138);
-
   --zehn-color-accent-lighten-major: var(--SystemAccentColorLight3-RGB, 225, 186, 195);
   --zehn-color-accent-lighten-medium: var(--SystemAccentColorLight2-RGB, 218, 157, 172);
   --zehn-color-accent-lighten-minor: var(--SystemAccentColorLight1-RGB, 215, 135, 154);
+  --zehn-color-accent: var(--SystemAccentColor-RGB, 210, 115, 138);
   --zehn-color-accent-darken-minor: var(--SystemAccentColorDark1-RGB, 203, 95, 121);
   --zehn-color-accent-darken-medium: var(--SystemAccentColorDark2-RGB, 204, 69, 102);
   --zehn-color-accent-darken-major: var(--SystemAccentColorDark3-RGB, 181, 56, 86);
+}
 
-  --zehn-color-accent-positive-major: light-dark(var(--zehn-color-accent-lighten-major), var(--zehn-color-accent-darken-major));
-  --zehn-color-accent-positive-medium: light-dark(var(--zehn-color-accent-lighten-medium), var(--zehn-color-accent-darken-medium));
-  --zehn-color-accent-positive-minor: light-dark(var(--zehn-color-accent-lighten-minor), var(--zehn-color-accent-darken-minor));
-  --zehn-color-accent-negative-minor: light-dark(var(--zehn-color-accent-darken-minor), var(--zehn-color-accent-lighten-minor));
-  --zehn-color-accent-negative-medium: light-dark(var(--zehn-color-accent-darken-medium), var(--zehn-color-accent-lighten-medium));
-  --zehn-color-accent-negative-major: light-dark(var(--zehn-color-accent-darken-major), var(--zehn-color-accent-lighten-major));
+@media (prefers-color-scheme: light) {
+  :root {
+    --zehn-color-accent-positive-major: var(--zehn-color-accent-lighten-major);
+    --zehn-color-accent-positive-medium: var(--zehn-color-accent-lighten-medium);
+    --zehn-color-accent-positive-minor: var(--zehn-color-accent-lighten-minor);
+    --zehn-color-accent-negative-minor: var(--zehn-color-accent-darken-minor);
+    --zehn-color-accent-negative-medium: var(--zehn-color-accent-darken-medium);
+    --zehn-color-accent-negative-major: var(--zehn-color-accent-darken-major);
+  }
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zehn-color-accent-positive-major: var(--zehn-color-accent-darken-major);
+    --zehn-color-accent-positive-medium: var(--zehn-color-accent-darken-medium);
+    --zehn-color-accent-positive-minor: var(--zehn-color-accent-darken-minor);
+    --zehn-color-accent-negative-minor: var(--zehn-color-accent-lighten-minor);
+    --zehn-color-accent-negative-medium: var(--zehn-color-accent-lighten-medium);
+    --zehn-color-accent-negative-major: var(--zehn-color-accent-lighten-major);
+  }
+}
+
+:root {
+  --zehn-color-blend-background: var(--option-accent-blend-background, var(--zehn-color-accent-positive-minor));
+  --zehn-color-blend-foreground: var(--option-accent-blend-foreground, var(--zehn-color-accent-negative-minor));
+}
+
+:root {
   --zehn-color-white: 255, 255, 255;
   --zehn-color-gray: 127, 127, 127;
   --zehn-color-black: 0, 0, 0;
