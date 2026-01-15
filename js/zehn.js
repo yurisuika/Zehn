@@ -94,6 +94,22 @@ const Zehn = {
         }
       }
     });
+  },
+
+  addButton(target, button, buttonIcon, position, callback) {
+    var btn = document.createElement('button');
+    btn.classList.add('ZehnButton');
+    btn.id = `${button}`;
+    btn.name = 'button';
+    btn.onclick = callback;
+    if (position) {
+      document.querySelector(`${target}`).append(btn);
+    } else {
+      document.querySelector(`${target}`).prepend(btn);
+    }
+    var icon = document.createElement('div');
+    icon.id = `${buttonIcon}`;
+    document.querySelector(`${target}`).querySelector(`#${button}`).append(icon);
   }
 };
 

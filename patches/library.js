@@ -5,54 +5,12 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
-function addButton(target, button, buttonIcon, position, state, callback) {
-  var btn = document.createElement('button');
-  btn.classList.add('ZehnButton');
-  btn.id = `${button}`;
-  btn.type = 'button';
-  if (state) {
-    btn.value = 'close';
-  } else {
-    btn.value = 'open';
-  }
-  btn.name = 'button';
-  btn.onclick = callback;
-  if (position) {
-    document.querySelector(`${target}`).append(btn);
-  } else {
-    document.querySelector(`${target}`).prepend(btn);
-  }
-  var icon = document.createElement('div');
-  icon.id = `${buttonIcon}`;
-  document.querySelector(`${target}`).querySelector(`#${button}`).append(icon);
-};
-
 function toggleNavigation() {
   if (document.getElementById('toggleNavigation') != null) {
     var btnNavigation = document.getElementById('toggleNavigation');
     var root = document.querySelectorAll(`._2UyOBeiSdBayaFdRa39N2O`);
     var nav = document.querySelector(`._2D64jIEK7wpUR_NlObDW76`);
-    if (btnNavigation.value == 'close') {
-      btnNavigation.value = 'open';
-      root.forEach((element) => {
-        element.style.setProperty('width', 'fit-content', 'important');
-        element.style.setProperty('padding', '0px 8px', 'important');
-        element.style.setProperty('min-width', 'fit-content', 'important');
-        element.style.setProperty('max-width', 'fit-content', 'important');
-        element.style.setProperty('color', 'var(--zehn-color-text-primary)', 'important');
-        element.classList.add('rootShown');
-        element.classList.toggle('rootHidden');
-      });
-      if (nav) {
-        nav.style.setProperty('width', '0px', 'important');
-        nav.style.setProperty('min-width', '0px', 'important');
-        nav.style.setProperty('max-width', '0px', 'important');
-        nav.style.setProperty('opacity', '0', 'important');
-        nav.style.setProperty('visibility', 'hidden', 'important');
-      }
-    }
-    else if (btnNavigation.value = 'open') {
-      btnNavigation.value = 'close';
+    if (btnNavigation.classList.contains(`zehnToggled`)) {
       root.forEach((element) => {
         element.style.setProperty('width', '0px', 'important');
         element.style.setProperty('padding', '0px', 'important');
@@ -70,6 +28,25 @@ function toggleNavigation() {
         nav.style.setProperty('visibility', 'visible', 'important');
       }
     }
+    else {
+      root.forEach((element) => {
+        element.style.setProperty('width', 'fit-content', 'important');
+        element.style.setProperty('padding', '0px 8px', 'important');
+        element.style.setProperty('min-width', 'fit-content', 'important');
+        element.style.setProperty('max-width', 'fit-content', 'important');
+        element.style.setProperty('color', 'var(--zehn-color-text-primary)', 'important');
+        element.classList.add('rootShown');
+        element.classList.toggle('rootHidden');
+      });
+      if (nav) {
+        nav.style.setProperty('width', '0px', 'important');
+        nav.style.setProperty('min-width', '0px', 'important');
+        nav.style.setProperty('max-width', '0px', 'important');
+        nav.style.setProperty('opacity', '0', 'important');
+        nav.style.setProperty('visibility', 'hidden', 'important');
+      }
+    }
+    btnNavigation.classList.toggle('zehnToggled');
   }
 };
 
@@ -80,18 +57,7 @@ function toggleSidebar() {
     var sidebar = document.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`);
     var buttons = document.querySelector(`._1ZS_xta5HMXzR8JgxDH6n7 ._2WgQEFvIzJw_SHNGbjtRFU`);
     btnLibrary.classList.add('DialogButton');
-    if (btnSidebar.value == 'close') {
-      btnSidebar.value = 'open';
-      btnLibrary.value = 'open';
-      btnLibrary.style.display = 'block';
-      sidebar.style.setProperty('visibility', 'hidden', 'important');
-      sidebar.style.setProperty('min-width', '0px', 'important');
-      sidebar.style.setProperty('max-width', '0px', 'important');
-      buttons.style.setProperty('min-width', '0px', 'important');
-    }
-    else if (btnSidebar.value = 'open') {
-      btnSidebar.value = 'close';
-      btnLibrary.value = 'close';
+    if (btnLibrary.classList.contains(`zehnToggled`)) {
       btnLibrary.style.display = 'none';
       sidebar.style.setProperty('visibility', 'visible', 'important');
       if (navigator.userAgent.includes('Linux')) {
@@ -104,6 +70,15 @@ function toggleSidebar() {
       }
       buttons.style.setProperty('min-width', 'calc(48px * 4)', 'important');
     }
+    else {
+      btnLibrary.style.display = 'block';
+      sidebar.style.setProperty('visibility', 'hidden', 'important');
+      sidebar.style.setProperty('min-width', '0px', 'important');
+      sidebar.style.setProperty('max-width', '0px', 'important');
+      buttons.style.setProperty('min-width', '0px', 'important');
+    }
+    btnSidebar.classList.toggle('zehnToggled');
+    btnLibrary.classList.toggle('zehnToggled');
   }
 };
 
@@ -111,16 +86,15 @@ function toggleWhatsNew() {
   if (document.getElementById('toggleWhatsNew') != null) {
     var btnWhatsNew = document.getElementById('toggleWhatsNew');
     var whatsNew = document.querySelector(`._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i > div:last-child`);
-    if (btnWhatsNew.value == 'close') {
-      btnWhatsNew.value = 'open';
+    if (btnWhatsNew.classList.contains(`zehnToggled`)) {
       whatsNew.style.setProperty('max-height', '300px', 'important');
       whatsNew.style.setProperty('opacity', '1', 'important');
     }
-    else if (btnWhatsNew.value = 'open') {
-      btnWhatsNew.value = 'close';
+    else {
       whatsNew.style.setProperty('max-height', '0', 'important');
       whatsNew.style.setProperty('opacity', '0', 'important');
     }
+    btnWhatsNew.classList.toggle('zehnToggled');
   }
 };
 
@@ -130,20 +104,20 @@ function toggleActivity() {
     var featured = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
     var event = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
     var community = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)`);
-    if (btnActivity.value == 'close') {
-      btnActivity.value = 'open';
+    // if (btnActivity.classList.contains(`zehnToggled`)) {
+    if (event.style.getPropertyValue('display') == 'block' || !event.style.display) {
       featured.style.setProperty('display', 'none', 'important');
       event.style.setProperty('display', 'none', 'important');
       community.style.setProperty('display', 'block', 'important');
     }
-    else if (btnActivity.value = 'open') {
-      btnActivity.value = 'close';
+    else {
       if (featured.hasChildNodes()) {
         featured.style.setProperty('display', 'block', 'important');
       }
       event.style.setProperty('display', 'block', 'important');
       community.style.setProperty('display', 'none', 'important');
     }
+    btnActivity.classList.classList.toggle('zehnToggled');
   }
 };
 
@@ -151,49 +125,39 @@ function toggleDetails() {
   if (document.getElementById('toggleDetails') != null) {
     var btnDetails = document.getElementById('toggleDetails');
     var details = document.querySelector(`._2aor4XVOYzN1PBSREk0UbO`);
-    var featured = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
-    var activity = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
-    if (btnDetails.value == 'close') {
-      btnDetails.value = 'open';
-      // featured.style.setProperty('min-width', '66%', 'important');
-      // featured.style.setProperty('max-width', '66%', 'important');
-      // activity.style.setProperty('min-width', '66%', 'important');
-      // activity.style.setProperty('max-width', '66%', 'important');
+    // if (btnDetails.classList.contains(`zehnToggled`)) {
+    if (details.style.getPropertyValue('display') == 'none' || !details.style.display) {
       details.style.setProperty('display', 'flex', 'important');
     }
-    else if (btnDetails.value = 'open') {
-      btnDetails.value = 'close';
-      // featured.style.setProperty('min-width', '100%', 'important');
-      // featured.style.setProperty('max-width', '100%', 'important');
-      // activity.style.setProperty('min-width', '100%', 'important');
-      // activity.style.setProperty('max-width', '100%', 'important');
+    else {
       details.style.setProperty('display', 'none', 'important');
     }
+    btnDetails.classList.toggle('zehnToggled');
   }
 };
 
 function addButtonNavigation(target) {
-  addButton(target, 'toggleNavigation', 'toggleNavigationIcon', false, true, toggleNavigation);
+  Zehn.addButton(target, 'toggleNavigation', 'toggleNavigationIcon', false, toggleNavigation);
 };
 
 function addButtonActivity(target) {
-  addButton(target, 'toggleActivity', 'toggleActivityIcon', false, true, toggleActivity);
+  Zehn.addButton(target, 'toggleActivity', 'toggleActivityIcon', false, toggleActivity);
 };
 
 function addButtonWhatsNew(target) {
-  addButton(target, 'toggleWhatsNew', 'toggleWhatsNewIcon', true, false, toggleWhatsNew);
+  Zehn.addButton(target, 'toggleWhatsNew', 'toggleWhatsNewIcon', true, toggleWhatsNew);
 };
 
 function addButtonSidebar(target) {
-  addButton(target, 'toggleSidebar', 'toggleSidebarIcon', false, true, toggleSidebar);
+  Zehn.addButton(target, 'toggleSidebar', 'toggleSidebarIcon', false, toggleSidebar);
 };
 
 function addButtonLibrary(target) {
-  addButton(target, 'toggleLibrary', 'toggleLibraryIcon', true, true, toggleSidebar);
+  Zehn.addButton(target, 'toggleLibrary', 'toggleLibraryIcon', true, toggleSidebar);
 };
 
 function addButtonDetails(target) {
-  addButton(target, 'toggleDetails', 'toggleDetailsIcon', false, true, toggleDetails);
+  Zehn.addButton(target, 'toggleDetails', 'toggleDetailsIcon', false, toggleDetails);
 };
 
 Zehn.createElement('._3s0lkohH8wU2do0K1il28Y', '#toggleNavigation', addButtonNavigation);

@@ -5,19 +5,12 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
-function addButtonUser() {
-  var btn = document.createElement('button');
-  btn.classList.add('ZehnButton');
-  btn.id = 'toggleUser';
-  btn.type = 'button';
-  btn.value = 'open';
-  btn.name = 'button';
-  btn.onclick = function () {
+function toggleUser() {
+  if (document.getElementById('toggleUser') != null) {
     var btnUser = document.getElementById('toggleUser');
     var user = document.querySelector(`.currentUserContainer`);
     var voice = document.querySelector(`.activeVoiceControls`);
-    if (btnUser.value == 'close') {
-      btnUser.value = 'open';
+    if (btnUser.classList.contains(`zehnToggled`)) {
       user.style.setProperty('transform', 'scaleY(0)', 'important');
       user.style.setProperty('min-height', '0px', 'important');
       user.style.setProperty('height', '0px', 'important');
@@ -27,8 +20,7 @@ function addButtonUser() {
         voice.style.setProperty('height', '0px', 'important');
       }
     }
-    else if (btnUser.value = 'open') {
-      btnUser.value = 'close';
+    else {
       user.style.setProperty('transform', 'none', 'important');
       user.style.setProperty('min-height', '48px', 'important');
       user.style.setProperty('height', '48px', 'important');
@@ -38,12 +30,13 @@ function addButtonUser() {
         voice.style.setProperty('height', '48px', 'important');
       }
     }
-  };
-  document.querySelector('.chatTitleBar').prepend(btn);
-  var icon = document.createElement('div');
-  icon.id = 'toggleUserIcon';
-  document.getElementById('toggleUser').append(icon);
-}
+    btnUser.classList.toggle('zehnToggled');
+  }
+};
+
+function addButtonUser(target) {
+  Zehn.addButton(target, 'toggleUser', 'toggleUserIcon', false, toggleUser);
+};
 
 Zehn.createElement('.friendListHeaderContainer .chatTitleBar', '.ZehnButton', addButtonUser);
 
