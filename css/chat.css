@@ -1872,9 +1872,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   /* bottom: 0 !important; */
   /* right: 0 !important; */
   /* left: 0 !important; */
+  transition: background 0.2s ease-in-out !important;
 }
 
-.WindowFocus .chatWindow .chatEntry {}
+.chatWindow .chatEntry:has(textarea:focus) {
+  background-color: var(--zehn-color-window-section) !important;
+}
 
 .chatWindow .chatEntry > * {
   margin-bottom: 0 !important;

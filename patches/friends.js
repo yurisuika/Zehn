@@ -6,10 +6,12 @@ Zehn.addUserAgent();
 Options.setOptions();
 
 function toggleUser() {
-  if (document.getElementById('toggleUser') != null) {
-    var btnUser = document.getElementById('toggleUser');
+  var btnUser = document.getElementById('toggleUser');
+
+  if (btnUser != null) {
     var user = document.querySelector(`.currentUserContainer`);
     var voice = document.querySelector(`.activeVoiceControls`);
+
     if (btnUser.classList.contains(`zehnToggled`)) {
       user.style.setProperty('transform', 'scaleY(0)', 'important');
       user.style.setProperty('min-height', '0px', 'important');
@@ -30,6 +32,7 @@ function toggleUser() {
         voice.style.setProperty('height', '48px', 'important');
       }
     }
+
     btnUser.classList.toggle('zehnToggled');
   }
 };

@@ -2253,23 +2253,36 @@ body:not(.WindowFocus) #toggleUserIcon {
   filter: var(--zehn-filter-focus);
 }
 
-#toggleDetails, #toggleActivity, #toggleWhatsNew {
+#toggleDetails, #toggleCommunity, #toggleActivity, #toggleDetailsSticky, #toggleCommunitySticky, #toggleActivitySticky, #toggleWhatsNew {
   width: 48px;
   height: 48px;
   line-height: 48px;
   border: none;
   background-color: var(--zehn-color-button-client-background);
+  position: relative;
 }
 
-#toggleDetails:hover, #toggleActivity:hover, #toggleWhatsNew:hover {
+#toggleDetails:hover, #toggleCommunity:hover, #toggleActivity:hover, #toggleDetailsSticky:hover, #toggleCommunitySticky:hover, #toggleActivitySticky:hover, #toggleWhatsNew:hover {
   background-color: var(--zehn-color-button-client-background-hover);
 }
 
-#toggleDetails:active, #toggleActivity:active, #toggleWhatsNew:active {
+#toggleDetails:active, #toggleCommunity:active, #toggleActivity:active, #toggleDetailsSticky:active, #toggleCommunitySticky:active, #toggleActivitySticky:active, #toggleWhatsNew:active {
   background-color: var(--zehn-color-button-client-background-active);
 }
 
-#toggleDetailsIcon, #toggleActivityIcon, #toggleWhatsNewIcon {
+#toggleDetails.zehnToggled::after, #toggleCommunity.zehnToggled::after, #toggleActivity.zehnToggled::after, #toggleDetailsSticky.zehnToggled::after, #toggleCommunitySticky.zehnToggled::after, #toggleActivitySticky.zehnToggled::after {
+  content: "";
+  background-color: transparent;
+  display: block;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background-color: rgb(var(--zehn-color-accent));
+}
+
+#toggleDetailsIcon, #toggleCommunityIcon, #toggleActivityIcon, #toggleDetailsIconSticky, #toggleCommunityIconSticky, #toggleActivityIconSticky, #toggleWhatsNewIcon {
   width: 100%;
   height: 100%;
   background-color: var(--zehn-color-icon-primary);
@@ -2279,12 +2292,16 @@ body:not(.WindowFocus) #toggleUserIcon {
   margin: auto;
 }
 
-#toggleDetailsIcon {
-  -webkit-mask-image: var(--zehn-icon-more);
+#toggleDetailsIcon, #toggleDetailsIconSticky {
+  -webkit-mask-image: var(--zehn-icon-graph);
 }
 
-#toggleActivityIcon {
-  -webkit-mask-image: var(--zehn-icon-view-task);
+#toggleCommunityIcon, #toggleCommunityIconSticky {
+  -webkit-mask-image: var(--zehn-icon-picture);
+}
+
+#toggleActivityIcon, #toggleActivityIconSticky {
+  -webkit-mask-image: var(--zehn-icon-event);
 }
 
 #toggleWhatsNewIcon {
