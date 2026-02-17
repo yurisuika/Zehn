@@ -1,6 +1,6 @@
 const Options = {
   setOptions() {
-    if (!document.documentElement.classList.contains('core') && !document.documentElement.classList.contains('responsive')) {
+    if (!Array.from(document.documentElement.classList).some(className => className.startsWith(`MillenniumWindow_`)) && !document.documentElement.classList.contains('responsive')) {
       fetch('https://steamloopback.host/skins/Zehn/config/options.json').then((response) => response.json()).then(
         (options) => {
           // THEME -------------------------------------------------------------
