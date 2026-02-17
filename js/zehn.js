@@ -25,31 +25,40 @@ const Zehn = {
 
   appendElements(target, classes) {
     classes.forEach((selector) => {
-      if (document.querySelector(`${target}`) != null) {
-        document.querySelectorAll(`${selector}`).forEach((sub) => {
-        document.querySelector(`${target}`).appendChild(sub || '');
-        })
-      }
+      const elements = document.querySelectorAll(`${target}`);
+      elements.forEach((element) => {
+        if (element != null) {
+          document.querySelectorAll(`${selector}`).forEach((sub) => {
+            document.querySelector(`${target}`).appendChild(sub || '');
+          })
+        }
+      })
     });
   },
 
   prependElements(target, classes) {
     classes.forEach((selector) => {
-      if (document.querySelector(`${target}`) != null) {
-        document.querySelectorAll(`${selector}`).forEach((sub) => {
-        document.querySelector(`${target}`).prepend(sub || '');
-        })
-      }
+      const elements = document.querySelectorAll(`${target}`);
+      elements.forEach((element) => {
+        if (element != null) {
+          document.querySelectorAll(`${selector}`).forEach((sub) => {
+            document.querySelector(`${target}`).append(sub || '');
+          })
+        }
+      })
     });
   },
 
   beforeElements(target, classes) {
     classes.forEach((selector) => {
-      if (document.querySelector(`${target}`) != null) {
-        document.querySelectorAll(`${selector}`).forEach((sub) => {
-        document.querySelector(`${target}`).before(sub || '');
-        })
-      }
+      const elements = document.querySelectorAll(`${target}`);
+      elements.forEach((element) => {
+        if (element != null) {
+          document.querySelectorAll(`${selector}`).forEach((sub) => {
+            document.querySelector(`${target}`).before(sub || '');
+          })
+        }
+      })
     });
   },
 

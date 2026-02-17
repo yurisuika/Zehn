@@ -297,9 +297,18 @@ Zehn.movePrepend('.fbu3l7kPiBeb3EKCjIb8n', '.fi6UDkxJq66MLo2z9wabQ', [
 Zehn.moveAppend('.DKXVRVBokaW_Xxo6kyKq0', '.DKXVRVBokaW_Xxo6kyKq0', [
   '._3-jI6bR_mj4JCTwXNFFuuL' // SCREENSHOT CAPTION
 ]);
-Zehn.movePrepend('._1fu6xumTI1nCY5wc6FG_N2', '.LCeIT0gmFTY8fdfaVgk4j', [
-  '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
-]);
 Zehn.moveAppend('._1gvujtNl7v7FpJK6kaMeKZ', '._1gvujtNl7v7FpJK6kaMeKZ', [
   '._2yt71EY8-YdWa8dBEE1DAW' // ARTWORK DESCRIPTION
 ]);
+Zehn.moveAppend('._1fu6xumTI1nCY5wc6FG_N2', '._3Sf_ShCtdfWp5P04k2cIgp .PageListColumn', [
+  '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
+]);
+
+function removeOldNotesDelete() {
+  var column = document.querySelector(`._3Sf_ShCtdfWp5P04k2cIgp .PageListColumn`);
+  if (column != null && column.hasChildNodes && column.childElementCount > 4) {
+    column.lastChild.previousElementSibling.remove();
+  }
+}
+
+Zehn.waitAndObserve('._3Sf_ShCtdfWp5P04k2cIgp .PageListColumn', removeOldNotesDelete);
