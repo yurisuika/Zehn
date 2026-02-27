@@ -35,12 +35,14 @@ For SFP, edit the config in `~/config/options.json`!
 On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/mode/<theme>/colors.css`.
 
 Zehn features several added buttons for an improved experience:
-* The library window's menu button toggles the visibility of the root menu bar and the navigation menu bar.
-* You can toggle the visibility of the current user container on the friends window using the navigation button in the upper-left corner.
-* The library sidebar can be toggled by an added button. You will find this button on the sidebar when opened and in the bottom-right corner when closed while the window is focused and hovered.
-* The What's New container in the library can be collpased.
-* The game page details panel is hidden by default. A button has been added to the playbar to toggle it.
-* The game event and community content feeds can be toggled, with the event feed displayed by default. The button is also in the playbar.
+* On the main window...
+  * The root menu is toggled via the menu button in the upper-left corner of the navbar. It is hidden by default.
+  * Theater Mode, which hides the game list sidebar, is toggled via the button in the navbar before the window controls.
+  * Several search and filter related controls in library sidebar can be toggled via a button in the upper-left corner of the sidebar. These controls are hidden by default.
+  * The What's New container in the library may be collapsed via the button next to the carousel controls.
+  * Three buttons to select between displaying the Activity feed, the Community feed, and the Details panels for a game entry are found added to the playbar.
+* On the friends list window...
+  * The current user container is toggled via the menu button in the upper-left corner. It is hidden by default.
 
 #### Versions
 Zehn features both a static and a live version!
