@@ -12,7 +12,7 @@ function toggleUser() {
     var user = document.querySelector(`.currentUserContainer`);
     var voice = document.querySelector(`.activeVoiceControls`);
 
-    if (btnUser.classList.contains(`zehnToggled`)) {
+    if (btnUser.classList.contains(`ZehnToggled`)) {
       user.style.setProperty('transform', 'scaleY(0)', 'important');
       user.style.setProperty('min-height', '0px', 'important');
       user.style.setProperty('height', '0px', 'important');
@@ -33,7 +33,7 @@ function toggleUser() {
       }
     }
 
-    btnUser.classList.toggle('zehnToggled');
+    btnUser.classList.toggle('ZehnToggled');
   }
 };
 
