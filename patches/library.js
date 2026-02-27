@@ -159,6 +159,39 @@ function toggleWhatsNew() {
   addClassOnToggle('.QsvsRVwbsApgKt1MhM0fz', 'toggleWhatsNew', 'ZehnWhatsNewCollapsed');
 };
 
+function nameGameSections() {
+    var featured = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
+    var event = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
+    var community = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)`);
+    var details = document.querySelector(`._2aor4XVOYzN1PBSREk0UbO`);
+
+    if (featured != null) {
+      if (featured.id != 'ZehnGameFeaturedEvent') {
+        featured.id = 'ZehnGameFeaturedEvent';
+      }
+    }
+
+    if (event != null) {
+      if (event.id != 'ZehnGameEvent') {
+        event.id = 'ZehnGameEvent';
+      }
+    }
+
+    if (community != null) {
+      if (community.id != 'ZehnGameCommunity') {
+        community.id = 'ZehnGameCommunity';
+      }
+    }
+
+    if (details != null) {
+      if (details.id != 'ZehnGameDetails') {
+        details.id = 'ZehnGameDetails';
+      }
+    }
+}
+
+Zehn.waitAndObserve('.OhSdLYuggDtBcWjYP0j_9', nameGameSections);
+
 function toggleActivity() {
   var btnActivitySticky = document.getElementById('toggleActivitySticky');
   var btnActivity = document.getElementById('toggleActivity');
@@ -169,17 +202,28 @@ function toggleActivity() {
 
   if (btnActivity != null && btnCommunity != null && btnDetails != null) {
 
-    var featured = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
-    var event = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
-    var community = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)`);
-    var details = document.querySelector(`._2aor4XVOYzN1PBSREk0UbO`);
+    var featured = document.getElementById('ZehnGameFeaturedEvent');
+    var event = document.getElementById('ZehnGameEvent');
+    var community = document.getElementById('ZehnGameCommunity');
+    var details = document.getElementById('ZehnGameDetails');
 
-    if (featured.hasChildNodes()) {
-      featured.style.setProperty('display', 'block', 'important');
+    if (featured != null) {
+      if (featured.hasChildNodes()) {
+        featured.style.setProperty('display', 'block', 'important');
+      }
     }
-    event.style.setProperty('display', 'block', 'important');
-    community.style.setProperty('display', 'none', 'important');
-    details.style.setProperty('display', 'none', 'important');
+
+    if (event != null) {
+      event.style.setProperty('display', 'block', 'important');
+    }
+
+    if (community != null) {
+      community.style.setProperty('display', 'none', 'important');
+    }
+
+    if (details != null) {
+      details.style.setProperty('display', 'none', 'important');
+    }
 
     btnActivitySticky.classList.add('ZehnToggled');
     btnActivity.classList.add('ZehnToggled');
@@ -200,15 +244,26 @@ function toggleCommunity() {
 
   if (btnActivity != null && btnCommunity != null && btnDetails != null) {
 
-    var featured = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
-    var event = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
-    var community = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)`);
-    var details = document.querySelector(`._2aor4XVOYzN1PBSREk0UbO`);
+    var featured = document.getElementById('ZehnGameFeaturedEvent');
+    var event = document.getElementById('ZehnGameEvent');
+    var community = document.getElementById('ZehnGameCommunity');
+    var details = document.getElementById('ZehnGameDetails');
 
-    featured.style.setProperty('display', 'none', 'important');
-    event.style.setProperty('display', 'none', 'important');
-    community.style.setProperty('display', 'block', 'important');
-    details.style.setProperty('display', 'none', 'important');
+    if (featured != null) {
+      featured.style.setProperty('display', 'none', 'important');
+    }
+
+    if (event != null) {
+      event.style.setProperty('display', 'none', 'important');
+    }
+
+    if (community != null) {
+      community.style.setProperty('display', 'block', 'important');
+    }
+
+    if (details != null) {
+      details.style.setProperty('display', 'none', 'important');
+    }
 
     btnActivitySticky.classList.remove('ZehnToggled');
     btnActivity.classList.remove('ZehnToggled');
@@ -229,15 +284,26 @@ function toggleDetails() {
 
   if (btnActivity != null && btnCommunity != null && btnDetails != null) {
 
-    var featured = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
-    var event = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
-    var community = document.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)`);
-    var details = document.querySelector(`._2aor4XVOYzN1PBSREk0UbO`);
+    var featured = document.getElementById('ZehnGameFeaturedEvent');
+    var event = document.getElementById('ZehnGameEvent');
+    var community = document.getElementById('ZehnGameCommunity');
+    var details = document.getElementById('ZehnGameDetails');
 
-    featured.style.setProperty('display', 'none', 'important');
-    event.style.setProperty('display', 'none', 'important');
-    community.style.setProperty('display', 'none', 'important');
-    details.style.setProperty('display', 'flex', 'important');
+    if (featured != null) {
+      featured.style.setProperty('display', 'none', 'important');
+    }
+
+    if (event != null) {
+      event.style.setProperty('display', 'none', 'important');
+    }
+
+    if (community != null) {
+      community.style.setProperty('display', 'none', 'important');
+    }
+
+    if (details != null) {
+      details.style.setProperty('display', 'flex', 'important');
+    }
 
     btnActivitySticky.classList.remove('ZehnToggled');
     btnActivity.classList.remove('ZehnToggled');
