@@ -135,6 +135,14 @@ const Options = {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/mascot/hide.css"/>');
           }
 
+          if (options.library.mascotType == "gif") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/mascot type/gif.css"/>');
+          } else if (options.library.mascotType == "jpg") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/mascot type/jpg.css"/>');
+          } if (options.library.mascotType == "png") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/mascot type/png.css"/>');
+          }
+
           if (options.library.addShelf) {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/add shelf/show.css"/>');
           } else {
