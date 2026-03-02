@@ -3,19 +3,19 @@ Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design lang
 
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2, the first iteration of Fluent Design. It isn't quite the Metro of Windows 8 or the Fluent 2 of Windows 11. Rather, it is a transitional design language that retains the sharp lines and minimalistic icons of Metro and merges them with reactive Fluent effects such as Acrylic and Reveal that evolved into Fluent 2 for Windows 11. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
-![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/zehn.png?raw=true)
+![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/zehn.png)
 
 <details>
   <summary>Dark Mode Previews</summary>
 
-  ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/zehn-dark.png?raw=true)
+  ![dark](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark.png)
 
 </details>
 
 <details>
   <summary>Light Mode Previews</summary>
 
-  ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/master/assets/zehn-light.png?raw=true)
+  ![light](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light.png)
 
 </details>
 
@@ -30,6 +30,13 @@ You can colorize both the foreground and background colors of Zehn!
 For Millennium, under the `Theme` tab, enable your choice of foreground and/or background blending. Optionally, set the blend amount and color space (different approaches to blending that produces different results). Under the `Colors` tab, choose the colors for blending and you've got a whole new look!
 
 For SFP, edit the config in `~/config/options.json`!
+
+![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.png)
+
+#### Mascots
+You can give your waifu a home in your library by adding a mascot in Steam's UI folder. Place your PNG in `/steamui/mascots/waifu.png` and enjoy.
+
+![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
 
 #### Features
 On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/mode/<theme>/colors.css`.

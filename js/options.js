@@ -69,18 +69,12 @@ const Options = {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/avatar/square.css"/>');
           }
 
-          if (options.general.blur == "light") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/blur/light.css"/>');
-          } else if (options.general.blur == "normal") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/blur/normal.css"/>');
-          } else if (options.general.blur == "heavy") {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/blur/heavy.css"/>');
-          }
-
-          if (options.general.scrollbars) {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/scrollbars/show.css"/>');
-          } else {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/scrollbars/hide.css"/>');
+          if (options.general.scrollbars  == "none") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/scrollbars/none.css"/>');
+          } else if (options.general.scrollbars  == "windows") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/scrollbars/windows.css"/>');
+          } else if (options.general.scrollbars  == "steam") {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/scrollbars/steam.css"/>');
           }
 
           if (options.general.tooltips) {
@@ -135,6 +129,12 @@ const Options = {
           }
 
           // LIBRARY -----------------------------------------------------------
+          if (options.library.mascot) {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/mascot/show.css"/>');
+          } else {
+            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/mascot/hide.css"/>');
+          }
+
           if (options.library.addShelf) {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/add shelf/show.css"/>');
           } else {
@@ -145,13 +145,6 @@ const Options = {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/whats new/show.css"/>');
           } else {
             document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/whats new/hide.css"/>');
-          }
-
-          // CHAT --------------------------------------------------------------
-          if (options.chat.timeDivisions) {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/chat/time divisions/show.css"/>');
-          } else {
-            document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/chat/time divisions/hide.css"/>');
           }
         }
       );

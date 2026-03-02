@@ -52,7 +52,7 @@ Zehn.movePrepend('.doGxCBJrGimabHm365bOV', '.chatRoomOptions', [
 Zehn.moveAppend('.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
   '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // FORGOT WHAT THIS WAS
 ]);
-// Zehn.movePrepend('.currentUserContainer', '.chatTitleBar .title-area-children', [
+// Zehn.movePrepend('.currentUserContainer', '.friendListFooter', [
 //   '.currentUserContainer' // CURRENT USER
 // ]);
 // Zehn.moveAppend('.tabSearchTransitionGroup', '.socialTabContainer', [

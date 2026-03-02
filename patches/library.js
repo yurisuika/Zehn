@@ -74,7 +74,6 @@ function toggleNavigation() {
     if (btnNavigation.classList.contains(`ZehnToggled`)) {
       navbar.classList.remove('ZehnMenuOpened');
       document.documentElement.style.setProperty('--zehn-menu-height', '0px');
-      document.documentElement.style.setProperty('--zehn-menu-margin', '0px');
       root.forEach((element) => {
         element.style.setProperty('height', '0px', 'important');
         element.style.setProperty('display', 'none', 'important');
@@ -86,7 +85,6 @@ function toggleNavigation() {
     else {
       navbar.classList.add('ZehnMenuOpened');
       document.documentElement.style.setProperty('--zehn-menu-height', '32px');
-      document.documentElement.style.setProperty('--zehn-menu-margin', 'var(--zehn-menu-margin-scroll)');
       root.forEach((element) => {
         element.style.setProperty('height', '32px', 'important');
         element.style.setProperty('display', 'block', 'important');
