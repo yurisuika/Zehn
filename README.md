@@ -34,7 +34,7 @@ For SFP, edit the config in `~/config/options.json`!
 ![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.png)
 
 #### Mascots
-You can give your waifu a home in your library by adding a mascot in Steam's UI folder. Place your PNG in `/steamui/mascots/waifu.png` and enjoy.
+You can give your waifu a home in your library by adding a mascot in Steam's UI folder. Place your `waifu` image in `/steamui/mascots/` and enjoy. Supports JPG, GIF, and PNG file types.
 
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
 
