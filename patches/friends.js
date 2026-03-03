@@ -43,6 +43,25 @@ function addButtonUser(target) {
 
 Zehn.createElement('.friendListHeaderContainer .chatTitleBar', '.ZehnButton', addButtonUser);
 
+function reworkGroupChatSettingsPageList() {
+  const elements = document.querySelectorAll('._2YV0m3IRCNOoUV9YhJNFnV');
+  elements.forEach((element) => {
+    if (element.children.length == 0) {
+      var title = document.createElement('div');
+      title.classList.add('ZehnListTitle');
+      element.append(title);
+      title.textContent = element.childNodes[0].textContent;
+      element.childNodes[0].remove();
+
+      var icon = document.createElement('div');
+      icon.classList.add('ZehnListIcon');
+      element.prepend(icon);
+    }
+  });
+};
+
+Zehn.waitAndObserve('._2YV0m3IRCNOoUV9YhJNFnV', reworkGroupChatSettingsPageList);
+
 Zehn.movePrepend('.doGxCBJrGimabHm365bOV', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
 ]);
