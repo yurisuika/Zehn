@@ -27,14 +27,14 @@ For SFP, you may edit the config in `~/config/options.json` to dynamically patch
 #### Colorization
 You can colorize both the foreground and background colors of Zehn!
 
-For Millennium, under the `Theme` tab, enable your choice of foreground and/or background blending. Optionally, set the blend amount and color space (different approaches to blending that produces different results). Under the `Colors` tab, choose the colors for blending and you've got a whole new look!
+For Millennium, configure color blending under the `Theme` tab. Set the blending amount, choose either the colors (under the `Colors` tab) or just use your accent color, and you've got a whole new look!
 
-For SFP, edit the config in `~/config/options.json`!
+For SFP, edit the config in `~/config/options.json` as usual.
 
 ![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.png)
 
 #### Mascots
-You can give your waifu a home in your library by adding a mascot in Steam's UI folder. Place your `waifu` image in `/steamui/mascots/` and enjoy. Supports JPG, GIF, and PNG file types.
+You can give your waifu a home in your library by adding a mascot in Steam's UI folder. From the Steam directory, place your `waifu` image in `~/steamui/mascots/` and enjoy. Supports JPG, GIF, and PNG file types.
 
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
 
