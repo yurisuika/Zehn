@@ -62,6 +62,19 @@ function reworkGroupChatSettingsPageList() {
 
 Zehn.waitAndObserve('._2YV0m3IRCNOoUV9YhJNFnV', reworkGroupChatSettingsPageList);
 
+function moveChatButtons() {
+  const elements = document.querySelectorAll('.MultiUserChat');
+  elements.forEach((element) => {
+    var toggle = element.querySelector('.MemberListOption.ToggleMemberListView');
+    var header = element.querySelector('.chatRoomOptions');
+    if (toggle && header) {
+      header.append(toggle);
+    }
+  });
+};
+
+Zehn.waitAndObserve('.MultiUserChat', moveChatButtons);
+
 Zehn.movePrepend('.doGxCBJrGimabHm365bOV', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
 ]);

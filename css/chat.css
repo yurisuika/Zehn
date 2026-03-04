@@ -2278,13 +2278,14 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* CHAT ROOM HEADER */
 .namedGroup .chatRoomGroupHeader, .chatRoomGroupHeader {
   padding: 0 !important;
-  height: 48px !important;
+  height: var(--zehn-size-bar-large) !important;
   gap: var(--zehn-size-gap-medium) !important;
 }
 
 .chatRoomHeader {
-  height: 48px !important;
-  padding-left: 16px !important;
+  height: var(--zehn-size-bar-large) !important;
+  padding: 0 !important;
+  background-color: var(--zehn-color-window-panel) !important;
 }
 
 .chatRoomGroupHeaderName {
@@ -2308,6 +2309,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   color: var(--zehn-color-text-secondary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   text-align: right !important;
+  margin: 0 !important;
 }
 
 .chatRoomGroupHeader {
@@ -2323,6 +2325,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 55px !important;
   filter: saturate(0.0) !important;
   background-size: auto !important;
+}
+
+/* TAGLINE */
+.chatRoomGroupHeaderNameandTag {
+  padding-left: 16px !important;
 }
 
 /* CHAT ROOM OPTIONS */
@@ -2458,7 +2465,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   z-index: 99 !important;
 }
 
-.chatWindow:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry, .chatWindow:has(.chatRoomGroupNavCollapsed) .chatRoomHeader {
+.chatWindow:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry, .chatWindow:has(.chatRoomGroupNavCollapsed) .chatHeader {
   margin-left: var(--zehn-size-bar-large) !important;
 }
 
@@ -2796,11 +2803,24 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHAT ROOM MEMBER LIST */
 .MemberListColumn {
+  position: absolute !important;
   transition: none !important;
-  background: var(--zehn-color-window-panel) !important;
-  transition: none !important;
-  width: var(--zehn-size-pagelist-width) !important;
+  background-color: var(--zehn-color-window-fancy) !important;
+  border: var(--zehn-size-border) solid var(--zehn-color-border) !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 32px !important;
+  left: 32px !important;
+  right: 0 !important;
+  bottom: calc(32px + 32px) !important;
+  max-height: calc(100% - 64px - 48px) !important;
+  max-width: calc(100% - 64px) !important;
 }
+
+.WindowFocus .MemberListColumn {
+  border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important
+}
+
 .chatRoomMembers {
   border-left: unset !important;
 }
@@ -2855,6 +2875,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .MemberListColumn.MemberListViewCompact {
   width: var(--zehn-size-bar-large) !important;
+  display: none !important;
 }
 
 .MemberListOptionsContainer {
@@ -2884,6 +2905,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .MemberListOption.ToggleMemberListView {
   padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
 }
 
 .MemberListColumn.MemberListViewCompact .MemberListOption.ToggleMemberListView {
@@ -2904,11 +2927,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-medium) !important;
-  -webkit-mask-image: var(--zehn-icon-chevron-left) !important;
+  -webkit-mask-image: var(--zehn-icon-people) !important;
 }
 
-.MemberListColumn.MemberListViewCompact .MemberListOption .SVGIcon_DoubleArrow {
-  -webkit-mask-image: var(--zehn-icon-chevron-right) !important;
+.MultiUserChat:not(:has(.MemberListViewCompact)) .ToggleMemberListView::after {
+  content: "";
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background-color: rgb(var(--zehn-color-accent));
+  display: block;
+  position: absolute;
 }
 
 .MemberListOption .SVGIcon_DoubleArrow * {
@@ -3000,12 +3030,13 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   width: 0 !important;
 }
 
-.MemberListColumn:not(.MemberListViewCompact) .MemberListOptionsContainer .socialInputContainer {
+.MemberListColumn .MemberListOptionsContainer .socialInputContainer {
   width: 100% !important;
   max-height: var(--zehn-size-bar-large) !important;
   height: var(--zehn-size-bar-large) !important;
   margin: 0 !important;
   min-height: var(--zehn-size-bar-large) !important;
+  background-color: var(--zehn-color-window-panel) !important;
 }
 
 .MemberListOptionsContainer .socialInputContainer .friendSearchInput[type="text"] {
@@ -3140,22 +3171,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* VOICE ROOM CHAT */
 .VoiceRoomChatHistory {
-  /* background-color: var(--zehn-color-window-overlay) !important; */
   background: transparent !important;
-  /* position: fixed !important; */
-  /* z-index: 999 !important; */
 }
 
 .chatWindow .InsetWindowOpen .chatEntry {
   z-index: 999 !important;
-  /* position: fixed !important;
-  left: 1px !important;
-  right: 1px !important;
-  bottom: 1px !important; */
-}
-
-.ChatRoomGroupDialog_contents:has(.chatRoomGroupNavCollapsed) .VoiceRoomChatHistory {
-  left: 32px !important;
 }
 
 .VoiceRoomChatWindow {
@@ -3361,22 +3381,41 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .doGxCBJrGimabHm365bOV::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  background-color: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-medium) !important;
-  -webkit-mask-image: var(--zehn-icon-stream) !important;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--zehn-color-icon-primary);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: var(--zehn-size-icon-medium);
+  -webkit-mask-image: var(--zehn-icon-stream);
+}
+
+.doGxCBJrGimabHm365bOV._3z8S8pbud00oOqK8OGHzDJ {
+  filter: none !important;
+}
+
+.doGxCBJrGimabHm365bOV._3z8S8pbud00oOqK8OGHzDJ::before {
+  content: "";
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background-color: rgb(var(--zehn-color-accent));
+  display: block;
+  position: absolute;
 }
 
 /* BROADCAST */
 .ChatRoomGroup_Main_Content.Vertical, .ChatRoomGroup_Main_Content.Horizontal, .ChatRoomGroup_Main_Content {
   position: relative !important;
+}
+
+.BroadcastSection {
+  max-height: calc(100% - 64px) !important;
 }
 
 .ChatRoomGroup_Main_Content > div:has(.BroadcastSection) {
@@ -3517,7 +3556,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHAT EXPANDER */
 .chatWindow:has(.chatHidden) .chatRoomHeader {
-  padding-left: calc(16px + 48px) !important;
+  padding-left: var(--zehn-size-bar-large) !important;
 }
 
 .BroadcastChatExpander {
