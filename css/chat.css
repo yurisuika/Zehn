@@ -2692,6 +2692,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   mask-size: var(--zehn-size-icon-medium) !important;
   margin: auto 16px !important;
   box-sizing: border-box !important;
+  vertical-align: middle !important;f
 }
 
 .chatDialogs .chatRoomTextChannelIcon svg {
@@ -2798,6 +2799,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   transition: none !important;
   background: var(--zehn-color-window-panel) !important;
   transition: none !important;
+  width: var(--zehn-size-pagelist-width) !important;
 }
 .chatRoomMembers {
   border-left: unset !important;
@@ -2823,6 +2825,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   line-height: normal !important;
 }
 
+.chatRoomMembers .friendGroup .groupName {
+  display: none !important;
+}
+
 .chatRoomMembers .friendGroup .groupName .groupCount {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-12) !important;
@@ -2842,17 +2848,17 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* MEMBER LIST COLLAPSED */
 .MemberListColumn.MemberListViewCompact .chatRoomMembers .friendGroup .groupName {
-  margin-left: 0 !important;
-  height: 32px !important;
-  width: 32px !important;
+  margin: 0 !important;
+  height: var(--zehn-size-bar-large) !important;
+  width: var(--zehn-size-bar-large) !important;
 }
 
 .MemberListColumn.MemberListViewCompact {
-  width: 32px !important;
+  width: var(--zehn-size-bar-large) !important;
 }
 
 .MemberListOptionsContainer {
-  height: 32px !important;
+  height: auto !important;
 }
 
 .MemberListViewCompact .MemberListOptionsContainer .MemberListOption {
@@ -2860,8 +2866,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatRoomGroupNavCollapseExpand, .MemberListOption {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-bar-large) !important;
   opacity: 1 !important;
   padding: 0 !important;
   transition: none !important;
@@ -2881,12 +2887,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListColumn.MemberListViewCompact .MemberListOption.ToggleMemberListView {
-  margin-right: -12px !important;
-}
-
-.MemberListOption .SVGIcon_DoubleArrow {
-  transform: none !important;
-  transition: none !important;
+  margin: 0 !important;
 }
 
 .MemberListColumn.MemberListViewCompact .MemberListOption .SVGIcon_DoubleArrow {
@@ -2894,8 +2895,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOption .SVGIcon_DoubleArrow {
-  width: 32px !important;
-  height: 32px !important;
+  transform: none !important;
+  transition: none !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
   margin: 0 !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
@@ -2908,57 +2911,60 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   -webkit-mask-image: var(--zehn-icon-chevron-right) !important;
 }
 
-.MemberListOption .SVGIcon_DoubleArrow polyline {
+.MemberListOption .SVGIcon_DoubleArrow * {
   display: none !important;
 }
 
 .MemberListViewCompact .groupName {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
   padding: 0 !important;
   margin: 0 !important;
 }
 
 /* MEMBER AVATAR COLLAPSED */
 .MemberListViewCompact .MemberListOptionsContainer .CompactFriendsList .friend .avatarHolder {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-avatar-medium) !important;
+  height: var(--zehn-size-avatar-medium) !important;
 }
 
-.chatroomBucket_regular.Panel.Focusable:first-of-type {}
-
 .chatroomBucket_regular.Panel.Focusable {
-  height: 32px !important;
-  max-height: 32px !important;
+  height: var(--zehn-size-pagelist-height) !important;
+  max-height: var(--zehn-size-pagelist-height) !important;
   position: relative !important;
   display: block !important;
-  top: 32px !important;
+  top: 0 !important;
 }
 
 .MemberListViewCompact .CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount, .MemberListViewCompact .CompactFriendsList .friend .avatarHolder {
-  width: 24px !important;
-  height: 24px !important;
-  margin: 4px !important;
+  width: var(--zehn-size-avatar-small) !important;
+  height: var(--zehn-size-avatar-small) !important;
+  margin: 8px 12px !important;
+  top: unset !important;
 }
 
 .MemberListViewCompact .CompactFriendsList .friend, .MemberListViewCompact .CompactFriendsList .friendGroup .friend {
-  height: 24px !important;
+  height: var(--zehn-size-pagelist-height) !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
 /* MEMBER AVATAR OPEN */
-.MemberListColumn:not(.MemberListViewCompact ) .chatroomBucket_regular.Panel.Focusable {
+.MemberListColumn:not(.MemberListViewCompact) .chatroomBucket_regular.Panel.Focusable {
   padding: 0 !important;
   background-color: var(--zehn-color-list-background) !important;
 }
 
-.MemberListColumn:not(.MemberListViewCompact ) .chatroomBucket_regular.Panel.Focusable:hover {
+.MemberListColumn:not(.MemberListViewCompact) .chatroomBucket_regular.Panel.Focusable:hover {
   background-color: var(--zehn-color-list-background-hover) !important;
 }
 
-.MemberListColumn:not(.MemberListViewCompact ) .chatroomBucket_regular.Panel.Focusable:active {
+.MemberListColumn:not(.MemberListViewCompact) .chatroomBucket_regular.Panel.Focusable:active {
   background-color: var(--zehn-color-list-background-active) !important;
+}
+
+.CompactFriendsList .friendGroup .ChatRoomMemberScrollList_List .friend {
+  height: var(--zehn-size-pagelist-height) !important;
 }
 
 /* OWNER */
@@ -2989,16 +2995,21 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 /* FILTER INPUT */
+.MemberListViewCompact .MemberListOptionsContainer .socialInputContainer {
+  margin: 0 !important;
+  width: 0 !important;
+}
+
 .MemberListColumn:not(.MemberListViewCompact) .MemberListOptionsContainer .socialInputContainer {
   width: 100% !important;
-  max-height: 32px !important;
-  height: 32px !important;
+  max-height: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-bar-large) !important;
   margin: 0 !important;
-  min-height: 32px !important;
+  min-height: var(--zehn-size-bar-large) !important;
 }
 
 .MemberListOptionsContainer .socialInputContainer .friendSearchInput[type="text"] {
-  height: 32px !important;
+  height: var(--zehn-size-bar-large) !important;
   margin: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -3006,7 +3017,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOptionsContainer .socialInputContainer .inputContainer.no-drag {
-  height: 32px !important;
+  height: var(--zehn-size-bar-large) !important;
+}
+
+.MemberListOptionsContainer .socialInputContainer .inputContainer .friendSearchInput:focus {
+  background-color: var(--zehn-color-window-section) !important;
 }
 
 .MemberListColumn.MemberListViewCompact .MemberListOptionsContainer .socialInputContainer .inputContainer.no-drag {
@@ -3018,15 +3033,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   font-size: var(--zehn-size-14) !important;
   padding: 0 16px !important;
   width: 100% !important;
-  height: 32px !important;
+  height: var(--zehn-size-bar-large) !important;
 }
 
 .MemberListColumn .inputContainer::after {
   content: "" !important;
   position: absolute !important;
   right: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-bar-large) !important;
   background-color: var(--zehn-color-icon-secondary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -3048,13 +3063,13 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOptionsContainer .friendSearchClear {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-bar-large) !important;
 }
 
 .MemberListOptionsContainer .friendSearchClear .SVGIcon_X_Line {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-bar-large) !important;
 }
 
 .SearchActive .inputContainer:not(:has(input:placeholder-shown)) .friendSearchClear {
