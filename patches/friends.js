@@ -10,7 +10,7 @@ function toggleUser() {
 
   if (btnUser != null) {
     var user = document.querySelector(`.currentUserContainer`);
-    var voice = document.querySelector(`.activeVoiceControls`);
+    var voice = document.querySelector(`.friendListHeaderContainer .activeVoiceControls`);
 
     if (btnUser.classList.contains(`ZehnToggled`)) {
       user.style.setProperty('transform', 'scaleY(0)', 'important');

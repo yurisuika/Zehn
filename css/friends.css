@@ -748,6 +748,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   background: transparent !important;
 }
 
+.activeVoiceControls .activeVoiceFlexBox > div {
+  flex-grow: 1 !important;
+}
+
 .activeVoiceFlexBox {
   height: 100% !important;
 }
@@ -829,16 +833,25 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .activeVoiceFlexBox .activeVoiceButtons button {
   margin-top: 0 !important;
   padding: 0 !important;
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
+  min-width: var(--zehn-size-button-medium) !important;
+  min-height: var(--zehn-size-button-medium) !important;
   max-width: 100% !important;
-  max-height: 48px !important;
+  max-height: var(--zehn-size-button-medium) !important;
   border: unset !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
   flex: 1 !important;
+}
+
+.friendListHeaderContainer .activeVoiceFlexBox .activeVoiceButtons button {
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
+  min-width: var(--zehn-size-button-large) !important;
+  min-height: var(--zehn-size-button-large) !important;
+  max-width: 100% !important;
+  max-height: var(--zehn-size-button-large) !important;
 }
 
 .VoiceControlPanelButton.ToggleMicrophoneButton.Focusable svg {
@@ -2283,6 +2296,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 /* CHAT ROOM DROP DOWN */
+.chatRoomVoiceChannel:not(.ActiveVoiceChannel) .chatRoomTextChannel {
+  display: none !important;
+}
+
 .ChatRoomListGroupItemChatRooms {
   margin-left: 0 !important;
   font-size: var(--zehn-size-14) !important;
@@ -2303,11 +2320,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   background: var(--zehn-color-window-panel) !important;
 }
 
-.chatRoomVoiceChannelNameContainer {
-  padding-top: 0 !important;
-  height: 32px !important;
-}
-
 div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer {
   background-color: var(--zehn-color-list-background) !important;
 }
@@ -2322,8 +2334,8 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
   border-radius: var(--zehn-size-radius-none) !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-pagelist-height) !important;
   background: var(--zehn-color-button-fancy-background) !important;
 }
 
@@ -2340,8 +2352,8 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton svg {
-  width: 32px !important;
-  height: 32px !important;
+  width: 100% !important;
+  height: 100% !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -2389,8 +2401,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .ChatRoomListGroupItem .chatRoomVoiceChannelIcon {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin: 0 !important;
   display: none !important;
 }
 
@@ -2404,15 +2415,16 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomVoiceChannelName, .chatRoomTextChannelName, .chatRoomGroupName {
-  margin-top: 0 !important;
-  margin-right: 0 !important;
+  margin: 0 !important;
 }
 
+/* EMPTY CHANNEL NOTICE */
 .emptyChannelNotice.Visible {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin: 0 16px !important;
   height: 24px !important;
   line-height: 24px !important;
+  text-align: center !important;
+  display: none !important;
 }
 
 .emptyChannelNotice:not(.Visible) {
@@ -2426,6 +2438,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   font-weight: var(--zehn-size-weight-normal) !important;
 }
 
+/* VOICE CONTROLS */
 .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceFlexBox {
   height: 100% !important;
 }
@@ -2435,43 +2448,21 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   margin-top: 0 !important;
 }
 
-.chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceButtons button .VoiceControlPanelButton, .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceButtons button {
-  background-color: transparent !important;
-  width: 32px !important;
-  height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
-  margin: 0 !important;
-}
-
-.chatRoomVoiceChannel .chatRoomTextChannel .chatRoomTextChannelIcon .SVGIcon_TextRoom {
-  width: 32px !important;
-  height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
-  margin-top: 0 !important;
-  margin: 0 !important;
+.chatRoomVoiceChannel .activeVoiceButtons {
+  width: 100% !important;
+  right: 0 !important;
 }
 
 .chatRoomVoiceChannel .SVGIcon_TextRoom .TextLines, .chatRoomVoiceChannel .SVGIcon_TextRoom .ScratchPad {
   display: none !important;
 }
 
-.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton .SVGIcon_Button.SVGIcon_VoiceRoom {
-  width: 32px !important;
-  height: 32px !important;
-  margin-top: 0 !important;
-  margin-left: 0 !important;
-  transform: none !important;
-  display: none !important;
-}
-
 .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceButtons {
   background-color: transparent !important;
   border-radius: var(--zehn-size-radius-none) !important;
-  width: 32px !important;
-  height: 32px !important;
-  justify-content: flex-end !important;
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-bar-medium) !important;
+  justify-content: stretch !important;
 }
 
 .activeVoiceButtons {
@@ -2482,19 +2473,18 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   border-radius: var(--zehn-size-radius-none) !important;
 }
 
-.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
-  width: 32px !important;
-  height: 32px !important;
-  opacity: 1 !important;
-}
-
-.chatRoomVoiceChannel .chatRoomTextChannel {
-  min-width: 32px !important;
-  min-height: 32px !important;
+.chatRoomVoiceChannel .chatRoomTextChannel, .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
+  min-width: var(--zehn-size-button-medium) !important;
+  min-height: var(--zehn-size-bar-medium) !important;
   transition: none !important;
-  right: 32px !important;
+  left: 0 !important;
+  right: unset !important;
   bottom: 0 !important;
   background-color: var(--zehn-color-list-background) !important;
+  width: 100% !important;
+  height: var(--zehn-size-bar-medium) !important;
+  opacity: 1 !important;
+  position: relative !important;
 }
 
 .chatRoomVoiceChannel .chatRoomTextChannel:hover {
@@ -2505,19 +2495,25 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   background-color: var(--zehn-color-list-background-active) !important;
 }
 
+/* SCRATCH PAD WHATEVER THIS ACTUALLY IS */
 .ScratchPadConnect {
   display: none !important;
-  width: 32px !important;
-  height: 32px !important;
-  background: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-medium) !important;
-  -webkit-mask-image: var(--zehn-icon-notes) !important;
-  bottom: 0 !important;
-  left: 0 !important;
+  color: transparent !important;
+  position: absolute !important;
+  right: 8px !important;
+  left: unset !important;
+  bottom: 18px !important;
   top: unset !important;
-  right: unset !important;
+  min-width: 6px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: rgb(var(--zehn-color-accent)) !important;
+  letter-spacing: normal !important;
+  font-size: var(--zehn-size-10) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
 }
 
 .InsetWindowOpen .ActiveVoiceChannel .ScratchPadConnect {
@@ -2526,8 +2522,9 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 /* GO TO CHANNEL BUTTON */
 .chatRoomVoiceChannel .chatRoomTextChannel .chatRoomTextChannelIcon {
-  width: 32px !important;
-  height: 32px !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  height: var(--zehn-size-bar-medium) !important;
   margin: 0 !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
@@ -2537,15 +2534,35 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   color: transparent !important;
 }
 
+.chatRoomVoiceChannel .chatRoomTextChannel svg {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* VOICE CONTROLS */
+.chatRoomVoiceChannel .VoiceControlPanelButton svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+}
+
+.activeVoiceControls .VoiceControlPanelButton {
+  flex-grow: 1 !important;
+}
+
+.chatRoomVoiceChannel .VoiceControlPanelButton.ToggleMicrophoneButton, .chatRoomVoiceChannel .VoiceControlPanelButton.ToggleVoiceOutputButton {
+  display: flex !important;
+}
+
 /* END VOICE CHAT BUTTON */
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat {
   border: unset !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: auto !important;
+  height: var(--zehn-size-bar-medium) !important;
   margin: 0 !important;
   color: transparent !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
+  min-width: auto !important;
+  min-height: var(--zehn-size-bar-medium) !important;
   background-color: var(--zehn-color-button-fancy-background) !important;
 }
 
@@ -2565,8 +2582,8 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat svg {
-  width: 32px !important;
-  height: 32px !important;
+  width: 100% !important;
+  height: 100% !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;

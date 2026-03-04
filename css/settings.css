@@ -66,12 +66,12 @@
 
 /* FIX FOR OVERLAY SETTINGS */
 ._1itstBRykbCEZZrECYg_YU .DialogContentTransition {
-  max-width: calc(100% - 200px - 2px);
-  max-height: calc(100% - 2px) !important;
+  max-width: calc(100% - var(--zehn-size-pagelist-width) - (var(--zehn-size-border) * 2));
+  max-height: calc(100% - (var(--zehn-size-border) * 2)) !important;
 }
 
 ._1itstBRykbCEZZrECYg_YU .PageListColumn {
-  max-height: calc(100% - 2px) !important;
+  max-height: calc(100% - (var(--zehn-size-border) * 2)) !important;
 }
 
 /* OVERLAY WINDOW CONTROLS */
@@ -82,7 +82,7 @@
 }
 
 .ModalDialogPopup .ModalDialogBody.DesktopUI .PopupFullWindow .TitleBar._3gGR9H910U7tiqa3tPCQa8 {
-  width: calc(100% - 2px) !important;
+  width: calc(100% - (var(--zehn-size-border) * 2)) !important;
   box-sizing: border-box !important;
 }
 
@@ -181,8 +181,8 @@
 
 ._1-vlriAtKYDViAEunue4VO ._2PPbMrzl8PKBwpkjYs9b0i {
   font-weight: var(--zehn-size-weight-normal) !important;
-  line-height: 40px !important;
-  height: 40px !important;
+  line-height: var(--zehn-size-pagelist-height) !important;
+  height: var(--zehn-size-pagelist-height) !important;
   color: var(--zehn-color-text-primary) !important;
 }
 
@@ -194,8 +194,8 @@
 
 ._2kwFFHckg8jvnwJfg9-la8 {
   padding-top: 0 !important;
-  min-width: 200px !important;
-  max-width: 200px !important;
+  min-width: var(--zehn-size-pagelist-width) !important;
+  max-width: var(--zehn-size-pagelist-width) !important;
   background: var(--zehn-color-window-acrylic) !important;
 /*  height: calc(100vh - 2px) !important;*/
   height: 100% !important;
@@ -3190,20 +3190,14 @@ button.TEWmsM70ZLEOxLAjDMpcv ._3Wb9yDmYPUJksCr7HmaT9H {
 }
 
 ._1FyBL6obxHQ2Z2CsaV2Gbz {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border) !important; */
-  /* height: calc(100% - 2px) !important; */
   border: none !important;
-}
-
-.WindowFocus ._1FyBL6obxHQ2Z2CsaV2Gbz {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important; */
 }
 
 ._1FyBL6obxHQ2Z2CsaV2Gbz ._1-vlriAtKYDViAEunue4VO {
   padding: 0 0 0 48px !important;
-  height: 40px !important;
+  height: var(--zehn-size-pagelist-height) !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: 40px !important;
+  line-height: var(--zehn-size-pagelist-height) !important;
   position: relative !important;
 }
 
@@ -4528,8 +4522,8 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
 }
 
 .xSTLmzylFJdIfak7ZdhuA {
-  min-width: 160px !important;
-  max-width: 200px !important;
+  min-width: var(--zehn-size-pagelist-width-min) !important;
+  max-width: var(--zehn-size-pagelist-width) !important;
 }
 
 .xSTLmzylFJdIfak7ZdhuA .uyoPtKbi4K01XGuYF5-C_ {
@@ -4558,9 +4552,9 @@ button.DialogButton.smallFontSetting.Primary, button.DialogButton.defaultFontSet
   box-sizing: border-box !important;
   transition: transform 0.05s ease-in-out !important;
   position: relative !important;
-  min-width: 160px;
-  width: 200px;
-  max-width: 200px;
+  min-width: var(--zehn-size-pagelist-width-min);
+  width: var(--zehn-size-pagelist-width);
+  max-width: var(--zehn-size-pagelist-width);
   height: var(--zehn-size-pagelist-height);
   display: flex;
   background-color: var(--zehn-color-list-background) !important;
@@ -4754,6 +4748,11 @@ button.DialogButton.DialogButtonTall {
   margin: 0 !important;
 }
 
+.friendsui-container .ChatGroupSettingsChannels_Row .rolePriorityButton svg {
+  width: 24px !important;
+  height: 16px !important;
+}
+
 .roleList .roleRow {
   background-color: var(--zehn-color-table-odd) !important;
 }
@@ -4838,6 +4837,11 @@ button.DialogButton.DialogButtonTall {
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-medium) !important;
+  margin: 0 !important;
+}
+
+.ChatGroupSettingsChannels_Row .SVGIcon_Button * {
+  display: none !important;
 }
 
 .ChatGroupSettingsChannels_Row .SVGIcon_TextRoom {
