@@ -149,21 +149,21 @@ function togglePage(root, target, button) {
     const details = document.getElementById('zehnGameDetails');
     const pages = [featured, event, community, details];
 
-    pages.forEach(page => {
+    pages.forEach((page) => {
       if (button == btnActivity) {
-        if (page == featured || page == event) {
+        if (page && (page == featured || page == event)) {
           page.classList.add('zehnDisplayed');
         } else if (page) {
           page.classList.remove('zehnDisplayed');
         }
       } else if (button == btnCommunity) {
-        if (page == community) {
+        if (page && (page == community)) {
           page.classList.add('zehnDisplayed');
         } else if (page) {
           page.classList.remove('zehnDisplayed');
         }
       } else if (button == btnDetails) {
-        if (page == details) {
+        if (page && (page == details)) {
           page.classList.add('zehnDisplayed');
         } else if (page) {
           page.classList.remove('zehnDisplayed');
@@ -171,7 +171,7 @@ function togglePage(root, target, button) {
       }
     });
 
-    buttons.forEach(element => {
+    buttons.forEach((element) => {
       if (element == button) {
         element.classList.add('zehnToggled');
       } else {
