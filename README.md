@@ -40,7 +40,7 @@ You can give your waifu a home in your library by adding a mascot in Steam's UI 
 
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
 
-#### Features
+### Features
 On Windows, the accent color will take your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to change this, please manually enter the value in `~/config/theme/mode/<theme>/colors.css`.
 
 Zehn features several added buttons for an improved experience:
@@ -55,14 +55,14 @@ Zehn features several added buttons for an improved experience:
 * On the chat window...
   * The channel list, member list, and settings buttons are toggled via three buttons added in the group chat header bar.
 
-#### Versions
+### Versions
 Zehn features both a static and a live version!
 
 The [static version](https://github.com/yurisuika/Zehn/tree/master) contains the whole skin source. You will need to download the [latest release](https://github.com/yurisuika/Zehn/releases/latest) for any updates, which come often as rolling releases!
 
 The [live version](https://github.com/yurisuika/Zehn/tree/live) references the latest static version on the web, so each time Steam is started or reloaded you will have the latest improvements. This version is recommended for most users as it infrequently requires updates.
 
-#### Installation
+### Installation
 1. Download your preferred version.
 2. Extract the archive `Zehn`.
 3. Navigate to your Steam folder.
@@ -72,5 +72,5 @@ The [live version](https://github.com/yurisuika/Zehn/tree/live) references the l
 
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
-#### Discussion
+### Discussion
 If you have inquires, you may use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) or join my modding [Discord](https://discord.gg/0zdNEkQle7Qg9C1H) server.
