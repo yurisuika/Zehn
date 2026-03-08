@@ -1,92 +1,4 @@
 const Zehn = {
-  waitForElement(selector) {
-    return new Promise(resolve => {
-      if (document.querySelector(selector)) {
-        return resolve(document.querySelector(selector));
-      }
-      const observer = new MutationObserver(mutations => {
-        if (document.querySelector(selector)) {
-          observer.disconnect();
-          resolve(document.querySelector(selector));
-        }
-      });
-      observer.observe(document.body, {childList: true, subtree: true});
-    });
-  },
-
-  waitAndObserve(wait, callback) {
-    Zehn.waitForElement(wait).then((element) => {
-      var observer = new MutationObserver(function(mutations, observer) {
-        callback();
-      });
-      observer.observe(document, {subtree: true, attributes: true});
-    });
-  },
-
-  appendElements(target, classes) {
-    classes.forEach((selector) => {
-      const elements = document.querySelectorAll(`${target}`);
-      elements.forEach((element) => {
-        if (element != null) {
-          document.querySelectorAll(`${selector}`).forEach((sub) => {
-            document.querySelector(`${target}`).appendChild(sub || '');
-          })
-        }
-      })
-    });
-  },
-
-  prependElements(target, classes) {
-    classes.forEach((selector) => {
-      const elements = document.querySelectorAll(`${target}`);
-      elements.forEach((element) => {
-        if (element != null) {
-          document.querySelectorAll(`${selector}`).forEach((sub) => {
-            document.querySelector(`${target}`).append(sub || '');
-          })
-        }
-      })
-    });
-  },
-
-  beforeElements(target, classes) {
-    classes.forEach((selector) => {
-      const elements = document.querySelectorAll(`${target}`);
-      elements.forEach((element) => {
-        if (element != null) {
-          document.querySelectorAll(`${selector}`).forEach((sub) => {
-            document.querySelector(`${target}`).before(sub || '');
-          })
-        }
-      })
-    });
-  },
-
-  moveAppend(wait, target, classes) {
-    Zehn.waitAndObserve(wait, () => Zehn.appendElements(target, classes));
-  },
-
-  movePrepend(wait, target, classes) {
-    Zehn.waitAndObserve(wait, () => Zehn.prependElements(target, classes));
-  },
-
-  moveBefore(wait, target, classes) {
-    Zehn.waitAndObserve(wait, () => Zehn.beforeElements(target, classes));
-  },
-
-  removeOld(wait, target, classes) {
-    Zehn.waitAndObserve(wait, () => {
-      classes.forEach((selector) => {
-        var removable = document.querySelectorAll(`${target} ${selector}`);
-        if (removable != null) {
-          if (removable.length > 1) {
-            removable[0].remove();
-          }
-        }
-      });
-    });
-  },
-
   addUserAgent() {
     if (navigator.userAgent.includes('Linux')) {
       document.documentElement.classList.add('Linux');
@@ -95,30 +7,145 @@ const Zehn = {
     }
   },
 
-  createElement(target, button, callback) {
-    Zehn.waitAndObserve(target, () => {
-      if (document.querySelector(`${target}`) != null) {
-        if (document.querySelector(`${target} ${button}`) == null) {
-            callback(target);
+  waitAndCallback(rootSelector, targetSelector, callback) {
+    const roots = document.querySelectorAll(rootSelector);
+    if (roots.length > 0) {
+      roots.forEach((root) => {
+        const targets = root.querySelectorAll(targetSelector);
+        
+        return new Promise((resolve) => {
+            if (root && targets.length > 0) {
+                targets.forEach((target) => callback(root, target));
+                return resolve(targets);
+            }
+
+            const observer = new MutationObserver((mutations) => {
+                const newTargets = root.querySelectorAll(targetSelector);
+                if (newTargets.length > 0) {
+                    newTargets.forEach((target) => callback(root, target));
+                    observer.disconnect();
+                    resolve(newTargets);
+                }
+            });
+
+            observer.observe(document.body, { childList: true, subtree: true });
+        }).then((elements) => {
+            const observer = new MutationObserver(() => {
+                const updatedTargets = root.querySelectorAll(targetSelector);
+                updatedTargets.forEach((target) => callback(root, target));
+            });
+            observer.observe(document, { subtree: true, attributes: true });
+        });
+      });
+    }
+  },
+
+  waitAndCheckAdditionAndCallback(rootSelector, targetSelector, additionSelector, callback) {
+    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
+      const addition = target.querySelector(additionSelector);
+      if (!addition) {
+        callback(root, target, additionSelector);
+      }
+    });
+  },
+
+  addButton(rootSelector, targetSelector, additionSelector, position, defaultToggled, callback) {
+    Zehn.waitAndCheckAdditionAndCallback(rootSelector, targetSelector, additionSelector, (root, target, additionSelector) => {
+      const button = document.createElement('button');
+      const buttonName = additionSelector.slice(1);
+      const buttonSelectorIsId = additionSelector.charAt(0) === '#';
+
+      button.classList.add('zehnButton');
+      if (buttonSelectorIsId) {
+        button.id = buttonName;
+      } else {
+        button.classList.add(buttonName);
+      }
+      if (defaultToggled) {
+        button.classList.add('zehnToggled');
+      }
+      button.name = 'button';
+      button.onclick = () => callback(root, target, button);
+      if (position) {
+        target.append(button);
+      } else {
+        target.prepend(button);
+      }
+
+      const icon = document.createElement('div');
+      if (buttonSelectorIsId) {
+        icon.id = `${buttonName}Icon`;
+      } else {
+        icon.classList.add(`${buttonName}Icon`);
+      }
+      button.append(icon);
+    });
+  },
+
+  addRootClassOnToggle(root, target, button, buttonTargetToggleName) {
+    button.classList.toggle('zehnToggled');
+    if (button.classList.contains('zehnToggled')) {
+      if (!root.classList.contains(`${buttonTargetToggleName}`)) {
+        root.classList.add(`${buttonTargetToggleName}`);
+      }
+    } else {
+      if (root.classList.contains(`${buttonTargetToggleName}`)) {
+        root.classList.remove(`${buttonTargetToggleName}`);
+      }
+    }
+  },
+
+  checkButtonToggle(rootSelector, targetSelector, buttonSelector, additionName) {
+    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
+      if (target) {
+        if (target.classList.contains(additionName)) {
+          const button = target.querySelector(buttonSelector);
+          if (button) {
+            if (!button.classList.contains('zehnToggled')) {
+              button.classList.add('zehnToggled');
+            }
+          }
         }
       }
     });
   },
 
-  addButton(target, button, buttonIcon, position, callback) {
-    var btn = document.createElement('button');
-    btn.classList.add('ZehnButton');
-    btn.id = `${button}`;
-    btn.name = 'button';
-    btn.onclick = callback;
-    if (position) {
-      document.querySelector(`${target}`).append(btn);
-    } else {
-      document.querySelector(`${target}`).prepend(btn);
-    }
-    var icon = document.createElement('div');
-    icon.id = `${buttonIcon}`;
-    document.querySelector(`${target}`).querySelector(`#${button}`).append(icon);
+  moveAppend(rootSelector, targetSelector, movingSelectors) {
+    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
+      movingSelectors.forEach((selector) => {
+        root.querySelectorAll(selector).forEach((element) => {
+          target.appendChild(element || '');
+        })
+      });
+    });
+  },
+
+  movePrepend(rootSelector, targetSelector, movingSelectors) {
+    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
+      movingSelectors.forEach((selector) => {
+        root.querySelectorAll(selector).forEach((element) => {
+          target.prepend(element || '');
+        })
+      });
+    });
+  },
+
+  moveBefore(rootSelector, targetSelector, movingSelectors) {
+    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
+      movingSelectors.forEach((selector) => {
+        root.querySelectorAll(selector).forEach((element) => {
+          target.before(element || '');
+        })
+      });
+    });
+  },
+
+  removeTarget(rootSelector, targetSelector, count, last) {
+    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
+      if (target && target.hasChildNodes && target.childElementCount > count) {
+        target[count - last].remove();
+      }
+    });
   }
 };
 

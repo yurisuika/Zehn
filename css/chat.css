@@ -2047,7 +2047,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   font-size: var(--zehn-size-14) !important;
   height: auto !important;
   min-height: 48px !important;
-  max-height: 144px !important;
+  max-height: 48px !important;
   min-height: 48px !important;
   color: var(--zehn-color-text-primary) !important;
   margin: 0 16px !important;
@@ -2351,6 +2351,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px !important;
+  display: none !important;
 }
 
 .chatRoomButton:hover {
@@ -2359,6 +2360,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatRoomButton:active {
   background-color: var(--zehn-color-button-fancy-background-active) !important;
+}
+
+.MultiUserChat.zehnSettingsButtonsOpened .chatRoomButton {
+  display: flex !important;
 }
 
 .chatRoomButton .SVGIcon_Button {
@@ -2436,6 +2441,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 100% !important;
   transition: none !important;
   background: var(--zehn-color-window-panel) !important;
+  display: none !important;
+}
+
+.MultiUserChat.zehnChannelListOpened .chatRoomGroupNavColumn {
+  display: flex !important;
 }
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
@@ -2459,18 +2469,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   top: unset !important;
 }
 
-.chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .ChatRoomGroup_MainAndChatEntry, .chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .chatRoomHeader {
-  margin-left: 200px !important;
-  transition: margin 0.2s ease-in-out, width 0.2s ease-in-out !important;
+.MultiUserChat .ChatRoomGroup_MainAndChatEntry, .MultiUserChat .chatHeader {
+  transition: none !important;
   z-index: 99 !important;
-}
-
-.chatWindow:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry, .chatWindow:has(.chatRoomGroupNavCollapsed) .chatHeader {
-  margin-left: var(--zehn-size-bar-large) !important;
-}
-
-.chatWindow:has(.chatRoomGroupNavColumn:not(.defaultChatOnly):not(.chatRoomGroupNavCollapsed)) .ChatRoomGroup_MainAndChatEntry .chatRoomHeader, .chatWindow:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry .chatRoomHeader {
   margin-left: 0 !important;
+}
+
+.MultiUserChat.zehnChannelListOpened .ChatRoomGroup_MainAndChatEntry, .MultiUserChat.zehnChannelListOpened .chatHeader {
+  margin-left: var(--zehn-size-pagelist-width) !important;
+}
+
+.MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry, .MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .chatHeader {
+  margin-left: var(--zehn-size-bar-large) !important;
 }
 
 .ChatHistoryContainer {
@@ -2907,6 +2917,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: 0 !important;
   margin: 0 !important;
   position: relative !important;
+  order: 80 !important;
 }
 
 .MemberListColumn.MemberListViewCompact .MemberListOption.ToggleMemberListView {

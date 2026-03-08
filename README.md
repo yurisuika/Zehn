@@ -24,6 +24,8 @@ For Millennium, use the respective tabs under the theme's settings.
 
 For SFP, you may edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do. The skin folder must be named `Zehn` for this to work at the present time!
 
+Please note that if you are not using Millennium, you must now set the "enable" option to `true` in `options.json`. This is to prevent the JSON config from being loaded in Millennium.
+
 #### Colorization
 You can colorize both the foreground and background colors of Zehn!
 
@@ -50,6 +52,8 @@ Zehn features several added buttons for an improved experience:
   * Three buttons to select between displaying the Activity feed, the Community feed, and the Details panels for a game entry are found added to the playbar.
 * On the friends list window...
   * The current user container is toggled via the menu button in the upper-left corner. It is hidden by default.
+* On the chat window...
+  * The channel list, member list, and settings buttons are toggled via three buttons added in the group chat header bar.
 
 #### Versions
 Zehn features both a static and a live version!
