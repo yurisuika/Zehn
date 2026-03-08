@@ -129,123 +129,64 @@ Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, 
   if (details) {
     if (details.id != 'zehnGameDetails') {
       details.id = 'zehnGameDetails';
+      details.classList.add('zehnDisplayed');
     }
   }
 });
 
-/* TOGGLE GAME PAGE DETAILS PANEL ----------------------------------------------------------------------------------- */
+/* TOGGLE GAME PAGE CONTENT ----------------------------------------------------------------------------------------- */
 
-function toggleDetails(root, target, button) {
+function togglePage(root, target, button) {
   const btnActivity = target.querySelector('.zehnToggleActivity');
   const btnCommunity = target.querySelector('.zehnToggleCommunity');
   const btnDetails = target.querySelector('.zehnToggleDetails');
+  const buttons = [btnActivity, btnCommunity, btnDetails];
+
   if (btnActivity && btnCommunity && btnDetails) {
     const featured = document.getElementById('zehnGameFeaturedEvent');
     const event = document.getElementById('zehnGameEvent');
     const community = document.getElementById('zehnGameCommunity');
     const details = document.getElementById('zehnGameDetails');
+    const pages = [featured, event, community, details];
 
-    if (featured) {
-      featured.style.setProperty('display', 'none', 'important');
-    }
-
-    if (event) {
-      event.style.setProperty('display', 'none', 'important');
-    }
-
-    if (community) {
-      community.style.setProperty('display', 'none', 'important');
-    }
-
-    if (details) {
-      details.style.setProperty('display', 'flex', 'important');
-    }
-
-    btnActivity.classList.remove('zehnToggled');
-    btnCommunity.classList.remove('zehnToggled');
-    btnDetails.classList.add('zehnToggled');
-  }
-};
-
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleDetails', false, true, toggleDetails);
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleDetails', false, true, toggleDetails);
-
-/* TOGGLE GAME PAGE COMMUNITY FEED ---------------------------------------------------------------------------------- */
-
-function toggleCommunity(root, target, button) {
-  const btnActivity = target.querySelector('.zehnToggleActivity');
-  const btnCommunity = target.querySelector('.zehnToggleCommunity');
-  const btnDetails = target.querySelector('.zehnToggleDetails');
-  if (btnActivity && btnCommunity && btnDetails) {
-    const featured = document.getElementById('zehnGameFeaturedEvent');
-    const event = document.getElementById('zehnGameEvent');
-    const community = document.getElementById('zehnGameCommunity');
-    const details = document.getElementById('zehnGameDetails');
-
-    if (featured) {
-      featured.style.setProperty('display', 'none', 'important');
-    }
-
-    if (event) {
-      event.style.setProperty('display', 'none', 'important');
-    }
-
-    if (community) {
-      community.style.setProperty('display', 'block', 'important');
-    }
-
-    if (details) {
-      details.style.setProperty('display', 'none', 'important');
-    }
-
-    btnActivity.classList.remove('zehnToggled');
-    btnCommunity.classList.add('zehnToggled');
-    btnDetails.classList.remove('zehnToggled');
-  }
-};
-
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleCommunity', false, false, toggleCommunity);
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleCommunity', false, false, toggleCommunity);
-
-/* TOGGLE GAME PAGE ACTIVITY FEED ----------------------------------------------------------------------------------- */
-
-function toggleActivity(root, target, button) {
-  const btnActivity = target.querySelector('.zehnToggleActivity');
-  const btnCommunity = target.querySelector('.zehnToggleCommunity');
-  const btnDetails = target.querySelector('.zehnToggleDetails');
-  if (btnActivity && btnCommunity && btnDetails) {
-
-    const featured = document.getElementById('zehnGameFeaturedEvent');
-    const event = document.getElementById('zehnGameEvent');
-    const community = document.getElementById('zehnGameCommunity');
-    const details = document.getElementById('zehnGameDetails');
-
-    if (featured) {
-      if (featured.hasChildNodes()) {
-        featured.style.setProperty('display', 'block', 'important');
+    pages.forEach(page => {
+      if (button == btnActivity) {
+        if (page == featured || page == event) {
+          page.classList.add('zehnDisplayed');
+        } else if (page) {
+          page.classList.remove('zehnDisplayed');
+        }
+      } else if (button == btnCommunity) {
+        if (page == community) {
+          page.classList.add('zehnDisplayed');
+        } else if (page) {
+          page.classList.remove('zehnDisplayed');
+        }
+      } else if (button == btnDetails) {
+        if (page == details) {
+          page.classList.add('zehnDisplayed');
+        } else if (page) {
+          page.classList.remove('zehnDisplayed');
+        }
       }
-    }
+    });
 
-    if (event) {
-      event.style.setProperty('display', 'block', 'important');
-    }
-
-    if (community) {
-      community.style.setProperty('display', 'none', 'important');
-    }
-
-    if (details) {
-      details.style.setProperty('display', 'none', 'important');
-    }
-
-    btnActivity.classList.add('zehnToggled');
-    btnCommunity.classList.remove('zehnToggled');
-    btnDetails.classList.remove('zehnToggled');
+    buttons.forEach(element => {
+      if (element == button) {
+        element.classList.add('zehnToggled');
+      } else {
+        element.classList.remove('zehnToggled');
+      }
+    });
   }
 };
 
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleActivity', false, false, toggleActivity);
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleActivity', false, false, toggleActivity);
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleDetails', false, true, togglePage); // STICKY DETAILS
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleDetails', false, true, togglePage); // DETAILS
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleCommunity', false, false, togglePage); // STICKY COMMUNITY
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleCommunity', false, false, togglePage); // COMMUNITY
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleActivity', false, false, togglePage); // STICKY ACTIVITY
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleActivity', false, false, togglePage); // ACTIVITY
 
 /* MOVE SUPERNAV INTO MAIN NAVBAR ----------------------------------------------------------------------------------- */
 
