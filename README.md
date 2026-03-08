@@ -20,14 +20,16 @@ Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a s
 </details>
 
 ### Customization
+Zehn features various options to change the look and layout of the skin, including hiding and showing content, changing avatar style, and more.
+
 For Millennium, use the respective tabs under the theme's settings.
 
 For SFP, you may edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do. The skin folder must be named `Zehn` for this to work at the present time!
 
-Please note that if you are not using Millennium, you must now set the "enable" option to `true` in `options.json`. This is to prevent the JSON config from being loaded in Millennium.
+> Please note that if you are not using Millennium, you must now set the `enable` option to `true` in `options.json`. This is to prevent the JSON config patches from being injected in addition to the patches already selected through Millennium's own settings system.
 
 #### Colorization
-You can colorize both the foreground and background colors of Zehn!
+You can colorize both the foreground and background of Zehn!
 
 For Millennium, configure color blending under the `Theme` tab. Set the blending amount, choose either the colors (under the `Colors` tab) or just use your accent color, and you've got a whole new look!
 
