@@ -134,6 +134,29 @@ Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, 
   }
 });
 
+
+/* CHECK GAME DETAILS PANELS FOR WRAPPER ---------------------------------------------------------------------------- */
+
+Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '#zehnGameDetails', (root, target) => {
+  const width = target.clientWidth;
+  if (target.dataset.width != width) {
+    target.dataset.width = width;
+
+    Array.from(target.children).forEach((panel) => {
+      if (!panel.classList.contains('vzLedtsu3TtTlKLEKzIhH')) {
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('vzLedtsu3TtTlKLEKzIhH');
+        target.prepend(wrapper);
+        wrapper.append(panel);
+      }
+
+      if (panel.children.length == 0) {
+        target.append(panel);
+      }
+    });
+  }
+});
+
 /* TOGGLE GAME PAGE CONTENT ----------------------------------------------------------------------------------------- */
 
 function togglePage(root, target, button) {
