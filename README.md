@@ -22,22 +22,27 @@ Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a s
 ### Customization
 Zehn features various options to change the look and layout of the skin, including hiding and showing content, changing avatar style, and more.
 
-For Millennium, use the respective tabs under the theme's settings.
+#### Millennium
+Use the respective tabs under the theme's settings.
 
-For SFP, you may edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do. The skin folder must be named `Zehn` for this to work at the present time!
+#### SFP
+You may edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do. The skin folder must be named `Zehn` for this to work at the present time!
 
-> Please note that if you are not using Millennium, you must now set the `enable` option to `true` in `options.json`. This is to prevent the JSON config patches from being injected in addition to the patches already selected through Millennium's own settings system.
+> [!IMPORTANT]
+> Please note that if you are not using Millennium, you must now set the `enable` option to `true` in `options.json`, and vice versa. This is to prevent the JSON config patches from being injected in addition to the patches already selected through Millennium's own settings system.
 
-#### Colorization
+### Colorization
 You can colorize both the foreground and background of Zehn!
 
-For Millennium, configure color blending under the `Theme` tab. Set the blending amount, choose either the colors (under the `Colors` tab) or just use your accent color, and you've got a whole new look!
+#### Millennium
+Configure color blending under the `Theme` tab. Set the blending amount, choose either the colors (under the `Colors` tab) or just use your accent color, and you've got a whole new look!
 
-For SFP, edit the config in `~/config/options.json` as usual.
+#### SFP
+Edit the config in `~/config/options.json` as usual.
 
 ![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.png)
 
-#### Mascots
+### Mascots
 You can give your waifu a home in your library by adding a mascot in Steam's UI folder. From the Steam directory, place your `waifu` image in `~/steamui/mascots/` and enjoy. Supports JPG, GIF, and PNG file types.
 
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
