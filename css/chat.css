@@ -435,7 +435,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 .chatHistoryScroll {
   padding: 0 !important;
   overflow-x: hidden !important;
-  display: flex !important;
+  display: block !important;
 }
 
 .ChatMessageBlock {
@@ -1025,7 +1025,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 .ChatMessageInvite.Inviter .groupName, .ChatMessageInvite.GroupAlreadyJoined .groupName {
   color: var(--zehn-color-text-primary) !important;
-  font-size: var(--zehn-size-16) !important;
+  font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   line-height: 16px !important;
   height: 16px !important;
@@ -1474,12 +1474,19 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .msg .chatVideoContainer a.chatImageURL, .msg .chatImageContainer a.chatImageURL {
-  bottom: 0 !important;
-  left: 0 !important;
+  inset: 0 !important;
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
+  position: relative !important;
+  display: block !important;
 }
 
 .chatImageContainer .chatImageURL {
   order: 70 !important;
+}
+
+.msg .Panel > a.chatImageURL {
+  display: none !important; /* Remove if failed to move in JS */
 }
 
 .chatImageURL {
@@ -1610,7 +1617,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .BBCodeResizableComponent.Minimized .BBCodeCollapsed_Friend {
   transition: none !important;
   order: 100 !important;
-  margin-left: var(--zehn-size-gap-medium) !important;
+  margin: 0 0 0 var(--zehn-size-gap-medium) !important;
   padding: 0 !important;
   display: block !important;
 }
@@ -1687,11 +1694,24 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   transition: opacity 0.2s ease-in-out !important;
 }
 
+.BBCodeAlreadyCollapsed .BBCodeCollapseControl {
+  position: relative !important;
+  inset: 0 !important;
+}
+
 .BBCodeImageWrapper:hover .BBCodeCollapseControl {
   opacity: 1 !important; 
 }
 
 .BBCodeAlreadyCollapsed {
+  padding: var(--zehn-size-padding-medium) !important;
+  background: var(--zehn-color-window-section) !important;
+  display: flex !important;
+  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  width: fit-content !important;
+}
+
+.BBCodeAlreadyCollapsed:hover {
   background: var(--zehn-color-window-panel) !important;
 }
 
@@ -1700,26 +1720,27 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeAlreadyCollapsedText {
-  height: 32px !important;
-  padding: 0 16px !important;
-  margin-left: 32px !important;
-  line-height: 32px !important;
+  height: var(--zehn-size-bar-medium) !important;
+  padding: 0 !important;
+  margin: 0 0 0 var(--zehn-size-gap-medium) !important;
+  line-height: var(--zehn-size-button-medium) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background: transparent !important;
   display: block !important;
+  order: 109 !important;
 }
 
 .BBCodeAlreadyCollapsedText:hover {
   background: transparent !important;
 }
 
-.BBCodeAlreadyCollapsed .BBCodeCollapseControl {
-  left: 0 !important;
+.BBCodeYouTubeComponent_Sizer {
+  margin: 0 !important;
+  width: 100% !important;
 }
 
-.BBCodeYouTubeComponent_Sizer {
-  margin: 0 0 var(--zehn-size-gap-medium) 0 !important;
-  width: 100% !important;
+.BBCodeResizableComponent * {
+  transition: none !important;
 }
 
 .BBCodeResizableComponent, .BBCodeResizableComponent.BBCodeYouTubeComponent {

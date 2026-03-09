@@ -103,5 +103,5 @@ Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogCo
 /* MOVE CHAT EMBED BUTTONS ------------------------------------------------------------------------------------------ */
 
 Zehn.moveAppend('.msg', '.BBCodeResizableComponent', [
-  '.Panel .chatImageURL' // POP OUT VIDEO
+  '.Panel > .chatImageURL' // POP OUT VIDEO
 ]);
