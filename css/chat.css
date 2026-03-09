@@ -642,9 +642,9 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   font-size: var(--zehn-size-10) !important;
   width: 100% !important;
   display: flex !important;
-  margin: 0 !important;
-  height: 32px !important;
-  line-height: 32px !important;
+  height: var(--zehn-size-bar-medium) !important;
+  line-height: var(--zehn-size-bar-medium) !important;
+  margin: 0 0 24px 0 !important;
 }
 
 .timeDivision.time_passes .preHorizDivider {
@@ -983,14 +983,14 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 /* GROUP CHAT INVITE */
 .ChatMessageInvite, .ChatMessageInvite.GroupAlreadyJoined, .ChatMessageInvite.Inviter {
-  background: var(--zehn-color-window-section) !important;
+  background: var(--zehn-color-panel) !important;
   gap: var(--zehn-size-gap-medium) !important;
   padding: var(--zehn-size-padding-medium) !important;
   border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
 }
 
 .ChatMessageInvite:hover {
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-panel-hover) !important;
 }
 
 .ChatMessageInvite .leftInviteContainer {
@@ -1076,6 +1076,17 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   font-weight: var(--zehn-size-weight-normal) !important;
   bottom: var(--zehn-size-padding-medium) !important;
   right: var(--zehn-size-padding-medium) !important;
+}
+
+/* EXPIRED */
+.ChatMessageInvite.RequestingInfo.displayRow, .ChatMessageInvite.InviteExpired {
+  max-width: fit-content !important;
+}
+
+.ChatMessageInvite.RequestingInfo .postedExpiredInvite, .ChatMessageInvite.InviteExpired .postedExpiredInvite {
+  color: var(--zehn-color-text-secondary) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
 }
 
 /* MESSAGE REACTIONS */
@@ -1355,7 +1366,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* VIDEO UPLOAD */
 .chatFileUploadPreviewContainer .SVGIcon_Video {
   fill: transparent !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-window-section) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
@@ -1444,7 +1455,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding-bottom: 32px !important;
   max-width: 100% !important;
   width: 700px;
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-window-section) !important;
 }
 
 .chatVideoContainer video {
@@ -1705,14 +1716,14 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeAlreadyCollapsed {
   padding: var(--zehn-size-padding-medium) !important;
-  background: var(--zehn-color-window-section) !important;
+  background: var(--zehn-color-panel) !important;
   display: flex !important;
   border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
   width: fit-content !important;
 }
 
 .BBCodeAlreadyCollapsed:hover {
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-panel-hover) !important;
 }
 
 .BBCodeAlreadyCollapsed.Minimized:hover .BBCodeAlreadyCollapsedText, .BBCodeResizableComponent.Minimized:hover .BBCodeCollapsed {
@@ -1746,7 +1757,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .BBCodeResizableComponent, .BBCodeResizableComponent.BBCodeYouTubeComponent {
   max-width: 100% !important;
   width: 512px;
-  background: var(--zehn-color-window-section) !important;
+  background: var(--zehn-color-panel) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
   padding: var(--zehn-size-padding-medium) !important;
@@ -1757,7 +1768,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeResizableComponent:hover, .BBCodeResizableComponent.BBCodeYouTubeComponent:hover {
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-panel-hover) !important;
 }
 
 .YoutubePlayer {
@@ -2094,7 +2105,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 ._1JZstfJ6jCBChXx0ZDwfpR, ._2_QSE1Nit6wrabY5ZgDZOz {
   margin: 0 !important;
   padding: 0 !important;
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-window-section) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -2215,12 +2226,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* CHAT ENTRY */
 .chatWindow .chatEntry {
   padding: 0 !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-input-fancy-background) !important;
   transition: background 0.2s ease-in-out !important;
 }
 
 .chatWindow .chatEntry:has(textarea:focus) {
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-input-fancy-background-focus) !important;
 }
 
 .chatWindow .chatEntry > * {
@@ -2475,7 +2486,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatRoomHeader {
   height: var(--zehn-size-bar-large) !important;
   padding: 0 !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-window-section) !important;
 }
 
 .chatRoomGroupHeaderName {
@@ -2630,7 +2641,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   position: absolute !important;
   height: 100% !important;
   transition: none !important;
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-window-section) !important;
   display: none !important;
 }
 
@@ -3237,7 +3248,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: var(--zehn-size-bar-large) !important;
   margin: 0 !important;
   min-height: var(--zehn-size-bar-large) !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-input-fancy-background) !important;
 }
 
 .MemberListOptionsContainer .socialInputContainer .friendSearchInput[type="text"] {
@@ -3253,7 +3264,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOptionsContainer .socialInputContainer .inputContainer .friendSearchInput:focus {
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-input-fancy-background-focus) !important;
 }
 
 .MemberListColumn.MemberListViewCompact .MemberListOptionsContainer .socialInputContainer .inputContainer.no-drag {
@@ -3624,11 +3635,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .ChatRoomGroup_Main_Content > div:has(.BroadcastSection) {
   min-width: 180px !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-window-section) !important;
 }
 
 .BroadcastSection, .BroadcastContainerSection {
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-window-section) !important;
 }
 
 .videoContainer {}
@@ -3638,7 +3649,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .videoSrc {
   transition: filter 0.2s ease-in-out !important;
   border: none !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-window-section) !important;
 }
 
 .videoContainer:hover.HidePlayerControls .videoControls, .videoContainer:hover.HidePlayerControls .STV_BroadcastClose {
@@ -3852,7 +3863,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* CHANNELS */
 .chatBody .ChatBodyControls {
   border: none !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-window-section) !important;
 }
 
 .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab.Active {
@@ -3935,7 +3946,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 ._3soy-wJhd4RZ8SNtC31AOz {
   padding: 0 !important;
-  background-color: var(--zehn-color-window-panel) !important;
+  background-color: var(--zehn-color-window-section) !important;
   transition: none !important;
 }
 
