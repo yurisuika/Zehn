@@ -739,11 +739,6 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 /* TRADE OFFER */
-.msg.isCurrentUser .TradeOfferInvite, .TradeOfferInvite {
-  background: transparent !important;
-  display: flex !important;
-}
-
 .ChatMessageInvite .inviteURLContainer {
   margin-bottom: 0 !important;
 }
@@ -752,11 +747,14 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   color: var(--zehn-color-text-secondary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  margin: 0 4px 0 0 !important;
+  margin: 0 !important;
+  line-height: 16px !important;
+  display: none !important;
 }
 
 .ChatMessageInvite .inviteURLContainer .inviteURLAndCopy {
   margin: 0 !important;
+  gap: 8px !important;
 }
 
 .ChatMessageInvite .inviteURLLink {
@@ -767,9 +765,12 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   border: unset !important;
-  margin-right: 4px !important;
+  margin: 0 !important;
   text-overflow: ellipsis !important;
   min-width: 0 !important;
+  order: 2 !important;
+  flex-grow: 1 !important;
+  line-height: 16px !important;
 }
 
 .ChatMessageInvite .inviteURLLink:hover {
@@ -784,6 +785,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   width: 16px !important;
   height: 16px !important;
   margin: 0 !important;
+  order: 1 !important;
 }
 
 .friendsui-container .SVGIcon_Button.SVGIcon_CopyToClipboard {
@@ -794,13 +796,64 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
-  mask-size: var(--zehn-size-icon-medium) !important;
+  mask-size: var(--zehn-size-icon-small) !important;
   -webkit-mask-image: var(--zehn-icon-clipboard) !important;
   transition: all 0.2s ease-in-out !important;
 }
 
-.OpenGraphFooter .OpenGraphURLButton:active .SVGIcon_CopyToClipboard polygon, .copyInviteLink:active .SVGIcon_CopyToClipboard polygon, .OpenGraphFooter .OpenGraphURLButton:active .SVGIcon_CopyToClipboard polyline, .copyInviteLink:active .SVGIcon_CopyToClipboard polyline {
-  fill: transparent !important;
+.OpenGraphFooter .SVGIcon_CopyToClipboard *, .copyInviteLink .SVGIcon_CopyToClipboard *, .OpenGraphFooter .SVGIcon_CopyToClipboard *, .copyInviteLink .SVGIcon_CopyToClipboard * {
+  display: none !important;
+}
+
+/* TRADE OFFER STATUS */
+.TradeOfferInvite .leftInviteContainer .SVGIcon_Trade {
+  inset: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0 !important;
+}
+
+.TradeOfferInvite .leftInviteContainer .SVGIcon_Trade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(var(--zehn-color-accent));
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 50%;
+}
+
+.TradeOfferInvite .leftInviteContainer .SVGIcon_Trade:hover::before {
+  opacity: 1;
+}
+
+.SVGIcon_Trade {
+-webkit-mask-image: var(--zehn-icon-surprise) !important;
+}
+
+/* TRADE OFFER NOTE */
+.TradeOffer_NoteFromFriendCtn {
+  margin: 0 !important;
+}
+
+.TradeOffer_NoteFromFriend_QuoteArrow {
+  display: none !important;
+}
+
+.ChatMessageInvite .inviteLabel {
+  margin: 0 !important;
+}
+
+.TradeOffer_NoteFromFriend {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--zehn-color-text-secondary) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  border: none !important;
+  background: transparent; !important;
+  line-height: 16px !important;
 }
 
 /* INVITE */
@@ -929,8 +982,15 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 /* GROUP CHAT INVITE */
-.ChatMessageInvite.GroupAlreadyJoined, .ChatMessageInvite.Inviter {
-  background: transparent !important;
+.ChatMessageInvite, .ChatMessageInvite.GroupAlreadyJoined, .ChatMessageInvite.Inviter {
+  background: var(--zehn-color-window-section) !important;
+  gap: var(--zehn-size-gap-medium) !important;
+  padding: var(--zehn-size-padding-medium) !important;
+  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+}
+
+.ChatMessageInvite:hover {
+  background: var(--zehn-color-window-panel) !important;
 }
 
 .ChatMessageInvite .leftInviteContainer {
@@ -939,19 +999,23 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 .ChatMessageInvite.Inviter .ChatRoomGroupAvatar.Small {
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
+  width: var(--zehn-size-avatar-medium) !important;
+  height: var(--zehn-size-avatar-medium) !important;
+  line-height: var(--zehn-size-avatar-medium) !important;
   font-size: var(--zehn-size-16) !important;
 }
 
 .ChatMessageInvite .rightInviteContainer, .ChatMessageInvite.NoBGSplitInvite .rightInviteContainer {
-  padding: 16px !important;
+  padding: 0 !important;
   box-sizing: border-box !important;
+  width: 100% !important;
 }
 
 .ChatMessageInvite .rightInviteContainer .rightInviteContainerContent {
-  margin-right: 16px !important;
+  margin-right: var(--zehn-size-padding-medium) !important;
+  gap: var(--zehn-size-gap-small) !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .ChatMessageInvite.Inviter .inviteLabel, .ChatMessageInvite.GroupAlreadyJoined .inviteLabel {
@@ -963,7 +1027,8 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-16) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  line-height: 24px !important;
+  line-height: 16px !important;
+  height: 16px !important;
 }
 
 .ChatMessageInvite .DialogButton, .inviteButtonJoinChat {
@@ -995,6 +1060,78 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   outline: 2px solid var(--zehn-color-button-dialog-border-active) !important;
 }
 
+.ChatMessageInvite .inviteButton.inviteButtonJoinChat {
+  padding: 0 16px !important;
+}
+
+/* EMPTY DIV */
+.ChatMessageInvite > div:not(.Invite_ExpireTime):empty {
+  display: none !important;
+}
+
+/* INVITE EXPIRE TIME */
+.msg.ChatMessageInvite .invitedTimeLabel, .Invite_ExpireTime {
+  color: var(--zehn-color-text-tertiary) !important;
+  font-size: var(--zehn-size-10) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  bottom: var(--zehn-size-padding-medium) !important;
+  right: var(--zehn-size-padding-medium) !important;
+}
+
+/* MESSAGE REACTIONS */
+._1Ab0f8lGXvkC0tPjkFoYj8 {
+  margin-top: var(--zehn-size-gap-medium) !important;
+  padding: 0 32px 0 64px !important;
+  gap: var(--zehn-size-gap-small) !important;
+}
+
+._2FJUPOjT7afeB0125mqdQt, .UA15KlVbtDSJkqSpIAMIN {
+  margin: 0 !important;
+}
+
+.UA15KlVbtDSJkqSpIAMIN {
+  margin: 0 !important;
+  padding: var(--zehn-size-padding-small) !important;
+  border-radius: var(--zehn-size-border-radius-none) !important;
+  background: var(--zehn-color-tag) !important;
+}
+
+.UA15KlVbtDSJkqSpIAMIN:hover {
+  background: var(--zehn-color-tag-hover) !important;
+}
+
+.UA15KlVbtDSJkqSpIAMIN:active {
+  background: var(--zehn-color-tag-active) !important;
+}
+
+.m89hcklEIZomEEXW7E4Ky {
+  width: var(--zehn-size-icon-medium) !important;
+  height: var(--zehn-size-icon-medium) !important;
+  padding: 0 !important;
+}
+
+.a2_2ffGgB_f8RBwW8D8Rj {
+  line-height: 16px !important;
+  color: var(--zehn-color-text-secondary) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  margin: 0 0 0 var(--zehn-size-gap-small) !important;
+}
+
+/* ADD REACTION BUTTON */
+._2FJUPOjT7afeB0125mqdQt {
+  display: none !important;
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-medium) !important;
+  -webkit-mask-image: var(--zehn-icon-emoticon) !important;
+}
+
 /* FRIEND TYPING */
 .FriendChatTypingNotification {
   background: transparent !important;
@@ -1005,6 +1142,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   line-height: 24px !important;
   box-sizing: border-box !important;
   text-align: right !important;
+  transition: opacity 0.2s ease-in-out !important;
 }
 
 /* SCROLL TO BOTTOM */
@@ -1015,8 +1153,8 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   font-size: var(--zehn-size-14) !important;
   padding-top: 0 !important;
   height: 24px !important;
-  opacity: 0 !important;
-  transition: opacity 0.5s ease !important;
+  transition: opacity 0.2s ease !important;
+  display: none !important;
 }
 
 .ScrollToBottomButton:hover, .ScrollToBottomButton:active {
@@ -1302,10 +1440,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   opacity: 1 !important;
 }
 
-.BBCodeResizableComponent.Minimized.chatVideoContainer {
-  padding-bottom: 0 !important;
-}
-
 .chatVideoContainer {
   padding-bottom: 32px !important;
   max-width: 100% !important;
@@ -1339,15 +1473,13 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   display: none !important;
 }
 
-.BBCodeResizableComponent.Minimized .chatImageURL, .BBCodeResizableComponent.Minimized .BBCodeRestoreControl, .BBCodeResizableComponent.Minimized .BBCodeResizeControl, .BBCodeResizableComponent.ActivelyResizing .BBCodeCollapseControl, .chatVideoContainer.ActivelyResizing .chatImageURL, .chatImageContainer.ActivelyResizing .chatImageURL {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  display: none !important;
-}
-
 .msg .chatVideoContainer a.chatImageURL, .msg .chatImageContainer a.chatImageURL {
   bottom: 0 !important;
   left: 0 !important;
+}
+
+.chatImageContainer .chatImageURL {
+  order: 70 !important;
 }
 
 .chatImageURL {
@@ -1409,14 +1541,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatVideoContainer .chatImageURL .SVGIcon_Button {
-  bottom: 0 !important;
-  left: 0 !important;
+  inset: 0 !important;
+  position: relative !important;
 }
 
 .BBCodeResizeControl {
   padding: 0 !important;
   opacity: 1 !important;
   stroke: transparent !important;
+  order: 100 !important;
 }
 
 .BBCodeYouTubeComponent .BBCodeResizeControl {
@@ -1424,11 +1557,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: 32px !important;
 }
 
-.BBCodeResizableComponent.BBCodeYouTubeComponent.Resized.Minimized {
+.BBCodeResizableComponentResized.Minimized, .BBCodeResizableComponent.BBCodeYouTubeComponent.Resized.Minimized {
   width: inherit !important;
 }
 
+.BBCodeResizableComponent .BBCodeRestoreControl, .BBCodeResizableComponent .BBCodeResizeControl, .BBCodeResizableComponent .BBCodeCollapseControl, .BBCodeResizableComponent .chatImageURL {
+  position: relative !important;
+}
+
 .BBCodeRestoreControl {
+  order: 80 !important;
   left: 0 !important;
   top: 0 !important;
   width: 32px !important;
@@ -1471,15 +1609,21 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeResizableComponent.Minimized .BBCodeCollapsed_Friend {
   transition: none !important;
+  order: 100 !important;
+  margin-left: var(--zehn-size-gap-medium) !important;
+  padding: 0 !important;
+  display: block !important;
 }
 
 .BBCodeCollapsed_Friend {
-  margin: 0 0 0 32px !important;
-  padding: 0 16px !important;
+  margin: 0 !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
   line-height: 32px !important;
   border-radius: var(--zehn-size-radius-none) !important;
   transition: none !important;
   background-color: transparent !important;
+  position: relative !important;
+  display: none !important;
 }
 
 /* VIDEO PLAY CONTROL */
@@ -1574,16 +1718,25 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeYouTubeComponent_Sizer {
-  margin-top: 32px !important;
+  margin: 0 0 var(--zehn-size-gap-medium) 0 !important;
+  width: 100% !important;
 }
 
-.BBCodeResizableComponent.BBCodeYouTubeComponent {
+.BBCodeResizableComponent, .BBCodeResizableComponent.BBCodeYouTubeComponent {
   max-width: 100% !important;
   width: 512px;
-  background: var(--zehn-color-window-panel) !important;
+  background: var(--zehn-color-window-section) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: var(--zehn-size-padding-medium) !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  place-content: flex-end !important;
+}
+
+.BBCodeResizableComponent:hover, .BBCodeResizableComponent.BBCodeYouTubeComponent:hover {
+  background: var(--zehn-color-window-panel) !important;
 }
 
 .YoutubePlayer {
@@ -1594,21 +1747,27 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  padding: 0 16px !important;
+  padding: 0 !important;
   margin: 0 !important;
-  width: calc(100% - 32px) !important;
-  line-height: 32px !important;
+  width: auto !important;
+  line-height: var(--zehn-size-bar-medium) !important;
   box-sizing: border-box !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
+.test.HideWhenMinimized {
+  margin-right: auto !important;
+  max-width: calc(100% - (3 * var(--zehn-size-button-medium))) !important;
+  padding-right: var(--zehn-size-padding-medium) !important;
+}
 
 .BBCodeResizableComponent.Minimized {
   min-height: 32px !important;
   min-width: 0 !important;
-  width: 100% !important;
-  /* background-color: transparent !important; */
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: fit-content !important;
 }
 
 .BBCodeResizableComponent.Minimized .BBCodeCollapseControl {
@@ -1616,11 +1775,25 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   right: unset !important;
 }
 
-.msg:not(:hover) .BBCodeCollapseControl {
+/*.msg:not(:hover) .BBCodeCollapseControl {
   opacity: 0 !important;
+}*/
+
+.BBCodeResizableComponent.ActivelyResizing .BBCodeRestoreControl, .BBCodeResizableComponent:not(.Resized) .BBCodeRestoreControl, .BBCodeResizableComponent.Restoring .BBCodeRestoreControl {
+  display: block !important;
+}
+
+.BBCodeResizableComponent.Minimized .chatImageURL, .BBCodeResizableComponent.Minimized .BBCodeRestoreControl, .BBCodeResizableComponent.Minimized .BBCodeResizeControl {
+  display: none !important;
+  opacity: 1 !important;
+}
+
+.BBCodeResizableComponent.ActivelyResizing .BBCodeCollapseControl, .chatVideoContainer.ActivelyResizing .chatImageURL, .chatImageContainer.ActivelyResizing .chatImageURL {
+  opacity: 1 !important;
 }
 
 .BBCodeCollapseControl {
+  order: 90 !important;
   right: 0 !important;
   top: 0 !important;
   width: 32px !important;
@@ -1921,7 +2094,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 ._2FYTu5WGjICrU8ipb6eKUQ {
-  margin-left: var(--zehn-size-gap-small) !important;
+  margin-left: var(--zehn-size-padding-small) !important;
 }
 
 ._3k_UWqsMxpeVIcUnYUFMKB {
@@ -1953,7 +2126,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 ._1pRBji9mcVrh7DrVjinASc {
-  padding: var(--zehn-size-gap-medium) !important;
+  padding: var(--zehn-size-padding-medium) !important;
 }
 
 ._2CzF2_EbHOrtoS7zAOj_Md {
@@ -2022,10 +2195,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatWindow .chatEntry {
   padding: 0 !important;
   background-color: var(--zehn-color-window-panel) !important;
-  /* position: absolute !important; */
-  /* bottom: 0 !important; */
-  /* right: 0 !important; */
-  /* left: 0 !important; */
   transition: background 0.2s ease-in-out !important;
 }
 
@@ -3309,12 +3478,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .LoadingOlderMessages {
-  color: var(--zehn-color-text-primary) !important;
+  color: var(--zehn-color-text-secondary) !important;
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   left: 0 !important;
   top: 0 !important;
   line-height: 32px !important;
+  width: 100% !important;
+  text-align: center;
+  transition: opacity 0.2s ease-in-out !important;
 }
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed ~ .ChatRoomGroup_MainAndChatEntry .VoiceRoomChatHistory .chatHistoryScroll {

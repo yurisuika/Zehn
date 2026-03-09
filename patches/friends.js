@@ -99,3 +99,9 @@ Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogCo
 // Zehn.movePrepend('.friendsListContainer', '.friendListFooter', [
 //   '.currentUserContainer' // CURRENT USER
 // ]);
+
+/* MOVE CHAT EMBED BUTTONS ------------------------------------------------------------------------------------------ */
+
+Zehn.moveAppend('.msg', '.BBCodeResizableComponent', [
+  '.Panel .chatImageURL' // POP OUT VIDEO
+]);
