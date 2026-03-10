@@ -1758,7 +1758,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeResizableComponent, .BBCodeResizableComponent.BBCodeYouTubeComponent {
   max-width: 100% !important;
-  width: 512px;
+  width: 640px;
   background: var(--zehn-color-panel) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
@@ -1888,10 +1888,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   float: right !important;
   width: 40px !important;
   height: 40px !important;
+  display: none !important;
 }
 
 .workshopItemControls {
-  margin-top: 16px !important;
+  margin-top: 0 !important;
   padding: 0 !important;
   line-height: 32px !important;
 }
@@ -1911,8 +1912,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .SteamPublishedFile > div:has(.workshopItemControls) {
   position: absolute !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  right: var(--zehn-size-padding-medium) !important;
+  bottom: var(--zehn-size-padding-medium) !important;
 }
 
 .workshopItemControlCtn > span {
@@ -1995,16 +1996,28 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* OPEN GRAPH */
 .msg div.ChatMessageOpenGraph, .msg div.SteamPublishedFile {
+  width: 640px !important;
   max-width: 100% !important;
   color: var(--zehn-color-text-secondary) !important;
-  padding: 0 !important;
+  padding: var(--zehn-size-padding-medium) !important;
   margin: 0 !important;
-  background: transparent !important;
+  background: var(--zehn-color-panel) !important;
   border-radius: var(--zehn-size-radius-none) !important;
+  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  transition: background 0.2s ease-in-out !important;
+}
+
+.msg div.ChatMessageOpenGraph:hover, .msg div.SteamPublishedFile:hover {
+  background: var(--zehn-color-panel-hover) !important;
 }
 
 .OpenGraphContent {
+  display: flex !important;
   gap: var(--zehn-size-gap-medium) !important;
+}
+
+.OpenGraphContent > div:empty {
+  display: none !important;
 }
 
 .OpenGraphImgBackground {
@@ -2028,13 +2041,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .OpenGraphContent .OpenGraphImgContainer {
   max-width: 100% !important;
   margin-bottom: 0 !important;
+  width: 100% !important;
 }
 
 .OpenGraphImgContainer, .ChatLargeImageContainer {
-  margin-right: 16px !important;
+  margin-right: 0 !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: transparent !important;
 }
+
+.ChatLargeImageContainer_Image {}
 
 .msg a.OpenGraphImgContainer:hover {
   filter: none !important;
@@ -2042,12 +2058,23 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .ChatMessageOpenGraph_Title {
   font-size: var(--zehn-size-14) !important;
-  color: var(--zehn-color-text-primary) !important;
+  color: var(--zehn-color-link) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
+}
+
+.ChatMessageOpenGraph_Title:hover {
+  color: var(--zehn-color-link-hover) !important;
+}
+
+.ChatMessageOpenGraph_Title:active {
+  color: var(--zehn-color-link-active) !important;
 }
 
 .ChatMessageOpenGraph_Body {
   padding: 0 !important;
+  gap: var(--zehn-size-gap-small) !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .ChatMessageOpenGraph .OpenGraphFooter {
@@ -2098,10 +2125,23 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .OpenGraphMessageURLPosition {}
 
 .OpenGraphFooter .OpenGraphURLButton {
-  width: 32px !important;
-  height: 32px !important;
-  margin-left: 0 !important;
-  margin-top: 0 !important;
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
+  margin: 0 !important;
+  background: var(--zehn-color-button-fancy-background) !important;
+}
+
+.OpenGraphFooter .OpenGraphURLButton:hover {
+  background: var(--zehn-color-button-fancy-background-hover) !important;
+}
+
+.OpenGraphFooter .OpenGraphURLButton:active {
+  background: var(--zehn-color-button-fancy-background-active) !important;
+}
+
+.OpenGraphFooter .OpenGraphURLButton .SVGIcon_Button.SVGIcon_CopyToClipboard {
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
 }
 
 /* GAME EMBED */
@@ -2112,7 +2152,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  height: 232px !important;
+  height: fit-content !important;
   border-radius: var(--zehn-size-radius-none) !important;
   border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
   transition: background 0.2s ease-in-out !important;
