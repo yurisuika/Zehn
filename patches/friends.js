@@ -75,6 +75,7 @@ Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogCo
 
 /* MOVE CHAT EMBED BUTTONS ------------------------------------------------------------------------------------------ */
 
-Zehn.moveAppend('.msg', '.BBCodeResizableComponent', [
+Zehn.moveAppend('.msg', '.BBCodeResizableComponent.chatVideoContainer', [
   '.Panel > .chatImageURL' // POP OUT VIDEO
 ]);
+Zehn.removeNamedTarget('.msg', '.BBCodeResizableComponent.chatVideoContainer', '.chatImageURL', 0);

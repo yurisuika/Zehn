@@ -146,6 +146,15 @@ const Zehn = {
         target[count - last].remove();
       }
     });
+  },
+
+  removeNamedTarget(rootSelector, targetSelector, removeableName, ordinal) {
+    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
+      const removables = target.querySelectorAll(removeableName);
+      if (removables.length > 1) {
+        removables[ordinal].remove();
+      }
+    });
   }
 };
 

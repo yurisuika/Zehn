@@ -899,6 +899,8 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   border-radius: var(--zehn-size-radius-none) !important;
   background: transparent !important;
   display: flex !important;
+  max-width: var(--zehn-size-embed-width) !important;
+  min-width: 0 !important;
 }
 
 .msg.ChatMessageInvite.gameInviteMsg.Panel.Focusable {
@@ -1018,10 +1020,11 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   padding: 0 !important;
   box-sizing: border-box !important;
   width: 100% !important;
+  gap: var(--zehn-size-gap-medium) !important;
 }
 
 .ChatMessageInvite .rightInviteContainer .rightInviteContainerContent {
-  margin-right: var(--zehn-size-padding-medium) !important;
+  margin: 0 !important;
   gap: var(--zehn-size-gap-small) !important;
   display: flex !important;
   flex-direction: column !important;
@@ -1220,6 +1223,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   background-image: var(--zehn-texture-acrylic) !important;
   outline: 2px solid var(--zehn-color-button-dialog-border) !important;
   outline-offset: -2px !important;
+  display: none !important;
 }
 
 div:hover > .inviteAnotherFriendButton {
@@ -1462,13 +1466,14 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatVideoContainer {
   padding-bottom: 32px !important;
-  max-width: 100% !important;
-  width: 700px;
+  max-width: var(--zehn-size-embed-width) !important;
+  width: var(--zehn-size-embed-width);
   background: var(--zehn-color-window-section) !important;
 }
 
 .chatVideoContainer video {
-  max-width: unset !important;
+  display: block !important;
+  max-width: var(--zehn-size-embed-width) !important;
 }
 
 ._1wu95XTcpkpdKpgg_n2HR {
@@ -1493,6 +1498,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   display: none !important;
 }
 
+/* POP OUT VIDEO IN BROWSER */
 .msg .chatVideoContainer a.chatImageURL, .msg .chatImageContainer a.chatImageURL {
   inset: 0 !important;
   width: var(--zehn-size-button-medium) !important;
@@ -1509,7 +1515,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   display: none !important; /* Remove if failed to move in JS */
 }
 
+.msg .chatVideoContainer.Minimized .chatImageURL {
+  display: none !important;
+}
+
 .chatImageURL {
+  opacity: 1 !important;
   transition: none !important;
   width: var(--zehn-size-button-medium) !important;
   height: var(--zehn-size-button-medium) !important;
@@ -1522,10 +1533,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatImageURL:active {
   background-color: var(--zehn-color-button-fancy-background-active) !important;
-}
-
-.chatImageURL {
-  opacity: 1 !important;
 }
 
 .msg .SVGIcon_Button {
@@ -1636,8 +1643,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeResizableComponent.Minimized .BBCodeCollapsed_Friend {
   transition: none !important;
-  order: 100 !important;
-  margin: 0 0 0 var(--zehn-size-gap-medium) !important;
+  order: 10 !important;
+  margin: 0 auto 0 0 !important;
   padding: 0 !important;
   display: block !important;
 }
@@ -1702,11 +1709,23 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* IMAGE CONTAINER */
 .chatImageContainer {
+  display: block !important;
   padding: 0 !important;
+}
+
+.PreserveAspect {
+  height: fit-content !important;
+  padding: 0 !important;
+}
+
+.chatImageContainer img {
+  position: relative !important;
 }
 
 .BBCodeImageWrapper {
   background-color: transparent !important;
+  width: fit-content !important;
+  max-width: calc(var(--zehn-size-padding-medium) * 2 + var(--zehn-size-embed-width)) !important;
 }
 
 .BBCodeImageWrapper .BBCodeCollapseControl {
@@ -1765,8 +1784,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeResizableComponent, .BBCodeResizableComponent.BBCodeYouTubeComponent {
-  max-width: 100% !important;
-  width: 640px;
+  width: auto !important;
+  max-width: var(--zehn-size-embed-width);
   background: var(--zehn-color-panel) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
@@ -1810,7 +1829,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   min-width: 0 !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
-  width: fit-content !important;
+  width: auto !important;
+  max-width: var(--zehn-size-embed-width) !important;
 }
 
 .BBCodeResizableComponent.Minimized .BBCodeCollapseControl {
@@ -1818,12 +1838,9 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   right: unset !important;
 }
 
-/*.msg:not(:hover) .BBCodeCollapseControl {
-  opacity: 0 !important;
-}*/
-
 .BBCodeResizableComponent.ActivelyResizing .BBCodeRestoreControl, .BBCodeResizableComponent:not(.Resized) .BBCodeRestoreControl, .BBCodeResizableComponent.Restoring .BBCodeRestoreControl {
-  display: block !important;
+  /*display: block !important;*/
+  display: none !important;
 }
 
 .BBCodeResizableComponent.Minimized .chatImageURL, .BBCodeResizableComponent.Minimized .BBCodeRestoreControl, .BBCodeResizableComponent.Minimized .BBCodeResizeControl {
@@ -1833,6 +1850,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeResizableComponent.ActivelyResizing .BBCodeCollapseControl, .chatVideoContainer.ActivelyResizing .chatImageURL, .chatImageContainer.ActivelyResizing .chatImageURL {
   opacity: 1 !important;
+}
+
+.BBCodeResizableComponent .BBCodeResizeControl {
+  display: none !important;
 }
 
 .BBCodeCollapseControl {
@@ -2004,8 +2025,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* OPEN GRAPH */
 .msg div.ChatMessageOpenGraph, .msg div.SteamPublishedFile {
-  width: 640px !important;
-  max-width: 100% !important;
+  width: auto !important;
+  max-width: var(--zehn-size-embed-width) !important;
   color: var(--zehn-color-text-secondary) !important;
   padding: var(--zehn-size-padding-medium) !important;
   margin: 0 !important;
