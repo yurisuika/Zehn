@@ -12,34 +12,7 @@ Options.setOptions();
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
 Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleUser', false, false, (root, target, button) => {
-  const btnUser = document.getElementById('zehnToggleUser');
-  if (btnUser) {
-    const user = document.querySelector(`.currentUserContainer`);
-    const voice = document.querySelector(`.friendListHeaderContainer .activeVoiceControls`);
-
-    if (btnUser.classList.contains(`zehnToggled`)) {
-      user.style.setProperty('transform', 'scaleY(0)', 'important');
-      user.style.setProperty('min-height', '0px', 'important');
-      user.style.setProperty('height', '0px', 'important');
-      if (voice) {
-        voice.style.setProperty('transform', 'scaleY(0)', 'important');
-        voice.style.setProperty('min-height', '0px', 'important');
-        voice.style.setProperty('height', '0px', 'important');
-      }
-    }
-    else {
-      user.style.setProperty('transform', 'none', 'important');
-      user.style.setProperty('min-height', '48px', 'important');
-      user.style.setProperty('height', '48px', 'important');
-      if (voice) {
-        voice.style.setProperty('transform', 'none', 'important');
-        voice.style.setProperty('min-height', '48px', 'important');
-        voice.style.setProperty('height', '48px', 'important');
-      }
-    }
-
-    btnUser.classList.toggle('zehnToggled');
-  }
+  Zehn.addRootClassOnToggle(root, target, button, 'zehnCurrentUserOpened');
 });
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */

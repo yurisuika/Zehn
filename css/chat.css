@@ -321,13 +321,11 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 /* TAB AVATAR */
 ._2XZq-_f6npaQdAgeRzKIkz .friend .labelHolder {
   height: 24px !important;
-  /* margin-right: 16px !important; */
-  /* margin-left: 12px !important; */
-  margin: 0 !important;
+  margin: 0 0 0 12px !important;
 }
 
-.ChatTabs.compactView .labelHolder {
-  margin-top: 0 !important;
+.ChatTabs .labelHolder, .ChatTabs.compactView .labelHolder {
+  margin: 0 0 0 12px !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz .friend {
@@ -486,8 +484,10 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   width: 8px !important;
   height: 8px !important;
   border-radius: 50% !important;
-  margin-right: 8px !important;
+  margin-right: var(--zehn-size-gap-small) !important;
   display: none !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
 .chatWindow.compactView .ChatRoomSpeaker .speaker .speakerStatus, .chatWindow.compactView .ChatMsgSlashEmote .speaker .speakerStatus {
@@ -496,6 +496,11 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 .speaker .speakerStatus {
   margin: 0 !important;
+}
+
+.speaker.online.away .speakerStatus, .speaker.ingame.away .speakerStatus {
+  -webkit-mask: none !important;
+  background-color: rgb(var(--zehn-color-away)) !important;
 }
 
 .speaker.ingame .speakerStatus {
@@ -510,15 +515,18 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   background-color: rgb(var(--zehn-color-offline)) !important;
 }
 
+.speaker.online:has(._3IswZMeeD6ORStUjgv6Xh8) .speakerStatus, .speaker.ingame:has(._3IswZMeeD6ORStUjgv6Xh8) .speakerStatus {
+  background: rgb(var(--zehn-color-disturb)) !important;
+}
+
 .nibodjvvrm86uCfnnAn4g {
   transition: none !important;
 }
 
 .ChatRoomSpeaker .speaker .speakerAvatar, .ChatMsgSlashEmote .speaker .speakerAvatar {
-  width: 32px !important;
-  height: 32px !important;
-  /* display: none !important; */
-  margin-right: 16px !important;
+  width: var(--zehn-size-avatar-medium) !important;
+  height: var(--zehn-size-avatar-medium) !important;
+  margin-right: var(--zehn-size-gap-medium) !important;
   transform: translateY(8px) !important;
 }
 
@@ -2932,7 +2940,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   transition: none !important;
   background: transparent !important;
   margin: 0 !important;
-  padding: 0 16px 0 0 !important;
+  padding: 0 !important;
   bottom: unset !important;
   top: unset !important;
   border-radius: 0 !important;
@@ -2969,6 +2977,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatRoomGroupNavCollapsed .chatRoomTextChannel.ActiveTextChannel:active, .chatRoomGroupNavCollapsed .chatRoomVoiceChannel.ActiveVoiceChannel:active {
   background-color: var(--zehn-color-list-background-active) !important;
+}
+
+.chatRoomVoiceChannel.ActiveVoiceChannel, .chatRoomVoiceChannel.ActiveVoiceChannel:hover, .chatRoomVoiceChannel.ActiveVoiceChannel:active {
+  background: var(--zehn-color-panel) !important;
 }
 
 .ChannelTypeTitle .ChannelTypeLabel:hover:not(.NoPermission) {
@@ -3046,7 +3058,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatTab .chatTabUnreadBadge, .FriendMessageCount, .ChatUnreadMessageIndicator {
-  line-height: var(--zehn-size-nav-height) !important;
+  line-height: var(--zehn-size-navbar-height) !important;
   height: 100% !important;
   width: auto !important;
   border-radius: var(--zehn-size-radius-none) !important;
@@ -3076,7 +3088,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHANNEL LIST ICONS */
 .chatDialogs .chatRoomTextChannelIcon, .chatDialogs .chatRoomVoiceChannelIcon {
-  margin: 0 !important;
+  margin: auto 0 !important;
   width: var(--zehn-size-button-large) !important;
   height: 100% !important;
   min-width: var(--zehn-size-button-large) !important;
@@ -3355,8 +3367,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatroomBucket_regular.Panel.Focusable {
-  height: var(--zehn-size-pagelist-height) !important;
-  max-height: var(--zehn-size-pagelist-height) !important;
+  height: var(--zehn-size-button-large) !important;
+  max-height: var(--zehn-size-button-large) !important;
   position: relative !important;
   display: block !important;
   top: 0 !important;
@@ -3390,7 +3402,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .CompactFriendsList .friendGroup .ChatRoomMemberScrollList_List .friend {
-  height: var(--zehn-size-pagelist-height) !important;
+  height: var(--zehn-size-button-large) !important;
 }
 
 /* OWNER */
@@ -3432,6 +3444,9 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: var(--zehn-size-bar-large) !important;
   margin: 0 !important;
   min-height: var(--zehn-size-bar-large) !important;
+}
+
+.MemberListOptionsContainer, .MemberListColumn .MemberListOptionsContainer .socialInputContainer {
   background-color: var(--zehn-color-input-fancy-background) !important;
 }
 
@@ -3447,7 +3462,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: var(--zehn-size-bar-large) !important;
 }
 
-.MemberListOptionsContainer .socialInputContainer .inputContainer .friendSearchInput:focus {
+.MemberListOptionsContainer:has(.friendSearchInput:focus), .MemberListOptionsContainer .socialInputContainer .inputContainer .friendSearchInput:focus {
   background-color: var(--zehn-color-input-fancy-background-focus) !important;
 }
 
@@ -3474,11 +3489,11 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-small) !important;
   -webkit-mask-image: var(--zehn-icon-search) !important;
-  opacity: 1 !important;
+  opacity: 0 !important;
 }
 
-.MemberListColumn.MemberListViewCompact .inputContainer:has(input:placeholder-shown)::after {
-  opacity: 0 !important;
+.MemberListColumn .inputContainer:has(input:placeholder-shown)::after {
+  opacity: 1 !important;
 }
 
 .friendSearchInput::placeholder {

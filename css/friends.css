@@ -240,8 +240,8 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   border-bottom: unset !important;
   height: 0 !important;
   min-height: 0 !important;
-  max-height: 48px !important;
-  padding: 0 16px !important;
+  max-height: var(--zehn-size-bar-large) !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
   align-items: center !important;
   display: flex !important;
   margin-top: 0 !important;
@@ -250,10 +250,21 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   order: 999 !important;
 }
 
+.zehnCurrentUserOpened .currentUserContainer {
+  transform: none !important;
+  height: var(--zehn-size-bar-large) !important;
+  min-height: var(--zehn-size-bar-large) !important;
+}
+
 .compactView .currentUserContainer {
   height: 0 !important;
   min-height: 0 !important;
-  max-height: 0 !important;
+  max-height: var(--zehn-size-bar-medium) !important;
+}
+
+.zehnCurrentUserOpened .compactView .currentUserContainer {
+  height: var(--zehn-size-bar-medium) !important;
+  min-height: var(--zehn-size-bar-medium) !important;
 }
 
 .statusHeaderGlow {
@@ -263,9 +274,9 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 .currentUserAvatar {
   border-radius: var(--zehn-size-radius-none) !important;
-  width: 32px !important;
-  height: 32px !important;
-  margin-right: 16px !important;
+  width: var(--zehn-size-avatar-medium) !important;
+  height: var(--zehn-size-avatar-medium) !important;
+  margin-right: 0 !important;
 }
 
 .currentUserAvatar:hover {
@@ -275,14 +286,14 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 .currentUserAvatar .nibodjvvrm86uCfnnAn4g {
   transform: none !important;
-  height: 32px !important;
-  width: 32px !important;
+  width: var(--zehn-size-avatar-medium) !important;
+  height: var(--zehn-size-avatar-medium) !important;
   margin: 0 !important;
 }
 
 .AvatarAndUser {
   width: fit-content !important;
-  line-height: 32px !important;
+  height: var(--zehn-size-avatar-medium) !important;
   max-width: 100% !important;
   align-items: center !important;
   box-sizing: border-box !important;
@@ -361,6 +372,11 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 .currentUserContainer .labelHolder {
   margin: 0 !important;
+  padding-left: var(--zehn-size-padding-medium) !important;
+}
+
+.compactView .currentUserContainer .labelHolder {
+  padding-left: var(--zehn-size-padding-small) !important;
 }
 
 .friendlist .ContextMenuButton {
@@ -502,35 +518,35 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .favoriteElement {
-  height: 48px !important;
-  width: 48px !important;
-  min-width: 48px !important;
+  height: var(--zehn-size-bar-large) !important;
+  width: var(--zehn-size-bar-large) !important;
+  min-width: var(--zehn-size-bar-large) !important;
   flex-grow: 1 !important;
 }
 
 .compactQuickAccess .favoriteElement {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-avatar-medium) !important;
+  height: var(--zehn-size-avatar-medium) !important;
 }
 
 .favoriteElement .ChatRoomGroupAvatar {
   padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  margin: 3px !important;
-  line-height: 32px !important;
+  width: var(--zehn-size-avatar-medium) !important;
+  height: var(--zehn-size-avatar-medium) !important;
+  margin: var(--zehn-size-padding-small) !important;
+  line-height: var(--zehn-size-avatar-medium) !important;
   font-size: var(--zehn-size-16) !important;
 }
 
 .friend.quickAccessFriend {
-  width: 32px !important;
+  width: var(--zehn-size-avatar-medium) !important;
   margin: auto !important;
   height: 100% !important;
   align-items: center !important;
 }
 
 .compactQuickAccess .friend.quickAccessFriend {
-  width: 24px !important;
+  width: var(--zehn-size-avatar-small) !important;
   height: 100% !important;
   margin: auto !important;
 }
@@ -540,13 +556,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .compactQuickAccess .friend.quickAccessFriend .nibodjvvrm86uCfnnAn4g {
-  height: 24px !important;
-  width: 24px !important;
+  width: var(--zehn-size-avatar-small) !important;
+  height: var(--zehn-size-avatar-small) !important;
 }
 
 .quickAccessFriends.compactQuickAccess .nibodjvvrm86uCfnnAn4g.Medium {
-  width: 24px !important;
-  height: 24px !important;
+  width: var(--zehn-size-avatar-small) !important;
+  height: var(--zehn-size-avatar-small) !important;
 }
 
 .FavoriteFriend_GameIcon {
@@ -731,11 +747,22 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendListHeaderContainer .activeVoiceControls {
-  height: 0px !important;
-  transition: all 0.25s ease-in-out !important;
+  height: 0 !important;
+  transition: none !important;
   background-color: transparent !important;
   border: unset !important;
   border-image: url() !important;
+}
+
+.zehnCurrentUserOpened .friendListHeaderContainer .activeVoiceControls {
+  transform: none !important;
+  height: var(--zehn-size-bar-large) !important;
+  min-height: var(--zehn-size-bar-large) !important;
+}
+
+.zehnCurrentUserOpened .compactView .friendListHeaderContainer .activeVoiceControls {
+  height: var(--zehn-size-bar-medium) !important;
+  min-height: var(--zehn-size-bar-medium) !important;
 }
 
 .FriendsListContent .buttonsContainer {
@@ -768,9 +795,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendListHeaderContainer .activeVoiceLabels {
   display: inline-flex !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: 48px !important;
-  padding: 0 16px !important;
+  line-height: var(--zehn-size-bar-large) !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
   display: none !important;
+}
+
+.compactView .friendListHeaderContainer .activeVoiceLabels {
+  line-height: var(--zehn-size-bar-medium) !important;
 }
 
 .activeVoiceLabels {
@@ -801,9 +832,15 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendListHeaderContainer .activeVoiceButtons {
-  min-width: calc(48px * 3) !important;
-  height: 48px !important;
-  flex: 1 1 calc(48px * 3) !important;
+  min-width: calc(var(--zehn-size-bar-large) * 3) !important;
+  height: var(--zehn-size-bar-large) !important;
+  flex: 1 1 calc(var(--zehn-size-bar-large) * 3) !important;
+}
+
+.compactView .friendListHeaderContainer .activeVoiceButtons {
+  min-width: calc(var(--zehn-size-bar-medium) * 3) !important;
+  height: var(--zehn-size-bar-medium) !important;
+  flex: 1 1 calc(var(--zehn-size-bar-medium) * 3) !important;
 }
 
 .VoiceControlPanelButton svg {
@@ -811,7 +848,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-medium) !important;
-  max-height: 48px !important;
+  max-height: 100% !important;
 }
 
 .VoiceControlPanelButton:focus {
@@ -852,6 +889,14 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   min-height: var(--zehn-size-button-large) !important;
   max-width: 100% !important;
   max-height: var(--zehn-size-button-large) !important;
+}
+
+.compactView .friendListHeaderContainer .activeVoiceFlexBox .activeVoiceButtons button {
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
+  min-width: var(--zehn-size-button-medium) !important;
+  min-height: var(--zehn-size-button-medium) !important;
+  max-height: var(--zehn-size-button-medium) !important;
 }
 
 .VoiceControlPanelButton.ToggleMicrophoneButton.Focusable svg {
@@ -935,14 +980,19 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .socialListTab {
   margin-top: 0 !important;
-  height: 48px !important;
+  height: var(--zehn-size-bar-large) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: 48px !important;
+  line-height: var(--zehn-size-bar-large) !important;
   text-transform: uppercase !important;
   padding: 0 !important;
-  transition: height 0.2s ease-in-out !important;
+  /*transition: height 0.2s ease-in-out !important;*/
+  transition: none !important;
+}
+
+.socialListTab.TabSearchActive {
+  padding: 0 !important;
 }
 
 .socialListTab .tabLabel {
@@ -950,25 +1000,20 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   font-weight: var(--zehn-size-weight-normal) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: 48px !important;
+  line-height: var(--zehn-size-bar-large) !important;
   transition: none !important;
   display: none !important;
 }
 
 .socialListTab.TabSearchActive .tabLabel {
-  transition: none !important;
   width: 0 !important;
-}
-
-.socialListTab.TabSearchActive {
-  padding: 0 !important;
 }
 
 .TabSearchButton {
   background-color: transparent !important;
   padding: 0 !important;
-  height: 48px !important;
-  width: 48px !important;
+  height: var(--zehn-size-button-large) !important;
+  width: var(--zehn-size-button-large) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
   transition: none !important;
@@ -1000,24 +1045,37 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .TabSearchButton .searchIconButton {
   cursor: pointer !important;
-  height: 48px !important;
+  height: var(--zehn-size-button-large) !important;
   width: 100% !important;
   margin: 0 !important;
   transition: none !important;
   flex-grow: 1 !important;
   justify-content: center !important;
   display: flex !important;
+  position: relative !important;
 }
 
 .TabSearchActive .TabSearchButton .searchIconButton {
-  width: 48px !important;
+  width: var(--zehn-size-button-large) !important;
   opacity: 1 !important;
+}
+
+.TabSearchActive .TabSearchButton .searchIconButton::after {
+  content: "";
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background-color: rgb(var(--zehn-color-accent));
+  display: block;
+  position: absolute;
 }
 
 .tabSearchTransitionGroup {
   height: 0 !important;
   transform: scaleY(0) !important;
-  transition: height 0.2s ease-in-out, transform 0.2s ease-in-out !important;
+  /*transition: height 0.2s ease-in-out, transform 0.2s ease-in-out !important;*/
+  transition: none !important;
   position: absolute !important;
   left: 0 !important;
   right: 0 !important;
@@ -1025,19 +1083,18 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   opacity: 0 !important;
 }
 
-.tabSearchTransitionGroup:has(.socialSearchContainer), .tabSearchTransitionGroup:has(.socialSearchContainer.tab-search-anim-exit-active) {
+.socialListTab.TabSearchActive .tabSearchTransitionGroup {
   opacity: 1 !important;
-  height: 48px !important;
+  height: var(--zehn-size-bar-large) !important;
   transform: scaleY(1) !important;
 }
 
-.socialListTab:has(.socialSearchContainer) {
-  height: 96px !important;
+.socialListTab {
+  height: var(--zehn-size-bar-large) !important;
 }
 
-.socialTabContainer:has(.socialSearchContainer) .tabSearchTransitionGroup {
-  height: 48px !important;
-  transform: none !important;
+.socialListTab.TabSearchActive {
+  height: calc(2 * var(--zehn-size-bar-large)) !important;
 }
 
 .friendsTabButtonsContainer {
@@ -1046,8 +1103,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendsTabButtonsContainer .TabSearchButton .SVGIcon_MagnifyingGlass {
-  height: 48px !important;
-  width: 48px !important;
+  height: var(--zehn-size-button-large) !important;
+  width: var(--zehn-size-button-large) !important;
   margin: 0 !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
@@ -1076,7 +1133,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .socialInputContainer.SearchActive {
-  max-height: 48px !important;
+  max-height: var(--zehn-size-button-large) !important;
 }
 
 .socialInputContainer .inputContainer {
@@ -1084,7 +1141,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .socialInputContainer .inputContainer.no-drag {
-  height: 48px !important;
+  height: var(--zehn-size-bar-large) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: transparent !important;
 }
@@ -1093,7 +1150,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   color: var(--zehn-color-text-primary) !important;
   background-color: transparent !important;
   font-size: var(--zehn-size-14) !important;
-  padding: 0 16px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
   transition: none !important;
   background-image: none !important;
 }
@@ -1104,7 +1161,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   bottom: 0 !important;
   top: 0 !important;
   right: 0 !important;
-  width: 48px !important;
+  width: var(--zehn-size-bar-large) !important;
   pointer-events: none !important;
   background-color: var(--zehn-color-icon-secondary) !important;
   mask-repeat: no-repeat !important;
@@ -1123,7 +1180,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .socialInputContainer .DialogInput_Wrapper>input.DialogInput {
-  padding: 0 16px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
 .friendSearchInput::placeholder {
@@ -1133,8 +1190,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendSearchClear {
-  width: 48px !important;
-  height: 48px !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
   right: 0 !important;
   top: 0 !important;
   transition: none !important;
@@ -1149,8 +1206,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendSearchClear .SVGIcon_X_Line {
-  width: 48px !important;
-  height: 48px !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
 }
 
 .friendSearchNoResultsContainer {
@@ -1181,12 +1238,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .addFriendButton {
   background-color: var(--zehn-color-button-fancy-background) !important;
   padding: 0 !important;
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
-  /* max-width: 32px !important; */
-  max-height: 48px !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
+  min-width: var(--zehn-size-button-large) !important;
+  min-height: var(--zehn-size-button-large) !important;
+  max-height: var(--zehn-size-button-large) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
   flex-grow: 1 !important;
@@ -1203,14 +1259,14 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendRequestButton {
   background-color: var(--zehn-color-button-fancy-background) !important;
   padding: 0 !important;
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
-  /* max-width: 48px !important; */
-  max-height: 48px !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
+  min-width: var(--zehn-size-button-large) !important;
+  min-height: var(--zehn-size-button-large) !important;
+  max-height: var(--zehn-size-button-large) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
+  position: relative !important;
 }
 
 .friendRequestButton:hover {
@@ -1219,6 +1275,17 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .friendRequestButton:active {
   background-color: var(--zehn-color-button-fancy-background-active) !important;
+}
+
+.friendRequestButton.friendRequestViewActive::after {
+  content: "";
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background-color: rgb(var(--zehn-color-accent));
+  display: block;
+  position: absolute;
 }
 
 .friendRequestButton .SVGIcon_FriendRequest, .addFriendButton .SVGIcon_AddFriend {
@@ -1269,7 +1336,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   letter-spacing: normal !important;
   font-size: var(--zehn-size-10) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  line-height: 10px !important;
+  line-height: var(--zehn-size-10) !important;
 }
 
 .friendRequestButton:hover .requestsNumber {
@@ -1278,8 +1345,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* FRIEND REQUESTS */
 .friendGroup.friendOutgoingRequests .groupName, .friendGroup.friendRequests .groupName {
-  padding: 0 16px !important;
-  line-height: 32px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
+  line-height: var(--zehn-size-bar-medium) !important;
 }
 
 /* FRIEND INVITE BUTTONS */
@@ -1288,8 +1355,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendInviteButton {
-  width: 48px !important;
-  height: 48px !important;
+  width: var(--zehn-size-button-large) !important;
+  height: var(--zehn-size-button-large) !important;
   transition: none !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
@@ -1318,8 +1385,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendlist.compactView .friendInviteButton {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
 }
 
 .friendInviteButton.declineFriendInvite, .friendInviteButton.acceptFriendInvite {
@@ -1366,11 +1433,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   transform: none !important;
   left: 16px !important;
   transition: none !important;
-  height: 48px !important;
+  height: var(--zehn-size-bar-large) !important;
 }
 
 .compactView .friendInviteBlockContainer {
-  height: 32px !important;
+  height: var(--zehn-size-bar-medium) !important;
 }
 
 .friendInviteBlockContainer .displayColumn {
@@ -1605,8 +1672,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friend .labelHolder {
- margin-left: 0 !important;
- padding-left: 16px !important;
+ padding: 0 !important;
+ margin: 0 0 0 var(--zehn-size-gap-medium) !important;
  height: 32px !important;
  display: grid !important;
  align-content: center !important;
@@ -1735,13 +1802,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* COMPACT */
 .compactView .currentUserAvatar, .compactView .currentUserAvatar .avatarHolder {
-  width: 24px !important;
-  height: 24px !important;
-}
-
-.compactView .currentUserAvatar .nibodjvvrm86uCfnnAn4g {
-  width: 24px !important;
-  height: 24px !important;
+  /*width: 24px !important;*/
+  /*height: 24px !important;*/
+  width: 8px !important;
+  height: 8px !important;
+  /*top: calc(50% - 4px) !important;*/
+  margin: auto 0 !important;
 }
 
 .CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
@@ -1751,11 +1817,31 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   margin-bottom: auto !important;
 }
 
+.CompactFriendsList:not(.chatRoomMembers) .friend .avatarHolder, .compactView .currentUserAvatar .avatarHolder {
+  /*width: var(--zehn-size-avatar-small) !important;*/
+  /*height: var(--zehn-size-avatar-small) !important;*/
+  padding: 0 !important;
+  /*top: calc(50% - (var(--zehn-size-avatar-small) / 2)) !important;*/
+  top: calc(50% - 4px) !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: auto 0 !important;
+}
+
+.CompactFriendsList:not(.chatRoomMembers) .friend .avatarHolder img.avatar, .compactView .currentUserAvatar img.avatar {
+  display: none !important;
+}
+
 .CompactFriendsList .friend .avatarHolder {
-  width: var(--zehn-size-avatar-small) !important;
-  height: var(--zehn-size-avatar-small) !important;
-  padding-right: 0 !important;
-  top: calc(50% - (var(--zehn-size-avatar-small) / 2)) !important;
+  padding: 0 !important;
+}
+
+.CompactFriendsList:not(.chatRoomMembers) .friend .avatarHolder .avatarStatus, .compactView .currentUserAvatar .avatarHolder .avatarStatus {
+  -webkit-mask-image: none !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: auto !important;
+  border-radius: 50% !important;
 }
 
 .CompactFriendsList .friend, .CompactFriendsList .friendGroup .friend, .CompactFriendsList .friendGroup .SteamPlayerGroupFooter, .CompactFriendsList .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
@@ -1768,12 +1854,13 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   filter: none !important;
 }
 
-.CompactFriendsList .friend .labelHolder {
-  margin-top: 0 !important;
+.CompactFriendsList:not(.chatRoomMembers) .friend .labelHolder {
+  margin: 0 0 0 var(--zehn-size-gap-small) !important;
   height: 32px !important;
+  padding: 0 !important;
 }
 
-.CompactFriendsList ._3sxE7F1LV2IcSX68YsH9dI {
+.CompactFriendsList:not(.chatRoomMembers) ._3sxE7F1LV2IcSX68YsH9dI {
   display: none !important;
 }
 
@@ -2258,16 +2345,27 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* COMPACT */
 .compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar {
-  height: 24px !important;
-  width: 24px !important;
-  line-height: 24px !important;
+  /*height: 24px !important;*/
+  /*width: 24px !important;*/
+  /*line-height: 24px !important;*/
   font-size: var(--zehn-size-12) !important;
+  height: 8px !important;
+  width: 8px !important;
+  line-height: 8px !important;
+  margin: auto 0 !important;
 }
 
 .compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar.Small {
-  height: 24px !important;
-  width: 24px !important;
+  /*height: 24px !important;*/
+  /*width: 24px !important;*/
+  height: 8px !important;
+  width: 8px !important;
   border-width: 0 !important;
+  margin: auto 0 !important;
+}
+
+.compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials, .compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar img, .compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar img {
+  display: none !important;
 }
 
 .compactView .ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName {
@@ -2275,7 +2373,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .compactView .ChatRoomListGroupItem_header {
-  padding: 4px 16px !important;
+  padding: 8px 16px !important;
 }
 
 .compactView .ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
@@ -2318,9 +2416,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel.ActiveVoiceChannel {
-  background-color: transparent !important;
   border-radius: var(--zehn-size-radius-none) !important;
-  background: var(--zehn-color-window-section) !important;
+  background: var(--zehn-color-panel) !important;
 }
 
 div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer {
@@ -2337,9 +2434,14 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
   border-radius: var(--zehn-size-radius-none) !important;
-  width: var(--zehn-size-button-large) !important;
+  width: var(--zehn-size-pagelist-height) !important;
   height: var(--zehn-size-pagelist-height) !important;
   background: var(--zehn-color-button-fancy-background) !important;
+}
+
+.friendsListContainer .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
+  width: var(--zehn-size-button-medium) !important;
+  height: var(--zehn-size-button-medium) !important;
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton:hover {
@@ -2388,6 +2490,12 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   margin-top: 0 !important;
 }
 
+.chatRoomVoiceChannelIcon, .chatRoomTextChannelIcon {
+  margin: auto 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+}
+
 .chatRoomVoiceChannelIconGlow {
   background: transparent !important;
   width: 0 !important;
@@ -2405,6 +2513,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .ChatRoomListGroupItem .chatRoomVoiceChannelIcon {
   margin: 0 !important;
+  padding: 0 !important;
   display: none !important;
 }
 
@@ -2448,7 +2557,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceControls {
   background: transparent !important;
-  margin-top: 0 !important;
+  margin-top: var(--zehn-size-gap-medium) !important;
 }
 
 .chatRoomVoiceChannel .activeVoiceButtons {
@@ -2608,7 +2717,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 .VoiceChannelParticipants.CompactFriendsList .friend {
   margin-top: 0 !important;
   height: 32px !important;
-  padding: 3px 16px !important;
+  padding: 0 16px !important;
 }
 
 .VoiceChannelParticipants.CompactFriendsList {
