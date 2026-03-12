@@ -216,7 +216,7 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj
 Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._39oUCO1OuizVPwcnnv88no > ._30vB9DdsPK7VrZAbb5Q1Av', [
   '._3Z3ohQ8-1NKnCZkbS6fvy ._2D64jIEK7wpUR_NlObDW76' // NAV
 ]);
-Zehn.removeTarget('.QsvsRVwbsApgKt1MhM0fz', '._39oUCO1OuizVPwcnnv88no > ._30vB9DdsPK7VrZAbb5Q1Av', 1, 1);
+Zehn.removeDuplicatedElement('.QsvsRVwbsApgKt1MhM0fz', '._39oUCO1OuizVPwcnnv88no > ._30vB9DdsPK7VrZAbb5Q1Av', '._2D64jIEK7wpUR_NlObDW76', 0);
 
 /* ADD SPACER FOR NAVBAR DOWNLOADS STATUS --------------------------------------------------------------------------- */
 
@@ -294,4 +294,4 @@ Zehn.moveAppend('._2p9h7sf5EGrEVlsWxtvUPH', '._1gvujtNl7v7FpJK6kaMeKZ', [
 Zehn.moveAppend('.ModalDialogPopup', '._2kwFFHckg8jvnwJfg9-la8.PageListColumn', [
   '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
 ]);
-Zehn.removeTarget('._3Sf_ShCtdfWp5P04k2cIgp', '._2kwFFHckg8jvnwJfg9-la8.PageListColumn', 4, 2);
+Zehn.removeDuplicatedElement('.ModalDialogPopup', '._2kwFFHckg8jvnwJfg9-la8.PageListColumn', '._2kwFFHckg8jvnwJfg9-la8.PageListColumn > .tool-tip-source', 0);

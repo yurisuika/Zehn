@@ -140,17 +140,9 @@ const Zehn = {
     });
   },
 
-  removeTarget(rootSelector, targetSelector, count, last) {
+  removeDuplicatedElement(rootSelector, targetSelector, removeableSelector, ordinal) {
     Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
-      if (target && target.hasChildNodes && target.childElementCount > count) {
-        target[count - last].remove();
-      }
-    });
-  },
-
-  removeNamedTarget(rootSelector, targetSelector, removeableName, ordinal) {
-    Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
-      const removables = target.querySelectorAll(removeableName);
+      const removables = target.querySelectorAll(removeableSelector);
       if (removables.length > 1) {
         removables[ordinal].remove();
       }

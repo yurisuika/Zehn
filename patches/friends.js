@@ -78,4 +78,4 @@ Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogCo
 Zehn.moveAppend('.msg', '.BBCodeResizableComponent.chatVideoContainer', [
   '.Panel > .chatImageURL' // POP OUT VIDEO
 ]);
-Zehn.removeNamedTarget('.msg', '.BBCodeResizableComponent.chatVideoContainer', '.chatImageURL', 0);
+Zehn.removeDuplicatedElement('.msg', '.BBCodeResizableComponent.chatVideoContainer', '.chatImageURL', 0);
