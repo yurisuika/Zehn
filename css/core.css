@@ -151,7 +151,7 @@ input[type="text" i] {
   margin-right: 0 !important;
   line-height: 32px !important;
   margin-bottom: 0 !important;
-  padding: 0 16px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
 .DialogHeader:has(button) {
@@ -228,7 +228,7 @@ label > .DialogLabel {
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  /* padding: 0 16px !important;
+  /* padding: 0 var(--zehn-size-padding-medium) !important;
   line-height: 32px !important; */
   padding: 0 14px !important;
   line-height: 28px !important;
@@ -268,7 +268,7 @@ button.TextButton:active {
   color: rgb(var(--zehn-color-accent)) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  /* padding: 0 16px !important; */
+  /* padding: 0 var(--zehn-size-padding-medium) !important; */
   padding: 0 !important;
 }
 
@@ -1695,19 +1695,16 @@ input[type="radio" i]:checked:active::after {
   transform: translateY(-2px);
 }
 
-._9Ql-oVe_j8E-vsDdyVdWo:not(.yLrDAetGoWx0GYqA6ShfS)::after {
+._9Ql-oVe_j8E-vsDdyVdWo::after {
   content: var(--zehn-translation-off) !important;
 }
 
-.lcOTPSjzoMa0rZHjVcyOW ._9Ql-oVe_j8E-vsDdyVdWo:not(.yLrDAetGoWx0GYqA6ShfS)::after {
-  display: none !important;
-}
-
-div:not(._3nshrDGTDpTKlE5otdJspw) ._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS::after {
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS::after {
   content: var(--zehn-translation-on) !important;
 }
 
-.lcOTPSjzoMa0rZHjVcyOW ._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS::after {
+/* DON'T ADD TO SCREENSHOT SHARE DIALOG CAUSE IT IS AT THE END OF THE DIALOG */
+.lcOTPSjzoMa0rZHjVcyOW ._9Ql-oVe_j8E-vsDdyVdWo::after {
   display: none !important;
 }
 
@@ -2432,6 +2429,7 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   margin: 32px 0 0 0 !important;
 }
 
+/* DIALOG SPACING TO FIX SCROLLBAR POS */
 .DialogContent._DialogLayout.GenericConfirmDialog._DialogCenterVertically .DialogContent_InnerWidth {
   min-height: fit-content !important;
 }
@@ -2449,16 +2447,19 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   max-width: unset !important;
 }
 
+.ModalDialogPopup .DialogContent_InnerWidth .DialogBody > * {
+  max-width: var(--zehn-size-dialog-scroll-content-width) !important;
+}
+
 .DialogContent_InnerWidth:has(._3Sf_ShCtdfWp5P04k2cIgp) {
   padding: 0 !important;
 }
-
 
 .DialogContent_InnerWidth > form {
   gap: var(--zehn-size-gap-medium) !important;
   display: flex !important;
   flex-direction: column !important;
-  padding: 16px 0 !important; /* INNER WIDTH */
+  padding: var(--zehn-size-padding-medium) 0 !important; /* INNER WIDTH */
   max-height: fit-content !important;
 }
 
@@ -2473,7 +2474,7 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 }
 
 .DialogBody, .DialogFooter {
-  padding: 0 16px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
 .DialogBody > .DialogBody {
@@ -2520,7 +2521,7 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 }
 
 ._3t8HxXdv4QoWO7f3awdiCQ > * {
-  padding: 0 16px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
 /* DROPDOWN */
@@ -2613,7 +2614,7 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 
 /* DELETE CONFIRMATION */
 .DialogContent_InnerWidth > .DialogBodyText {
-  padding: 0 16px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
 .DialogContent_InnerWidth > .DialogFooter {
@@ -3322,7 +3323,7 @@ div:not(:hover)>::-webkit-scrollbar {
   font-weight: var(--zehn-size-weight-normal) !important;
   position: absolute !important;
   right: 112px !important;
-  padding: 0 16px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
 /* BUTTON */
