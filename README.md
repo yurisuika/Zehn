@@ -62,6 +62,11 @@ Zehn features several added buttons for an improved experience:
 * On the chat window...
   * The channel list, member list, and settings buttons are toggled via three buttons added in the group chat header bar.
 
+### Plugin Support
+You can enjoy explicit support for the following plugins while using Zehn:
+* Extendium
+* Size on Disk
+
 ### Versions
 Zehn features both a static and a live version!
 
