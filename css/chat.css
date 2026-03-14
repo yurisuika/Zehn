@@ -279,12 +279,16 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 .jMumuBBbjOf_v5JU9RpmZ {
-  bottom: 4px !important;
-  right: 4px !important;
-  width: 6px !important;
-  height: 6px !important;
+  bottom: calc(50% - (var(--zehn-size-status-small) / 2)) !important;
+  right: var(--zehn-size-padding-medium) !important;
+  width: var(--zehn-size-status-small) !important;
+  height: var(--zehn-size-status-small) !important;
   background-color: rgb(var(--zehn-color-accent)) !important;
   border-radius: 50% !important;
+}
+
+.ChatTabsContextMenu .jMumuBBbjOf_v5JU9RpmZ {
+  right: var(--zehn-size-padding-tiny) !important;
 }
 
 /* CLOSE BUTTON */
@@ -362,15 +366,14 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 /* TAB SELECTOR */
 .chatTabSelector {
-  width: 32px !important;
-  height: 32px !important;
+  width: var(--zehn-size-titlebar-width) !important;
+  height: var(--zehn-size-titlebar-height) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background: var(--zehn-color-button-fancy-background) !important;
-  filter: var(--zehn-filter-focus) !important;
 }
 
-.WindowFocus .chatTabSelector {
-  filter: none !important;
+body:not(.WindowFocus) .chatTabSelector svg {
+  filter: var(--zehn-filter-focus) !important;
 }
 
 .chatTabSelector:hover {
@@ -383,12 +386,12 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 .chatTabSelector .SVGIcon_DownArrowContextMenu {
   padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   border: unset !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
@@ -397,11 +400,9 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-medium) !important;
   -webkit-mask-image: var(--zehn-icon-chevron-down) !important;
-  filter: none !important;
 }
 
 .chatTabSelector .SVGIcon_DownArrowContextMenu * {
-  opacity: 0 !important;
   display: none !important;
 }
 
@@ -425,6 +426,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 .chatHistory {
   margin: 0 !important;
   padding-bottom: 0 !important;
+  padding-top: var(--zehn-size-padding-extra) !important;
   position: relative;
   flex-grow: 1 !important;
   align-content: flex-end !important;
@@ -437,11 +439,11 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 .ChatMessageBlock {
-  margin-bottom: 24px !important;
+  margin-bottom: var(--zehn-size-padding-extra) !important;
 }
 
 .compactView .ChatMessageBlock {
-  margin-bottom: 24px !important;
+  margin-bottom: var(--zehn-size-padding-extra) !important;
 }
 
 /* LINK */
@@ -589,11 +591,11 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 /* SCALING */
 .smallChatFont .msg.serverMsg .msgText, .smallChatFont .nameWidthLabel, .ChatHistoryContainer.smallChatFont .ChatSpeaker .speaker, .smallChatFont .msg {
-  line-height: 12px !important;
+  line-height: var(--zehn-size-16) !important;
 }
 
 .largeChatFont .nameWidthLabel, .ChatHistoryContainer.largeChatFont .ChatSpeaker .speaker, .largeChatFont .msg {
-  line-height: 16px !important;
+  line-height: var(--zehn-size-32) !important;
 }
 
 .smallChatFont .chatTextarea, .smallChatFont .msg.serverMsg .msgText, .FriendsSettingsChatFontSizeSection_ButtonRow .smallFontSetting, .smallChatFont .ChatMessageOpenGraph_Title, .smallChatFont .nameWidthLabel, .ChatHistoryContainer.smallChatFont .ChatSpeaker .speaker, .smallChatFont {
@@ -717,11 +719,13 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 .msgText {
   color: var(--zehn-color-text-primary) !important;
-  padding: 0 32px 0 64px !important;
+  padding: 0 var(--zehn-size-padding-large) 0 var(--zehn-size-padding-ultra) !important;
+  line-height: var(--zehn-size-24) !important;
+  font-size: var(--zehn-size-14) !important;
 }
 
 .chatWindow.compactView .msgText {
-  padding: 0 32px !important;
+  padding: 0 var(--zehn-size-padding-large) !important;
 }
 
 /* ROOM EFFECT */
@@ -3664,16 +3668,13 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .VoiceRoomChatTitle::after {
-  content: "" !important;
-  z-index: -1 !important;
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  opacity: 0 !important;
-  background-image: var(--zehn-texture-acrylic) !important;
-  transition: opacity 0.2s ease-in-out !important;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image: var(--zehn-texture-acrylic);
+  transition: opacity 0.2s ease-in-out;
 }
 
 .WindowFocus .VoiceRoomChatTitle::after {
