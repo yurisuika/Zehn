@@ -106,7 +106,6 @@
 ._2L3s2nzh7yCnNESfI5_dN1.jnXtv79jL6SXXwlJYPtQz._3Yf8b2v5oOD8Wqsxu04ar._39RheXihcN6H2k2muQTjkI {
   background-color: var(--zehn-color-window-acrylic) !important;
   left: 0 !important;
-  /*width: calc(100% - var(--zehn-scrollbar-width)) !important;*/
   width: 100% !important;
   transition: background-color 0.2s ease-in-out !important;
 }
@@ -166,10 +165,7 @@
 ._3VQUewWB8g6Z5qB4C7dGFr::before, ._1bq4x9pa4-9RLY-dXWUZTp::before {
   content: "" !important;
   position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   opacity: var(--zehn-display-mascot) !important;
   background-image: var(--zehn-mascot-type) !important;
   background-repeat: no-repeat !important;
@@ -1154,10 +1150,7 @@ body:not(.WindowFocus) ._3yD46y5pd3zOGR7CzKs0mC ._3x51wbt5DYyWC8JKwQ51ir {
 
 ._2EQ7ghgqIdjKv9jsQC0Zq9 .ip-YZhijAMZcuRoXBGiye:has(>._1sCy-pm412Smb0wJx0W-4)::after {
   content: "" !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   position: absolute !important;
   transition: none !important;
   width: var(--zehn-size-navbar-width) !important;
@@ -1227,18 +1220,18 @@ body:not(.WindowFocus) ._3yD46y5pd3zOGR7CzKs0mC ._3x51wbt5DYyWC8JKwQ51ir {
 
 .downloadsSpacer {
   display: block !important;
-  width: calc(var(--zehn-download-bar-width) + 32px) !important;
-  height: 32px !important;
+  width: calc(var(--zehn-download-bar-width) + (2 * var(--zehn-size-padding-medium))) !important;
+  height: var(--zehn-size-navbar-height) !important;
 }
 
 ._2_FomluqqgQ2Hx8ON3AVep {
   max-width: var(--zehn-download-bar-width) !important;
   width: var(--zehn-download-bar-width) !important;
-  height: 32px !important;
+  height: var(--zehn-size-navbar-height) !important;
   float: right !important;
   margin-top: 0 !important;
   margin-left: calc((var(--zehn-size-navbar-width) * -4) - var(--zehn-download-bar-width) - 16px) !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-navbar-height) !important;
   gap: 0 !important;
 }
 
@@ -1311,7 +1304,7 @@ body:not(.WindowFocus) ._3yD46y5pd3zOGR7CzKs0mC ._3x51wbt5DYyWC8JKwQ51ir {
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   padding: 0 var(--zehn-size-padding-medium) !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-button-dialog) !important;
   outline: 2px solid var(--zehn-color-button-dialog-border) !important;
   outline-offset: -2px !important;
 }
@@ -1339,10 +1332,7 @@ body:not(.WindowFocus) ._3yD46y5pd3zOGR7CzKs0mC ._3x51wbt5DYyWC8JKwQ51ir {
 ._32TmRVFkc8HMIUZ-KnnKby._3E5iVG630BkOHTaJJaMEMw::after {
   content: "" !important;
   position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -7703,10 +7693,7 @@ button.DialogButton._1qG6xUlNu-qvdhpSxwed5:active {
 
 /* LOCKED */
 .SfyYvxDpnz-oGXMDxtqEf {
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   background-size: cover !important;
   filter: blur(5px) !important;
 }
@@ -9116,10 +9103,7 @@ div.NarrowRightPanel ._3dJ4Bq6Msivz5-UIHzSEQu {
   z-index: 10 !important;
   content: "" !important;
   position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   outline: 4px solid rgb(var(--zehn-color-accent)) !important;
   outline-offset: -4px !important;
 }
@@ -10852,10 +10836,7 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb._3nJyYxGQ3kdwwabPmxNnMe {
   z-index: 10 !important;
   content: "" !important;
   position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   outline: 4px solid rgb(var(--zehn-color-accent)) !important;
   outline-offset: -4px !important;
 }
@@ -10890,7 +10871,10 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb._3nJyYxGQ3kdwwabPmxNnMe {
 
 /* DOWNLOADS -------------------------------------------------------------------------------------------------------- */
 
+/* MAKE THE DOWNLOAD STUFF GO ABOVE ACRYLIC */
 ._1bq4x9pa4-9RLY-dXWUZTp {
+  overflow-y: hidden !important;
+  z-index: unset !important;
   background: var(--zehn-color-window-fancy) !important;
 }
 
