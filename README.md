@@ -65,7 +65,11 @@ Zehn features several added buttons for an improved experience:
 ### Plugin Support
 You can enjoy explicit support for the following plugins while using Zehn:
 * Extendium
+  * Browser bar buttons, extensions context menus, and settings dialogs all skinned.
+* Gratitude
+  * Playbay icon skinned.
 * Size on Disk
+  * Playbar icon skinned.
 
 ### Versions
 Zehn features both a static and a live version!
