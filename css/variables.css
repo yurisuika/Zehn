@@ -151,7 +151,7 @@
   --zehn-color-dropdown-dialog-border-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
   --zehn-color-dropdown-dialog-border-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
   --zehn-color-dropdown-dialog-text: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-dropdown-dialog-text-subtitle: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-text-other: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-dropdown-dialog-text-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
 
   --zehn-color-dropdown-fancy-background: transparent;
@@ -1161,10 +1161,8 @@
   --zehn-size-button-dialog-large: var(--zehn-size-button-large);
   --zehn-size-button-dialog-border: 2px;
   --zehn-size-button-dialog-radius: var(--zehn-size-radius-none);
-  --zehn-size-button-dialog-padding-x: var(--zehn-size-padding-medium);
-  --zehn-size-button-dialog-padding-y: 0;
-  --zehn-size-button-dialog-padding: var(--zehn-size-button-dialog-padding-y) var(--zehn-size-button-dialog-padding-x);
-  --zehn-size-button-dialog-padding-column: var(--zehn-size-button-dialog-padding-x) var(--zehn-size-button-dialog-padding-y);
+  --zehn-size-button-dialog-padding: 0  var(--zehn-size-padding-medium);
+  --zehn-size-button-dialog-padding-column:  var(--zehn-size-padding-medium) 0;
   --zehn-size-button-dialog-padding-square: 0;
   --zehn-size-button-dialog-text: var(--zehn-size-14);
 
@@ -1177,21 +1175,26 @@
   --zehn-size-input-fancy-padding: var(--zehn-size-input-fancy-padding-y) var(--zehn-size-input-fancy-padding-x);
 
   --zehn-size-input-dialog: calc(var(--zehn-size-input-medium) - (2 * var(--zehn-size-input-dialog-border)));
+  --zehn-size-input-dialog-width: 300px;
   --zehn-size-input-dialog-border: 2px;
   --zehn-size-input-dialog-radius: var(--zehn-size-radius-none);
-  --zehn-size-input-dialog-padding-x: calc(var(--zehn-size-padding-medium) - var(--zehn-size-input-dialog-border));
-  --zehn-size-input-dialog-padding-y: 0;
-  --zehn-size-input-dialog-padding: var(--zehn-size-input-dialog-padding-y) var(--zehn-size-input-dialog-padding-x);
+  --zehn-size-input-dialog-padding: 0 calc(var(--zehn-size-padding-medium) - var(--zehn-size-input-dialog-border));
   --zehn-size-input-dialog-text: var(--zehn-size-14);
 
   /* DROPDOWNS */
+  --zehn-size-dropdown-medium: 32px;
+  --zehn-size-dropdown-large: 48px;
+
   --zehn-size-dropdown-fancy-padding-x: var(--zehn-size-padding-medium);
   --zehn-size-dropdown-fancy-padding-y: 0;
   --zehn-size-dropdown-fancy-padding: var(--zehn-size-dropdown-fancy-padding-y) var(--zehn-size-dropdown-fancy-padding-x);
 
-  --zehn-size-dropdown-dialog-padding-x: var(--zehn-size-padding-less);
-  --zehn-size-dropdown-dialog-padding-y: 0;
-  --zehn-size-dropdown-dialog-padding: var(--zehn-size-dropdown-dialog-padding-y) var(--zehn-size-dropdown-dialog-padding-x);
+  --zehn-size-dropdown-dialog: var(--zehn-size-dropdown-medium);
+  --zehn-size-dropdown-dialog-large: var(--zehn-size-dropdown-large);
+  --zehn-size-dropdown-dialog-width: 300px;
+  --zehn-size-dropdown-dialog-border: 2px;
+  --zehn-size-dropdown-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-dropdown-dialog-padding: 0 8px 0 10px;
   --zehn-size-dropdown-dialog-text: var(--zehn-size-14);
 
   /* CHECKBOXES */
@@ -1243,6 +1246,9 @@
   --zehn-size-playbar-height: 48px;
   --zehn-size-playbar-width: 48px;
 
+  /* CONTEXT */
+  --zehn-size-context-radius: var(--zehn-size-radius-none) !important;
+
   /* OTHER */
   --zehn-size-context-list: 32px;
 
@@ -1251,8 +1257,6 @@
   --zehn-size-pagelist-width-min: 240px;
 
   --zehn-size-dialog-scroll-content-width: 960px;
-
-  --zehn-size-dialog-button-width: 300px;
 
   --zehn-size-downloads-panel: 200px;
 

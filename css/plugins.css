@@ -291,7 +291,7 @@
 
 .root-buttons button.DialogButton {
   width: 100% !important;
-  max-width: unset !important;
+  max-width: none !important;
   height: var(--zehn-size-button-dialog-large) !important;
 }
 
@@ -410,6 +410,11 @@
   gap: var(--zehn-size-gap-button) !important;
   padding: 0 !important;
   height: var(--zehn-size-button-medium) !important;
+}
+
+.extension-buttons>:last-child {
+  display: block !important;
+  margin: auto 0 !important;
 }
 
 /* EXTENSION DETAILS */
@@ -866,7 +871,7 @@
 }
 
 /* INSTALL EXTENSION */
-.extendium.LegacyPopup form > .DialogBody > .DialogBodyText > div {
+.extendium .DialogBodyText > div:has([placeholder="Enter chrome web store URL"]) {
   gap: var(--zehn-size-gap-medium) !important;
   display: flex !important;
   flex-direction: column !important;

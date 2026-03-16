@@ -10,9 +10,18 @@
   letter-spacing: normal !important;
 }
 
+::-webkit-resizer {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: none !important;
+}
+
 button {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 :root {
@@ -31,10 +40,6 @@ button {
   --touchmenuicon-fg: var(--zehn-color-text-primary);
   --touchmenuicon-bg: transparent;
   --touchmenuicon-scale: 1;
-}
-
-:focus-visible {
-  outline: none !important;
 }
 
 body, body._2LxgdMcpWJRjkxZKbmeEEb {
@@ -95,15 +100,12 @@ a:active {
   margin: 0 !important;
 }
 
-::-webkit-resizer {
-  display: none !important;
-}
-
 /* TEXT INPUT */
 .DialogInput_Wrapper>input.DialogInput {
   /* padding: 0 12px !important; */
   padding: 0 10px !important;
-  min-width: 300px !important;
+  min-width: var(--zehn-size-input-dialog-width) !important;
+  max-width: var(--zehn-size-input-dialog-width) !important;
   color: var(--zehn-color-input-dialog-text) !important;
   background: var(--zehn-color-input-dialog-background) padding-box !important;
   /* outline: 2px solid var(--zehn-color-input-dialog-border) !important; */
@@ -201,21 +203,12 @@ label > .DialogLabel {
 }
 
 /* TEXT */
-.DesktopUI .DialogBodyText {
-  line-height: var(--zehn-size-24) !important;
-}
-
 .DialogBodyText {
+  line-height: var(--zehn-size-24) !important;
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   margin-bottom: 0 !important;
-}
-
-.DialogDropDown {
-  color: var(--zehn-color-dropdown-dialog-text) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-dropdown-dialog-text) !important;
 }
 
 .DialogButton {
@@ -245,21 +238,6 @@ label > .DialogLabel {
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   line-height: var(--zehn-size-32) !important;
-}
-
-button.TextButton {
-  border-bottom: unset !important;
-  color: var(--zehn-color-link) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-}
-
-button.TextButton:hover {
-  color: var(--zehn-color-link-hover) !important;
-}
-
-button.TextButton:active {
-  color: var(--zehn-color-link-active) !important;
 }
 
 .DialogRequirementLabel {
@@ -375,11 +353,6 @@ table, th, td, tbody, thead, tr {
   font-size: var(--zehn-size-14) !important;
   margin-bottom: 0 !important;
   margin-bottom: unset !important;
-}
-
-/* ICON */
-.ModalPosition_Content {
-  color: var(--zehn-color-text-primary) !important;
 }
 
 /* EMOTICON */
@@ -753,75 +726,6 @@ img.AB86vEzEKPL0y5fK_m4pT {
   margin: 3px !important;
 }
 
-/* LINK */
-.DialogBody a, .textLink {
-  color: var(--zehn-color-link) !important;
-}
-
-.DialogBody a:hover, .textLink:hover {
-  color: var(--zehn-color-link-hover) !important;
-}
-
-.DialogBody a:active, .textLink:active {
-  color: var(--zehn-color-link-active) !important;
-}
-
-/* BUTTON */
-* .DialogButton, button.DialogButton, button.DialogButton.Primary, button.DialogButton.Small {
-  box-sizing: border-box !important;
-  background-position: unset !important;
-  margin: 0 !important;
-  transition: none !important;
-  height: var(--zehn-size-button-dialog) !important;
-  line-height: var(--zehn-size-button-dialog) !important;
-  padding: var(--zehn-size-button-dialog-padding) !important;
-  background: var(--zehn-color-button-dialog-background) !important;
-  color: var(--zehn-color-button-dialog-text) !important;
-  font-size: var(--zehn-size-button-dialog-text) !important;
-  border-radius: var(--zehn-size-button-dialog-radius) !important;
-  outline: var(--zehn-size-button-dialog-border) solid var(--zehn-color-button-dialog-border) !important;
-  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
-}
-
-* .DialogButton:hover, button.DialogButton:hover, button.DialogButton.gpfocus, button.DialogButton.Primary:hover, button.DialogButton.Primary.gpfocus {
-  background-color: var(--zehn-color-button-dialog-background-hover) !important;
-  color: var(--zehn-color-button-dialog-text) !important;
-  outline-color: var(--zehn-color-button-dialog-border-hover) !important;
-}
-
-* .DialogButton:active, button.DialogButton:enabled:active, button.DialogButton:enabled:active:hover, button.DialogButton:enabled:active.gpfocus, button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:hover:active, button.DialogButton.Primary:enabled:active.gpfocus {
-  background-color: var(--zehn-color-button-dialog-background-active) !important;
-  color: var(--zehn-color-button-dialog-text) !important;
-  outline-color: var(--zehn-color-button-dialog-border-active) !important;
-}
-
-* .DialogButton:disabled, button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton:disabled:active, button.DialogButton.Disabled, button.DialogButton.Disabled:hover, button.DialogButton.Disabled:active {
-  background-color: var(--zehn-color-button-dialog-background-disabled) !important;
-  color: var(--zehn-color-button-dialog-text-disabled) !important;
-  outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
-}
-
-.DialogButton .SVGIcon_Button {
-  margin: 0 !important;
-  vertical-align: unset !important;
-}
-
-.DialogButton:disabled .SVGIcon_Button, .DialogButton.Disabled .SVGIcon_Button {
-  opacity: 1 !important;
-  filter: none !important;
-  background: var(--zehn-color-icon-tertiary) !important;
-}
-
-button.DialogButton::before {
-  box-shadow: 0 0 0 0 transparent !important;
-  transition: none !important;
-  opacity: unset !important;
-}
-
-.DesktopUI .DialogThreeColLayout._DialogColLayout {
-  gap: var(--zehn-size-gap-medium) !important;
-}
-
 /* RADIO */
 input[type="radio" i] {
   background-color: transparent !important;
@@ -1095,10 +999,6 @@ input[type="radio" i]:checked:active::after {
   display: none !important;
 }
 
-.DialogCheckbox .SVGIcon_DialogCheck * {
-  display: none !important;
-}
-
 .DialogCheckbox .SVGIcon_DialogCheck {
   stroke: transparent !important;
   width: 16px !important;
@@ -1338,7 +1238,7 @@ input[type="radio" i]:checked:active::after {
 .DialogSlider_Container {
   padding: 0 !important;
   display: flex !important;
-  flex-direction: column !important;;
+  flex-direction: column !important;
 }
 
 .DialogLabelExplainer {
@@ -1406,8 +1306,6 @@ input[type="radio" i]:checked:active::after {
   margin: 6px 0 !important;
 }
 
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv {}
-
 ._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw {
   width: 40px !important;
   height: 16px !important;
@@ -1415,7 +1313,7 @@ input[type="radio" i]:checked:active::after {
   top: 0 !important;
   border: 2px solid var(--zehn-color-switch-border-off) !important;
   background: var(--zehn-color-switch-background-off) !important;
-  border-radius: 9001px !important;;
+  border-radius: 9001px !important;
 }
 
 ._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw:hover {
@@ -1710,47 +1608,6 @@ input[type="radio" i]:checked:active::after {
   opacity: 1 !important;
 }
 
-/* SELECT */
-select {
-  color: var(--zehn-color-dropdown-dialog-text) !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  background: var(--zehn-color-dropdown-dialog-background) padding-box !important;
-  border: 2px solid var(--zehn-color-dropdown-dialog-border) !important;
-  appearance: unset !important;
-  line-height: 28px !important;
-  padding: 0 10px !important;
-  font: 400 var(--zehn-size-14) var(--zehn-font-family) !important;
-  height: 32px !important;
-}
-
-select:hover {
-  background: var(--zehn-color-dropdown-dialog-background-hover) padding-box !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
-}
-
-select:active {
-  background: var(--zehn-color-dropdown-dialog-background-active) padding-box !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
-}
-
-select:focus {
-  background: var(--zehn-color-dropdown-dialog-background-focus) padding-box !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
-  color: var(--zehn-color-dropdown-dialog-text-focus) !important;
-}
-
-select * {
-  border-radius: var(--zehn-size-radius-none) !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 0 !important;
-  border: var(--zehn-size-border) solid var(--zehn-color-context-dropdown-border) !important;
-  background-color: var(--zehn-color-context-dropdown-background) !important;
-  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
-  background-blend-mode: exclusion !important;
-  background-image: var(--zehn-texture-acrylic) !important;
-}
-
 option {
   color: var(--zehn-color-text-primary) !important;
   line-height: 32px !important;
@@ -1782,7 +1639,7 @@ option:active {
   line-height: 16px !important;
 }
 
-.DialogListBuilderInput_Input, .DialogDropDown._DialogInputContainer {
+.DialogListBuilderInput_Input {
   color: var(--zehn-color-dropdown-dialog-text) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   /* outline-offset: -2px !important; */
@@ -1820,75 +1677,6 @@ option:active {
   color: var(--zehn-color-input-dialog-text-focus) !important;
 }
 
-.DialogDropDown._DialogInputContainer {
-  background: var(--zehn-color-dropdown-dialog-background) padding-box !important;
-  /* outline: 2px solid var(--zehn-color-dropdown-dialog-border) !important; */
-  border: 2px solid var(--zehn-color-dropdown-dialog-border) !important;
-}
-
-.DialogDropDown._DialogInputContainer:hover {
-  background: var(--zehn-color-dropdown-dialog-background-hover) padding-box !important;
-  /* outline-color: var(--zehn-color-dropdown-dialog-border-hover) !important; */
-  border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
-}
-
-.DialogDropDown._DialogInputContainer:active {
-  background: var(--zehn-color-dropdown-dialog-background-active) padding-box !important;
-  /* outline-color: var(--zehn-color-dropdown-dialog-border-active) !important; */
-  border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
-}
-
-.DialogDropDown._DialogInputContainer.Disabled, .DialogDropDown._DialogInputContainer.Disabled:hover, .DialogDropDown._DialogInputContainer.Disabled:active, .DialogDropDown._DialogInputContainer:disabled, .DialogDropDown._DialogInputContainer:disabled:hover, .DialogDropDown._DialogInputContainer:disabled:active {
-  background: var(--zehn-color-dropdown-dialog-background-disabled) padding-box !important;
-  /* outline-color: var(--zehn-color-dropdown-dialog-border-disabled) !important; */
-  border-color: var(--zehn-color-dropdown-dialog-border-disabled) !important;
-  color: var(--zehn-color-dropdown-dialog-text-disabled) !important;
-}
-
-.DialogDropDown._DialogInputContainer.Disabled:not(:has(.SVGIcon_DownArrowContextMenu)) .DialogDropDown_CurrentDisplay {
-  padding-right: calc(8px + 32px) !important;
-}
-
-.DialogDropDown.Disabled {
-  opacity: 1 !important;
-}
-
-.DialogDropDown_Arrow.DesktopUI, .DesktopUI .DialogDropDown_Arrow, .DialogDropDown_Arrow {
-  opacity: 1 !important;
-  display: flex !important;
-  top: 0 !important;
-  right: 0 !important;
-  left: unset !important;
-  bottom: unset !important;
-  width: 28px !important;
-  height: 28px !important;
-  align-self: flex-end !important;
-  position: relative !important;
-  margin: 0 0 0 auto !important;
-}
-
-.DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu {
-  fill: transparent !important;
-}
-
-.SVGIcon_DownArrowContextMenu {
-  background-color: var(--zehn-color-icon-secondary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-small) !important;
-  -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
-  height: 28px !important;
-  width: 28px !important;
-}
-
-.DialogDropDown, ._3few7361SOf4k_YuKCmM62.DialogDropDown {
-  height: 32px !important;
-  gap: var(--zehn-size-gap-small) !important;
-  line-height: 28px !important;
-  /* padding: 0 0 0 12px !important; */
-  padding: 0 0 0 10px !important;
-}
-
 /* LOADING */
 ._3pXasCUulX4jjqO79s4q_F._2MkHZqf7MrgW3f8qGHiI8Z {
   background: var(--zehn-color-window-fancy) !important;
@@ -1917,10 +1705,7 @@ option:active {
 div:has(>._39-WTtOSEPJqAEjOcNGE3j)::after, div:has(>._1DWH_4M4yAq8O2T06-3ckY)::after, div:has(>.loadingthrobber_Large_)::after, div:has(>._3sa1NXudhvcc1U7HrlLdNQ > img)::after {
   content: "" !important;
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   width: 140px !important;
   height: 140px !important;
   margin: auto !important;
@@ -1960,10 +1745,7 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
 ._1m8iQOSVziKDHiInrfskv_::after {
   content: "" !important;
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   -webkit-mask-image: url("https://steamloopback.host/images/steam_spinner.png") !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
@@ -2078,6 +1860,19 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
   margin: 0 !important;
   border: none !important;
 }
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* ZEHN BUTTONS ----------------------------------------------------------------------------------------------------- */
 
 /* INJECTED BUTTON */
 .zehnButton {
@@ -2385,20 +2180,305 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 
 
 
+/* INTERACTABLE - LINK ---------------------------------------------------------------------------------------------- */
+
+button.TextButton {
+  border-bottom: unset !important;
+  color: var(--zehn-color-link) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+}
+
+button.TextButton:hover {
+  color: var(--zehn-color-link-hover) !important;
+}
+
+button.TextButton:active {
+  color: var(--zehn-color-link-active) !important;
+}
+
+.DialogBody a, .textLink {
+  color: var(--zehn-color-link) !important;
+}
+
+.DialogBody a:hover, .textLink:hover {
+  color: var(--zehn-color-link-hover) !important;
+}
+
+.DialogBody a:active, .textLink:active {
+  color: var(--zehn-color-link-active) !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* INTERACTABLE - BUTTON (DIALOG) ----------------------------------------------------------------------------------- */
+
+* .DialogButton, button.DialogButton, button.DialogButton.Primary, button.DialogButton.Small {
+  box-sizing: border-box !important;
+  background-position: unset !important;
+  margin: 0 !important;
+  transition: none !important;
+  height: var(--zehn-size-button-dialog) !important;
+  line-height: var(--zehn-size-button-dialog) !important;
+  padding: var(--zehn-size-button-dialog-padding) !important;
+  background: var(--zehn-color-button-dialog-background) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
+  border-radius: var(--zehn-size-button-dialog-radius) !important;
+  outline: var(--zehn-size-button-dialog-border) solid var(--zehn-color-button-dialog-border) !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
+}
+
+* .DialogButton:hover, button.DialogButton:hover, button.DialogButton.gpfocus, button.DialogButton.Primary:hover, button.DialogButton.Primary.gpfocus {
+  background-color: var(--zehn-color-button-dialog-background-hover) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover) !important;
+}
+
+* .DialogButton:active, button.DialogButton:enabled:active, button.DialogButton:enabled:active:hover, button.DialogButton:enabled:active.gpfocus, button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:hover:active, button.DialogButton.Primary:enabled:active.gpfocus {
+  background-color: var(--zehn-color-button-dialog-background-active) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active) !important;
+}
+
+* .DialogButton:disabled, button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton:disabled:active, button.DialogButton.Disabled, button.DialogButton.Disabled:hover, button.DialogButton.Disabled:active {
+  background-color: var(--zehn-color-button-dialog-background-disabled) !important;
+  color: var(--zehn-color-button-dialog-text-disabled) !important;
+  outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
+}
+
+.DialogButton .SVGIcon_Button {
+  margin: 0 !important;
+  vertical-align: unset !important;
+}
+
+.DialogButton:disabled .SVGIcon_Button, .DialogButton.Disabled .SVGIcon_Button {
+  opacity: 1 !important;
+  filter: none !important;
+  background: var(--zehn-color-icon-tertiary) !important;
+}
+
+button.DialogButton::before {
+  box-shadow: 0 0 0 0 transparent !important;
+  transition: none !important;
+  opacity: unset !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* INTERACTABLE - DROPDOWN (DIALOG) --------------------------------------------------------------------------------- */
+
+.DialogDropDown._DialogInputContainer {
+  gap: 0 !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  max-width: fit-content !important;
+  min-width: var(--zehn-size-dropdown-dialog-width) !important;
+  height: var(--zehn-size-dropdown-dialog) !important;
+  line-height: var(--zehn-size-dropdown-dialog) !important;
+  padding: var(--zehn-size-dropdown-dialog-padding) !important;
+  background: var(--zehn-color-dropdown-dialog-background) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
+  font-size: var(--zehn-size-dropdown-dialog-text) !important;
+  border-radius: var(--zehn-size-dropdown-dialog-radius) !important;
+  border: var(--zehn-size-dropdown-dialog-border) solid var(--zehn-color-dropdown-dialog-border) !important;
+}
+
+.DialogDropDown._DialogInputContainer:hover {
+  background: var(--zehn-color-dropdown-dialog-background-hover) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
+  border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
+}
+
+.DialogDropDown._DialogInputContainer:active {
+  background: var(--zehn-color-dropdown-dialog-background-active) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
+  border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
+}
+
+.DialogDropDown._DialogInputContainer:focus {
+  background: var(--zehn-color-dropdown-dialog-background-focus) padding-box !important;
+  border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
+  color: var(--zehn-color-dropdown-dialog-text-focus) !important;
+}
+
+.DialogDropDown._DialogInputContainer.Disabled, .DialogDropDown._DialogInputContainer.Disabled:hover, .DialogDropDown._DialogInputContainer.Disabled:active, .DialogDropDown._DialogInputContainer:disabled, .DialogDropDown._DialogInputContainer:disabled:hover, .DialogDropDown._DialogInputContainer:disabled:active {
+  background: var(--zehn-color-dropdown-dialog-background-disabled) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text-disabled) !important;
+  border-color: var(--zehn-color-dropdown-dialog-border-disabled) !important;
+  opacity: 1 !important;
+}
+
+/* CURRENT DISPLAY */
+._2J170P0ckFcUIlsDU13MLS ._DialogInputContainer .DialogDropDown_CurrentDisplay {
+  padding: 0 !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  background-color: transparent !important;
+}
+
+.DialogDropDown_CurrentDisplay {
+  margin-right: auto !important;
+  text-align: left !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  font-size: inherit !important;
+}
+
+/* CHEVRON ICON */
+._2J170P0ckFcUIlsDU13MLS ._DialogInputContainer .DialogDropDown_Arrow {
+  padding: 0 !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  background-color: transparent !important;
+}
+
+.DialogDropDown_Arrow {
+  opacity: 1 !important;
+  display: flex !important;
+  align-self: flex-end !important;
+  position: relative !important;
+  margin: 0 0 0 auto !important;
+  inset: 0 !important;
+  width: var(--zehn-size-icon-small) !important;
+  height: 100% !important;
+  padding-left: var(--zehn-size-padding-small) !important;
+}
+
+.DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu, .SVGIcon_DownArrowContextMenu {
+  height: 100% !important;
+  width: 100% !important;
+  background-color: var(--zehn-color-icon-secondary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-small) !important;
+  -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+}
+
+.DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu * {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* INTERACTABLE - SELECT (DIALOG) ----------------------------------------------------------------------------------- */
+
+select {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  font: var(--zehn-font-family) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  max-width: fit-content !important;
+  min-width: var(--zehn-size-dropdown-dialog-width) !important;
+  height: var(--zehn-size-dropdown-dialog) !important;
+  line-height: var(--zehn-size-dropdown-dialog) !important;
+  padding: var(--zehn-size-dropdown-dialog-padding) !important;
+  background: var(--zehn-color-dropdown-dialog-background) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
+  font-size: var(--zehn-size-dropdown-dialog-text) !important;
+  border-radius: var(--zehn-size-dropdown-dialog-radius) !important;
+  border: var(--zehn-size-dropdown-dialog-border) solid var(--zehn-color-dropdown-dialog-border) !important;
+}
+
+select:hover {
+  background: var(--zehn-color-dropdown-dialog-background-hover) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
+  border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
+}
+
+select:active {
+  background: var(--zehn-color-dropdown-dialog-background-active) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
+  border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
+}
+
+select:focus {
+  background: var(--zehn-color-dropdown-dialog-background-focus) padding-box !important;
+  border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
+  color: var(--zehn-color-dropdown-dialog-text-focus) !important;
+}
+
+select * { /* WHERE THE FUCK IS THIS USED ANYWAYS??? */
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: var(--zehn-size-context-radius) !important;
+  border: var(--zehn-size-border) solid var(--zehn-color-context-dropdown-border) !important;
+  background-color: var(--zehn-color-context-dropdown-background) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--zehn-texture-acrylic) !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* MODAL ------------------------------------------------------------------------------------------------------------ */
+
+.fullheight.ModalDialogBody {
+  min-height: fit-content !important;
+}
+
+.ModalPosition_Content {
+  color: var(--zehn-color-text-primary) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  color: var(--zehn-color-text-primary) !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
 /* DIALOG ---------------------------------------------------------------------------------------------------------- */
 
-.DialogContent:not(._3Sf_ShCtdfWp5P04k2cIgp) {
+.DialogContent {
   padding: 0 !important;
 }
 
-.DialogContent:has(._3Sf_ShCtdfWp5P04k2cIgp) {
+.DialogContent_InnerWidth {
   padding: 0 !important;
-}
-
-.DialogContent_InnerWidth:not(._3Sf_ShCtdfWp5P04k2cIgp) {
-  /*padding: 32px 0 0 0 !important;*/
-  padding: 0 !important;
-  margin: 32px 0 0 0 !important;
+  margin: var(--zehn-size-titlebar-height) 0 0 0 !important;
   overflow: visible !important;
 }
 
@@ -2407,18 +2487,8 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   padding: 0 !important;
 }
 
-.CFTLX2wIKOK3hNV-fS7_V.DesktopUI .DialogContent_InnerWidth, .DesktopUI .CFTLX2wIKOK3hNV-fS7_V .DialogContent_InnerWidth {
-  /*padding: 32px 0 0 0 !important;*/
-  padding: 0 !important;
-  margin: 32px 0 0 0 !important;
-}
-
 /* DIALOG SPACING TO FIX SCROLLBAR POS */
 .DialogContent._DialogLayout.GenericConfirmDialog._DialogCenterVertically .DialogContent_InnerWidth {
-  min-height: fit-content !important;
-}
-
-.fullheight.ModalDialogBody {
   min-height: fit-content !important;
 }
 
@@ -2428,23 +2498,27 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 }
 
 .ModalDialogPopup .PopupFullWindow .DialogContent_InnerWidth {
-  max-width: unset !important;
+  max-width: none !important;
 }
 
-.ModalDialogPopup .DialogContent_InnerWidth .DialogBody > * {
+.ModalDialogPopup:has(.PageListColumn) .DialogContent_InnerWidth .DialogBody > * { /* LIMIT WIDTH FOR SETTINGS */
   max-width: var(--zehn-size-dialog-scroll-content-width) !important;
+  flex-wrap: wrap !important;
 }
 
-.DialogContent_InnerWidth:has(._3Sf_ShCtdfWp5P04k2cIgp) {
-  padding: 0 !important;
+.ModalDialogPopup:has(.xSTLmzylFJdIfak7ZdhuA) .DialogContent_InnerWidth .DialogBody > * { /* LIMIT WIDTH FOR CHAT SETTINGS */
+  max-width: var(--zehn-size-dialog-scroll-content-width) !important;
+  flex-wrap: wrap !important;
 }
 
 .DialogContent_InnerWidth > form {
   gap: var(--zehn-size-gap-medium) !important;
   display: flex !important;
+  flex-shrink: 0 !important;
   flex-direction: column !important;
   padding: var(--zehn-size-padding-medium) 0 !important; /* INNER WIDTH */
   max-height: fit-content !important;
+  min-height: fit-content !important;
 }
 
 .DialogContent_InnerWidth > .DialogHeader {
@@ -2457,20 +2531,11 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   flex-direction: column !important;
 }
 
-.DialogBody, .DialogFooter {
+.DialogBody {
   padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
-.DialogBody > .DialogBody {
-  padding: 0 !important;
-}
-
-.DialogBody .DialogFooter {
-  padding: 0 !important;
-  padding-bottom: 16px !important;
-}
-
-.DialogContent_InnerWidth > form .DialogBody .DialogFooter {
+.DialogBody > .DialogBody { /* DOUBLE DIALOG !!!!! */
   padding: 0 !important;
 }
 
@@ -2508,24 +2573,6 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
-/* DROPDOWN */
-.DialogDropDown_CurrentDisplay {
-  line-height: 28px !important;
-}
-
-/* DROPDOWN CURRENT DISPLAY */
-._2J170P0ckFcUIlsDU13MLS ._DialogInputContainer .DialogDropDown_CurrentDisplay {
-  padding: 0 !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  background-color: transparent !important;
-}
-
-._2J170P0ckFcUIlsDU13MLS ._DialogInputContainer .DialogDropDown_Arrow {
-  padding: 0 !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  background-color: transparent !important;
-}
-
 /* HEADER NOT ON SETTINGS */
 .DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader {
   position: absolute !important;
@@ -2546,16 +2593,6 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 
 .DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader .DialogHeaderSubtitle::before {
   content: "\00a0-\00a0" !important;
-}
-
-/* FOOTER */
-.DialogContent._DialogLayout.GenericConfirmDialog._DialogCenterVertically .DialogFooter {
-  padding-top: 0 !important;
-}
-
-.DialogFooter {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
 }
 
 /* ERROR */
@@ -2601,12 +2638,8 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
-.DialogContent_InnerWidth > .DialogFooter {
-  padding: 0 16px 16px 16px !important;
-}
-
 /* ABOUT STEAM */
-.FFIKUQ7BGKw6vO1voazlr.yXl6Aog783PLUFn-IiX7E .DialogContent_InnerWidth  {
+.FFIKUQ7BGKw6vO1voazlr.yXl6Aog783PLUFn-IiX7E .DialogContent_InnerWidth {
   padding: 0 !important;
   align-self: flex-start !important;
 }
@@ -2628,9 +2661,75 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   display: none !important;
 }
 
-/* TWO COL */
-.DialogTwoColLayout>._DialogLayout {
+/* FOOTER */
+.DialogFooter, .DialogBody .DialogFooter {
+  padding: 0 var(--zehn-size-padding-medium) !important;
+  margin: auto 0 0 0 !important;
+  gap: var(--zehn-size-gap-medium) !important;
+}
+
+.DialogContent_InnerWidth > .DialogFooter { /* FOOTERS DIRECTLY UNDER AN INNER WIDTH THAT NEED THE PADDING */
+  padding: 0 var(--zehn-size-padding-medium) var(--zehn-size-padding-medium) var(--zehn-size-padding-medium) !important;
+}
+
+.DialogContent_InnerWidth > form .DialogBody .DialogFooter { /* ??????????????????????????? */
+  padding: 0 !important;
+}
+
+/* CONFIRM DIALOG */
+.GenericConfirmDialog {
+  min-height: fit-content !important;
+  max-height: none !important;
+}
+
+.GenericConfirmDialog._DialogCenterVertically {
+  justify-content: center !important;
+}
+
+.GenericConfirmDialog .DialogFooter {
+  padding: 0 var(--zehn-size-padding-medium) !important;
+}
+
+.GenericConfirmDialog .DialogFooter ._DialogColLayout {
+  min-width: 100% !important;
+}
+
+.GenericConfirmDialog .DialogFooter .DialogButton { /* MAKE FOOTER BUTTONS FULL WIDTH */
+  flex: 1 !important;
+  max-width: none !important;
+}
+
+.GenericConfirmDialog ._DialogLayout:not(.DialogButton) { /* MAKE INPUTS FULL WIDTH */
+  flex: 1 !important;
+  max-width: none !important;
+}
+
+/* DIALOG COLUMNS */
+._DialogColLayout {
+  gap: var(--zehn-size-gap-button) !important;
+  justify-content: center !important;
+  flex-flow: row !important;
   max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+._DialogColLayout.DialogThreeColLayout {
+  gap: var(--zehn-size-gap-button) !important;
+}
+
+._DialogColLayout.DialogTwoColLayout {
+  gap: var(--zehn-size-gap-button) !important;
+}
+
+/* DIALOG LAYOUT */
+._DialogLayout { /* FOR PAGE WIDE LAYOUTS */
+  max-width: 100% !important;
+  min-width: fit-content !important;
+}
+
+._DialogLayout.DialogButton { /* FOR DIALOG BUTTONS */
+  max-width: fit-content !important;
+  min-width: fit-content !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -3225,7 +3324,7 @@ body:not(.WindowFocus) ::-webkit-scrollbar, div:not(:hover)>::-webkit-scrollbar 
   border-top: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
   border-bottom: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
   border-right: var(--zehn-scrollbar-focused-outer-spacing) solid transparent !important;
-  border-left: var(--zehn-scrollbar-focused-inner-spacing) solid transparent !important;;
+  border-left: var(--zehn-scrollbar-focused-inner-spacing) solid transparent !important;
   border-radius: var(--zehn-scrollbar-focused-thumb-radius) !important;
 }
 
@@ -3291,7 +3390,7 @@ body:not(.WindowFocus) ::-webkit-scrollbar, div:not(:hover)>::-webkit-scrollbar 
 }
 
 ._1xLWmfPlWGV47FujycPN_c .DialogInput_Wrapper > input.DialogInput {
-  min-width: unset !important;
+  min-width: none !important;
   padding: 0 48px 0 10px !important;
 }
 
