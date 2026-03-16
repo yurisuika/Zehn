@@ -202,7 +202,7 @@ label > .DialogLabel {
 
 /* TEXT */
 .DesktopUI .DialogBodyText {
-  line-height: 24px !important;
+  line-height: var(--zehn-size-24) !important;
 }
 
 .DialogBodyText {
@@ -213,25 +213,23 @@ label > .DialogLabel {
 }
 
 .DialogDropDown {
-  color: var(--zehn-color-text-primary) !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
+  font-size: var(--zehn-size-dropdown-dialog-text) !important;
 }
 
 .DialogButton {
   color: var(--zehn-color-button-dialog-text) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
 }
 
 .DialogInput {
-  color: var(--zehn-color-text-primary) !important;
+  color: var(--zehn-color-input-dialog-text) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  /* padding: 0 var(--zehn-size-padding-medium) !important;
-  line-height: 32px !important; */
-  padding: 0 14px !important;
-  line-height: 28px !important;
+  padding: var(--zehn-size-input-dialog-padding) !important;
+  line-height: var(--zehn-size-input-dialog) !important;
 }
 
 .DialogBody {
@@ -246,7 +244,7 @@ label > .DialogLabel {
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-32) !important;
 }
 
 button.TextButton {
@@ -268,7 +266,6 @@ button.TextButton:active {
   color: rgb(var(--zehn-color-accent)) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  /* padding: 0 var(--zehn-size-padding-medium) !important; */
   padding: 0 !important;
 }
 
@@ -770,52 +767,43 @@ img.AB86vEzEKPL0y5fK_m4pT {
 }
 
 /* BUTTON */
-button.DialogButton {
+* .DialogButton, button.DialogButton, button.DialogButton.Primary, button.DialogButton.Small {
+  box-sizing: border-box !important;
   background-position: unset !important;
-  background-color: var(--zehn-color-button-dialog-background) !important;
-  color: var(--zehn-color-button-dialog-text) !important;
-  border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
   transition: none !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border) !important;
-  outline-offset: -2px !important;
-}
-
-button.DialogButton.Small {
-  line-height: var(--zehn-size-button-medium) !important;
-}
-
-button.DialogButton.Primary {
+  height: var(--zehn-size-button-dialog) !important;
+  line-height: var(--zehn-size-button-dialog) !important;
+  padding: var(--zehn-size-button-dialog-padding) !important;
   background: var(--zehn-color-button-dialog-background) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
+  border-radius: var(--zehn-size-button-dialog-radius) !important;
+  outline: var(--zehn-size-button-dialog-border) solid var(--zehn-color-button-dialog-border) !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
 }
 
-button.DialogButton:hover, button.DialogButton.gpfocus {
+* .DialogButton:hover, button.DialogButton:hover, button.DialogButton.gpfocus, button.DialogButton.Primary:hover, button.DialogButton.Primary.gpfocus {
   background-color: var(--zehn-color-button-dialog-background-hover) !important;
   color: var(--zehn-color-button-dialog-text) !important;
   outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 }
 
-button.DialogButton:enabled:active, button.DialogButton:enabled:active:hover, button.DialogButton:enabled:active.gpfocus {
+* .DialogButton:active, button.DialogButton:enabled:active, button.DialogButton:enabled:active:hover, button.DialogButton:enabled:active.gpfocus, button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:hover:active, button.DialogButton.Primary:enabled:active.gpfocus {
   background-color: var(--zehn-color-button-dialog-background-active) !important;
   color: var(--zehn-color-button-dialog-text) !important;
   outline-color: var(--zehn-color-button-dialog-border-active) !important;
 }
 
-button.DialogButton::before {
-  box-shadow: 0 0 0 0 transparent !important;
-  transition: none !important;
-  opacity: unset !important;
-}
-
-button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton:disabled:active, button.DialogButton.Disabled, button.DialogButton.Disabled:hover, button.DialogButton.Disabled:active {
+* .DialogButton:disabled, button.DialogButton:disabled, button.DialogButton:disabled:hover, button.DialogButton:disabled:active, button.DialogButton.Disabled, button.DialogButton.Disabled:hover, button.DialogButton.Disabled:active {
   background-color: var(--zehn-color-button-dialog-background-disabled) !important;
   color: var(--zehn-color-button-dialog-text-disabled) !important;
   outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
 }
 
-button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:hover:active, button.DialogButton.Primary:enabled:active.gpfocus {
-  background: var(--zehn-color-button-dialog-background-active) !important;
-  color: var(--zehn-color-button-dialog-text) !important;
+.DialogButton .SVGIcon_Button {
+  margin: 0 !important;
+  vertical-align: unset !important;
 }
 
 .DialogButton:disabled .SVGIcon_Button, .DialogButton.Disabled .SVGIcon_Button {
@@ -824,13 +812,14 @@ button.DialogButton.Primary:enabled:active, button.DialogButton.Primary:enabled:
   background: var(--zehn-color-icon-tertiary) !important;
 }
 
-.DesktopUI .DialogThreeColLayout._DialogColLayout {
-  gap: var(--zehn-size-gap-medium) !important;
+button.DialogButton::before {
+  box-shadow: 0 0 0 0 transparent !important;
+  transition: none !important;
+  opacity: unset !important;
 }
 
-.DialogButton .SVGIcon_Button {
-  margin-right: 0 !important;
-  vertical-align: unset !important;
+.DesktopUI .DialogThreeColLayout._DialogColLayout {
+  gap: var(--zehn-size-gap-medium) !important;
 }
 
 /* RADIO */
@@ -1757,7 +1746,7 @@ select * {
   padding: 0 !important;
   border: var(--zehn-size-border) solid var(--zehn-color-context-dropdown-border) !important;
   background-color: var(--zehn-color-context-dropdown-background) !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--zehn-texture-acrylic) !important;
 }
@@ -2044,11 +2033,11 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: rgb(var(--zehn-color-accent)) !important;
   border: none !important;
-  line-height: var(--zehn-size-bar-small) !important;
+  line-height: var(--zehn-size-panel-small) !important;
   transition: none !important;
   animation-fill-mode: forwards !important;
   box-sizing: border-box !important;
-  height: var(--zehn-size-bar-small) !important;
+  height: var(--zehn-size-panel-small) !important;
   text-align: center !important;
 }
 
@@ -3285,7 +3274,7 @@ body:not(.WindowFocus) ::-webkit-scrollbar, div:not(:hover)>::-webkit-scrollbar 
   padding: 13px 8px !important;
   gap: 0 !important;
   background-color: var(--zehn-color-acrylic) !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--zehn-texture-acrylic) !important;
 }

@@ -652,8 +652,8 @@ body:not(.WindowFocus) .chatTabSelector svg {
   font-size: var(--zehn-size-10) !important;
   width: 100% !important;
   display: flex !important;
-  height: var(--zehn-size-bar-medium) !important;
-  line-height: var(--zehn-size-bar-medium) !important;
+  height: var(--zehn-size-panel-medium) !important;
+  line-height: var(--zehn-size-panel-medium) !important;
   margin: 0 0 24px 0 !important;
 }
 
@@ -963,23 +963,27 @@ body:not(.WindowFocus) .chatTabSelector svg {
 }
 
 .msg .acceptButtonsGroup button.DialogButton.GreenPlay {
+  height: var(--zehn-size-button-dialog) !important;
+  line-height: var(--zehn-size-button-dialog) !important;
+  padding: var(--zehn-size-button-dialog-padding) !important;
   background: var(--zehn-color-button-dialog-background) !important;
-  color: var(--zehn-color-text-primary) !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border) !important;
-  outline-offset: -2px !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
+  border-radius: var(--zehn-size-button-dialog-radius) !important;
+  outline: var(--zehn-size-button-dialog-border) solid var(--zehn-color-button-dialog-border) !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
 }
 
 .msg .acceptButtonsGroup button.DialogButton.GreenPlay:hover {
-  background: var(--zehn-color-button-dialog-background-hover) !important;
-  color: var(--zehn-color-text-primary) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border-hover) !important;
+  background-color: var(--zehn-color-button-dialog-background-hover) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 }
 
 .msg .acceptButtonsGroup button.DialogButton.GreenPlay:active {
-  background: var(--zehn-color-button-dialog-background-active) !important;
-  color: var(--zehn-color-text-primary) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border-active) !important;
+  background-color: var(--zehn-color-button-dialog-background-active) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active) !important;
 }
 
 .rightInviteContainer .closebutton {
@@ -1049,31 +1053,33 @@ body:not(.WindowFocus) .chatTabSelector svg {
 
 .ChatMessageInvite .DialogButton, .inviteButtonJoinChat {
   min-width: fit-content !important;
-  min-height: 32px !important;
+  min-height: var(--zehn-size-button-dialog) !important;
 }
 
 .inviteButton {
-  border-radius: var(--zehn-size-radius-none) !important;
-  padding: 0 var(--zehn-size-padding-medium) !important;
   border: unset !important;
   margin: 0 !important;
-  padding: 0 !important;
+  height: var(--zehn-size-button-dialog) !important;
+  line-height: var(--zehn-size-button-dialog) !important;
+  padding: var(--zehn-size-button-dialog-padding) !important;
   background: var(--zehn-color-button-dialog-background) !important;
-  color: var(--zehn-color-text-primary) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border) !important;
-  outline-offset: -2px !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
+  border-radius: var(--zehn-size-button-dialog-radius) !important;
+  outline: var(--zehn-size-button-dialog-border) solid var(--zehn-color-button-dialog-border) !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
 }
 
 .inviteButton:hover {
   background: var(--zehn-color-button-dialog-background-hover) !important;
-  color: var(--zehn-color-text-primary) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border-hover) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 }
 
 .inviteButton:active {
   background: var(--zehn-color-button-dialog-background-active) !important;
-  color: var(--zehn-color-text-primary) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border-active) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active) !important;
 }
 
 .ChatMessageInvite .inviteButton.inviteButtonJoinChat {
@@ -1205,55 +1211,57 @@ body:not(.WindowFocus) .chatTabSelector svg {
 
 /* ADD FRIEND BUTTON */
 .inviteAnotherFriendButton {
-  top: 16px !important;
-  right: 16px !important;
-  padding: 0 !important;
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
-  max-width: 48px !important;
-  max-height: 48px !important;
+  top: var(--zehn-size-gap-medium) !important;
+  right: var(--zehn-size-gap-medium) !important;
+  width: var(--zehn-size-button-dialog-large) !important;
+  height: var(--zehn-size-button-dialog-large) !important;
+  min-width: var(--zehn-size-button-dialog-large) !important;
+  min-height: var(--zehn-size-button-dialog-large) !important;
+  max-width: var(--zehn-size-button-dialog-large) !important;
+  max-height: var(--zehn-size-button-dialog-large) !important;
   border: unset !important;
-  border-radius: var(--zehn-size-radius-none) !important;
   margin: 0 !important;
-  background-size: 48px !important;
+  line-height: var(--zehn-size-button-dialog-large) !important;
+  padding: var(--zehn-size-button-dialog-padding-square) !important;
   background: var(--zehn-color-button-dialog-background) !important;
-  transition: opacity 0.25s ease !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
+  border-radius: var(--zehn-size-button-dialog-radius) !important;
+  outline: var(--zehn-size-button-dialog-border) solid var(--zehn-color-button-dialog-border) !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
+  transition: opacity 0.2s ease-in-out !important;
   transition-delay: 1s !important;
   opacity: 0 !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  background-size: auto !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--zehn-texture-acrylic) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border) !important;
-  outline-offset: -2px !important;
   display: none !important;
 }
 
 div:hover > .inviteAnotherFriendButton {
   opacity: 1 !important;
   transition-delay: 1s !important;
-  transition: opacity 0.25s ease !important;
+  transition: opacity 0.2s ease-in-out !important;
 }
 
 .inviteAnotherFriendButton:hover {
   background-color: var(--zehn-color-button-dialog-background-hover) !important;
-  color: var(--zehn-color-text-primary) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border-hover) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 }
 
 .inviteAnotherFriendButton:active {
   background-color: var(--zehn-color-button-dialog-background-active) !important;
-  color: var(--zehn-color-text-primary) !important;
-  outline: 2px solid var(--zehn-color-button-dialog-border-active) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active) !important;
 }
 
 .inviteAnotherFriendButton .SVGIcon_Button, .inviteAnotherFriendButton:hover .SVGIcon_Button, .chatRoomButton:hover:not(.Disabled) .SVGIcon_Button {
   width: 100% !important;
   height: 100% !important;
   fill: transparent !important;
-  margin-left: 0 !important;
-  margin-top: 0 !important;
+  margin: 0 !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -1264,17 +1272,16 @@ div:hover > .inviteAnotherFriendButton {
   -webkit-mask-image: var(--zehn-icon-contact-add) !important;
 }
 
-
 body:not(.WindowFocus) .inviteAnotherFriendButton {
   opacity: 0 !important;
 }
 
 /* UPLOAD FILE */
 .chatFileUploadPreviewContainer {
-  bottom: 32px !important;
+  bottom: var(--zehn-size-gap-large) !important;
   left: unset !important;
   background: var(--zehn-color-window-fancy) !important;
-  padding: calc(32px + 16px) 0 16px !important;
+  padding: calc(var(--zehn-size-titlebar-height) + var(--zehn-size-padding-medium)) 0 var(--zehn-size-padding-medium) !important;
   gap: var(--zehn-size-gap-medium) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   max-height: calc(100vh - 144px) !important;
@@ -1300,22 +1307,28 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatFileUploadFileName {
-  padding: 0 12px !important;
-  font-size: var(--zehn-size-12) !important;
+  padding: var(--zehn-size-titlebar-text-padding) !important;
+  padding-right: calc(var(--zehn-size-titlebar-width) + var(--zehn-size-titlebar-text-padding-x)) !important;
+  font-size: var(--zehn-size-titlebar-text) !important;
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-titlebar-height) !important;
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
+  right: 0 !important;
   text-align: left !important;
   width: 100% !important;
   background-color: var(--zehn-color-acrylic) !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--zehn-texture-acrylic) !important;
-  max-width: unset !important;
+  max-width: 100% !important;
   box-sizing: border-box !important;
+  max-height: var(--zehn-size-titlebar-height) !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
 }
 
 .chatFileUploadCancel {
@@ -1396,7 +1409,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatFileUploadProgressContainer {
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: var(--zehn-color-acrylic) !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--zehn-texture-acrylic) !important;
   padding: 16px !important;
@@ -1680,7 +1693,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: var(--zehn-color-button-acrylic-background) !important;
   background-image: var(--zehn-texture-acrylic) !important;
   background-blend-mode: exclusion !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   opacity: 0 !important;
   transform: scale(0.5) !important;
 }
@@ -1765,7 +1778,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeAlreadyCollapsedText {
-  height: var(--zehn-size-bar-medium) !important;
+  height: var(--zehn-size-panel-medium) !important;
   padding: 0 !important;
   margin: 0 auto 0 0 !important;
   line-height: var(--zehn-size-button-medium) !important;
@@ -1817,7 +1830,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: 0 !important;
   margin: 0 !important;
   width: auto !important;
-  line-height: var(--zehn-size-bar-medium) !important;
+  line-height: var(--zehn-size-panel-medium) !important;
   box-sizing: border-box !important;
   white-space: nowrap !important;
   overflow: hidden !important;
@@ -1963,7 +1976,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: var(--zehn-color-button-acrylic-background) !important;
   background-image: var(--zehn-texture-acrylic) !important;
   background-blend-mode: exclusion !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   gap: var(--zehn-size-gap-small) !important;
   display: flex !important;
   border-radius: var(--zehn-size-radius-none) !important;
@@ -2285,7 +2298,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: 0 var(--zehn-size-padding-small) !important;
   color: var(--zehn-color-text-primary) !important;
   height: 100% !important;
-  line-height: var(--zehn-size-bar-medium) !important;
+  line-height: var(--zehn-size-panel-medium) !important;
 }
 
 ._2TW_VCsWSsBfLU9gZC1n_V {
@@ -2367,7 +2380,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background-color: var(--zehn-color-button-acrylic-background) !important;
   background-image: var(--zehn-texture-acrylic) !important;
   background-blend-mode: exclusion !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   opacity: 0 !important;
   transform: scale(0.5) !important;
 }
@@ -2707,12 +2720,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* CHAT ROOM HEADER */
 .namedGroup .chatRoomGroupHeader, .chatRoomGroupHeader {
   padding: 0 !important;
-  height: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-panel-large) !important;
   gap: var(--zehn-size-gap-medium) !important;
 }
 
 .chatRoomHeader {
-  height: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-panel-large) !important;
   padding: 0 !important;
   background-color: var(--zehn-color-window-section) !important;
 }
@@ -2864,7 +2877,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHAT ROOM NAV COLUMN */
 .chatRoomGroupNavColumn {
-  margin-top: calc(-1 * var(--zehn-size-bar-large)) !important;
+  margin-top: calc(-1 * var(--zehn-size-panel-large)) !important;
   padding-bottom: var(--zehn-size-button-large) !important;
   position: absolute !important;
   height: 100% !important;
@@ -2881,7 +2894,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
   padding-bottom: 0 !important;
-  height: calc(100% + var(--zehn-size-bar-large)) !important;
+  height: calc(100% + var(--zehn-size-panel-large)) !important;
 }
 
 .chatRoomChannelGroups {
@@ -2911,7 +2924,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry, .MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .chatHeader {
-  margin-left: var(--zehn-size-bar-large) !important;
+  margin-left: var(--zehn-size-panel-large) !important;
 }
 
 .ChatHistoryContainer {
@@ -3161,8 +3174,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHAT ROOM LIST COLLAPSED */
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
-  min-width: var(--zehn-size-bar-large) !important;
-  max-width: var(--zehn-size-bar-large) !important;
+  min-width: var(--zehn-size-panel-large) !important;
+  max-width: var(--zehn-size-panel-large) !important;
   margin-bottom: 0 !important;
 }
 
@@ -3200,7 +3213,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatRoomGroupNavCollapsed .ChannelTypeTitle .ChannelTypeLabel, .chatRoomGroupNavCollapsed .chatRoomTextChannelName {
   top: 0 !important;
-  left: var(--zehn-size-bar-large) !important;
+  left: var(--zehn-size-panel-large) !important;
   position: absolute !important;
   transform: none !important;
 }
@@ -3314,12 +3327,12 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* MEMBER LIST COLLAPSED */
 .MemberListColumn.MemberListViewCompact .chatRoomMembers .friendGroup .groupName {
   margin: 0 !important;
-  height: var(--zehn-size-bar-large) !important;
-  width: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-panel-large) !important;
+  width: var(--zehn-size-panel-large) !important;
 }
 
 .MemberListColumn.MemberListViewCompact {
-  width: var(--zehn-size-bar-large) !important;
+  width: var(--zehn-size-panel-large) !important;
   display: none !important;
 }
 
@@ -3332,8 +3345,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatRoomGroupNavCollapseExpand, .MemberListOption {
-  width: var(--zehn-size-bar-large) !important;
-  height: var(--zehn-size-bar-large) !important;
+  width: var(--zehn-size-panel-large) !important;
+  height: var(--zehn-size-panel-large) !important;
   opacity: 1 !important;
   padding: 0 !important;
   transition: none !important;
@@ -3478,10 +3491,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .MemberListColumn .MemberListOptionsContainer .socialInputContainer {
   width: 100% !important;
-  max-height: var(--zehn-size-bar-large) !important;
-  height: var(--zehn-size-bar-large) !important;
+  max-height: var(--zehn-size-panel-large) !important;
+  height: var(--zehn-size-panel-large) !important;
   margin: 0 !important;
-  min-height: var(--zehn-size-bar-large) !important;
+  min-height: var(--zehn-size-panel-large) !important;
 }
 
 .MemberListOptionsContainer, .MemberListColumn .MemberListOptionsContainer .socialInputContainer {
@@ -3489,7 +3502,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOptionsContainer .socialInputContainer .friendSearchInput[type="text"] {
-  height: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-panel-large) !important;
   margin: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -3497,7 +3510,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOptionsContainer .socialInputContainer .inputContainer.no-drag {
-  height: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-panel-large) !important;
 }
 
 .MemberListOptionsContainer:has(.friendSearchInput:focus), .MemberListOptionsContainer .socialInputContainer .inputContainer .friendSearchInput:focus {
@@ -3513,15 +3526,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   font-size: var(--zehn-size-14) !important;
   padding: 0 var(--zehn-size-padding-medium) !important;
   width: 100% !important;
-  height: var(--zehn-size-bar-large) !important;
+  height: var(--zehn-size-panel-large) !important;
 }
 
 .MemberListColumn .inputContainer::after {
   content: "" !important;
   position: absolute !important;
   right: 0 !important;
-  width: var(--zehn-size-bar-large) !important;
-  height: var(--zehn-size-bar-large) !important;
+  width: var(--zehn-size-panel-large) !important;
+  height: var(--zehn-size-panel-large) !important;
   background-color: var(--zehn-color-icon-secondary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -3543,13 +3556,13 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .MemberListOptionsContainer .friendSearchClear {
-  width: var(--zehn-size-bar-large) !important;
-  height: var(--zehn-size-bar-large) !important;
+  width: var(--zehn-size-panel-large) !important;
+  height: var(--zehn-size-panel-large) !important;
 }
 
 .MemberListOptionsContainer .friendSearchClear .SVGIcon_X_Line {
-  width: var(--zehn-size-bar-large) !important;
-  height: var(--zehn-size-bar-large) !important;
+  width: var(--zehn-size-panel-large) !important;
+  height: var(--zehn-size-panel-large) !important;
 }
 
 .SearchActive .inputContainer:not(:has(input:placeholder-shown)) .friendSearchClear {
@@ -3659,7 +3672,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   line-height: 32px !important;
   background: var(--zehn-color-window-acrylic) !important;
   transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
-  backdrop-filter: blur(var(--zehn-size-blur)) !important;
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   background-blend-mode: exclusion !important;
 }
 
@@ -4005,7 +4018,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 /* CHAT EXPANDER */
 .chatWindow:has(.chatHidden) .chatRoomHeader {
-  padding-left: var(--zehn-size-bar-large) !important;
+  padding-left: var(--zehn-size-panel-large) !important;
 }
 
 .BroadcastChatExpander {
