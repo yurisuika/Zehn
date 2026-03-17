@@ -615,44 +615,51 @@
   margin: 0 !important;
 }
 
-.styled-input {
-  margin: var(--zehn-size-gap-medium) 0 !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  font-size: var(--zehn-size-14) !important;
-  line-height: 28px !important;
-  display: flex !important;
-  max-width: 100% !important;
-  min-width: 100% !important;
-  box-sizing: border-box !important;
-  color: var(--zehn-color-input-dialog-text) !important;
-  background: var(--zehn-color-input-dialog-background) padding-box !important;
-  border: 2px solid var(--zehn-color-input-dialog-border) !important;
-  height: var(--zehn-size-input-medium) !important;
-}
-
 .storage-manager .styled-input[type="text" i] {
   margin: var(--zehn-size-gap-medium) 0 !important;
 }
 
 .styled-input[type="text" i] {
-  padding: 0 12px !important;
-  margin: 0 !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  height: var(--zehn-size-input-dialog) !important;
+  line-height: var(--zehn-size-input-dialog) !important;
+  padding: var(--zehn-size-input-dialog-padding) !important;
+  background: var(--zehn-color-input-dialog-background) padding-box !important;
+  color: var(--zehn-color-input-dialog-text) !important;
+  font-size: var(--zehn-size-input-dialog-text) !important;
+  border-radius: var(--zehn-size-input-dialog-radius) !important;
+  border: var(--zehn-size-input-dialog-border) solid var(--zehn-color-input-dialog-border) !important;
 }
 
-.styled-input:hover {
+.styled-input[type="text" i]:hover {
   background: var(--zehn-color-input-dialog-background-hover) padding-box !important;
+  color: var(--zehn-color-input-dialog-text-hover) !important;
   border-color: var(--zehn-color-input-dialog-border-hover) !important;
 }
 
-.styled-input:active {
+.styled-input[type="text" i]:active {
   background: var(--zehn-color-input-dialog-background-active) padding-box !important;
+  color: var(--zehn-color-input-dialog-text-active) !important;
   border-color: var(--zehn-color-input-dialog-border-active) !important;
 }
 
-.styled-input:focus {
+.styled-input[type="text" i]:focus {
   background: var(--zehn-color-input-dialog-background-focus) padding-box !important;
   border-color: var(--zehn-color-input-dialog-border-focus) !important;
   color: var(--zehn-color-input-dialog-text-focus) !important;
+}
+
+.styled-input[type="text" i]:disabled, .styled-input[type="text" i]:read-only {
+  background: var(--zehn-color-input-dialog-background-disabled) padding-box !important;
+  color: var(--zehn-color-input-dialog-text-disabled) !important;
+  border-color: var(--zehn-color-input-dialog-border-disabled) !important;
+}
+
+.styled-input[type="text" i]::placeholder {
+  color: var(--zehn-color-input-dialog-text-placeholder) !important;
 }
 
 .storage-manager {
@@ -781,14 +788,26 @@
 
 .ext-links-manager .ext-links-remove:hover, .ext-links-manager .ext-links-add:hover {
   background-color: var(--zehn-color-button-dialog-background-hover) !important;
-  color: var(--zehn-color-button-dialog-text) !important;
+  color: var(--zehn-color-button-dialog-text-hover) !important;
   outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 }
 
 .ext-links-manager .ext-links-remove:active, .ext-links-manager .ext-links-add:active {
   background-color: var(--zehn-color-button-dialog-background-active) !important;
-  color: var(--zehn-color-button-dialog-text) !important;
+  color: var(--zehn-color-button-dialog-text-active) !important;
   outline-color: var(--zehn-color-button-dialog-border-active) !important;
+}
+
+.ext-links-manager .ext-links-remove:focus, .ext-links-manager .ext-links-addfocus {
+  background-color: var(--zehn-color-button-dialog-background-focus) !important;
+  color: var(--zehn-color-button-dialog-text-focus) !important;
+  outline-color: var(--zehn-color-button-dialog-border-focus) !important;
+}
+
+.ext-links-manager .ext-links-remove:disabled, .ext-links-manager .ext-links-adddisabled {
+  background-color: var(--zehn-color-button-dialog-background-disabled) !important;
+  color: var(--zehn-color-button-dialog-text-disabled) !important;
+  outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
 }
 
 .ext-links-manager .ext-links-toggle {
