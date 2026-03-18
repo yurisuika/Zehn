@@ -1,1 +1,0 @@
-import 'https://zehn.yurisuika.dev/patches/login.js';
