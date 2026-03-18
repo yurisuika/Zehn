@@ -128,12 +128,6 @@ label>.DialogLabel {
   line-height: 32px !important;
 }
 
-.ChatRoomNotificationSettingsDialog .DialogFooter {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-}
-
 /* TEXT */
 .DialogBodyText {
   line-height: var(--zehn-size-24) !important;
@@ -1455,10 +1449,24 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
 
 /* INTERACTABLE - DROPDOWN (DIALOG) --------------------------------------------------------------------------------- */
 
-.DialogDropDown._DialogInputContainer {
+/* UNSTYLE BUTTON THAT CONTAINS A DROPDOWN BECAUSE VALVE IS SMART */
+button.DialogButton:has(._3OHR1e3u08hK7hMx4fFy_L) {
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+/* DROPDOWN - DIALOG, OVERLAY CONTROLLER SETTINGS */
+select,
+.DialogDropDown._DialogInputContainer,
+._3OHR1e3u08hK7hMx4fFy_L {
+  appearance: unset !important;
+  align-items: center !important;
   gap: 0 !important;
   display: flex !important;
   box-sizing: border-box !important;
+  font: var(--zehn-font-family) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   max-width: fit-content !important;
   min-width: var(--zehn-size-dropdown-dialog-width) !important;
@@ -1472,40 +1480,53 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
   border: var(--zehn-size-dropdown-dialog-border) solid var(--zehn-color-dropdown-dialog-border) !important;
 }
 
-.DialogDropDown._DialogInputContainer:focus {
+select:focus,
+.DialogDropDown._DialogInputContainer:focus,
+._3OHR1e3u08hK7hMx4fFy_L:focus {
   background-color: var(--zehn-color-dropdown-dialog-background-focus) !important;
   color: var(--zehn-color-dropdown-dialog-text-focus) !important;
   border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
 }
 
-.DialogDropDown._DialogInputContainer:hover {
+select:hover,
+.DialogDropDown._DialogInputContainer:hover,
+._3OHR1e3u08hK7hMx4fFy_L:hover {
   background-color: var(--zehn-color-dropdown-dialog-background-hover) !important;
   color: var(--zehn-color-dropdown-dialog-text-hover) !important;
   border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
 }
 
-.DialogDropDown._DialogInputContainer:hover:focus {
+select:hover:focus,
+.DialogDropDown._DialogInputContainer:hover:focus,
+._3OHR1e3u08hK7hMx4fFy_L:hover:focus {
   background-color: var(--zehn-color-dropdown-dialog-background-hover-focus) !important;
   color: var(--zehn-color-dropdown-dialog-text-hover-focus) !important;
   border-color: var(--zehn-color-dropdown-dialog-border-hover-focus) !important;
 }
 
-.DialogDropDown._DialogInputContainer:active {
+select:active,
+.DialogDropDown._DialogInputContainer:active,
+._3OHR1e3u08hK7hMx4fFy_L:active {
   background-color: var(--zehn-color-dropdown-dialog-background-active) !important;
   color: var(--zehn-color-dropdown-dialog-text-active) !important;
   border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
 }
 
-.DialogDropDown._DialogInputContainer:active:focus {
+select:active:focus,
+.DialogDropDown._DialogInputContainer:active:focus,
+._3OHR1e3u08hK7hMx4fFy_L:active:focus {
   background-color: var(--zehn-color-dropdown-dialog-background-active-focus) !important;
   color: var(--zehn-color-dropdown-dialog-text-active-focus) !important;
   border-color: var(--zehn-color-dropdown-dialog-border-active-focus) !important;
 }
 
+select:disabled,
+select:disabled:is(:hover, :active, :focus),
 .DialogDropDown._DialogInputContainer.Disabled,
 .DialogDropDown._DialogInputContainer.Disabled:is(:hover, :active, :focus),
 .DialogDropDown._DialogInputContainer:disabled,
-.DialogDropDown._DialogInputContainer:disabled:is(:hover, :active, :focus) {
+.DialogDropDown._DialogInputContainer:disabled:is(:hover, :active, :focus),
+._3OHR1e3u08hK7hMx4fFy_L:disabled {
   background-color: var(--zehn-color-dropdown-dialog-background-disabled) !important;
   color: var(--zehn-color-dropdown-dialog-text-disabled) !important;
   border-color: var(--zehn-color-dropdown-dialog-border-disabled) !important;
@@ -1513,21 +1534,22 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
 }
 
 /* CURRENT DISPLAY */
-._2J170P0ckFcUIlsDU13MLS ._DialogInputContainer .DialogDropDown_CurrentDisplay {
+.DialogDropDown_CurrentDisplay,
+._3OHR1e3u08hK7hMx4fFy_L .uujQHHS-7y4IW6qfxHpe2 {
   padding: 0 !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: transparent !important;
-}
-
-.DialogDropDown_CurrentDisplay {
   margin-right: auto !important;
   text-align: left !important;
   line-height: inherit !important;
   color: inherit !important;
   font-size: inherit !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: inherit !important;
 }
 
-/* CHEVRON ICON */
+/* DROPDOWN CHEVRON */
 ._2J170P0ckFcUIlsDU13MLS ._DialogInputContainer .DialogDropDown_Arrow {
   padding: 0 !important;
   border-radius: var(--zehn-size-radius-none) !important;
@@ -1547,9 +1569,10 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
 }
 
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu,
-.SVGIcon_DownArrowContextMenu {
+.SVGIcon_DownArrowContextMenu,
+._3OHR1e3u08hK7hMx4fFy_L .DialogDropDown_CurrentDisplay~svg {
   height: 100% !important;
-  width: 100% !important;
+  width: var(--zehn-size-icon-small) !important;
   background-color: var(--zehn-color-icon-secondary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -1557,79 +1580,13 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
   -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
 }
 
-.DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu * {
+.DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu *,
+._3OHR1e3u08hK7hMx4fFy_L .DialogDropDown_CurrentDisplay~svg * {
   display: none !important;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-
-
-
-
-
-
-
-
-
-/* INTERACTABLE - SELECT (DIALOG) ----------------------------------------------------------------------------------- */
-
-select {
-  appearance: unset !important;
-  box-sizing: border-box !important;
-  font: var(--zehn-font-family) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  max-width: fit-content !important;
-  min-width: var(--zehn-size-dropdown-dialog-width) !important;
-  height: var(--zehn-size-dropdown-dialog) !important;
-  line-height: var(--zehn-size-dropdown-dialog) !important;
-  padding: var(--zehn-size-dropdown-dialog-padding) !important;
-  font-size: var(--zehn-size-dropdown-dialog-text) !important;
-  border-radius: var(--zehn-size-dropdown-dialog-radius) !important;
-  background: var(--zehn-color-dropdown-dialog-background) padding-box !important;
-  color: var(--zehn-color-dropdown-dialog-text) !important;
-  border: var(--zehn-size-dropdown-dialog-border) solid var(--zehn-color-dropdown-dialog-border) !important;
-}
-
-select:focus {
-  background-color: var(--zehn-color-dropdown-dialog-background-focus) !important;
-  color: var(--zehn-color-dropdown-dialog-text-focus) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
-}
-
-select:hover {
-  background-color: var(--zehn-color-dropdown-dialog-background-hover) !important;
-  color: var(--zehn-color-dropdown-dialog-text-hover) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
-}
-
-select:hover:focus {
-  background-color: var(--zehn-color-dropdown-dialog-background-hover-focus) !important;
-  color: var(--zehn-color-dropdown-dialog-text-hover-focus) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-hover-focus) !important;
-}
-
-select:active {
-  background-color: var(--zehn-color-dropdown-dialog-background-active) !important;
-  color: var(--zehn-color-dropdown-dialog-text-active) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
-}
-
-select:active:focus {
-  background-color: var(--zehn-color-dropdown-dialog-background-active-focus) !important;
-  color: var(--zehn-color-dropdown-dialog-text-active-focus) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-active-focus) !important;
-}
-
-select:disabled,
-select:disabled:is(:hover, :active, :focus) {
-  background-color: var(--zehn-color-dropdown-dialog-background-disabled) !important;
-  color: var(--zehn-color-dropdown-dialog-text-disabled) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-disabled) !important;
-}
-
+/* WHERE THE FUCK IS THIS USED AND WHAT THE HELL IS THIS ANYWAYS??? */
 select * {
-  /* WHERE THE FUCK IS THIS USED ANYWAYS??? */
   margin: 0 !important;
   padding: 0 !important;
   border-radius: var(--zehn-size-context-radius) !important;
@@ -2155,7 +2112,7 @@ input[type=checkbox]:checked:disabled,
   border-color: var(--zehn-color-checkbox-dialog-border-on-disabled) !important;
 }
 
-/* CHECKBOX TOGGLE (LOGIN PAGE DOES NOT SUPPLY CHECKMARK UNLESS CHECKED, SO WE MAKE A PSEUDOCLASS) */
+/* CHECKBOX TOGGLE */
 .DialogCheckbox .SVGIcon_DialogCheck *,
 .LBS7IDpob52Sb4ZoKobh0 ._28MB9LhS2kVTalIp0NHDv4 .SVGIcon_DialogCheck * {
   display: none !important;
@@ -2286,78 +2243,6 @@ input[type=checkbox]:checked:disabled::after,
 
 
 
-/* INTERACTABLE - TEXT INPUT (FANCY) -------------------------------------------------------------------------------- */
-
-/* INPUT */
-input[type="text" i] {
-  transition: none !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-  max-width: var(--zehn-size-input-fancy-width) !important;
-  min-width: var(--zehn-size-input-fancy-width) !important;
-  height: var(--zehn-size-input-fancy) !important;
-  line-height: var(--zehn-size-input-fancy-multiline) !important;
-  padding: var(--zehn-size-input-fancy-padding) !important;
-  background: var(--zehn-color-input-fancy-background) padding-box !important;
-  color: var(--zehn-color-input-fancy-text) !important;
-  font-size: var(--zehn-size-input-fancy-text) !important;
-  border-radius: var(--zehn-size-input-fancy-radius) !important;
-  border: var(--zehn-size-input-fancy-border) solid var(--zehn-color-input-fancy-border) !important;
-}
-
-input[type="text" i]:focus,
-input[type="text" i]:focus-within {
-  padding: var(--zehn-size-input-fancy-padding) !important;
-  background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
-  color: var(--zehn-color-input-fancy-text-focus) !important;
-  border-color: var(--zehn-color-input-fancy-border-focus) !important;
-}
-
-input[type="text" i]:hover {
-  background: var(--zehn-color-input-fancy-background-hover) padding-box !important;
-  color: var(--zehn-color-input-fancy-text-hover) !important;
-  border-color: var(--zehn-color-input-fancy-border-hover) !important;
-}
-
-input[type="text" i]:hover:focus,
-input[type="text" i]:focus-within:hover {
-  background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
-  color: var(--zehn-color-input-fancy-text-focus) !important;
-  border-color: var(--zehn-color-input-fancy-border-focus) !important;
-}
-
-input[type="text" i]:active {
-  background: var(--zehn-color-input-fancy-background-active) padding-box !important;
-  color: var(--zehn-color-input-fancy-text-active) !important;
-  border-color: var(--zehn-color-input-fancy-border-active) !important;
-}
-
-input[type="text" i]:active:focus,
-input[type="text" i]:focus-within:active {
-  background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
-  color: var(--zehn-color-input-fancy-text-focus) !important;
-  border-color: var(--zehn-color-input-fancy-border-focus) !important;
-}
-
-input[type="text" i]:disabled,
-input[type="text" i]:read-only {
-  background: var(--zehn-color-input-fancy-background-disabled) padding-box !important;
-  color: var(--zehn-color-input-fancy-text-disabled) !important;
-  border-color: var(--zehn-color-input-fancy-border-disabled) !important;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-
-
-
-
-
-
-
-
-
 /* INTERACTABLE - TEXT INPUT (DIALOG) ------------------------------------------------------------------------------- */
 
 /* INPUT LABEL */
@@ -2381,6 +2266,7 @@ input[type="text" i]:read-only {
 }
 
 /* TEXT INPUT */
+input[type="text" i],
 .DialogInput_Wrapper>input.DialogInput,
 input.DialogTextInputBase,
 input.DialogListBuilderInput_Input {
@@ -2399,6 +2285,8 @@ input.DialogListBuilderInput_Input {
   border: var(--zehn-size-input-dialog-border) solid var(--zehn-color-input-dialog-border) !important;
 }
 
+input[type="text" i]:focus,
+input[type="text" i]:focus-within,
 .DialogInput_Wrapper>input.DialogInput:focus,
 .DialogInput_Wrapper>input.DialogInput:focus-within,
 input.DialogTextInputBase:focus,
@@ -2410,6 +2298,7 @@ input.DialogListBuilderInput_Input:focus-within {
   color: var(--zehn-color-input-dialog-text-focus) !important;
 }
 
+input[type="text" i]:hover,
 .DialogInput_Wrapper>input.DialogInput:hover,
 input.DialogTextInputBase:hover,
 input.DialogListBuilderInput_Input:hover {
@@ -2418,6 +2307,8 @@ input.DialogListBuilderInput_Input:hover {
   border-color: var(--zehn-color-input-dialog-border-hover) !important;
 }
 
+input[type="text" i]:hover:focus,
+input[type="text" i]:focus-within:hover,
 .DialogInput_Wrapper>input.DialogInput:hover:focus,
 .DialogInput_Wrapper>input.DialogInput:focus-within:hover,
 input.DialogTextInputBase:hover:focus,
@@ -2429,6 +2320,7 @@ input.DialogListBuilderInput_Input:focus-within:hover {
   color: var(--zehn-color-input-dialog-text-hover-focus) !important;
 }
 
+input[type="text" i]:active,
 .DialogInput_Wrapper>input.DialogInput:active,
 input.DialogTextInputBase:active,
 input.DialogListBuilderInput_Input:active {
@@ -2437,6 +2329,8 @@ input.DialogListBuilderInput_Input:active {
   border-color: var(--zehn-color-input-dialog-border-active) !important;
 }
 
+input[type="text" i]:active:focus,
+input[type="text" i]:focus-within:active,
 .DialogInput_Wrapper>input.DialogInput:active:focus,
 .DialogInput_Wrapper>input.DialogInput:focus-within:active,
 input.DialogTextInputBase:active:focus,
@@ -2448,6 +2342,8 @@ input.DialogListBuilderInput_Input:focus-within:active {
   color: var(--zehn-color-input-dialog-text-active-focus) !important;
 }
 
+input[type="text" i]:disabled,
+input[type="text" i]:read-only,
 .DialogInput_Wrapper>input.DialogInput:disabled,
 .DialogInput_Wrapper>input.DialogInput:read-only,
 input.DialogTextInputBase:disabled,
@@ -2459,6 +2355,7 @@ input.DialogListBuilderInput_Input:read-only {
   border-color: var(--zehn-color-input-dialog-border-disabled) !important;
 }
 
+input[type="text" i]::placeholder,
 .DialogInput_Wrapper>input.DialogInput::placeholder,
 input.DialogTextInputBase::placeholder,
 input.DialogListBuilderInput_Input::placeholder {
@@ -2535,18 +2432,101 @@ input.DialogListBuilderInput_Input::placeholder {
 
 
 
+/* INTERACTABLE - TEXT INPUT (FANCY) -------------------------------------------------------------------------------- */
+
+/* INPUT - LIBRARY SIDEBAR */
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput {
+  transition: background-color 0.2s ease-in-out !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  max-width: var(--zehn-size-input-fancy-width) !important;
+  min-width: var(--zehn-size-input-fancy-width) !important;
+  width: var(--zehn-size-input-fancy-width) !important;
+  height: var(--zehn-size-input-fancy-large) !important;
+  min-height: var(--zehn-size-input-fancy-large) !important;
+  max-height: var(--zehn-size-input-fancy-large) !important;
+  line-height: var(--zehn-size-input-fancy-multiline) !important;
+  padding: var(--zehn-size-input-fancy-padding) !important;
+  padding-right: var(--zehn-size-input-fancy-large) !important;
+  background: var(--zehn-color-input-fancy-background) padding-box !important;
+  color: var(--zehn-color-input-fancy-text) !important;
+  font-size: var(--zehn-size-input-fancy-text) !important;
+  border-radius: var(--zehn-size-input-fancy-radius) !important;
+  border: var(--zehn-size-input-fancy-border) solid var(--zehn-color-input-fancy-border) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:focus,
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:focus-within {
+  padding: var(--zehn-size-input-fancy-padding) !important;
+  background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
+  color: var(--zehn-color-input-fancy-text-focus) !important;
+  border-color: var(--zehn-color-input-fancy-border-focus) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover {
+  background: var(--zehn-color-input-fancy-background-hover) padding-box !important;
+  color: var(--zehn-color-input-fancy-text-hover) !important;
+  border-color: var(--zehn-color-input-fancy-border-hover) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover:focus,
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover:focus-within {
+  background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
+  color: var(--zehn-color-input-fancy-text-focus) !important;
+  border-color: var(--zehn-color-input-fancy-border-focus) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active {
+  background: var(--zehn-color-input-fancy-background-active) padding-box !important;
+  color: var(--zehn-color-input-fancy-text-active) !important;
+  border-color: var(--zehn-color-input-fancy-border-active) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active:focus,
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active:focus-within {
+  background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
+  color: var(--zehn-color-input-fancy-text-focus) !important;
+  border-color: var(--zehn-color-input-fancy-border-focus) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:disabled,
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:read-only {
+  background: var(--zehn-color-input-fancy-background-disabled) padding-box !important;
+  color: var(--zehn-color-input-fancy-text-disabled) !important;
+  border-color: var(--zehn-color-input-fancy-border-disabled) !important;
+}
+
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput::placeholder {
+  color: var(--zehn-color-input-dialog-text-placeholder) !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
 /* INTERACTABLE - LINK ---------------------------------------------------------------------------------------------- */
 
 button.TextButton {
   border: unset !important;
   font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
 }
 
 a,
 .DialogBody a,
 .textLink,
 button.TextButton {
+  font-weight: var(--zehn-size-weight-normal) !important;
+  text-decoration: none !important;
   color: var(--zehn-color-link) !important;
 }
 
@@ -2575,69 +2555,6 @@ button.TextButton:active {
 
 
 
-/* INTERACTABLE - BUTTON (FANCY) ------------------------------------------------------------------------------------ */
-
-option {
-  appearance: unset !important;
-  box-sizing: border-box !important;
-  align-items: center !important;
-  min-height: var(--zehn-size-button-fancy) !important;
-  line-height: var(--zehn-size-button-fancy) !important;
-  padding: var(--zehn-size-button-fancy-padding) !important;
-  background: var(--zehn-color-button-fancy-background) !important;
-  color: var(--zehn-color-button-fancy-text) !important;
-  font-size: var(--zehn-size-button-fancy-text) !important;
-  border-radius: var(--zehn-size-button-fancy-radius) !important;
-  border: var(--zehn-size-button-fancy-border) solid var(--zehn-color-button-fancy-border) !important;
-}
-
-option:focus {
-  background-color: var(--zehn-color-button-fancy-background-focus) !important;
-  color: var(--zehn-color-button-fancy-text-focus) !important;
-  border-color: var(--zehn-color-button-fancy-border-focus) !important;
-}
-
-option:hover {
-  background-color: var(--zehn-color-button-fancy-background-hover) !important;
-  color: var(--zehn-color-button-fancy-text-hover) !important;
-  border-color: var(--zehn-color-button-fancy-border-hover) !important;
-}
-
-option:hover:focus {
-  background-color: var(--zehn-color-button-fancy-background-hover-focus) !important;
-  color: var(--zehn-color-button-fancy-text-hover-focus) !important;
-  border-color: var(--zehn-color-button-fancy-border-hover-focus) !important;
-}
-
-option:active {
-  background-color: var(--zehn-color-button-fancy-background-active) !important;
-  color: var(--zehn-color-button-fancy-text-active) !important;
-  border-color: var(--zehn-color-button-fancy-border-active) !important;
-}
-
-option:active:focus {
-  background-color: var(--zehn-color-button-fancy-background-active-focus) !important;
-  color: var(--zehn-color-button-fancy-text-active-focus) !important;
-  border-color: var(--zehn-color-button-fancy-border-active-focus) !important;
-}
-
-option:disabled {
-  background-color: var(--zehn-color-button-fancy-background-disabled) !important;
-  color: var(--zehn-color-button-fancy-text-disabled) !important;
-  border-color: var(--zehn-color-button-fancy-border-disabled) !important;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-
-
-
-
-
-
-
-
-
 /* INTERACTABLE - BUTTON (DIALOG) ----------------------------------------------------------------------------------- */
 
 button {
@@ -2652,10 +2569,13 @@ button.DialogButton::before {
   opacity: unset !important;
 }
 
-* .DialogButton,
+option,
 button.DialogButton,
 button.DialogButton.Primary,
 button.DialogButton.Small {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  align-items: center !important;
   box-sizing: border-box !important;
   background-position: unset !important;
   margin: 0 !important;
@@ -2671,7 +2591,7 @@ button.DialogButton.Small {
   outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
 }
 
-* .DialogButton:focus,
+option:focus,
 button.DialogButton:focus,
 button.DialogButton:enabled:focus {
   background-color: var(--zehn-color-button-dialog-background-focus) !important;
@@ -2679,7 +2599,7 @@ button.DialogButton:enabled:focus {
   outline-color: var(--zehn-color-button-dialog-border-focus) !important;
 }
 
-* .DialogButton:hover,
+option:hover,
 button.DialogButton:hover,
 button.DialogButton:enabled:hover {
   background-color: var(--zehn-color-button-dialog-background-hover) !important;
@@ -2687,7 +2607,7 @@ button.DialogButton:enabled:hover {
   outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 }
 
-* .DialogButton:hover:focus,
+option:hover:focus,
 button.DialogButton:hover:focus,
 button.DialogButton:enabled:hover:focus {
   background-color: var(--zehn-color-button-dialog-background-hover-focus) !important;
@@ -2695,7 +2615,7 @@ button.DialogButton:enabled:hover:focus {
   outline-color: var(--zehn-color-button-dialog-border-hover-focus) !important;
 }
 
-* .DialogButton:active,
+option:active,
 button.DialogButton:active,
 button.DialogButton:enabled:active {
   background-color: var(--zehn-color-button-dialog-background-active) !important;
@@ -2703,7 +2623,7 @@ button.DialogButton:enabled:active {
   outline-color: var(--zehn-color-button-dialog-border-active) !important;
 }
 
-* .DialogButton:active:focus,
+option:active:focus,
 button.DialogButton:active:focus,
 button.DialogButton:enabled:active:focus {
   background-color: var(--zehn-color-button-dialog-background-active-focus) !important;
@@ -2711,7 +2631,7 @@ button.DialogButton:enabled:active:focus {
   outline-color: var(--zehn-color-button-dialog-border-active-focus) !important;
 }
 
-* .DialogButton:disabled,
+option:disabled,
 button.DialogButton:disabled,
 button.DialogButton:disabled:is(:hover, :active, :focus),
 button.DialogButton.Disabled,
@@ -2732,6 +2652,20 @@ button.DialogButton.Disabled:is(:hover, :active, :focus) {
   filter: none !important;
   background: var(--zehn-color-icon-tertiary) !important;
 }
+
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* INTERACTABLE - BUTTON (FANCY) ------------------------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 
@@ -3050,10 +2984,6 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 
 /* MODAL ------------------------------------------------------------------------------------------------------------ */
 
-.fullheight.ModalDialogBody {
-  /*min-height: fit-content !important;*/
-}
-
 .ModalPosition_Content {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
@@ -3274,6 +3204,9 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   padding: 0 var(--zehn-size-padding-medium) !important;
   margin: auto 0 0 0 !important;
   gap: var(--zehn-size-gap-medium) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
 }
 
 .DialogContent_InnerWidth>.DialogFooter {
