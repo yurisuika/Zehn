@@ -69,16 +69,6 @@
   --zehn-color-context-border-light: 204, 204, 204;
   --zehn-color-context-border-dark: 118, 118, 118;
 
-  --zehn-color-tooltip-background: light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark)));
-  --zehn-color-tooltip-border: light-dark(rgb(var(--zehn-color-context-border-light)), rgb(var(--zehn-color-context-border-dark)));
-  --zehn-color-tooltip-text-primary: light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark)));
-  --zehn-color-tooltip-text-secondary: light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark)));
-
-  --zehn-color-context-menu-background: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
-  --zehn-color-context-menu-border: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-border-light)), rgb(var(--zehn-color-context-border-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
-  --zehn-color-context-dropdown-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.5), rgba(var(--zehn-color-black), 0.5)), rgba(var(--zehn-color-blend-background), 0.5) var(--zehn-blend-amount-background));
-  --zehn-color-context-dropdown-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.17), rgba(var(--zehn-color-white), 0.17)), rgba(var(--zehn-color-blend-background), 0.17) var(--zehn-blend-amount-background));
-
   --zehn-color-window-fancy: color-mix(in var(--zehn-blend-space), light-dark(rgb(255, 255, 255), rgb(34, 34, 34)), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
   --zehn-color-window-section: color-mix(in var(--zehn-blend-space), light-dark(rgb(230, 230, 230), rgb(31, 31, 31)), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
   ;
@@ -110,6 +100,18 @@
   --zehn-color-link: rgb(var(--zehn-color-accent));
   --zehn-color-link-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-link-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+
+  --zehn-color-tooltip-background: light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark)));
+  --zehn-color-tooltip-border: light-dark(rgb(var(--zehn-color-context-border-light)), rgb(var(--zehn-color-context-border-dark)));
+  --zehn-color-tooltip-text: light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark)));
+  --zehn-color-tooltip-text-other: light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark)));
+
+  --zehn-color-context-menu-background: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
+  --zehn-color-context-menu-border: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-border-light)), rgb(var(--zehn-color-context-border-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
+  --zehn-color-context-dropdown-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.5), rgba(var(--zehn-color-black), 0.5)), rgba(var(--zehn-color-blend-background), 0.5) var(--zehn-blend-amount-background));
+  --zehn-color-context-dropdown-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.17), rgba(var(--zehn-color-white), 0.17)), rgba(var(--zehn-color-blend-background), 0.17) var(--zehn-blend-amount-background));
+  --zehn-color-context-text: var(--zehn-color-text-primary);
+  --zehn-color-context-text-other: var(--zehn-color-text-secondary);
 
   --zehn-color-close-hover: light-dark(rgb(232, 18, 35), rgb(232, 18, 35));
   --zehn-color-close-pressed: light-dark(rgb(241, 112, 121), rgb(241, 112, 121));
@@ -1304,14 +1306,13 @@
   --zehn-size-input-medium: 32px;
   --zehn-size-input-large: 48px;
 
-  --zehn-size-input-fancy: var(--zehn-size-input-medium);
-  --zehn-size-input-fancy-large: var(--zehn-size-input-large);
+  --zehn-size-input-fancy: var(--zehn-size-input-large);
   --zehn-size-input-fancy-width: 100%;
   --zehn-size-input-fancy-border: 0;
   --zehn-size-input-fancy-radius: var(--zehn-size-radius-none);
   --zehn-size-input-fancy-padding: 0 var(--zehn-size-padding-medium);
   --zehn-size-input-fancy-text: var(--zehn-size-14);
-  --zehn-size-input-fancy-multiline: 24px;
+  --zehn-size-input-fancy-line: 24px;
 
   --zehn-size-input-dialog: var(--zehn-size-input-medium);
   --zehn-size-input-dialog-width: 300px;
@@ -1319,7 +1320,7 @@
   --zehn-size-input-dialog-radius: var(--zehn-size-radius-none);
   --zehn-size-input-dialog-padding: 0 calc(var(--zehn-size-padding-medium) - var(--zehn-size-input-dialog-border));
   --zehn-size-input-dialog-text: var(--zehn-size-14);
-  --zehn-size-input-dialog-multiline: 24px;
+  --zehn-size-input-dialog-line: 24px;
 
   /* DROPDOWNS */
   --zehn-size-dropdown-medium: 32px;
@@ -1335,6 +1336,8 @@
   --zehn-size-dropdown-dialog-padding: 0 8px 0 10px;
   --zehn-size-dropdown-dialog-text: var(--zehn-size-14);
   --zehn-size-dropdown-dialog-text-other: var(--zehn-size-12);
+  --zehn-size-dropdown-dialog-line: 32px;
+  --zehn-size-dropdown-dialog-line-other: 24px;
 
   /* PROGRESSBARS */
   --zehn-size-progressbar-thin: 2px;
@@ -1403,7 +1406,14 @@
   --zehn-size-key-padding: var(--zehn-size-padding-less);
 
   /* CONTEXT */
-  --zehn-size-context-radius: var(--zehn-size-radius-none) !important;
+  --zehn-size-context-list: 32px;
+  --zehn-size-context-border: 1px;
+  --zehn-size-context-radius: var(--zehn-size-radius-none);
+  --zehn-size-context-padding: 8px 16px;
+  --zehn-size-context-text: 14px;
+  --zehn-size-context-text-other: 12px;
+  --zehn-size-context-line: 16px;
+  --zehn-size-context-line-other: 16px;
 
   /* TOOLTIP */
   --zehn-size-tooltip-width: 300px;
@@ -1414,21 +1424,22 @@
   --zehn-size-tooltip-text: 12px;
   --zehn-size-tooltip-gap: var(--zehn-size-gap-small);
 
-  /* OTHER */
-  --zehn-size-context-list: 32px;
-
+  /* PAGELIST */
   --zehn-size-pagelist-height: 48px;
   --zehn-size-pagelist-width: 240px;
   --zehn-size-pagelist-width-min: 240px;
 
+  /* OTHER */
   --zehn-size-dialog-scroll-content-width: 960px;
 
   --zehn-size-downloads-panel: 200px;
 
   --zehn-size-setting-entry: 32px;
 
+  /* CHAT */
   --zehn-size-embed-width: 640px;
 
+  /* BLUR */
   --zehn-size-blur-acrylic: 30px;
   --zehn-size-blur-light: 4px;
 }
