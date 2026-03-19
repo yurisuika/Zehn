@@ -80,6 +80,10 @@
   --zehn-color-panel: color-mix(in var(--zehn-blend-space), light-dark(rgb(242, 242, 242), rgb(23, 23, 23)), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
   --zehn-color-panel-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(230, 230, 230), rgb(31, 31, 31)), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
 
+  --zehn-color-overlay-background: var(--zehn-color-panel);
+  --zehn-color-overlay-background-hover: var(--zehn-color-panel-hover);
+  --zehn-color-overlay-border: var(--zehn-color-border);
+
   --zehn-color-acrylic: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.5), rgba(var(--zehn-color-black), 0.5)), rgba(var(--zehn-color-blend-background), 0.5) var(--zehn-blend-amount-background));
 
   --zehn-color-text-primary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
@@ -1240,7 +1244,7 @@
   --zehn-size-weight-thickest: 700;
   --zehn-size-weight-super: 800;
 
-  --zehn-size-radius-none: 0px;
+  --zehn-size-radius-square: 0px;
   --zehn-size-radius-small: 4px;
   --zehn-size-radius-medium: 8px;
   --zehn-size-radius-large: 16px;
@@ -1278,14 +1282,14 @@
   --zehn-size-button-fancy: var(--zehn-size-button-medium);
   --zehn-size-button-fancy-large: var(--zehn-size-button-large);
   --zehn-size-button-fancy-border: 0;
-  --zehn-size-button-fancy-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-fancy-radius: var(--zehn-size-radius-square);
   --zehn-size-button-fancy-padding: 0;
   --zehn-size-button-fancy-text: var(--zehn-size-14);
 
   --zehn-size-button-dialog: var(--zehn-size-button-medium);
   --zehn-size-button-dialog-large: var(--zehn-size-button-large);
   --zehn-size-button-dialog-border: 2px;
-  --zehn-size-button-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-dialog-radius: var(--zehn-size-radius-square);
   --zehn-size-button-dialog-padding: 0 var(--zehn-size-padding-medium);
   --zehn-size-button-dialog-padding-column: var(--zehn-size-padding-medium) 0;
   --zehn-size-button-dialog-padding-square: 0;
@@ -1294,7 +1298,7 @@
   /* CHECKBOX BUTTONS */
   --zehn-size-checkbox-dialog: 20px;
   --zehn-size-checkbox-dialog-border: 2px;
-  --zehn-size-checkbox-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-checkbox-dialog-radius: var(--zehn-size-radius-square);
   --zehn-size-checkbox-dialog-toggle: 16px;
 
   /* RADIO BUTTONS */
@@ -1310,7 +1314,7 @@
   --zehn-size-input-fancy: var(--zehn-size-input-large);
   --zehn-size-input-fancy-width: 100%;
   --zehn-size-input-fancy-border: 0;
-  --zehn-size-input-fancy-radius: var(--zehn-size-radius-none);
+  --zehn-size-input-fancy-radius: var(--zehn-size-radius-square);
   --zehn-size-input-fancy-padding: 0 var(--zehn-size-padding-medium);
   --zehn-size-input-fancy-text: var(--zehn-size-14);
   --zehn-size-input-fancy-line: 24px;
@@ -1318,7 +1322,7 @@
   --zehn-size-input-dialog: var(--zehn-size-input-medium);
   --zehn-size-input-dialog-width: 300px;
   --zehn-size-input-dialog-border: 2px;
-  --zehn-size-input-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-input-dialog-radius: var(--zehn-size-radius-square);
   --zehn-size-input-dialog-padding: 0 calc(var(--zehn-size-padding-medium) - var(--zehn-size-input-dialog-border));
   --zehn-size-input-dialog-text: var(--zehn-size-14);
   --zehn-size-input-dialog-line: 24px;
@@ -1333,7 +1337,7 @@
   --zehn-size-dropdown-dialog-large: var(--zehn-size-dropdown-large);
   --zehn-size-dropdown-dialog-width: 300px;
   --zehn-size-dropdown-dialog-border: 2px;
-  --zehn-size-dropdown-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-dropdown-dialog-radius: var(--zehn-size-radius-square);
   --zehn-size-dropdown-dialog-padding: 0 8px 0 10px;
   --zehn-size-dropdown-dialog-text: var(--zehn-size-14);
   --zehn-size-dropdown-dialog-text-other: var(--zehn-size-12);
@@ -1344,7 +1348,7 @@
   --zehn-size-progressbar-thin: 2px;
   --zehn-size-progressbar-normal: 4px;
   --zehn-size-progressbar-thick: 8px;
-  --zehn-size-progressbar-radius: var(--zehn-size-radius-none);
+  --zehn-size-progressbar-radius: var(--zehn-size-radius-square);
 
   /* SETTINGS TEXT*/
   --zehn-size-text-settings-page-header: 28px;
@@ -1355,7 +1359,7 @@
 
   /* TAGS */
   --zehn-size-tag: 24px;
-  --zehn-size-tag-radius: var(--zehn-size-radius-none);
+  --zehn-size-tag-radius: var(--zehn-size-radius-square);
   --zehn-size-tag-padding: 0 var(--zehn-size-padding-small);
   --zehn-size-tag-gap: 4px;
 
@@ -1369,7 +1373,7 @@
   --zehn-size-gap-super: 48px;
   --zehn-size-gap-ultra: 64px;
   --zehn-size-gap-button: var(--zehn-size-gap-medium) var(--zehn-size-gap-small);
-  --zehn-size-gap-setting-group: var(--zehn-size-gap-small);
+  --zehn-size-gap-label: var(--zehn-size-gap-small);
 
   --zehn-size-padding-tiny: 4px;
   --zehn-size-padding-small: 8px;
@@ -1409,7 +1413,7 @@
   /* CONTEXT */
   --zehn-size-context-list: 32px;
   --zehn-size-context-border: 1px;
-  --zehn-size-context-radius: var(--zehn-size-radius-none);
+  --zehn-size-context-radius: var(--zehn-size-radius-square);
   --zehn-size-context-padding: 8px 16px;
   --zehn-size-context-text: 14px;
   --zehn-size-context-text-other: 12px;
@@ -1420,7 +1424,7 @@
   --zehn-size-tooltip-width: 300px;
   --zehn-size-tooltip-width-app: 220px;
   --zehn-size-tooltip-border: 1px;
-  --zehn-size-tooltip-radius: var(--zehn-size-radius-none);
+  --zehn-size-tooltip-radius: var(--zehn-size-radius-square);
   --zehn-size-tooltip-padding: 8px;
   --zehn-size-tooltip-text: 12px;
   --zehn-size-tooltip-gap: var(--zehn-size-gap-small);
@@ -1429,6 +1433,11 @@
   --zehn-size-pagelist-height: 48px;
   --zehn-size-pagelist-width: 240px;
   --zehn-size-pagelist-width-min: 240px;
+
+  /* OVERLAY */
+  --zehn-size-overlay-radius: var(--zehn-size-radius-medium);
+  --zehn-size-overlay-radius-small: var(--zehn-size-radius-small);
+  --zehn-size-overlay-border: 1px;
 
   /* OTHER */
   --zehn-size-dialog-scroll-content-width: 960px;

@@ -64,6 +64,8 @@ Zehn features several added buttons for an improved experience:
 
 ### Plugin Support
 You can enjoy explicit support for the following plugins while using Zehn:
+* Achievement Groups
+  * Completely skinned to match the other achievement overlay tabs.
 * Extendium
   * Browser bar buttons, extensions context menus, and settings dialogs all skinned.
 * Gratitude
