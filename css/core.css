@@ -1,6 +1,5 @@
-/* GENERAL ------------------------------------------------------------------------------------------------------------- */
+/* GLOBAL ----------------------------------------------------------------------------------------------------------- */
 
-/* GLOBAL */
 * {
   -webkit-font-smoothing: antialiased !important;
   -webkit-box-shadow: none !important;
@@ -18,6 +17,13 @@
   outline: none !important;
 }
 
+::selection {
+  background: var(--zehn-color-accent-100) !important;
+  text-shadow: 0 0 0 transparent !important;
+  color: var(--zehn-color-text-primary) !important;
+}
+
+/* SOME STEAM VARIABLES TO OVERRIDE */
 :root {
   --virtualmenu-accent: var(--zehn-color-accent-100);
   --virtualmenu-bg: transparent;
@@ -36,6 +42,19 @@
   --touchmenuicon-scale: 1;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* TEXT ------------------------------------------------------------------------------------------------------------- */
+
 body,
 body._2LxgdMcpWJRjkxZKbmeEEb {
   color: var(--zehn-color-text-primary) !important;
@@ -50,135 +69,10 @@ p {
   color: var(--zehn-color-text-primary) !important;
 }
 
-p {
-  margin-block-end: 0 !important;
-}
-
-p:first-of-type {
-  margin: 0 !important;
-}
-
+p,
+p:first-of-type,
 p:last-of-type {
   margin: 0 !important;
-}
-
-/* SELECTION */
-::selection {
-  background: var(--zehn-color-accent-100) !important;
-  text-shadow: 0 0 0 transparent !important;
-  color: var(--zehn-color-text-primary) !important;
-}
-
-.friendSearchInput::selection {
-  background: var(--zehn-color-accent-100) !important;
-  text-shadow: 0 0 0 transparent !important;
-  color: var(--zehn-color-text-primary) !important;
-}
-
-/* TITLES */
-.DialogHeader {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-28) !important;
-  margin-bottom: 0 !important;
-  margin-right: 0 !important;
-  line-height: 32px !important;
-  margin-bottom: 0 !important;
-  padding: 0 var(--zehn-size-padding-medium) !important;
-}
-
-.DialogHeader:has(button) {
-  gap: var(--zehn-size-gap-medium) !important;
-}
-
-.DialogHeaderSubtitle {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-20) !important;
-}
-
-.DialogHighlight {
-  color: var(--zehn-color-accent-100) !important;
-}
-
-.DialogSubHeader {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-20) !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  margin-right: 0 !important;
-}
-
-.DialogSubHeader:empty {
-  display: none !important;
-}
-
-/* SUBTITLES */
-.DialogLabel,
-.DialogLabelStrong {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-  text-transform: none !important;
-  margin-bottom: 0 !important;
-}
-
-label>.DialogLabel {
-  line-height: 32px !important;
-}
-
-/* TEXT */
-.DialogBodyText {
-  line-height: var(--zehn-size-24) !important;
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-  margin: 0 !important;
-}
-
-.DialogButton {
-  color: var(--zehn-color-button-dialog-text) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-button-dialog-text) !important;
-}
-
-.DialogInput {
-  color: var(--zehn-color-input-dialog-text) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-  padding: var(--zehn-size-input-dialog-padding) !important;
-  line-height: var(--zehn-size-input-dialog-line) !important;
-}
-
-.DialogBody {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-  gap: var(--zehn-size-gap-medium) !important;
-}
-
-.DialogToggle_Label {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-  line-height: var(--zehn-size-32) !important;
-}
-
-.DialogRequirementLabel {
-  color: var(--zehn-color-accent-100) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-  padding: 0 !important;
-}
-
-.inviteLinkContainer .DialogRequirementLabel,
-.CreateChatChannelDialog .DialogRequirementLabel {
-  padding: 0 !important;
-}
-
-.DialogRequirementLabel label {
-  min-width: 100% !important;
 }
 
 /* TABLES */
@@ -210,6 +104,19 @@ tr {
 .DialogSpanningTable.InviteLinksTable tbody tr:nth-child(2n) {
   background: var(--zehn-color-table-even) !important;
 }
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* AVATAR AND STATUS ------------------------------------------------------------------------------------------------ */
 
 /* STATUS */
 .nOdcT-MoOaXGePXLyPe0H {
@@ -602,8 +509,8 @@ img.AB86vEzEKPL0y5fK_m4pT {
   margin-top: 0 !important;
   margin-left: 0 !important;
   width: unset !important;
-  height: 16px !important;
-  line-height: 16px !important;
+  height: var(--zehn-color-icon-medium) !important;
+  line-height: var(--zehn-color-icon-medium) !important;
   display: flex !important;
   display: none !important;
 }
@@ -611,56 +518,57 @@ img.AB86vEzEKPL0y5fK_m4pT {
 .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_VR,
 .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_MobilePhone,
 .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_BigPicture {
+  /* NUKE THE SVGS */
   display: none !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_VR path,
-.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_MobilePhone path,
-.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_BigPicture path {
+.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_VR *,
+.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_MobilePhone *,
+.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_BigPicture * {
   fill: var(--zehn-color-status-ingame) !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_VR path,
-.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_MobilePhone path,
-.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_BigPicture path {
+.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_VR *,
+.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_MobilePhone *,
+.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_BigPicture * {
   fill: var(--zehn-color-status-online) !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_VR path,
-.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_MobilePhone path,
-.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_BigPicture path {
+.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_VR *,
+.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_MobilePhone *,
+.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_BigPicture * {
   fill: var(--zehn-color-status-away) !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_VR path,
-.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_MobilePhone path,
-.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_BigPicture path {
+.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_VR *,
+.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_MobilePhone *,
+.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_BigPicture * {
   fill: var(--zehn-color-status-away) !important;
 }
 
-.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_VR path,
-.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_MobilePhone path,
-.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_BigPicture path {
+.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_VR *,
+.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_MobilePhone *,
+.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_BigPicture * {
   fill: var(--zehn-color-status-disturb) !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_Button path {
+.KxAI_M9gWx3OnKSshHOs6.ingame .SVGIcon_Button * {
   fill: transparent !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_Button path {
+.KxAI_M9gWx3OnKSshHOs6.online .SVGIcon_Button * {
   fill: transparent !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_Button path {
+.KxAI_M9gWx3OnKSshHOs6.ingame.awayOrSnooze .SVGIcon_Button * {
   fill: transparent !important;
 }
 
-.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_Button path {
+.KxAI_M9gWx3OnKSshHOs6.online.awayOrSnooze .SVGIcon_Button * {
   fill: transparent !important;
 }
 
-.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_Button path {
+.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .KxAI_M9gWx3OnKSshHOs6 .SVGIcon_Button * {
   fill: var(--zehn-color-status-disturb) !important;
 }
 
@@ -708,13 +616,18 @@ img.AB86vEzEKPL0y5fK_m4pT {
   background: var(--zehn-color-status-offline) !important;
 }
 
-/* CHAT LOADING */
-._21nVi2jNuF_prxLY1mAaKK,
-._2wAKy-0ZkO_vhbiQCP9MgE ._21nVi2jNuF_prxLY1mAaKK {
-  color: var(--zehn-color-accent-100) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-}
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* INDICATOR DOTS --------------------------------------------------------------------------------------------------- */
 
 /* NEW INDICATOR */
 ._3O2gRFANfKKg3mYONXvlcL {
@@ -730,21 +643,6 @@ img.AB86vEzEKPL0y5fK_m4pT {
   width: 6px !important;
   height: 6px !important;
   border-radius: var(--zehn-size-radius-circle) !important;
-}
-
-/* AVATAR INITIALS */
-* .ChatRoomGroupAvatar_initials {
-  color: var(--zehn-color-text-primary) !important;
-  background: transparent !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  background-image: none !important;
-  -webkit-text-fill-color: var(--zehn-color-text-primary) !important;
-  font-size: 1em !important;
-  width: 100% !important;
-  height: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -1097,7 +995,7 @@ select * {
   background-color: transparent !important;
   border-radius: var(--zehn-size-radius-square) !important;
   color: var(--zehn-color-text-settings-control) !important;
-  font-size: var(--zehn-size-text-settings-control) !important;
+  font-size: var(--zehn-size-text-control) !important;
   padding: 0 !important;
   margin: 0 !important;
   display: flex !important;
@@ -1114,7 +1012,7 @@ select * {
 .HijmccPB1BKyhOwhX1EVl.RadioButton:focus,
 .HijmccPB1BKyhOwhX1EVl.RadioButton:disabled {
   font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-text-settings-control) !important;
+  font-size: var(--zehn-size-text-control) !important;
   line-height: var(--zehn-size-setting-entry) !important;
   height: var(--zehn-size-setting-entry) !important;
   border-radius: var(--zehn-size-radius-square) !important;
@@ -1476,7 +1374,7 @@ input[type="radio" i]:checked:disabled::after,
 .DialogBody .useDefaultsCheckBox,
 .DialogBody.useDefaults .useDefaultsCheckBox {
   color: var(--zehn-color-text-settings-control) !important;
-  size: var(--zehn-size-text-settings-control) !important;
+  size: var(--zehn-size-text-control) !important;
 }
 
 .DialogCheckbox.Disabled .DialogToggle_Label,
@@ -1727,11 +1625,6 @@ input[type=checkbox]:checked:disabled::after,
 
 /* INTERACTABLE - TEXT INPUT (DIALOG) ------------------------------------------------------------------------------- */
 
-/* INPUT LABEL */
-.DialogInputRequirementLabel {
-  color: var(--zehn-color-text-secondary) !important;
-}
-
 /* CONTAINER */
 .DialogListBuilderInput ._DialogInputContainer {
   padding: 0 !important;
@@ -1747,12 +1640,14 @@ input[type=checkbox]:checked:disabled::after,
   width: auto !important;
 }
 
+/* FOR MULTILINE TEXT AREAS, CENTER TEXT */
 textarea {
   align-content: center !important;
 }
 
 /* TEXT INPUT */
 input[type="text"],
+.DialogInput,
 .DialogInput_Wrapper>input.DialogInput,
 input.DialogTextInputBase,
 input.DialogListBuilderInput_Input,
@@ -1772,22 +1667,19 @@ input.DialogListBuilderInput_Input,
   border: var(--zehn-size-input-dialog-border) solid var(--zehn-color-input-dialog-border) !important;
 }
 
-input[type="text"]:focus,
-input[type="text"]:focus-within,
-.DialogInput_Wrapper>input.DialogInput:focus,
-.DialogInput_Wrapper>input.DialogInput:focus-within,
-input.DialogTextInputBase:focus,
-input.DialogTextInputBase:focus-within,
-input.DialogListBuilderInput_Input:focus,
-input.DialogListBuilderInput_Input:focus-within,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:focus,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:focus-within {
+input[type="text"]:is(:focus, :focus-within),
+.DialogInput:is(:focus, :focus-within),
+.DialogInput_Wrapper>input.DialogInput:is(:focus, :focus-within),
+input.DialogTextInputBase:is(:focus, :focus-within),
+input.DialogListBuilderInput_Input:is(:focus, :focus-within),
+.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:is(:focus, :focus-within) {
   background: var(--zehn-color-input-dialog-background-focus) padding-box !important;
   border-color: var(--zehn-color-input-dialog-border-focus) !important;
   color: var(--zehn-color-input-dialog-text-focus) !important;
 }
 
 input[type="text"]:hover,
+.DialogInput:hover,
 .DialogInput_Wrapper>input.DialogInput:hover,
 input.DialogTextInputBase:hover,
 input.DialogListBuilderInput_Input:hover,
@@ -1797,22 +1689,19 @@ input.DialogListBuilderInput_Input:hover,
   border-color: var(--zehn-color-input-dialog-border-hover) !important;
 }
 
-input[type="text"]:hover:focus,
-input[type="text"]:hover:focus-within,
-.DialogInput_Wrapper>input.DialogInput:hover:focus,
-.DialogInput_Wrapper>input.DialogInput:hover:focus-within,
-input.DialogTextInputBase:hover:focus,
-input.DialogTextInputBase:hover:focus-within,
-input.DialogListBuilderInput_Input:hover:focus,
-input.DialogListBuilderInput_Input:hover:focus-within,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:hover:focus,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:hover:focus-within {
+input[type="text"]:hover:is(:focus, :focus-within),
+.DialogInput:hover:is(:focus, :focus-within),
+.DialogInput_Wrapper>input.DialogInput:hover:is(:focus, :focus-within),
+input.DialogTextInputBase:hover:is(:focus, :focus-within),
+input.DialogListBuilderInput_Input:hover:is(:focus, :focus-within),
+.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:hover:is(:focus, :focus-within) {
   background: var(--zehn-color-input-dialog-background-hover-focus) padding-box !important;
   border-color: var(--zehn-color-input-dialog-border-hover-focus) !important;
   color: var(--zehn-color-input-dialog-text-hover-focus) !important;
 }
 
 input[type="text"]:active,
+.DialogInput:active,
 .DialogInput_Wrapper>input.DialogInput:active,
 input.DialogTextInputBase:active,
 input.DialogListBuilderInput_Input:active,
@@ -1822,36 +1711,30 @@ input.DialogListBuilderInput_Input:active,
   border-color: var(--zehn-color-input-dialog-border-active) !important;
 }
 
-input[type="text"]:active:focus,
-input[type="text"]:active:focus-within,
-.DialogInput_Wrapper>input.DialogInput:active:focus,
-.DialogInput_Wrapper>input.DialogInput:active:focus-within,
-input.DialogTextInputBase:active:focus,
-input.DialogTextInputBase:active:focus-within,
-input.DialogListBuilderInput_Input:active:focus,
-input.DialogListBuilderInput_Input:active:focus-within,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:active:focus,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:active:focus-within {
+input[type="text"]:active:is(:focus, :focus-within),
+.DialogInput:active:is(:focus, :focus-within),
+.DialogInput_Wrapper>input.DialogInput:is(:focus, :focus-within),
+input.DialogTextInputBase:active:is(:focus, :focus-within),
+input.DialogListBuilderInput_Input:active:is(:focus, :focus-within),
+.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:active:is(:focus, :focus-within) {
   background: var(--zehn-color-input-dialog-background-active-focus) padding-box !important;
   border-color: var(--zehn-color-input-dialog-border-active-focus) !important;
   color: var(--zehn-color-input-dialog-text-active-focus) !important;
 }
 
-input[type="text"]:disabled,
-input[type="text"]:read-only,
-.DialogInput_Wrapper>input.DialogInput:disabled,
-.DialogInput_Wrapper>input.DialogInput:read-only,
-input.DialogTextInputBase:disabled,
-input.DialogTextInputBase:read-only,
-input.DialogListBuilderInput_Input:disabled,
-input.DialogListBuilderInput_Input:read-only,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:disabled {
+input[type="text"]:is(:disabled, :read-only),
+.DialogInput:is(:disabled, :read-only),
+.DialogInput_Wrapper>input.DialogInput:is(:disabled, :read-only),
+input.DialogTextInputBase:is(:disabled, :read-only),
+input.DialogListBuilderInput_Input:is(:disabled, :read-only),
+.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:is(:disabled, :read-only) {
   background: var(--zehn-color-input-dialog-background-disabled) padding-box !important;
   color: var(--zehn-color-input-dialog-text-disabled) !important;
   border-color: var(--zehn-color-input-dialog-border-disabled) !important;
 }
 
 input[type="text"]::placeholder,
+.DialogInput::placeholder,
 .DialogInput_Wrapper>input.DialogInput::placeholder,
 input.DialogTextInputBase::placeholder,
 input.DialogListBuilderInput_Input::placeholder {
@@ -1954,12 +1837,9 @@ input.DialogListBuilderInput_Input::placeholder {
   border: var(--zehn-size-input-fancy-border) solid var(--zehn-color-input-fancy-border) !important;
 }
 
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:focus,
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:focus-within,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:focus,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:focus-within,
-.friendSearchInput[type="text"]:focus,
-.friendSearchInput[type="text"]:focus-within {
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:is(:focus, :focus-within),
+.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:is(:focus, :focus-within),
+.friendSearchInput[type="text"]:is(:focus, :focus-within) {
   padding: var(--zehn-size-input-fancy-padding) !important;
   background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
   color: var(--zehn-color-input-fancy-text-focus) !important;
@@ -1974,12 +1854,9 @@ input.DialogListBuilderInput_Input::placeholder {
   border-color: var(--zehn-color-input-fancy-border-hover) !important;
 }
 
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover:focus,
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover:focus-within,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:hover:focus,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:hover:focus-within,
-.friendSearchInput[type="text"]:hover:focus,
-.friendSearchInput[type="text"]:hover:focus-within {
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover:is(:focus, :focus-within),
+.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:hover:is(:focus, :focus-within),
+.friendSearchInput[type="text"]:hover:focus:is(:focus, :focus-within) {
   background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
   color: var(--zehn-color-input-fancy-text-focus) !important;
   border-color: var(--zehn-color-input-fancy-border-focus) !important;
@@ -1993,12 +1870,9 @@ input.DialogListBuilderInput_Input::placeholder {
   border-color: var(--zehn-color-input-fancy-border-active) !important;
 }
 
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active:focus,
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active:focus-within,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:active:focus,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:active:focus-within,
-.friendSearchInput[type="text"]:active:focus,
-.friendSearchInput[type="text"]:active:focus-within {
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active:is(:focus, :focus-within),
+.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:active:is(:focus, :focus-within),
+.friendSearchInput[type="text"]:active:is(:focus, :focus-within) {
   background: var(--zehn-color-input-fancy-background-focus) padding-box !important;
   color: var(--zehn-color-input-fancy-text-focus) !important;
   border-color: var(--zehn-color-input-fancy-border-focus) !important;
@@ -2037,7 +1911,7 @@ input.DialogListBuilderInput_Input::placeholder {
 /* CONTAINER */
 ._DialogInputContainer {
   margin: 0 !important;
-  line-height: 1em !important;
+  line-height: var(--zehn-size-setting-entry) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -2045,6 +1919,10 @@ input.DialogListBuilderInput_Input::placeholder {
 
 .DialogToggleField._DialogInputContainer {
   padding: 0 !important;
+}
+
+.DialogToggleField_NewUIContainer {
+  height: var(--zehn-size-setting-entry) !important;
 }
 
 /* SWITCH INNER CONTAINER */
@@ -3204,14 +3082,14 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
   padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
-/* HEADER NOT ON SETTINGS */
+/* HEADER NOT ON SETTINGS - MAKE IT GO IN THE TITLEBAR */
 .DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   padding: 0 12px !important;
   line-height: 32px !important;
-  font-size: var(--zehn-size-12) !important;
+  font-size: var(--zehn-size-text-page-title) !important;
   margin-bottom: 0 !important;
   display: flex !important;
   flex-direction: row !important;
@@ -3219,11 +3097,114 @@ body:not(.WindowFocus) #zehnToggleUserIcon {
 
 .DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader .DialogHeaderSubtitle {
   color: var(--zehn-color-text-primary) !important;
-  font-size: var(--zehn-size-12) !important;
+  font-size: var(--zehn-size-text-page-title) !important;
 }
 
 .DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader .DialogHeaderSubtitle::before {
   content: "\00a0-\00a0" !important;
+}
+
+/* TITLES */
+.DialogHeader {
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-page-header) !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
+  line-height: 32px !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
+}
+
+.DialogHeader:has(button) {
+  gap: var(--zehn-size-gap-medium) !important;
+}
+
+.DialogHeaderSubtitle {
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+}
+
+.DialogHighlight {
+  color: var(--zehn-color-accent-100) !important;
+}
+
+.DialogSubHeader {
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  margin-right: 0 !important;
+}
+
+.DialogSubHeader:empty {
+  display: none !important;
+}
+
+/* SUBTITLES */
+.DialogLabel,
+.DialogLabelStrong {
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+label>.DialogLabel {
+  line-height: 32px !important;
+}
+
+/* TEXT */
+.DialogBody {
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-body) !important;
+  gap: var(--zehn-size-gap-medium) !important;
+}
+
+.DialogBodyText {
+  line-height: var(--zehn-size-24) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-body) !important;
+  margin: 0 !important;
+}
+
+.DialogToggle_Label {
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  line-height: var(--zehn-size-24) !important;
+}
+
+.DialogToggle_Description {
+  color: var(--zehn-color-text-secondary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  padding: 0 !important;
+  line-height: var(--zehn-size-24) !important;
+}
+
+.DialogRequirementLabel {
+  color: var(--zehn-color-accent-100) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  padding: 0 !important;
+  line-height: var(--zehn-size-24) !important;
+}
+
+.DialogInputRequirementLabel {
+  color: var(--zehn-color-text-secondary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  line-height: var(--zehn-size-24) !important;
+  margin-left: var(--zehn-size-gap-small) !important;
+}
+
+.DialogRequirementLabel label {
+  min-width: 100% !important;
 }
 
 /* ERROR */
