@@ -393,7 +393,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   color: var(--zehn-color-text-primary) !important;
   padding: 0 8px !important;
   border-radius: var(--zehn-size-radius-square) !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   text-align: center !important;
   left: 0 !important;
   bottom: 0 !important;
@@ -412,7 +412,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss:hover {
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   opacity: 1 !important;
 }
 
@@ -639,7 +639,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   border-radius: var(--zehn-size-radius-square) !important;
   padding: 0 var(--zehn-size-padding-medium) !important;
   position: absolute !important;
@@ -987,7 +987,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   left: 4px;
   right: 4px;
   height: var(--zehn-size-focusbar);
-  background-color: rgb(var(--zehn-color-accent));
+  background-color: var(--zehn-color-accent-100);
   display: block;
   position: absolute;
 }
@@ -1189,7 +1189,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   left: 4px;
   right: 4px;
   height: var(--zehn-size-focusbar);
-  background-color: rgb(var(--zehn-color-accent));
+  background-color: var(--zehn-color-accent-100);
   display: block;
   position: absolute;
 }
@@ -1245,7 +1245,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   overflow: hidden;
   margin: 0 !important;
   padding: 0 !important;
-  background-color: rgb(var(--zehn-color-accent)) !important;
+  background-color: var(--zehn-color-accent-100) !important;
   letter-spacing: normal !important;
   font-size: var(--zehn-size-10) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -1293,7 +1293,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   left: 4px;
   right: 4px;
   height: var(--zehn-size-focusbar);
-  background-color: rgb(var(--zehn-color-accent));
+  background-color: var(--zehn-color-accent-100);
   display: block;
   position: absolute;
 }
@@ -1472,7 +1472,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .ChatRoomListGroupItem .FriendMessageCount,
 .unreadFriend .FriendMessageCount {
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   padding: 0 !important;
   margin-top: 0 !important;
   margin-right: 0 !important;
@@ -1506,7 +1506,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .unreadMessageViolator {
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -2109,7 +2109,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   margin: 0 !important;
   background: transparent !important;
   border-radius: var(--zehn-mask-avatar-roundness) !important;
-  background: rgba(var(--zehn-color-accent), 0.5) !important;
+  background: var(--zehn-color-accent-50) !important;
   border: none !important;
 }
 
@@ -2117,7 +2117,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   margin: 0 !important;
   background: transparent !important;
   border-radius: var(--zehn-mask-avatar-roundness) !important;
-  background: rgba(var(--zehn-color-accent), 0.5) !important;
+  background: var(--zehn-color-accent-50) !important;
   border: none !important;
   line-height: 100% !important;
 }
@@ -2227,10 +2227,26 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   display: none !important;
 }
 
-.ChatRoomListGroupItem .openGroupButton .SVGIcon_DoubleArrow polyline {
+.ChatRoomListGroupItem .openGroupButton .SVGIcon_DoubleArrow * {
   display: none !important;
 }
 
+/* EXPAND ARROW - IS THIS EVEN USED ANYMORE? */
+.ExpandArrow {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-medium) !important;
+  -webkit-mask-image: var(--zehn-icon-chevron-right) !important;
+  margin-top: 0 !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* STATUS CONTAINER */
 .ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
   margin-top: auto !important;
   margin-bottom: auto !important;
@@ -2587,7 +2603,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
   border-radius: var(--zehn-size-radius-circle) !important;
   margin: 0 !important;
   padding: 0 !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   letter-spacing: normal !important;
   font-size: var(--zehn-size-10) !important;
   font-weight: var(--zehn-size-weight-normal) !important;

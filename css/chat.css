@@ -288,7 +288,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   right: var(--zehn-size-padding-medium) !important;
   width: var(--zehn-size-status-small) !important;
   height: var(--zehn-size-status-small) !important;
-  background-color: rgb(var(--zehn-color-accent)) !important;
+  background-color: var(--zehn-color-accent-100) !important;
   border-radius: var(--zehn-size-radius-circle) !important;
 }
 
@@ -491,7 +491,7 @@ body:not(.WindowFocus) .chatTabSelector svg {
 /* CHAT AVATARS */
 .ChatRoomSpeaker .speaker .speakerStatus,
 .ChatMsgSlashEmote .speaker .speakerStatus {
-  background-color: rgb(var(--zehn-color-offline)) !important;
+  background-color: var(--zehn-color-status-offline) !important;
   width: 8px !important;
   height: 8px !important;
   border-radius: var(--zehn-size-radius-circle) !important;
@@ -513,24 +513,24 @@ body:not(.WindowFocus) .chatTabSelector svg {
 .speaker.online.away .speakerStatus,
 .speaker.ingame.away .speakerStatus {
   -webkit-mask: none !important;
-  background-color: rgb(var(--zehn-color-away)) !important;
+  background-color: var(--zehn-color-status-away) !important;
 }
 
 .speaker.ingame .speakerStatus {
-  background-color: rgb(var(--zehn-color-ingame)) !important;
+  background-color: var(--zehn-color-status-ingame) !important;
 }
 
 .speaker.online .speakerStatus {
-  background-color: rgb(var(--zehn-color-online)) !important;
+  background-color: var(--zehn-color-status-online) !important;
 }
 
 .speaker.offline .speakerStatus {
-  background-color: rgb(var(--zehn-color-offline)) !important;
+  background-color: var(--zehn-color-status-offline) !important;
 }
 
 .speaker.online:has(._3IswZMeeD6ORStUjgv6Xh8) .speakerStatus,
 .speaker.ingame:has(._3IswZMeeD6ORStUjgv6Xh8) .speakerStatus {
-  background: rgb(var(--zehn-color-disturb)) !important;
+  background: var(--zehn-color-status-disturb) !important;
 }
 
 .nibodjvvrm86uCfnnAn4g {
@@ -812,7 +812,7 @@ body:not(.WindowFocus) .chatTabSelector svg {
   border-radius: var(--zehn-size-radius-square) !important;
   padding: 0 !important;
   background-color: transparent !important;
-  color: rgb(var(--zehn-color-accent)) !important;
+  color: var(--zehn-color-accent-100) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   border: unset !important;
@@ -871,7 +871,7 @@ body:not(.WindowFocus) .chatTabSelector svg {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgb(var(--zehn-color-accent));
+  background-color: var(--zehn-color-accent-100);
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   border-radius: var(--zehn-size-radius-circle);
@@ -1077,7 +1077,7 @@ body:not(.WindowFocus) .chatTabSelector svg {
   background: var(--zehn-color-panel) !important;
   gap: var(--zehn-size-gap-medium) !important;
   padding: var(--zehn-size-padding-medium) !important;
-  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
   transition: background 0.2s ease-in-out !important;
 }
 
@@ -1275,12 +1275,12 @@ body:not(.WindowFocus) .chatTabSelector svg {
 .ScrollToBottomButton {
   color: var(--zehn-color-text-primary) !important;
   border-radius: var(--zehn-size-radius-square) !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   font-size: var(--zehn-size-14) !important;
   padding-top: 0 !important;
   height: 24px !important;
+  opacity: 0 !important;
   transition: opacity 0.2s ease !important;
-  display: none !important;
 }
 
 .ScrollToBottomButton:hover,
@@ -1301,6 +1301,10 @@ body:not(.WindowFocus) .chatTabSelector svg {
   line-height: 24px !important;
   text-transform: uppercase !important;
   width: 100% !important;
+}
+
+.ScrollToBottomButton.Hidden {
+  transform: translateY(24px) !important;
 }
 
 /* ADD FRIEND BUTTON */
@@ -1543,7 +1547,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatFileUploadErrorDescription {
   padding: 0 !important;
   font-size: var(--zehn-size-12) !important;
-  color: rgb(var(--zehn-color-accent)) !important;
+  color: var(--zehn-color-accent-100) !important;
   text-align: center !important;
 }
 
@@ -1873,7 +1877,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: var(--zehn-size-padding-medium) !important;
   background: var(--zehn-color-panel) !important;
   display: flex !important;
-  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
   width: auto !important;
   max-width: var(--zehn-size-embed-width) !important;
   transition: background 0.2s ease-in-out !important;
@@ -1922,7 +1926,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: var(--zehn-size-padding-medium) !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
-  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
   place-content: flex-end !important;
   transition: background 0.2s ease-in-out !important;
 }
@@ -2178,7 +2182,7 @@ div:hover>.BBCodeCollapseControl {
   margin: 0 !important;
   background: var(--zehn-color-panel) !important;
   border-radius: var(--zehn-size-radius-square) !important;
-  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
   transition: background 0.2s ease-in-out !important;
 }
 
@@ -2266,7 +2270,7 @@ div:hover>.BBCodeCollapseControl {
   border-bottom: none !important;
   letter-spacing: normal !important;
   font-size: var(--zehn-size-12) !important;
-  color: rgb(var(--zehn-color-accent)) !important;
+  color: var(--zehn-color-accent-100) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   line-height: 32px !important;
 }
@@ -2332,7 +2336,7 @@ div:hover>.BBCodeCollapseControl {
   font-weight: var(--zehn-size-weight-normal) !important;
   height: fit-content !important;
   border-radius: var(--zehn-size-radius-square) !important;
-  border-bottom: 2px solid rgb(var(--zehn-color-accent)) !important;
+  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
   transition: background 0.2s ease-in-out !important;
 }
 
@@ -2427,7 +2431,7 @@ div:hover>.BBCodeCollapseControl {
 .KN2rLYTydEJfhK2JG1xBI {
   margin: 0 !important;
   border-radius: var(--zehn-size-radius-square) !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   padding: 0 var(--zehn-size-padding-small) !important;
   color: var(--zehn-color-text-primary) !important;
   height: 100% !important;
@@ -2862,7 +2866,7 @@ div:hover>.BBCodeCollapseControl {
 ._5BtHMjT9usALaSWHGugdV .u5Kx6dkUppvb-1qV4IIuy {
   width: 6px !important;
   height: 6px !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
   border-radius: var(--zehn-size-radius-circle) !important;
 }
 
@@ -3020,11 +3024,11 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .statMembersInGame {
-  color: rgb(var(--zehn-color-accent)) !important;
+  color: var(--zehn-color-accent-100) !important;
 }
 
 .statMembersInGame .statCircle {
-  background-color: rgb(var(--zehn-color-accent)) !important;
+  background-color: var(--zehn-color-accent-100) !important;
 }
 
 /* CHAT ROOM NAV COLUMN */
@@ -3264,11 +3268,11 @@ div:hover>.BBCodeCollapseControl {
   display: block !important;
   width: 0 !important;
   height: 20px !important;
-  outline: 2px solid rgb(var(--zehn-color-accent)) !important;
+  outline: 2px solid var(--zehn-color-accent-100) !important;
   content: "" !important;
   left: 2px !important;
   top: 10px !important;
-  background: rgb(var(--zehn-color-accent)) !important;
+  background: var(--zehn-color-accent-100) !important;
 }
 
 .chatRoomVoiceChannelNameContainer,
@@ -3297,7 +3301,7 @@ div:hover>.BBCodeCollapseControl {
   height: 100% !important;
   width: auto !important;
   border-radius: var(--zehn-size-radius-square) !important;
-  color: rgb(var(--zehn-color-accent)) !important;
+  color: var(--zehn-color-accent-100) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   margin: 0 !important;
@@ -3314,7 +3318,7 @@ div:hover>.BBCodeCollapseControl {
 .ChatUnreadMessageIndicator .chatUnreadCircle {
   width: 6px !important;
   height: 6px !important;
-  background-color: rgb(var(--zehn-color-accent)) !important;
+  background-color: var(--zehn-color-accent-100) !important;
   border-radius: var(--zehn-size-radius-circle) !important;
   left: unset !important;
   top: 3px !important;
@@ -3587,7 +3591,7 @@ div:hover>.BBCodeCollapseControl {
   left: 4px;
   right: 4px;
   height: var(--zehn-size-focusbar);
-  background-color: rgb(var(--zehn-color-accent));
+  background-color: var(--zehn-color-accent-100);
   display: block;
   position: absolute;
 }
@@ -3947,15 +3951,16 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .LoadingOlderMessages {
-  color: var(--zehn-color-text-secondary) !important;
-  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   left: 0 !important;
   top: 0 !important;
-  line-height: 32px !important;
+  line-height: 24px !important;
   width: 100% !important;
   text-align: center;
   transition: opacity 0.2s ease-in-out !important;
+  background: var(--zehn-color-accent-100) !important;
 }
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed~.ChatRoomGroup_MainAndChatEntry .VoiceRoomChatHistory .chatHistoryScroll {
@@ -3982,7 +3987,7 @@ div:hover>.BBCodeCollapseControl {
 ._3zWGwYIQs01hkEl3N2sICI {
   height: auto !important;
   padding: 32px !important;
-  background: rgba(var(--zehn-color-accent), 0.5) !important;
+  background: var(--zehn-color-accent-50) !important;
   border-radius: var(--zehn-size-radius-square) !important;
 }
 
@@ -4056,7 +4061,7 @@ div:hover>.BBCodeCollapseControl {
   left: 4px;
   right: 4px;
   height: var(--zehn-size-focusbar);
-  background-color: rgb(var(--zehn-color-accent));
+  background-color: var(--zehn-color-accent-100);
   display: block;
   position: absolute;
 }
@@ -4389,7 +4394,7 @@ div:hover>.BBCodeCollapseControl {
 }
 
 ._8MzyWIQ6TwS_AnWj_m4rL {
-  color: rgb(var(--zehn-color-accent)) !important;
+  color: var(--zehn-color-accent-100) !important;
   padding: 8px 16px !important;
   border: none !important;
   margin: 0 !important;
@@ -4489,7 +4494,7 @@ div:hover>.BBCodeCollapseControl {
 
 ._1k4dSfTb9MQQkhRmcTNjXs {
   background: transparent !important;
-  border: 2px solid rgb(var(--zehn-color-accent)) !important;
+  border: 2px solid var(--zehn-color-accent-100) !important;
 }
 
 ._3EegkD4UmE1ZI1j7DOgAIe {

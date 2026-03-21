@@ -10,6 +10,12 @@
   --zehn-color-away: var(--custom-color-away, 240, 178, 50);
   --zehn-color-disturb: var(--custom-color-disturb, 242, 63, 67);
   --zehn-color-offline: var(--custom-color-offline, 128, 132, 142);
+
+  --zehn-color-status-ingame: rgb(var(--zehn-color-ingame));
+  --zehn-color-status-online: rgb(var(--zehn-color-online));
+  --zehn-color-status-away: rgb(var(--zehn-color-away));
+  --zehn-color-status-disturb: rgb(var(--zehn-color-disturb));
+  --zehn-color-status-offline: rgb(var(--zehn-color-offline));
 }
 
 :root {
@@ -20,6 +26,12 @@
   --zehn-color-accent-darken-minor: var(--SystemAccentColorDark1-RGB, 203, 95, 121);
   --zehn-color-accent-darken-medium: var(--SystemAccentColorDark2-RGB, 204, 69, 102);
   --zehn-color-accent-darken-major: var(--SystemAccentColorDark3-RGB, 181, 56, 86);
+
+  --zehn-color-accent-20: rgba(var(--zehn-color-accent), 0.2);
+  --zehn-color-accent-40: rgba(var(--zehn-color-accent), 0.4);
+  --zehn-color-accent-50: rgba(var(--zehn-color-accent), 0.5);
+  --zehn-color-accent-60: rgba(var(--zehn-color-accent), 0.6);
+  --zehn-color-accent-100: rgb(var(--zehn-color-accent));
 }
 
 @media (prefers-color-scheme: light) {
@@ -55,7 +67,7 @@
   --zehn-color-black: 0, 0, 0;
 
   --zehn-color-border: light-dark(rgba(var(--zehn-color-black), 0.45), rgba(var(--zehn-color-white), 0.17));
-  --zehn-color-border-focus: var(--option-accent-borders, rgb(var(--zehn-color-accent)));
+  --zehn-color-border-focus: var(--option-accent-borders, var(--zehn-color-accent-100));
 
   --zehn-color-foreground-primary-light: 0, 0, 0;
   --zehn-color-foreground-primary-dark: 255, 255, 255;
@@ -101,7 +113,7 @@
   --zehn-color-icon-secondary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-icon-tertiary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
 
-  --zehn-color-link: rgb(var(--zehn-color-accent));
+  --zehn-color-link: var(--zehn-color-accent-100);
   --zehn-color-link-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-link-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
 
@@ -220,11 +232,11 @@
   --zehn-color-input-dialog-background-active-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-input-dialog-background-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-input-dialog-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-border-focus: rgb(var(--zehn-color-accent));
+  --zehn-color-input-dialog-border-focus: var(--zehn-color-accent-100);
   --zehn-color-input-dialog-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-border-hover-focus: rgb(var(--zehn-color-accent));
+  --zehn-color-input-dialog-border-hover-focus: var(--zehn-color-accent-100);
   --zehn-color-input-dialog-border-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-border-active-focus: rgb(var(--zehn-color-accent));
+  --zehn-color-input-dialog-border-active-focus: var(--zehn-color-accent-100);
   --zehn-color-input-dialog-border-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-input-dialog-text-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-input-dialog-text: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
@@ -265,9 +277,9 @@
   --zehn-color-checkbox-dialog-background-off-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
   --zehn-color-checkbox-dialog-background-off-active-focus: var(--zehn-color-checkbox-dialog-background-off-active);
   --zehn-color-checkbox-dialog-background-off-disabled: transparent;
-  --zehn-color-checkbox-dialog-background-on: rgb(var(--zehn-color-accent));
+  --zehn-color-checkbox-dialog-background-on: var(--zehn-color-accent-100);
   --zehn-color-checkbox-dialog-background-on-focus: var(--zehn-color-checkbox-dialog-background-on);
-  --zehn-color-checkbox-dialog-background-on-hover: rgb(var(--zehn-color-accent));
+  --zehn-color-checkbox-dialog-background-on-hover: var(--zehn-color-accent-100);
   --zehn-color-checkbox-dialog-background-on-hover-focus: var(--zehn-color-checkbox-dialog-background-on-hover);
   --zehn-color-checkbox-dialog-background-on-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
   --zehn-color-checkbox-dialog-background-on-active-focus: var(--zehn-color-checkbox-dialog-background-on-active);
@@ -303,16 +315,16 @@
 
   --zehn-color-checkbox-media-background-off: color-mix(in var(--zehn-blend-space), rgba(204, 204, 204, 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-checkbox-media-background-off-hover: color-mix(in var(--zehn-blend-space), rgb(204, 204, 204), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-checkbox-media-background-on: rgb(var(--zehn-color-accent));
-  --zehn-color-checkbox-media-background-on-hover: rgba(var(--zehn-color-accent), 0.4);
+  --zehn-color-checkbox-media-background-on: var(--zehn-color-accent-100);
+  --zehn-color-checkbox-media-background-on-hover: var(--zehn-color-accent-40);
   --zehn-color-checkbox-media-border-off: color-mix(in var(--zehn-blend-space), rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-checkbox-media-border-off-hover: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-checkbox-media-border-on: rgb(var(--zehn-color-accent));
-  --zehn-color-checkbox-media-border-on-hover: rgba(var(--zehn-color-accent), 0.4);
+  --zehn-color-checkbox-media-border-on: var(--zehn-color-accent-100);
+  --zehn-color-checkbox-media-border-on-hover: var(--zehn-color-accent-40);
   --zehn-color-checkbox-media-outline-off: color-mix(in var(--zehn-blend-space), rgba(var(--zehn-color-gray), 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-checkbox-media-outline-off-hover: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-gray)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-checkbox-media-outline-on: rgb(var(--zehn-color-accent));
-  --zehn-color-checkbox-media-outline-on-hover: rgba(var(--zehn-color-accent), 0.4);
+  --zehn-color-checkbox-media-outline-on: var(--zehn-color-accent-100);
+  --zehn-color-checkbox-media-outline-on-hover: var(--zehn-color-accent-40);
   --zehn-color-checkbox-media-toggle: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
 
   --zehn-color-radio-background-off: transparent;
@@ -336,9 +348,9 @@
   --zehn-color-radio-border-off-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
   --zehn-color-radio-border-off-active-focus: var(--zehn-color-radio-border-off-active);
   --zehn-color-radio-border-off-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-radio-border-on: rgb(var(--zehn-color-accent));
+  --zehn-color-radio-border-on: var(--zehn-color-accent-100);
   --zehn-color-radio-border-on-focus: var(--zehn-color-radio-border-on);
-  --zehn-color-radio-border-on-hover: rgb(var(--zehn-color-accent));
+  --zehn-color-radio-border-on-hover: var(--zehn-color-accent-100);
   --zehn-color-radio-border-on-hover-focus: var(--zehn-color-radio-border-on-hover);
   --zehn-color-radio-border-on-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
   --zehn-color-radio-border-on-active-focus: var(--zehn-color-radio-border-on-active);
@@ -362,7 +374,7 @@
   --zehn-color-switch-background-off-hover: transparent;
   --zehn-color-switch-background-off-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(102, 102, 102), rgb(162, 162, 162)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-switch-background-off-disabled: transparent;
-  --zehn-color-switch-background-on: rgb(var(--zehn-color-accent));
+  --zehn-color-switch-background-on: var(--zehn-color-accent-100);
   --zehn-color-switch-background-on-hover: light-dark(rgb(var(--zehn-color-accent-lighten-minor)), rgb(var(--zehn-color-accent-darken-minor)));
   --zehn-color-switch-background-on-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(102, 102, 102), rgb(162, 162, 162)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-switch-background-on-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
@@ -386,10 +398,10 @@
   --zehn-color-slider-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-slider-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
   --zehn-color-slider-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-slider-handle: rgb(var(--zehn-color-accent));
+  --zehn-color-slider-handle: var(--zehn-color-accent-100);
   --zehn-color-slider-handle-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-slider-handle-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(204, 204, 204), rgb(118, 118, 118)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-slider-track: rgb(var(--zehn-color-accent));
+  --zehn-color-slider-track: var(--zehn-color-accent-100);
   --zehn-color-slider-default: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
 
   --zehn-color-picker-border: transparent;
@@ -442,10 +454,10 @@
   --zehn-color-tag-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.35), rgba(var(--zehn-color-white), 0.35)), rgba(var(--zehn-color-blend-foreground), 0.35) var(--zehn-blend-amount-foreground));
 
   --zehn-color-progress-empty: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-progress-filled: rgb(var(--zehn-color-accent));
+  --zehn-color-progress-filled: var(--zehn-color-accent-100);
   --zehn-color-timeline-empty: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-timeline-filled: rgb(var(--zehn-color-accent));
-  --zehn-color-timeline-handle: rgb(var(--zehn-color-accent));
+  --zehn-color-timeline-filled: var(--zehn-color-accent-100);
+  --zehn-color-timeline-handle: var(--zehn-color-accent-100);
   --zehn-color-timeline-handle-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
   --zehn-color-timeline-handle-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
   --zehn-color-timeline-selection: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
@@ -470,11 +482,11 @@
   --zehn-color-keyboard-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
   --zehn-color-keyboard-key: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
   --zehn-color-keyboard-key-mod: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-keyboard-key-focus: rgb(var(--zehn-color-accent));
+  --zehn-color-keyboard-key-focus: var(--zehn-color-accent-100);
 
   --zehn-color-virtualmenu-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
-  --zehn-color-virtualmenu-background-selected: rgba(var(--zehn-color-accent), 0.5);
-  --zehn-color-virtualmenu-border: rgb(var(--zehn-color-accent));
+  --zehn-color-virtualmenu-background-selected: var(--zehn-color-accent-50);
+  --zehn-color-virtualmenu-border: var(--zehn-color-accent-100);
 }
 
 @media (prefers-contrast: more) {
