@@ -937,12 +937,11 @@ select:disabled:is(:hover, :active, :focus),
   align-self: flex-end !important;
   position: relative !important;
   margin: 0 !important;
-  margin-left: auto !important;
+  margin-left: var(--zehn-size-gap-medium) !important;
   inset: 0 !important;
   width: var(--zehn-size-icon-small) !important;
   height: 100% !important;
   padding: 0 !important;
-  padding-left: var(--zehn-size-gap-medium) !important;
 }
 
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu,
@@ -1375,11 +1374,6 @@ input[type="radio" i]:checked:disabled::after,
 .DialogBody.useDefaults .useDefaultsCheckBox {
   color: var(--zehn-color-text-settings-control) !important;
   size: var(--zehn-size-text-control) !important;
-}
-
-.DialogCheckbox.Disabled .DialogToggle_Label,
-.DialogCheckbox_Container.Disabled .DialogToggle_Label {
-  color: var(--zehn-color-text-settings-control-disabled) !important;
 }
 
 /* CHECKBOX - DIALOGS / LOGIN WINDOW  */
@@ -1919,6 +1913,7 @@ input.DialogListBuilderInput_Input::placeholder {
 
 .DialogToggleField._DialogInputContainer {
   padding: 0 !important;
+  gap: var(--zehn-size-gap-small) !important;
 }
 
 .DialogToggleField_NewUIContainer {
@@ -2335,6 +2330,10 @@ input.DialogListBuilderInput_Input::placeholder {
   line-height: var(--zehn-size-24) !important;
 }
 
+._2yM7SDNRgnEnGEZIf-WSoG {
+  width: var(--zehn-size-slider-width) !important;
+}
+
 /* SETTINGS SLIDER */
 ._2_vG6TwMW2XtyLlTEaODH9::before,
 .SliderTrack::before {
@@ -2446,15 +2445,18 @@ button.TextButton:active {
 }
 
 ._1CJeU7emnRNSJ8Xk3Leavm>div {
-  min-width: 0 !important;
   flex-grow: 1 !important;
   justify-content: center !important;
 }
 
+/* FADE OUT */
+._26cOWHMMjKvxQ-UyuikavV {
+  mask-image: linear-gradient(to right, transparent, black var(--zehn-size-gap-medium), black calc(100% - var(--zehn-size-gap-medium)), transparent) !important;
+}
+
 /* SPACER */
 .dCYlnZ6rohlL85gziA5ZY {
-  min-width: 0 !important;
-  display: none !important;
+  min-width: var(--zehn-size-gap-medium) !important;
 }
 
 /* TAB */
@@ -3173,10 +3175,15 @@ label>.DialogLabel {
 }
 
 .DialogToggle_Label {
-  color: var(--zehn-color-text-primary) !important;
+  color: var(--zehn-color-text-settings-control) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-text-label) !important;
-  line-height: var(--zehn-size-24) !important;
+  line-height: normal !important;
+  align-self: center !important;
+}
+
+.Disabled .DialogToggle_Label {
+  color: var(--zehn-color-text-settings-control-disabled) !important;
 }
 
 .DialogToggle_Description {
@@ -3184,7 +3191,8 @@ label>.DialogLabel {
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-text-label) !important;
   padding: 0 !important;
-  line-height: var(--zehn-size-24) !important;
+  line-height: normal !important;
+  align-self: center !important;
 }
 
 .DialogRequirementLabel {
@@ -3205,6 +3213,47 @@ label>.DialogLabel {
 
 .DialogRequirementLabel label {
   min-width: 100% !important;
+}
+
+/* CONTROLS */
+.DialogContent .DialogControlsSection {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-gap-medium) !important;
+}
+
+.DialogContent .DialogControlsSection:has(._1CJeU7emnRNSJ8Xk3Leavm) {
+  /* FOR TABLIST */
+  /* display: block !important; */
+}
+
+.DialogControlsSection:empty {
+  display: none !important;
+}
+
+.DialogContent .DialogControlsSection>.Panel {
+  max-width: 100% !important;
+}
+
+.DialogContent .DialogControlsSection>.Panel:not(._1ml4SNc3LIyBDHIf8ekVSw) {
+  gap: 8px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.DialogContent .DialogControlsSection:not(:first-child),
+.DialogContent .DialogControlsSectionHeader:not(:first-child),
+.DialogContent .DialogHeader:not(:first-child),
+.DialogContent .DialogSubHeader:not(:first-child) {
+  margin-top: 0 !important;
+}
+
+.DialogControlsSection:not(:last-child) {
+  margin-bottom: 0 !important;
+}
+
+.DialogControlsSectionHeader:not(:last-child) {
+  margin-bottom: 0 !important;
 }
 
 /* ERROR */
