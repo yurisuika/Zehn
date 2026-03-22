@@ -104,7 +104,7 @@
   flex: 1 !important;
   flex-direction: row !important;
   place-items: flex-start !important;
-  min-height: var(--zehn-size-setting-entry) !important;
+  min-height: var(--zehn-size-settings-entry) !important;
   align-items: center !important;
 }
 
@@ -156,8 +156,10 @@
 .steam-hunters-achievements-page .group-title .group-title-text {
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-20) !important;
-  line-height: auto !important;
+  font-size: var(--zehn-size-16) !important;
+  line-height: normal !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
 }
 
 .steam-hunters-achievements-page .date {
@@ -242,6 +244,10 @@
 }
 
 /* ACHIEVEMENT ENTRY */
+.steam-hunters-achievements-page .group-content {
+  padding: 0 !important;
+}
+
 .steam-hunters-achievements-page .achievement-item {
   margin: 0 !important;
   gap: var(--zehn-size-gap-small) !important;
@@ -266,6 +272,7 @@
 
 .steam-hunters-achievements-page .achievement-item .achievement-content {
   margin: 0 !important;
+  margin-right: 16px !important;
 }
 
 .steam-hunters-achievements-page .achievement-item .achievement-content .achievement-inner-content {
@@ -312,6 +319,68 @@
   display: none !important;
 }
 
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .achievement-tag,
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .obtainability {
+  border-radius: var(--zehn-size-tag-radius-small) !important;
+  color: var(--zehn-color-tag-text) !important;
+  background: var(--zehn-color-tag) !important;
+  padding: var(--zehn-size-tag-padding-small) !important;
+  font-size: var(--zehn-size-tag-text-small) !important;
+  height: var(--zehn-size-tag-small) !important;
+  box-sizing: border-box !important;
+  align-items: center !important;
+  gap: var(--zehn-size-tag-gap) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .achievement-tag:hover,
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .obtainability:hover {
+  background: var(--zehn-color-tag-hover) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .achievement-tag:active,
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .obtainability:active {
+  background: var(--zehn-color-tag-active) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .obtainability.Unobtainable {
+  color: var(--zehn-color-tag-text) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .obtainability.ConditionallyObtainable {
+  color: var(--zehn-color-tag-text) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .guide-link {
+  gap: var(--zehn-size-gap-tiny) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .guide-link .guide-icon {
+  width: var(--zehn-size-icon-small) !important;
+  height: var(--zehn-size-icon-small) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .guide-link .guide-icon svg {
+  width: var(--zehn-size-icon-small) !important;
+  height: var(--zehn-size-icon-small) !important;
+  background-color: var(--zehn-color-link) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-small) !important;
+  -webkit-mask-image: var(--zehn-icon-preview) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .guide-link:hover .guide-icon svg {
+  background-color: var(--zehn-color-link-hover) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .guide-link:active .guide-icon svg {
+  background-color: var(--zehn-color-link-active) !important;
+}
+
+.steam-hunters-achievements-page .achievement-item .achievement-extra-info .guide-link .guide-icon svg * {
+  display: none !important;
+}
+
 .steam-hunters-achievements-page .achievement-item .left {
   position: absolute !important;
   margin: auto var(--zehn-size-gap-medium) !important;
@@ -331,7 +400,7 @@
 .steam-hunters-achievements-page .achievement-item .achievement-progress {
   border-radius: var(--zehn-size-progressbar-radius) !important;
   height: var(--zehn-size-progressbar-normal) !important;
-  inset: var(--zehn-size-gap-small) var(--zehn-size-gap-medium) !important;
+  /* inset: var(--zehn-size-gap-small) var(--zehn-size-gap-medium) !important; */
   top: unset !important;
   background-color: var(--zehn-color-progress-empty) !important;
 }
@@ -360,18 +429,151 @@
   margin: auto 0 !important;
 }
 
-.steam-hunters-achievements-page .steam-hunters-percentage.Common {
+.steam-hunters-achievements-page .steam-hunters-percentage.Common,
+._2_lmTz0tA4NOSle5WaO1PZ .steam-hunters-percentage.Common {
+  color: var(--zehn-color-text-tertiary) !important;
+}
+
+.steam-hunters-achievements-page .steam-hunters-percentage.Uncommon,
+._2_lmTz0tA4NOSle5WaO1PZ .steam-hunters-percentage.Uncommon {
+  color: var(--zehn-color-text-secondary) !important;
+}
+
+.steam-hunters-achievements-page .steam-hunters-percentage.Rare,
+._2_lmTz0tA4NOSle5WaO1PZ .steam-hunters-percentage.Rare {
   color: var(--zehn-color-text-primary) !important;
 }
 
-.steam-hunters-achievements-page .steam-hunters-percentage.Uncommon {
-   color: var(--zehn-color-accent-100) !important;
+.steam-hunters-achievements-page .steam-hunters-percentage.Epic,
+._2_lmTz0tA4NOSle5WaO1PZ .steam-hunters-percentage.Epic {
+  color: var(--zehn-color-accent-100) !important;
+}
+
+.steam-hunters-achievements-page .steam-hunters-percentage.Legendary,
+._2_lmTz0tA4NOSle5WaO1PZ .steam-hunters-percentage.Legendary {
+  color: var(--zehn-color-accent-100) !important;
+  font-weight: var(--zehn-size-weight-super) !important;
 }
 
 .steam-hunters-achievements-page .unlocked-date {
   color: var(--zehn-color-text-secondary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-12) !important;
+}
+
+/* TOOLTIP */
+.steam-hunters-tooltip-arrow {
+  border-top-color: var(--zehn-color-tooltip-background) !important;
+  border-color: transparent !important;
+  display: none !important;
+}
+
+/* PREFERENCES */
+.steam-hunters-achievements-page .preferences-overlay {
+  position: relative !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  animation: none !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup {
+  margin: var(--zehn-size-gap-medium) 0 0 0 !important;
+  border: none !important;
+  border-radius: var(--zehn-size-radius-square) !important;
+  max-height: unset !important;
+  min-width: 100% !important;
+  background: transparent !important;
+}
+
+/* PREFERENCES HEADER */
+.steam-hunters-achievements-page .preferences-popup .preferences-header {
+  padding: 0 var(--zehn-size-padding-medium) !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup .preferences-header h2 {
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-page-header) !important;
+  margin: 0 !important;
+}
+
+/* PREFERENCES LIST */
+.steam-hunters-achievements-page .preferences-popup .preferences-list {
+  padding: var(--zehn-size-padding-medium) !important;
+  min-height: fit-content !important;
+  gap: var(--zehn-size-gap-medium) !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup .preferences-list .preference-item {
+  background: transparent !important;
+  transition: none !important;
+  padding: 0 !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: var(--zehn-size-gap-small) !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup .preferences-list .preference-item .preference-info .preference-label {
+  color: var(--zehn-color-text-control) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup .preferences-list .preference-item .preference-info .preference-description {
+  color: var(--zehn-color-text-description) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-description) !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup .preferences-list hr {
+  border: none !important;
+  background: var(--zehn-color-seperator) !important;
+  height: var(--zehn-size-seperator) !important;
+}
+
+/* PREVIEW */
+.steam-hunters-achievements-page .preferences-popup .preferences-preview {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin-top: var(--zehn-size-padding-medium) !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup .preferences-preview .preview-text {
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  margin: 0 0 var(--zehn-size-gap-medium) 0 !important;
+  padding: 0 var(--zehn-size-padding-medium) !important;
+}
+
+.steam-hunters-achievements-page .preferences-popup .preferences-preview .preview-window {
+  padding: 0 !important;
+  border: none !important;
+  border-radius: var(--zehn-size-radius-square) !important;
+  background: transparent !important;
+}
+
+/* ERROR */
+.steam-hunters-error-message {
+  padding: 0 var(--zehn-size-padding-medium) !important;
+  text-align: center !important;
+}
+
+.steam-hunters-error-message svg {
+  width: var(--zehn-size-icon-super) !important;
+  height: var(--zehn-size-icon-super) !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-super) !important;
+  -webkit-mask-image: var(--zehn-icon-alert) !important;
+}
+
+.steam-hunters-error-message svg * {
+  display: none !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -528,7 +730,7 @@
   position: relative !important;
   bottom: unset !important;
   margin: 4px 16px !important;
-  height: 1px !important;
+  height: var(--zehn-size-seperator) !important;
   background: var(--zehn-color-seperator-context) !important;
   /*display: none !important;*/
 }
@@ -649,7 +851,7 @@
 /* EXTENSION CONTEXT MENU */
 .extendium[class*="___Context_Menu"] ._2T8HGXJpXSDoSvvPwF9uXd._1-NP1PnZ92z74rDyvBaNbu {
   margin: 4px 16px !important;
-  height: 1px !important;
+  height: var(--zehn-size-seperator) !important;
   background: var(--zehn-color-seperator-context) !important;
   border: none !important;
 }
@@ -842,7 +1044,6 @@
 .md-button {
   height: var(--zehn-size-button-large) !important;
   width: var(--zehn-size-button-large) !important;
-  !important;
   line-height: var(--zehn-size-button-large) !important;
   border-radius: var(--zehn-size-radius-square) !important;
   color: var(--zehn-color-text-primary) !important;
@@ -931,7 +1132,7 @@
 }
 
 .hr {
-  /*border-top: 1px solid var(--zehn-color-seperator) !important;*/
+  /*border-top: var(--zehn-size-seperator) solid var(--zehn-color-seperator) !important;*/
 }
 
 .extension-detail-info .hr {
