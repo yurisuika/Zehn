@@ -9,13 +9,7 @@
 }
 
 /* BORDER */
-.multiChatDialog {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border) !important; */
-}
-
-.WindowFocus .multiChatDialog {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important; */
-}
+.multiChatDialog {}
 
 .chat_main.singlewindow .multiChatDialog {
   border: none !important;
@@ -797,7 +791,7 @@ body:not(.WindowFocus) .chatTabSelector svg {
   width: 32px !important;
 }
 
-/* TRADE OFFER */
+/* TRADE OFFER / EMBED LINK */
 .ChatMessageInvite .inviteURLContainer {
   margin-bottom: 0 !important;
 }
@@ -811,57 +805,96 @@ body:not(.WindowFocus) .chatTabSelector svg {
   display: none !important;
 }
 
-.ChatMessageInvite .inviteURLContainer .inviteURLAndCopy {
+.ChatMessageInvite .inviteURLContainer .inviteURLAndCopy,
+.ChatMessageOpenGraph .OpenGraphFooter {
+  transform: none !important;
   margin: 0 !important;
-  gap: 8px !important;
+  gap: var(--zehn-size-gap-small) !important;
 }
 
-.ChatMessageInvite .inviteURLLink {
-  border-radius: var(--zehn-size-radius-square) !important;
+.OpenGraphMessageURL_full {
+  transform: none !important;
+  opacity: 0 !important;
   padding: 0 !important;
+  border: none !important;
   background-color: transparent !important;
-  color: var(--zehn-color-accent-100) !important;
-  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text-secondary) !important;
+  width: 100% !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-12) !important;
+  line-height: 32px !important;
+  max-height: fit-content !important;
+  height: fit-content !important;
+}
+
+.OpenGraphFooter:hover .OpenGraphMessageURL_full {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.ChatMessageInvite .inviteURLLink,
+.msg .OpenGraphMessageURL {
+  border-radius: var(--zehn-size-radius-square) !important;
+  background-color: transparent !important;
+  color: var(--zehn-color-link) !important;
+  font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   border: unset !important;
   margin: 0 !important;
+  padding: 0 !important;
   text-overflow: ellipsis !important;
   min-width: 0 !important;
   order: 2 !important;
   flex-grow: 1 !important;
-  line-height: 16px !important;
+  line-height: 32px !important;
+  max-height: fit-content !important;
+  height: fit-content !important;
 }
 
-.ChatMessageInvite .inviteURLLink:hover {
-  color: var(--zehn-color-text-secondary) !important;
+.ChatMessageInvite .inviteURLLink:hover,
+.msg .OpenGraphMessageURL:hover {
+  color: var(--zehn-color-link-hover) !important;
 }
 
-.ChatMessageInvite .inviteURLLink:active {
-  color: var(--zehn-color-text-tertiary) !important;
+.ChatMessageInvite .inviteURLLink:active,
+.msg .OpenGraphMessageURL:active {
+  color: var(--zehn-color-link-active) !important;
 }
 
-.inviteURLContainer .copyInviteLink {
-  width: 16px !important;
-  height: 16px !important;
+.inviteURLContainer .copyInviteLink,
+.OpenGraphFooter .OpenGraphURLButton  {
   margin: 0 !important;
   order: 1 !important;
+  width: var(--zehn-size-button-fancy) !important;
+  height: var(--zehn-size-button-fancy) !important;
+  background: var(--zehn-color-button-fancy-background) !important;
 }
 
-.friendsui-container .SVGIcon_Button.SVGIcon_CopyToClipboard {
+.inviteURLContainer .copyInviteLink:hover,
+.OpenGraphFooter .OpenGraphURLButton:hover {
+  background: var(--zehn-color-button-fancy-background-hover) !important;
+}
+
+.inviteURLContainer .copyInviteLink:active,
+.OpenGraphFooter .OpenGraphURLButton:active {
+  background: var(--zehn-color-button-fancy-background-active) !important;
+}
+
+.friendsui-container .SVGIcon_Button.SVGIcon_CopyToClipboard,
+.inviteURLContainer .copyInviteLink .SVGIcon_Button.SVGIcon_CopyToClipboard,
+.OpenGraphFooter .OpenGraphURLButton .SVGIcon_Button.SVGIcon_CopyToClipboard {
   stroke: transparent !important;
   fill: transparent !important;
-  width: 16px !important;
-  height: 16px !important;
+  width: 100% !important;
+  height: 100% !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
-  mask-size: var(--zehn-size-icon-medium) !important;
+  mask-size: var(--zehn-size-icon-small) !important;
   -webkit-mask-image: var(--zehn-icon-clipboard) !important;
   transition: all 0.2s ease-in-out !important;
 }
 
-.OpenGraphFooter .SVGIcon_CopyToClipboard *,
-.copyInviteLink .SVGIcon_CopyToClipboard *,
 .OpenGraphFooter .SVGIcon_CopyToClipboard *,
 .copyInviteLink .SVGIcon_CopyToClipboard * {
   display: none !important;
@@ -959,20 +992,30 @@ body:not(.WindowFocus) .chatTabSelector svg {
   display: none !important;
 }
 
-.ChatMessageInvite {
+.ChatMessageInvite,
+.ChatMessageInvite.GroupAlreadyJoined,
+.ChatMessageInvite.Inviter,
+.ChatMessageInvite.gameInviteMsg {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  margin-bottom: 0 !important;
-  border-radius: var(--zehn-size-radius-square) !important;
-  background: transparent !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-padding-medium) !important;
   display: flex !important;
   max-width: var(--zehn-size-embed-width) !important;
   min-width: 0 !important;
+  transition: background 0.2s ease-in-out !important;
+  gap: var(--zehn-size-gap-medium) !important;
+  background: var(--zehn-color-embed-background) !important;
+  border-radius: var(--zehn-size-embed-radius) !important;
+  border-width: var(--zehn-size-embed-border);
+  border-style: solid !important;
+  border-color: var(--zehn-color-embed-border) !important;
+}
 }
 
-.msg.ChatMessageInvite.gameInviteMsg.Panel.Focusable {
-  background: transparent !important;
+.ChatMessageInvite:hover {
+  background: var(--zehn-color-embed-background-hover) !important;
 }
 
 .msg .inviteLaebl,
@@ -1079,20 +1122,6 @@ body:not(.WindowFocus) .chatTabSelector svg {
 }
 
 /* GROUP CHAT INVITE */
-.ChatMessageInvite,
-.ChatMessageInvite.GroupAlreadyJoined,
-.ChatMessageInvite.Inviter {
-  background: var(--zehn-color-panel) !important;
-  gap: var(--zehn-size-gap-medium) !important;
-  padding: var(--zehn-size-padding-medium) !important;
-  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
-  transition: background 0.2s ease-in-out !important;
-}
-
-.ChatMessageInvite:hover {
-  background: var(--zehn-color-panel-hover) !important;
-}
-
 .ChatMessageInvite .leftInviteContainer {
   padding: 0 !important;
   align-self: center !important;
@@ -1517,7 +1546,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 /* VIDEO UPLOAD */
 .chatFileUploadPreviewContainer .SVGIcon_Video {
   fill: transparent !important;
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-section) !important;
   border-radius: var(--zehn-size-radius-square) !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
@@ -1595,7 +1624,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding-bottom: 32px !important;
   max-width: var(--zehn-size-embed-width) !important;
   width: var(--zehn-size-embed-width);
-  background: var(--zehn-color-window-section) !important;
+  background: var(--zehn-color-section) !important;
 }
 
 .chatVideoContainer video {
@@ -1699,7 +1728,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .msg .SVGIcon_Button.SVGIcon_Popout {
-  -webkit-mask-image: var(--zehn-icon-window-popout) !important;
+  -webkit-mask-image: var(--zehn-icon-popout) !important;
 }
 
 .msg .SVGIcon_Button.SVGIcon_ResizeIcon {
@@ -1883,16 +1912,19 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .BBCodeAlreadyCollapsed {
   padding: var(--zehn-size-padding-medium) !important;
-  background: var(--zehn-color-panel) !important;
   display: flex !important;
-  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
   width: auto !important;
   max-width: var(--zehn-size-embed-width) !important;
   transition: background 0.2s ease-in-out !important;
+  background: var(--zehn-color-embed-background) !important;
+  border-radius: var(--zehn-size-embed-radius) !important;
+  border-width: var(--zehn-size-embed-border);
+  border-style: solid !important;
+  border-color: var(--zehn-color-embed-border) !important;
 }
 
 .BBCodeAlreadyCollapsed:hover {
-  background: var(--zehn-color-panel-hover) !important;
+  background: var(--zehn-color-embed-background-hover) !important;
 }
 
 .BBCodeAlreadyCollapsed.Minimized:hover .BBCodeAlreadyCollapsedText,
@@ -1928,20 +1960,23 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .BBCodeResizableComponent.BBCodeYouTubeComponent {
   width: auto !important;
   max-width: var(--zehn-size-embed-width);
-  background: var(--zehn-color-panel) !important;
-  border-radius: var(--zehn-size-radius-square) !important;
+  background: var(--zehn-color-embed-background) !important;
+  border-radius: var(--zehn-size-embed-radius) !important;
   margin: 0 !important;
   padding: var(--zehn-size-padding-medium) !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
-  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
+  border-width: var(--zehn-size-embed-border);
+  border-style: solid !important;
+  border-color: var(--zehn-color-embed-border) !important;
+}
   place-content: flex-end !important;
   transition: background 0.2s ease-in-out !important;
 }
 
 .BBCodeResizableComponent:hover,
 .BBCodeResizableComponent.BBCodeYouTubeComponent:hover {
-  background: var(--zehn-color-panel-hover) !important;
+  background: var(--zehn-color-embed-background-hover) !important;
 }
 
 .YoutubePlayer {
@@ -2188,15 +2223,18 @@ div:hover>.BBCodeCollapseControl {
   color: var(--zehn-color-text-secondary) !important;
   padding: var(--zehn-size-padding-medium) !important;
   margin: 0 !important;
-  background: var(--zehn-color-panel) !important;
-  border-radius: var(--zehn-size-radius-square) !important;
-  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
+  background: var(--zehn-color-embed-background) !important;
+  border-radius: var(--zehn-size-embed-radius) !important;
+  border-width: var(--zehn-size-embed-border);
+  border-style: solid !important;
+  border-color: var(--zehn-color-embed-border) !important;
+}
   transition: background 0.2s ease-in-out !important;
 }
 
 .msg div.ChatMessageOpenGraph:hover,
 .msg div.SteamPublishedFile:hover {
-  background: var(--zehn-color-panel-hover) !important;
+  background: var(--zehn-color-embed-background-hover) !important;
 }
 
 .OpenGraphContent {
@@ -2266,71 +2304,10 @@ div:hover>.BBCodeCollapseControl {
   flex-direction: column !important;
 }
 
-.ChatMessageOpenGraph .OpenGraphFooter {
-  transform: none !important;
-}
-
-.msg .OpenGraphMessageURL {
-  max-height: 32px !important;
-  border-radius: var(--zehn-size-radius-square) !important;
-  background: transparent !important;
-  padding: 0 !important;
-  border-bottom: none !important;
-  letter-spacing: normal !important;
-  font-size: var(--zehn-size-12) !important;
-  color: var(--zehn-color-accent-100) !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  line-height: 32px !important;
-}
-
-.msg .OpenGraphMessageURL:hover {
-  color: var(--zehn-color-text-secondary) !important;
-}
-
-.msg .OpenGraphMessageURL:active {
-  color: var(--zehn-color-text-tertiary) !important;
-}
-
-.OpenGraphMessageURL_full {
-  opacity: 0 !important;
-  transform: none !important;
-  padding: 0 !important;
-  border: none !important;
-  background-color: transparent !important;
-  color: var(--zehn-color-text-secondary) !important;
-  width: 100% !important;
-  margin-top: 0 !important;
-  max-height: 32px !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  line-height: 32px !important;
-  font-size: var(--zehn-size-12) !important;
-}
-
-.OpenGraphFooter:hover .OpenGraphMessageURL_full {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-.OpenGraphMessageURLPosition {}
-
-.OpenGraphFooter .OpenGraphURLButton {
-  width: var(--zehn-size-button-medium) !important;
-  height: var(--zehn-size-button-medium) !important;
+.ChatMessageOpenGraph_Description {
   margin: 0 !important;
-  background: var(--zehn-color-button-fancy-background) !important;
-}
-
-.OpenGraphFooter .OpenGraphURLButton:hover {
-  background: var(--zehn-color-button-fancy-background-hover) !important;
-}
-
-.OpenGraphFooter .OpenGraphURLButton:active {
-  background: var(--zehn-color-button-fancy-background-active) !important;
-}
-
-.OpenGraphFooter .OpenGraphURLButton .SVGIcon_Button.SVGIcon_CopyToClipboard {
-  width: var(--zehn-size-button-medium) !important;
-  height: var(--zehn-size-button-medium) !important;
+  font-size: var(--zehn-size-12) !important;
+  line-height: normal !important;
 }
 
 /* GAME EMBED */
@@ -2338,19 +2315,23 @@ div:hover>.BBCodeCollapseControl {
 ._2_QSE1Nit6wrabY5ZgDZOz {
   margin: 0 !important;
   padding: var(--zehn-size-padding-medium) !important;
-  background: var(--zehn-color-panel) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   height: fit-content !important;
-  border-radius: var(--zehn-size-radius-square) !important;
-  border-bottom: 2px solid var(--zehn-color-accent-100) !important;
   transition: background 0.2s ease-in-out !important;
+  gap: var(--zehn-size-gap-medium) !important;
+  background: var(--zehn-color-embed-background) !important;
+  border-radius: var(--zehn-size-embed-radius) !important;
+  border-width: var(--zehn-size-embed-border);
+  border-style: solid !important;
+  border-color: var(--zehn-color-embed-border) !important;
+}
 }
 
 ._1JZstfJ6jCBChXx0ZDwfpR:hover,
 ._2_QSE1Nit6wrabY5ZgDZOz:hover {
-  background: var(--zehn-color-panel-hover) !important;
+  background: var(--zehn-color-embed-background-hover) !important;
 }
 
 ._15zMZHizyW80NNsvBfj9L4 {
@@ -2552,7 +2533,7 @@ div:hover>.BBCodeCollapseControl {
 
 /* EMBED VIDEO POP UP */
 ._1FRLI2bl5lQd1WTvywZUl0 {
-  background: var(--zehn-color-window-overlay) !important;
+  background: var(--zehn-color-backdrop) !important;
   border-radius: var(--zehn-size-radius-square) !important;
   width: 100% !important;
   height: 100% !important;
@@ -2889,7 +2870,7 @@ div:hover>.BBCodeCollapseControl {
 .chatRoomHeader {
   height: var(--zehn-size-panel-large) !important;
   padding: 0 !important;
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-section) !important;
 }
 
 .chatRoomGroupHeaderName {
@@ -3046,7 +3027,7 @@ div:hover>.BBCodeCollapseControl {
   position: absolute !important;
   height: 100% !important;
   transition: none !important;
-  background: var(--zehn-color-window-section) !important;
+  background: var(--zehn-color-section) !important;
   display: none !important;
   max-width: var(--zehn-size-pagelist-width) !important;
   min-width: var(--zehn-size-pagelist-width) !important;
@@ -3872,14 +3853,14 @@ div:hover>.BBCodeCollapseControl {
 .VoiceRoomChatTitle {
   padding: 0 !important;
   line-height: 32px !important;
-  background: var(--zehn-color-window-acrylic) !important;
+  background: var(--zehn-color-section-acrylic) !important;
   transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
   backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
   background-blend-mode: exclusion !important;
 }
 
 .WindowFocus .VoiceRoomChatTitle {
-  background-color: var(--zehn-color-window-acrylic-focus) !important;
+  background-color: var(--zehn-color-section-acrylic-focus) !important;
 }
 
 .VoiceRoomChatTitle::after {
@@ -3985,7 +3966,7 @@ div:hover>.BBCodeCollapseControl {
 
 /* INVITE DROP */
 ._3EwDM8E1LYILno1QNM0IAv {
-  background: var(--zehn-color-window-overlay) !important;
+  background: var(--zehn-color-backdrop) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-16) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -4087,12 +4068,12 @@ div:hover>.BBCodeCollapseControl {
 
 .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
   min-width: 180px !important;
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-section) !important;
 }
 
 .BroadcastSection,
 .BroadcastContainerSection {
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-section) !important;
 }
 
 .videoContainer {}
@@ -4102,7 +4083,7 @@ div:hover>.BBCodeCollapseControl {
 .videoSrc {
   transition: filter 0.2s ease-in-out !important;
   border: none !important;
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-section) !important;
 }
 
 .videoContainer:hover.HidePlayerControls .videoControls,
@@ -4326,7 +4307,7 @@ div:hover>.BBCodeCollapseControl {
 /* CHANNELS */
 .chatBody .ChatBodyControls {
   border: none !important;
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-section) !important;
 }
 
 .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab.Active {
@@ -4410,7 +4391,7 @@ div:hover>.BBCodeCollapseControl {
 
 ._3soy-wJhd4RZ8SNtC31AOz {
   padding: 0 !important;
-  background-color: var(--zehn-color-window-section) !important;
+  background-color: var(--zehn-color-section) !important;
   transition: none !important;
 }
 
