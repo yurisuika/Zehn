@@ -184,6 +184,8 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 ._2XZq-_f6npaQdAgeRzKIkz::before,
 ._2XZq-_f6npaQdAgeRzKIkz:last-of-type::after {
   width: 0 !important;
+  background: transparent !important;
+  display: none !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ {
@@ -220,9 +222,9 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   -webkit-mask: none !important;
 }
 
-._21I8pyEfvklCsrYIcsBtYY,
-._3hCFlMxf40SP2WVNOubSvf {
-  padding: 4px !important;
+/* TAB CONTENT */
+.vs5AhAWHJLa_eDOBkDcMy>._21I8pyEfvklCsrYIcsBtYY, .vs5AhAWHJLa_eDOBkDcMy>._3hCFlMxf40SP2WVNOubSvf {
+  padding: var(--zehn-size-padding-tiny) !important;
 }
 
 /* MIC STATUS */
@@ -300,14 +302,23 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 /* CLOSE BUTTON */
 ._2XZq-_f6npaQdAgeRzKIkz ._1JXI4j2_xSpVK1YjyEuebr {
-  transition: opacity 0.5s ease-in-out !important;
+  transition: opacity 0.2s ease-in-out, width 0.2s ease-in-out, transform 0.2s ease-in-out !important;
+  width: var(--zehn-size-titlebar-height) !important;
+  height: var(--zehn-size-titlebar-height) !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz:not(:hover) ._1JXI4j2_xSpVK1YjyEuebr {
   opacity: 0 !important;
+  width: 0 !important;
+  transform: scale(0) !important;
 }
 
-._2XZq-_f6npaQdAgeRzKIkz:hover ._1JXI4j2_xSpVK1YjyEuebr .SVGIcon_X_Line {
+._2XZq-_f6npaQdAgeRzKIkz ._1JXI4j2_xSpVK1YjyEuebr .SVGIcon_X_Line {
+  width: 100% !important;
+  height: 100% !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -315,18 +326,8 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   -webkit-mask-image: var(--zehn-icon-clear) !important;
 }
 
-._2XZq-_f6npaQdAgeRzKIkz:hover ._1JXI4j2_xSpVK1YjyEuebr .SVGIcon_X_Line line {
+._2XZq-_f6npaQdAgeRzKIkz ._1JXI4j2_xSpVK1YjyEuebr .SVGIcon_X_Line * {
   display: none !important;
-}
-
-._1JXI4j2_xSpVK1YjyEuebr {
-  width: 12px !important;
-  height: 12px !important;
-  margin: 12px !important;
-}
-
-._1JXI4j2_xSpVK1YjyEuebr svg {
-  width: 12px !important;
 }
 
 /* TAB AVATAR */

@@ -43,7 +43,7 @@ Edit the config in `~/config/options.json` as usual.
 ![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.png)
 
 ### Mascots
-You can give your waifu a home in your library by adding a mascot in Steam's UI folder. From the Steam directory, place your `waifu` image in `~/steamui/mascots/` and enjoy. Supports JPG, GIF, and PNG file types.
+You can give your waifu a home in your library by adding a mascot in Steam's UI folder. From the Steam directory, place your `waifu` image in `~/steamui/mascots/` and enjoy. Supports JPG, GIF, and PNG file types (you must set the file type in the settings).
 
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
 
@@ -69,7 +69,7 @@ You can enjoy explicit support for the following plugins while using Zehn:
 * Extendium
   * Browser bar buttons, extensions context menus, and settings dialogs all skinned.
 * Gratitude
-  * Playbay icon skinned.
+  * Playbar icon skinned.
 * Size on Disk
   * Playbar icon skinned.
 
@@ -91,4 +91,4 @@ The [live version](https://github.com/yurisuika/Zehn/tree/live) references the l
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
 ### Discussion
-If you have inquires, you may use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) or join my modding [Discord](https://discord.gg/0zdNEkQle7Qg9C1H) server.
+If you have inquires, you may use either [GitHub Discussions](https://github.com/yurisuika/Zehn/discussions) ~~or join my modding [Discord](https://discord.gg/0zdNEkQle7Qg9C1H) server~~ (you can join, but it is disabled as I've quit using Discord).

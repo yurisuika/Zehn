@@ -131,8 +131,8 @@
 
   --zehn-color-context-menu-background: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
   --zehn-color-context-menu-border: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-border-light)), rgb(var(--zehn-color-context-border-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
-  --zehn-color-context-dropdown-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.5), rgba(var(--zehn-color-black), 0.5)), rgba(var(--zehn-color-blend-background), 0.5) var(--zehn-blend-amount-background));
-  --zehn-color-context-dropdown-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.17), rgba(var(--zehn-color-white), 0.17)), rgba(var(--zehn-color-blend-background), 0.17) var(--zehn-blend-amount-background));
+  --zehn-color-context-dropdown-background: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
+  --zehn-color-context-dropdown-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.17), rgba(var(--zehn-color-black), 0.35)), light-dark(rgba(var(--zehn-color-blend-background), 0.17), rgba(var(--zehn-color-blend-background), 0.35)) var(--zehn-blend-amount-background));
   --zehn-color-context-text: var(--zehn-color-text-primary);
   --zehn-color-context-text-other: var(--zehn-color-text-secondary);
 
@@ -423,7 +423,7 @@
   --zehn-color-list-background: transparent;
   --zehn-color-list-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
   --zehn-color-list-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-list-background-focus: light-dark(rgb(var(--zehn-color-accent-lighten-major)), rgb(var(--zehn-color-accent-darken-major)));
+  --zehn-color-list-background-focus: var(--zehn-color-accent-100);
 
   --zehn-color-table-odd: transparent;
   --zehn-color-table-even: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
@@ -1464,14 +1464,21 @@
   --zehn-size-key-padding: var(--zehn-size-padding-less);
 
   /* CONTEXT */
-  --zehn-size-context-list: 32px;
+  --zehn-size-context-padding: 4px 0;
+  --zehn-size-context-padding-controls: 16px;
   --zehn-size-context-border: 1px;
   --zehn-size-context-radius: var(--zehn-size-radius-square);
-  --zehn-size-context-padding: 8px 16px;
+  --zehn-size-context-entry-height: calc(32px - (2 * var(--zehn-size-context-entry-margin)));
+  --zehn-size-context-entry-width: calc(100% - (2 * var(--zehn-size-context-entry-margin)));
+  --zehn-size-context-entry-margin: 1px;
+  --zehn-size-context-entry-padding: 7px 15px;
+  --zehn-size-context-entry-radius: var(--zehn-size-radius-square);
   --zehn-size-context-text: 14px;
   --zehn-size-context-text-other: 12px;
   --zehn-size-context-line: 16px;
   --zehn-size-context-line-other: 16px;
+  --zehn-size-context-seperator: 1px;
+  --zehn-size-context-seperator-margin: 4px 16px;
 
   /* TOOLTIP */
   --zehn-size-tooltip-width: 300px;

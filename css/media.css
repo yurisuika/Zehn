@@ -411,17 +411,6 @@
   background-color: var(--zehn-color-progress-filled) !important;
 }
 
-/* RECORDINGS DIALOG */
-.DialogContent:has(._1f9_BgoyE1cjqyeKD8dh9u) {
-  padding: 0 !important;
-}
-
-.DialogContent_InnerWidth:has(._2r485O6B51u64d19eTbK1a),
-.DialogContent_InnerWidth:has(._2OsQkIMNf9Cnl4xfBXMApr),
-.DialogContent_InnerWidth:has(.YzIcpcz4oFx-nndxro5jE) {
-  padding: 0 !important;
-}
-
 /* RECORDINGS - BANNER */
 ._1f9_BgoyE1cjqyeKD8dh9u .YzIcpcz4oFx-nndxro5jE {
   width: 100% !important;
@@ -1132,10 +1121,11 @@
 }
 
 .PopupFullWindow:has(._2dU9SCYnAxjOss_afiRpoP) .TitleBar {
-  height: 32px !important;
+  height: var(--zehn-size-titlebar-height) !important;
   background: var(--zehn-color-section-acrylic) !important;
   transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out !important;
-  /* backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important; */
+  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
+  /* THIS IS BLURRING THE ACCENT BORDER SOMEHOW */
   background-blend-mode: exclusion !important;
 }
 
@@ -1210,9 +1200,10 @@
   order: 2 !important;
 }
 
-._2p9h7sf5EGrEVlsWxtvUPH:has(._3twsgFT0Ba--9DybmydSI8),
-._2p9h7sf5EGrEVlsWxtvUPH:has(.isyHTP860Su66qLXg8c4A) {
+.DialogContent:has(._3twsgFT0Ba--9DybmydSI8),
+.DialogContent:has(.isyHTP860Su66qLXg8c4A) {
   background-color: var(--zehn-color-window-fancy) !important;
+  /* SET BACKGROUND TO USE FANCY COLOR WHEN MEDIA IS SELECTED */
 }
 
 .ClipManager ._1UHcyIKxLXAv4x6mGw4EW3 .IZLKpdf1TW21itUMICab8 {
