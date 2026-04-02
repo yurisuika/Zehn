@@ -449,12 +449,13 @@ body:not(.WindowFocus) .chatTabSelector svg {
   display: block !important;
 }
 
-.ChatMessageBlock {
-  margin-bottom: var(--zehn-size-padding-extra) !important;
+.ChatMessageBlock,
+.compactView .ChatMessageBlock {
+  margin-bottom: var(--zehn-size-gap-small) !important;
 }
 
-.compactView .ChatMessageBlock {
-  margin-bottom: var(--zehn-size-padding-extra) !important;
+.ChatMessageBlock.LastMessageBlock {
+  margin-bottom: var(--zehn-size-gap-extra) !important;
 }
 
 /* LINK */
@@ -777,7 +778,7 @@ span.mentionSearchMatch {
   display: flex !important;
   height: var(--zehn-size-panel-medium) !important;
   line-height: var(--zehn-size-panel-medium) !important;
-  margin: 0 0 24px 0 !important;
+  margin: 0 !important;
 }
 
 .timeDivision.time_passes .preHorizDivider {
@@ -815,30 +816,60 @@ span.mentionSearchMatch {
 /* MESSAGES */
 .MultiUserChat .msg {
   margin-right: 0 !important;
-  padding: 8px 0 !important;
+  padding: var(--zehn-size-padding-tiny) 0 !important;
 }
 
 .MultiUserChat.compactView .msg {
-  padding: 0 0 !important;
+  padding: var(--zehn-size-padding-tiny) 0 !important;
 }
 
-.MultiUserChat .msg._3qYm9oxf8MdyvQDJgbfCrF {}
-
-._3qYm9oxf8MdyvQDJgbfCrF,
-.ChatMessageBlock:has(.msg:nth-of-type(2):hover)>.ChatSpeaker {
+/* MESSAGE BACKGROUND */
+.ChatMessageBlock .msg._3qYm9oxf8MdyvQDJgbfCrF,
+.ChatSpeaker+._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2),
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2)) .ChatSpeaker {
   background-color: var(--zehn-color-chat-background) !important;
 }
 
-._3qYm9oxf8MdyvQDJgbfCrF:hover,
-.ChatMessageBlock:has(.msg:nth-of-type(2):hover)>.ChatSpeaker {
+.ChatMessageBlock .msg._3qYm9oxf8MdyvQDJgbfCrF:hover,
+.ChatSpeaker:hover+._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2),
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2)) .ChatSpeaker:hover,
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2):hover) .ChatSpeaker {
   background-color: var(--zehn-color-chat-background-hover) !important;
 }
 
-._3qYm9oxf8MdyvQDJgbfCrF:active,
-.ChatMessageBlock:has(.msg:nth-of-type(2):active)>.ChatSpeaker {
+.ChatMessageBlock .msg._3qYm9oxf8MdyvQDJgbfCrF:active,
+.ChatSpeaker:active+._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2),
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2)) .ChatSpeaker:active,
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2):active) .ChatSpeaker {
   background-color: var(--zehn-color-chat-background-active) !important;
 }
 
+/* WITH MENTION */
+.ChatMessageBlock:has(.mention.me) {
+  background-color: var(--zehn-color-chat-mention-background) !important;
+}
+
+.ChatMessageBlock:has(.mention.me):hover {
+  background-color: var(--zehn-color-chat-mention-background-hover) !important;
+}
+
+.ChatMessageBlock:has(.mention.me):active {
+  background-color: var(--zehn-color-chat-mention-background-active) !important;
+}
+
+.ChatMessageBlock:has(.mention.me)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--zehn-size-focusbar);
+  background: var(--zehn-color-accent-100);
+  z-index: 5;
+}
+
+/* MSG TEXT */
 .MultiUserChat .isCurrentUser .msgText {
   color: var(--zehn-color-text-primary) !important;
 }
@@ -1330,7 +1361,7 @@ span.mentionSearchMatch {
 
 /* MESSAGE REACTIONS */
 ._1Ab0f8lGXvkC0tPjkFoYj8 {
-  margin-top: var(--zehn-size-gap-medium) !important;
+  margin-top: 0 !important;
   padding: 0 32px 0 64px !important;
   gap: var(--zehn-size-gap-small) !important;
 }
