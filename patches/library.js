@@ -12,7 +12,7 @@ Options.setOptions();
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
 Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
-  const sidebarWidth = root.querySelector(`._9sPoVBFyE_vE87mnZJ5aB`).offsetWidth;
+  const sidebarWidth = root.querySelector('._9sPoVBFyE_vE87mnZJ5aB').offsetWidth;
   const filterWidth = window.innerWidth - sidebarWidth;
 
   target.style.width = `${filterWidth}px`;
@@ -33,19 +33,19 @@ function toggleNavbarClass(root, target, pageSelector, toggleName) {
   }
 }
 
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', (root, target) => {
+Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
   toggleNavbarClass(root, target, '._1fuML-ekRbTEzgzC597yGP', 'zehnConsoleOpened');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', (root, target) => {
+Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
   toggleNavbarClass(root, target, '._1bq4x9pa4-9RLY-dXWUZTp', 'zehnDownloadsOpened');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', (root, target) => {
+Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
   toggleNavbarClass(root, target, '.MillenniumSettings', 'zehnMillenniumOpened');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', (root, target) => {
+Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
   toggleNavbarClass(root, target, '._39RheXihcN6H2k2muQTjkI', 'zehnStickyHeader');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', (root, target) => {
+Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
   toggleNavbarClass(root, target, '.RGNMWtyj73_-WdhflrmuY._3WJCt_OkjPA6npxOtguSt5', 'zehnLibraryOpened');
 });
 
@@ -55,12 +55,11 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', '#zehnToggl
   const btnNavigation = document.getElementById('zehnToggleNavigation');
   if (btnNavigation) {
 
-    const root = document.querySelectorAll(`._2UyOBeiSdBayaFdRa39N2O`);
-    const nav = document.querySelector(`._2D64jIEK7wpUR_NlObDW76`);
-    const navbar = document.querySelector(`._3Z7VQ1IMk4E3HsHvrkLNgo`);
+    const root = document.querySelectorAll('._2UyOBeiSdBayaFdRa39N2O');
+    const container = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
 
-    if (btnNavigation.classList.contains(`zehnToggled`)) {
-      navbar.classList.remove('zehnMenuOpened');
+    if (btnNavigation.classList.contains('zehnToggled')) {
+      container.classList.remove('zehnMenuOpened');
       document.documentElement.style.setProperty('--zehn-menu-height', '0px');
       root.forEach((element) => {
         element.style.setProperty('height', '0px', 'important');
@@ -71,7 +70,7 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', '#zehnToggl
       });
     }
     else {
-      navbar.classList.add('zehnMenuOpened');
+      container.classList.add('zehnMenuOpened');
       document.documentElement.style.setProperty('--zehn-menu-height', '32px');
       root.forEach((element) => {
         element.style.setProperty('height', '32px', 'important');
@@ -93,6 +92,16 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', '#zehnToggl
   Zehn.addRootClassOnToggle(root, target, button, 'zehnSearchOpened');
 });
 
+/* APPLY TOGGLE STATE TO SEARCH BUTTON WHEN SWITCHING TO/FROM SMALL MODE -------------------------------------------- */
+
+Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleSidebarSearch', (root, target) => {
+  if (root.classList.contains('zehnSearchOpened')) {
+    if (!target.classList.contains('zehnToggled')) {
+      target.classList.add('zehnToggled');
+    }
+  };
+});
+
 /* TOGGLE LIBRARY WHAT'S NEW SECTION -------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '._3BFcmjAaMyP6GTPwc0VyWi', '#zehnToggleWhatsNew', 'zehnWhatsNewCollapsed');
@@ -103,10 +112,10 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3Wb
 /* ID GAME PAGE SECTIONS -------------------------------------------------------------------------------------------- */
 
 Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, target) => {
-  const featured = target.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)`);
-  const event = target.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)`);
-  const community = target.querySelector(`._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)`);
-  const details = target.querySelector(`._2aor4XVOYzN1PBSREk0UbO`);
+  const featured = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)');
+  const event = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)');
+  const community = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)');
+  const details = target.querySelector('._2aor4XVOYzN1PBSREk0UbO');
 
   if (featured) {
     if (featured.id != 'zehnGameFeaturedEvent') {
@@ -224,7 +233,7 @@ Zehn.waitAndCheckAdditionAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf
   const spacer = document.createElement('div');
   spacer.classList.add('zehnDownloadsSpacer');
   if (!addition) {
-    document.querySelector(`._3cykd-VfN_xBxf3Qxriccm`).before(spacer || '');
+    document.querySelector('._3cykd-VfN_xBxf3Qxriccm').before(spacer || '');
   }
 });
 

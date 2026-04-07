@@ -25,8 +25,27 @@
         }
       }
     },
-    "Accent Color (Window Borders)": {
-      "description": "Show accent color on window borders.",
+    "Transparency Effects": {
+      "description": "Windows and surfaces appear translucent.\n\nSupports DWMX plugin for Acrylic blur behind windows.",
+      "tab": "Theme",
+      "default": "yes",
+      "values": {
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/transparency/disable.css"
+          }
+        },
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/theme/transparency/enable.css"
+          }
+        }
+      }
+    },
+    "Accent Color": {
+      "description": "Show accent color on focused window borders.",
       "tab": "Theme",
       "default": "yes",
       "values": {
@@ -44,10 +63,10 @@
         }
       }
     },
-    "Accent Color (Background Color Blend)": {
+    "Accented Background Color": {
       "description": "Use accent color for the background color blend.\n\nOverrides the color chosen in the Colors section.",
       "tab": "Theme",
-      "default": "yes",
+      "default": "false",
       "values": {
         "no": {
           "TargetCss": {
@@ -63,10 +82,10 @@
         }
       }
     },
-    "Accent Color (Foreground Color Blend)": {
+    "Accented Foreground Color": {
       "description": "Use accent color for the foreground color blend.\n\nOverrides the color chosen in the Colors section.",
       "tab": "Theme",
-      "default": "yes",
+      "default": "false",
       "values": {
         "no": {
           "TargetCss": {
@@ -82,8 +101,8 @@
         }
       }
     },
-    "Color Blend Amount (Background)": {
-      "description": "Sets how much color is blended into the theme's background. This includes window backgrounds and acrylic effects.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
+    "Background Blend Amount": {
+      "description": "Select how much color is blended into the theme's background. This includes window backgrounds and acrylic effects.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
       "tab": "Theme",
       "default": "0%",
       "values": {
@@ -119,8 +138,8 @@
         }
       }
     },
-    "Color Blend Amount (Foreground)": {
-      "description": "Sets how much color is blended into the theme's foreground. This includes text, buttons, and other foreground elements.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
+    "Foreground Blend Amount": {
+      "description": "Select how much color is blended into the theme's foreground. This includes text, buttons, and other foreground elements.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
       "tab": "Theme",
       "default": "0%",
       "values": {
@@ -157,7 +176,7 @@
       }
     },
     "Color Blend Color Space": {
-      "description": "Sets the color space used in blending.",
+      "description": "Select the color space used in blending.",
       "tab": "Theme",
       "default": "sRGB",
       "values": {
@@ -182,7 +201,7 @@
       }
     },
     "Avatar Shape": {
-      "description": "Selects the avatar shape.",
+      "description": "Select the avatar shape.",
       "tab": "General",
       "default": "Round",
       "values": {
@@ -201,7 +220,7 @@
       }
     },
     "Scrollbar Style": {
-      "description": "Sets the style of scrollbar.",
+      "description": "Select the style of scrollbar.",
       "tab": "General",
       "default": "None",
       "values": {
@@ -225,8 +244,8 @@
         }
       }
     },
-    "Display Tooltips": {
-      "description": "Toggles displaying tooltips on the client.",
+    "Show Tooltips": {
+      "description": "Show tooltips and miniprofiles in the client.",
       "tab": "General",
       "default": "yes",
       "values": {
@@ -244,8 +263,33 @@
         }
       }
     },
-    "Display Account Avatar": {
-      "description": "Toggles displaying the account avatar on the navbar.",
+    "Titlebar Size": {
+      "description": "Choose the size of window titlebars.\n\nOptionally, only set the main Steam window titlebar as wide.",
+      "tab": "General",
+      "default": "Normal",
+      "values": {
+        "Normal": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/general/titlebars/normal.css"
+          }
+        },
+        "Mixed": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/general/titlebars/mixed.css"
+          }
+        },
+        "Wide": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/general/titlebars/wide.css"
+          }
+        }
+      }
+    },
+    "Show Account Avatar": {
+      "description": "Show your avatar on the navbar account button.",
       "tab": "Navigation",
       "default": "no",
       "values": {
@@ -263,8 +307,8 @@
         }
       }
     },
-    "Display Announcements Button": {
-      "description": "Toggles displaying the announcements button on the navbar.",
+    "Show Announcements Button": {
+      "description": "Show the announcements button on the navbar.",
       "tab": "Navigation",
       "default": "no",
       "values": {
@@ -282,8 +326,8 @@
         }
       }
     },
-    "Display Add Game Button": {
-      "description": "Toggles displaying the add game button on the navbar.",
+    "Show Add Game Button": {
+      "description": "Show the add game button on the navbar.",
       "tab": "Navigation",
       "default": "no",
       "values": {
@@ -301,8 +345,8 @@
         }
       }
     },
-    "Display VR Button": {
-      "description": "Toggles displaying the VR button on the navbar.",
+    "Show VR Button": {
+      "description": "Show the VR button on the navbar.",
       "tab": "Navigation",
       "default": "no",
       "values": {
@@ -320,8 +364,8 @@
         }
       }
     },
-    "Display Big Picture Button": {
-      "description": "Toggles displaying the Big Picture button on the navbar.",
+    "Show Big Picture Button": {
+      "description": "Show the Big Picture button on the navbar.",
       "tab": "Navigation",
       "default": "no",
       "values": {
@@ -339,27 +383,8 @@
         }
       }
     },
-    "Display URL Bar": {
-      "description": "Toggles displaying the URL bar below the navbar.",
-      "tab": "Navigation",
-      "default": "no",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/url bar/hide.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/url bar/show.css"
-          }
-        }
-      }
-    },
-    "Download Bar Width": {
-      "description": "Selects the download bar width on the navbar.",
+    "Download Progress Width": {
+      "description": "Adjust the download progress width on the navbar.",
       "tab": "Navigation",
       "default": "Normal",
       "values": {
@@ -383,8 +408,27 @@
         }
       }
     },
-    "Display Mascot": {
-      "description": "Toggles displaying a mascot behind the main library content.\n\nFrom your main Steam folder, place an image named `waifu` in the `/steamui/mascots/` directory.",
+    "Show URL Bar": {
+      "description": "Show the URL bar in the main Steam window.",
+      "tab": "Navigation",
+      "default": "yes",
+      "values": {
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/navigation/url bar/hide.css"
+          }
+        },
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "config/navigation/url bar/show.css"
+          }
+        }
+      }
+    },
+    "Mascot": {
+      "description": "Show a mascot behind the main library content.\n\nFrom your main Steam folder, place an image named `waifu` in the `/steamui/mascots/` directory.",
       "tab": "Library",
       "default": "no",
       "values": {
@@ -403,7 +447,7 @@
       }
     },
     "Mascot File Type": {
-      "description": "Sets the file type for your mascot.",
+      "description": "Select the file type for your mascot.",
       "tab": "Library",
       "default": "PNG",
       "values": {
@@ -427,8 +471,8 @@
         }
       }
     },
-    "Display Add Shelf Button": {
-      "description": "Toggles displaying the add shelf button on the library.",
+    "Show Add Shelf Button": {
+      "description": "Show the add shelf button on the library.",
       "tab": "Library",
       "default": "no",
       "values": {
@@ -446,8 +490,8 @@
         }
       }
     },
-    "Display What's New Section": {
-      "description": "Toggles displaying the What's New section on the library.",
+    "Show What's New Section": {
+      "description": "Show the What's New section on the library.",
       "tab": "Library",
       "default": "no",
       "values": {
@@ -574,7 +618,7 @@
     "owner": "yurisuika",
     "repo_name": "Zehn"
   },
-  "version": "2026.4.2",
+  "version": "2026.4.7",
   "tags": [
     "Minimal",
     "Dark",

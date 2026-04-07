@@ -13,6 +13,12 @@ const Options = {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/light.css"/>');
             }
 
+            if (options.theme.transparency) {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/transparency/enable.css"/>');
+            } else {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/transparency/disable.css"/>');
+            }
+
             if (options.theme.accent.borders) {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/accent/borders/enable.css"/>');
             } else {
@@ -84,6 +90,14 @@ const Options = {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/tooltips/hide.css"/>');
             }
 
+            if (options.general.titlebars == "normal") {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/titlebars/normal.css"/>');
+            } else if (options.general.titlebars == "mixed") {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/titlebars/mixed.css"/>');
+            } else if (options.general.titlebars == "wide") {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/titlebars/wide.css"/>');
+            }
+
             // NAVIGATION --------------------------------------------------------
             if (options.navigation.accountAvatar) {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/account avatar/show.css"/>');
@@ -115,18 +129,18 @@ const Options = {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/big picture/hide.css"/>');
             }
 
-            if (options.navigation.urlBar) {
-              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/url bar/show.css"/>');
-            } else {
-              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/url bar/hide.css"/>');
-            }
-
             if (options.navigation.downloadBar == "narrow") {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/download bar/narrow.css"/>');
             } else if (options.navigation.downloadBar == "normal") {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/download bar/normal.css"/>');
             } else if (options.navigation.downloadBar == "wide") {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/download bar/wide.css"/>');
+            }
+
+            if (options.navigation.urlBar) {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/url bar/show.css"/>');
+            } else {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/url bar/hide.css"/>');
             }
 
             // LIBRARY -----------------------------------------------------------

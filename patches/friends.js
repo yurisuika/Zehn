@@ -9,10 +9,28 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
+/* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
+
+Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', false, false, (root, target, button) => {
+  Zehn.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
+});
+
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
-Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleUser', false, false, (root, target, button) => {
+Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', '#zehnToggleUser', true, false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnCurrentUserOpened');
+});
+
+/* APPLY CURRENT USER CLASS WHEN SWITCHED BETWEEN DOCKED CHAT ------------------------------------------------------- */
+
+Zehn.waitAndCallback('.friendsListContainer', '#zehnToggleUser', (root, target) => {
+  if (target.classList.contains('zehnToggled')) {
+    const currentUser = root.querySelector('.currentUserContainer');
+
+    if (!currentUser.classList.contains('zehnCurrentUserOpened')) {
+      currentUser.classList.add('zehnCurrentUserOpened');
+    }
+  };
 });
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
