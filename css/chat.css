@@ -1402,23 +1402,10 @@ span.mentionSearchMatch {
   -webkit-mask-image: var(--zehn-icon-emoticon) !important;
 }
 
-/* FRIEND TYPING */
-.FriendChatTypingNotification {
-  background: transparent !important;
-  font-size: var(--zehn-size-12) !important;
-  color: var(--zehn-color-text-secondary) !important;
-  width: 100% !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  padding: 0 var(--zehn-size-padding-medium) !important;
-  line-height: 24px !important;
-  box-sizing: border-box !important;
-  text-align: right !important;
-  transition: opacity 0.2s ease !important;
-}
-
-/* SCROLL TO BOTTOM */
+/* SCROLL TO BOTTOM, LOADING OLDER MESSAGES, TYPING NOTIFICATION */
 .ScrollToBottomButton,
-.LoadingOlderMessages {
+.LoadingOlderMessages,
+.FriendChatTypingNotification {
   color: var(--zehn-color-text-primary) !important;
   border-radius: var(--zehn-size-overlay-radius-small) !important;
   background: var(--zehn-color-overlay-background) !important;
@@ -1433,13 +1420,38 @@ span.mentionSearchMatch {
   top: unset !important;
   left: unset !important;
   margin: var(--zehn-size-gap-small) var(--zehn-size-gap-medium) !important;
+  line-height: var(--zehn-size-panel-small) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
   overflow: hidden !important;
   z-index: 20 !important;
-  opacity: 1 !important;
+  text-transform: uppercase !important;
 }
 
+.ScrollToBottomButton,
+.LoadingOlderMessages,
+.FriendChatTypingNotification.FriendIsTyping {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.FriendChatTypingNotification,
+.LoadingOlderMessages.Hidden,
+.ScrollToBottomButton.Hidden {
+  opacity: 0 !important;
+  transform: translateY(var(--zehn-size-panel-small)) !important;
+}
+
+.FriendChatTypingNotification {
+  padding: 0 var(--zehn-size-padding-small) !important;
+}
+
+.ChatHistoryContainer:has(.FriendIsTyping) .ScrollToBottomButton,
 .ChatHistoryContainer:has(.ScrollToBottomButton:not(.Hidden)) .LoadingOlderMessages {
   bottom: calc(var(--zehn-size-gap-small) + var(--zehn-size-panel-small)) !important;
+}
+
+.ChatHistoryContainer:has(.ScrollToBottomButton:not(.Hidden)):has(.FriendIsTyping) .LoadingOlderMessages {
+  bottom: calc(2 * (var(--zehn-size-gap-small) + var(--zehn-size-panel-small))) !important;
 }
 
 .ScrollToBottomButton>span,
@@ -1450,8 +1462,8 @@ span.mentionSearchMatch {
   letter-spacing: normal !important;
   color: inherit !important;
   font-size: inherit !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  line-height: var(--zehn-size-panel-small) !important;
+  line-height: inherit !important;
+  font-weight: inherit !important;
   text-transform: uppercase !important;
   padding: 0 var(--zehn-size-padding-small) !important;
 }
@@ -1464,12 +1476,6 @@ span.mentionSearchMatch {
 .LoadingOlderMessages:active>span,
 .ScrollToBottomButton:active>span {
   background: var(--zehn-color-button-app-background-active) !important;
-}
-
-.LoadingOlderMessages.Hidden,
-.ScrollToBottomButton.Hidden {
-  opacity: 0 !important;
-  transform: translateY(var(--zehn-size-panel-small)) !important;
 }
 
 /* ADD FRIEND BUTTON */
