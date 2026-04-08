@@ -8,57 +8,90 @@ const Zehn = {
   },
 
   waitAndCallback(rootSelector, targetSelector, callback) {
-    const processed = new WeakSet();
-    const rootObservers = new Map();
-
-    function handleTarget(root, target) {
-      if (processed.has(target)) return;
-      processed.add(target);
-      try { callback(root, target); } catch (e) {}
-    }
-
-    function scanAndObserveRoot(root) {
-      if (rootObservers.has(root)) return;
-      root.querySelectorAll(targetSelector).forEach(target => handleTarget(root, target));
-
-      const rootObserver = new MutationObserver(mutations => {
-        for (const mutation of mutations) {
-          if (mutation.type === 'childList') {
-            for (const node of mutation.addedNodes) {
-              if (!(node instanceof Element)) continue;
-              if (node.matches && node.matches(targetSelector)) handleTarget(root, node);
-              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(i => handleTarget(root, i));
+    const roots = document.querySelectorAll(rootSelector);
+    if (roots.length > 0) {
+      roots.forEach((root) => {
+        const targets = root.querySelectorAll(targetSelector);
+        
+        return new Promise((resolve) => {
+            if (root && targets.length > 0) {
+                targets.forEach((target) => callback(root, target));
+                return resolve(targets);
             }
-          }
-        }
+
+            const observer = new MutationObserver((mutations) => {
+                const newTargets = root.querySelectorAll(targetSelector);
+                if (newTargets.length > 0) {
+                    newTargets.forEach((target) => callback(root, target));
+                    observer.disconnect();
+                    resolve(newTargets);
+                }
+            });
+
+            observer.observe(document.body, { childList: true, subtree: true });
+        }).then((elements) => {
+            const observer = new MutationObserver(() => {
+                const updatedTargets = root.querySelectorAll(targetSelector);
+                updatedTargets.forEach((target) => callback(root, target));
+            });
+            observer.observe(document, { subtree: true, attributes: true });
+        });
       });
-      rootObserver.observe(root, { childList: true, subtree: true });
-      rootObservers.set(root, rootObserver);
     }
-
-    document.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
-
-    const documentObserver = new MutationObserver(mutations => {
-      for (const mutation of mutations) {
-        if (mutation.type === 'childList') {
-          for (const node of mutation.addedNodes) {
-            if (!(node instanceof Element)) continue;
-            if (node.matches && node.matches(rootSelector)) scanAndObserveRoot(node);
-            if (node.querySelectorAll) node.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
-          }
-        }
-      }
-    });
-    documentObserver.observe(document.body || document, { childList: true, subtree: true });
-
-    return {
-      disconnect() {
-        documentObserver.disconnect();
-        for (const rootObserver of rootObservers.values()) rootObserver.disconnect();
-        rootObservers.clear();
-      }
-    };
   },
+
+  // waitAndCallback(rootSelector, targetSelector, callback) {
+  //   const processed = new WeakSet();
+  //   const rootObservers = new Map();
+
+  //   function handleTarget(root, target) {
+  //     if (processed.has(target)) return;
+  //     processed.add(target);
+  //     try { callback(root, target); } catch (e) {}
+  //   }
+
+  //   function scanAndObserveRoot(root) {
+  //     if (rootObservers.has(root)) return;
+  //     root.querySelectorAll(targetSelector).forEach(target => handleTarget(root, target));
+
+  //     const rootObserver = new MutationObserver(mutations => {
+  //       for (const mutation of mutations) {
+  //         if (mutation.type === 'childList') {
+  //           for (const node of mutation.addedNodes) {
+  //             if (!(node instanceof Element)) continue;
+  //             if (node.matches && node.matches(targetSelector)) handleTarget(root, node);
+  //             if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(i => handleTarget(root, i));
+  //           }
+  //         }
+  //       }
+  //     });
+  //     rootObserver.observe(root, { childList: true, subtree: true });
+  //     rootObservers.set(root, rootObserver);
+  //   }
+
+  //   document.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
+
+  //   const documentObserver = new MutationObserver(mutations => {
+  //     for (const mutation of mutations) {
+  //       if (mutation.type === 'childList') {
+  //         for (const node of mutation.addedNodes) {
+  //           if (!(node instanceof Element)) continue;
+  //           if (node.matches && node.matches(rootSelector)) scanAndObserveRoot(node);
+  //           if (node.querySelectorAll) node.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
+  //         }
+  //       }
+  //     }
+  //   });
+  //   documentObserver.observe(document.body || document, { childList: true, subtree: true });
+
+  //   return {
+  //     disconnect() {
+  //       documentObserver.disconnect();
+  //       for (const rootObserver of rootObservers.values()) rootObserver.disconnect();
+  //       rootObservers.clear();
+  //     }
+  //   };
+  // },
 
   waitAndCheckAdditionAndCallback(rootSelector, targetSelector, additionSelector, callback) {
     Zehn.waitAndCallback(rootSelector, targetSelector, (root, target) => {
