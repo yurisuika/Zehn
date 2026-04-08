@@ -674,6 +674,7 @@ html._14wqdluDeDnnEcg3OSLEmd ._2EstNjFIIZm_WUSKm5Wt7n {
   font-weight: var(--zehn-size-weight-normal) !important;
   margin: 0 !important;
   padding: 0 !important;
+  width: 100% !important;
 }
 
 .personaContextMenuItem._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem {
@@ -707,19 +708,56 @@ html._14wqdluDeDnnEcg3OSLEmd ._2EstNjFIIZm_WUSKm5Wt7n {
   margin: 0 !important;
 }
 
+/* MAKE CHECKBOX ACT LIKE A SELECTABLE LIST OPTION */
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox * {
+  display: none !important;
+}
+
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: var(--zehn-color-list-background-focus);
+  border-radius: var(--zehn-size-context-entry-radius);
+}
+
+@media (prefers-color-scheme: light) {
+  .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before {
+    filter: brightness(1.55) saturate(0.55)!important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before {
+    filter: brightness(0.55) saturate(1.45) !important;
+  }
+}
+
+/* OLD CHECKBOX */
+._1n7Wloe5jZ6fSuvV18NNWI:has(.DialogCheckbox_Container.DNDCheckBox) {
+  display: block !important;
+}
+
 .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox {
   transform: none !important;
   margin: 0 !important;
   order: 2 !important;
   margin-left: auto !important;
 }
-
+ 
 .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox .SVGIcon_DialogCheck {
-  margin: 0 !important;
-  top: 0 !important;
-  padding: 0 !important;
-  width: 16px !important;
-  height: 16px !important;
   transform: none !important;
 }
 
