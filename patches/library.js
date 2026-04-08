@@ -300,7 +300,6 @@ Zehn.moveAppend('._2p9h7sf5EGrEVlsWxtvUPH', '._1gvujtNl7v7FpJK6kaMeKZ', [
 
 /* MOVE NOTES DELETE BUTTON INTO PAGELIST --------------------------------------------------------------------------- */
 
-Zehn.moveAppend('.ModalDialogPopup', '._2kwFFHckg8jvnwJfg9-la8.PageListColumn', [
+Zehn.moveAppend('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', [
   '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
 ]);
-Zehn.removeDuplicatedElement('.ModalDialogPopup', '._2kwFFHckg8jvnwJfg9-la8.PageListColumn', '._2kwFFHckg8jvnwJfg9-la8.PageListColumn > .tool-tip-source', 0);
