@@ -2819,23 +2819,32 @@ textarea::placeholder,
 }
 
 /* SLIDER */
+:root {
+  --slider-margin: calc((var(--zehn-size-slider-handle-height) - var(--zehn-size-slider-track)) / 2);
+  --slider-margin-negative: calc(-1 * var(--slider-margin));
+  --track-end: calc(var(--zehn-size-slider-handle-width) / 2);
+  --track-end-negative: calc(-1 * var(--track-end));
+}
+
 .DialogSlider_Slider,
 ._2_vG6TwMW2XtyLlTEaODH9,
 .SliderTrack {
   background: var(--zehn-color-slider-background) !important;
   border-radius: var(--zehn-size-slider-track-radius) !important;
   height: var(--zehn-size-slider-track) !important;
-  margin: 11px 0 !important;
+  width: 100% !important;
+  margin: var(--slider-margin) 0 !important;
   border: unset !important;
   margin-right: 0 !important;
 }
 
 .DialogSlider_Slider {
-  margin: 11px 0 !important;
+  width: 100% !important;
+  margin: var(--slider-margin) 0 !important;
   border: unset !important;
   margin-right: 0 !important;
-  border-left: 4px solid var(--zehn-color-slider-track) !important;
-  border-right: 4px solid transparent !important;
+  border-left: var(--track-end) solid var(--zehn-color-slider-track) !important;
+  border-right: var(--track-end) solid transparent !important;
 }
 
 ._2_vG6TwMW2XtyLlTEaODH9,
@@ -2874,20 +2883,20 @@ textarea::placeholder,
 }
 
 .DialogSlider_Grabber {
-  top: -11px !important;
+  top: var(--slider-margin-negative) !important;
   bottom: 0 !important;
-  margin-left: -4px !important;
+  margin-left: var(--track-end-negative) !important;
 }
 
 ._3DLyrg7YP5cNP9HKda62qd ._1AJ4um4afrf4IzK9Sg4jPH .SliderControlPanelGroup ._2_vG6TwMW2XtyLlTEaODH9::after {
   content: "" !important;
   position: absolute !important;
-  --normalized-fill-start: calc((100% - 8px) * min(var(--normalized-slider-value), 0)) !important;
-  --normalized-fill-end: calc((100% - 8px) * max(var(--normalized-slider-value), 0)) !important;
+  --normalized-fill-start: calc((100% - var(--zehn-size-slider-handle-width)) * min(var(--normalized-slider-value), 0)) !important;
+  --normalized-fill-end: calc((100% - var(--zehn-size-slider-handle-width)) * max(var(--normalized-slider-value), 0)) !important;
   --normalized-width-handle: calc(var(--normalized-fill-end) - var(--normalized-fill-start)) !important;
   --inverse-normalized-default-value: calc(1 - var(--normalized-slider-default-value)) !important;
   left: var(--normalized-width-handle) !important;
-  top: -11px !important;
+  top: var(--slider-margin-negative) !important;
 }
 
 .DialogSlider_Slider:hover .DialogSlider_Grabber,
@@ -2922,17 +2931,18 @@ textarea::placeholder,
 
 ._8xNY6EWVZsDfOfUqDrus-,
 .SliderHandleContainer {
-  transform: translateX(calc(-100% * var(--inverse-normalized-value) + 8px * var(--inverse-normalized-value))) !important;
+  transform: translateX(calc(-100% * var(--inverse-normalized-value) + var(--zehn-size-slider-handle-width) * var(--inverse-normalized-value))) !important;
 }
 
 ._2aCoHO7mXYYdPXMN0USBAW {
-  transform: translateX(calc(-100% * var(--inverse-normalized-default-value) + 4px * var(--inverse-normalized-default-value))) translateY(17px) !important;
+  transform: translateX(calc(-100% * var(--inverse-normalized-default-value) + var(--track-end) * var(--inverse-normalized-default-value))) translateY(17px) !important;
 }
 
 ._23hjXB5XSry64xirVGpWAY._2vIQRDODaxmltxEdCSbuYf {
   padding-top: 0 !important;
 }
 
+/* TICK */
 ._1NgUy7a2LKuF-moe-rzsiH {
   width: 1px !important;
   height: 4px !important;
