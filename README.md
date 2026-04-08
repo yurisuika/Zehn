@@ -15,25 +15,74 @@ Some ways this is accomplished in Zehn:
 * The game search is hidden by default; once you set up a bunch of filters, you don't need to constantly see their tags and other filter buttons displayed, so you can hide the search section and still retain its functionality while giving the list center stage.
 * You can toggle showing your own status and the friends search from the buttons bar. And you can even hide that bar as well to just view your contacts. Garner the ability to only view what matters most.
 * Steam natively allows the chat channel list to be pinned open or collapsed, but Zehn takes it a step further and allows you to completely hide it. Additionally, the members list is displayed as an overlay that is only shown when you need it.
-
-Zehn styles every control in either a dialog style or an app style. When opening a dialog, you are looking to get something done, so things like buttons and dropdowns are very distinct. But for windows that you will usually have open all the time, like the library or chat, controls displayed don't try to fight for your attention, but instead meld with the panel that they are part of. Evenly sized controls flow into eachother. Simple iconography is weighted proportionally with the typeface. This is the elegent simplicity of Windows 10 Fluent Design that you love brought to Steam!
-
 > [!TIP]
 > Check out these extended previews to see more of Zehn! 
 >
 > <details>
 >   <summary>Dark Mode</summary>
 >
->   ![dark](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark.png)
+>   #### Main
+>   ![main](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/main.png)
+>
+>   #### Friends
+>   ![friends](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/friends.png)
+>
+>   #### Chat
+>   ![chat](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/chat.png)
+>
+>   #### Media
+>   ![media](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/media.png)
+>
+>   #### Settings
+>   ![settings](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/settings.png)
+>
+>   #### Notes
+>   ![notes](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/notes.png)
+>
+>   #### Servers
+>   ![servers](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/servers.png)
+>
+>   #### Browser
+>   ![browser](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/browser.png)
+>
+>   #### Overlay
+>   ![overlay](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/dark/overlay.png)
 >
 > </details>
 >
 > <details>
 >   <summary>Light Mode</summary>
 >
->   ![light](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light.png)
+>   #### Main
+>   ![main](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/main.png)
+>
+>   #### Friends
+>   ![friends](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/friends.png)
+>
+>   #### Chat
+>   ![chat](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/chat.png)
+>
+>   #### Media
+>   ![media](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/media.png)
+>
+>   #### Settings
+>   ![settings](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/settings.png)
+>
+>   #### Notes
+>   ![notes](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/notes.png)
+>
+>   #### Servers
+>   ![servers](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/servers.png)
+>
+>   #### Browser
+>   ![browser](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/browser.png)
+>
+>   #### Overlay
+>   ![overlay](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/light/overlay.png)
 > 
 > </details>
+
+Zehn styles every control in either a dialog style or an app style. When opening a dialog, you are looking to get something done, so things like buttons and dropdowns are very distinct. But for windows that you will usually have open all the time, like the library or chat, controls displayed don't try to fight for your attention, but instead meld with the panel that they are part of. Evenly sized controls flow into eachother. Simple iconography is weighted proportionally with the typeface. This is the elegent simplicity of Windows 10 Fluent Design that you love brought to Steam!
 
 ## What Does Zehn Offer?
 
