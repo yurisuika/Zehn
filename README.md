@@ -164,7 +164,7 @@ You can enjoy support for the following plugins while using Zehn:
 * Achievement Groups
   * Completely skinned to match the other achievement overlay tabs.
 * Collections+
-  * Ensured to work seemlessly with Zehn.
+  * Ensured to work with Zehn.
 * Window Styler (DWMX)
   * When Transparency Effects is enabled in the settings, certain windows can have Acrylic blur behind them.
 * Extendium
