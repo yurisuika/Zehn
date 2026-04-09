@@ -1,11 +1,11 @@
 # Zehn
 Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design language. It comes in both dark and light modes with lots of customization!
 
-## Make Steam Look Like A Native App!
-
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2, the first iteration of Fluent Design. It isn't quite the Metro of Windows 8 or the Fluent 2 of Windows 11. Rather, it is a transitional design language that retains the sharp lines and minimalistic icons of Metro and merges them with reactive Fluent effects such as Acrylic and Reveal that evolved into Fluent 2 for Windows 11. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
 ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/zehn.png)
+
+## Make Steam Look Like A Native App!
 
 Part of the design philosophy behind Zehn is to de-clutter Steam. Not everything needs to be thrown in your face at once. Why take up more space than is really needed?
 
@@ -86,17 +86,6 @@ Zehn styles every control in either a dialog style or an app style. When opening
 
 ## What Does Zehn Offer?
 
-### Acrylic
-Acrylic is a Fluent Design material that blurs the background with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways.
-
-Certain surfaces will always have an acrylic blur on them. These are small panels that blur content within a window. You'll often find this below details and descriptions laid atop of images.
-
-Some windows have reactive panels that change into an acrylic blur on window focus when `Transparency Effects` is enabled in the options. These fall into two categories:
-* Panels that overlay and blur Steam content below them, such as the main window navbar.
-* Panels that blur the window background. These include various settings windows, notes, friends and chat. Of these, some are supported to give Steam a transparent background when using the DWMX plugin for Millennium. This allows the Acrylic to actually show through below the window and blur whatever is below it. You may need additional software to get a blur working, as at this time DWMX's blur is noted to not work (I recommend using Windhawk's `Translucent Windows` mod). Presently, the only windows that support this functionality are the pagelisted settings windows.
-
-![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.png)
-
 ### Customization
 Zehn features various options to change the look and layout of the skin, including hiding and showing content, changing avatar style, and more.
 
@@ -127,6 +116,17 @@ Choose between using your accent color or custom colors and how much color you w
 >
 > #### SFP
 > Edit the config in `~/config/options.json` as usual. Set the colors in `~config/colors.css`.
+
+### Acrylic
+Acrylic is a Fluent Design material that blurs the background with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways.
+
+Certain surfaces will always have an acrylic blur on them. These are small panels that blur content within a window. You'll often find this below details and descriptions laid atop of images.
+
+Some windows have reactive panels that change into an acrylic blur on window focus when `Transparency Effects` is enabled in the options. These fall into two categories:
+* Panels that overlay and blur Steam content below them, such as the main window navbar.
+* Panels that blur the window background. These include various settings windows, notes, friends and chat. Of these, some are supported to give Steam a transparent background when using the DWMX plugin for Millennium. This allows the Acrylic to actually show through below the window and blur whatever is below it. You may need additional software to get a blur working, as at this time DWMX's blur is noted to not work (I recommend using Windhawk's `Translucent Windows` mod). Presently, the only windows that support this functionality are the pagelisted settings windows.
+
+![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.png)
 
 ### Mascots
 You can give your waifu a home in your library by adding a mascot in Steam's UI folder.
@@ -179,9 +179,9 @@ You can enjoy support for the following plugins while using Zehn:
 ### Versions
 Zehn features both a static and a live version!
 
-The [static version](https://github.com/yurisuika/Zehn/tree/master) contains the whole skin source. You will need to download the [latest release](https://github.com/yurisuika/Zehn/releases/latest) for any updates, which come often as rolling releases!
+The [static version](https://github.com/yurisuika/Zehn/tree/master) contains the whole skin source. You will need to download the skin for any updates, which come often as rolling releases! This version is recommended for users using a self-updating theme patcher.
 
-The [live version](https://github.com/yurisuika/Zehn/tree/live) references the latest static version on the web, so each time Steam is started or reloaded you will have the latest improvements. This version is recommended for most users as it infrequently requires updates.
+The [live version](https://github.com/yurisuika/Zehn/tree/live) references the latest static version on the web, so each time Steam is started or reloaded you will have the latest improvements. As this version only requires updating when patches and settings are changed, this is recommended for users without a self-updating skin patcher.
 
 ### Installation
 1. Download your preferred version.
@@ -193,10 +193,10 @@ The [live version](https://github.com/yurisuika/Zehn/tree/live) references the l
 
 Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
-### Recent Updates
-See Zehn's [Announcements](https://github.com/yurisuika/Zehn/discussions/categories/announcements) for notable recent features, changes, and fixes!
+### Update Documentation
+See Zehn's [Announcements](https://github.com/yurisuika/Zehn/discussions/categories/announcements) category in Discussions for details on recent updates! Noteable fixes, changes, and additions are described here, so you can know all about the latest improvements to Zehn.
 
 ### Support and Community
 Head over to [Discussions](https://github.com/yurisuika/Zehn/discussions) for support, to share your ideas, and more!
 
-[Yuri's Modding Lair](https://discord.gg/0zdNEkQle7Qg9C1H) is closed, as I've quit using Discord, which I suggest you do too!
+~~[Yuri's Modding Lair Discord](https://discord.gg/0zdNEkQle7Qg9C1H)~~ is closed for the foreseeable future.
