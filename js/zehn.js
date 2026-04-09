@@ -7,14 +7,14 @@ const Zehn = {
     }
   },
 
-  observeForCallback(rootSelector, targetSelector, callback) {
+  observeRootForCallback(rootSelector, targetSelector, callback) {
     const processed = new WeakSet();
     const rootObservers = new Map();
 
     function handleTarget(root, target) {
       if (processed.has(target)) return;
       processed.add(target);
-      try { callback(root, target); } catch (e) { console.log("fucking shit is fucked"); }
+      try { callback(root, target); } catch (e) { console.error(e); }
     }
 
     function scanAndObserveRoot(root) {
@@ -60,8 +60,41 @@ const Zehn = {
     };
   },
 
+  observeForCallback(root, targetSelector, callback) {
+    const processed = new WeakSet();
+
+    function handleTarget(target) {
+      if (processed.has(target)) return;
+      processed.add(target);
+      try { callback(root, target); } catch (e) { console.error(e); }
+    }
+
+    if (root instanceof Element) {
+      root.querySelectorAll(targetSelector).forEach(handleTarget);
+    }
+
+    const observer = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type !== 'childList') continue;
+        for (const node of mutation.addedNodes) {
+          if (!(node instanceof Element)) continue;
+          if (node.matches && node.matches(targetSelector)) handleTarget(node);
+          if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(handleTarget);
+        }
+      }
+    });
+
+    observer.observe(root, { childList: true, subtree: true });
+
+    return {
+      disconnect() {
+        observer.disconnect();
+      }
+    };
+  },
+
   observeForCallbackIfMissing(rootSelector, targetSelector, additionSelector, callback) {
-    Zehn.observeForCallback(rootSelector, targetSelector, (root, target) => {
+    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       const addition = target.querySelector(additionSelector);
       if (!addition) {
         callback(root, target, additionSelector);
@@ -116,7 +149,7 @@ const Zehn = {
   },
 
   checkButtonToggle(rootSelector, targetSelector, buttonSelector, additionName) {
-    Zehn.observeForCallback(rootSelector, targetSelector, (root, target) => {
+    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       if (target) {
         if (target.classList.contains(additionName)) {
           const button = target.querySelector(buttonSelector);
@@ -131,37 +164,37 @@ const Zehn = {
   },
 
   moveAppend(rootSelector, targetSelector, movingSelectors) {
-    Zehn.observeForCallback(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((selector) => {
-        root.querySelectorAll(selector).forEach((element) => {
-          target.appendChild(element || '');
-        })
+    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      movingSelectors.forEach((movingSelector) => {
+        Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+          target.appendChild(moving);
+        });
       });
     });
   },
 
   movePrepend(rootSelector, targetSelector, movingSelectors) {
-    Zehn.observeForCallback(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((selector) => {
-        root.querySelectorAll(selector).forEach((element) => {
-          target.prepend(element || '');
+    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      movingSelectors.forEach((movingSelector) => {
+        Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+          target.prepend(moving || '');
         })
       });
     });
   },
 
   moveBefore(rootSelector, targetSelector, movingSelectors) {
-    Zehn.observeForCallback(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((selector) => {
-        root.querySelectorAll(selector).forEach((element) => {
-          target.before(element || '');
+    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      movingSelectors.forEach((movingSelector) => {
+        Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+          target.before(moving || '');
         })
       });
     });
   },
 
   removeDuplicatedElement(rootSelector, targetSelector, removeableSelector, ordinal) {
-    Zehn.observeForCallback(rootSelector, targetSelector, (root, target) => {
+    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       const removables = target.querySelectorAll(removeableSelector);
       if (removables.length > 1) {
         removables[ordinal].remove();
