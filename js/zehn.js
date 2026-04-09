@@ -166,8 +166,9 @@ const Zehn = {
   moveAppend(rootSelector, targetSelector, movingSelectors) {
     Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
-        Zehn.observeForCallback(root, movingSelector, (root, moving) => {
-          target.appendChild(moving);
+        // Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+        root.querySelectorAll(movingSelector).forEach((moving) => {
+          target.append(moving);
         });
       });
     });
@@ -176,7 +177,8 @@ const Zehn = {
   movePrepend(rootSelector, targetSelector, movingSelectors) {
     Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
-        Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+        // Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+        root.querySelectorAll(movingSelector).forEach((moving) => {
           target.prepend(moving || '');
         })
       });
@@ -186,7 +188,8 @@ const Zehn = {
   moveBefore(rootSelector, targetSelector, movingSelectors) {
     Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
-        Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+        // Zehn.observeForCallback(root, movingSelector, (root, moving) => {
+        root.querySelectorAll(movingSelector).forEach((moving) => {
           target.before(moving || '');
         })
       });
