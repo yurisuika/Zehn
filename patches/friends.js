@@ -23,7 +23,7 @@ Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', '#zehnTog
 
 /* APPLY CURRENT USER CLASS WHEN SWITCHED BETWEEN DOCKED CHAT ------------------------------------------------------- */
 
-Zehn.waitAndCallback('.friendsListContainer', '#zehnToggleUser', (root, target) => {
+Zehn.observeForCallback('.friendsListContainer', '#zehnToggleUser', (root, target) => {
   if (target.classList.contains('zehnToggled')) {
     const currentUser = root.querySelector('.currentUserContainer');
 
@@ -35,7 +35,7 @@ Zehn.waitAndCallback('.friendsListContainer', '#zehnToggleUser', (root, target) 
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
-Zehn.waitAndCallback('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', (root, target) => {
+Zehn.observeForCallback('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', (root, target) => {
   if (target.children.length == 0) {
     const title = document.createElement('div');
     title.classList.add('zehnListTitle');
@@ -65,7 +65,7 @@ Zehn.addButton('.MultiUserChat', '.chatRoomOptions', '.zehnToggleChannelList', t
 
 /* TOGGLE MEMBER LIST STATUS ---------------------------------------------------------------------------------------- */
 
-Zehn.waitAndCallback('.multiChatDialog', '.MultiUserChat', (root, target) => {
+Zehn.observeForCallback('.multiChatDialog', '.MultiUserChat', (root, target) => {
   const toggle = target.querySelector('.MemberListOption.ToggleMemberListView');
   const header = target.querySelector('.chatRoomOptions');
   if (header && toggle) {

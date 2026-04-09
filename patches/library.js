@@ -11,7 +11,7 @@ Options.setOptions();
 
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
   const sidebarWidth = root.querySelector('._9sPoVBFyE_vE87mnZJ5aB').offsetWidth;
   const filterWidth = window.innerWidth - sidebarWidth;
 
@@ -20,33 +20,34 @@ Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, 
 
 /* TOGGLE NAVBAR BACKGROUND CLASSES BASED ON WHAT LIBRARY PAGE IS OPEN ---------------------------------------------- */
 
-function toggleNavbarClass(root, target, pageSelector, toggleName) {
-  const page = root.querySelector(pageSelector);
-  if (page) {
-    if (!target.classList.contains(toggleName)) {
-      target.classList.add(toggleName);
-    }
-  } else if (!page) {
-    if (target.classList.contains(toggleName)) {
-      target.classList.remove(toggleName);
-    }
-  }
-}
+function toggleClassWithPresence(root, target, pageSelector, toggleName) {
+  const update = () => {
+    const present = !!document.querySelector(pageSelector);
+    target.classList.toggle(toggleName, present);
+  };
 
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
-  toggleNavbarClass(root, target, '._1fuML-ekRbTEzgzC597yGP', 'zehnConsoleOpened');
+  update();
+
+  const observer = new MutationObserver(update);
+  observer.observe(root, { childList: true, subtree: true });
+
+  return observer;
+};
+
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
+  toggleClassWithPresence(root, target, '._1fuML-ekRbTEzgzC597yGP', 'zehnConsoleOpened');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
-  toggleNavbarClass(root, target, '._1bq4x9pa4-9RLY-dXWUZTp', 'zehnDownloadsOpened');
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
+  toggleClassWithPresence(root, target, '._1bq4x9pa4-9RLY-dXWUZTp', 'zehnDownloadsOpened');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
-  toggleNavbarClass(root, target, '.MillenniumSettings', 'zehnMillenniumOpened');
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
+  toggleClassWithPresence(root, target, '.MillenniumSettings', 'zehnMillenniumOpened');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
-  toggleNavbarClass(root, target, '._39RheXihcN6H2k2muQTjkI', 'zehnStickyHeader');
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
+  toggleClassWithPresence(root, target, '._39RheXihcN6H2k2muQTjkI', 'zehnStickyHeader');
 });
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
-  toggleNavbarClass(root, target, '.RGNMWtyj73_-WdhflrmuY._3WJCt_OkjPA6npxOtguSt5', 'zehnLibraryOpened');
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', (root, target) => {
+  toggleClassWithPresence(root, target, '.RGNMWtyj73_-WdhflrmuY._3WJCt_OkjPA6npxOtguSt5', 'zehnLibraryOpened');
 });
 
 /* TOGGLE ROOT MENU ------------------------------------------------------------------------------------------------- */
@@ -94,7 +95,7 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', '#zehnToggl
 
 /* APPLY TOGGLE STATE TO SEARCH BUTTON WHEN SWITCHING TO/FROM SMALL MODE -------------------------------------------- */
 
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleSidebarSearch', (root, target) => {
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleSidebarSearch', (root, target) => {
   if (root.classList.contains('zehnSearchOpened')) {
     if (!target.classList.contains('zehnToggled')) {
       target.classList.add('zehnToggled');
@@ -111,7 +112,7 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3Wb
 
 /* ID GAME PAGE SECTIONS -------------------------------------------------------------------------------------------- */
 
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, target) => {
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, target) => {
   const featured = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)');
   const event = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)');
   const community = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)');
@@ -146,7 +147,7 @@ Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, 
 
 /* CHECK GAME DETAILS PANELS FOR WRAPPER ---------------------------------------------------------------------------- */
 
-Zehn.waitAndCallback('.QsvsRVwbsApgKt1MhM0fz', '#zehnGameDetails', (root, target) => {
+Zehn.observeForCallback('.QsvsRVwbsApgKt1MhM0fz', '#zehnGameDetails', (root, target) => {
   const width = target.clientWidth;
   if (target.dataset.width != width) {
     target.dataset.width = width;
@@ -229,7 +230,7 @@ Zehn.removeDuplicatedElement('.QsvsRVwbsApgKt1MhM0fz', '._39oUCO1OuizVPwcnnv88no
 
 /* ADD SPACER FOR NAVBAR DOWNLOADS STATUS --------------------------------------------------------------------------- */
 
-Zehn.waitAndCheckAdditionAndCallback('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', '.zehnDownloadsSpacer', (root, target, addition) => {
+Zehn.observeForCallbackIfMissing('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', '.zehnDownloadsSpacer', (root, target, addition) => {
   const spacer = document.createElement('div');
   spacer.classList.add('zehnDownloadsSpacer');
   if (!addition) {
