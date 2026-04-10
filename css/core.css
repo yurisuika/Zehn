@@ -913,6 +913,16 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
 }
 
 /* DIALOG CONTAINERS */
+.DialogRoundCheckboxField_Container,
+.DialogRoundCheckboxField_Container.WithLabel {
+  line-height: 100% !important;
+  margin: 0 !important;
+}
+
+.DialogRoundCheckboxField_Container.WithLabel .DialogRoundCheckboxField {
+  margin: 0 !important;
+}
+
 .DialogRoundCheckboxField {
   width: var(--zehn-size-settings-entry) !important;
   height: var(--zehn-size-settings-entry) !important;
@@ -1493,7 +1503,7 @@ button.DialogButton:has(._3OHR1e3u08hK7hMx4fFy_L) {
   background: none !important;
 }
 
-/* PAGED LIST CONTENT */
+/* PAGED LIST CONTENT WIDTH OVERRIDE */
 .DialogContentTransition:is(.ZjHHXZlnZhCahNrBFplWc, .OX7USkJ5dDP_icD00Gal6) select,
 .DialogContentTransition:is(.ZjHHXZlnZhCahNrBFplWc, .OX7USkJ5dDP_icD00Gal6) .DialogDropDown._DialogInputContainer,
 .DialogContentTransition:is(.ZjHHXZlnZhCahNrBFplWc, .OX7USkJ5dDP_icD00Gal6) ._3OHR1e3u08hK7hMx4fFy_L,
@@ -1503,20 +1513,16 @@ button.DialogButton:has(._3OHR1e3u08hK7hMx4fFy_L) {
   min-width: var(--zehn-size-dropdown-dialog-width) !important;
 }
 
-/* OTHER */
+/* DROPDOWN - GENERIC */
 select,
+/* DIALOG */
 .DialogDropDown._DialogInputContainer,
+/* CONTROLLER SETTINGS */
 ._3OHR1e3u08hK7hMx4fFy_L,
+/* ACHIEVEMENT GROUPS PLUGIN */
 .steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"] {
   max-width: 100% !important;
   min-width: 100% !important;
-}
-
-/* DROPDOWN - DIALOG, OVERLAY CONTROLLER SETTINGS */
-select,
-.DialogDropDown._DialogInputContainer,
-._3OHR1e3u08hK7hMx4fFy_L,
-.steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"] {
   appearance: unset !important;
   align-items: center !important;
   gap: 0 !important;
@@ -1532,65 +1538,46 @@ select,
   background: var(--zehn-color-dropdown-dialog-background) padding-box !important;
   color: var(--zehn-color-dropdown-dialog-text) !important;
   border: var(--zehn-size-dropdown-dialog-border) solid var(--zehn-color-dropdown-dialog-border) !important;
-}
 
-select:focus,
-.DialogDropDown._DialogInputContainer:focus,
-._3OHR1e3u08hK7hMx4fFy_L:focus,
-.steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"]:focus {
-  background-color: var(--zehn-color-dropdown-dialog-background-focus) !important;
-  color: var(--zehn-color-dropdown-dialog-text-focus) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
-}
+  &:focus {
+    background-color: var(--zehn-color-dropdown-dialog-background-focus) !important;
+    color: var(--zehn-color-dropdown-dialog-text-focus) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
+  }
 
-select:hover,
-.DialogDropDown._DialogInputContainer:hover,
-._3OHR1e3u08hK7hMx4fFy_L:hover,
-.steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"]:hover {
-  background-color: var(--zehn-color-dropdown-dialog-background-hover) !important;
-  color: var(--zehn-color-dropdown-dialog-text-hover) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-dropdown-dialog-background-hover) !important;
+    color: var(--zehn-color-dropdown-dialog-text-hover) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
+  }
 
-select:hover:focus,
-.DialogDropDown._DialogInputContainer:hover:focus,
-._3OHR1e3u08hK7hMx4fFy_L:hover:focus,
-.steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"]:hover:focus {
-  background-color: var(--zehn-color-dropdown-dialog-background-hover-focus) !important;
-  color: var(--zehn-color-dropdown-dialog-text-hover-focus) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-hover-focus) !important;
-}
+  &:hover:focus {
+    background-color: var(--zehn-color-dropdown-dialog-background-hover-focus) !important;
+    color: var(--zehn-color-dropdown-dialog-text-hover-focus) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-hover-focus) !important;
+  }
 
-select:active,
-.DialogDropDown._DialogInputContainer:active,
-._3OHR1e3u08hK7hMx4fFy_L:active,
-.steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"]:active {
-  background-color: var(--zehn-color-dropdown-dialog-background-active) !important;
-  color: var(--zehn-color-dropdown-dialog-text-active) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
-}
+  &:active {
+    background-color: var(--zehn-color-dropdown-dialog-background-active) !important;
+    color: var(--zehn-color-dropdown-dialog-text-active) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
+  }
 
-select:active:focus,
-.DialogDropDown._DialogInputContainer:active:focus,
-._3OHR1e3u08hK7hMx4fFy_L:active:focus,
-.steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"]:active:focus {
-  background-color: var(--zehn-color-dropdown-dialog-background-active-focus) !important;
-  color: var(--zehn-color-dropdown-dialog-text-active-focus) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-active-focus) !important;
-}
+  &:active:focus {
+    background-color: var(--zehn-color-dropdown-dialog-background-active-focus) !important;
+    color: var(--zehn-color-dropdown-dialog-text-active-focus) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-active-focus) !important;
+  }
 
-select:disabled,
-select:disabled:is(:hover, :active, :focus),
-.DialogDropDown._DialogInputContainer.Disabled,
-.DialogDropDown._DialogInputContainer.Disabled:is(:hover, :active, :focus),
-.DialogDropDown._DialogInputContainer:disabled,
-.DialogDropDown._DialogInputContainer:disabled:is(:hover, :active, :focus),
-._3OHR1e3u08hK7hMx4fFy_L:disabled,
-.steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"]:disabled {
-  background-color: var(--zehn-color-dropdown-dialog-background-disabled) !important;
-  color: var(--zehn-color-dropdown-dialog-text-disabled) !important;
-  border-color: var(--zehn-color-dropdown-dialog-border-disabled) !important;
-  opacity: 1 !important;
+  &.Disabled,
+  .Disabled:is(:hover, :active, :focus),
+  :disabled,
+  :disabled:is(:hover, :active, :focus) {
+    background-color: var(--zehn-color-dropdown-dialog-background-disabled) !important;
+    color: var(--zehn-color-dropdown-dialog-text-disabled) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-disabled) !important;
+    opacity: 1 !important;
+  }
 }
 
 /* CURRENT DISPLAY */
@@ -1675,18 +1662,16 @@ select:disabled:is(:hover, :active, :focus),
 .DialogContent.GenericConfirmDialog .zeGUOeW3Cat4UJGCGwXPZ svg {
   padding: 0 !important;
   height: 100% !important;
-  width: 100% !important;
+  width: var(--zehn-size-icon-small) !important;
   background-color: var(--zehn-color-icon-secondary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-small) !important;
   -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
-}
 
-.DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu *,
-._3OHR1e3u08hK7hMx4fFy_L .DialogDropDown_CurrentDisplay~svg *,
-.zeGUOeW3Cat4UJGCGwXPZ svg * {
-  display: none !important;
+  * {
+    display: none !important;
+  }
 }
 
 /* WHERE THE FUCK IS THIS USED AND WHAT THE HELL IS THIS ANYWAYS??? */
@@ -1733,7 +1718,7 @@ select * {
   justify-content: space-between !important;
   position: relative !important;
   box-sizing: border-box !important;
-  min-width: var(--zehn-size-sorting-width) !important;
+  min-width: var(--zehn-size-dropdown-app-width) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   height: var(--zehn-size-dropdown-app) !important;
   line-height: var(--zehn-size-dropdown-app-line) !important;
@@ -1743,55 +1728,43 @@ select * {
   background: var(--zehn-color-dropdown-app-background) padding-box !important;
   color: var(--zehn-color-dropdown-app-text) !important;
   border: var(--zehn-size-dropdown-app-border) solid var(--zehn-color-dropdown-app-border) !important;
-}
 
-._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown._DialogInputContainer:focus,
-._2rxrVvbku0AC8Qbequ4-z9 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown._DialogInputContainer:focus,
-._2rxrVvbku0AC8Qbequ4-z9 ._341mdPDkZV7JkbIxGBREsd .DialogDropDown._DialogInputContainer:focus {
-  background-color: var(--zehn-color-dropdown-app-background-focus) !important;
-  color: var(--zehn-color-dropdown-app-text-focus) !important;
-  border-color: var(--zehn-color-dropdown-app-border-focus) !important;
-}
+  &:focus {
+    background-color: var(--zehn-color-dropdown-app-background-focus) !important;
+    color: var(--zehn-color-dropdown-app-text-focus) !important;
+    border-color: var(--zehn-color-dropdown-app-border-focus) !important;
+  }
 
-._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown._DialogInputContainer:hover,
-._2rxrVvbku0AC8Qbequ4-z9 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown._DialogInputContainer:hover,
-._2rxrVvbku0AC8Qbequ4-z9 ._341mdPDkZV7JkbIxGBREsd .DialogDropDown._DialogInputContainer:hover {
-  background-color: var(--zehn-color-dropdown-app-background-hover) !important;
-  color: var(--zehn-color-dropdown-app-text-hover) !important;
-  border-color: var(--zehn-color-dropdown-app-border-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-dropdown-app-background-hover) !important;
+    color: var(--zehn-color-dropdown-app-text-hover) !important;
+    border-color: var(--zehn-color-dropdown-app-border-hover) !important;
+  }
 
-._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown._DialogInputContainer:hover:focus,
-._2rxrVvbku0AC8Qbequ4-z9 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown._DialogInputContainer:hover:focus,
-._2rxrVvbku0AC8Qbequ4-z9 ._341mdPDkZV7JkbIxGBREsd .DialogDropDown._DialogInputContainer:hover:focus {
-  background-color: var(--zehn-color-dropdown-app-background-hover-focus) !important;
-  color: var(--zehn-color-dropdown-app-text-hover-focus) !important;
-  border-color: var(--zehn-color-dropdown-app-border-hover-focus) !important;
-}
+  &:hover:focus {
+    background-color: var(--zehn-color-dropdown-app-background-hover-focus) !important;
+    color: var(--zehn-color-dropdown-app-text-hover-focus) !important;
+    border-color: var(--zehn-color-dropdown-app-border-hover-focus) !important;
+  }
 
-._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown._DialogInputContainer:active,
-._2rxrVvbku0AC8Qbequ4-z9 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown._DialogInputContainer:active,
-._2rxrVvbku0AC8Qbequ4-z9 ._341mdPDkZV7JkbIxGBREsd .DialogDropDown._DialogInputContainer:active {
-  background-color: var(--zehn-color-dropdown-app-background-active) !important;
-  color: var(--zehn-color-dropdown-app-text-active) !important;
-  border-color: var(--zehn-color-dropdown-app-border-active) !important;
-}
+  &:active {
+    background-color: var(--zehn-color-dropdown-app-background-active) !important;
+    color: var(--zehn-color-dropdown-app-text-active) !important;
+    border-color: var(--zehn-color-dropdown-app-border-active) !important;
+  }
 
-._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown._DialogInputContainer:active:focus,
-._2rxrVvbku0AC8Qbequ4-z9 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown._DialogInputContainer:active:focus,
-._2rxrVvbku0AC8Qbequ4-z9 ._341mdPDkZV7JkbIxGBREsd .DialogDropDown._DialogInputContainer:active:focus {
-  background-color: var(--zehn-color-dropdown-app-background-active-focus) !important;
-  color: var(--zehn-color-dropdown-app-text-active-focus) !important;
-  border-color: var(--zehn-color-dropdown-app-border-active-focus) !important;
-}
+  &:active:focus {
+    background-color: var(--zehn-color-dropdown-app-background-active-focus) !important;
+    color: var(--zehn-color-dropdown-app-text-active-focus) !important;
+    border-color: var(--zehn-color-dropdown-app-border-active-focus) !important;
+  }
 
-._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown._DialogInputContainer:disabled,
-._2rxrVvbku0AC8Qbequ4-z9 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown._DialogInputContainer:disabled,
-._2rxrVvbku0AC8Qbequ4-z9 ._341mdPDkZV7JkbIxGBREsd .DialogDropDown._DialogInputContainer:disabled {
-  background-color: var(--zehn-color-dropdown-app-background-disabled) !important;
-  color: var(--zehn-color-dropdown-app-text-disabled) !important;
-  border-color: var(--zehn-color-dropdown-app-border-disabled) !important;
-  opacity: 1 !important;
+  &:disabled {
+    background-color: var(--zehn-color-dropdown-app-background-disabled) !important;
+    color: var(--zehn-color-dropdown-app-text-disabled) !important;
+    border-color: var(--zehn-color-dropdown-app-border-disabled) !important;
+    opacity: 1 !important;
+  }
 }
 
 /* CURRENT DISPLAY */
@@ -1899,13 +1872,13 @@ select * {
 /* CONTAINER */
 ._1tBzypb5E2AwNuBuVns9Hl {
   font-size: var(--zehn-size-text-description) !important;
+  gap: var(--zehn-size-gap-small) !important;
+  margin: 0 !important;
 }
 
 ._23SnllqT_AqZ1C_QHcNQ4Z ._30PVtUudUBJBzac0vEncl_ {
-  margin: 0 !important;
   margin-left: var(--zehn-size-gap-medium) !important;
-  font-size: var(--zehn-size-text-description) !important;
-  gap: var(--zehn-size-gap-small) !important;
+  /* SPACE FOR SHOWCASE HEADER */
 }
 
 /* LABEL */
@@ -1939,43 +1912,43 @@ select * {
   background: var(--zehn-color-sorting-background) padding-box !important;
   color: var(--zehn-color-sorting-text) !important;
   border: var(--zehn-size-sorting-border) solid var(--zehn-color-sorting-border) !important;
-}
 
-._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown._DialogInputContainer:focus {
-  background-color: var(--zehn-color-sorting-background-focus) !important;
-  color: var(--zehn-color-sorting-text-focus) !important;
-  border-color: var(--zehn-color-sorting-border-focus) !important;
-}
+  &:focus {
+    background-color: var(--zehn-color-sorting-background-focus) !important;
+    color: var(--zehn-color-sorting-text-focus) !important;
+    border-color: var(--zehn-color-sorting-border-focus) !important;
+  }
 
-._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown._DialogInputContainer:hover {
-  background-color: var(--zehn-color-sorting-background-hover) !important;
-  color: var(--zehn-color-sorting-text-hover) !important;
-  border-color: var(--zehn-color-sorting-border-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-sorting-background-hover) !important;
+    color: var(--zehn-color-sorting-text-hover) !important;
+    border-color: var(--zehn-color-sorting-border-hover) !important;
+  }
 
-._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown._DialogInputContainer:hover:focus {
-  background-color: var(--zehn-color-sorting-background-hover-focus) !important;
-  color: var(--zehn-color-sorting-text-hover-focus) !important;
-  border-color: var(--zehn-color-sorting-border-hover-focus) !important;
-}
+  &:hover:focus {
+    background-color: var(--zehn-color-sorting-background-hover-focus) !important;
+    color: var(--zehn-color-sorting-text-hover-focus) !important;
+    border-color: var(--zehn-color-sorting-border-hover-focus) !important;
+  }
 
-._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown._DialogInputContainer:active {
-  background-color: var(--zehn-color-sorting-background-active) !important;
-  color: var(--zehn-color-sorting-text-active) !important;
-  border-color: var(--zehn-color-sorting-border-active) !important;
-}
+  &:active {
+    background-color: var(--zehn-color-sorting-background-active) !important;
+    color: var(--zehn-color-sorting-text-active) !important;
+    border-color: var(--zehn-color-sorting-border-active) !important;
+  }
 
-._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown._DialogInputContainer:active:focus {
-  background-color: var(--zehn-color-sorting-background-active-focus) !important;
-  color: var(--zehn-color-sorting-text-active-focus) !important;
-  border-color: var(--zehn-color-sorting-border-active-focus) !important;
-}
+  &:active:focus {
+    background-color: var(--zehn-color-sorting-background-active-focus) !important;
+    color: var(--zehn-color-sorting-text-active-focus) !important;
+    border-color: var(--zehn-color-sorting-border-active-focus) !important;
+  }
 
-._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown._DialogInputContainer:disabled {
-  background-color: var(--zehn-color-sorting-background-disabled) !important;
-  color: var(--zehn-color-sorting-text-disabled) !important;
-  border-color: var(--zehn-color-sorting-border-disabled) !important;
-  opacity: 1 !important;
+  &:disabled {
+    background-color: var(--zehn-color-sorting-background-disabled) !important;
+    color: var(--zehn-color-sorting-text-disabled) !important;
+    border-color: var(--zehn-color-sorting-border-disabled) !important;
+    opacity: 1 !important;
+  }
 }
 
 /* CURRENT DISPLAY */
@@ -2048,6 +2021,89 @@ select * {
 
 
 
+/* INTERACTABLE - TEXT INPUT (BAR) ---------------------------------------------------------------------------------- */
+
+/* TEXT AREAS - GENERIC */
+textarea,
+/* CHAT */
+._113iuw_HlE_qSgt9cGWCSv,
+/* CONSOLE */
+._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput,
+/* RECORDINGS SEARCH */
+._36KTbApKz0VLY9Q6lGt4aH input {
+  transition: none !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  max-width: var(--zehn-size-input-bar-width) !important;
+  width: var(--zehn-size-input-bar-width) !important;
+  height: var(--zehn-size-input-bar) !important;
+  min-height: var(--zehn-size-input-bar) !important;
+  max-height: var(--zehn-size-input-bar) !important;
+  line-height: var(--zehn-size-input-bar-line) !important;
+  padding: var(--zehn-size-input-bar-padding) !important;
+  background: var(--zehn-color-input-bar-background) padding-box !important;
+  color: var(--zehn-color-input-bar-text) !important;
+  font-size: var(--zehn-size-input-bar-text) !important;
+  border-radius: var(--zehn-size-input-bar-radius) !important;
+  border: var(--zehn-size-input-bar-border) solid var(--zehn-color-input-bar-border) !important;
+  field-sizing: content !important;
+
+  &:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-bar-background-focus) padding-box !important;
+    color: var(--zehn-color-input-bar-text-focus) !important;
+    border-color: var(--zehn-color-input-bar-border-focus) !important;
+  }
+
+  &:hover {
+    background: var(--zehn-color-input-bar-background-hover) padding-box !important;
+    color: var(--zehn-color-input-bar-text-hover) !important;
+    border-color: var(--zehn-color-input-bar-border-hover) !important;
+  }
+
+  &:hover:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-bar-background-hover-focus) padding-box !important;
+    color: var(--zehn-color-input-bar-text-hover-focus) !important;
+    border-color: var(--zehn-color-input-bar-border-hover-focus) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-input-bar-background-active) padding-box !important;
+    color: var(--zehn-color-input-bar-text-active) !important;
+    border-color: var(--zehn-color-input-bar-border-active) !important;
+  }
+
+  &:active:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-bar-background-active-focus) padding-box !important;
+    color: var(--zehn-color-input-bar-text-active-focus) !important;
+    border-color: var(--zehn-color-input-bar-border-active-focus) !important;
+  }
+
+  &:disabled {
+    background: var(--zehn-color-input-bar-background-disabled) padding-box !important;
+    color: var(--zehn-color-input-bar-text-disabled) !important;
+    border-color: var(--zehn-color-input-bar-border-disabled) !important;
+  }
+
+  &::placeholder {
+    color: var(--zehn-color-input-bar-text-placeholder) !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    font-style: italic !important;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
 /* INTERACTABLE - TEXT INPUT (DIALOG) ------------------------------------------------------------------------------- */
 
 /* CONTAINER */
@@ -2090,10 +2146,32 @@ input.DialogInput.DialogListBuilderInput_Input,
   min-width: 100% !important;
 }
 
-/* TEXT INPUT */
+/* TEXT INPUT - GENERIC */
 input[type="text"],
+/* DIALOG */
 input.DialogInput.DialogTextInputBase,
+/* DIALOG LIST BUILDER */
 input.DialogInput.DialogListBuilderInput_Input,
+/* LOGIN */
+.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx,
+/* REVIEW GAME */
+.sK8bmf5vWULFzqtbyJO59 textarea._392iEmqj65Eac9ealm4Pmi,
+/* CONTROLER SETTINGS EDITABLE VALUES */
+._3aMlipGagTx2AjSsMP_yZj,
+._1iWWSmS4pDD1vKNDTkghbh,
+/* REPROT AI CONTENT */
+.W7yFQn7zoBv-1CyobSsk1,
+/* REPORT COMMUNITY CONTENT */
+textarea._1H8F9Z-889HGdHeC5msAZ0,
+/* SCREENSHOTS SHARE */
+textarea._-8fRT1eDDVo6CU2ehlzmG,
+/* SHARE SCREENSHOT (OLD ???) */
+.qFjVwKFidyZdbmIhaENhV,
+/* UPLOAD SCREENSHOT (OLD ???) */
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy.zeGUOeW3Cat4UJGCGwXPZ,
+/* EXTENDIUM STORAGE MANAGER */
+.styled-input[type="text" i],
+/* ACHIEVEMENTS PLUGIN */
 .steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input {
   font-weight: var(--zehn-size-weight-normal) !important;
   margin: 0 !important;
@@ -2106,67 +2184,55 @@ input.DialogInput.DialogListBuilderInput_Input,
   font-size: var(--zehn-size-input-dialog-text) !important;
   border-radius: var(--zehn-size-input-dialog-radius) !important;
   border: var(--zehn-size-input-dialog-border) solid var(--zehn-color-input-dialog-border) !important;
+
+  &:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-dialog-background-focus) padding-box !important;
+    border-color: var(--zehn-color-input-dialog-border-focus) !important;
+    color: var(--zehn-color-input-dialog-text-focus) !important;
+  }
+
+  &:hover {
+    background: var(--zehn-color-input-dialog-background-hover) padding-box !important;
+    color: var(--zehn-color-input-dialog-text-hover) !important;
+    border-color: var(--zehn-color-input-dialog-border-hover) !important;
+  }
+
+  &:hover:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-dialog-background-hover-focus) padding-box !important;
+    border-color: var(--zehn-color-input-dialog-border-hover-focus) !important;
+    color: var(--zehn-color-input-dialog-text-hover-focus) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-input-dialog-background-active) padding-box !important;
+    color: var(--zehn-color-input-dialog-text-active) !important;
+    border-color: var(--zehn-color-input-dialog-border-active) !important;
+  }
+
+  &:active:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-dialog-background-active-focus) padding-box !important;
+    border-color: var(--zehn-color-input-dialog-border-active-focus) !important;
+    color: var(--zehn-color-input-dialog-text-active-focus) !important;
+  }
+
+  &:is(:disabled, :read-only) {
+    background: var(--zehn-color-input-dialog-background-disabled) padding-box !important;
+    color: var(--zehn-color-input-dialog-text-disabled) !important;
+    border-color: var(--zehn-color-input-dialog-border-disabled) !important;
+  }
+
+  &::placeholder {
+    color: var(--zehn-color-input-dialog-text-placeholder) !important;
+    font-style: italic !important;
+  }
 }
 
-input[type="text"]:is(:focus, :focus-within),
-input.DialogInput.DialogTextInputBase:is(:focus, :focus-within),
-input.DialogInput.DialogListBuilderInput_Input:is(:focus, :focus-within),
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-dialog-background-focus) padding-box !important;
-  border-color: var(--zehn-color-input-dialog-border-focus) !important;
-  color: var(--zehn-color-input-dialog-text-focus) !important;
-}
-
-input[type="text"]:hover,
-input.DialogInput.DialogTextInputBase:hover,
-input.DialogInput.DialogListBuilderInput_Input:hover,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:hover {
-  background: var(--zehn-color-input-dialog-background-hover) padding-box !important;
-  color: var(--zehn-color-input-dialog-text-hover) !important;
-  border-color: var(--zehn-color-input-dialog-border-hover) !important;
-}
-
-input[type="text"]:hover:is(:focus, :focus-within),
-input.DialogInput.DialogTextInputBase:hover:is(:focus, :focus-within),
-input.DialogInput.DialogListBuilderInput_Input:hover:is(:focus, :focus-within),
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:hover:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-dialog-background-hover-focus) padding-box !important;
-  border-color: var(--zehn-color-input-dialog-border-hover-focus) !important;
-  color: var(--zehn-color-input-dialog-text-hover-focus) !important;
-}
-
-input[type="text"]:active,
-input.DialogInput.DialogTextInputBase:active,
-input.DialogInput.DialogListBuilderInput_Input:active,
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:active {
-  background: var(--zehn-color-input-dialog-background-active) padding-box !important;
-  color: var(--zehn-color-input-dialog-text-active) !important;
-  border-color: var(--zehn-color-input-dialog-border-active) !important;
-}
-
-input[type="text"]:active:is(:focus, :focus-within),
-input.DialogInput.DialogTextInputBase:active:is(:focus, :focus-within),
-input.DialogInput.DialogListBuilderInput_Input:active:is(:focus, :focus-within),
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:active:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-dialog-background-active-focus) padding-box !important;
-  border-color: var(--zehn-color-input-dialog-border-active-focus) !important;
-  color: var(--zehn-color-input-dialog-text-active-focus) !important;
-}
-
-input[type="text"]:is(:disabled, :read-only),
-input.DialogInput.DialogTextInputBase:is(:disabled, :read-only),
-input.DialogInput.DialogListBuilderInput_Input:is(:disabled, :read-only),
-.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input:is(:disabled, :read-only) {
-  background: var(--zehn-color-input-dialog-background-disabled) padding-box !important;
-  color: var(--zehn-color-input-dialog-text-disabled) !important;
-  border-color: var(--zehn-color-input-dialog-border-disabled) !important;
-}
-
-input[type="text"]::placeholder,
-input.DialogInput.DialogTextInputBase::placeholder,
-input.DialogInput.DialogListBuilderInput_Input::placeholder {
-  color: var(--zehn-color-input-dialog-text-placeholder) !important;
-  font-style: italic !important;
+/* OVERRIDES */
+.W7yFQn7zoBv-1CyobSsk1,
+.qFjVwKFidyZdbmIhaENhV,
+textarea._1H8F9Z-889HGdHeC5msAZ0 {
+  height: fit-content !important;
+  max-height: fit-content !important;
 }
 
 /* LIST BUILDER LIST ITEM */
@@ -2184,6 +2250,12 @@ input.DialogInput.DialogListBuilderInput_Input::placeholder {
 }
 
 /* CLEAR ACTION */
+._2WkJpi6EQMR6CUXzMDJ9rq {
+  width: var(--zehn-size-input-dialog) !important;
+  text-align: center !important;
+}
+
+._2WkJpi6EQMR6CUXzMDJ9rq svg,
 .DialogInput_ClearAction {
   width: var(--zehn-size-icon-small) !important;
   height: 100% !important;
@@ -2196,36 +2268,36 @@ input.DialogInput.DialogListBuilderInput_Input::placeholder {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-small) !important;
   -webkit-mask-image: var(--zehn-icon-clear) !important;
-}
 
-.DialogInput_ClearAction:hover {
-  background-color: var(--zehn-color-text-secondary) !important;
-  color: var(--zehn-color-text-primary) !important;
-}
+  &:not(:hover) {
+    opacity: 1 !important;
+  }
 
-.DialogInput_ClearAction:active {
-  background-color: var(--zehn-color-text-secondary) !important;
-  color: var(--zehn-color-text-primary) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-text-secondary) !important;
+    color: var(--zehn-color-text-primary) !important;
+  }
 
-.DialogInput_ClearAction svg {
-  width: var(--zehn-size-icon-small) !important;
-  height: var(--zehn-size-icon-small) !important;
-  margin: auto !important;
-  position: absolute !important;
-  right: 0 !important;
-  left: 0 !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  display: none !important;
-}
+  &:active {
+    background-color: var(--zehn-color-text-secondary) !important;
+    color: var(--zehn-color-text-primary) !important;
+  }
 
-.DialogInput_ClearAction svg * {
-  display: none !important;
-}
+  svg {
+    width: var(--zehn-size-icon-small) !important;
+    height: var(--zehn-size-icon-small) !important;
+    margin: auto !important;
+    position: absolute !important;
+    right: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    display: none !important;
 
-.DialogInput_ClearAction:not(:hover) {
-  opacity: 1 !important;
+    * {
+      display: none !important;
+    }
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -2241,6 +2313,7 @@ input.DialogInput.DialogListBuilderInput_Input::placeholder {
 
 /* INTERACTABLE - TEXT INPUT (APP) ---------------------------------------------------------------------------------- */
 
+._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX .DialogInput_Wrapper,
 ._20QAC4WMXm8qFE8waUT5oo ._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper,
 .tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper,
 .socialInputContainer .inputContainer,
@@ -2258,11 +2331,18 @@ input.DialogInput.DialogListBuilderInput_Input::placeholder {
   width: 100% !important;
 }
 
-/* INPUT - COLLECTIONS TITLE, LIBRARY SIDEBAR, EMOTICON PICKER, GROUP CHAT SEARCH */
+/* INPUT - GAME STATUS */
+._3x31AgESSlUqX3D4MTHv2m ._1JlC29Ic6L-QvL-39X_d-X,
+/* COLLECTIONS TITLE */
 ._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput,
+/* LIBRARY SIDEBAR */
 ._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput,
+/* EMOTICON PICKER */
 .tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput,
-.friendSearchInput[type="text"] {
+/*  GROUP CHAT SEARCH */
+.friendSearchInput[type="text"],
+/* FRIENDS LIST SEARCH */
+#friendSearchInputID {
   /* transition: background-color 0.2s ease !important; */
   transition: none !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -2281,71 +2361,66 @@ input.DialogInput.DialogListBuilderInput_Input::placeholder {
   font-size: var(--zehn-size-input-app-text) !important;
   border-radius: var(--zehn-size-input-app-radius) !important;
   border: var(--zehn-size-input-app-border) solid var(--zehn-color-input-app-border) !important;
+
+  &:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-app-background-focus) padding-box !important;
+    color: var(--zehn-color-input-app-text-focus) !important;
+    border-color: var(--zehn-color-input-app-border-focus) !important;
+  }
+
+  &:hover {
+    background: var(--zehn-color-input-app-background-hover) padding-box !important;
+    color: var(--zehn-color-input-app-text-hover) !important;
+    border-color: var(--zehn-color-input-app-border-hover) !important;
+  }
+
+  &:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-app-background-hover-focus) padding-box !important;
+    color: var(--zehn-color-input-app-text-hover-focus) !important;
+    border-color: var(--zehn-color-input-app-border-hover-focus) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-input-app-background-active) padding-box !important;
+    color: var(--zehn-color-input-app-text-active) !important;
+    border-color: var(--zehn-color-input-app-border-active) !important;
+  }
+
+  &:active:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-app-background-active-focus) padding-box !important;
+    color: var(--zehn-color-input-app-text-active-focus) !important;
+    border-color: var(--zehn-color-input-app-border-active-focus) !important;
+  }
+
+  &:disabled {
+    background: var(--zehn-color-input-app-background-disabled) padding-box !important;
+    color: var(--zehn-color-input-app-text-disabled) !important;
+    border-color: var(--zehn-color-input-app-border-disabled) !important;
+  }
+
+  &::placeholder {
+    color: var(--zehn-color-input-app-text-placeholder) !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    font-style: italic !important;
+  }
 }
 
-._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput:is(:focus, :focus-within),
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:is(:focus, :focus-within),
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:is(:focus, :focus-within),
-.friendSearchInput[type="text"]:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-app-background-focus) padding-box !important;
-  color: var(--zehn-color-input-app-text-focus) !important;
-  border-color: var(--zehn-color-input-app-border-focus) !important;
+/* OVERRIDES */
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput,
+.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput,
+.friendSearchInput[type="text"] {
+  /* PADDING FOR SEARCH ICON / CLEAR INPUT */
+  padding: var(--zehn-size-input-app-padding-search) !important;
 }
 
-._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput:hover,
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:hover,
-.friendSearchInput[type="text"]:hover {
-  background: var(--zehn-color-input-app-background-hover) padding-box !important;
-  color: var(--zehn-color-input-app-text-hover) !important;
-  border-color: var(--zehn-color-input-app-border-hover) !important;
-}
-
-._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput:hover:is(:focus, :focus-within),
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:hover:is(:focus, :focus-within),
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:hover:is(:focus, :focus-within),
-.friendSearchInput[type="text"]:hover:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-app-background-hover-focus) padding-box !important;
-  color: var(--zehn-color-input-app-text-hover-focus) !important;
-  border-color: var(--zehn-color-input-app-border-hover-focus) !important;
-}
-
-._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput:active,
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:active,
-.friendSearchInput[type="text"]:active {
-  background: var(--zehn-color-input-app-background-active) padding-box !important;
-  color: var(--zehn-color-input-app-text-active) !important;
-  border-color: var(--zehn-color-input-app-border-active) !important;
-}
-
-._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput:active:is(:focus, :focus-within),
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:active:is(:focus, :focus-within),
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:active:is(:focus, :focus-within),
-.friendSearchInput[type="text"]:active:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-app-background-active-focus) padding-box !important;
-  color: var(--zehn-color-input-app-text-active-focus) !important;
-  border-color: var(--zehn-color-input-app-border-active-focus) !important;
-}
-
-._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput:disabled,
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput:disabled,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput:disabled,
-.friendSearchInput[type="text"]:disabled {
-  background: var(--zehn-color-input-app-background-disabled) padding-box !important;
-  color: var(--zehn-color-input-app-text-disabled) !important;
-  border-color: var(--zehn-color-input-app-border-disabled) !important;
-}
-
-._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput::placeholder,
-._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput::placeholder,
-.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper>input.DialogInput::placeholder,
-.friendSearchInput[type="text"]::placeholder,
-#friendSearchInputID::placeholder {
-  color: var(--zehn-color-input-app-text-placeholder) !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
-  font-style: italic !important;
+._3x31AgESSlUqX3D4MTHv2m ._1JlC29Ic6L-QvL-39X_d-X {
+  /* EXPAND TO FIT TEXT */
+  align-content: center !important;
+  field-sizing: content !important;
+  resize: vertical !important;
+  height: unset !important;
+  max-height: unset !important;
 }
 
 /* SEARCH ICON */
@@ -2425,112 +2500,10 @@ input.DialogInput.DialogListBuilderInput_Input::placeholder {
   inset: 0 !important;
   width: var(--zehn-size-icon-small) !important;
   height: 100% !important;
-}
 
-._20QAC4WMXm8qFE8waUT5oo ._12vo5L1hsNGdao6_ssuirS .DialogInput_ClearAction svg *,
-.friendSearchClear .SVGIcon_X_Line * {
-  display: none !important;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-
-
-
-
-
-
-
-
-
-/* INTERACTABLE - TEXT INPUT (BAR) ---------------------------------------------------------------------------------- */
-
-/* TEXT AREAS, CHAT, CONSOLE, RECORDINGS SEARCH */
-textarea,
-._113iuw_HlE_qSgt9cGWCSv,
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput,
-._36KTbApKz0VLY9Q6lGt4aH input {
-  transition: none !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-  max-width: var(--zehn-size-input-bar-width) !important;
-  width: var(--zehn-size-input-bar-width) !important;
-  height: var(--zehn-size-input-bar) !important;
-  min-height: var(--zehn-size-input-bar) !important;
-  max-height: var(--zehn-size-input-bar) !important;
-  line-height: var(--zehn-size-input-bar-line) !important;
-  padding: var(--zehn-size-input-bar-padding) !important;
-  background: var(--zehn-color-input-bar-background) padding-box !important;
-  color: var(--zehn-color-input-bar-text) !important;
-  font-size: var(--zehn-size-input-bar-text) !important;
-  border-radius: var(--zehn-size-input-bar-radius) !important;
-  border: var(--zehn-size-input-bar-border) solid var(--zehn-color-input-bar-border) !important;
-  field-sizing: content !important;
-}
-textarea:is(:focus, :focus-within),
-._113iuw_HlE_qSgt9cGWCSv:is(:focus, :focus-within)
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput:is(:focus, :focus-within),
-._36KTbApKz0VLY9Q6lGt4aH input:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-bar-background-focus) padding-box !important;
-  color: var(--zehn-color-input-bar-text-focus) !important;
-  border-color: var(--zehn-color-input-bar-border-focus) !important;
-}
-
-textarea:hover,
-._113iuw_HlE_qSgt9cGWCSv:hover,
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput:hover,
-._36KTbApKz0VLY9Q6lGt4aH input:hover {
-  background: var(--zehn-color-input-bar-background-hover) padding-box !important;
-  color: var(--zehn-color-input-bar-text-hover) !important;
-  border-color: var(--zehn-color-input-bar-border-hover) !important;
-}
-
-textarea:hover:is(:focus, :focus-within),
-._113iuw_HlE_qSgt9cGWCSv:hover:is(:focus, :focus-within),
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput:hover:is(:focus, :focus-within),
-._36KTbApKz0VLY9Q6lGt4aH input:hover:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-bar-background-hover-focus) padding-box !important;
-  color: var(--zehn-color-input-bar-text-hover-focus) !important;
-  border-color: var(--zehn-color-input-bar-border-hover-focus) !important;
-}
-
-textarea:active,
-._113iuw_HlE_qSgt9cGWCSv:active,
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput:active,
-._36KTbApKz0VLY9Q6lGt4aH input:active {
-  background: var(--zehn-color-input-bar-background-active) padding-box !important;
-  color: var(--zehn-color-input-bar-text-active) !important;
-  border-color: var(--zehn-color-input-bar-border-active) !important;
-}
-
-textarea:active:is(:focus, :focus-within),
-._113iuw_HlE_qSgt9cGWCSv:active:is(:focus, :focus-within),
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput:active:is(:focus, :focus-within),
-._36KTbApKz0VLY9Q6lGt4aH input:active:is(:focus, :focus-within) {
-  background: var(--zehn-color-input-bar-background-active-focus) padding-box !important;
-  color: var(--zehn-color-input-bar-text-active-focus) !important;
-  border-color: var(--zehn-color-input-bar-border-active-focus) !important;
-}
-
-textarea:disabled,
-._113iuw_HlE_qSgt9cGWCSv:disabled,
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput:disabled,
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput:read-only,
-._36KTbApKz0VLY9Q6lGt4aH input:disabled {
-  background: var(--zehn-color-input-bar-background-disabled) padding-box !important;
-  color: var(--zehn-color-input-bar-text-disabled) !important;
-  border-color: var(--zehn-color-input-bar-border-disabled) !important;
-}
-
-textarea::placeholder,
-._113iuw_HlE_qSgt9cGWCSv::placeholder,
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput::placeholder,
-._36KTbApKz0VLY9Q6lGt4aH input::placeholder {
-  color: var(--zehn-color-input-bar-text-placeholder) !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
-  font-style: italic !important;
+  * {
+    display: none !important;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -4870,6 +4843,7 @@ div[role=rowgroup] {
 
 /* BUTTON */
 ._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd {
+  padding: var(--zehn-size-button-app-padding) !important;
   background: var(--zehn-color-button-app-background) !important;
   outline: 0 solid var(--zehn-color-button-app-border) !important;
 }
