@@ -1654,6 +1654,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendStatusHover {
+  padding: var(--zehn-size-padding-small) var(--zehn-size-padding-medium) !important;
   transition: none !important;
   background-color: var(--zehn-color-list-background) !important;
 }
@@ -1732,11 +1733,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 /* COMPACT */
 .compactView .currentUserAvatar,
 .compactView .currentUserAvatar .avatarHolder {
-  /*width: 24px !important;*/
-  /*height: 24px !important;*/
   width: var(--zehn-size-status-medium) !important;
   height: var(--zehn-size-status-medium) !important;
-  /*top: calc(50% - 4px) !important;*/
   margin: auto 0 !important;
 }
 
@@ -1751,13 +1749,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .compactView .currentUserAvatar .avatarHolder {
   width: var(--zehn-size-avatar-small) !important;
   height: var(--zehn-size-avatar-small) !important;
-  top: calc(50% - (var(--zehn-size-avatar-small) / 2)) !important;
 }
 
 .CompactFriendsList:not(.chatRoomMembers):not(.ChatTabsContextMenu) .friend .avatarHolder,
 .compactView .currentUserAvatar .avatarHolder {
   padding: 0 !important;
-  top: calc(50% - (var(--zehn-size-status-medium) / 2)) !important;
   width: var(--zehn-size-status-medium) !important;
   height: var(--zehn-size-status-medium) !important;
   margin: auto 0 !important;
@@ -1785,9 +1781,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .CompactFriendsList .friendGroup .friend,
 .CompactFriendsList .friendGroup .SteamPlayerGroupFooter,
 .CompactFriendsList .friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
-  height: var(--zehn-size-panel-medium) !important;
+  height: fit-content !important;
   margin: 0 !important;
-  padding: 0 var(--zehn-size-padding-medium) !important;
 }
 
 .CompactFriendsList .friend.speaking .avatarHolder img.avatar {
@@ -1796,7 +1791,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .CompactFriendsList:not(.chatRoomMembers):not(.ChatTabsContextMenu) .friend .labelHolder {
   margin: 0 0 0 var(--zehn-size-gap-small) !important;
-  height: var(--zehn-size-avatar-medium) !important;
+  height: fit-content !important;
   padding: 0 !important;
 }
 
@@ -2034,6 +2029,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   display: none !important;
 }
 
+.friendCategoryContainer,
 .ChatRoomListGroupItem {
   background-color: transparent !important;
   transition: none !important;
@@ -2042,7 +2038,9 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .ChatRoomListGroupItem_header {
   background-color: var(--zehn-color-list-background) !important;
   margin: 0 !important;
-  padding: 8px 16px !important;
+  padding: 0 !important;
+  line-height: 100% !important;
+  padding: var(--zehn-size-padding-small) var(--zehn-size-padding-medium) !important;
 }
 
 .ChatRoomListGroupItem_header>div:has(.openGroupButton) {
@@ -2084,82 +2082,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .ChatRoomListGroupItemChatRooms .chatRoomVoiceChannel:not(.ActiveVoiceChannel):hover {
   background-color: transparent !important;
-}
-
-.ChatRoomListGroupItem .ChatRoomMultiFriendAvatar.Small {
-  width: 32px !important;
-  height: 32px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.ChatRoomListGroupItem .ChatRoomGroupAvatar.HasAvatar {
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
-  font-size: var(--zehn-size-16) !important;
-}
-
-.ChatRoomMultiFriendAvatar {
-  margin: 0 !important;
-  background: transparent !important;
-  border-radius: var(--zehn-mask-avatar-roundness) !important;
-  background: var(--zehn-color-accent-50) !important;
-  border: none !important;
-}
-
-.ChatRoomGroupAvatar {
-  margin: 0 !important;
-  background: transparent !important;
-  border-radius: var(--zehn-mask-avatar-roundness) !important;
-  background: var(--zehn-color-accent-50) !important;
-  border: none !important;
-  line-height: 100% !important;
-}
-
-.ChatRoomGroupAvatar.Smaller {
-  width: 24px !important;
-  height: 24px !important;
-  line-height: 24px !important;
-  font-size: var(--zehn-size-12) !important;
-}
-
-.ChatRoomGroupAvatar.Small {
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
-  font-size: var(--zehn-size-16) !important;
-}
-
-.ChatRoomGroupAvatar.Micro {
-  width: 32px !important;
-  height: 32px !important;
-  line-height: 32px !important;
-  font-size: var(--zehn-size-16) !important;
-}
-
-.ChatRoomListGroupItem .ChatRoomGroupAvatar {
-  width: 32px !important;
-  height: 32px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  line-height: 32px !important;
-  font-size: var(--zehn-size-16) !important;
-}
-
-/* AVATAR INITIALS */
-* .ChatRoomGroupAvatar_initials {
-  color: var(--zehn-color-text-primary) !important;
-  background: transparent !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  background-image: none !important;
-  -webkit-text-fill-color: var(--zehn-color-text-primary) !important;
-  font-size: 1em !important;
-  width: 100% !important;
-  height: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
 }
 
 /* GROUP NAME */

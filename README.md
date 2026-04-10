@@ -115,7 +115,7 @@ Choose between using your accent color or custom colors and how much color you w
 > Configure color blending under the `Theme` tab. You may manually set the colors under the `Colors` tab.
 >
 > #### SFP
-> Edit the config in `~/config/options.json` as usual. Set the colors in `~config/colors.css`.
+> Edit the config in `~/config/options.json` as usual. Set the colors in `~/config/colors.css`.
 
 ### Acrylic
 Acrylic is a Fluent Design material that blurs the background with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways.
