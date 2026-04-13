@@ -354,3 +354,29 @@ Zehn.addRevealClass('._2X_ZpO2X_CIOIEfml3ZTcX', [
 ]);
 
 Zehn.reveal('._2X_ZpO2X_CIOIEfml3ZTcX'); // SERVERS HEADER
+
+/* REVEAL SETTINGS + NOTES ------------------------------------------------------------------------------------------ */
+
+Zehn.addRevealClass('.PageListColumn', [
+  '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
+  '._3Sjbkvk647UKKVLX6J7gsW' // NEW NOTE
+], true)
+
+Zehn.addRevealClassOnMutation('.PageListColumn', [
+  '._1-vlriAtKYDViAEunue4VO' // LIST ENTRY
+], true)
+
+Zehn.reveal('.PageListColumn'); // PAGELIST
+
+/* REVEAL GROUP CHAT SETTINGS --------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.xSTLmzylFJdIfak7ZdhuA', [
+  '._2YV0m3IRCNOoUV9YhJNFnV', // LIST ENTRY
+  '._1NqKTWvxtFgflRlqLTtv7e' // LEAVE
+], true)
+
+Zehn.addRevealClassOnMutation('.xSTLmzylFJdIfak7ZdhuA', [
+  '._2YV0m3IRCNOoUV9YhJNFnV' // LIST ENTRY
+], true)
+
+Zehn.reveal('.xSTLmzylFJdIfak7ZdhuA'); // PAGELIST

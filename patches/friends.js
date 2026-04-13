@@ -26,15 +26,19 @@ Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', '#zehnTog
 
 Zehn.observeRootForCallback('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', (root, target) => {
   if (target.children.length == 0) {
+    const container = document.createElement('div');
+    container.classList.add('zehnListContainer');
+    target.append(container);
+
     const title = document.createElement('div');
     title.classList.add('zehnListTitle');
-    target.append(title);
+    container.append(title);
     title.textContent = target.childNodes[0].textContent;
     target.childNodes[0].remove();
 
     const icon = document.createElement('div');
     icon.classList.add('zehnListIcon');
-    target.prepend(icon);
+    container.prepend(icon);
   }
 });
 
@@ -113,3 +117,21 @@ Zehn.reveal('.chatRoomHeader'); // CHAT HEADER
 // ]);
 
 // Zehn.reveal('.chatEntry'); // CHAT BAR
+
+/* REVEAL CHAT CHANNEL LIST ----------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.chatRoomGroupNavColumn', [
+  '.chatRoomGroupNavCollapseExpand' // PIN
+]);
+
+Zehn.addRevealClass('.chatRoomGroupNavColumn', [
+  '.chatRoomTextChannel', // TEXT
+  '.chatRoomVoiceChannel' // VOICE
+], true);
+
+Zehn.addRevealClassOnMutation('.chatRoomGroupNavColumn', [
+  '.chatRoomTextChannel', // TEXT
+  '.chatRoomVoiceChannel' // VOICE
+], true);
+
+Zehn.reveal('.chatRoomGroupNavColumn'); // PAGELIST

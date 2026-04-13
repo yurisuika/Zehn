@@ -131,18 +131,9 @@ Some windows have reactive panels that change into an acrylic blur on window foc
 ### Reveal
 Reveal is a Fluent Design effect that reveals some hidden details to certain controls in a radial gradient around the mouse pointer.
 
-In Zehn, when `Transparency Effects` is enabled, controls in several primary panels are given a Reveal effect. This includes the following:
-* On the library window...
-  * Game page playbar.
-  * Game list sidebar controls panel.
-* On the friends list window...
-  * Controls panel.
-* On the chat window...
-  * Group chat header controls panel.
-* On the media window...
-  * Screenshots/recordings library controls panel.
-* On the server list window...
-  * Controls panel.
+In Zehn, when `Transparency Effects` is enabled, various interactive elements are given a Reveal effect. There are two variants of Reveal:
+* List style: This appears on pagelist entries such as settings and notes pageslists.
+* Button style: This appears on primary header control bar buttons.
 
 ![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.gif)
 

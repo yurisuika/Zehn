@@ -222,23 +222,27 @@ const Zehn = {
     });
   },
 
-  addRevealClass(rootSelector, targetSelectors) {
+  addRevealClass(rootSelector, targetSelectors, isList = false) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
     targetSelectors.forEach((targetSelector) => {
       this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
         target.classList.toggle('zehnReveal', true);
+        if (isList) target.classList.toggle('zehnRevealList', true);
       });
     });
   },
 
-  addRevealClassOnMutation(rootSelector, targetSelectors) {
+  addRevealClassOnMutation(rootSelector, targetSelectors, isList = false) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
     targetSelectors.forEach((targetSelector) => {
       this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
         const observer = new MutationObserver((mutations) => {
-          if (mutations.length) target.classList.toggle('zehnReveal', true);
+          if (mutations.length) {
+            target.classList.toggle('zehnReveal', true);
+            if (isList) target.classList.toggle('zehnRevealList', true);
+          }
         });
         observer.observe(target, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'id', 'style'] });
 
@@ -347,7 +351,7 @@ const Zehn = {
         pointerInside = true;
       });
 
-      let refreshTimer = 0;
+      let refreshTimer = 100;
       function scheduleRefreshRects() {
         clearTimeout(refreshTimer);
         refreshTimer = setTimeout(refreshRects, 100);
