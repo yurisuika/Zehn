@@ -235,29 +235,20 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   background: transparent !important;
 }
 
-._2XZq-_f6npaQdAgeRzKIkz:hover .c9l09VKqQIXJvsl0gqItO,
-._2XZq-_f6npaQdAgeRzKIkz:active .c9l09VKqQIXJvsl0gqItO {
-  opacity: 0 !important;
-  transition: opacity 0.25s ease !important;
-}
-
 ._2XZq-_f6npaQdAgeRzKIkz:not(.Yd-DsWkYiFiYwpci--Yk_):not(:hover):not(:active) .c9l09VKqQIXJvsl0gqItO {
   filter: var(--zehn-filter-focus) !important;
   transition: none !important;
-}
-
-._2XZq-_f6npaQdAgeRzKIkz:not(.Yd-DsWkYiFiYwpci--Yk_) * {
-  stroke: transparent !important;
-  fill: transparent !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz .c9l09VKqQIXJvsl0gqItO {
   width: var(--zehn-size-icon-medium) !important;
   height: var(--zehn-size-titlebar-height) !important;
   padding: 0 !important;
-  left: unset !important;
-  right: var(--zehn-size-gap-medium) !important;
-  top: 0 !important;
+  inset: 0 !important;
+  transition: opacity 0.2s ease !important;
+  position: relative !important;
+  margin-left: var(--zehn-size-gap-small) !important;
+  order: 2 !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz .c9l09VKqQIXJvsl0gqItO svg {
@@ -272,8 +263,12 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   -webkit-mask-image: var(--zehn-icon-mic) !important;
 }
 
-._2XZq-_f6npaQdAgeRzKIkz .c9l09VKqQIXJvsl0gqItO[title="Microphone is muted"] svg {
+._2XZq-_f6npaQdAgeRzKIkz._3xSp_2yTGID-3a2SsunWpF .c9l09VKqQIXJvsl0gqItO svg {
   -webkit-mask-image: var(--zehn-icon-mic-mute) !important;
+}
+
+._2XZq-_f6npaQdAgeRzKIkz .c9l09VKqQIXJvsl0gqItO svg * {
+  display: none !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz .SVGIcon_Microphone {
@@ -309,6 +304,7 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   width: var(--zehn-size-icon-medium) !important;
   height: var(--zehn-size-icon-medium) !important;
   display: none !important;
+  order: 3 !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ ._1JXI4j2_xSpVK1YjyEuebr {
@@ -2890,6 +2886,7 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .VoiceToggle {
+  margin: 0 !important;
   padding: 0 !important;
   width: 48px !important;
   height: 48px !important;
@@ -2899,10 +2896,23 @@ div:hover>.BBCodeCollapseControl {
   max-height: 48px !important;
   border: unset !important;
   border-radius: var(--zehn-size-radius-square) !important;
-  margin: 0 !important;
-  background-size: 48px !important;
   background-color: transparent !important;
   color: var(--zehn-color-icon-primary) !important;
+}
+
+.VoiceToggleIconCtn {
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  inset: 0 !important;
+  color: transparent !important;
+}
+
+.VoiceToggle svg {
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: auto !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -2910,8 +2920,13 @@ div:hover>.BBCodeCollapseControl {
   -webkit-mask-image: var(--zehn-icon-mic) !important;
 }
 
-.VoiceToggle.Active {
+.VoiceToggle.Active svg {
+  color: transparent !important;
   -webkit-mask-image: var(--zehn-icon-chat-leave) !important;
+}
+
+.VoiceToggle svg * {
+  display: none !important;
 }
 
 .ChatMessageEntryVoice.Inactive,
@@ -2929,27 +2944,6 @@ div:hover>.BBCodeCollapseControl {
   background-color: var(--zehn-color-button-app-background-active) !important;
 }
 
-.VoiceToggleIconCtn {
-  padding: 0 !important;
-  width: 48px !important;
-  left: 0 !important;
-  top: 0 !important;
-  color: transparent !important;
-}
-
-.VoiceToggleIconCtn .SVGIcon_VoiceRoom .Microphone {
-  fill: transparent !important;
-  opacity: 0 !important;
-}
-
-.VoiceToggle.Active:focus svg,
-.VoiceToggle.Active:hover svg {
-  color: transparent !important;
-}
-
-.VoiceToggle.Active svg {
-  color: transparent !important;
-}
 
 .friendsui-container .Aupswi7-c-w3XwNO5cp2i svg {
   background-color: var(--zehn-color-icon-primary) !important;

@@ -128,6 +128,24 @@ Some windows have reactive panels that change into an acrylic blur on window foc
 
 ![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.png)
 
+### Reveal
+Reveal is a Fluent Design effect that reveals some hidden details to certain controls in a radial gradient around the mouse pointer.
+
+In Zehn, when `Transparency Effects` is enabled, controls in several primary panels are given a Reveal effect. This includes the following:
+* On the library window...
+  * Game page playbar.
+  * Game list sidebar controls panel.
+* On the friends list window...
+  * Controls panel.
+* On the chat window...
+  * Group chat header controls panel.
+* On the media window...
+  * Screenshots/recordings library controls panel.
+* On the server list window...
+  * Controls panel.
+
+![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.png)
+
 ### Mascots
 You can give your waifu a home in your library by adding a mascot in Steam's UI folder.
 
@@ -144,7 +162,7 @@ Your mascot will display when you are not hovering over the main library content
 On Windows, Zehn's accent color will use your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to override the system accent color, you may do so in the Millennium settings. If using SFP, please manually override the accent variables near the start of `~/css/variables.css`.
 
 Zehn features several added buttons for an improved experience:
-* On the main window...
+* On the library window...
   * The root menu is toggled via the menu button in the upper-left corner of the navbar. It is hidden by default.
   * Theater Mode, which hides the game list sidebar, is toggled via the button in the navbar before the window controls.
   * Several search and filter related controls in library sidebar can be toggled via a button in the upper-left corner of the sidebar. These controls are hidden by default.

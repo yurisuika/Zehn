@@ -11,26 +11,15 @@ Options.setOptions();
 
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
-Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', false, false, (root, target, button) => {
+Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', ['zehnButton'], false, false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
 });
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
-Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', '#zehnToggleUser', true, false, (root, target, button) => {
+Zehn.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnCurrentUserOpened');
+Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', '#zehnToggleUser', ['zehnButton', 'zehnReveal'], true, false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnCurrentUserOpened');
-});
-
-/* APPLY CURRENT USER CLASS WHEN SWITCHED BETWEEN DOCKED CHAT ------------------------------------------------------- */
-
-Zehn.observeRootForCallback('.friendsListContainer', '#zehnToggleUser', (root, target) => {
-  if (target.classList.contains('zehnToggled')) {
-    const currentUser = root.querySelector('.currentUserContainer');
-
-    if (!currentUser.classList.contains('zehnCurrentUserOpened')) {
-      currentUser.classList.add('zehnCurrentUserOpened');
-    }
-  };
 });
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
@@ -51,27 +40,23 @@ Zehn.observeRootForCallback('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', (root, t
 
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
-Zehn.checkButtonToggle('.chatDialogs', '.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
-Zehn.addButton('.MultiUserChat', '.chatRoomOptions', '.zehnToggleSettingsButtons', true, false, (root, target, button) => {
+Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
+Zehn.addButton('.MultiUserChat', '.chatRoomOptions', '.zehnToggleSettingsButtons', ['zehnButton', 'zehnReveal'], true, false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
 });
 
 /* TOGGLE GROUP CHAT CHANNEL PAGELIST ------------------------------------------------------------------------------- */
 
-Zehn.checkButtonToggle('.chatDialogs', '.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
-Zehn.addButton('.MultiUserChat', '.chatRoomOptions', '.zehnToggleChannelList', true, false, (root, target, button) => {
+Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
+Zehn.addButton('.MultiUserChat', '.chatRoomOptions', '.zehnToggleChannelList', ['zehnButton', 'zehnReveal'], true, false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
 });
 
 /* TOGGLE MEMBER LIST STATUS ---------------------------------------------------------------------------------------- */
 
-Zehn.observeRootForCallback('.multiChatDialog', '.MultiUserChat', (root, target) => {
-  const toggle = target.querySelector('.MemberListOption.ToggleMemberListView');
-  const header = target.querySelector('.chatRoomOptions');
-  if (header && toggle) {
-    header.append(toggle);
-  }
-});
+Zehn.moveAppend('.MultiUserChat', '.chatRoomOptions', [
+  '.MemberListOption.ToggleMemberListView'
+]);
 
 /* MOVE GROUP CHAT BROADCAST BUTTON INTO HEADER --------------------------------------------------------------------- */
 
@@ -85,15 +70,46 @@ Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogCo
   '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // CHAT ROOM NAME
 ]);
 
-/* MOVE CURRENT USER CONTAINER TO FOOTER IF IT DIDN'T BREAK --------------------------------------------------------- */
-
-// Zehn.movePrepend('.friendsListContainer', '.friendListFooter', [
-//   '.currentUserContainer' // CURRENT USER
-// ]);
-
 /* MOVE CHAT EMBED BUTTONS ------------------------------------------------------------------------------------------ */
 
 Zehn.moveAppend('.msg', '.BBCodeResizableComponent.chatVideoContainer', [
   '.Panel > .chatImageURL' // POP OUT VIDEO
 ]);
 Zehn.removeDuplicatedElement('.msg', '.BBCodeResizableComponent.chatVideoContainer', '.chatImageURL', 0);
+
+/* REVEAL FRRIENDS -------------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.friendsTabButtonsContainer', [
+  '.searchIconButton', // SEARCH
+  '.friendRequestButton', // REQUESTS
+  '.addFriendButton' // ADD
+]);
+
+Zehn.reveal('.friendsTabButtonsContainer'); // FRIENDS CONTROLS
+
+/* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.chatRoomHeader', [
+  '.doGxCBJrGimabHm365bOV', // STREAM
+  '.chatRoomButton.ManageNotifications', // NOTIFICATION SETTINGS
+  '.chatRoomButton.InviteToGroupChat', // INVITE TO GROUP CHAT
+  '.chatRoomButton.GroupChatSettings', // GROUP CHAT SETTINGS
+  '.MemberListOption.ToggleMemberListView' // TOGGLE MEMBER LIST
+]);
+
+Zehn.reveal('.chatRoomHeader'); // CHAT HEADER
+
+/* REVEAL CHAT ENTRY ------------------------------------------------------------------------------------------------ */
+
+// Zehn.addRevealClass('.chatEntry', [
+//   '._3Ule3rolhZJiBN4yNNtk1s .RVIs84dAE6wHcjH9tkinc', // ENTER
+//   '.RVIs84dAE6wHcjH9tkinc.Aupswi7-c-w3XwNO5cp2i', // EMOTICON
+//   '.RVIs84dAE6wHcjH9tkinc._3zOBeq5W4cNK3lRz_7aroW', // EMBED
+//   '.ChatMessageEntryVoice .VoiceToggle' // VOICE
+// ]);
+
+// Zehn.addRevealClassOnMutation('.chatEntry', [
+//   '._3Ule3rolhZJiBN4yNNtk1s .RVIs84dAE6wHcjH9tkinc' // ENTER
+// ]);
+
+// Zehn.reveal('.chatEntry'); // CHAT BAR

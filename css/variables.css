@@ -571,6 +571,9 @@
   --zehn-color-virtualmenu-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
   --zehn-color-virtualmenu-background-selected: var(--zehn-color-accent-50);
   --zehn-color-virtualmenu-border: var(--zehn-color-accent-100);
+
+  --zehn-color-reveal: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
+  --zehn-color-reveal-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
 }
 
 @media (prefers-contrast: more) {
@@ -1384,8 +1387,9 @@
   --zehn-blend-space: var(--option-blend-space, oklab);
 
   /* TRANSPARENCY */
-  --zehn-transparency-window: var(--option-transparency-window, var(--zehn-color-base));
-  --zehn-transparency-acrylic: var(--option-transparency-acrylic, var(--zehn-color-section));
+  --zehn-transparency-window: var(--option-transparency-window, transparent);
+  --zehn-transparency-acrylic: var(--option-transparency-acrylic, var(--zehn-color-acrylic));
+  --zehn-reveal: var(--option-reveal, 1);
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -1712,6 +1716,9 @@
   /* BLUR */
   --zehn-size-blur-acrylic: 30px;
   --zehn-size-blur-light: 4px;
+
+  /* REVEAL */
+  --zehn-size-reveal-border: 1px;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
