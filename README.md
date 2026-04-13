@@ -144,7 +144,7 @@ In Zehn, when `Transparency Effects` is enabled, controls in several primary pan
 * On the server list window...
   * Controls panel.
 
-![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.png)
+![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.gif)
 
 ### Mascots
 You can give your waifu a home in your library by adding a mascot in Steam's UI folder.
