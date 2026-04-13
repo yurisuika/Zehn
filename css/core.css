@@ -3021,27 +3021,43 @@ button.TextButton {
   font-size: var(--zehn-size-14) !important;
 }
 
+/* clOUD SYNC ERROR */
+button.DialogButton._3Cdin80d-hVsakHUZboheb._1qG6xUlNu-qvdhpSxwed5,
 a,
 .DialogBody a,
 .textLink,
 button.TextButton {
+  line-height: inherit !important;
+  height: inherit !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   text-decoration: none !important;
   color: var(--zehn-color-link) !important;
-}
+  outline: none !important;
+  border: none !important;
+  background: transparent !important;
 
-a:hover,
-.DialogBody a:hover,
-.textLink:hover,
-button.TextButton:hover {
-  color: var(--zehn-color-link-hover) !important;
-}
+  &:focus {
+    color: var(--zehn-color-link) !important;
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
 
-a:active,
-.DialogBody a:active,
-.textLink:active,
-button.TextButton:active {
-  color: var(--zehn-color-link-active) !important;
+  &:hover,
+  &:hover:focus {
+    color: var(--zehn-color-link-hover) !important;
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  &:active,
+  &:active:focus {
+    color: var(--zehn-color-link-active) !important;
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -3681,9 +3697,16 @@ body:not(.WindowFocus) #zehnToggleFriendsHeaderIcon {
   padding: 0 !important;
 }
 
-.ModalDialogPopup .DialogContent, .ModalOverlayContent .DialogContent {
+.ModalDialogPopup .DialogContent,
+.ModalOverlayContent .DialogContent {
+  padding-top: 0 !important;
+}
+
+.ModalDialogPopup:has(.TitleBar) .DialogContent,
+.ModalOverlayContent:has(.TitleBar) .DialogContent {
   padding-top: var(--zehn-size-titlebar-height) !important;
 }
+
 
 .ModalDialogPopup .DialogContent:has(._3Sf_ShCtdfWp5P04k2cIgp) {
   padding-top: 0 !important;
