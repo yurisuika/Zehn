@@ -222,6 +222,26 @@ const Zehn = {
     });
   },
 
+  createIconTitleContainer(rootSelector, targetSelector) {
+    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      if (target.children.length == 0) {
+        const container = document.createElement('div');
+        container.classList.add('zehnListContainer');
+        target.append(container);
+
+        const title = document.createElement('div');
+        title.classList.add('zehnListTitle');
+        container.append(title);
+        title.textContent = target.childNodes[0].textContent;
+        target.childNodes[0].remove();
+
+        const icon = document.createElement('div');
+        icon.classList.add('zehnListIcon');
+        container.prepend(icon);
+      }
+    });
+  },
+
   addRevealClass(rootSelector, targetSelectors, isList = false) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 

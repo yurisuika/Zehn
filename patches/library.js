@@ -292,6 +292,10 @@ Zehn.moveAppendAndObserve('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', [
   '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
 ]);
 
+/* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
+
+Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl');
+
 /* REVEAL SIDEBAR --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
@@ -394,3 +398,36 @@ Zehn.addRevealClassOnMutation('._2oua5ZJCOVQf0Vwgk7teo', [
 ], true);
 
 Zehn.reveal('._2oua5ZJCOVQf0Vwgk7teo'); // PAGE LIST
+
+/* REVEAL OVERLAY EXIT ---------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.fi6UDkxJq66MLo2z9wabQ', [
+  '.BoygotvcKo4DC4dSix8G3', // CLOSE
+  '.mh8m9p4PBg_Qrev1bfTzc' // BACK TO GAME
+]);
+
+Zehn.reveal('.fi6UDkxJq66MLo2z9wabQ'); // BAR
+
+/* REVEAL OVERLAY WINDOWS ------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._1EI98QaSW75zbVd3gxgBfS', [
+  '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
+]);
+
+Zehn.addRevealClassOnMutation('._1EI98QaSW75zbVd3gxgBfS', [
+  '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
+]);
+
+Zehn.reveal('._1EI98QaSW75zbVd3gxgBfS'); // BAR
+
+/* REVEAL CLOCK/TIMER ----------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._1JTFbdOLNdh4RmamEfRS39', [
+  '.HijmccPB1BKyhOwhX1EVl' // BUTTONS
+]);
+
+Zehn.addRevealClassOnMutation('._1JTFbdOLNdh4RmamEfRS39', [
+  '.HijmccPB1BKyhOwhX1EVl' // BUTTONS
+]);
+
+Zehn.reveal('._1JTFbdOLNdh4RmamEfRS39'); // PANEL

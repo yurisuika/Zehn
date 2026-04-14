@@ -24,23 +24,7 @@ Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', '#zehnTog
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
-Zehn.observeRootForCallback('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', (root, target) => {
-  if (target.children.length == 0) {
-    const container = document.createElement('div');
-    container.classList.add('zehnListContainer');
-    target.append(container);
-
-    const title = document.createElement('div');
-    title.classList.add('zehnListTitle');
-    container.append(title);
-    title.textContent = target.childNodes[0].textContent;
-    target.childNodes[0].remove();
-
-    const icon = document.createElement('div');
-    icon.classList.add('zehnListIcon');
-    container.prepend(icon);
-  }
-});
+Zehn.createIconTitleContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV');
 
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
