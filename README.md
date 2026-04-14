@@ -1,5 +1,5 @@
 # Zehn
-Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design language. It comes in both dark and light modes with lots of customization!
+Zehn is a Steam skin based on Windows 10's transitional design language. It comes in both dark and light modes with lots of customization!
 
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is technically known as MDL2, the first iteration of Fluent Design. It is a transitional design language that retains the sharp lines and minimalistic icons of Metro and merges them with reactive Fluent effects such as Acrylic and Reveal that evolved into Fluent 2 for Windows 11. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
