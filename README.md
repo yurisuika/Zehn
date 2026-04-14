@@ -126,7 +126,7 @@ Some windows have reactive panels that change into an acrylic blur on window foc
 * Panels that overlay and blur Steam content below them, such as the main window navbar.
 * Panels that blur the window background. These include various settings windows, notes, friends and chat. Of these, some are supported to give Steam a transparent background when using the DWMX plugin for Millennium. This allows the Acrylic to actually show through below the window and blur whatever is below it. You may need additional software to get a blur working, as at this time DWMX's blur is noted to not work (I recommend using Windhawk's `Translucent Windows` mod). Presently, the only windows that support this functionality are the pagelisted settings windows.
 
-![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.png)
+![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.gif)
 
 ### Reveal
 Reveal is a Fluent Design effect that reveals some hidden details to certain controls in a radial gradient around the mouse pointer.
