@@ -359,11 +359,13 @@ Zehn.reveal('._2X_ZpO2X_CIOIEfml3ZTcX'); // SERVERS HEADER
 
 Zehn.addRevealClass('.PageListColumn', [
   '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
+  '._2mL2HfT5AkDXRi1YBnRWKa', // CONTROLLER SETTINGS LIST ENTRY
   '._3Sjbkvk647UKKVLX6J7gsW' // NEW NOTE
 ], true)
 
 Zehn.addRevealClassOnMutation('.PageListColumn', [
-  '._1-vlriAtKYDViAEunue4VO' // LIST ENTRY
+  '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
+  '._2mL2HfT5AkDXRi1YBnRWKa' // CONTROLLER SETTINGS LIST ENTRY
 ], true)
 
 Zehn.reveal('.PageListColumn'); // PAGELIST
@@ -380,3 +382,15 @@ Zehn.addRevealClassOnMutation('.xSTLmzylFJdIfak7ZdhuA', [
 ], true)
 
 Zehn.reveal('.xSTLmzylFJdIfak7ZdhuA'); // PAGELIST
+
+/* REVEAL CONTROLLER SETTINGS --------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._2oua5ZJCOVQf0Vwgk7teo', [
+  '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
+], true);
+
+Zehn.addRevealClassOnMutation('._2oua5ZJCOVQf0Vwgk7teo', [
+  '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
+], true);
+
+Zehn.reveal('._2oua5ZJCOVQf0Vwgk7teo'); // PAGE LIST

@@ -1,13 +1,13 @@
 # Zehn
 Zehn is a Steam skin based on Windows 10's Metro/Fluent transitional design language. It comes in both dark and light modes with lots of customization!
 
-Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is known as MDL2, the first iteration of Fluent Design. It isn't quite the Metro of Windows 8 or the Fluent 2 of Windows 11. Rather, it is a transitional design language that retains the sharp lines and minimalistic icons of Metro and merges them with reactive Fluent effects such as Acrylic and Reveal that evolved into Fluent 2 for Windows 11. Both of these names were already used for other skins, but still neither quite fit anyways. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
+Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is technically known as MDL2, the first iteration of Fluent Design. It is a transitional design language that retains the sharp lines and minimalistic icons of Metro and merges them with reactive Fluent effects such as Acrylic and Reveal that evolved into Fluent 2 for Windows 11. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
 ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/zehn.png)
 
 ## Make Steam Look Like A Native App!
 
-Part of the design philosophy behind Zehn is to de-clutter Steam. Not everything needs to be thrown in your face at once. Why take up more space than is really needed?
+Part of the design philosophy behind Zehn is to only show what is always going to be relevant to your needs. The rest can be displayed when the ephemeral moment comes. Steam has a lot of visual clutter and redundancy, so Zehn seeks to alleviate you of this and let you navigate Steam without all the distraction.
 
 Some ways this is accomplished in Zehn:
 * Much is consolidated into the navigation bar in the main Steam window. The root menu is only shown when you open it via the menu button.
@@ -133,7 +133,7 @@ Reveal is a Fluent Design effect that reveals some hidden details to certain con
 
 In Zehn, when `Transparency Effects` is enabled, various interactive elements are given a Reveal effect. There are two variants of Reveal:
 * List style: This appears on pagelist entries such as settings and notes pageslists.
-* Button style: This appears on primary header control bar buttons.
+* Button style: This appears on primary control section panels.
 
 ![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.gif)
 
