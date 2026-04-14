@@ -3706,16 +3706,33 @@ body:not(.WindowFocus) #zehnToggleFriendsHeaderIcon {
   padding: 0 !important;
 }
 
+.DialogContent,
+.DialogContentTransition {
+  background: transparent !important;
+}
+
+@media (prefers-contrast: more) {
+
+  .DialogContent,
+  .DialogContentTransition {
+    background: transparent !important;
+  }
+}
+
 .ModalDialogPopup .DialogContent,
 .ModalOverlayContent .DialogContent {
   padding-top: 0 !important;
 }
 
 .ModalDialogPopup:has(.TitleBar) .DialogContent,
-.ModalOverlayContent:has(.TitleBar) .DialogContent {
+.ModalOverlayContent:has(.ModalPosition_Dismiss) .DialogContent {
   padding-top: var(--zehn-size-titlebar-height) !important;
 }
 
+.ModalDialogPopup:has(.TitleBar) .DialogContentTransition.ZjHHXZlnZhCahNrBFplWc .DialogContent {
+  /* OVERLAY CONTROLLER SETTINGS */
+  padding-top: var(--zehn-size-padding-medium) !important;
+}
 
 .ModalDialogPopup .DialogContent:has(._3Sf_ShCtdfWp5P04k2cIgp) {
   padding-top: 0 !important;
@@ -3778,6 +3795,11 @@ body:not(.WindowFocus) #zehnToggleFriendsHeaderIcon {
   gap: var(--zehn-size-gap-medium) !important;
   display: flex !important;
   flex-direction: column !important;
+}
+
+.DialogContent._3mgb-3_dHk3POEOVOh0Dvp .DialogBody {
+  /* OVERLAY CONTROLLER SETTINGS BECAUSE DIALOG CONTENT HAS PADDING */
+  padding: 0 !important;
 }
 
 .DialogBody {
@@ -4201,6 +4223,15 @@ body.WindowFocus:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):
   background: transparent !important;
 }
 
+.ModalOverlayContent.active .DialogContent._DialogLayout:not(.CFTLX2wIKOK3hNV-fS7_V) {
+  border: var(--zehn-size-border) solid var(--zehn-color-border) !important;
+  background: var(--zehn-color-base) !important;
+}
+
+.WindowFocus .ModalOverlayContent.active .DialogContent._DialogLayout:not(.CFTLX2wIKOK3hNV-fS7_V) {
+  border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important;
+}
+
 /* NOTIFICATIONS BORDER */
 body.zXrpABNQHpWKgSzqnGlL {
   border: none !important;
@@ -4213,6 +4244,13 @@ body.zXrpABNQHpWKgSzqnGlL {
   height: 0 !important;
 }
 
+/* TOPBAR */
+.ModalPosition_TopBar {
+  min-height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
+
 /* WINDOW CONTROLS */
 ._39oUCO1OuizVPwcnnv88no .qP17eBPXkfezFfexZ4hC3 {
   flex: 0 1 calc(var(--zehn-size-titlebar-width) * 3) !important;
@@ -4222,6 +4260,13 @@ body.zXrpABNQHpWKgSzqnGlL {
 
 .title-bar-actions.window-controls {
   min-width: fit-content !important;
+}
+
+.ModalDialogPopup .ModalDialogBody:not(._1UJDmU3N-pkv7oTJ_Zf9nK):not(.l25AfossKXBOZGYoty0tM) .title-area,
+.ModalDialogPopup .ModalDialogBody._1UJDmU3N-pkv7oTJ_Zf9nK .GameNotes .title-area {
+  right: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
 }
 
 .title-area,
