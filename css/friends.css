@@ -46,7 +46,8 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   flex-direction: column !important;
 }
 
-.friendListHeaderContainer, .ChatTabs {
+.friendListHeaderContainer,
+.ChatTabs {
   /* background-color: transparent !important; */
   /* background-color: var(--zehn-color-section) !important; */
   background: var(--zehn-color-section-acrylic) !important;
@@ -56,32 +57,27 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   background-blend-mode: exclusion !important;
 }
 
-.WindowFocus .friendListHeaderContainer, .WindowFocus .ChatTabs {
+.WindowFocus .friendListHeaderContainer,
+.WindowFocus .ChatTabs {
   background-color: var(--zehn-color-section-acrylic-focus) !important;
 }
 
-.friendListHeaderContainer::after, .ChatTabs::after {
+.friendListHeaderContainer::after,
+.ChatTabs::after {
   content: "";
-  z-index: -1;
+  z-index: 0;
   position: absolute;
   inset: 0;
   opacity: 0;
+  pointer-events: none;
   background-image: var(--zehn-texture-acrylic);
   transition: opacity 0.2s ease-in-out;
 }
 
-.WindowFocus .friendListHeaderContainer::after, .WindowFocus .ChatTabs::after {
-  opacity: 1 !important;
+.WindowFocus .friendListHeaderContainer::after,
+.WindowFocus .ChatTabs::after {
+  opacity: var(--zehn-transparency);
 }
-
-/* .friendListHeaderContainer .TitleBar,
-.ChatTabs .TitleBar {
-  background-color: var(--zehn-color-section) !important;
-}
-
-.friendListHeaderContainer>div {
-  background-color: transparent !important;
-} */
 
 .friendlist .friendListHeaderContainer .friendListCollapse {
   transition: none !important;

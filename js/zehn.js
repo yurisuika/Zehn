@@ -60,6 +60,35 @@ const Zehn = {
     };
   },
 
+  observeTargetForCallback(targetSelector, callback) {
+    const processed = new WeakSet();
+
+    function handleTarget(target) {
+      if (processed.has(target)) return;
+      processed.add(target);
+      try { callback(target); } catch (e) { console.error(e); }
+    }
+
+    const documentObserver = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'childList') {
+          for (const node of mutation.addedNodes) {
+            if (!(node instanceof Element)) continue;
+              if (node.matches && node.matches(targetSelector)) handleTarget(node);
+              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(i => handleTarget(i));
+          }
+        }
+      }
+    });
+    documentObserver.observe(document.body || document, { childList: true, subtree: true });
+
+    return {
+      disconnect() {
+        documentObserver.disconnect();
+      }
+    };
+  },
+
   observeForCallback(root, targetSelector, callback) {
     const processed = new WeakSet();
 
@@ -242,6 +271,23 @@ const Zehn = {
     });
   },
 
+  createImgContainer(rootSelector, targetSelector) {
+    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      const container = document.createElement('div');
+      container.classList.add('zehnImgContainer');
+      root.append(container);
+      container.append(target);
+    });
+  },
+
+  createSeparator(rootSelector, targetSelector) {
+    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      const container = document.createElement('div');
+      container.classList.add('zehnSeparator');
+      target.before(container || '');
+    });
+  },
+
   addRevealClass(rootSelector, targetSelectors, isList = false) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
@@ -274,114 +320,124 @@ const Zehn = {
     });
   },
 
-  reveal(rootSelector) {
+  revealInner(containerSelector) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
-    this.observeRootForCallback(rootSelector, '.zehnReveal', (root, target) => {
-      // const targets = Array.from(document.querySelectorAll('.zehnReveal'));
-      const targets = [target];
-      const maskSize = 200;
-      const halfMask = maskSize / 2;
-
-      let rootRect = root.getBoundingClientRect();
-      let targetOffsets = new Map();
-      let pending = false;
-      let pointerX = 0, pointerY = 0;
-      let pointerInside = false;
-
-      function refreshRects() {
-        rootRect = root.getBoundingClientRect();
-        targetOffsets.clear();
-        for (const t of targets) {
-          const r = t.getBoundingClientRect();
-          targetOffsets.set(t, {
-            left: r.left - rootRect.left,
-            top: r.top - rootRect.top,
-            width: r.width,
-            height: r.height,
-          });
-        }
-      }
-
-      function applyMaskToTarget(t, px, py) {
-        const pos = `${px}px ${py}px`;
-        const size = `${maskSize}px ${maskSize}px`;
-        t.style.maskPosition = pos;
-        t.style.webkitMaskPosition = pos;
-        t.style.maskSize = size;
-        t.style.webkitMaskSize = size;
-      }
-
-      function hideMaskOnTarget(t) {
-        const pos = `0px 0px`;
-        const size = `0px 0px`;
-        t.style.maskPosition = pos;
-        t.style.webkitMaskPosition = pos;
-        t.style.maskSize = size;
-        t.style.webkitMaskSize = size;
-      }
-
-      function updateMasks() {
-        if (!pointerInside) {
-          for (const t of targets) hideMaskOnTarget(t);
-        } else {
-          for (const t of targets) {
-            const off = targetOffsets.get(t);
-            if (!off) continue;
-
-            const px = Math.round(pointerX - off.left - halfMask);
-            const py = Math.round(pointerY - off.top - halfMask);
-
-            const key = `${px},${py}`;
-            if (t.__lastMaskPos === key) continue;
-            t.__lastMaskPos = key;
-
-            applyMaskToTarget(t, px, py);
-          }
-        }
-        pending = false;
-      }
-
-      root.addEventListener('pointermove', (e) => {
-        pointerX = e.clientX - rootRect.left;
-        pointerY = e.clientY - rootRect.top;
-
-        pointerInside =
-          pointerX >= 0 &&
-          pointerX <= rootRect.width &&
-          pointerY >= 0 &&
-          pointerY <= rootRect.height;
-
-        if (!pending) {
-          pending = true;
-          requestAnimationFrame(updateMasks);
-        }
-      }, { passive: true });
-
-      root.addEventListener('pointerleave', () => {
-        pointerInside = false;
-        if (!pending) {
-          pending = true;
-          requestAnimationFrame(updateMasks);
-        }
-      });
-
-      root.addEventListener('pointerenter', () => {
-        refreshRects();
-        pointerInside = true;
-      });
-
-      let refreshTimer = 100;
-      function scheduleRefreshRects() {
-        clearTimeout(refreshTimer);
-        refreshTimer = setTimeout(refreshRects, 100);
-      }
-      window.addEventListener('resize', scheduleRefreshRects, { passive: true });
-      window.addEventListener('scroll', scheduleRefreshRects, { passive: true });
-
-      refreshRects();
-
+    this.observeRootForCallback(containerSelector, '.zehnReveal', (container, revealed) => {
+      this.reveal(container, revealed);
     });
+  },
+
+  revealSelf(selfSelector) {
+    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
+
+    this.observeTargetForCallback(selfSelector, (revealed) => {
+      this.reveal(revealed, revealed);
+    });
+  },
+
+  reveal(container, revealed) {
+    const targets = [revealed];
+    const maskSize = 200;
+    const halfMask = maskSize / 2;
+
+    let containerRect = container.getBoundingClientRect();
+    let targetOffsets = new Map();
+    let pending = false;
+    let pointerX = 0, pointerY = 0;
+    let pointerInside = false;
+
+    function refreshRects() {
+      containerRect = container.getBoundingClientRect();
+      targetOffsets.clear();
+      for (const t of targets) {
+        const r = t.getBoundingClientRect();
+        targetOffsets.set(t, {
+          left: r.left - containerRect.left,
+          top: r.top - containerRect.top,
+          width: r.width,
+          height: r.height,
+        });
+      }
+    }
+
+    function applyMaskToTarget(t, px, py) {
+      const pos = `${px}px ${py}px`;
+      const size = `${maskSize}px ${maskSize}px`;
+      t.style.maskPosition = pos;
+      t.style.webkitMaskPosition = pos;
+      t.style.maskSize = size;
+      t.style.webkitMaskSize = size;
+    }
+
+    function hideMaskOnTarget(t) {
+      const pos = `0px 0px`;
+      const size = `0px 0px`;
+      t.style.maskPosition = pos;
+      t.style.webkitMaskPosition = pos;
+      t.style.maskSize = size;
+      t.style.webkitMaskSize = size;
+    }
+
+    function updateMasks() {
+      if (!pointerInside) {
+        for (const t of targets) hideMaskOnTarget(t);
+      } else {
+        for (const t of targets) {
+          const off = targetOffsets.get(t);
+          if (!off) continue;
+
+          const px = Math.round(pointerX - off.left - halfMask);
+          const py = Math.round(pointerY - off.top - halfMask);
+
+          const key = `${px},${py}`;
+          if (t.__lastMaskPos === key) continue;
+          t.__lastMaskPos = key;
+
+          applyMaskToTarget(t, px, py);
+        }
+      }
+      pending = false;
+    }
+
+    container.addEventListener('pointermove', (e) => {
+      pointerX = e.clientX - containerRect.left;
+      pointerY = e.clientY - containerRect.top;
+
+      pointerInside =
+        pointerX >= 0 &&
+        pointerX <= containerRect.width &&
+        pointerY >= 0 &&
+        pointerY <= containerRect.height;
+
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(updateMasks);
+      }
+    }, { passive: true });
+
+    container.addEventListener('pointerleave', () => {
+      pointerInside = false;
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(updateMasks);
+      }
+    });
+
+    container.addEventListener('pointerenter', () => {
+      refreshRects();
+      pointerInside = true;
+    });
+
+    let refreshTimer = 100;
+    function scheduleRefreshRects() {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(refreshRects, 100);
+    }
+    window.addEventListener('resize', scheduleRefreshRects, { passive: true });
+    window.addEventListener('scroll', scheduleRefreshRects, { passive: true });
+
+    refreshRects();
   }
 };
 

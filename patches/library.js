@@ -9,6 +9,51 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
+/* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
+]);
+
+Zehn.addRevealClassOnMutation('._2EstNjFIIZm_WUSKm5Wt7n', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
+]);
+
+Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+
+/* REVEAL DROPDOWN -------------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
+  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE)' // DROPDOWN ENTRY
+]);
+
+Zehn.addRevealClassOnMutation('._30wJO3MC4x-I1OWpy1TAeE', [
+  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE)' // DROPDOWN ENTRY
+]);
+
+Zehn.revealSelf('._2oAiZidGyUxL-hfupFDQ2m.zehnReveal');
+
+/* REVEAL NOTIFICATION MENU ----------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
+  '.QFW0BtI4l77AFmv1xLAkx', // ALL
+  '._3B8wRA4H7e_oSksYNqpSPv', // STANDARD
+  '._25gii5r23MmAqXvLZj24tK', // PINNED WEB
+  '._3k90ug209sE23xAMqcM74s' // PINNED DESKTOP
+]);
+
+Zehn.addRevealClassOnMutation('._2EstNjFIIZm_WUSKm5Wt7n', [
+  '.QFW0BtI4l77AFmv1xLAkx', // ALL
+  '._3B8wRA4H7e_oSksYNqpSPv', // STANDARD
+  '._25gii5r23MmAqXvLZj24tK', // PINNED WEB
+  '._3k90ug209sE23xAMqcM74s' // PINNED DESKTOP
+]);
+
+Zehn.revealSelf('.QFW0BtI4l77AFmv1xLAkx.zehnReveal');
+Zehn.revealSelf('._3B8wRA4H7e_oSksYNqpSPv.zehnReveal');
+Zehn.revealSelf('._25gii5r23MmAqXvLZj24tK.zehnReveal');
+Zehn.revealSelf('._3k90ug209sE23xAMqcM74s.zehnReveal');
+
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
 Zehn.observeRootForCallback('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
@@ -292,9 +337,30 @@ Zehn.moveAppendAndObserve('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', [
   '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
 ]);
 
+/* MOVE SUPERNAV AND ROOT MENU LIST ITEMS INTO CONTAINERS ----------------------------------------------------------- */
+
+Zehn.createIconTitleContainer('.Store_Supernav', '.contextMenuItem');
+Zehn.createIconTitleContainer('.Library_Supernav', '.contextMenuItem');
+Zehn.createIconTitleContainer('.Community_Supernav', '.contextMenuItem');
+Zehn.createIconTitleContainer('.Profile_Supernav', '.contextMenuItem');
+
+Zehn.createIconTitleContainer('.Steam_Root_Menu', '.contextMenuItem');
+Zehn.createIconTitleContainer('.View_Root_Menu', '.contextMenuItem');
+Zehn.createIconTitleContainer('.Friends_Root_Menu', '.contextMenuItem');
+Zehn.createIconTitleContainer('.Games_Root_Menu', '.contextMenuItem');
+Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
+
+/* ADD PLAY IMG INTO CONTAINER -------------------------------------------------------------------------------------- */
+
+Zehn.createImgContainer('.jjN9CtYfeIJoHpKOCmKOx', '._2co0ek5jbAvxuML8CcgsBy');
+
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
 Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl');
+
+/* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
+
+Zehn.createSeparator('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE');
 
 /* REVEAL SIDEBAR --------------------------------------------------------------------------------------------------- */
 
@@ -310,7 +376,7 @@ Zehn.addRevealClassOnMutation('._1ZS_xta5HMXzR8JgxDH6n7', [
   '._3mzKdQXht__YHo6PX1LmB6', // FILTERS (LINUX, SORT BY, READY TO PLAY)
 ]);
 
-Zehn.reveal('._1ZS_xta5HMXzR8JgxDH6n7'); // SIDEBAR
+Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
 
 /* REVEAL PLAYBAR --------------------------------------------------------------------------------------------------- */
 
@@ -330,7 +396,7 @@ Zehn.addRevealClassOnMutation('._9EHg918wH6CQCQlD5PWOO', [
   '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
 ]);
 
-Zehn.reveal('._3fLo166MlaNqP8r8tTyRz'); // PLAYBAR
+Zehn.revealInner('._3fLo166MlaNqP8r8tTyRz');
 
 /* REVEAL MEDIA LIBRARY --------------------------------------------------------------------------------------------- */
 
@@ -339,7 +405,7 @@ Zehn.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
   '._36KTbApKz0VLY9Q6lGt4aH' // SEARCH
 ]);
 
-Zehn.reveal('.YzIcpcz4oFx-nndxro5jE'); // IMAGE LIST
+Zehn.revealInner('.YzIcpcz4oFx-nndxro5jE');
 
 /* REVEAL SCREENSHOT ------------------------------------------------------------------------------------------------ */
 
@@ -348,7 +414,7 @@ Zehn.reveal('.YzIcpcz4oFx-nndxro5jE'); // IMAGE LIST
 //   '._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy' // BUTTONS
 // ]);
 
-// Zehn.reveal('.DKXVRVBokaW_Xxo6kyKq0'); // IMAGE PAGE
+// Zehn.revealChildren('.DKXVRVBokaW_Xxo6kyKq0');
 
 /* REVEAL SERVERS --------------------------------------------------------------------------------------------------- */
 
@@ -357,7 +423,7 @@ Zehn.addRevealClass('._2X_ZpO2X_CIOIEfml3ZTcX', [
   '.DialogDropDown' // DROPDOWN
 ]);
 
-Zehn.reveal('._2X_ZpO2X_CIOIEfml3ZTcX'); // SERVERS HEADER
+Zehn.revealInner('._2X_ZpO2X_CIOIEfml3ZTcX');
 
 /* REVEAL SETTINGS + NOTES ------------------------------------------------------------------------------------------ */
 
@@ -372,7 +438,7 @@ Zehn.addRevealClassOnMutation('.PageListColumn', [
   '._2mL2HfT5AkDXRi1YBnRWKa' // CONTROLLER SETTINGS LIST ENTRY
 ], true)
 
-Zehn.reveal('.PageListColumn'); // PAGELIST
+Zehn.revealInner('.PageListColumn');
 
 /* REVEAL GROUP CHAT SETTINGS --------------------------------------------------------------------------------------- */
 
@@ -385,7 +451,7 @@ Zehn.addRevealClassOnMutation('.xSTLmzylFJdIfak7ZdhuA', [
   '._2YV0m3IRCNOoUV9YhJNFnV' // LIST ENTRY
 ], true)
 
-Zehn.reveal('.xSTLmzylFJdIfak7ZdhuA'); // PAGELIST
+Zehn.revealInner('.xSTLmzylFJdIfak7ZdhuA');
 
 /* REVEAL CONTROLLER SETTINGS --------------------------------------------------------------------------------------- */
 
@@ -397,7 +463,7 @@ Zehn.addRevealClassOnMutation('._2oua5ZJCOVQf0Vwgk7teo', [
   '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
 ], true);
 
-Zehn.reveal('._2oua5ZJCOVQf0Vwgk7teo'); // PAGE LIST
+Zehn.revealInner('._2oua5ZJCOVQf0Vwgk7teo');
 
 /* REVEAL OVERLAY EXIT ---------------------------------------------------------------------------------------------- */
 
@@ -406,7 +472,7 @@ Zehn.addRevealClass('.fi6UDkxJq66MLo2z9wabQ', [
   '.mh8m9p4PBg_Qrev1bfTzc' // BACK TO GAME
 ]);
 
-Zehn.reveal('.fi6UDkxJq66MLo2z9wabQ'); // BAR
+Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
 
 /* REVEAL OVERLAY WINDOWS ------------------------------------------------------------------------------------------- */
 
@@ -418,7 +484,7 @@ Zehn.addRevealClassOnMutation('._1EI98QaSW75zbVd3gxgBfS', [
   '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
 ]);
 
-Zehn.reveal('._1EI98QaSW75zbVd3gxgBfS'); // BAR
+Zehn.revealInner('._1EI98QaSW75zbVd3gxgBfS');
 
 /* REVEAL CLOCK/TIMER ----------------------------------------------------------------------------------------------- */
 
@@ -430,4 +496,4 @@ Zehn.addRevealClassOnMutation('._1JTFbdOLNdh4RmamEfRS39', [
   '.HijmccPB1BKyhOwhX1EVl' // BUTTONS
 ]);
 
-Zehn.reveal('._1JTFbdOLNdh4RmamEfRS39'); // PANEL
+Zehn.revealInner('._1JTFbdOLNdh4RmamEfRS39');

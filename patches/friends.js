@@ -9,6 +9,18 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
+/* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
+]);
+
+Zehn.addRevealClassOnMutation('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
+]);
+
+Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
 Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', ['zehnButton'], false, false, (root, target, button) => {
@@ -73,7 +85,7 @@ Zehn.addRevealClass('.friendsTabButtonsContainer', [
   '.addFriendButton' // ADD
 ]);
 
-Zehn.reveal('.friendsTabButtonsContainer'); // FRIENDS CONTROLS
+Zehn.revealInner('.friendsTabButtonsContainer');
 
 /* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
 
@@ -85,7 +97,7 @@ Zehn.addRevealClass('.chatRoomHeader', [
   '.MemberListOption.ToggleMemberListView' // TOGGLE MEMBER LIST
 ]);
 
-Zehn.reveal('.chatRoomHeader'); // CHAT HEADER
+Zehn.revealInner('.chatRoomHeader');
 
 /* REVEAL CHAT ENTRY ------------------------------------------------------------------------------------------------ */
 
@@ -100,7 +112,7 @@ Zehn.reveal('.chatRoomHeader'); // CHAT HEADER
 //   '._3Ule3rolhZJiBN4yNNtk1s .RVIs84dAE6wHcjH9tkinc' // ENTER
 // ]);
 
-// Zehn.reveal('.chatEntry'); // CHAT BAR
+// Zehn.revealChildren('.chatEntry');
 
 /* REVEAL CHAT CHANNEL LIST ----------------------------------------------------------------------------------------- */
 
@@ -118,4 +130,4 @@ Zehn.addRevealClassOnMutation('.chatRoomGroupNavColumn', [
   '.chatRoomVoiceChannel' // VOICE
 ], true);
 
-Zehn.reveal('.chatRoomGroupNavColumn'); // PAGELIST
+Zehn.revealInner('.chatRoomGroupNavColumn');

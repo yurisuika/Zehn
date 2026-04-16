@@ -1519,8 +1519,67 @@ select,
 /* DIALOG */
 .DialogDropDown._DialogInputContainer,
 /* CONTROLLER SETTINGS */
-._3OHR1e3u08hK7hMx4fFy_L,
-/* ACHIEVEMENT GROUPS PLUGIN */
+._3OHR1e3u08hK7hMx4fFy_L {
+  max-width: 100% !important;
+  min-width: 100% !important;
+  appearance: unset !important;
+  align-items: center !important;
+  gap: 0 !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+  font: var(--zehn-font-family) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  height: var(--zehn-size-dropdown-dialog) !important;
+  line-height: var(--zehn-size-dropdown-dialog-line) !important;
+  padding: var(--zehn-size-dropdown-dialog-padding) !important;
+  font-size: var(--zehn-size-dropdown-dialog-text) !important;
+  border-radius: var(--zehn-size-dropdown-dialog-radius) !important;
+  background: var(--zehn-color-dropdown-dialog-background) padding-box !important;
+  color: var(--zehn-color-dropdown-dialog-text) !important;
+  border: var(--zehn-size-dropdown-dialog-border) solid var(--zehn-color-dropdown-dialog-border) !important;
+
+  &:focus {
+    background-color: var(--zehn-color-dropdown-dialog-background-focus) !important;
+    color: var(--zehn-color-dropdown-dialog-text-focus) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-focus) !important;
+  }
+
+  &:hover {
+    background-color: var(--zehn-color-dropdown-dialog-background-hover) !important;
+    color: var(--zehn-color-dropdown-dialog-text-hover) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-hover) !important;
+  }
+
+  &:hover:focus {
+    background-color: var(--zehn-color-dropdown-dialog-background-hover-focus) !important;
+    color: var(--zehn-color-dropdown-dialog-text-hover-focus) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-hover-focus) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-dropdown-dialog-background-active) !important;
+    color: var(--zehn-color-dropdown-dialog-text-active) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-active) !important;
+  }
+
+  &:active:focus {
+    background-color: var(--zehn-color-dropdown-dialog-background-active-focus) !important;
+    color: var(--zehn-color-dropdown-dialog-text-active-focus) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-active-focus) !important;
+  }
+
+  &.Disabled,
+  .Disabled:is(:hover, :active, :focus),
+  :disabled,
+  :disabled:is(:hover, :active, :focus) {
+    background-color: var(--zehn-color-dropdown-dialog-background-disabled) !important;
+    color: var(--zehn-color-dropdown-dialog-text-disabled) !important;
+    border-color: var(--zehn-color-dropdown-dialog-border-disabled) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ACHIEVEMENTS PLUGIN - SEPARATE BECAUSE OF SPECIFICITY HELL */
 .steam-hunters-achievements-page .achievements-header .DialogDropDown[type="button"] {
   max-width: 100% !important;
   min-width: 100% !important;
@@ -1674,18 +1733,6 @@ select,
   * {
     display: none !important;
   }
-}
-
-/* WHERE THE FUCK IS THIS USED AND WHAT THE HELL IS THIS ANYWAYS??? */
-select * {
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: var(--zehn-size-context-radius) !important;
-  border: var(--zehn-size-border) solid var(--zehn-color-context-dropdown-border) !important;
-  background-color: var(--zehn-color-context-dropdown-background) !important;
-  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
-  background-blend-mode: exclusion !important;
-  background-image: var(--zehn-texture-acrylic) !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -2036,10 +2083,12 @@ select * {
 
 /* TEXT AREAS - GENERIC */
 textarea,
+/* CONTEXT DROPDOWN */
+._2EstNjFIIZm_WUSKm5Wt7n .DialogInput_Wrapper>input.DialogInput.DialogTextInputBase,
 /* CHAT */
 ._113iuw_HlE_qSgt9cGWCSv,
 /* CONSOLE */
-._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput,
+._2SdqX9SccD_TtDat-bNo5- .DialogInput_Wrapper>input.DialogInput.DialogTextInputBase,
 /* RECORDINGS SEARCH */
 ._36KTbApKz0VLY9Q6lGt4aH input {
   transition: none !important;
@@ -2102,6 +2151,12 @@ textarea,
     font-weight: inherit !important;
     font-style: italic !important;
   }
+}
+
+._2EstNjFIIZm_WUSKm5Wt7n .DialogInput_Wrapper>input.DialogInput.DialogTextInputBase {
+  height: var(--zehn-size-input-bar-context) !important;
+  min-height: var(--zehn-size-input-context) !important;
+  max-height: var(--zehn-size-input-context) !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -2181,8 +2236,63 @@ textarea._-8fRT1eDDVo6CU2ehlzmG,
 /* SHARE SCREENSHOT (OLD ???) */
 .qFjVwKFidyZdbmIhaENhV,
 /* EXTENDIUM STORAGE MANAGER */
-.styled-input[type="text" i],
-/* ACHIEVEMENTS PLUGIN */
+.styled-input[type="text" i] {
+  text-align: left !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  height: var(--zehn-size-input-dialog) !important;
+  line-height: var(--zehn-size-input-dialog-line) !important;
+  padding: var(--zehn-size-input-dialog-padding) !important;
+  background: var(--zehn-color-input-dialog-background) padding-box !important;
+  color: var(--zehn-color-input-dialog-text) !important;
+  font-size: var(--zehn-size-input-dialog-text) !important;
+  border-radius: var(--zehn-size-input-dialog-radius) !important;
+  border: var(--zehn-size-input-dialog-border) solid var(--zehn-color-input-dialog-border) !important;
+
+  &:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-dialog-background-focus) padding-box !important;
+    border-color: var(--zehn-color-input-dialog-border-focus) !important;
+    color: var(--zehn-color-input-dialog-text-focus) !important;
+  }
+
+  &:hover {
+    background: var(--zehn-color-input-dialog-background-hover) padding-box !important;
+    color: var(--zehn-color-input-dialog-text-hover) !important;
+    border-color: var(--zehn-color-input-dialog-border-hover) !important;
+  }
+
+  &:hover:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-dialog-background-hover-focus) padding-box !important;
+    border-color: var(--zehn-color-input-dialog-border-hover-focus) !important;
+    color: var(--zehn-color-input-dialog-text-hover-focus) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-input-dialog-background-active) padding-box !important;
+    color: var(--zehn-color-input-dialog-text-active) !important;
+    border-color: var(--zehn-color-input-dialog-border-active) !important;
+  }
+
+  &:active:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-dialog-background-active-focus) padding-box !important;
+    border-color: var(--zehn-color-input-dialog-border-active-focus) !important;
+    color: var(--zehn-color-input-dialog-text-active-focus) !important;
+  }
+
+  &:is(:disabled, :read-only) {
+    background: var(--zehn-color-input-dialog-background-disabled) padding-box !important;
+    color: var(--zehn-color-input-dialog-text-disabled) !important;
+    border-color: var(--zehn-color-input-dialog-border-disabled) !important;
+  }
+
+  &::placeholder {
+    color: var(--zehn-color-input-dialog-text-placeholder) !important;
+    font-style: italic !important;
+  }
+}
+
+/* ACHIEVEMENTS PLUGIN - SEPARATE BECAUSE OF SPECIFICITY HELL */
 .steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input {
   text-align: left !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -3654,6 +3764,7 @@ body:not(.WindowFocus) #zehnToggleFriendsHeaderIcon {
 
 .zehnReveal::before {
   content: '';
+  z-index: -1;
   position: absolute;
   inset: 0 !important;
   border: var(--zehn-size-reveal-border) solid var(--zehn-color-reveal-border);
@@ -3661,7 +3772,7 @@ body:not(.WindowFocus) #zehnToggleFriendsHeaderIcon {
   mask-origin: border-box;
   mask-position: inherit;
   mask-size: inherit;
-  mask-repeat: space;
+  mask-repeat: no-repeat;
   opacity: var(--zehn-reveal);
 }
 
@@ -3687,6 +3798,10 @@ body:not(.WindowFocus) #zehnToggleFriendsHeaderIcon {
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   color: var(--zehn-color-text-primary) !important;
+}
+
+.ModalDialogPopup .ModalDialogBody {
+  background: transparent !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -4235,6 +4350,11 @@ body.WindowFocus:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):
 /* NOTIFICATIONS BORDER */
 body.zXrpABNQHpWKgSzqnGlL {
   border: none !important;
+}
+
+/* STOP OVERFLOW */
+.PopupFullWindow {
+  overflow: hidden !important;
 }
 
 /* WINODW GRIP */
