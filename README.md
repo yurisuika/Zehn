@@ -129,11 +129,11 @@ Some windows have reactive panels that change into an acrylic blur on window foc
 ![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.gif)
 
 ### Reveal
-Reveal is a Fluent Design effect that reveals some hidden details to certain controls in a radial gradient around the mouse pointer.
+Reveal is a Fluent Design effect that reveals hidden backgrounds and borders in a radial gradient around the pointer upon hover.
 
-In Zehn, when `Transparency Effects` is enabled, various interactive elements are given a Reveal effect. There are two variants of Reveal:
-* List style: This appears on pagelist entries such as settings and notes pageslists.
-* Button style: This appears on primary control section panels.
+In Zehn, when `Transparency Effects` is enabled, various interactive elements are given a Reveal effect. This is either done based on the mouse position within the surrounding container of the items, or base on the mouse position within the items themselves.
+
+Buttons take on with the first flavor. Both pagelist entries and context menu entries use the second flavor. Each has a distinction to how backgrounds and borders are styled.
 
 ![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.gif)
 
