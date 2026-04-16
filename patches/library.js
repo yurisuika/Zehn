@@ -350,9 +350,11 @@ Zehn.createIconTitleContainer('.Friends_Root_Menu', '.contextMenuItem');
 Zehn.createIconTitleContainer('.Games_Root_Menu', '.contextMenuItem');
 Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
 
-/* ADD PLAY IMG INTO CONTAINER -------------------------------------------------------------------------------------- */
+/* ADD PLAY ICON INTO CONTAINER -------------------------------------------------------------------------------------- */
 
-Zehn.createImgContainer('.jjN9CtYfeIJoHpKOCmKOx', '._2co0ek5jbAvxuML8CcgsBy');
+Zehn.createIconContainer('.jjN9CtYfeIJoHpKOCmKOx', 'zehnIconContainer'); // COMMUNITY ICON
+Zehn.createContainer('._3AjoLnMNKxYmNTGTJCLfgs', '.SVGIcon_Button', 'zehnIconContainer'); // LIBRARY ICON
+Zehn.createContainer('._8YrRmy_c6O0FCxFT8gjqo', '.SVGIcon_Button', 'zehnIconContainer'); // UNINSTALL ICON
 
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
@@ -360,7 +362,7 @@ Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl'
 
 /* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
 
-Zehn.createSeparator('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE');
+Zehn.createBeforeTarget('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE', 'zehnSeparator');
 
 /* REVEAL SIDEBAR --------------------------------------------------------------------------------------------------- */
 

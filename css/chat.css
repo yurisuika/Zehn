@@ -934,6 +934,7 @@ span.mentionSearchMatch {
   max-height: 100% !important;
   height: 100% !important;
   align-self: center !important;
+  align-content: center !important;
 }
 
 .OpenGraphFooter:hover .OpenGraphMessageURL_full {
@@ -969,6 +970,10 @@ span.mentionSearchMatch {
 .ChatMessageInvite .inviteURLLink:active,
 .msg .OpenGraphMessageURL:active {
   color: var(--zehn-color-link-active) !important;
+}
+
+.ChatMessageOpenGraph .OpenGraphFooter {
+  width: 100% !important;
 }
 
 .inviteURLContainer .copyInviteLink,
@@ -1985,29 +1990,26 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .chatVideoPlayControl .playButtonContainer {
-  height: 128px !important;
-  width: 128px !important;
+  --button-size: calc(2 * var(--zehn-size-icon-super));
+  width: var(--button-size) !important;
+  height: var(--button-size) !important;
   padding: 0 !important;
   margin: auto !important;
   border-radius: var(--zehn-size-radius-circle) !important;
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease !important;
-  background-color: var(--zehn-color-button-acrylic-background) !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+  opacity: 0 !important;
+  transform: scale(0.5) !important;
+  background-color: var(--zehn-color-acrylic) !important;
   background-blend-mode: exclusion !important;
   backdrop-filter: var(--zehn-acrylic-filter) !important;
   background-size: auto !important;
   background-image: var(--zehn-acrylic-texture) !important;
-  opacity: 0 !important;
-  transform: scale(0.5) !important;
 }
 
-.chatVideoPlayControl .playButtonContainer:hover {
+.chatVideoPlayControl:hover .playButtonContainer {
+  transition: opacity 0.2s ease 1s, transform 0.2s ease 1s !important;
   opacity: 1 !important;
   transform: scale(1) !important;
-  background-color: var(--zehn-color-button-acrylic-background-hover) !important;
-}
-
-.chatVideoPlayControl .playButtonContainer:active {
-  background-color: var(--zehn-color-button-acrylic-background-active) !important;
 }
 
 .msg .chatVideoContainer .chatVideoPlayControl svg {
@@ -2020,10 +2022,15 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   -webkit-mask-image: var(--zehn-icon-play) !important;
   width: 100% !important;
   height: 100% !important;
+  transition: transform 0.2s ease !important;
+  
+  * {
+    display: none !important;
+  }
 }
 
 .chatVideoPlayControl:hover svg {
-  transform: none !important;
+  transform: scale(1.05) !important;
 }
 
 /* IMAGE CONTAINER */
@@ -2266,16 +2273,11 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .workshopItemControlCtn {
-  gap: var(--zehn-size-gap-small) !important;
+  gap: var(--zehn-size-gap-tiny) !important;
   display: flex !important;
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-}
-
-.SteamPublishedFile:hover .workshopItemControlCtn>span {
-  opacity: 1 !important;
-  transform: scale(1) !important;
 }
 
 .SteamPublishedFile>div:has(.workshopItemControls) {
@@ -2285,34 +2287,40 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .workshopItemControlCtn>span {
-  transition-property: opacity, transform !important;
-  transition-duration: .16s !important;
-  transition-timing-function: ease !important;
-  opacity: 0 !important;
-  transform: scale(0.5) !important;
-  padding: 8px !important;
+  align-items: center !important;
+  display: flex !important;
   margin: 0 !important;
+  padding: var(--zehn-size-padding-small) var(--zehn-size-padding-medium) !important;
   height: 24px !important;
   line-height: 24px !important;
-  background-color: var(--zehn-color-button-acrylic-background) !important;
-  background-blend-mode: exclusion !important;
-  backdrop-filter: var(--zehn-acrylic-filter) !important;
-  background-size: auto !important;
-  background-image: var(--zehn-acrylic-texture) !important;
+  border: unset !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
   gap: var(--zehn-size-gap-small) !important;
-  display: flex !important;
-  border-radius: var(--zehn-size-radius-square) !important;
-  background-position: center !important;
-  background-repeat: repeat !important;
-  background-image: none !important;
+  background: var(--zehn-color-overlay-background) !important;
+  border: var(--zehn-size-overlay-border) solid var(--zehn-color-overlay-border) !important;
+  border-radius: var(--zehn-size-overlay-radius-small) !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+  opacity: 0 !important;
+  transform: scale(0.5) !important;
+}
+
+.SteamPublishedFile:hover .workshopItemControlCtn>span {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.workshopItemControlCtn>span:empty {
+  gap: 0 !important;
 }
 
 .SteamPublishedFile .upvoteCount::before,
 .SteamPublishedFile .commentCount::before,
 .SteamPublishedFile .general_btn::before {
   content: "" !important;
-  width: 24px !important;
-  height: 24px !important;
+  width: var(--zehn-size-icon-medium) !important;
+  height: var(--zehn-size-icon-medium) !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
@@ -2320,26 +2328,29 @@ div:hover>.BBCodeCollapseControl {
   float: left !important;
 }
 
-.SteamPublishedFile .upvoteCount {}
-
 .SteamPublishedFile .upvoteCount::before {
   -webkit-mask-image: var(--zehn-icon-thumb-up) !important;
 }
-
-.SteamPublishedFile .commentCount {}
 
 .SteamPublishedFile .commentCount::before {
   -webkit-mask-image: var(--zehn-icon-chat-discussion) !important;
 }
 
 .general_btn {
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  max-width: fit-content !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
+}
+
+.upvoteCount,
+.commentCount,
+.general_btn.voteUp,
+.general_btn.voteDown {
+  width: fit-content !important;
 }
 
 .general_btn.voteUp,
@@ -2355,10 +2366,6 @@ div:hover>.BBCodeCollapseControl {
   -webkit-mask-image: var(--zehn-icon-thumb-up-active) !important;
 }
 
-.general_btn.voteDown {
-  width: 24px !important;
-}
-
 .general_btn.voteDown::before {
   -webkit-mask-image: var(--zehn-icon-thumb-down) !important;
 }
@@ -2370,6 +2377,9 @@ div:hover>.BBCodeCollapseControl {
 /* OPEN GRAPH */
 .msg div.ChatMessageOpenGraph,
 .msg div.SteamPublishedFile {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: var(--zehn-size-gap-small) !important;
   width: auto !important;
   max-width: var(--zehn-size-chat-embed-width) !important;
   color: var(--zehn-color-text-secondary) !important;
@@ -2380,8 +2390,11 @@ div:hover>.BBCodeCollapseControl {
   border-width: var(--zehn-size-chat-embed-border);
   border-style: solid !important;
   border-color: var(--zehn-color-embed-border) !important;
-}
   transition: background-color 0.2s ease !important;
+}
+
+.msg div.ChatMessageOpenGraph {
+  flex-wrap: wrap !important;
 }
 
 .msg div.ChatMessageOpenGraph:hover,
@@ -2454,6 +2467,7 @@ div:hover>.BBCodeCollapseControl {
   gap: var(--zehn-size-gap-small) !important;
   display: flex !important;
   flex-direction: column !important;
+  line-height: normal !important;
 }
 
 .ChatMessageOpenGraph_Description {
@@ -2478,7 +2492,6 @@ div:hover>.BBCodeCollapseControl {
   border-width: var(--zehn-size-chat-embed-border);
   border-style: solid !important;
   border-color: var(--zehn-color-embed-border) !important;
-}
 }
 
 ._1JZstfJ6jCBChXx0ZDwfpR:hover,
@@ -2505,6 +2518,8 @@ div:hover>.BBCodeCollapseControl {
 
 ._2FYTu5WGjICrU8ipb6eKUQ {
   margin-left: var(--zehn-size-padding-small) !important;
+  line-height: normal !important;
+  align-self: center !important;
 }
 
 ._3k_UWqsMxpeVIcUnYUFMKB {
@@ -2541,6 +2556,10 @@ div:hover>.BBCodeCollapseControl {
 
 ._1pRBji9mcVrh7DrVjinASc {
   padding: var(--zehn-size-padding-medium) 0 !important;
+  line-height: normal !important;
+  color: var(--zehn-color-text-secondary) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
 }
 
 ._2YtH82S-Lg0VhPR88OcEKS {
@@ -2616,9 +2635,30 @@ div:hover>.BBCodeCollapseControl {
 }
 
 ._3SCtLxKknXT2PcQStMloQh svg {
-  margin: var(--zehn-size-padding-small) !important;
+  margin: 0 !important;
   height: var(--zehn-size-icon-medium) !important;
   width: var(--zehn-size-icon-medium) !important;
+}
+
+.GwzCoJjXJ4hjayrci3jhF {
+  line-height: 16px !important;
+  padding: 0 var(--zehn-size-padding-small) !important;
+}
+
+._3Jj-5xYWd7LXI_PFnCru2N {
+  color: var(--zehn-color-text-secondary) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  padding: 0 !important;
+}
+
+._38EpIjFrkDJB0tWjqPPCrG,
+._38EpIjFrkDJB0tWjqPPCrG._2g_Np3i1Qn-OcDoWzkaQA6 {
+  color: var(--zehn-color-text-primary) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* GAME EMBED IMAGES */
@@ -2648,31 +2688,26 @@ div:hover>.BBCodeCollapseControl {
 
 /* GAME EMBED VIDEO PLAY */
 ._3z_x2p4-vEsacO9D8xcw8m {
-  top: calc(50% - 32px) !important;
-  left: calc(50% - 32px) !important;
-  width: 64px !important;
-  height: 64px !important;
+  --button-size: calc(2 * var(--zehn-size-icon-large));
+  width: var(--button-size) !important;
+  height: var(--button-size) !important;
+  padding: 0 !important;
+  margin: auto !important;
   border-radius: var(--zehn-size-radius-circle) !important;
-  border: none !important;
-  opacity: 1 !important;
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease !important;
-  background-color: var(--zehn-color-button-acrylic-background) !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+  opacity: 0 !important;
+  transform: scale(0.5) !important;
+  background-color: var(--zehn-color-acrylic) !important;
   background-blend-mode: exclusion !important;
   backdrop-filter: var(--zehn-acrylic-filter) !important;
   background-size: auto !important;
   background-image: var(--zehn-acrylic-texture) !important;
-  opacity: 0 !important;
-  transform: scale(0.5) !important;
 }
 
-._3z_x2p4-vEsacO9D8xcw8m:hover {
+.AJ2FfAjCY6ZGrE7wVemEp:hover ._3z_x2p4-vEsacO9D8xcw8m {
+  transition: opacity 0.2s ease 1s, transform 0.2s ease 1s !important;
   opacity: 1 !important;
   transform: scale(1) !important;
-  background-color: var(--zehn-color-button-acrylic-background-hover) !important;
-}
-
-._3z_x2p4-vEsacO9D8xcw8m:active {
-  background-color: var(--zehn-color-button-acrylic-background-active) !important;
 }
 
 ._3z_x2p4-vEsacO9D8xcw8m .SVGIcon_Play {
@@ -2682,6 +2717,15 @@ div:hover>.BBCodeCollapseControl {
   height: 64px !important;
   -webkit-mask-image: var(--zehn-icon-play) !important;
   mask-size: var(--zehn-size-icon-large) !important;
+  transition: transform 0.2s ease !important;
+
+  * {
+    display: none !important;
+  }
+}
+
+._3z_x2p4-vEsacO9D8xcw8m:hover .SVGIcon_Play {
+  transform: scale(1.05) !important;
 }
 
 /* EMBED VIDEO POP UP */

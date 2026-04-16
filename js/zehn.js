@@ -271,19 +271,33 @@ const Zehn = {
     });
   },
 
-  createImgContainer(rootSelector, targetSelector) {
+  createIconContainer(targetSelector, containerName) {
+    this.observeTargetForCallback(targetSelector, (target) => {
+      const container = document.createElement('div');
+      container.classList.add('zehnContainer');
+      container.classList.add(containerName);
+      target.append(container);
+
+      const icon = document.createElement('div');
+      icon.classList.add('zehnIcon');
+      container.prepend(icon);
+    });
+  },
+
+  createContainer(rootSelector, targetSelector, containerName) {
     this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
-      container.classList.add('zehnImgContainer');
+      container.classList.add('zehnContainer');
+      container.classList.add(containerName);
       root.append(container);
       container.append(target);
     });
   },
 
-  createSeparator(rootSelector, targetSelector) {
+  createBeforeTarget(rootSelector, targetSelector, additionName) {
     this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
-      container.classList.add('zehnSeparator');
+      container.classList.add(additionName);
       target.before(container || '');
     });
   },
