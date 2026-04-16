@@ -353,8 +353,6 @@ Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
 /* ADD PLAY ICON INTO CONTAINER -------------------------------------------------------------------------------------- */
 
 Zehn.createIconContainer('.jjN9CtYfeIJoHpKOCmKOx', 'zehnIconContainer'); // COMMUNITY ICON
-Zehn.createContainer('._3AjoLnMNKxYmNTGTJCLfgs', '.SVGIcon_Button', 'zehnIconContainer'); // LIBRARY ICON
-Zehn.createContainer('._8YrRmy_c6O0FCxFT8gjqo', '.SVGIcon_Button', 'zehnIconContainer'); // UNINSTALL ICON
 
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
