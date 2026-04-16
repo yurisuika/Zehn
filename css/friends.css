@@ -52,7 +52,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   /* background-color: var(--zehn-color-section) !important; */
   background: var(--zehn-color-section-acrylic) !important;
   transition: background-color 0.2s ease !important;
-  backdrop-filter: blur(var(--zehn-size-blur-acrylic)) !important;
+  backdrop-filter: var(--zehn-acrylic-filter) !important;
   /* THIS IS BLURRING THE ACCENT BORDER SOMEHOW WHEN MEDIA IS BEHIND IT IN CHAT */
   background-blend-mode: exclusion !important;
 }
@@ -70,13 +70,14 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   inset: 0;
   opacity: 0;
   pointer-events: none;
-  background-image: var(--zehn-texture-acrylic);
+  background-size: auto;
+  background-image: var(--zehn-acrylic-texture);
   transition: opacity 0.2s ease-in-out;
 }
 
 .WindowFocus .friendListHeaderContainer::after,
 .WindowFocus .ChatTabs::after {
-  opacity: var(--zehn-transparency);
+  opacity: var(--zehn-acrylic);
 }
 
 .friendlist .friendListHeaderContainer .friendListCollapse {
