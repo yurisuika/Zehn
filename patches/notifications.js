@@ -8,3 +8,11 @@ Zehn.addUserAgent();
 /* ENABLE CONFIG WITH MILLENNIUM ------------------------------------------------------------------------------------ */
 
 Options.setOptions();
+
+/* REVEAL TOAST ----------------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.zXrpABNQHpWKgSzqnGlL', [
+  '._1OOQPJx0nCNP9ME9toCmV7' // TOAST
+]);
+
+Zehn.revealInner('.zXrpABNQHpWKgSzqnGlL', '._1OOQPJx0nCNP9ME9toCmV7');

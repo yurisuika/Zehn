@@ -21,8 +21,13 @@ Zehn.addRevealClassOnMutation('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
 
 Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 
+/* TOGGLE CLASSES BASED ON WHAT HEADER CONTENT IS OPEN -------------------------------------------------------------- */
+
+Zehn.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearchActive', 'zehnSearchOpened');
+
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
+Zehn.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
 Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', ['zehnButton'], false, false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
 });

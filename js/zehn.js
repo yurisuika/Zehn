@@ -128,6 +128,22 @@ const Zehn = {
     });
   },
 
+  toggleClassWithPresence(rootSelector, targetSelector, pageSelector, toggleName) {
+    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      const update = () => {
+        const present = !!document.querySelector(pageSelector);
+        target.classList.toggle(toggleName, present);
+      };
+
+      update();
+
+      const observer = new MutationObserver(update);
+      observer.observe(root, { childList: true, subtree: true });
+
+      return observer;
+    });
+  },
+
   addButton(rootSelector, targetSelector, nameSelector, additionalNameSelectors, position, defaultToggled, callback) {
     this.observeForCallbackIfMissing(rootSelector, targetSelector, nameSelector, (root, target, additionSelector) => {
       const button = document.createElement('button');
