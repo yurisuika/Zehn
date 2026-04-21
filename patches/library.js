@@ -56,7 +56,7 @@ Zehn.revealSelf('._3k90ug209sE23xAMqcM74s.zehnReveal');
 
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
-Zehn.observeRootForCallback('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
+Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
   const sidebarWidth = root.querySelector('._9sPoVBFyE_vE87mnZJ5aB').offsetWidth;
   const filterWidth = window.innerWidth - sidebarWidth;
 
@@ -73,7 +73,7 @@ Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw
 
 /* TOGGLE ROOT MENU ------------------------------------------------------------------------------------------------- */
 
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', '#zehnToggleNavigation', ['zehnButton'], false, false, (root, target, button) => {
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', ['#zehnToggleNavigation', '.zehnButton'], false, (root, target, button) => {
   const btnNavigation = document.getElementById('zehnToggleNavigation');
   if (btnNavigation) {
 
@@ -110,20 +110,20 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', '#zehnToggl
 /* TOGGLE LIBRARY SEARCH SECTION ------------------------------------------------------------------------------------ */
 
 Zehn.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleSidebarSearch', 'zehnSearchOpened');
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', '#zehnToggleSidebarSearch', ['zehnButton', 'zehnReveal'], false, false, (root, target, button) => {
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', ['#zehnToggleSidebarSearch', '.zehnButton', '.zehnReveal'], false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnSearchOpened');
 });
 
 /* TOGGLE LIBRARY WHAT'S NEW SECTION -------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleWhatsNew', 'zehnWhatsNewCollapsed');
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO > div:nth-child(2)', '#zehnToggleWhatsNew', ['zehnButton'], true, false, (root, target, button) => {
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO > div:nth-child(2)', ['#zehnToggleWhatsNew', '.zehnButton'], true, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnWhatsNewCollapsed');
 });
 
 /* ID GAME PAGE SECTIONS -------------------------------------------------------------------------------------------- */
 
-Zehn.observeRootForCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, target) => {
+Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, target) => {
   const featured = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)');
   const event = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)');
   const community = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)');
@@ -157,7 +157,7 @@ Zehn.observeRootForCallback('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', 
 
 /* CHECK GAME DETAILS PANELS FOR WRAPPER ---------------------------------------------------------------------------- */
 
-Zehn.observeRootForCallback('.QsvsRVwbsApgKt1MhM0fz', '#zehnGameDetails', (root, target) => {
+Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '#zehnGameDetails', (root, target) => {
   const width = target.clientWidth;
   if (target.dataset.width != width) {
     target.dataset.width = width;
@@ -224,12 +224,12 @@ function togglePage(root, target, button) {
   }
 };
 
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleDetails', ['zehnButton', 'zehnReveal'], false, true, togglePage); // STICKY DETAILS
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleDetails', ['zehnButton', 'zehnReveal'], false, true, togglePage); // DETAILS
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleCommunity', ['zehnButton', 'zehnReveal'], false, false, togglePage); // STICKY COMMUNITY
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleCommunity', ['zehnButton', 'zehnReveal'], false, false, togglePage); // COMMUNITY
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleActivity', ['zehnButton', 'zehnReveal'], false, false, togglePage); // STICKY ACTIVITY
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', '.zehnToggleActivity', ['zehnButton', 'zehnReveal'], false, false, togglePage); // ACTIVITY
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], false, togglePage); // STICKY DETAILS
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], false, togglePage); // DETAILS
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], false, togglePage); // STICKY COMMUNITY
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], false, togglePage); // COMMUNITY
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], false, togglePage); // STICKY ACTIVITY
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], false, togglePage); // ACTIVITY
 
 /* MOVE SUPERNAV INTO MAIN NAVBAR ----------------------------------------------------------------------------------- */
 
@@ -240,13 +240,7 @@ Zehn.removeDuplicatedElement('.QsvsRVwbsApgKt1MhM0fz', '._39oUCO1OuizVPwcnnv88no
 
 /* ADD SPACER FOR NAVBAR DOWNLOADS STATUS --------------------------------------------------------------------------- */
 
-Zehn.observeForCallbackIfMissing('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', '.zehnDownloadsSpacer', (root, target, addition) => {
-  const spacer = document.createElement('div');
-  spacer.classList.add('zehnDownloadsSpacer');
-  if (!addition) {
-    document.querySelector('._3cykd-VfN_xBxf3Qxriccm').before(spacer || '');
-  }
-});
+Zehn.createBeforeTarget('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', '.zehnDownloadsSpacer');
 
 /* MOVE VANILLA BUTTONS INTO NAVBAR ---------------------------------------------------------------------------------- */
 
@@ -269,7 +263,7 @@ Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
 
 /* TOGGLE THEATER MODE AKA REMOVE LIBRARY SIDEBAR ------------------------------------------------------------------- */
 
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', '#zehnToggleTheaterMode', ['zehnButton'], true, false, (root, target, button) => {
+Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleTheaterMode', '.zehnButton'], true, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnTheaterMode');
 });
 
@@ -307,7 +301,7 @@ Zehn.moveAppend('._2p9h7sf5EGrEVlsWxtvUPH', '._1gvujtNl7v7FpJK6kaMeKZ', [
   '._2yt71EY8-YdWa8dBEE1DAW' // ARTWORK DESCRIPTION
 ]);
 
-/* MOVE NOTES DELETE BUTTON INTO PAGELIST --------------------------------------------------------------------------- */
+/* MOVE NOTES DELETE BUTTON ----------------------------------------------------------------------------------------- */
 
 Zehn.moveAppendAndObserve('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', [
   '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE

@@ -90,13 +90,14 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 /* FRIENDS SCROLL UNDER BEHAVIOR */
 .friendsListContainer {
-  --header-height: var(--zehn-size-friends-header-height);
+  --quickaccess-height: var(--zehn-size-friends-quickaccess-height);
+  --buttons-height: var(--zehn-size-friends-buttons-height);
   --search-height: 0px;
   --user-height: 0px;
 }
 
 .friendsListContainer.zehnFriendsHeaderClosed {
-  --header-height: 0px;
+  --buttons-height: 0px;
 }
 
 .friendsListContainer:has(.TabSearchActive) {
@@ -110,7 +111,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 }
 
 .friendlistListContainer {
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--header-height) + var(--search-height) + var(--user-height)) !important;
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--quickaccess-height) + var(--buttons-height) + var(--search-height) + var(--user-height)) !important;
 }
 
 .FriendsListContent::before {
@@ -119,7 +120,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   position: absolute;
   inset: 0;
   background: var(--zehn-color-app);
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--header-height) + var(--search-height) + var(--user-height)) !important;
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--quickaccess-height) + var(--buttons-height) + var(--search-height) + var(--user-height));
 }
 
 .FriendsListContent>div,
@@ -163,6 +164,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 /* AVATAR STATUS */
 .friend .avatarHolder .avatarStatus {
   display: block !important;
+  transition-duration: 0.2s !important;
 }
 
 .friendlistListContainer .friend .avatarHolder .avatarStatus,
@@ -1694,7 +1696,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .friendStatusHover {
-  padding: var(--zehn-size-padding-small) var(--zehn-size-padding-medium) !important;
+  padding: 0 !important;
   transition: none !important;
   background-color: var(--zehn-color-list-background) !important;
 }
@@ -2043,6 +2045,17 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   top: calc(50% - 3px) !important;
   margin: 0 !important;
   position: absolute !important;
+}
+
+.quickAccessFriends .ChatUnreadMessageIndicator {
+  top: 4px !important;
+  right: 4px !important;
+  bottom: unset !important;
+  left: unset !important;
+}
+
+.quickAccessFriends .ChatUnreadMessageIndicator .chatUnreadCircle {
+  inset: unset !important;
 }
 
 /* GROUP CHATS LIST */

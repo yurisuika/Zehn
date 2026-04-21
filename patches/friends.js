@@ -28,16 +28,20 @@ Zehn.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearchA
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
 Zehn.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
-Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', ['zehnButton'], false, false, (root, target, button) => {
+Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], false, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
 });
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
 Zehn.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnCurrentUserOpened');
-Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', '#zehnToggleUser', ['zehnButton', 'zehnReveal'], true, false, (root, target, button) => {
+Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], true, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnCurrentUserOpened');
 });
+
+/* SET VARIABLE FOR HEADER HEIGHT ----------------------------------------------------------------------------------- */
+
+Zehn.storeTargetHeightAsVariable('.friendsui-container', '.quickAccessFriends', '--zehn-size-friends-quickaccess-height');
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
@@ -46,14 +50,14 @@ Zehn.createIconTitleContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV');
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
-Zehn.addButton('.MultiUserChat', '.chatRoomOptions', '.zehnToggleSettingsButtons', ['zehnButton', 'zehnReveal'], true, false, (root, target, button) => {
+Zehn.addButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], true, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
 });
 
 /* TOGGLE GROUP CHAT CHANNEL PAGELIST ------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
-Zehn.addButton('.MultiUserChat', '.chatRoomOptions', '.zehnToggleChannelList', ['zehnButton', 'zehnReveal'], true, false, (root, target, button) => {
+Zehn.addButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], true, (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
 });
 
@@ -136,3 +140,11 @@ Zehn.addRevealClassOnMutation('.chatRoomGroupNavColumn', [
 ], true);
 
 Zehn.revealInner('.chatRoomGroupNavColumn');
+
+/* REVEAL CHAT TABS ------------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.titleBarContainer.ChatTabs', [
+  '.vs5AhAWHJLa_eDOBkDcMy' // TAB
+], true);
+
+Zehn.revealInner('.titleBarContainer.ChatTabs');

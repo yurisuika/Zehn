@@ -7,7 +7,7 @@ const Zehn = {
     }
   },
 
-  observeRootForCallback(rootSelector, targetSelector, callback) {
+  findRootsAndTargets(rootSelector, targetSelector, callback) {
     const processed = new WeakSet();
     const rootObservers = new Map();
 
@@ -27,7 +27,7 @@ const Zehn = {
             for (const node of mutation.addedNodes) {
               if (!(node instanceof Element)) continue;
               if (node.matches && node.matches(targetSelector)) handleTarget(root, node);
-              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(i => handleTarget(root, i));
+              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(root, n));
             }
           }
         }
@@ -60,7 +60,7 @@ const Zehn = {
     };
   },
 
-  observeTargetForCallback(targetSelector, callback) {
+  findTargets(root, targetSelector, callback) {
     const processed = new WeakSet();
 
     function handleTarget(target) {
@@ -69,50 +69,19 @@ const Zehn = {
       try { callback(target); } catch (e) { console.error(e); }
     }
 
-    const documentObserver = new MutationObserver(mutations => {
+    document.querySelectorAll(targetSelector).forEach(t => handleTarget(t));
+
+    const observer = new MutationObserver(mutations => {
       for (const mutation of mutations) {
         if (mutation.type === 'childList') {
           for (const node of mutation.addedNodes) {
             if (!(node instanceof Element)) continue;
               if (node.matches && node.matches(targetSelector)) handleTarget(node);
-              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(i => handleTarget(i));
+              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(n));
           }
         }
       }
     });
-    documentObserver.observe(document.body || document, { childList: true, subtree: true });
-
-    return {
-      disconnect() {
-        documentObserver.disconnect();
-      }
-    };
-  },
-
-  observeForCallback(root, targetSelector, callback) {
-    const processed = new WeakSet();
-
-    function handleTarget(target) {
-      if (processed.has(target)) return;
-      processed.add(target);
-      try { callback(root, target); } catch (e) { console.error(e); }
-    }
-
-    if (root instanceof Element) {
-      root.querySelectorAll(targetSelector).forEach(handleTarget);
-    }
-
-    const observer = new MutationObserver(mutations => {
-      for (const mutation of mutations) {
-        if (mutation.type !== 'childList') continue;
-        for (const node of mutation.addedNodes) {
-          if (!(node instanceof Element)) continue;
-          if (node.matches && node.matches(targetSelector)) handleTarget(node);
-          if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(handleTarget);
-        }
-      }
-    });
-
     observer.observe(root, { childList: true, subtree: true });
 
     return {
@@ -122,60 +91,57 @@ const Zehn = {
     };
   },
 
-  observeForCallbackIfMissing(rootSelector, targetSelector, additionSelector, callback) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
-      if (!target.querySelector(additionSelector)) callback(root, target, additionSelector);
-    });
-  },
-
-  toggleClassWithPresence(rootSelector, targetSelector, pageSelector, toggleName) {
-    Zehn.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
-      const update = () => {
-        const present = !!document.querySelector(pageSelector);
-        target.classList.toggle(toggleName, present);
-      };
+  handleOnMutation(rootSelector, targetSelector, callback, shouldObserveTarget = false) {
+    Zehn.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+      const update = () => callback(root, target);
 
       update();
 
       const observer = new MutationObserver(update);
-      observer.observe(root, { childList: true, subtree: true });
+      observer.observe((shouldObserveTarget ? target : root), { childList: true, subtree: true });
 
       return observer;
     });
   },
 
-  addButton(rootSelector, targetSelector, nameSelector, additionalNameSelectors, position, defaultToggled, callback) {
-    this.observeForCallbackIfMissing(rootSelector, targetSelector, nameSelector, (root, target, additionSelector) => {
-      const button = document.createElement('button');
-      const buttonName = additionSelector.slice(1);
-      const buttonSelectorIsId = additionSelector.charAt(0) === '#';
+  storeTargetHeightAsVariable(rootSelector, targetSelector, variableName) {
+    Zehn.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+      document.documentElement.style.setProperty(variableName, `${target.offsetHeight}px`);
+    }, true);
+  },
 
-      additionalNameSelectors.forEach((additionalNameSelector) => {
-        button.classList.add(additionalNameSelector);
+  toggleClassWithPresence(rootSelector, targetSelector, pageSelector, toggleName) {
+    this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+      const present = !!document.querySelector(pageSelector);
+      target.classList.toggle(toggleName, present);
+    });
+  },
+
+  addButton(rootSelector, targetSelector, nameSelectors, shouldAppend, callback) {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+      const button = document.createElement('button');
+
+      nameSelectors.forEach((nameSelector) => {
+        const name = nameSelector.slice(1);
+        const isId = nameSelector.charAt(0) === '#';
+
+        if (isId) {
+          button.id = name;
+        } else {
+          button.classList.add(name);
+        }
       });
 
-      if (buttonSelectorIsId) {
-        button.id = buttonName;
-      } else {
-        button.classList.add(buttonName);
-      }
-      if (defaultToggled) {
-        button.classList.add('zehnToggled');
-      }
       button.name = 'button';
       button.onclick = () => callback(root, target, button);
-      if (position) {
+      if (shouldAppend) {
         target.append(button);
       } else {
         target.prepend(button);
       }
 
       const icon = document.createElement('div');
-      if (buttonSelectorIsId) {
-        icon.id = `${buttonName}Icon`;
-      } else {
-        icon.classList.add(`${buttonName}Icon`);
-      }
+      icon.classList.add(`zehnIcon`);
       button.append(icon);
     });
   },
@@ -186,20 +152,20 @@ const Zehn = {
   },
 
   checkButtonToggle(rootSelector, targetSelector, additionName) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       if (root.classList.contains(additionName)) target.classList.toggle('zehnToggled', true);
     });
   },
 
   checkTargetToggle(rootSelector, targetSelector, additionName, toggleSelector) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const toggle = root.querySelector(toggleSelector);
       if (target.classList.contains('zehnToggled')) toggle.classList.toggle(additionName, true);
     });
   },
 
   moveAppend(rootSelector, targetSelector, movingSelectors) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
         root.querySelectorAll(movingSelector).forEach((moving) => {
           target.append(moving);
@@ -209,9 +175,9 @@ const Zehn = {
   },
 
   moveAppendAndObserve(rootSelector, targetSelector, movingSelectors) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
-        this.observeForCallback(root, movingSelector, (root, moving) => {
+        this.findTargets(root, movingSelector, (moving) => {
           target.append(moving);
         });
       });
@@ -219,7 +185,7 @@ const Zehn = {
   },
 
   movePrepend(rootSelector, targetSelector, movingSelectors) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
         root.querySelectorAll(movingSelector).forEach((moving) => {
           target.prepend(moving || '');
@@ -229,9 +195,9 @@ const Zehn = {
   },
 
   movePrependAndObserve(rootSelector, targetSelector, movingSelectors) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
-        this.observeForCallback(root, movingSelector, (root, moving) => {
+        this.findTargets(root, movingSelector, (moving) => {
           target.prepend(moving || '');
         })
       });
@@ -239,7 +205,7 @@ const Zehn = {
   },
 
   moveBefore(rootSelector, targetSelector, movingSelectors) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
         root.querySelectorAll(movingSelector).forEach((moving) => {
           target.before(moving || '');
@@ -249,9 +215,9 @@ const Zehn = {
   },
 
   moveBeforeAndObserve(rootSelector, targetSelector, movingSelectors) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       movingSelectors.forEach((movingSelector) => {
-        this.observeForCallback(root, movingSelector, (root, moving) => {
+        this.findTargets(root, movingSelector, (moving) => {
           target.before(moving || '');
         })
       });
@@ -259,7 +225,7 @@ const Zehn = {
   },
 
   removeDuplicatedElement(rootSelector, targetSelector, removeableSelector, ordinal) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const removables = target.querySelectorAll(removeableSelector);
       if (removables.length > 1) {
         removables[ordinal].remove();
@@ -268,7 +234,7 @@ const Zehn = {
   },
 
   createIconTitleContainer(rootSelector, targetSelector) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       if (target.children.length == 0) {
         const container = document.createElement('div');
         container.classList.add('zehnListContainer');
@@ -288,7 +254,7 @@ const Zehn = {
   },
 
   createIconContainer(targetSelector, containerName) {
-    this.observeTargetForCallback(targetSelector, (target) => {
+    this.findTargets(document, targetSelector, (target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
       container.classList.add(containerName);
@@ -301,7 +267,7 @@ const Zehn = {
   },
 
   createContainer(rootSelector, targetSelector, containerName) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
       container.classList.add(containerName);
@@ -311,7 +277,7 @@ const Zehn = {
   },
 
   createBeforeTarget(rootSelector, targetSelector, additionName) {
-    this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
       container.classList.add(additionName);
       target.before(container || '');
@@ -319,10 +285,8 @@ const Zehn = {
   },
 
   addRevealClass(rootSelector, targetSelectors, isList = false) {
-    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
-
     targetSelectors.forEach((targetSelector) => {
-      this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
         target.classList.toggle('zehnReveal', true);
         if (isList) target.classList.toggle('zehnRevealList', true);
       });
@@ -330,10 +294,8 @@ const Zehn = {
   },
 
   addRevealClassOnMutation(rootSelector, targetSelectors, isList = false) {
-    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
-
     targetSelectors.forEach((targetSelector) => {
-      this.observeRootForCallback(rootSelector, targetSelector, (root, target) => {
+      this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
         const observer = new MutationObserver((mutations) => {
           if (mutations.length) {
             target.classList.toggle('zehnReveal', true);
@@ -353,7 +315,7 @@ const Zehn = {
   revealInner(containerSelector) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
-    this.observeRootForCallback(containerSelector, '.zehnReveal', (container, revealed) => {
+    this.findRootsAndTargets(containerSelector, '.zehnReveal', (container, revealed) => {
       this.reveal(container, revealed);
     });
   },
@@ -361,7 +323,7 @@ const Zehn = {
   revealSelf(selfSelector) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
-    this.observeTargetForCallback(selfSelector, (revealed) => {
+    this.findTargets(document, selfSelector, (revealed) => {
       this.reveal(revealed, revealed);
     });
   },
