@@ -2170,6 +2170,87 @@ textarea,
 
 
 
+/* INTERACTABLE - TEXT INPUT (URL) ---------------------------------------------------------------------------------- */
+
+/* URL BAR */
+._26Gmfe09NRsnF7eprTZYdY ._1d2NZ4Jt0wrdapfvDFhpVS ._1W55urU2WazGofFzN0_jHB .DialogInput_Wrapper>input.DialogInput,
+._26Gmfe09NRsnF7eprTZYdY ._1d2NZ4Jt0wrdapfvDFhpVS ._1W55urU2WazGofFzN0_jHB:not(:has(input)),
+.UkR3sY319PuaUNuUWks2K ._2m_orETo6AghzAnc0sISCt .MZPxEZcxAGtPDf1NYtouS {
+  align-content: center !important;
+  transition: none !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  min-width: fit-content !important;
+  max-width: var(--zehn-size-input-url-width) !important;
+  width: var(--zehn-size-input-url-width) !important;
+  height: var(--zehn-size-input-url) !important;
+  min-height: var(--zehn-size-input-url) !important;
+  max-height: var(--zehn-size-input-url) !important;
+  line-height: var(--zehn-size-input-url-line) !important;
+  padding: var(--zehn-size-input-url-padding) !important;
+  background: var(--zehn-color-input-url-background) !important;
+  color: var(--zehn-color-input-url-text) !important;
+  font-size: var(--zehn-size-input-url-text) !important;
+  border-radius: var(--zehn-size-input-url-radius) !important;
+  border: var(--zehn-size-input-url-border) solid var(--zehn-color-input-url-border) !important;
+  field-sizing: content !important;
+
+  &:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-url-background-focus)!important;
+    color: var(--zehn-color-input-url-text-focus) !important;
+    border-color: var(--zehn-color-input-url-border-focus) !important;
+  }
+
+  &:hover {
+    background: var(--zehn-color-input-url-background-hover) !important;
+    color: var(--zehn-color-input-url-text-hover) !important;
+    border-color: var(--zehn-color-input-url-border-hover) !important;
+  }
+
+  &:hover:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-url-background-hover-focus)!important;
+    color: var(--zehn-color-input-url-text-hover-focus) !important;
+    border-color: var(--zehn-color-input-url-border-hover-focus) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-input-url-background-active) !important;
+    color: var(--zehn-color-input-url-text-active) !important;
+    border-color: var(--zehn-color-input-url-border-active) !important;
+  }
+
+  &:active:is(:focus, :focus-within) {
+    background: var(--zehn-color-input-url-background-active-focus) !important;
+    color: var(--zehn-color-input-url-text-active-focus) !important;
+    border-color: var(--zehn-color-input-url-border-active-focus) !important;
+  }
+
+  &:disabled {
+    background: var(--zehn-color-input-url-background-disabled) !important;
+    color: var(--zehn-color-input-url-text-disabled) !important;
+    border-color: var(--zehn-color-input-url-border-disabled) !important;
+  }
+
+  &::placeholder {
+    color: var(--zehn-color-input-url-text-placeholder) !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    font-style: italic !important;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
 /* INTERACTABLE - TEXT INPUT (DIALOG) ------------------------------------------------------------------------------- */
 
 /* CONTAINER */
@@ -3719,9 +3800,8 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
 
 .zehnReveal::before {
   content: '';
-  z-index: -1;
   position: absolute;
-  inset: 0 !important;
+  inset: 0;
   border: var(--zehn-size-reveal-border) solid var(--zehn-color-reveal-border);
   -webkit-mask-image: radial-gradient(circle closest-side, white, transparent);
   mask-origin: border-box;
@@ -3729,10 +3809,20 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
   mask-size: inherit;
   mask-repeat: no-repeat;
   opacity: var(--zehn-reveal);
+  pointer-events: none;
 }
 
-.zehnReveal.zehnRevealList::before {
+.zehnReveal.zehnRevealBackgroundOnly::before {
   border: none;
+}
+
+.zehnReveal.zehnRevealBorderOnly::before {
+  background-color: transparent;
+}
+
+.zehnReveal.Disabled::before,
+.zehnReveal._1f6yYACTilZQ2dmqGd5zXk::before {
+  opacity: 0;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */

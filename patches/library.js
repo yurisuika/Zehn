@@ -5,7 +5,7 @@ import Options from './../js/options.js';
 
 Zehn.addUserAgent();
 
-/* ENABLE CONFIG WITH MILLENNIUM ------------------------------------------------------------------------------------ */
+/* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
 Options.setOptions();
 
@@ -14,7 +14,6 @@ Options.setOptions();
 Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
 ]);
-
 Zehn.addRevealClassOnMutation('._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
 ]);
@@ -26,7 +25,6 @@ Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 Zehn.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
   '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE)' // DROPDOWN ENTRY
 ]);
-
 Zehn.addRevealClassOnMutation('._30wJO3MC4x-I1OWpy1TAeE', [
   '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE)' // DROPDOWN ENTRY
 ]);
@@ -73,7 +71,7 @@ Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw
 
 /* TOGGLE ROOT MENU ------------------------------------------------------------------------------------------------- */
 
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', ['#zehnToggleNavigation', '.zehnButton'], false, (root, target, button) => {
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', ['#zehnToggleNavigation', '.zehnButton'], (root, target, button) => {
   const btnNavigation = document.getElementById('zehnToggleNavigation');
   if (btnNavigation) {
 
@@ -96,6 +94,7 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', ['#zehnTogg
       document.documentElement.style.setProperty('--zehn-size-menu-height', '32px');
       root.forEach((element) => {
         element.style.setProperty('height', '32px', 'important');
+
         element.style.setProperty('display', 'block', 'important');
         element.style.setProperty('color', 'var(--zehn-color-text-primary)', 'important');
         element.classList.add('zehnRootShown');
@@ -105,19 +104,19 @@ Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', ['#zehnTogg
 
     btnNavigation.classList.toggle('zehnToggled');
   }
-});
+}, false);
 
 /* TOGGLE LIBRARY SEARCH SECTION ------------------------------------------------------------------------------------ */
 
 Zehn.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleSidebarSearch', 'zehnSearchOpened');
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', ['#zehnToggleSidebarSearch', '.zehnButton', '.zehnReveal'], false, (root, target, button) => {
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', ['#zehnToggleSidebarSearch', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnSearchOpened');
-});
+}, false);
 
 /* TOGGLE LIBRARY WHAT'S NEW SECTION -------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleWhatsNew', 'zehnWhatsNewCollapsed');
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO > div:nth-child(2)', ['#zehnToggleWhatsNew', '.zehnButton'], true, (root, target, button) => {
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO > div:nth-child(2)', ['#zehnToggleWhatsNew', '.zehnButton'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnWhatsNewCollapsed');
 });
 
@@ -224,12 +223,12 @@ function togglePage(root, target, button) {
   }
 };
 
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], false, togglePage); // STICKY DETAILS
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], false, togglePage); // DETAILS
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], false, togglePage); // STICKY COMMUNITY
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], false, togglePage); // COMMUNITY
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], false, togglePage); // STICKY ACTIVITY
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], false, togglePage); // ACTIVITY
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, false); // STICKY DETAILS
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, false); // DETAILS
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, false); // STICKY COMMUNITY
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, false); // COMMUNITY
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, false); // STICKY ACTIVITY
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, false); // ACTIVITY
 
 /* MOVE SUPERNAV INTO MAIN NAVBAR ----------------------------------------------------------------------------------- */
 
@@ -263,7 +262,7 @@ Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
 
 /* TOGGLE THEATER MODE AKA REMOVE LIBRARY SIDEBAR ------------------------------------------------------------------- */
 
-Zehn.addButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleTheaterMode', '.zehnButton'], true, (root, target, button) => {
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleTheaterMode', '.zehnButton'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnTheaterMode');
 });
 
@@ -340,7 +339,6 @@ Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
   '._2CEKFex6JMsAse2lqMMjUp', // COLLECTIONS
   '._3mzKdQXht__YHo6PX1LmB6' // FILTERS (LINUX, SORT BY, READY TO PLAY)
 ]);
-
 Zehn.addRevealClassOnMutation('._1ZS_xta5HMXzR8JgxDH6n7', [
   '.uE7Pj4tb2n3_Bx4vjEX0a', // SCROLL UP
   '._3mzKdQXht__YHo6PX1LmB6', // FILTERS (LINUX, SORT BY, READY TO PLAY)
@@ -361,7 +359,6 @@ Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
   '._3qDWQGB0rtwM3qpXTb11Q- .zvLq1GUCH3yLuqv_TXBJ1', // INFO / SCROLL UP
   '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
 ]);
-
 Zehn.addRevealClassOnMutation('._9EHg918wH6CQCQlD5PWOO', [
   '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
 ]);
@@ -384,7 +381,7 @@ Zehn.revealInner('.YzIcpcz4oFx-nndxro5jE');
 //   '._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy' // BUTTONS
 // ]);
 
-// Zehn.revealChildren('.DKXVRVBokaW_Xxo6kyKq0');
+// Zehn.revealInner('.DKXVRVBokaW_Xxo6kyKq0');
 
 /* REVEAL SERVERS --------------------------------------------------------------------------------------------------- */
 
@@ -401,12 +398,15 @@ Zehn.addRevealClass('.PageListColumn', [
   '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
   '._2mL2HfT5AkDXRi1YBnRWKa', // CONTROLLER SETTINGS LIST ENTRY
   '._3Sjbkvk647UKKVLX6J7gsW' // NEW NOTE
-], true)
-
+], [
+  'zehnRevealBackgroundOnly'
+]);
 Zehn.addRevealClassOnMutation('.PageListColumn', [
   '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
   '._2mL2HfT5AkDXRi1YBnRWKa' // CONTROLLER SETTINGS LIST ENTRY
-], true)
+], [
+  'zehnRevealBackgroundOnly'
+]);
 
 Zehn.revealInner('.PageListColumn');
 
@@ -415,11 +415,14 @@ Zehn.revealInner('.PageListColumn');
 Zehn.addRevealClass('.xSTLmzylFJdIfak7ZdhuA', [
   '._2YV0m3IRCNOoUV9YhJNFnV', // LIST ENTRY
   '._1NqKTWvxtFgflRlqLTtv7e' // LEAVE
-], true)
-
+], [
+  'zehnRevealBackgroundOnly'
+]);
 Zehn.addRevealClassOnMutation('.xSTLmzylFJdIfak7ZdhuA', [
   '._2YV0m3IRCNOoUV9YhJNFnV' // LIST ENTRY
-], true)
+], [
+  'zehnRevealBackgroundOnly'
+]);
 
 Zehn.revealInner('.xSTLmzylFJdIfak7ZdhuA');
 
@@ -427,11 +430,14 @@ Zehn.revealInner('.xSTLmzylFJdIfak7ZdhuA');
 
 Zehn.addRevealClass('._2oua5ZJCOVQf0Vwgk7teo', [
   '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
-], true);
-
+], [
+  'zehnRevealBackgroundOnly'
+]);
 Zehn.addRevealClassOnMutation('._2oua5ZJCOVQf0Vwgk7teo', [
   '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
-], true);
+], [
+  'zehnRevealBackgroundOnly'
+]);
 
 Zehn.revealInner('._2oua5ZJCOVQf0Vwgk7teo');
 
@@ -449,7 +455,6 @@ Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
 Zehn.addRevealClass('._1EI98QaSW75zbVd3gxgBfS', [
   '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
 ]);
-
 Zehn.addRevealClassOnMutation('._1EI98QaSW75zbVd3gxgBfS', [
   '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
 ]);
@@ -467,3 +472,40 @@ Zehn.addRevealClassOnMutation('._1JTFbdOLNdh4RmamEfRS39', [
 ]);
 
 Zehn.revealInner('._1JTFbdOLNdh4RmamEfRS39');
+
+/* REVEAL URL BAR --------------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
+  '._1W55urU2WazGofFzN0_jHB .DialogInput_Wrapper', // INPUT WRAPPER
+  '._1W55urU2WazGofFzN0_jHB:not(:has(input))' // NO INPUT
+], [
+  'zehnRevealBorderOnly'
+]);
+Zehn.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
+  '._2UTNf-Ec4o5_3LPJtc2u7M._1oXr_GpvIgjHasLyU3tBn', // BUTTONS
+  '.extensions-bar-container .extension-button' // EXTENDIUM
+]);
+Zehn.addRevealClassOnMutation('._26Gmfe09NRsnF7eprTZYdY', [
+  '._2UTNf-Ec4o5_3LPJtc2u7M._1oXr_GpvIgjHasLyU3tBn', // BUTTONS
+  '.extensions-bar-container .extension-button' // EXTENDIUM
+]);
+
+Zehn.revealInner('._26Gmfe09NRsnF7eprTZYdY');
+
+/* REVEAL URL BAR LIBRARY ------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
+  '._2m_orETo6AghzAnc0sISCt' // LIBRARY FAKE INPUT WRAPPER
+], [
+  'zehnRevealBorderOnly'
+]);
+Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
+  '._3KaB94Jl4r0hFkthDPJy09', // BUTTONS
+  '.extensions-bar-container .extension-button' // EXTENDIUM
+]);
+Zehn.addRevealClassOnMutation('.UkR3sY319PuaUNuUWks2K', [
+  '._3KaB94Jl4r0hFkthDPJy09', // BUTTONS
+  '.extensions-bar-container .extension-button' // EXTENDIUM
+]);
+
+Zehn.revealInner('.UkR3sY319PuaUNuUWks2K');

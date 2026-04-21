@@ -5,6 +5,6 @@ import Options from './../js/options.js';
 
 Zehn.addUserAgent();
 
-/* ENABLE CONFIG WITH MILLENNIUM ------------------------------------------------------------------------------------ */
+/* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
 Options.setOptions();

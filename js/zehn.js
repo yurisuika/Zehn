@@ -117,7 +117,7 @@ const Zehn = {
     });
   },
 
-  addButton(rootSelector, targetSelector, nameSelectors, shouldAppend, callback) {
+  createButton(rootSelector, targetSelector, nameSelectors, callback, shouldAppend = true) {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const button = document.createElement('button');
 
@@ -143,6 +143,57 @@ const Zehn = {
       const icon = document.createElement('div');
       icon.classList.add(`zehnIcon`);
       button.append(icon);
+    });
+  },
+
+  createIconTitleContainer(rootSelector, targetSelector) {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+      if (target.children.length == 0) {
+        const container = document.createElement('div');
+        container.classList.add('zehnListContainer');
+        target.append(container);
+
+        const title = document.createElement('div');
+        title.classList.add('zehnListTitle');
+        container.append(title);
+        title.textContent = target.childNodes[0].textContent;
+        target.childNodes[0].remove();
+
+        const icon = document.createElement('div');
+        icon.classList.add('zehnListIcon');
+        container.prepend(icon);
+      }
+    });
+  },
+
+  createIconContainer(targetSelector, containerName) {
+    this.findTargets(document, targetSelector, (target) => {
+      const container = document.createElement('div');
+      container.classList.add('zehnContainer');
+      container.classList.add(containerName);
+      target.append(container);
+
+      const icon = document.createElement('div');
+      icon.classList.add('zehnIcon');
+      container.prepend(icon);
+    });
+  },
+
+  createContainer(rootSelector, targetSelector, containerName) {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+      const container = document.createElement('div');
+      container.classList.add('zehnContainer');
+      container.classList.add(containerName);
+      root.append(container);
+      container.append(target);
+    });
+  },
+
+  createBeforeTarget(rootSelector, targetSelector, additionName) {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+      const container = document.createElement('div');
+      container.classList.add(additionName);
+      target.before(container || '');
     });
   },
 
@@ -233,73 +284,22 @@ const Zehn = {
     });
   },
 
-  createIconTitleContainer(rootSelector, targetSelector) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      if (target.children.length == 0) {
-        const container = document.createElement('div');
-        container.classList.add('zehnListContainer');
-        target.append(container);
-
-        const title = document.createElement('div');
-        title.classList.add('zehnListTitle');
-        container.append(title);
-        title.textContent = target.childNodes[0].textContent;
-        target.childNodes[0].remove();
-
-        const icon = document.createElement('div');
-        icon.classList.add('zehnListIcon');
-        container.prepend(icon);
-      }
-    });
-  },
-
-  createIconContainer(targetSelector, containerName) {
-    this.findTargets(document, targetSelector, (target) => {
-      const container = document.createElement('div');
-      container.classList.add('zehnContainer');
-      container.classList.add(containerName);
-      target.append(container);
-
-      const icon = document.createElement('div');
-      icon.classList.add('zehnIcon');
-      container.prepend(icon);
-    });
-  },
-
-  createContainer(rootSelector, targetSelector, containerName) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const container = document.createElement('div');
-      container.classList.add('zehnContainer');
-      container.classList.add(containerName);
-      root.append(container);
-      container.append(target);
-    });
-  },
-
-  createBeforeTarget(rootSelector, targetSelector, additionName) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const container = document.createElement('div');
-      container.classList.add(additionName);
-      target.before(container || '');
-    });
-  },
-
-  addRevealClass(rootSelector, targetSelectors, isList = false) {
+  addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
     targetSelectors.forEach((targetSelector) => {
       this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
         target.classList.toggle('zehnReveal', true);
-        if (isList) target.classList.toggle('zehnRevealList', true);
+        additionalNames.forEach(name => {target.classList.toggle(name, true)});
       });
     });
   },
 
-  addRevealClassOnMutation(rootSelector, targetSelectors, isList = false) {
+  addRevealClassOnMutation(rootSelector, targetSelectors, additionalNames = []) {
     targetSelectors.forEach((targetSelector) => {
       this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
         const observer = new MutationObserver((mutations) => {
           if (mutations.length) {
             target.classList.toggle('zehnReveal', true);
-            if (isList) target.classList.toggle('zehnRevealList', true);
+            additionalNames.forEach(name => {target.classList.toggle(name, true)});
           }
         });
         observer.observe(target, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'id', 'style'] });

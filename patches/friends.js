@@ -5,7 +5,7 @@ import Options from './../js/options.js';
 
 Zehn.addUserAgent();
 
-/* ENABLE CONFIG WITH MILLENNIUM ------------------------------------------------------------------------------------ */
+/* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
 Options.setOptions();
 
@@ -14,7 +14,6 @@ Options.setOptions();
 Zehn.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
 ]);
-
 Zehn.addRevealClassOnMutation('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
 ]);
@@ -28,14 +27,14 @@ Zehn.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearchA
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
 Zehn.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
-Zehn.addButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], false, (root, target, button) => {
+Zehn.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
-});
+}, false);
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
 Zehn.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnCurrentUserOpened');
-Zehn.addButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], true, (root, target, button) => {
+Zehn.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnCurrentUserOpened');
 });
 
@@ -50,14 +49,14 @@ Zehn.createIconTitleContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV');
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
-Zehn.addButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], true, (root, target, button) => {
+Zehn.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
 });
 
 /* TOGGLE GROUP CHAT CHANNEL PAGELIST ------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
-Zehn.addButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], true, (root, target, button) => {
+Zehn.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
 });
 
@@ -116,35 +115,46 @@ Zehn.revealInner('.chatRoomHeader');
 //   '.RVIs84dAE6wHcjH9tkinc._3zOBeq5W4cNK3lRz_7aroW', // EMBED
 //   '.ChatMessageEntryVoice .VoiceToggle' // VOICE
 // ]);
-
 // Zehn.addRevealClassOnMutation('.chatEntry', [
 //   '._3Ule3rolhZJiBN4yNNtk1s .RVIs84dAE6wHcjH9tkinc' // ENTER
 // ]);
 
-// Zehn.revealChildren('.chatEntry');
+// Zehn.revealInner('.chatEntry');
 
 /* REVEAL CHAT CHANNEL LIST ----------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomGroupNavCollapseExpand' // PIN
 ]);
-
 Zehn.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomTextChannel', // TEXT
   '.chatRoomVoiceChannel' // VOICE
-], true);
-
+], [
+  'zehnRevealBackgroundOnly'
+]);
 Zehn.addRevealClassOnMutation('.chatRoomGroupNavColumn', [
   '.chatRoomTextChannel', // TEXT
   '.chatRoomVoiceChannel' // VOICE
-], true);
+], [
+  'zehnRevealBackgroundOnly'
+]);
 
 Zehn.revealInner('.chatRoomGroupNavColumn');
 
 /* REVEAL CHAT TABS ------------------------------------------------------------------------------------------------- */
 
+// Zehn.addRevealClass('.titleBarContainer.ChatTabs', [
+//   '.vs5AhAWHJLa_eDOBkDcMy' // TAB
+// ], [
+//   'zehnRevealBackgroundOnly'
+// ]);
+
+// Zehn.revealInner('.titleBarContainer.ChatTabs');
+
 Zehn.addRevealClass('.titleBarContainer.ChatTabs', [
-  '.vs5AhAWHJLa_eDOBkDcMy' // TAB
-], true);
+  '._3f1rJf0BU79ub9YR2KihaT' // TAB CONTAINER
+], [
+  'zehnRevealBackgroundOnly'
+]);
 
 Zehn.revealInner('.titleBarContainer.ChatTabs');
