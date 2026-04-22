@@ -1256,6 +1256,7 @@ input[type="radio" i]:checked:disabled::after,
 input[type=checkbox],
 .DialogCheckbox,
 .LBS7IDpob52Sb4ZoKobh0 {
+  appearance: unset !important;
   margin: auto 0 !important;
   position: relative !important;
   box-sizing: border-box !important;
@@ -1504,6 +1505,7 @@ button.DialogButton:has(._3OHR1e3u08hK7hMx4fFy_L) {
 }
 
 /* PAGED LIST CONTENT WIDTH OVERRIDE */
+.MillenniumDesktopSidebar_EditorContent select,
 .DialogContentTransition:is(.ZjHHXZlnZhCahNrBFplWc, .OX7USkJ5dDP_icD00Gal6) select,
 .DialogContentTransition:is(.ZjHHXZlnZhCahNrBFplWc, .OX7USkJ5dDP_icD00Gal6) .DialogDropDown._DialogInputContainer,
 .DialogContentTransition:is(.ZjHHXZlnZhCahNrBFplWc, .OX7USkJ5dDP_icD00Gal6) ._3OHR1e3u08hK7hMx4fFy_L,
@@ -1654,6 +1656,7 @@ select,
   text-overflow: ellipsis !important;
   overflow: hidden !important;
   white-space: inherit !important;
+  gap: var(--zehn-size-gap-small) !important;
 }
 
 /* OTHER DISPLAY */
@@ -1717,6 +1720,7 @@ select,
   padding: 0 !important;
 }
 
+._2o2fXzn99OddeqZMjbDuxQ:has(select)::after,
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu,
 .SVGIcon_DownArrowContextMenu,
 ._3OHR1e3u08hK7hMx4fFy_L .DialogDropDown_CurrentDisplay~svg,
@@ -1733,6 +1737,52 @@ select,
   * {
     display: none !important;
   }
+}
+
+/* FAKE A CHEVRON IN WRAPPED SELECT */
+._2o2fXzn99OddeqZMjbDuxQ:has(select)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: var(--zehn-size-gap-small);
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* PICKER STYLING DOESN'T SEEM TO WORK */
+select::picker(select) {
+  appearance: base-select !important;
+  border-radius: var(--zehn-size-context-radius) !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-context-padding) !important;
+  border: var(--zehn-size-context-border) solid var(--zehn-color-context-dropdown-border) !important;
+  background-color: var(--zehn-color-context-dropdown-background) !important;
+}
+
+option {
+  appearance: base-select !important;
+  border-radius: var(--zehn-size-context-entry-radius) !important;
+  background: var(--zehn-color-list-background) padding-box !important;
+  border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border) !important;
+  line-height: var(--zehn-size-context-line) !important;
+  max-width: var(--zehn-size-context-entry-width) !important;
+  box-sizing: border-box !important;
+  border-radius: var(--zehn-size-context-entry-radius) !important;
+  padding: var(--zehn-size-context-entry-padding) !important;
+}
+
+option:hover {
+  background: var(--zehn-color-list-background-hover) padding-box !important;
+}
+
+option:active {
+  background: var(--zehn-color-list-background-active) padding-box !important;
+}
+
+option:checked {
+  background: var(--zehn-color-list-background-focus) padding-box !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -2297,6 +2347,7 @@ input.DialogInput.DialogListBuilderInput_Input,
 
 /* TEXT INPUT - GENERIC */
 input[type="text"],
+input[type="number"],
 /* DIALOG */
 input.DialogInput.DialogTextInputBase,
 /* DIALOG LIST BUILDER */
@@ -3380,7 +3431,6 @@ button.DialogButton::before {
   opacity: unset !important;
 }
 
-option,
 button.DialogButton,
 button.DialogButton.Primary,
 button.DialogButton.Small,
@@ -3403,7 +3453,6 @@ button.DialogButton.Small,
   outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
 }
 
-option:focus,
 button.DialogButton:focus,
 button.DialogButton:enabled:focus,
 .steam-hunters-achievements-page button:focus {
@@ -3412,7 +3461,6 @@ button.DialogButton:enabled:focus,
   outline-color: var(--zehn-color-button-dialog-border-focus) !important;
 }
 
-option:hover,
 button.DialogButton:hover,
 button.DialogButton:enabled:hover,
 .steam-hunters-achievements-page button:hover {
@@ -3421,7 +3469,6 @@ button.DialogButton:enabled:hover,
   outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 }
 
-option:hover:focus,
 button.DialogButton:hover:focus,
 button.DialogButton:enabled:hover:focus,
 .steam-hunters-achievements-page button:hover:focus {
@@ -3430,7 +3477,6 @@ button.DialogButton:enabled:hover:focus,
   outline-color: var(--zehn-color-button-dialog-border-hover-focus) !important;
 }
 
-option:active,
 button.DialogButton:active,
 button.DialogButton:enabled:active,
 .steam-hunters-achievements-page button:active {
@@ -3439,7 +3485,6 @@ button.DialogButton:enabled:active,
   outline-color: var(--zehn-color-button-dialog-border-active) !important;
 }
 
-option:active:focus,
 button.DialogButton:active:focus,
 button.DialogButton:enabled:active:focus,
 .steam-hunters-achievements-page button:active:focus {
@@ -3448,7 +3493,6 @@ button.DialogButton:enabled:active:focus,
   outline-color: var(--zehn-color-button-dialog-border-active-focus) !important;
 }
 
-option:disabled,
 button.DialogButton:disabled,
 button.DialogButton:disabled:is(:hover, :active, :focus),
 button.DialogButton.Disabled,
