@@ -54,10 +54,12 @@ Zehn.revealSelf('._3k90ug209sE23xAMqcM74s.zehnReveal');
 
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
-Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
-  const sidebarWidth = root.querySelector('._9sPoVBFyE_vE87mnZJ5aB').offsetWidth;
-  const filterWidth = window.innerWidth - sidebarWidth;
+Zehn.handleOnMutation('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
+  const sidebar = root.querySelector('._9sPoVBFyE_vE87mnZJ5aB');
+  var sidebarWidth = Math.round(sidebar.offsetWidth);
+  sidebar.style.width = `${sidebarWidth}px`;
 
+  var filterWidth = window.innerWidth - sidebarWidth;
   target.style.width = `${filterWidth}px`;
 });
 
