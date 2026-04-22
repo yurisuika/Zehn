@@ -98,7 +98,7 @@ const Zehn = {
       update();
 
       const observer = new MutationObserver(update);
-      observer.observe((shouldObserveTarget ? target : root), { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'id', 'style'] });
+      observer.observe((shouldObserveTarget ? target : root), { childList: true, subtree: true });
 
       return observer;
     });
