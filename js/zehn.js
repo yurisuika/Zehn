@@ -104,6 +104,22 @@ const Zehn = {
     });
   },
 
+  handleOnFirstMutation(rootSelector, targetSelector, callback, shouldObserveTarget = false) {
+    Zehn.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+      const update = () => callback(root, target);
+
+      update();
+
+      const observer = new MutationObserver(update);
+      observer.observe((shouldObserveTarget ? target : root), { childList: true, subtree: true, attributeFilter: ['class', 'id', 'style'] });
+
+      return {
+        observer,
+        disconnect: () => observer.disconnect()
+      };
+    });
+  },
+
   storeTargetHeightAsVariable(rootSelector, targetSelector, variableName) {
     Zehn.handleOnMutation(rootSelector, targetSelector, (root, target) => {
       document.documentElement.style.setProperty(variableName, `${target.offsetHeight}px`);
@@ -286,28 +302,9 @@ const Zehn = {
 
   addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
     targetSelectors.forEach((targetSelector) => {
-      this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+      this.handleOnFirstMutation(rootSelector, targetSelector, (root, target) => {
         target.classList.toggle('zehnReveal', true);
         additionalNames.forEach(name => {target.classList.toggle(name, true)});
-      });
-    });
-  },
-
-  addRevealClassOnMutation(rootSelector, targetSelectors, additionalNames = []) {
-    targetSelectors.forEach((targetSelector) => {
-      this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-        const observer = new MutationObserver((mutations) => {
-          if (mutations.length) {
-            target.classList.toggle('zehnReveal', true);
-            additionalNames.forEach(name => {target.classList.toggle(name, true)});
-          }
-        });
-        observer.observe(target, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'id', 'style'] });
-
-        return {
-          observer,
-          disconnect: () => observer.disconnect()
-        };
       });
     });
   },

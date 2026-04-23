@@ -14,8 +14,5 @@ Options.setOptions();
 Zehn.addRevealClass('.extendium.Extensions .ContextMenuPopupBody', [
   '.eKmEXJCm_lgme24Fp_HWt._2HuzvKQ2QMUJ-JJOeApaF1 ._3jMlJm4PQCA8SfNlUR99Fo' // CONTEXT ENTRY
 ]);
-Zehn.addRevealClassOnMutation('.extendium.Extensions .ContextMenuPopupBody', [
-  '.eKmEXJCm_lgme24Fp_HWt._2HuzvKQ2QMUJ-JJOeApaF1 ._3jMlJm4PQCA8SfNlUR99Fo' // CONTEXT ENTRY
-]);
 
 Zehn.revealSelf('.eKmEXJCm_lgme24Fp_HWt._2HuzvKQ2QMUJ-JJOeApaF1 ._3jMlJm4PQCA8SfNlUR99Fo.zehnReveal');

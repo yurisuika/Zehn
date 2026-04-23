@@ -14,9 +14,6 @@ Options.setOptions();
 Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
 ]);
-Zehn.addRevealClassOnMutation('._2EstNjFIIZm_WUSKm5Wt7n', [
-  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
-]);
 
 Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 
@@ -25,22 +22,12 @@ Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 Zehn.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
   '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE)' // DROPDOWN ENTRY
 ]);
-Zehn.addRevealClassOnMutation('._30wJO3MC4x-I1OWpy1TAeE', [
-  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE)' // DROPDOWN ENTRY
-]);
 
 Zehn.revealSelf('._2oAiZidGyUxL-hfupFDQ2m.zehnReveal');
 
 /* REVEAL NOTIFICATION MENU ----------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
-  '.QFW0BtI4l77AFmv1xLAkx', // ALL
-  '._3B8wRA4H7e_oSksYNqpSPv', // STANDARD
-  '._25gii5r23MmAqXvLZj24tK', // PINNED WEB
-  '._3k90ug209sE23xAMqcM74s' // PINNED DESKTOP
-]);
-
-Zehn.addRevealClassOnMutation('._2EstNjFIIZm_WUSKm5Wt7n', [
   '.QFW0BtI4l77AFmv1xLAkx', // ALL
   '._3B8wRA4H7e_oSksYNqpSPv', // STANDARD
   '._25gii5r23MmAqXvLZj24tK', // PINNED WEB
@@ -341,10 +328,6 @@ Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
   '._2CEKFex6JMsAse2lqMMjUp', // COLLECTIONS
   '._3mzKdQXht__YHo6PX1LmB6' // FILTERS (LINUX, SORT BY, READY TO PLAY)
 ]);
-Zehn.addRevealClassOnMutation('._1ZS_xta5HMXzR8JgxDH6n7', [
-  '.uE7Pj4tb2n3_Bx4vjEX0a', // SCROLL UP
-  '._3mzKdQXht__YHo6PX1LmB6', // FILTERS (LINUX, SORT BY, READY TO PLAY)
-]);
 
 Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
 
@@ -359,9 +342,6 @@ Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
   '._3oddBTkj_FjknCgBnPqcmQ ._3qDWQGB0rtwM3qpXTb11Q-', // SETTINGS
   '._3qDWQGB0rtwM3qpXTb11Q-._1oYt_BfxCHnA-_6sfUHiNn', // CONTROLLER
   '._3qDWQGB0rtwM3qpXTb11Q- .zvLq1GUCH3yLuqv_TXBJ1', // INFO / SCROLL UP
-  '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
-]);
-Zehn.addRevealClassOnMutation('._9EHg918wH6CQCQlD5PWOO', [
   '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
 ]);
 
@@ -403,12 +383,6 @@ Zehn.addRevealClass('.PageListColumn', [
 ], [
   'zehnRevealBackgroundOnly'
 ]);
-Zehn.addRevealClassOnMutation('.PageListColumn', [
-  '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
-  '._2mL2HfT5AkDXRi1YBnRWKa' // CONTROLLER SETTINGS LIST ENTRY
-], [
-  'zehnRevealBackgroundOnly'
-]);
 
 Zehn.revealInner('.PageListColumn');
 
@@ -420,22 +394,12 @@ Zehn.addRevealClass('.xSTLmzylFJdIfak7ZdhuA', [
 ], [
   'zehnRevealBackgroundOnly'
 ]);
-Zehn.addRevealClassOnMutation('.xSTLmzylFJdIfak7ZdhuA', [
-  '._2YV0m3IRCNOoUV9YhJNFnV' // LIST ENTRY
-], [
-  'zehnRevealBackgroundOnly'
-]);
 
 Zehn.revealInner('.xSTLmzylFJdIfak7ZdhuA');
 
 /* REVEAL CONTROLLER SETTINGS --------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._2oua5ZJCOVQf0Vwgk7teo', [
-  '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
-], [
-  'zehnRevealBackgroundOnly'
-]);
-Zehn.addRevealClassOnMutation('._2oua5ZJCOVQf0Vwgk7teo', [
   '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
 ], [
   'zehnRevealBackgroundOnly'
@@ -457,19 +421,12 @@ Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
 Zehn.addRevealClass('._1EI98QaSW75zbVd3gxgBfS', [
   '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
 ]);
-Zehn.addRevealClassOnMutation('._1EI98QaSW75zbVd3gxgBfS', [
-  '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
-]);
 
 Zehn.revealInner('._1EI98QaSW75zbVd3gxgBfS');
 
 /* REVEAL CLOCK/TIMER ----------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._1JTFbdOLNdh4RmamEfRS39', [
-  '.HijmccPB1BKyhOwhX1EVl' // BUTTONS
-]);
-
-Zehn.addRevealClassOnMutation('._1JTFbdOLNdh4RmamEfRS39', [
   '.HijmccPB1BKyhOwhX1EVl' // BUTTONS
 ]);
 
@@ -487,10 +444,6 @@ Zehn.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
   '._2UTNf-Ec4o5_3LPJtc2u7M._1oXr_GpvIgjHasLyU3tBn', // BUTTONS
   '.extensions-bar-container .extension-button' // EXTENDIUM
 ]);
-Zehn.addRevealClassOnMutation('._26Gmfe09NRsnF7eprTZYdY', [
-  '._2UTNf-Ec4o5_3LPJtc2u7M._1oXr_GpvIgjHasLyU3tBn', // BUTTONS
-  '.extensions-bar-container .extension-button' // EXTENDIUM
-]);
 
 Zehn.revealInner('._26Gmfe09NRsnF7eprTZYdY');
 
@@ -502,10 +455,6 @@ Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
   'zehnRevealBorderOnly'
 ]);
 Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
-  '._3KaB94Jl4r0hFkthDPJy09', // BUTTONS
-  '.extensions-bar-container .extension-button' // EXTENDIUM
-]);
-Zehn.addRevealClassOnMutation('.UkR3sY319PuaUNuUWks2K', [
   '._3KaB94Jl4r0hFkthDPJy09', // BUTTONS
   '.extensions-bar-container .extension-button' // EXTENDIUM
 ]);

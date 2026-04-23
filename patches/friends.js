@@ -14,9 +14,6 @@ Options.setOptions();
 Zehn.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
 ]);
-Zehn.addRevealClassOnMutation('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
-  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
-]);
 
 Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 
@@ -115,9 +112,6 @@ Zehn.revealInner('.chatRoomHeader');
 //   '.RVIs84dAE6wHcjH9tkinc._3zOBeq5W4cNK3lRz_7aroW', // EMBED
 //   '.ChatMessageEntryVoice .VoiceToggle' // VOICE
 // ]);
-// Zehn.addRevealClassOnMutation('.chatEntry', [
-//   '._3Ule3rolhZJiBN4yNNtk1s .RVIs84dAE6wHcjH9tkinc' // ENTER
-// ]);
 
 // Zehn.revealInner('.chatEntry');
 
@@ -127,12 +121,6 @@ Zehn.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomGroupNavCollapseExpand' // PIN
 ]);
 Zehn.addRevealClass('.chatRoomGroupNavColumn', [
-  '.chatRoomTextChannel', // TEXT
-  '.chatRoomVoiceChannel' // VOICE
-], [
-  'zehnRevealBackgroundOnly'
-]);
-Zehn.addRevealClassOnMutation('.chatRoomGroupNavColumn', [
   '.chatRoomTextChannel', // TEXT
   '.chatRoomVoiceChannel' // VOICE
 ], [
