@@ -326,6 +326,8 @@ const Zehn = {
   },
 
   reveal(container, revealed) {
+    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
+
     const targets = [revealed];
     const maskSize = 200;
     const halfMask = maskSize / 2;
