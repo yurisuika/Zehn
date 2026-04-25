@@ -1925,13 +1925,25 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 /* POP OUT VIDEO IN BROWSER */
+.chatImageURL,
 .msg .chatVideoContainer a.chatImageURL,
 .msg .chatImageContainer a.chatImageURL {
+  opacity: 1 !important;
+  transition: none !important;
   inset: 0 !important;
   width: var(--zehn-size-button-medium) !important;
   height: var(--zehn-size-button-medium) !important;
   position: relative !important;
   display: block !important;
+  background-color: var(--zehn-color-button-app-background) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .chatImageContainer .chatImageURL {
@@ -1947,22 +1959,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   display: none !important;
 }
 
-.chatImageURL {
-  opacity: 1 !important;
-  transition: none !important;
-  width: var(--zehn-size-button-medium) !important;
-  height: var(--zehn-size-button-medium) !important;
-  background-color: var(--zehn-color-button-app-background) !important;
-}
-
-.chatImageURL:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
-
-.chatImageURL:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
-}
-
 .msg .SVGIcon_Button {
   width: var(--zehn-size-button-medium) !important;
   height: var(--zehn-size-button-medium) !important;
@@ -1971,10 +1967,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-medium) !important;
-}
 
-.msg .SVGIcon_Button * {
-  display: none !important;
+  * {
+    display: none !important;
+  }
 }
 
 .chatVideoContainer .BBCodeResizeControl {
@@ -1982,19 +1978,17 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   height: var(--zehn-size-button-medium) !important;
 }
 
-.BBCodeResizeControl:hover,
-.BBCodeRestoreControl:hover {
+.BBCodeResizeControl,
+.BBCodeRestoreControl {
   background-color: var(--zehn-color-button-app-background) !important;
-}
 
-.BBCodeResizeControl:hover,
-.BBCodeRestoreControl:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.BBCodeResizeControl:active,
-.BBCodeRestoreControl:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .msg .SVGIcon_Button.SVGIcon_Popout {
@@ -2326,7 +2320,16 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: 0 !important;
   opacity: 1 !important;
   background-color: var(--zehn-color-button-app-background) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
+
 
 .BBCodeResizableComponent:hover .BBCodeCollapseControl:hover,
 .BBCodeCollapseControl:hover,
@@ -2334,28 +2337,21 @@ div:hover>.BBCodeCollapseControl {
   opacity: 1 !important;
 }
 
-.BBCodeCollapseControl:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
-
-.BBCodeCollapseControl:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
-}
-
 .BBCodeCollapseControl .SVGIcon_Button {
   top: 0 !important;
   right: 0 !important;
   width: 32px !important;
   height: 32px !important;
+  transition: none !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-medium) !important;
   -webkit-mask-image: var(--zehn-icon-window-collapse) !important;
-}
 
-.BBCodeCollapseControl .SVGIcon_Button * {
-  display: none !important;
+  * {
+    display: none !important;
+  }
 }
 
 .BBCodeCollapseControl .SVGIcon_Button,
@@ -2365,10 +2361,6 @@ div:hover>.BBCodeCollapseControl {
   height: 32px !important;
   bottom: 0 !important;
   right: 0 !important;
-}
-
-.BBCodeCollapseControl .SVGIcon_Button {
-  transition: none !important;
 }
 
 .Minimized .BBCodeCollapseControl .SVGIcon_Button {
@@ -2574,14 +2566,14 @@ div:hover>.BBCodeCollapseControl {
   font-size: var(--zehn-size-14) !important;
   color: var(--zehn-color-link) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-}
 
-.ChatMessageOpenGraph_Title:hover {
-  color: var(--zehn-color-link-hover) !important;
-}
+  &:hover {
+    color: var(--zehn-color-link-hover) !important;
+  }
 
-.ChatMessageOpenGraph_Title:active {
-  color: var(--zehn-color-link-active) !important;
+  &:active {
+    color: var(--zehn-color-link-active) !important;
+  }
 }
 
 .ChatMessageOpenGraph_Body {
@@ -2700,14 +2692,14 @@ div:hover>.BBCodeCollapseControl {
   border-radius: var(--zehn-size-radius-square) !important;
   height: var(--zehn-size-button-medium) !important;
   background: var(--zehn-color-button-app-background) !important;
-}
 
-._3aFwaBQvuga_yODqLxSmy6:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-._3aFwaBQvuga_yODqLxSmy6:active {
-  background: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .KN2rLYTydEJfhK2JG1xBI {
@@ -2746,14 +2738,14 @@ div:hover>.BBCodeCollapseControl {
   width: var(--zehn-size-button-medium) !important;
   margin: 0 !important;
   background: var(--zehn-color-button-app-background) !important;
-}
 
-._3SCtLxKknXT2PcQStMloQh:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-._3SCtLxKknXT2PcQStMloQh:active {
-  background: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 ._3SCtLxKknXT2PcQStMloQh svg {
@@ -2875,14 +2867,14 @@ div:hover>.BBCodeCollapseControl {
   right: var(--zehn-size-padding-medium) !important;
   top: var(--zehn-size-padding-medium) !important;
   position: absolute !important;
-}
 
-._1FRLI2bl5lQd1WTvywZUl0._3C_TSOqWcAoh-WTAh3LLLd div:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-._1FRLI2bl5lQd1WTvywZUl0._3C_TSOqWcAoh-WTAh3LLLd div:active {
-  background: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 ._1FRLI2bl5lQd1WTvywZUl0._3C_TSOqWcAoh-WTAh3LLLd svg {
@@ -2945,14 +2937,14 @@ div:hover>.BBCodeCollapseControl {
   max-width: 0 !important;
   min-width: 0 !important;
   display: none !important;
-}
 
-.RVIs84dAE6wHcjH9tkinc:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.RVIs84dAE6wHcjH9tkinc:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .RVIs84dAE6wHcjH9tkinc {
@@ -2998,14 +2990,14 @@ div:hover>.BBCodeCollapseControl {
 .RVIs84dAE6wHcjH9tkinc:not(.Aupswi7-c-w3XwNO5cp2i):not(._3zOBeq5W4cNK3lRz_7aroW) {
   background: var(--zehn-color-button-app-background) !important;
   transition: none !important;
-}
 
-.RVIs84dAE6wHcjH9tkinc:not(.Aupswi7-c-w3XwNO5cp2i):not(._3zOBeq5W4cNK3lRz_7aroW):hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.RVIs84dAE6wHcjH9tkinc:not(.Aupswi7-c-w3XwNO5cp2i):not(._3zOBeq5W4cNK3lRz_7aroW):active {
-  background: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .RVIs84dAE6wHcjH9tkinc:not(.Aupswi7-c-w3XwNO5cp2i):not(._3zOBeq5W4cNK3lRz_7aroW) .SVGIcon_Submit {
@@ -3108,25 +3100,23 @@ div:hover>.BBCodeCollapseControl {
 .VoiceToggle.Active svg {
   color: transparent !important;
   -webkit-mask-image: var(--zehn-icon-chat-leave) !important;
-}
 
-.VoiceToggle svg * {
-  display: none !important;
+  * {
+    display: none !important;
+  }
 }
 
 .ChatMessageEntryVoice.Inactive,
 .ChatMessageEntryVoice.Active {
   background-color: var(--zehn-color-button-app-background) !important;
-}
 
-.ChatMessageEntryVoice.Inactive:hover,
-.ChatMessageEntryVoice.Active:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.ChatMessageEntryVoice.Inactive:active,
-.ChatMessageEntryVoice.Active:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .friendsui-container .Aupswi7-c-w3XwNO5cp2i svg {
@@ -3245,14 +3235,14 @@ div:hover>.BBCodeCollapseControl {
   background-position: center !important;
   background-size: 16px !important;
   display: none !important;
-}
 
-.chatRoomButton:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.chatRoomButton:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .MultiUserChat.zehnSettingsButtonsOpened .chatRoomButton {
@@ -3391,16 +3381,16 @@ div:hover>.BBCodeCollapseControl {
 
 .friendsui-container .chatRoomGroupNavCollapseExpand {
   background-color: var(--zehn-color-button-app-background) !important;
-}
 
-.friendsui-container .chatRoomGroupNavCollapseExpand:hover {
-  filter: none !important;
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    filter: none !important;
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.friendsui-container .chatRoomGroupNavCollapseExpand:active {
-  filter: none !important;
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    filter: none !important;
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .friendsui-container .SVGIcon_Pin {
@@ -3411,6 +3401,10 @@ div:hover>.BBCodeCollapseControl {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-medium) !important;
   -webkit-mask-image: var(--zehn-icon-pin) !important;
+
+  * {
+    display: none !important;
+  }
 }
 
 .friendsui-container .SVGIcon_Pin.Pinned {
@@ -3419,10 +3413,6 @@ div:hover>.BBCodeCollapseControl {
 
 .friendsui-container .SVGIcon_Pin:hover {
   filter: none !important;
-}
-
-.friendsui-container .SVGIcon_Pin * {
-  display: none !important;
 }
 
 /* CHAT ROOM CHANNEL LIST */
@@ -3813,14 +3803,14 @@ div:hover>.BBCodeCollapseControl {
   padding: 0 !important;
   transition: none !important;
   background-color: var(--zehn-color-button-app-background) !important;
-}
 
-.MemberListOption:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.MemberListOption:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .MemberListOption.ToggleMemberListView {
@@ -3906,14 +3896,14 @@ div:hover>.BBCodeCollapseControl {
 .MemberListColumn:not(.MemberListViewCompact) .chatroomBucket_regular.Panel.Focusable {
   padding: 0 !important;
   background-color: var(--zehn-color-list-background) !important;
-}
 
-.MemberListColumn:not(.MemberListViewCompact) .chatroomBucket_regular.Panel.Focusable:hover {
-  background-color: var(--zehn-color-list-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-list-background-hover) !important;
+  }
 
-.MemberListColumn:not(.MemberListViewCompact) .chatroomBucket_regular.Panel.Focusable:active {
-  background-color: var(--zehn-color-list-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-list-background-active) !important;
+  }
 }
 
 .CompactFriendsList .friendGroup .ChatRoomMemberScrollList_List .friend {
@@ -4216,14 +4206,14 @@ div:hover>.BBCodeCollapseControl {
   margin-right: 0 !important;
   background-image: none !important;
   position: relative !important;
-}
 
-.doGxCBJrGimabHm365bOV:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.doGxCBJrGimabHm365bOV:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .doGxCBJrGimabHm365bOV::after {
@@ -4306,14 +4296,14 @@ div:hover>.BBCodeCollapseControl {
   height: 32px !important;
   background-color: var(--zehn-color-button-app-background) !important;
   border-radius: var(--zehn-size-radius-square) !important;
-}
 
-.STV_BroadcastClose:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.STV_BroadcastClose:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .STV_BroadcastClose svg {
@@ -4422,14 +4412,14 @@ div:hover>.BBCodeCollapseControl {
   padding: 0 !important;
   opacity: 1 !important;
   transition: opacity 0.2s !important;
-}
 
-.BroadcastChatExpander:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.BroadcastChatExpander:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .chatRoomOptions .BroadcastChatExpander {
@@ -4492,16 +4482,14 @@ div:hover>.BBCodeCollapseControl {
   transition: none !important;
   background: var(--zehn-color-button-app-background) !important;
   fill: transparent !important;
-}
 
-.chatBody .ChatBodyControls .showBothTabs:hover,
-.chatBody .ChatBodyControls .Close:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.chatBody .ChatBodyControls .showBothTabs:active,
-.chatBody .ChatBodyControls .Close:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 /* CHANNELS */
@@ -4521,14 +4509,14 @@ div:hover>.BBCodeCollapseControl {
 
 .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab:not(.Active) {
   background-color: var(--zehn-color-list-background) !important;
-}
 
-.chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab:not(.Active):hover {
-  background-color: var(--zehn-color-list-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-.chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab:not(.Active):active {
-  background-color: var(--zehn-color-list-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 .chatBody .InnerChatTab,
@@ -4656,14 +4644,14 @@ div:hover>.BBCodeCollapseControl {
   right: 0 !important;
   bottom: 0 !important;
   background: var(--zehn-color-button-app-background) !important;
-}
 
-._39xGjKkRIIE7HwloXCWT41:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+  }
 
-._39xGjKkRIIE7HwloXCWT41:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
+  &:active {
+    background: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
 ._2vz6RRjc3uhVClPT9KmsWO {
