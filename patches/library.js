@@ -39,15 +39,75 @@ Zehn.revealSelf('._3B8wRA4H7e_oSksYNqpSPv.zehnReveal');
 Zehn.revealSelf('._25gii5r23MmAqXvLZj24tK.zehnReveal');
 Zehn.revealSelf('._3k90ug209sE23xAMqcM74s.zehnReveal');
 
+/* RECALCULATE GRID SPACERS ----------------------------------------------------------------------------------------- */
+
+function recalculateGrid() {
+  Zehn.handleOnMutation('._2Nq6ov7A1hGcHXVOXNt_OE', '.DGRkX_HYUzbFaqRysWQVi', (root, target) => {
+    const startSpacer = target.firstElementChild;
+    const grid = target.querySelector('[role="grid"]');
+    const endSpacer = target.lastElementChild;
+
+    var rowHeight = 0;
+    const library = document.querySelector('_3xRRJfD2xy95i9NhJxLTp0');
+    if (library.classList.contains('LibraryDisplaySizeLarge')) {
+      rowHeight = 222;
+    } else if (library.classList.contains('LibraryDisplaySizeMedium')) {
+      rowHeight = 148;
+    } else if (library.classList.contains('LibraryDisplaySizeSmall')) {
+      rowHeight = 111;
+    }
+
+    var rowCount = grid.getAttribute('aria-rowcount');
+    var gap = parseInt(getComputedStyle(grid).getPropertyValue('row-gap'), 10);
+
+    const observer = new MutationObserver(mutations => {
+      const cell = grid.querySelector('[role="gridcell"]')?.firstElementChild;
+      if (cell) rowHeight = Math.max(rowHeight, Math.round(cell.offsetHeight));
+
+      var firstRow = grid.firstElementChild.getAttribute('aria-rowindex');
+      var lastRow = grid.lastElementChild.getAttribute('aria-rowindex');
+      var trimmedRowCountStart = firstRow - 1;
+      var trimmedRowCountEnd = rowCount - lastRow;
+
+      // target.setAttribute('data-row-height', `${rowHeight}px`);
+      // target.setAttribute('data-row-count', rowCount);
+      // target.setAttribute('data-trimmed-row-count-start', trimmedRowCountStart);
+      // target.setAttribute('data-trimmed-row-count-end', trimmedRowCountEnd);
+
+      // target.style.setProperty('--row-height', `${rowHeight}px`);
+      // target.style.setProperty('--row-count', rowCount);
+      // target.style.setProperty('--trimmed-row-count-start', trimmedRowCountStart);
+      // target.style.setProperty('--trimmed-row-count-end', trimmedRowCountEnd);
+
+      var gridHeight = (rowCount * rowHeight) + (gap * (rowCount - 1));
+      target.style.height = `${gridHeight}px`;
+      target.setAttribute('data-grid-height', `${gridHeight}px`);
+
+      var startSpacerHeight = (rowHeight + gap) * trimmedRowCountStart;
+      startSpacer.style.height = `${startSpacerHeight}px`;
+      target.setAttribute('data-start-height', `${startSpacerHeight}px`);
+
+      var endSpacerHeight = (rowHeight + gap) * trimmedRowCountEnd;
+      endSpacer.style.height = `${endSpacerHeight}px`;
+      target.setAttribute('data-end-height', `${endSpacerHeight}px`);
+    });
+    observer.observe(grid, { childList: true, subtree: true });
+
+    return observer;
+  }, true);
+};
+
+// recalculateGrid();
+
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
 Zehn.handleOnMutation('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
   const sidebar = root.querySelector('._9sPoVBFyE_vE87mnZJ5aB');
-  var sidebarWidth = Math.round(sidebar.offsetWidth);
-  sidebar.style.width = `${sidebarWidth}px`;
 
-  var filterWidth = window.innerWidth - sidebarWidth;
-  target.style.width = `${filterWidth}px`;
+  if (sidebar) {
+    var filterWidth = window.innerWidth - sidebar.offsetWidth;
+    target.style.width = `${filterWidth}px`;
+  }
 });
 
 /* TOGGLE NAVBAR BACKGROUND CLASSES BASED ON WHAT LIBRARY PAGE IS OPEN ---------------------------------------------- */
@@ -219,21 +279,14 @@ Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, false); // STICKY ACTIVITY
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, false); // ACTIVITY
 
-/* MOVE SUPERNAV INTO MAIN NAVBAR ----------------------------------------------------------------------------------- */
-
-Zehn.moveAppendAndObserve('.QsvsRVwbsApgKt1MhM0fz', '._39oUCO1OuizVPwcnnv88no > ._30vB9DdsPK7VrZAbb5Q1Av', [
-  '._3Z3ohQ8-1NKnCZkbS6fvy ._2D64jIEK7wpUR_NlObDW76' // NAV
-]);
-Zehn.removeDuplicatedElement('.QsvsRVwbsApgKt1MhM0fz', '._39oUCO1OuizVPwcnnv88no > ._30vB9DdsPK7VrZAbb5Q1Av', '._2D64jIEK7wpUR_NlObDW76', 0);
-
 /* ADD SPACER FOR NAVBAR DOWNLOADS STATUS --------------------------------------------------------------------------- */
 
-Zehn.createBeforeTarget('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', '.zehnDownloadsSpacer');
+Zehn.createBeforeTarget('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', '#zehnDownloadsSpacer');
 
 /* MOVE VANILLA BUTTONS INTO NAVBAR ---------------------------------------------------------------------------------- */
 
 Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
-  '.zehnDownloadsSpacer', // DOWNLOADS SPACER
+  '#zehnDownloadsSpacer', // DOWNLOADS SPACER
   '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3yD46y5pd3zOGR7CzKs0mC)', // ACCOUNT
   '._3cykd-VfN_xBxf3Qxriccm .Focusable:has(._3mGEzzp18imtSzGPkduedi)', // NOTIFICATIONS
   '._1TdaAqMFadi0UTqilrkelR', // FRIENDS
@@ -262,7 +315,8 @@ Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._20QAC4WMXm8qFE8waUT5oo', [
 ]);
 Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', [
   '._3AhYljPF4e4E8LaBt-FoY0', // SIDEBAR BUTTON LIBRARY
-  '._2CEKFex6JMsAse2lqMMjUp' // SIDEBAR BUTTON COLLECTIONS
+  '._2CEKFex6JMsAse2lqMMjUp', // SIDEBAR BUTTON COLLECTIONS
+  '._1PgAonvorr0o_NMxNKiDFU ._3mzKdQXht__YHo6PX1LmB6' // FILTER CONTROLS
 ]);
 
 /* MOVE BROWSER TABS INTO TITLEBAR ---------------------------------------------------------------------------------- */
@@ -308,17 +362,17 @@ Zehn.createIconTitleContainer('.Friends_Root_Menu', '.contextMenuItem');
 Zehn.createIconTitleContainer('.Games_Root_Menu', '.contextMenuItem');
 Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
 
-/* ADD PLAY ICON INTO CONTAINER -------------------------------------------------------------------------------------- */
-
-Zehn.createIconContainer('.jjN9CtYfeIJoHpKOCmKOx', 'zehnIconContainer'); // COMMUNITY ICON
-
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
 Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl');
 
+/* ADD PLAY ICON INTO CONTAINER -------------------------------------------------------------------------------------- */
+
+Zehn.createIconContainer('.jjN9CtYfeIJoHpKOCmKOx', '.zehnIconContainer'); // COMMUNITY ICON
+
 /* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
 
-Zehn.createBeforeTarget('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE', 'zehnSeparator');
+Zehn.createBeforeTarget('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE', '.zehnSeparator');
 
 /* REVEAL SIDEBAR --------------------------------------------------------------------------------------------------- */
 

@@ -133,19 +133,23 @@ const Zehn = {
     });
   },
 
+  nameElement(element, nameSelector) {
+    const name = nameSelector.slice(1);
+    const isId = nameSelector.charAt(0) === '#';
+
+    if (isId) {
+      element.id = name;
+    } else {
+      element.classList.add(name);
+    }
+  },
+
   createButton(rootSelector, targetSelector, nameSelectors, callback, shouldAppend = true) {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const button = document.createElement('button');
 
       nameSelectors.forEach((nameSelector) => {
-        const name = nameSelector.slice(1);
-        const isId = nameSelector.charAt(0) === '#';
-
-        if (isId) {
-          button.id = name;
-        } else {
-          button.classList.add(name);
-        }
+        this.nameElement(button, nameSelector);
       });
 
       button.name = 'button';
@@ -186,7 +190,7 @@ const Zehn = {
     this.findTargets(document, targetSelector, (target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
-      container.classList.add(containerName);
+      this.nameElement(container, containerName);
       target.append(container);
 
       const icon = document.createElement('div');
@@ -199,7 +203,7 @@ const Zehn = {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
-      container.classList.add(containerName);
+      this.nameElement(container, containerName);
       root.append(container);
       container.append(target);
     });
@@ -208,7 +212,7 @@ const Zehn = {
   createBeforeTarget(rootSelector, targetSelector, additionName) {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
-      container.classList.add(additionName);
+      this.nameElement(container, additionName);
       target.before(container || '');
     });
   },
@@ -292,7 +296,7 @@ const Zehn = {
   },
 
   removeDuplicatedElement(rootSelector, targetSelector, removeableSelector, ordinal) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
       const removables = target.querySelectorAll(removeableSelector);
       if (removables.length > 1) {
         removables[ordinal].remove();
@@ -326,8 +330,6 @@ const Zehn = {
   },
 
   reveal(container, revealed) {
-    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
-
     const targets = [revealed];
     const maskSize = 200;
     const halfMask = maskSize / 2;
