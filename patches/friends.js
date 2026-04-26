@@ -82,7 +82,7 @@ Zehn.moveAppend('.msg', '.BBCodeResizableComponent.chatVideoContainer', [
 ]);
 Zehn.removeDuplicatedElement('.msg', '.BBCodeResizableComponent.chatVideoContainer', '.chatImageURL', 0);
 
-/* REVEAL FRRIENDS -------------------------------------------------------------------------------------------------- */
+/* REVEAL FRRIENDS CONTROLS ----------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.friendsTabButtonsContainer', [
   '.searchIconButton', // SEARCH
@@ -92,6 +92,19 @@ Zehn.addRevealClass('.friendsTabButtonsContainer', [
 
 // Zehn.revealInner('.friendsTabButtonsContainer');
 Zehn.revealInner('.socialTabSearchContainer');
+
+/* REVEAL FRIENDS LIST ---------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.FriendsListContent', [
+  '.groupName', // FRIEND GROUP
+  '.friendsContainer .friend', // FRIEND
+  '.ToggleGroupChatList', // GROUP CHATS TOGGLE
+  '.chatRoomListContainer .ChatRoomListGroupItem' // GROUP CHAT
+], [
+  'zehnRevealBackgroundOnly'
+]);
+
+Zehn.revealSelf('.FriendsListContent .zehnReveal');
 
 /* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
 

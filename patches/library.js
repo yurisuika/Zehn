@@ -392,6 +392,7 @@ Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
 Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
 // Zehn.revealInner('._3x1HklzyDs4TEjACrRO2tB');
 
+/* REVEAL SIDEBAR GAME LIST ----------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.ReactVirtualized__Grid__innerScrollContainer', [
   'div[role="gridcell"]' // LIST ENTRY
