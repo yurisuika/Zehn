@@ -304,6 +304,7 @@ Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
 
 /* TOGGLE THEATER MODE AKA REMOVE LIBRARY SIDEBAR ------------------------------------------------------------------- */
 
+Zehn.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleTheaterMode', 'zehnTheaterMode');
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleTheaterMode', '.zehnButton'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnTheaterMode');
 });
