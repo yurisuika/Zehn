@@ -211,11 +211,11 @@ html[class*="_Root_Menu"] {
   line-height: var(--zehn-size-context-line) !important;
 
   &:hover {
-    background-color: var(--zehn-color-list-background-hover) !important;
+    background: var(--zehn-color-list-background-hover) !important;
   }
 
   &:active {
-    background-color: var(--zehn-color-list-background-active) !important;
+    background: var(--zehn-color-list-background-active) !important;
   }
 }
 
@@ -793,23 +793,29 @@ html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem .zehnListIco
   }
 }
 
-._1n7Wloe5jZ6fSuvV18NNWI:not(.contextMenuUnselectable)::after {
-  content: "";
-  position: absolute;
-  display: block;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  border-radius: var(--zehn-size-context-entry-radius);
-  background: var(--zehn-color-list-background) padding-box;
-  border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border);
+._1n7Wloe5jZ6fSuvV18NNWI:not(.contextMenuUnselectable) {
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    border-radius: var(--zehn-size-context-entry-radius);
+    background: var(--zehn-color-list-background) padding-box;
+    border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border);
+  }
 
   &:hover {
-    background: var(--zehn-color-list-background-hover) padding-box;
+    &::after {
+      background: var(--zehn-color-list-background-hover) padding-box;
+    }
   }
 
   &:active {
-    background: var(--zehn-color-list-background-active) padding-box;
+    &::after {
+      background: var(--zehn-color-list-background-active) padding-box;
+    }
   }
 }
 /* SELECTED / INNER MENU ENTRIES */
@@ -1792,22 +1798,28 @@ html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem .zehnListIco
 ._3B8wRA4H7e_oSksYNqpSPv::after,
 ._25gii5r23MmAqXvLZj24tK::after,
 ._3k90ug209sE23xAMqcM74s::after {
-  content: "";
-  position: absolute;
-  display: block;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  border-radius: var(--zehn-size-context-entry-radius);
-  background: var(--zehn-color-list-background) padding-box;
-  border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border) !important;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    border-radius: var(--zehn-size-context-entry-radius);
+    background: var(--zehn-color-list-background) padding-box;
+    border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border);
+  }
 
   &:hover {
-    background: var(--zehn-color-list-background-hover) padding-box;
+    &::after {
+      background: var(--zehn-color-list-background-hover) padding-box;
+    }
   }
 
   &:active {
-    background: var(--zehn-color-list-background-active) padding-box;
+    &::after {
+      background: var(--zehn-color-list-background-active) padding-box;
+    }
   }
 }
 
