@@ -390,6 +390,7 @@ Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
 ]);
 
 Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
+// Zehn.revealInner('._3x1HklzyDs4TEjACrRO2tB');
 
 /* REVEAL PLAYBAR --------------------------------------------------------------------------------------------------- */
 
@@ -406,6 +407,22 @@ Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
 ]);
 
 Zehn.revealInner('._3fLo166MlaNqP8r8tTyRz');
+// Zehn.revealInner('._2Nq6ov7A1hGcHXVOXNt_OE');
+
+/* REVEAL URL BAR LIBRARY ------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
+  '._2m_orETo6AghzAnc0sISCt' // LIBRARY FAKE INPUT WRAPPER
+], [
+  'zehnRevealBorderOnly'
+]);
+Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
+  '._3KaB94Jl4r0hFkthDPJy09', // BUTTONS
+  '.extensions-bar-container .extension-button' // EXTENDIUM
+]);
+
+Zehn.revealInner('.UkR3sY319PuaUNuUWks2K');
+// Zehn.revealInner('.QsvsRVwbsApgKt1MhM0fz');
 
 /* REVEAL MEDIA LIBRARY --------------------------------------------------------------------------------------------- */
 
@@ -415,6 +432,7 @@ Zehn.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
 ]);
 
 Zehn.revealInner('.YzIcpcz4oFx-nndxro5jE');
+// Zehn.revealInner('._3nWSY9HJwc9HWeByKWggV6');
 
 /* REVEAL SCREENSHOT ------------------------------------------------------------------------------------------------ */
 
@@ -433,6 +451,7 @@ Zehn.addRevealClass('._2X_ZpO2X_CIOIEfml3ZTcX', [
 ]);
 
 Zehn.revealInner('._2X_ZpO2X_CIOIEfml3ZTcX');
+// Zehn.revealInner('._2rxrVvbku0AC8Qbequ4-z9');
 
 /* REVEAL SETTINGS + NOTES ------------------------------------------------------------------------------------------ */
 
@@ -506,17 +525,8 @@ Zehn.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
 ]);
 
 Zehn.revealInner('._26Gmfe09NRsnF7eprTZYdY');
-
-/* REVEAL URL BAR LIBRARY ------------------------------------------------------------------------------------------- */
-
-Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
-  '._2m_orETo6AghzAnc0sISCt' // LIBRARY FAKE INPUT WRAPPER
-], [
-  'zehnRevealBorderOnly'
-]);
-Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
-  '._3KaB94Jl4r0hFkthDPJy09', // BUTTONS
-  '.extensions-bar-container .extension-button' // EXTENDIUM
-]);
-
-Zehn.revealInner('.UkR3sY319PuaUNuUWks2K');
+// Zehn.revealInner('.OverlayBrowser_Browser');
+// Zehn.revealInner('.OverlayBrowser_Guides');
+// Zehn.revealInner('.OverlayBrowser_Discussion');
+// Zehn.revealInner('.OverlayBrowser_DLC');
+// Zehn.revealInner('.TabbedPopupBrowser');

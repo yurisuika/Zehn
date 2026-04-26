@@ -90,7 +90,8 @@ Zehn.addRevealClass('.friendsTabButtonsContainer', [
   '.addFriendButton' // ADD
 ]);
 
-Zehn.revealInner('.friendsTabButtonsContainer');
+// Zehn.revealInner('.friendsTabButtonsContainer');
+Zehn.revealInner('.socialTabSearchContainer');
 
 /* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
 
@@ -103,6 +104,7 @@ Zehn.addRevealClass('.chatRoomHeader', [
 ]);
 
 Zehn.revealInner('.chatRoomHeader');
+// Zehn.revealInner('.chatDialogs');
 
 /* REVEAL CHAT ENTRY ------------------------------------------------------------------------------------------------ */
 
@@ -130,14 +132,6 @@ Zehn.addRevealClass('.chatRoomGroupNavColumn', [
 Zehn.revealInner('.chatRoomGroupNavColumn');
 
 /* REVEAL CHAT TABS ------------------------------------------------------------------------------------------------- */
-
-// Zehn.addRevealClass('.titleBarContainer.ChatTabs', [
-//   '.vs5AhAWHJLa_eDOBkDcMy' // TAB
-// ], [
-//   'zehnRevealBackgroundOnly'
-// ]);
-
-// Zehn.revealInner('.titleBarContainer.ChatTabs');
 
 Zehn.addRevealClass('.titleBarContainer.ChatTabs', [
   '._3f1rJf0BU79ub9YR2KihaT' // TAB CONTAINER
