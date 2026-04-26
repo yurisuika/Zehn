@@ -96,9 +96,9 @@ Zehn.revealInner('.socialTabSearchContainer');
 /* REVEAL FRIENDS LIST ---------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.FriendsListContent', [
-  '.groupName', // FRIEND GROUP
+  '.groupHeaderContainer', // FRIEND GROUP
   '.friendsContainer .friend', // FRIEND
-  '.ToggleGroupChatList', // GROUP CHATS TOGGLE
+  '.friendsListSectionTitle.chatSectionTitle', // GROUP CHATS TOGGLE
   '.chatRoomListContainer .ChatRoomListGroupItem' // GROUP CHAT
 ], [
   'zehnRevealBackgroundOnly'
