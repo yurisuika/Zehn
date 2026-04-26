@@ -530,3 +530,13 @@ Zehn.revealInner('._26Gmfe09NRsnF7eprTZYdY');
 // Zehn.revealInner('.OverlayBrowser_Discussion');
 // Zehn.revealInner('.OverlayBrowser_DLC');
 // Zehn.revealInner('.TabbedPopupBrowser');
+
+/* REVEAL BROWSER TABS ---------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('._290hvyptb3mP0rOSaapjgZ', [
+  '.aqvbkhC1ejt4s8QvWA-c5' // TAB CONTAINER
+], [
+  'zehnRevealBackgroundOnly'
+]);
+
+Zehn.revealSelf('.aqvbkhC1ejt4s8QvWA-c5');
