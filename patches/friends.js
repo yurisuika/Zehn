@@ -96,6 +96,7 @@ Zehn.revealInner('.socialTabSearchContainer');
 /* REVEAL FRIENDS LIST ---------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.FriendsListContent', [
+  '.friendGroup>.groupName', // GAME GROUP
   '.groupHeaderContainer', // FRIEND GROUP
   '.friendsContainer .friend', // FRIEND
   '.friendsListSectionTitle.chatSectionTitle', // GROUP CHATS TOGGLE
