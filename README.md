@@ -208,4 +208,4 @@ See Zehn's [Announcements](https://github.com/yurisuika/Zehn/discussions/categor
 ### Support and Community
 Head over to [Discussions](https://github.com/yurisuika/Zehn/discussions) for support, to share your ideas, and more!
 
-~~[Yuri's Modding Lair Discord](https://discord.gg/0zdNEkQle7Qg9C1H)~~ is closed for the foreseeable future.
+Join the new [Steam Group](https://steamcommunity.com/groups/zehntheme) and drop into the chat room!
