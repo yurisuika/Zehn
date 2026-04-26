@@ -166,12 +166,16 @@ const Zehn = {
     });
   },
 
-  createIconTitleContainer(rootSelector, targetSelector) {
+  createIconTitleContainer(rootSelector, targetSelector, shouldAppend = true) {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       if (target.children.length == 0) {
         const container = document.createElement('div');
         container.classList.add('zehnListContainer');
-        target.append(container);
+        if (shouldAppend) {
+          target.append(container);
+        } else {
+          target.prepend(container);
+        }
 
         const title = document.createElement('div');
         title.classList.add('zehnListTitle');
@@ -186,12 +190,16 @@ const Zehn = {
     });
   },
 
-  createIconContainer(targetSelector, containerName) {
+  createIconContainer(targetSelector, containerName, shouldAppend = true) {
     this.findTargets(document, targetSelector, (target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
       this.nameElement(container, containerName);
-      target.append(container);
+      if (shouldAppend) {
+        target.append(container);
+      } else {
+        target.prepend(container);
+      }
 
       const icon = document.createElement('div');
       icon.classList.add('zehnIcon');
@@ -199,12 +207,17 @@ const Zehn = {
     });
   },
 
-  createContainer(rootSelector, targetSelector, containerName) {
+  createContainer(rootSelector, targetSelector, containerName, shouldAppend = true) {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
       this.nameElement(container, containerName);
-      root.append(container);
+      if (shouldAppend) {
+        root.append(container);
+      } else {
+        root.prepend(container);
+      }
+
       container.append(target);
     });
   },

@@ -279,6 +279,11 @@ Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, false); // STICKY ACTIVITY
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, false); // ACTIVITY
 
+/* WRAP NAVIGATION CONTROLS FOR BACKGROUND -------------------------------------------------------------------------- */
+
+Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8:nth-child(2)', '#zehnForwardsWrapper', false);
+Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8', '#zehnBackwardsWrapper', false);
+
 /* ADD SPACER FOR NAVBAR DOWNLOADS STATUS --------------------------------------------------------------------------- */
 
 Zehn.createBeforeTarget('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', '#zehnDownloadsSpacer');
