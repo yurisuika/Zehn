@@ -392,6 +392,15 @@ Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
 Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
 // Zehn.revealInner('._3x1HklzyDs4TEjACrRO2tB');
 
+
+Zehn.addRevealClass('.ReactVirtualized__Grid__innerScrollContainer', [
+  'div[role="gridcell"]' // LIST ENTRY
+], [
+  'zehnRevealBackgroundOnly'
+]);
+
+Zehn.revealSelf('.ReactVirtualized__Grid__innerScrollContainer>div[role="gridcell"].zehnReveal');
+
 /* REVEAL PLAYBAR --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
