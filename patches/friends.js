@@ -98,14 +98,14 @@ Zehn.revealInner('.socialTabSearchContainer');
 Zehn.addRevealClass('.FriendsListContent', [
   '.friendGroup>.groupName', // GAME GROUP
   '.groupHeaderContainer', // FRIEND GROUP
-  '.friendsContainer .friend', // FRIEND
   '.friendsListSectionTitle.chatSectionTitle', // GROUP CHATS TOGGLE
-  '.chatRoomListContainer .ChatRoomListGroupItem' // GROUP CHAT
+  '.chatRoomListContainer .ChatRoomListGroupItem', // GROUP CHAT
+  '.friend' // FRIEND
 ], [
   'zehnRevealBackgroundOnly'
 ]);
 
-Zehn.revealSelf('.FriendsListContent .zehnReveal');
+Zehn.revealInner('.FriendsListContent');
 
 /* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
 
