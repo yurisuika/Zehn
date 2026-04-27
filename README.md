@@ -173,6 +173,7 @@ Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy th
 * Achievement Groups
   * Made to match the other achievement overlay tabs.
 * Collections+
+* Easy SteamGrid
 * Extendium
   * Browser bar buttons, extensions context menus, and settings dialogs all skinned.
 * Gratitude
