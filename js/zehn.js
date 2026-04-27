@@ -91,6 +91,33 @@ const Zehn = {
     };
   },
 
+  findTargetsAlways(root, targetSelector, callback) {
+    const processed = new WeakSet();
+
+    function handleTarget(target) {
+      if (processed.has(target)) return;
+      processed.add(target);
+      try { callback(target); } catch (e) { console.error(e); }
+    }
+
+    document.querySelectorAll(targetSelector).forEach(t => handleTarget(t));
+
+    const observer = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'childList') {
+          for (const node of mutation.addedNodes) {
+            if (!(node instanceof Element)) continue;
+              if (node.matches && node.matches(targetSelector)) handleTarget(node);
+              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(n));
+          }
+        }
+      }
+    });
+    observer.observe(root, { childList: true, subtree: true });
+
+    return observer;
+  },
+
   handleOnMutation(rootSelector, targetSelector, callback, shouldObserveTarget = false) {
     Zehn.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const update = () => callback(root, target);
@@ -337,7 +364,7 @@ const Zehn = {
   revealSelf(selfSelector) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
-    this.findTargets(document, selfSelector, (revealed) => {
+    this.findTargetsAlways(document, selfSelector, (revealed) => {
       this.reveal(revealed, revealed);
     });
   },

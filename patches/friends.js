@@ -105,7 +105,7 @@ Zehn.addRevealClass('.FriendsListContent', [
   'zehnRevealBackgroundOnly'
 ]);
 
-Zehn.revealInner('.FriendsListContent');
+Zehn.revealSelf('.FriendsListContent .zehnReveal');
 
 /* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
 
