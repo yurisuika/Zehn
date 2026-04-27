@@ -400,7 +400,7 @@ Zehn.addRevealClass('.ReactVirtualized__Grid__innerScrollContainer', [
   'zehnRevealBackgroundOnly'
 ]);
 
-Zehn.revealSelf('.ReactVirtualized__Grid__innerScrollContainer>div[role="gridcell"].zehnReveal');
+Zehn.revealSelf('.ReactVirtualized__Grid__innerScrollContainer>div[role="gridcell"]');
 
 /* REVEAL PLAYBAR --------------------------------------------------------------------------------------------------- */
 

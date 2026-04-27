@@ -60,7 +60,7 @@ const Zehn = {
     };
   },
 
-  findTargets(root, targetSelector, callback) {
+  findTargets(root, targetSelector, callback, shouldDisconnect = true) {
     const processed = new WeakSet();
 
     function handleTarget(target) {
@@ -84,38 +84,15 @@ const Zehn = {
     });
     observer.observe(root, { childList: true, subtree: true });
 
-    return {
-      disconnect() {
-        observer.disconnect();
-      }
-    };
-  },
-
-  findTargetsAlways(root, targetSelector, callback) {
-    const processed = new WeakSet();
-
-    function handleTarget(target) {
-      if (processed.has(target)) return;
-      processed.add(target);
-      try { callback(target); } catch (e) { console.error(e); }
-    }
-
-    document.querySelectorAll(targetSelector).forEach(t => handleTarget(t));
-
-    const observer = new MutationObserver(mutations => {
-      for (const mutation of mutations) {
-        if (mutation.type === 'childList') {
-          for (const node of mutation.addedNodes) {
-            if (!(node instanceof Element)) continue;
-              if (node.matches && node.matches(targetSelector)) handleTarget(node);
-              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(n));
-          }
+    if (shouldDisconnect) {
+      return {
+        disconnect() {
+          observer.disconnect();
         }
-      }
-    });
-    observer.observe(root, { childList: true, subtree: true });
-
-    return observer;
+      };
+    } else {
+      return observer;
+    }
   },
 
   handleOnMutation(rootSelector, targetSelector, callback, shouldObserveTarget = false) {
@@ -364,9 +341,9 @@ const Zehn = {
   revealSelf(selfSelector) {
     if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
 
-    this.findTargetsAlways(document, selfSelector, (revealed) => {
+    this.findTargets(document, selfSelector, (revealed) => {
       this.reveal(revealed, revealed);
-    });
+    }, false);
   },
 
   reveal(container, revealed) {

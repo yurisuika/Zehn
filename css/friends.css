@@ -1636,6 +1636,11 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   display: none !important;
 }
 
+.CompactFriendsList .friendsContainer {
+  padding: 0 !important;
+  transition: none !important;
+}
+
 .recentChatsGroup .friendGroup:has(.Collapsed)>div:not(:first-of-type) {
   display: none !important;
 }
@@ -1669,9 +1674,9 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 .friendGroup .friend,
 .friendGroup .SteamPlayerGroupFooter {
   margin: 0 !important;
-  padding: 8px 16px 8px 16px !important;
+  padding: var(--zehn-size-padding-small) var(--zehn-size-padding-medium) !important;
   align-items: center !important;
-  height: 32px !important;
+  height: var(--zehn-size-avatar-medium) !important;
 }
 
 .friendlistListContainer .friend .avatarHolder {
@@ -1686,9 +1691,9 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 /* SORT BY */
 .groupHeaderContainer .SortByRecent {
   position: absolute !important;
-  right: 16px !important;
-  width: 16px !important;
-  height: 16px !important;
+  right: var(--zehn-size-gap-medium) !important;
+  width: var(--zehn-size-icon-medium) !important;
+  height: var(--zehn-size-icon-medium) !important;
   margin: 0 !important;
   transition: none !important;
   background-color: transparent !important;
@@ -1832,27 +1837,29 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   border-top-left-radius: 0 !important;
 }
 
-.friendGroup.gameGroup:not(.OtherGamesGroup) .friend {
-  padding: 8px 16px !important;
-}
-
-.friendGroup.gameGroup:not(.OtherGamesGroup) .SteamPlayerGroupFooter {
-  padding: 0 var(--zehn-size-padding-medium) !important;
+.SteamPlayerGroupLines {
+  display: none !important;
 }
 
 /* GROUP FOOTER */
 .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
-  height: fit-content !important;
   border: unset !important;
-  width: 32px !important;
+  width: var(--zehn-size-panel-medium) !important;
   margin: 0 !important;
   transform: none !important;
+  background: var(--zehn-color-panel) !important;
+  margin: var(--zehn-size-gap-small) !important;
+  padding: 0 var(--zehn-size-padding-small) !important;
+  line-height: var(--zehn-size-panel-small) !important;
+  height: var(--zehn-size-panel-small) !important;
+  box-sizing: border-box !important;
+  border-radius: var(--zehn-size-radius-small) !important;
 }
 
 .SteamPlayerGroupFooterCount .count {
   width: 100% !important;
   display: table-cell !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-panel-small) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   text-align: center !important;
@@ -1865,16 +1872,15 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   padding: 0 !important;
   vertical-align: middle !important;
   height: initial !important;
-  margin-left: 16px !important;
+  margin-left: var(--zehn-size-gap-medium) !important;
   font-size: var(--zehn-size-12) !important;
   text-align: left !important;
   color: var(--zehn-color-text-secondary) !important;
   -webkit-mask: none !important;
-  width: calc(100% - 72px) !important;
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
   overflow: hidden !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-panel-small) !important;
 }
 
 /* GROUPED FRIENDS */
