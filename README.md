@@ -5,6 +5,8 @@ Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a s
 
 ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/zehn.png)
 
+----------
+
 ## Make Steam Look Like A Native App!
 
 Part of the design philosophy behind Zehn is to only show what is always going to be relevant to your needs. The rest can be displayed when the ephemeral moment comes. Steam has a lot of visual clutter and redundancy, so Zehn seeks to alleviate you of this and let you navigate Steam without all the distraction.
@@ -83,6 +85,8 @@ Some ways this is accomplished in Zehn:
 > </details>
 
 Zehn styles every control in either a dialog style or an app style. When opening a dialog, you are looking to get something done, so things like buttons and dropdowns are very distinct. But for windows that you will usually have open all the time, like the library or chat, controls displayed don't try to fight for your attention, but instead meld with the panel that they are part of. Evenly sized controls flow into eachother. Simple iconography is weighted proportionally with the typeface. This is the elegent simplicity of Windows 10 Fluent Design that you love brought to Steam!
+
+----------
 
 ## What Does Zehn Offer?
 
@@ -183,6 +187,8 @@ Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy th
 * Size on Disk
 * Window Styler (DWMX)
   * When Transparency Effects is enabled in the settings, certain windows can have Acrylic blur behind them.
+
+----------
 
 ## Getting Zehn
 

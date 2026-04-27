@@ -151,13 +151,11 @@ const Zehn = {
   createButton(rootSelector, targetSelector, nameSelectors, callback, shouldAppend = true) {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const button = document.createElement('button');
-
+      button.name = 'button';
+      button.onclick = () => callback(root, target, button);
       nameSelectors.forEach((nameSelector) => {
         this.nameElement(button, nameSelector);
       });
-
-      button.name = 'button';
-      button.onclick = () => callback(root, target, button);
       if (shouldAppend) {
         target.append(button);
       } else {
@@ -194,11 +192,13 @@ const Zehn = {
     });
   },
 
-  createIconContainer(targetSelector, containerName, shouldAppend = true) {
+  createIconContainer(targetSelector, nameSelectors, shouldAppend = true) {
     this.findTargets(document, targetSelector, (target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
-      this.nameElement(container, containerName);
+      nameSelectors.forEach((nameSelector) => {
+        this.nameElement(container, nameSelector);
+      });
       if (shouldAppend) {
         target.append(container);
       } else {
@@ -211,11 +211,13 @@ const Zehn = {
     });
   },
 
-  createContainer(rootSelector, targetSelector, containerName, shouldAppend = true) {
+  createContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
-      this.nameElement(container, containerName);
+      nameSelectors.forEach((nameSelector) => {
+        this.nameElement(container, nameSelector);
+      });
       if (shouldAppend) {
         root.append(container);
       } else {
@@ -226,11 +228,17 @@ const Zehn = {
     });
   },
 
-  createBeforeTarget(rootSelector, targetSelector, additionName) {
+  createAdjacentElement(rootSelector, targetSelector, nameSelectors, shouldPlaceBefore = true, elementType = 'div') {
     this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const container = document.createElement('div');
-      this.nameElement(container, additionName);
-      target.before(container || '');
+      const element = document.createElement(elementType);
+      nameSelectors.forEach((nameSelector) => {
+        this.nameElement(element, nameSelector);
+      });
+      if (shouldPlaceBefore) {
+        target.before(element || '');
+      } else {
+        target.after(element || '');
+      }
     });
   },
 
