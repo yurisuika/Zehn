@@ -372,9 +372,14 @@ Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
 
 Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl');
 
-/* ADD PLAY ICON INTO CONTAINER -------------------------------------------------------------------------------------- */
+/* WRAP LOAD MORE --------------------------------------------------------------------------------------------------- */
 
-Zehn.createIconContainer('.jjN9CtYfeIJoHpKOCmKOx', ['.zehnIconContainer']); // COMMUNITY ICON
+Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._1EC1xjjUGqI7fqX6PVzJA3', ['#zehnNews']);
+Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj', ['#zehnLoad']);
+
+/* ADD PLAY ICON INTO CONTAINER ------------------------------------------------------------------------------------- */
+
+Zehn.createIconContainer('._3lh8aaHNMcFvupuNhQDfFt', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnIconContainer']); // COMMUNITY ICON
 
 /* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
 

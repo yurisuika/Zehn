@@ -192,8 +192,8 @@ const Zehn = {
     });
   },
 
-  createIconContainer(targetSelector, nameSelectors, shouldAppend = true) {
-    this.findTargets(document, targetSelector, (target) => {
+  createIconContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
       nameSelectors.forEach((nameSelector) => {
@@ -208,6 +208,27 @@ const Zehn = {
       const icon = document.createElement('div');
       icon.classList.add('zehnIcon');
       container.prepend(icon);
+    });
+  },
+
+  createTitleContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+        const container = document.createElement('div');
+        container.classList.add('zehnContainer');
+        nameSelectors.forEach((nameSelector) => {
+          this.nameElement(container, nameSelector);
+        });
+        if (shouldAppend) {
+          target.append(container);
+        } else {
+          target.prepend(container);
+        }
+
+        const title = document.createElement('div');
+        title.classList.add('zehnTitle');
+        container.append(title);
+        title.textContent = target.childNodes[0].textContent;
+        target.childNodes[0].remove();
     });
   },
 
@@ -389,8 +410,8 @@ const Zehn = {
     }
 
     function hideMaskOnTarget(t) {
-      const pos = `0px 0px`;
-      const size = `0px 0px`;
+      const pos = '0px 0px';
+      const size = '0px 0px';
       t.style.maskPosition = pos;
       t.style.webkitMaskPosition = pos;
       t.style.maskSize = size;
