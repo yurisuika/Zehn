@@ -96,6 +96,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   --user-height: 0px;
 }
 
+.friendsListContainer:not(:has(.friendsTabButtonsContainer)),
 .friendsListContainer.zehnFriendsHeaderClosed {
   --buttons-height: 0px;
 }
@@ -2759,14 +2760,14 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
 
 .VoiceChannelParticipants.CompactFriendsList {
   background-color: var(--zehn-color-list-background) !important;
-}
 
-.VoiceChannelParticipants.CompactFriendsList:hover {
-  background-color: var(--zehn-color-list-background-hover) !important;
-}
+  &:hover {
+    background-color: var(--zehn-color-list-background-hover) !important;
+  }
 
-.VoiceChannelParticipants.CompactFriendsList:active {
-  background-color: var(--zehn-color-list-background-active) !important;
+  &:active {
+    background-color: var(--zehn-color-list-background-active) !important;
+  }
 }
 
 .VoiceChannelParticipants .friend {
@@ -2776,11 +2777,14 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
 /* OFFLINE CONTAINER */
 ._18bmBH7zyngCgHtgY3IEL_ {
   background-color: transparent !important;
+  overflow: hidden !important;
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--quickaccess-height) + var(--buttons-height) + var(--search-height) + var(--user-height)) !important;
 }
 
 ._3t-tVOpu2n074cjZsygYfm {
   max-width: 324px !important;
   padding: 16px !important;
+  background: var(--zehn-color-app) !important;
 }
 
 ._3t-tVOpu2n074cjZsygYfm ._2MByvWz7Ec6CRwKDWFmHrS {
