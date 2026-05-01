@@ -5021,11 +5021,7 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   border-radius: var(--zehn-size-radius-square) !important;
   -webkit-box-shadow: none !important;
   border: none !important;
-  background: var(--zehn-scrollbar-unfocused-background) !important;
-}
-
-div:hover>::-webkit-scrollbar:not(:window-inactive) {
-  background-color: var(--zehn-scrollbar-focused-background) !important;
+  background: transparent !important;
 }
 
 ::-webkit-scrollbar,
@@ -5042,8 +5038,12 @@ div:hover>::-webkit-scrollbar:not(:window-inactive) {
 
 /* TRACK */
 ::-webkit-scrollbar-track {
-  background: transparent !important;
   border-radius: var(--zehn-size-radius-square) !important;
+  background: var(--zehn-scrollbar-unfocused-background) !important;
+}
+
+div:hover>::-webkit-scrollbar:not(:window-inactive) {
+  background-color: var(--zehn-scrollbar-focused-background) !important;
 }
 
 /* CORNER */
@@ -5056,13 +5056,32 @@ div:hover>::-webkit-scrollbar:not(:window-inactive) {
 /* BUTTON */
 ::-webkit-scrollbar-button {
   border: none !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: var(--zehn-size-icon-sm) !important;
+  --button-size: var(--zehn-scrollbar-unfocused-button-size);
+}
+
+*::-webkit-scrollbar-button {
+  display: block !important;
+}
+
+::-webkit-scrollbar-button:vertical {
+  height: var(--button-size) !important;
+  width: var(--zehn-scrollbar-width) !important;
+  max-height: var(--button-size) !important;
+  max-width: var(--zehn-scrollbar-width) !important;
+}
+
+::-webkit-scrollbar-button:horizontal {
+  height: var(--zehn-scrollbar-width) !important;
+  width: var(--button-size) !important;
+  max-height: var(--zehn-scrollbar-width) !important;
+  max-width: var(--button-size) !important;
 }
 
 ::-webkit-scrollbar-button:single-button:window-inactive {
-  height: 0 !important;
-  width: 0 !important;
-  max-height: 0 !important;
-  max-width: 0 !important;
+  --button-size: var(--zehn-scrollbar-unfocused-button-size);
   background-color: var(--zehn-color-scrollbar-button-unfocused) !important;
 }
 
@@ -5074,26 +5093,20 @@ div:hover>::-webkit-scrollbar:not(:window-inactive) {
   background-color: var(--zehn-color-scrollbar-button-unfocused-active) !important;
 }
 
-div:hover>::-webkit-scrollbar-button:single-button:not(:window-inactive) {
-  height: 16px !important;
-  width: 16px !important;
-  max-height: 16px !important;
-  max-width: 16px !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 12px !important;
+div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive) {
+  --button-size: var(--zehn-scrollbar-focused-button-size);
   background-color: var(--zehn-color-scrollbar-button-focused) !important;
 }
 
-div:hover>::-webkit-scrollbar-button:single-button:not(:window-inactive):hover {
+div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive):hover {
   background-color: var(--zehn-color-scrollbar-button-focused-hover) !important;
 }
 
-div:hover>::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
+div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
   background-color: var(--zehn-color-scrollbar-button-focused-active) !important;
 }
 
-::-webkit-scrollbar-button:single-button:not(:window-inactive)::after {
+/* ::-webkit-scrollbar-button:single-button:not(:window-inactive)::after {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -5121,6 +5134,31 @@ div:hover>::-webkit-scrollbar-button:single-button:not(:window-inactive):active 
 
 ::-webkit-scrollbar-button:single-button:increment:horizontal:not(:window-inactive)::after {
   -webkit-mask-image: var(--zehn-icon-chevron-right-medium) !important;
+} */
+
+
+::-webkit-scrollbar-button:single-button:not(:window-inactive) {
+  color: var(--zehn-color-scrollbar-glyph) !important;
+}
+
+::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
+  color: var(--zehn-color-scrollbar-glyph-active) !important;
+}
+
+::-webkit-scrollbar-button:single-button:decrement:not(:window-inactive) {
+  background-image: var(--zehn-icon-chevron-up-medium) !important;
+}
+
+::-webkit-scrollbar-button:single-button:decrement:horizontal:not(:window-inactive) {
+  background-image: var(--zehn-icon-chevron-left-medium) !important;
+}
+
+::-webkit-scrollbar-button:single-button:increment:not(:window-inactive) {
+  background-image: var(--zehn-icon-chevron-down-medium) !important;
+}
+
+::-webkit-scrollbar-button:single-button:increment:horizontal:not(:window-inactive) {
+  background-image: var(--zehn-icon-chevron-right-medium) !important;
 }
 
 /* THUMB */
@@ -5160,7 +5198,7 @@ div:hover>::-webkit-scrollbar-button:single-button:not(:window-inactive):active 
   border-left: var(--zehn-scrollbar-unfocused-end-spacing) solid transparent !important;
 }
 
-div:hover>::-webkit-scrollbar-thumb:not(:window-inactive) {
+div:hover::-webkit-scrollbar-thumb:not(:window-inactive) {
   width: var(--zehn-scrollbar-focused-thumb-width) !important;
   height: var(--zehn-scrollbar-focused-thumb-width) !important;
   border-top: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
@@ -5171,15 +5209,15 @@ div:hover>::-webkit-scrollbar-thumb:not(:window-inactive) {
   background-color: var(--zehn-scrollbar-focused-foreground) !important;
 }
 
-div:hover>::-webkit-scrollbar-thumb:not(:window-inactive):hover {
+div:hover::-webkit-scrollbar-thumb:not(:window-inactive):hover {
   background-color: var(--zehn-scrollbar-focused-foreground-hover) !important;
 }
 
-div:hover>::-webkit-scrollbar-thumb:not(:window-inactive):active {
+div:hover::-webkit-scrollbar-thumb:not(:window-inactive):active {
   background-color: var(--zehn-scrollbar-focused-foreground-active) !important;
 }
 
-div:hover>::-webkit-scrollbar-thumb:horizontal:not(:window-inactive) {
+div:hover::-webkit-scrollbar-thumb:horizontal:not(:window-inactive) {
   border-top: var(--zehn-scrollbar-focused-inner-spacing) solid transparent !important;
   border-bottom: var(--zehn-scrollbar-focused-outer-spacing) solid transparent !important;
   border-right: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
@@ -5217,6 +5255,11 @@ div:hover>::-webkit-scrollbar-thumb:horizontal:not(:window-inactive) {
   overflow-y: auto;
 }
 
+/* FRIENDS */
+.FriendsListContent {
+  overflow-y: auto;
+}
+
 .DialogBody,
 div[role=rowgroup] {
   overflow-x: visible !important;
@@ -5224,6 +5267,61 @@ div[role=rowgroup] {
 }
 
 .HorizontalMiniSliderScroll {}
+
+/* SPECIFIC BUTTON OVERRIDES FOR HEADER CONTENT */
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.FriendsListContent:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  display: block !important;
+  height: calc(var(--button-size) + var(--header-height)) !important;
+  max-height: calc(var(--button-size) + var(--header-height)) !important;
+  border-top: calc(var(--header-height)) solid var(--zehn-color-base) !important;
+  background-clip: padding-box !important;
+}
+
+/* FRIENDS LIST */
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.FriendsListContent:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-titlebar-height) + var(--quickaccess-height) + var(--buttons-height) + var(--search-height) + var(--user-height);
+}
+
+/* CHAT */
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-titlebar-height);
+}
+
+/* GROUP CHAT */
+.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-titlebar-height) + var(--zehn-size-chat-header-height);
+}
+
+/* LIBRARY */
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-navbar-height) + var(--menu-space) + var(--playbar-space);
+}
+
+/* DOWNLOADS */
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-navbar-height) + var(--menu-space) + var(--downloads-space);
+}
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 
