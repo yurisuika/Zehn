@@ -169,12 +169,10 @@ body:not(.WindowFocus) .friendCollapseButton .SVGIcon_DoubleArrow {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-chevron-left) !important;
+
+  * { display: none !important; }
 }
 
-.friendCollapseButton .SVGIcon_DoubleArrow * {
-  stroke: transparent !important;
-  fill: transparent !important;
-}
 
 .chatTabOpenFriendsList {
   height: var(--zehn-size-titlebar-height) !important;
@@ -186,15 +184,16 @@ body:not(.WindowFocus) .friendCollapseButton .SVGIcon_DoubleArrow {
   background-color: var(--zehn-color-button-app-background) !important;
   margin: 0 !important;
   transition: none !important;
+
+  &:hover {
+    background-color: var(--zehn-color-button-app-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-button-app-background-active) !important;
+  }
 }
 
-.chatTabOpenFriendsList:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
-
-.chatTabOpenFriendsList:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
-}
 
 body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   filter: var(--zehn-filter-unfocus) !important;
@@ -360,14 +359,12 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-mic) !important;
+
+  * { display: none !important; }
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz._3xSp_2yTGID-3a2SsunWpF .c9l09VKqQIXJvsl0gqItO svg {
   -webkit-mask-image: var(--zehn-icon-mic-mute) !important;
-}
-
-._2XZq-_f6npaQdAgeRzKIkz .c9l09VKqQIXJvsl0gqItO svg * {
-  display: none !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz .SVGIcon_Microphone {
@@ -472,18 +469,18 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   height: var(--zehn-size-titlebar-height) !important;
   border-radius: var(--zehn-size-radius-square) !important;
   background: var(--zehn-color-button-app-background) !important;
+
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-button-app-background-focus) !important;
+  }
 }
 
 body:not(.WindowFocus) .chatTabSelector svg {
   filter: var(--zehn-filter-unfocus) !important;
-}
-
-.chatTabSelector:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
-
-.chatTabSelector:active {
-  background: var(--zehn-color-button-app-background-focus) !important;
 }
 
 .chatTabSelector .SVGIcon_DownArrowContextMenu {
@@ -502,10 +499,8 @@ body:not(.WindowFocus) .chatTabSelector svg {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-chevron-down) !important;
-}
 
-.chatTabSelector .SVGIcon_DownArrowContextMenu * {
-  display: none !important;
+  * { display: none !important; }
 }
 
 /* CHAT HEADER */
@@ -1124,9 +1119,9 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
   transition: all 0.2s ease !important;
 }
 
-.OpenGraphFooter .SVGIcon_CopyToClipboard *,
-.copyInviteLink .SVGIcon_CopyToClipboard * {
-  display: none !important;
+.OpenGraphFooter .SVGIcon_CopyToClipboard,
+.copyInviteLink .SVGIcon_CopyToClipboard {
+  * { display: none !important; }
 }
 
 /* TRADE OFFER STATUS */
@@ -1778,6 +1773,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-window-close) !important;
+
+  * { display: none !important; }
 }
 
 .chatFileUploadCancel:hover svg {
@@ -1786,12 +1783,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatFileUploadCancel:active svg {
   background-color: var(--zehn-color-control-dark) !important;
-}
-
-.chatFileUploadCancel svg * {
-  fill: transparent !important;
-  stroke: transparent !important;
-  display: none !important;
 }
 
 .chatFileUploadBtn {
@@ -3260,11 +3251,9 @@ div:hover>.BBCodeCollapseControl {
   mask-size: var(--zehn-size-icon-md) !important;
 }
 
-.inviteAnotherFriendButton svg *,
-.chatRoomButton svg * {
-  stroke: transparent !important;
-  fill: transparent !important;
-  display: none !important;
+.inviteAnotherFriendButton svg,
+.chatRoomButton svg {
+  * { display: none !important; }
 }
 
 .chatRoomButton.ManageNotifications svg {
@@ -3614,8 +3603,8 @@ div:hover>.BBCodeCollapseControl {
   -webkit-mask-image: var(--zehn-icon-volume) !important;
 }
 
-.chatDialogs svg * {
-  display: none !important;
+.chatDialogs svg {
+  * { display: none !important; }
 }
 
 /* CHAT ROOM LIST COLLAPSED */
@@ -3646,14 +3635,12 @@ div:hover>.BBCodeCollapseControl {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-add-list) !important;
+
+  * { display: none !important; }
 }
 
 .ChannelTypeTitle:hover .ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
   background-color: var(--zehn-color-icon-primary) !important;
-}
-
-.ChatRoomAddRoomBtn .SVGIcon_PlusCircle * {
-  display: none !important;
 }
 
 .chatRoomGroupNavCollapsed .ChannelTypeTitle .ChannelTypeLabel,
@@ -3837,6 +3824,8 @@ div:hover>.BBCodeCollapseControl {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-contacts) !important;
+
+  * { display: none !important; }
 }
 
 .MultiUserChat:not(:has(.MemberListViewCompact)) .ToggleMemberListView::after {
@@ -3848,10 +3837,6 @@ div:hover>.BBCodeCollapseControl {
   background-color: var(--zehn-color-focusbar);
   display: block;
   position: absolute;
-}
-
-.MemberListOption .SVGIcon_DoubleArrow * {
-  display: none !important;
 }
 
 .MemberListViewCompact .groupName {
@@ -4310,10 +4295,8 @@ div:hover>.BBCodeCollapseControl {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-clear) !important;
-}
 
-.STV_BroadcastClose svg * {
-  display: none !important;
+  * { display: none !important; }
 }
 
 .BroadcastVideoWatchState,
@@ -4447,6 +4430,8 @@ div:hover>.BBCodeCollapseControl {
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
+
+  * { display: none !important; }
 }
 
 .SVGIcon_HideShowChat {
@@ -4455,11 +4440,6 @@ div:hover>.BBCodeCollapseControl {
 
 .SVGIcon_ShowBothChats {
   -webkit-mask-image: var(--zehn-icon-chat-group) !important;
-}
-
-.SVGIcon_HideShowChat *,
-.SVGIcon_ShowBothChats * {
-  display: none !important;
 }
 
 .chatBody .ChatBodyControls .showBothTabs {
@@ -4542,10 +4522,8 @@ div:hover>.BBCodeCollapseControl {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-lg) !important;
   -webkit-mask-image: var(--zehn-icon-globe) !important;
-}
 
-.chatBody .InnerChatTab .SVGIcon_Globe * {
-  display: none !important;
+  * { display: none !important; }
 }
 
 /* PUBLIC CHAT */
