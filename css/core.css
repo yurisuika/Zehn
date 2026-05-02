@@ -5027,7 +5027,11 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   border-radius: var(--zehn-size-radius-square) !important;
   -webkit-box-shadow: none !important;
   border: none !important;
-  background: transparent !important;
+  background: var(--zehn-scrollbar-unfocused-background) !important;
+}
+
+div:hover::-webkit-scrollbar:not(:window-inactive) {
+  background: var(--zehn-scrollbar-focused-background) !important;
 }
 
 ::-webkit-scrollbar,
@@ -5045,11 +5049,7 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
 /* TRACK */
 ::-webkit-scrollbar-track {
   border-radius: var(--zehn-size-radius-square) !important;
-  background: var(--zehn-scrollbar-unfocused-background) !important;
-}
-
-div:hover>::-webkit-scrollbar:not(:window-inactive) {
-  background-color: var(--zehn-scrollbar-focused-background) !important;
+  background: transparent !important;
 }
 
 /* CORNER */
