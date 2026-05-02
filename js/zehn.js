@@ -34,25 +34,54 @@ const Zehn = {
     const rightActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
     const upActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-    document.documentElement.style.setProperty('--zehn-icon-scroll-down-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downLight)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-left-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftLight)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-right-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightLight)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-up-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-down-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-left-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-right-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-up-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upLight)}")`);
 
-    document.documentElement.style.setProperty('--zehn-icon-scroll-down-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveLight)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-left-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveLight)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-right-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveLight)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-up-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-down-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-left-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-right-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveLight)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-up-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveLight)}")`);
     
-    document.documentElement.style.setProperty('--zehn-icon-scroll-down-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downDark)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-left-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftDark)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-right-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightDark)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-up-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-down-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-left-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-right-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-up-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upDark)}")`);
 
-    document.documentElement.style.setProperty('--zehn-icon-scroll-down-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveDark)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-left-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveDark)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-right-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveDark)}")`);
-    document.documentElement.style.setProperty('--zehn-icon-scroll-up-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-down-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-left-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-right-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveDark)}")`);
+    // document.documentElement.style.setProperty('--zehn-icon-scroll-up-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveDark)}")`);
+
+    const css = `
+      :root {
+        --zehn-icon-scroll-down-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downLight)}");
+        --zehn-icon-scroll-left-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftLight)}");
+        --zehn-icon-scroll-right-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightLight)}");
+        --zehn-icon-scroll-up-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upLight)}");
+
+        --zehn-icon-scroll-down-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveLight)}");
+        --zehn-icon-scroll-left-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveLight)}");
+        --zehn-icon-scroll-right-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveLight)}");
+        --zehn-icon-scroll-up-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveLight)}");
+        
+        --zehn-icon-scroll-down-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downDark)}");
+        --zehn-icon-scroll-left-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftDark)}");
+        --zehn-icon-scroll-right-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightDark)}");
+        --zehn-icon-scroll-up-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upDark)}");
+
+        --zehn-icon-scroll-down-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveDark)}");
+        --zehn-icon-scroll-left-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveDark)}");
+        --zehn-icon-scroll-right-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveDark)}");
+        --zehn-icon-scroll-up-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveDark)}");
+      }
+    `;
+
+    const style = document.createElement('style');
+    style.id = 'glyphs';
+    style.textContent = css;
+    document.head.appendChild(style);
   },
 
   findRootsAndTargets(rootSelector, targetSelector, callback) {
