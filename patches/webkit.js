@@ -8,3 +8,7 @@ Zehn.addUserAgent();
 /* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
 Options.setOptions();
+
+/* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
+
+Zehn.setGlyphColor();

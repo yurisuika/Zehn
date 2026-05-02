@@ -7,6 +7,54 @@ const Zehn = {
     }
   },
 
+  setGlyphColor() {
+    const lightColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-light').trim();
+    const darkColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-dark').trim();
+
+    const lightActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-active-light').trim();
+    const darkActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-active-dark').trim();
+
+    const downLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+    const leftLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+    const rightLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+    const upLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+
+    const downActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+    const leftActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+    const rightActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+    const upActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+
+    const downDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+    const leftDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+    const rightDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+    const upDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+
+    const downActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+    const leftActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+    const rightActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+    const upActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+
+    document.documentElement.style.setProperty('--zehn-icon-scroll-down-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downLight)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-left-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftLight)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-right-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightLight)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-up-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upLight)}")`);
+
+    document.documentElement.style.setProperty('--zehn-icon-scroll-down-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveLight)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-left-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveLight)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-right-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveLight)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-up-active-light', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveLight)}")`);
+    
+    document.documentElement.style.setProperty('--zehn-icon-scroll-down-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downDark)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-left-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftDark)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-right-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightDark)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-up-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upDark)}")`);
+
+    document.documentElement.style.setProperty('--zehn-icon-scroll-down-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveDark)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-left-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveDark)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-right-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveDark)}")`);
+    document.documentElement.style.setProperty('--zehn-icon-scroll-up-active-dark', `url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveDark)}")`);
+  },
+
   findRootsAndTargets(rootSelector, targetSelector, callback) {
     const processed = new WeakSet();
     const rootObservers = new Map();

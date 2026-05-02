@@ -583,9 +583,13 @@
   --zehn-color-scrollbar-button-focused: transparent;
   --zehn-color-scrollbar-button-focused-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
   --zehn-color-scrollbar-button-focused-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-button-glyph: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-button-glyph-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-white)), rgba(var(--zehn-color-black))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-corner: transparent;
+  /* --zehn-color-scrollbar-button-glyph: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-scrollbar-button-glyph-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-white)), rgba(var(--zehn-color-black))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground)); */
+  --zehn-color-scroll-glyph-light: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-scroll-glyph-active-light: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-scroll-glyph-dark: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-scroll-glyph-active-dark: color-mix(in var(--zehn-blend-space), rgba(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+    --zehn-color-scrollbar-corner: transparent;
 
   --zehn-color-keyboard-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
   --zehn-color-keyboard-key: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
@@ -1297,37 +1301,6 @@
   --zehn-icon-zoom-in: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-zoom-in' style='fill:white' viewBox='0 0 16 16'><path d='M 15.8516 15.1484 Q 16 15.2969 16 15.5 Q 16 15.7031 15.8516 15.8516 Q 15.7031 16 15.5 16 Q 15.2969 16 15.1484 15.8516 L 9.0156 9.7266 q -0.75 0.6172 -1.6484 0.9453 Q 6.4766 11 5.5 11 Q 4.7422 11 4.0391 10.8047 Q 3.3359 10.6094 2.7266 10.25 Q 2.1172 9.8906 1.6094 9.3906 Q 1.1094 8.8828 0.75 8.2734 Q 0.3906 7.6641 0.1953 6.9609 Q 0 6.2578 0 5.5 Q 0 4.7422 0.1953 4.0391 Q 0.3906 3.3359 0.75 2.7266 Q 1.1094 2.1172 1.6094 1.6172 Q 2.1172 1.1094 2.7266 0.75 Q 3.3359 0.3906 4.0391 0.1953 Q 4.7422 0 5.5 0 Q 6.2578 0 6.9609 0.1953 Q 7.6641 0.3906 8.2734 0.75 q 0.6094 0.3594 1.1094 0.8672 q 0.5078 0.5 0.8672 1.1094 q 0.3594 0.6094 0.5547 1.3125 Q 11 4.7422 11 5.5 Q 11 6.4766 10.6719 7.375 Q 10.3438 8.2656 9.7266 9.0156 Z M 5.5 10 Q 6.4297 10 7.25 9.6484 Q 8.0703 9.2891 8.6797 8.6797 Q 9.2891 8.0703 9.6406 7.25 Q 10 6.4297 10 5.5 Q 10 4.5703 9.6406 3.75 Q 9.2891 2.9297 8.6797 2.3203 Q 8.0703 1.7109 7.25 1.3594 Q 6.4297 1 5.5 1 Q 4.5703 1 3.75 1.3594 Q 2.9297 1.7109 2.3203 2.3203 Q 1.7109 2.9297 1.3516 3.75 Q 1 4.5703 1 5.5 Q 1 6.4297 1.3516 7.25 Q 1.7109 8.0703 2.3203 8.6797 Q 2.9297 9.2891 3.75 9.6484 Q 4.5703 10 5.5 10 Z M 6 5 H 8 V 6 H 6 V 8 H 5 V 6 H 3 V 5 H 5 V 3 h 1 Z'/></svg>");
 
   --zehn-icon-zoom-out: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-zoom-out' style='fill:white' viewBox='0 0 16 16'><path d='M 16 15.4531 q 0 0.2188 -0.1328 0.3828 Q 15.7344 16 15.5 16 Q 15.2969 16 15.1484 15.8516 L 9.0156 9.7266 q -0.75 0.6172 -1.6484 0.9453 Q 6.4766 11 5.5 11 Q 4.7422 11 4.0391 10.8047 Q 3.3359 10.6094 2.7266 10.25 Q 2.1172 9.8906 1.6094 9.3906 Q 1.1094 8.8828 0.75 8.2734 Q 0.3906 7.6641 0.1953 6.9609 Q 0 6.2578 0 5.5 Q 0 4.7422 0.1953 4.0391 Q 0.3906 3.3359 0.75 2.7266 Q 1.1094 2.1172 1.6094 1.6172 Q 2.1172 1.1094 2.7266 0.75 Q 3.3359 0.3906 4.0391 0.1953 Q 4.7422 0 5.5 0 Q 6.2578 0 6.9609 0.1953 Q 7.6641 0.3906 8.2734 0.75 q 0.6094 0.3594 1.1094 0.8672 q 0.5078 0.5 0.8672 1.1094 q 0.3594 0.6094 0.5547 1.3125 Q 11 4.7422 11 5.5 Q 11 6.4766 10.6719 7.375 Q 10.3438 8.2656 9.7266 9.0156 l 0.4531 0.4453 l 1.8125 1.7734 q 0.5469 0.5469 1.1016 1.1094 q 0.5625 0.5547 1.0859 1.0859 q 0.5234 0.5313 0.9297 0.9609 q 0.4063 0.4297 0.6484 0.7188 Q 16 15.3906 16 15.4531 Z M 5.5 10 Q 6.4297 10 7.25 9.6484 Q 8.0703 9.2891 8.6797 8.6797 Q 9.2891 8.0703 9.6406 7.25 Q 10 6.4297 10 5.5 Q 10 4.5703 9.6406 3.75 Q 9.2891 2.9297 8.6797 2.3203 Q 8.0703 1.7109 7.25 1.3594 Q 6.4297 1 5.5 1 Q 4.5703 1 3.75 1.3594 Q 2.9297 1.7109 2.3203 2.3203 Q 1.7109 2.9297 1.3516 3.75 Q 1 4.5703 1 5.5 Q 1 6.4297 1.3516 7.25 Q 1.7109 8.0703 2.3203 8.6797 Q 2.9297 9.2891 3.75 9.6484 Q 4.5703 10 5.5 10 Z M 3 5 H 8 V 6 H 3 Z'/></svg>");
-}
-
-/* ------------------------------------------------------------------------------------------------------------------ */
-
-
-
-
-
-
-
-
-
-
-/* GLYPHS ----------------------------------------------------------------------------------------------------------- */
-
-:root {
-  --zehn-glyph-scroll-down-dark: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-down-dark' style='fill:white' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>");
-
-  --zehn-glyph-scroll-down-light: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-down-light' style='fill:black' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>");
-
-  --zehn-glyph-scroll-left-dark: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-left-dark' style='fill:white' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>");
-
-  --zehn-glyph-scroll-left-light: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-left-light' style='fill:black' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>");
-
-  --zehn-glyph-scroll-right-dark: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-right-dark' style='fill:white' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>");
-
-  --zehn-glyph-scroll-right-light: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-right-light' style='fill:black' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>");
-
-  --zehn-glyph-scroll-up-dark: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-up-dark' style='fill:white' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>");
-
-  --zehn-glyph-scroll-up-light: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='glyph-scroll-up-light' style='fill:black' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>");
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */

@@ -9,6 +9,10 @@ Zehn.addUserAgent();
 
 Options.setOptions();
 
+/* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
+
+Zehn.setGlyphColor();
+
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [

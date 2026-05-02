@@ -4982,10 +4982,8 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-keyboard) !important;
-}
 
-._2KhPXikozxMpbIRo_6jPxW.Col_6.KeyTheme_VKClose svg * {
-  display: none !important;
+  * { display: none !important; }
 }
 
 ._2KhPXikozxMpbIRo_6jPxW._1WbIjnypHqw8t8_NFQHPJr.Col_0.KeyTheme_SwitchKeys_Steam svg {
@@ -4996,10 +4994,8 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-emoticon) !important;
-}
 
-._2KhPXikozxMpbIRo_6jPxW._1WbIjnypHqw8t8_NFQHPJr.Col_0.KeyTheme_SwitchKeys_Steam svg * {
-  display: none !important;
+  * { display: none !important; }
 }
 
 ._2KhPXikozxMpbIRo_6jPxW._1WbIjnypHqw8t8_NFQHPJr.Col_1.KeyTheme_SwitchKeys_Layout svg {
@@ -5010,10 +5006,8 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-globe) !important;
-}
 
-._2KhPXikozxMpbIRo_6jPxW._1WbIjnypHqw8t8_NFQHPJr.Col_1.KeyTheme_SwitchKeys_Layout svg * {
-  display: none !important;
+  * { display: none !important; }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -5128,37 +5122,69 @@ div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
 
 @media (prefers-color-scheme: light) {
   ::-webkit-scrollbar-button:single-button:decrement {
-    background-image: var(--zehn-glyph-scroll-up-light) !important;
+    background-image: var(--zehn-icon-scroll-up-light) !important;
   }
 
   ::-webkit-scrollbar-button:single-button:decrement:horizontal {
-    background-image: var(--zehn-glyph-scroll-left-light) !important;
+    background-image: var(--zehn-icon-scroll-left-light) !important;
   }
 
   ::-webkit-scrollbar-button:single-button:increment {
-    background-image: var(--zehn-glyph-scroll-down-light) !important;
+    background-image: var(--zehn-icon-scroll-down-light) !important;
   }
 
   ::-webkit-scrollbar-button:single-button:increment:horizontal {
-    background-image: var(--zehn-glyph-scroll-right-light) !important;
+    background-image: var(--zehn-icon-scroll-right-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:active {
+    background-image: var(--zehn-icon-scroll-up-active-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal:active {
+    background-image: var(--zehn-icon-scroll-left-active-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:active {
+    background-image: var(--zehn-icon-scroll-down-active-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:horizontal:active {
+    background-image: var(--zehn-icon-scroll-right-active-light) !important;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   ::-webkit-scrollbar-button:single-button:decrement {
-    background-image: var(--zehn-glyph-scroll-up-dark) !important;
+    background-image: var(--zehn-icon-scroll-up-dark) !important;
   }
 
   ::-webkit-scrollbar-button:single-button:decrement:horizontal {
-    background-image: var(--zehn-glyph-scroll-left-dark) !important;
+    background-image: var(--zehn-icon-scroll-left-dark) !important;
   }
 
   ::-webkit-scrollbar-button:single-button:increment {
-    background-image: var(--zehn-glyph-scroll-down-dark) !important;
+    background-image: var(--zehn-icon-scroll-down-dark) !important;
   }
 
   ::-webkit-scrollbar-button:single-button:increment:horizontal {
-    background-image: var(--zehn-glyph-scroll-right-dark) !important;
+    background-image: var(--zehn-icon-scroll-right-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:active {
+    background-image: var(--zehn-icon-scroll-up-active-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal:active {
+    background-image: var(--zehn-icon-scroll-left-active-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:active {
+    background-image: var(--zehn-icon-scroll-down-active-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:horizontal:active {
+    background-image: var(--zehn-icon-scroll-right-active-dark) !important;
   }
 }
 
@@ -5381,26 +5407,24 @@ div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrem
   padding: var(--zehn-size-button-app-padding) !important;
   background: var(--zehn-color-button-app-background) !important;
   outline: 0 solid var(--zehn-color-button-app-border) !important;
-}
 
-._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-  outline: 0 solid var(--zehn-color-button-app-border-hover) !important;
-}
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+    outline: 0 solid var(--zehn-color-button-app-border-hover) !important;
+  }
 
-._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd:active {
-  background: var(--zehn-color-button-app-background-active) !important;
-  outline: 0 solid var(--zehn-color-button-app-border-active) !important;
+  &:active {
+    background: var(--zehn-color-button-app-background-active) !important;
+    outline: 0 solid var(--zehn-color-button-app-border-active) !important;
+  }
 }
 
 ._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd>svg {
   width: 32px !important;
   height: 32px !important;
   vertical-align: unset !important;
-}
 
-._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd>svg * {
-  display: none !important;
+  * { display: none !important; }
 }
 
 ._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd svg {
