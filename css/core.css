@@ -5118,59 +5118,48 @@ div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
   background-color: var(--zehn-color-scrollbar-button-focused-active) !important;
 }
 
-/* ::-webkit-scrollbar-button:single-button:not(:window-inactive)::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background-color: var(--zehn-color-scrollbar-glyph) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-sm) !important;
+::-webkit-scrollbar-button {
+  color: var(--zehn-color-scrollbar-button-glyph) !important;
 }
 
-::-webkit-scrollbar-button:single-button:not(:window-inactive):active::after {
-  background-color: var(--zehn-color-scrollbar-glyph-active) !important;
+::-webkit-scrollbar-button:active {
+  color: var(--zehn-color-scrollbar-button-glyph-active) !important;
 }
 
-::-webkit-scrollbar-button:single-button:decrement:not(:window-inactive)::after {
-  -webkit-mask-image: var(--zehn-icon-chevron-up-medium) !important;
+@media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-button:single-button:decrement {
+    background-image: var(--zehn-glyph-scroll-up-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal {
+    background-image: var(--zehn-glyph-scroll-left-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment {
+    background-image: var(--zehn-glyph-scroll-down-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:horizontal {
+    background-image: var(--zehn-glyph-scroll-right-light) !important;
+  }
 }
 
-::-webkit-scrollbar-button:single-button:decrement:horizontal:not(:window-inactive)::after {
-  -webkit-mask-image: var(--zehn-icon-chevron-left-medium) !important;
-}
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-button:single-button:decrement {
+    background-image: var(--zehn-glyph-scroll-up-dark) !important;
+  }
 
-::-webkit-scrollbar-button:single-button:increment:not(:window-inactive)::after {
-  -webkit-mask-image: var(--zehn-icon-chevron-down-medium) !important;
-}
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal {
+    background-image: var(--zehn-glyph-scroll-left-dark) !important;
+  }
 
-::-webkit-scrollbar-button:single-button:increment:horizontal:not(:window-inactive)::after {
-  -webkit-mask-image: var(--zehn-icon-chevron-right-medium) !important;
-} */
+  ::-webkit-scrollbar-button:single-button:increment {
+    background-image: var(--zehn-glyph-scroll-down-dark) !important;
+  }
 
-
-::-webkit-scrollbar-button:single-button:not(:window-inactive) {
-  color: var(--zehn-color-scrollbar-glyph) !important;
-}
-
-::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
-  color: var(--zehn-color-scrollbar-glyph-active) !important;
-}
-
-::-webkit-scrollbar-button:single-button:decrement:not(:window-inactive) {
-  background-image: var(--zehn-icon-chevron-up-medium) !important;
-}
-
-::-webkit-scrollbar-button:single-button:decrement:horizontal:not(:window-inactive) {
-  background-image: var(--zehn-icon-chevron-left-medium) !important;
-}
-
-::-webkit-scrollbar-button:single-button:increment:not(:window-inactive) {
-  background-image: var(--zehn-icon-chevron-down-medium) !important;
-}
-
-::-webkit-scrollbar-button:single-button:increment:horizontal:not(:window-inactive) {
-  background-image: var(--zehn-icon-chevron-right-medium) !important;
+  ::-webkit-scrollbar-button:single-button:increment:horizontal {
+    background-image: var(--zehn-glyph-scroll-right-dark) !important;
+  }
 }
 
 /* THUMB */
