@@ -3952,18 +3952,53 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
 #zehnGameEvent,
 #zehnGameCommunity,
 #zehnGameDetails {
-  display: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+
+  &:not(.zehnDisplayed) {
+    display: none !important;
+  }
 }
 
-.zehnDisplayed#zehnGameFeaturedEvent,
-.zehnDisplayed#zehnGameEvent,
-.zehnDisplayed#zehnGameCommunity {
+#zehnGameFeaturedEvent,
+#zehnGameEvent,
+#zehnGameCommunity {
   display: block !important;
 }
 
-.zehnDisplayed#zehnGameDetails {
-  /* display: flex !important; */
+#zehnGameDetails {
   display: grid !important;
+}
+
+#zehnActivityDisplayed {
+  #zehnGameCommunity,
+  #zehnGameDetails {
+    display: none !important;
+  }
+}
+
+#zehnCommunityDisplayed {
+  #zehnGameFeaturedEvent,
+  #zehnGameEvent,
+  #zehnGameDetails {
+    display: none !important;
+  }
+}
+
+#zehnDetailsDisplayed {
+  #zehnGameFeaturedEvent,
+  #zehnGameEvent,
+  #zehnGameCommunity {
+    display: none !important;
+  }
+}
+
+/* EMPTY EVENTS */
+.zehnDisplayed#zehnGameFeaturedEvent:empty,
+.zehnDisplayed#zehnGameEvent:empty,
+.zehnDisplayed#zehnGameCommunity:empty {
+  display: none !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */

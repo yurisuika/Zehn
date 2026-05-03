@@ -203,6 +203,7 @@ Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (ro
     if (details.id != 'zehnGameDetails') {
       details.id = 'zehnGameDetails';
       details.classList.add('zehnDisplayed');
+      target.id = 'zehnDetailsDisplayed';
     }
   }
 });
@@ -238,6 +239,7 @@ function togglePage(root, target, button) {
   const buttons = [btnActivity, btnCommunity, btnDetails];
 
   if (btnActivity && btnCommunity && btnDetails) {
+    const container = root.querySelector('.OhSdLYuggDtBcWjYP0j_9');
     const featured = document.getElementById('zehnGameFeaturedEvent');
     const event = document.getElementById('zehnGameEvent');
     const community = document.getElementById('zehnGameCommunity');
@@ -248,18 +250,21 @@ function togglePage(root, target, button) {
       if (button == btnActivity) {
         if (page && (page == featured || page == event)) {
           page.classList.add('zehnDisplayed');
+          container.id = 'zehnActivityDisplayed';
         } else if (page) {
           page.classList.remove('zehnDisplayed');
         }
       } else if (button == btnCommunity) {
         if (page && (page == community)) {
           page.classList.add('zehnDisplayed');
+          container.id = 'zehnCommunityDisplayed';
         } else if (page) {
           page.classList.remove('zehnDisplayed');
         }
       } else if (button == btnDetails) {
         if (page && (page == details)) {
           page.classList.add('zehnDisplayed');
+          container.id = 'zehnDetailsDisplayed';
         } else if (page) {
           page.classList.remove('zehnDisplayed');
         }
