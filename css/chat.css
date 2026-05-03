@@ -2122,7 +2122,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   width: 100% !important;
   height: 100% !important;
   transition: transform 0.2s ease !important;
-  /* transform: none !important; */
   
   * { display: none !important; }
 }
@@ -2131,10 +2130,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   transform: unset;
 }
 
-.chatVideoPlayControl:hover svg:hover,
-.chatVideoPlayControl svg:hover {
-  /* transform: scale(1.2) !important; */
-  animation: wobble 0.5s ease infinite both !important;
+@media (prefers-reduced-motion: no-preference) {
+  .chatVideoPlayControl:hover svg:hover,
+  .chatVideoPlayControl svg:hover {
+    animation: wobble 0.5s ease infinite both !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chatVideoPlayControl:hover svg:hover,
+  .chatVideoPlayControl svg:hover {
+    transform: scale(1.2) !important;
+  }
 }
 
 /* IMAGE CONTAINER */
@@ -2825,7 +2832,6 @@ div:hover>.BBCodeCollapseControl {
   -webkit-mask-image: var(--zehn-icon-play) !important;
   mask-size: var(--zehn-size-icon-lg) !important;
   transition: transform 0.2s ease !important;
-  /* transform: none !important; */
 
   * { display: none !important; }
 }
@@ -2834,10 +2840,18 @@ div:hover>.BBCodeCollapseControl {
   transform: unset;
 }
 
-._3z_x2p4-vEsacO9D8xcw8m:hover .SVGIcon_Play:hover,
-._3z_x2p4-vEsacO9D8xcw8m .SVGIcon_Play:hover {
-  /* transform: scale(1.2) !important; */
-  animation: wobble 0.5s ease infinite both !important;
+@media (prefers-reduced-motion: no-preference) {
+  ._3z_x2p4-vEsacO9D8xcw8m:hover .SVGIcon_Play:hover,
+  ._3z_x2p4-vEsacO9D8xcw8m .SVGIcon_Play:hover {
+    animation: wobble 0.5s ease infinite both !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ._3z_x2p4-vEsacO9D8xcw8m:hover .SVGIcon_Play:hover,
+  ._3z_x2p4-vEsacO9D8xcw8m .SVGIcon_Play:hover {
+    transform: scale(1.2) !important;
+  }
 }
 
 /* EMBED VIDEO POP UP */
