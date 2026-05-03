@@ -124,12 +124,11 @@ Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw
 
 /* TOGGLE ROOT MENU ------------------------------------------------------------------------------------------------- */
 
-Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', ['#zehnToggleNavigation', '.zehnButton'], (root, target, button) => {
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', ['#zehnToggleNavigation', '.zehnButton'], (root, target, button) => {
   const btnNavigation = document.getElementById('zehnToggleNavigation');
   if (btnNavigation) {
     const container = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
     container.classList.toggle('zehnMenuOpened', !btnNavigation.classList.contains('zehnToggled'));
-
     btnNavigation.classList.toggle('zehnToggled');
   }
 }, false);
