@@ -128,9 +128,14 @@ Certain surfaces will always have an acrylic blur on them. These are small panel
 
 Some windows have reactive panels that change into an acrylic blur on window focus when `Transparency Effects` is enabled in the options. These fall into two categories:
 * Panels that overlay and blur Steam content below them, such as the main window navbar.
-* Panels that blur the window background. These include various settings windows, notes, friends and chat. Of these, some are supported to give Steam a transparent background when using the DWMX plugin for Millennium. This allows the Acrylic to actually show through below the window and blur whatever is below it. You may need additional software to get a blur working, as at this time DWMX's blur is noted to not work (I recommend using Windhawk's `Translucent Windows` mod). Presently, the only windows that support this functionality are the pagelisted settings windows.
+* Panels that blur the window background. These include various settings windows, notes, friends and chat. Of these, some are supported to give Steam a transparent background when using the DWMX plugin for Millennium. This allows the Acrylic to actually show through below the window and blur whatever is below it.
 
 ![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.gif)
+
+> [!WARNING]
+> Behind-window Acrylic may require additional compositing software to function. At this present time, DWMX's blur is not noted to work, but it will still make window backgrounds transparent. Presently, the only windows that support this functionality in Zehn are the pagelisted settings windows.
+>
+> I personally use the `Translucent Windows` mod for Windhawk. Your choices will depend on your OS. Feel free to chat in the Steam Group or use GitHub Discussions for support!
 
 ### Reveal
 Reveal is a Fluent Design effect that reveals hidden backgrounds and borders in a radial gradient around the pointer upon hover.
@@ -168,9 +173,6 @@ Zehn features several added buttons for an improved experience:
   * The current user container is toggled via the button at the ends of the friends tab buttons container. It is hidden by default.
 * On the chat window...
   * The channel list, member list, and settings buttons are toggled via three buttons added to the group chat header bar.
-
-> [!WARNING]
-> On occasion, Millennium will fail to inject JS in the friends/chat windows. This means the added buttons fail to appear. You will have to F5 Steam until they show up.
 
 ### Plugin Support
 Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy the following plugins made to look right at home in a Zehn Steam:
