@@ -127,33 +127,8 @@ Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3s0lkohH8wU2do0K1il28Y', ['#zehnToggleNavigation', '.zehnButton'], (root, target, button) => {
   const btnNavigation = document.getElementById('zehnToggleNavigation');
   if (btnNavigation) {
-
-    const root = document.querySelectorAll('._2UyOBeiSdBayaFdRa39N2O');
     const container = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
-
-    if (btnNavigation.classList.contains('zehnToggled')) {
-      container.classList.remove('zehnMenuOpened');
-      document.documentElement.style.setProperty('--zehn-size-menu-height', '0px');
-      root.forEach((element) => {
-        element.style.setProperty('height', '0px', 'important');
-        element.style.setProperty('display', 'none', 'important');
-        element.style.setProperty('color', 'transparent', 'important');
-        element.classList.add('zehnRootHidden');
-        element.classList.toggle('zehnRootShown');
-      });
-    }
-    else {
-      container.classList.add('zehnMenuOpened');
-      document.documentElement.style.setProperty('--zehn-size-menu-height', '32px');
-      root.forEach((element) => {
-        element.style.setProperty('height', '32px', 'important');
-
-        element.style.setProperty('display', 'block', 'important');
-        element.style.setProperty('color', 'var(--zehn-color-text-primary)', 'important');
-        element.classList.add('zehnRootShown');
-        element.classList.toggle('zehnRootHidden');
-      });
-    }
+    container.classList.toggle('zehnMenuOpened', !btnNavigation.classList.contains('zehnToggled'));
 
     btnNavigation.classList.toggle('zehnToggled');
   }
