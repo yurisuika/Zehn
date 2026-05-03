@@ -8,11 +8,11 @@ const Zehn = {
   },
 
   setGlyphColor() {
-    const lightColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-light').trim();
-    const darkColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-dark').trim();
+    const lightColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-light').trim();
+    const darkColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-dark').trim();
 
-    const lightActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-active-light').trim();
-    const darkActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scroll-glyph-active-dark').trim();
+    const lightActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-light').trim();
+    const darkActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-dark').trim();
 
     const downLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
     const leftLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
