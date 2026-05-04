@@ -1026,26 +1026,48 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
   transform: none !important;
   margin: 0 !important;
   gap: var(--zehn-size-spacing-xs) !important;
+  position: relative !important;
+}
+
+.OpenGraphMessageURLPosition {
+  display: flex !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+}
+
+.OpenGraphMessageURL_short {
+  color: var(--zehn-color-text-primary) !important;
 }
 
 .OpenGraphMessageURL_full {
   transform: none !important;
-  opacity: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
   border: none !important;
   background-color: transparent !important;
   color: var(--zehn-color-text-secondary) !important;
-  width: 100% !important;
-  font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-12) !important;
-  line-height: var(--zehn-size-24) !important;
+}
+
+.OpenGraphMessageURL_short,
+.OpenGraphMessageURL_full {
+  text-transform: none !important;
   max-height: 100% !important;
   height: 100% !important;
   align-self: center !important;
   align-content: center !important;
+  font-weight: var(--zehn-size-weight-normal) !important;
+  font-size: var(--zehn-size-12) !important;
+  line-height: var(--zehn-size-24) !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: transform 0.2s ease !important;
+  position: relative !important;
+  display: block !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  min-width: 0 !important;
 }
 
+.OpenGraphFooter:hover .OpenGraphMessageURL_short,
 .OpenGraphFooter:hover .OpenGraphMessageURL_full {
   opacity: 1 !important;
   transform: none !important;
@@ -1055,7 +1077,7 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
 .msg .OpenGraphMessageURL {
   border-radius: var(--zehn-size-radius-square) !important;
   background: transparent !important;
-  color: var(--zehn-color-link) !important;
+  color: var(--zehn-color-text-secondary) !important;
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   border: unset !important;
@@ -1066,19 +1088,9 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
   order: 2 !important;
   flex-grow: 1 !important;
   line-height: var(--zehn-size-24) !important;
-  max-height: 100% !important;
-  height: 100% !important;
   align-self: center !important;
-}
-
-.ChatMessageInvite .inviteURLLink:hover,
-.msg .OpenGraphMessageURL:hover {
-  color: var(--zehn-color-link-hover) !important;
-}
-
-.ChatMessageInvite .inviteURLLink:active,
-.msg .OpenGraphMessageURL:active {
-  color: var(--zehn-color-link-active) !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 .ChatMessageOpenGraph .OpenGraphFooter {
@@ -1089,19 +1101,30 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
 .OpenGraphFooter .OpenGraphURLButton  {
   margin: 0 !important;
   order: 1 !important;
-  width: var(--zehn-size-button-app) !important;
-  height: var(--zehn-size-button-app) !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 10 !important;
   background: var(--zehn-color-button-app-background) !important;
-}
+  line-height: var(--zehn-size-24) !important;
+  transition: none !important;
 
-.inviteURLContainer .copyInviteLink:hover,
-.OpenGraphFooter .OpenGraphURLButton:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
+  &:hover {
+    background: var(--zehn-color-button-app-background-hover) !important;
+    backdrop-filter: var(--zehn-filter-light-blur) !important;
 
-.inviteURLContainer .copyInviteLink:active,
-.OpenGraphFooter .OpenGraphURLButton:active {
-  background: var(--zehn-color-button-app-background-active) !important;
+    svg {
+      opacity: 1 !important;
+    }
+  }
+
+  &:active {
+    background: var(--zehn-color-button-app-background-active) !important;
+  }
+
+  svg {
+    opacity: 0 !important;
+  }
 }
 
 .friendsui-container .SVGIcon_Button.SVGIcon_CopyToClipboard,
@@ -1111,16 +1134,14 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
   fill: transparent !important;
   width: 100% !important;
   height: 100% !important;
+  max-width: 100% !important;
   background-color: var(--zehn-color-icon-primary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-sm) !important;
   -webkit-mask-image: var(--zehn-icon-clipboard) !important;
-  transition: all 0.2s ease !important;
-}
+  transition: none !important;
 
-.OpenGraphFooter .SVGIcon_CopyToClipboard,
-.copyInviteLink .SVGIcon_CopyToClipboard {
   * { display: none !important; }
 }
 
@@ -1219,13 +1240,14 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
 .ChatMessageInvite.GroupAlreadyJoined,
 .ChatMessageInvite.Inviter,
 .ChatMessageInvite.gameInviteMsg {
+  box-sizing: border-box !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   margin: 0 !important;
-  padding: var(--zehn-size-padding-md) !important;
+  padding: var(--zehn-size-chat-embed-padding) !important;
   display: flex !important;
-  max-width: var(--zehn-size-chat-embed-width) !important;
+  max-width: var(--zehn-size-chat-embed) !important;
   min-width: 0 !important;
   transition: background-color 0.2s ease !important;
   gap: var(--zehn-size-spacing-md) !important;
@@ -1242,9 +1264,10 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
 
 .msg .inviteLabel,
 .ChatMessageInvite .inviteLabel {
-  color: var(--zehn-color-text-secondary) !important;
+  color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
+  line-height: var(--zehn-size-24) !important;
 }
 
 .msg .productName {
@@ -1372,9 +1395,10 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
 
 .ChatMessageInvite .rightInviteContainer .rightInviteContainerContent {
   margin: 0 !important;
-  gap: var(--zehn-size-spacing-xs) !important;
+  gap: 0 !important;
   display: flex !important;
   flex-direction: column !important;
+  align-self: center !important;
 }
 
 .ChatMessageInvite.Inviter .inviteLabel,
@@ -1877,18 +1901,19 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .chatVideoContainer {
   padding-bottom: 32px !important;
-  max-width: var(--zehn-size-chat-embed-width) !important;
-  width: var(--zehn-size-chat-embed-width);
-  background: var(--zehn-color-section) !important;
+  background: transparent !important;
 }
 
 .chatVideoContainer>.Panel {
-  width: 100% !important;
+  width: auto !important;
+  min-width: fit-content !important;
 }
 
 .chatVideoContainer video {
+  background: black !important;
   display: block !important;
-  max-width: var(--zehn-size-chat-embed-width) !important;
+  max-width: calc(var(--zehn-size-chat-embed) - (2 * var(--zehn-size-chat-embed-padding))) !important;
+  max-height: calc(var(--zehn-size-chat-embed) - (var(--zehn-size-focusbar) + (2 * var(--zehn-size-chat-embed-padding)))) !important;
 }
 
 ._1wu95XTcpkpdKpgg_n2HR {
@@ -1933,6 +1958,18 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   &:active {
     background-color: var(--zehn-color-button-app-background-active) !important;
   }
+}
+
+.msg .BBCodeResizableComponent:not(.Minimized, .Minimizing) a.chatImageURL {
+  position: absolute !important;
+  top: var(--zehn-size-chat-embed-padding) !important;
+  left: var(--zehn-size-chat-embed-padding) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.msg .BBCodeResizableComponent:not(.Minimized, .Minimizing):hover a.chatImageURL {
+  opacity: 1 !important;
 }
 
 .chatImageContainer .chatImageURL {
@@ -2039,28 +2076,28 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 /* VIDEO COLLAPSED */
-.BBCodeAlreadyCollapsed.Minimized .BBCodeAlreadyCollapsedText,
-.BBCodeResizableComponent.Minimized .BBCodeCollapsed_Friend {
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeAlreadyCollapsedText,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing).BBCodeCollapsed_Friend {
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   background-color: transparent !important;
 }
 
-.BBCodeAlreadyCollapsed.Minimized:hover .BBCodeAlreadyCollapsedText,
-.BBCodeResizableComponent.Minimized:hover .BBCodeCollapsed_Friend {
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing):hover .BBCodeAlreadyCollapsedText,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing):hover .BBCodeCollapsed_Friend {
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   background-color: transparent !important;
 }
 
-.BBCodeAlreadyCollapsed.Minimized:active .BBCodeAlreadyCollapsedText,
-.BBCodeResizableComponent.Minimized:active .BBCodeCollapsed_Friend {
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing):active .BBCodeAlreadyCollapsedText,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing):active .BBCodeCollapsed_Friend {
   color: var(--zehn-color-text-primary) !important;
 }
 
-.BBCodeResizableComponent.Minimized .BBCodeCollapsed_Friend {
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeCollapsed_Friend {
   transition: none !important;
   order: 10 !important;
   margin: 0 auto 0 0 !important;
@@ -2145,24 +2182,28 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 /* IMAGE CONTAINER */
-.chatImageContainer {
-  display: block !important;
-  padding: 0 !important;
-}
+.chatImageContainer {}
 
 .PreserveAspect {
-  height: fit-content !important;
   padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .chatImageContainer img {
   position: relative !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  max-width: calc(var(--zehn-size-chat-embed) - (2 * var(--zehn-size-chat-embed-padding))) !important;
+  max-height: calc(var(--zehn-size-chat-embed) - (var(--zehn-size-focusbar) + (2 * var(--zehn-size-chat-embed-padding)))) !important;
 }
 
 .BBCodeImageWrapper {
   background-color: transparent !important;
-  width: fit-content !important;
-  max-width: calc(var(--zehn-size-padding-md) * 2 + var(--zehn-size-chat-embed-width)) !important;
+  max-width: unset !important;
+  width: auto !important;
+  min-width: fit-content !important;
 }
 
 .BBCodeImageWrapper .BBCodeCollapseControl {
@@ -2183,7 +2224,7 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   padding: var(--zehn-size-padding-md) !important;
   display: flex !important;
   width: auto !important;
-  max-width: var(--zehn-size-chat-embed-width) !important;
+  max-width: var(--zehn-size-chat-embed) !important;
   transition: background-color 0.2s ease !important;
   background: var(--zehn-color-embed-background) !important;
   border-radius: var(--zehn-size-chat-embed-radius) !important;
@@ -2196,8 +2237,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   background: var(--zehn-color-embed-background-hover) !important;
 }
 
-.BBCodeAlreadyCollapsed.Minimized:hover .BBCodeAlreadyCollapsedText,
-.BBCodeResizableComponent.Minimized:hover .BBCodeCollapsed {
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing):hover .BBCodeAlreadyCollapsedText,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing):hover .BBCodeCollapsed {
   color: inherit !important;
 }
 
@@ -2221,18 +2262,21 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   width: 100% !important;
 }
 
-.BBCodeResizableComponent * {
-  transition: none !important;
-}
-
+.chatVideoContainer,
+.chatImageContainer,
 .BBCodeResizableComponent,
 .BBCodeResizableComponent.BBCodeYouTubeComponent {
-  width: auto !important;
-  max-width: var(--zehn-size-chat-embed-width);
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  min-height: calc(var(--zehn-size-focusbar) + var(--zehn-size-button-app) + (2 * var(--zehn-size-chat-embed-padding))) !important;
+  max-width: var(--zehn-size-chat-embed) !important;
+  max-height: var(--zehn-size-chat-embed) !important;
   background: var(--zehn-color-embed-background) !important;
   border-radius: var(--zehn-size-chat-embed-radius) !important;
   margin: 0 !important;
-  padding: var(--zehn-size-padding-md) !important;
+  padding: var(--zehn-size-chat-embed-padding) !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
   border-width: var(--zehn-size-chat-embed-border);
@@ -2240,11 +2284,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   border-color: var(--zehn-color-embed-border) !important;
   place-content: flex-end !important;
   transition: background-color 0.2s ease !important;
-}
 
-.BBCodeResizableComponent:hover,
-.BBCodeResizableComponent.BBCodeYouTubeComponent:hover {
-  background: var(--zehn-color-embed-background-hover) !important;
+  &:hover {
+    background: var(--zehn-color-embed-background-hover) !important;
+  }
 }
 
 .YoutubePlayer {
@@ -2252,9 +2295,8 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 }
 
 .BBCodeTitle {
-  color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
+  font-size: var(--zehn-size-12) !important;
   padding: 0 !important;
   margin: 0 !important;
   width: auto !important;
@@ -2267,20 +2309,34 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 
 .test.HideWhenMinimized {
   margin-right: auto !important;
-  max-width: calc(100% - (3 * var(--zehn-size-button-md))) !important;
-  padding-right: var(--zehn-size-padding-md) !important;
+  max-width: 100% !important;
+  padding: 0 !important;
 }
 
+.BBCodeResizableComponent.Minimizing,
 .BBCodeResizableComponent.Minimized {
-  min-height: 32px !important;
-  min-width: 0 !important;
+  min-height: calc(var(--zehn-size-focusbar) + var(--zehn-size-button-app) + (2 * var(--zehn-size-chat-embed-padding))) !important;
+  min-width: var(--zehn-size-chat-embed) !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   width: auto !important;
-  max-width: var(--zehn-size-chat-embed-width) !important;
+  max-width: var(--zehn-size-chat-embed) !important;
+  place-content: flex-end !important;
 }
 
-.BBCodeResizableComponent.Minimized .BBCodeCollapseControl {
+.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeCollapseControl {
+  position: absolute !important;
+  top: var(--zehn-size-chat-embed-padding) !important;
+  right: var(--zehn-size-chat-embed-padding) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.BBCodeResizableComponent:not(.Minimized, .Minimizing):hover .BBCodeCollapseControl {
+  opacity: 1 !important;
+}
+
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeCollapseControl {
   left: 0 !important;
   right: unset !important;
 }
@@ -2292,9 +2348,9 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   display: none !important;
 }
 
-.BBCodeResizableComponent.Minimized .chatImageURL,
-.BBCodeResizableComponent.Minimized .BBCodeRestoreControl,
-.BBCodeResizableComponent.Minimized .BBCodeResizeControl {
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .chatImageURL,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeRestoreControl,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeResizeControl {
   display: none !important;
   opacity: 1 !important;
 }
@@ -2328,7 +2384,6 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
     background-color: var(--zehn-color-button-app-background-active) !important;
   }
 }
-
 
 .BBCodeResizableComponent:hover .BBCodeCollapseControl:hover,
 .BBCodeCollapseControl:hover,
@@ -2492,7 +2547,7 @@ div:hover>.BBCodeCollapseControl {
   flex-direction: row !important;
   gap: var(--zehn-size-spacing-xs) !important;
   width: auto !important;
-  max-width: var(--zehn-size-chat-embed-width) !important;
+  max-width: var(--zehn-size-chat-embed) !important;
   color: var(--zehn-color-text-secondary) !important;
   padding: var(--zehn-size-padding-md) !important;
   margin: 0 !important;
@@ -2591,7 +2646,7 @@ div:hover>.BBCodeCollapseControl {
 ._1JZstfJ6jCBChXx0ZDwfpR,
 ._2_QSE1Nit6wrabY5ZgDZOz {
   margin: 0 !important;
-  padding: var(--zehn-size-padding-md) !important;
+  padding: var(--zehn-size-chat-embed-padding) !important;
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-size-weight-normal) !important;
@@ -2603,11 +2658,10 @@ div:hover>.BBCodeCollapseControl {
   border-width: var(--zehn-size-chat-embed-border);
   border-style: solid !important;
   border-color: var(--zehn-color-embed-border) !important;
-}
 
-._1JZstfJ6jCBChXx0ZDwfpR:hover,
-._2_QSE1Nit6wrabY5ZgDZOz:hover {
-  background: var(--zehn-color-embed-background-hover) !important;
+  &:hover {
+    background: var(--zehn-color-embed-background-hover) !important;
+  }
 }
 
 ._15zMZHizyW80NNsvBfj9L4 {
