@@ -31,7 +31,7 @@
   /* background-blend-mode: exclusion !important; */
   /* background-image: var(--zehn-acrylic-texture) !important; */
   padding: var(--zehn-size-context-padding) !important;
-  min-width: auto !important;
+  min-width: max-content !important;
 }
 
 .PP7LM0Ow1K5qkR8WElLpt>._2EstNjFIIZm_WUSKm5Wt7n {
@@ -50,6 +50,7 @@
   border: var(--zehn-size-overlay-border) solid var(--zehn-color-overlay-border) !important;
   border-radius: var(--zehn-size-overlay-radius) !important;
   overflow: hidden !important;
+  min-width: auto !important;
   /* EMOTICON */
 
   >._2EstNjFIIZm_WUSKm5Wt7n {
@@ -160,7 +161,20 @@
   }
 }
 
+/* DO NOT DISTURB */
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  border-radius: var(--zehn-size-context-entry-radius);
+  border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border);
+}
+
 /* SELECTED / INNER MENU ENTRIES */
+.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before,
 ._2oAiZidGyUxL-hfupFDQ2m:has(._1TyV26CL6Wjd3gaJsh_rpr)::after,
 ._1n7Wloe5jZ6fSuvV18NNWI.menuChecked:not(.contextMenuUnselectable)::after,
 ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK:not(.contextMenuUnselectable)::after {
@@ -168,6 +182,7 @@
 }
 
 @media (prefers-color-scheme: light) {
+  .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before,
   ._2oAiZidGyUxL-hfupFDQ2m:has(._1TyV26CL6Wjd3gaJsh_rpr)::after,
   ._1n7Wloe5jZ6fSuvV18NNWI.menuChecked:not(.contextMenuUnselectable)::after,
   ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK:not(.contextMenuUnselectable)::after {
@@ -176,6 +191,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before,
   ._2oAiZidGyUxL-hfupFDQ2m:has(._1TyV26CL6Wjd3gaJsh_rpr)::after,
   ._1n7Wloe5jZ6fSuvV18NNWI.menuChecked:not(.contextMenuUnselectable)::after,
   ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK:not(.contextMenuUnselectable)::after {
@@ -632,29 +648,6 @@
   background: transparent !important;
 
   * { display: none !important; }
-}
-
-.DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before {
-  content: "";
-  position: absolute;
-  display: block;
-  z-index: -1;
-  inset: 0;
-  pointer-events: none;
-  background: var(--zehn-color-list-background-focus);
-  border-radius: var(--zehn-size-context-entry-radius);
-}
-
-@media (prefers-color-scheme: light) {
-  .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before {
-    filter: var(--zehn-filter-context-light) !important;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .DialogCheckbox_Container._DialogLayout.DNDCheckBox.Panel .DialogCheckbox.Active::before {
-    filter: var(--zehn-filter-context-dark) !important;
-  }
 }
 
 /* OLD CHECKBOX */
