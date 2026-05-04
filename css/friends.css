@@ -90,29 +90,41 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 /* FRIENDS SCROLL UNDER BEHAVIOR */
 .friendsListContainer {
-  --quickaccess-height: var(--zehn-size-friends-quickaccess-height);
-  --buttons-height: var(--zehn-size-friends-buttons-height);
-  --search-height: 0px;
-  --user-height: 0px;
+  --friends-quickaccess-spacing: var(--zehn-size-friends-quickaccess-height);
+  --friends-buttons-spacing: var(--zehn-size-friends-buttons-height);
+  --friends-search-spacing: 0px;
+  --friends-user-spacing: 0px;
+}
+
+.friendsListContainer:has(.quickAccessFriends.emptyQuickAccess) {
+  --friends-quickaccess-spacing: 0px;
+}
+
+body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAccess) {
+  --friends-quickaccess-spacing: var(--zehn-size-panel-lg);
+}
+
+body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAccess.compactQuickAccess) {
+  --friends-quickaccess-spacing: var(--zehn-size-panel-md);
 }
 
 .friendsListContainer:not(:has(.friendsTabButtonsContainer)),
 .friendsListContainer.zehnFriendsHeaderClosed {
-  --buttons-height: 0px;
+  --friends-buttons-spacing: 0px;
 }
 
 .friendsListContainer:has(.TabSearchActive) {
 /* THIS IS ONLY COMING UP DELAYED FOR SOME REASON */
 /* .friendsListContainer.zehnSearchOpened { */
-  --search-height: var(--zehn-size-friends-search-height);
+  --friends-search-spacing: var(--zehn-size-friends-search-height);
 }
 
 .friendsListContainer.zehnCurrentUserOpened {
-  --user-height: var(--zehn-size-friends-user-height);
+  --friends-user-spacing: var(--zehn-size-friends-user-height);
 }
 
 .friendlistListContainer {
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--quickaccess-height) + var(--buttons-height) + var(--search-height) + var(--user-height)) !important;
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-quickaccess-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing)) !important;
 }
 
 .FriendsListContent::before {
@@ -121,7 +133,7 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
   position: absolute;
   inset: 0;
   background: var(--zehn-color-app);
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--quickaccess-height) + var(--buttons-height) + var(--search-height) + var(--user-height));
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-quickaccess-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing));
 }
 
 .FriendsListContent>div,
@@ -453,7 +465,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .quickAccessFriends.emptyQuickAccess.compactQuickAccess .quickAccessFriendsMessageDismiss {
-  line-height: 30px !important;
+  line-height: 32px !important;
 }
 
 .quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss:hover {
@@ -462,11 +474,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 .quickAccessFriends {
-  margin-left: 0 !important;
+  margin: 0 !important;
   width: 100% !important;
   padding: 0 !important;
   background-color: transparent !important;
   min-height: fit-content !important;
+  transition: none !important;
 }
 
 .quickAccessFriends:not(.emptyQuickAccess) {
@@ -2756,7 +2769,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
 ._18bmBH7zyngCgHtgY3IEL_ {
   background-color: transparent !important;
   overflow: hidden !important;
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--quickaccess-height) + var(--buttons-height) + var(--search-height) + var(--user-height)) !important;
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-quickaccess-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing)) !important;
 }
 
 ._3t-tVOpu2n074cjZsygYfm {
