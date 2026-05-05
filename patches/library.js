@@ -38,10 +38,10 @@ Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
   '._3k90ug209sE23xAMqcM74s' // PINNED DESKTOP
 ]);
 
-Zehn.revealSelf('.QFW0BtI4l77AFmv1xLAkx.zehnReveal');
-Zehn.revealSelf('._3B8wRA4H7e_oSksYNqpSPv.zehnReveal');
-Zehn.revealSelf('._25gii5r23MmAqXvLZj24tK.zehnReveal');
-Zehn.revealSelf('._3k90ug209sE23xAMqcM74s.zehnReveal');
+Zehn.revealSelf('.QFW0BtI4l77AFmv1xLAkx');
+Zehn.revealSelf('._3B8wRA4H7e_oSksYNqpSPv');
+Zehn.revealSelf('._25gii5r23MmAqXvLZj24tK');
+Zehn.revealSelf('._3k90ug209sE23xAMqcM74s');
 
 /* RECALCULATE GRID SPACERS ----------------------------------------------------------------------------------------- */
 
@@ -98,7 +98,7 @@ function recalculateGrid() {
     observer.observe(grid, { childList: true, subtree: true });
 
     return observer;
-  }, true);
+  }, { shouldObserveTarget: true, shouldDisconnect: false,  shouldAddAttributeFilter: false });
 };
 
 // recalculateGrid();
@@ -112,15 +112,15 @@ Zehn.handleOnMutation('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root,
     var filterWidth = window.innerWidth - sidebar.offsetWidth;
     target.style.width = `${filterWidth}px`;
   }
-});
+}, { shouldObserveTarget: false, shouldDisconnect: false, shouldAddAttributeFilter: false });
 
 /* TOGGLE NAVBAR BACKGROUND CLASSES BASED ON WHAT LIBRARY PAGE IS OPEN ---------------------------------------------- */
 
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._1fuML-ekRbTEzgzC597yGP', 'zehnConsoleOpened');
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._1bq4x9pa4-9RLY-dXWUZTp', 'zehnDownloadsOpened');
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '.MillenniumSettings', 'zehnMillenniumOpened');
-Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._2L3s2nzh7yCnNESfI5_dN1._39RheXihcN6H2k2muQTjkI', 'zehnStickyHeader');
-Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '.RGNMWtyj73_-WdhflrmuY._3WJCt_OkjPA6npxOtguSt5', 'zehnLibraryOpened');
+Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._39RheXihcN6H2k2muQTjkI', 'zehnStickyHeader');
+Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._3WJCt_OkjPA6npxOtguSt5', 'zehnLibraryOpened');
 
 /* TOGGLE ROOT MENU ------------------------------------------------------------------------------------------------- */
 

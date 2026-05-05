@@ -141,57 +141,44 @@ const Zehn = {
     });
     observer.observe(root, { childList: true, subtree: true });
 
-    if (shouldDisconnect) {
-      return {
-        disconnect() {
-          observer.disconnect();
-        }
-      };
-    } else {
-      return observer;
-    }
+    return shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
   },
 
-  handleOnMutation(rootSelector, targetSelector, callback, shouldObserveTarget = false) {
-    Zehn.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+  handleOnMutation(rootSelector, targetSelector, callback, options = {}) {
+    const defaults = {
+      shouldObserveTarget: false,
+      shouldDisconnect: true,
+      shouldAddAttributeFilter: false
+    };
+    const config = { ...defaults, ...options };
+
+    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const update = () => callback(root, target);
 
       update();
 
       const observer = new MutationObserver(update);
-      observer.observe((shouldObserveTarget ? target : root), { childList: true, subtree: true });
+      observer.observe((config.shouldObserveTarget ? target : root), {
+        childList: true,
+        subtree: true,
+        ...(config.shouldAddAttributeFilter ? { attributeFilter: ['class', 'id'] } : {})
+      });
 
-      return observer;
-    });
-  },
-
-  handleOnFirstMutation(rootSelector, targetSelector, callback, shouldObserveTarget = false) {
-    Zehn.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const update = () => callback(root, target);
-
-      update();
-
-      const observer = new MutationObserver(update);
-      observer.observe((shouldObserveTarget ? target : root), { childList: true, subtree: true, attributeFilter: ['class', 'id', 'style'] });
-
-      return {
-        observer,
-        disconnect: () => observer.disconnect()
-      };
+      return config.shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
     });
   },
 
   storeTargetHeightAsVariable(rootSelector, targetSelector, variableName) {
-    Zehn.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+    this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
       document.documentElement.style.setProperty(variableName, `${target.offsetHeight}px`);
-    }, true);
+    }, { shouldObserveTarget: true, shouldDisconnect: false, shouldAddAttributeFilter: false });
   },
 
-  toggleClassWithPresence(rootSelector, targetSelector, pageSelector, toggleName) {
+  toggleClassWithPresence(rootSelector, targetSelector, presentSelector, toggleName) {
     this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-      const present = !!document.querySelector(pageSelector);
+      const present = !!root.querySelector(presentSelector);
       target.classList.toggle(toggleName, present);
-    });
+    }, { shouldObserveTarget: true, shouldDisconnect: true,  shouldAddAttributeFilter: true });
   },
 
   nameElement(element, nameSelector) {
@@ -404,15 +391,15 @@ const Zehn = {
       if (removables.length > 1) {
         removables[ordinal].remove();
       }
-    });
+    }, { shouldObserveTarget: false, shouldDisconnect: false, shouldAddAttributeFilter: false });
   },
 
   addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
     targetSelectors.forEach((targetSelector) => {
-      this.handleOnFirstMutation(rootSelector, targetSelector, (root, target) => {
+      this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
         target.classList.toggle('zehnReveal', true);
         additionalNames.forEach(name => {target.classList.toggle(name, true)});
-      });
+      }, { shouldObserveTarget: false, shouldDisconnect: true, shouldAddAttributeFilter: true });
     });
   },
 
