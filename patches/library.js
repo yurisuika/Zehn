@@ -484,22 +484,15 @@ Zehn.addRevealClass('._2oua5ZJCOVQf0Vwgk7teo', [
 
 Zehn.revealInner('._2oua5ZJCOVQf0Vwgk7teo');
 
-/* REVEAL OVERLAY EXIT ---------------------------------------------------------------------------------------------- */
+/* REVEAL OVERLAY -------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.fi6UDkxJq66MLo2z9wabQ', [
   '.BoygotvcKo4DC4dSix8G3', // CLOSE
-  '.mh8m9p4PBg_Qrev1bfTzc' // BACK TO GAME
-]);
-
-Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
-
-/* REVEAL OVERLAY WINDOWS ------------------------------------------------------------------------------------------- */
-
-Zehn.addRevealClass('._3OzkVrQFFPv0aV41N4MrHV', [
+  '.mh8m9p4PBg_Qrev1bfTzc', // BACK TO GAME
   '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
 ]);
 
-Zehn.revealInner('._3OzkVrQFFPv0aV41N4MrHV');
+Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
 
 /* REVEAL CLOCK/TIMER ----------------------------------------------------------------------------------------------- */
 
