@@ -319,8 +319,8 @@ Zehn.movePrepend('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Browser .TitleBar.
 
 /* MOVE OVERLAY BUTTONS --------------------------------------------------------------------------------------------- */
 
-Zehn.movePrepend('.fbu3l7kPiBeb3EKCjIb8n', '.fi6UDkxJq66MLo2z9wabQ', [
-  '_3OzkVrQFFPv0aV41N4MrHV' // OVERLAY BUTTONS
+Zehn.movePrepend('._3b_pllMxcr_an1aQ5goWvB', '.fi6UDkxJq66MLo2z9wabQ', [
+  '._3OzkVrQFFPv0aV41N4MrHV' // OVERLAY BUTTONS
 ]);
 
 /* MOVE SCREENSHOT ELEMENTS ----------------------------------------------------------------------------------------- */
@@ -495,11 +495,11 @@ Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
 
 /* REVEAL OVERLAY WINDOWS ------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._1EI98QaSW75zbVd3gxgBfS', [
+Zehn.addRevealClass('._3OzkVrQFFPv0aV41N4MrHV', [
   '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
 ]);
 
-Zehn.revealInner('._1EI98QaSW75zbVd3gxgBfS');
+Zehn.revealInner('._3OzkVrQFFPv0aV41N4MrHV');
 
 /* REVEAL CLOCK/TIMER ----------------------------------------------------------------------------------------------- */
 
