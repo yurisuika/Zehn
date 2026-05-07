@@ -94,7 +94,6 @@ Zehn.addRevealClass('.friendsTabButtonsContainer', [
   '.addFriendButton' // ADD
 ]);
 
-// Zehn.revealInner('.friendsTabButtonsContainer');
 Zehn.revealInner('.socialTabSearchContainer');
 
 /* REVEAL FRIENDS LIST ---------------------------------------------------------------------------------------------- */
@@ -126,7 +125,6 @@ Zehn.addRevealClass('.chatRoomHeader', [
 ]);
 
 Zehn.revealInner('.chatRoomHeader');
-// Zehn.revealInner('.chatDialogs');
 
 /* REVEAL CHAT ENTRY ------------------------------------------------------------------------------------------------ */
 

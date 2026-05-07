@@ -378,7 +378,6 @@ Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
 ]);
 
 Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
-// Zehn.revealInner('._3x1HklzyDs4TEjACrRO2tB');
 
 /* REVEAL SIDEBAR GAME LIST ----------------------------------------------------------------------------------------- */
 
@@ -404,8 +403,7 @@ Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
   '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
 ]);
 
-Zehn.revealInner('._3Yf8b2v5oOD8Wqsxu04ar');
-// Zehn.revealInner('._2Nq6ov7A1hGcHXVOXNt_OE');
+Zehn.revealInner('._9EHg918wH6CQCQlD5PWOO');
 
 /* REVEAL URL BAR LIBRARY ------------------------------------------------------------------------------------------- */
 
@@ -420,7 +418,6 @@ Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
 ]);
 
 Zehn.revealInner('.UkR3sY319PuaUNuUWks2K');
-// Zehn.revealInner('.QsvsRVwbsApgKt1MhM0fz');
 
 /* REVEAL MEDIA LIBRARY --------------------------------------------------------------------------------------------- */
 
@@ -430,16 +427,6 @@ Zehn.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
 ]);
 
 Zehn.revealInner('.YzIcpcz4oFx-nndxro5jE');
-// Zehn.revealInner('._3nWSY9HJwc9HWeByKWggV6');
-
-/* REVEAL SCREENSHOT ------------------------------------------------------------------------------------------------ */
-
-// Zehn.addRevealClass('.DKXVRVBokaW_Xxo6kyKq0', [
-//   '.mZYRu1dN5Q9aQ1r3Cq_NE', // REACTIONS
-//   '._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy' // BUTTONS
-// ]);
-
-// Zehn.revealInner('.DKXVRVBokaW_Xxo6kyKq0');
 
 /* REVEAL SERVERS --------------------------------------------------------------------------------------------------- */
 
@@ -449,7 +436,6 @@ Zehn.addRevealClass('._2X_ZpO2X_CIOIEfml3ZTcX', [
 ]);
 
 Zehn.revealInner('._2X_ZpO2X_CIOIEfml3ZTcX');
-// Zehn.revealInner('._2rxrVvbku0AC8Qbequ4-z9');
 
 /* REVEAL SETTINGS + NOTES ------------------------------------------------------------------------------------------ */
 
@@ -516,11 +502,6 @@ Zehn.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
 ]);
 
 Zehn.revealInner('._26Gmfe09NRsnF7eprTZYdY');
-// Zehn.revealInner('.OverlayBrowser_Browser');
-// Zehn.revealInner('.OverlayBrowser_Guides');
-// Zehn.revealInner('.OverlayBrowser_Discussion');
-// Zehn.revealInner('.OverlayBrowser_DLC');
-// Zehn.revealInner('.TabbedPopupBrowser');
 
 /* REVEAL BROWSER TABS ---------------------------------------------------------------------------------------------- */
 
