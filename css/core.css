@@ -3946,6 +3946,8 @@ button.DialogButton.MillenniumIconButton.Secondary,
 ._23SnllqT_AqZ1C_QHcNQ4Z._2Ho8z58cxQIJljp55uGkdt,
 /* SHOWCASE REORDERING - DONE */
 ._1dy2s5YuBOYnRrupJmLfRR .MXh6nju1KU9_oaQCaR06e.DialogButton.Primary,
+/* PLAYBAR */
+._3qDWQGB0rtwM3qpXTb11Q-,
 /* POST GAME SUMMARY CAROUSEL */
 ._14b-hQsLwSwYcELtknxCUX._3qlJ0L41KQFqUTzVQKFERC,
 ._3IIEUTw03Vm3Mk54jlnUaT._3qlJ0L41KQFqUTzVQKFERC,
@@ -3989,6 +3991,7 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe,
 .gdKTXjvFuMeVN2qa6o8EL button.DialogButton,
 /* APP GRID SETTINGS */
 ._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._8JUfQypf4Uxt2i_hxBk_t {
+  box-sizing: border-box !important;
   margin: 0 !important;
   transition: none !important;
   align-content: center !important;
@@ -4186,6 +4189,15 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
   min-width: 100% !important;
   max-width: 100% !important;
   line-height: 100% !important;
+}
+
+._3qDWQGB0rtwM3qpXTb11Q- {
+  height: var(--zehn-size-playbar-height) !important;
+  max-height: var(--zehn-size-playbar-height) !important;
+  width: var(--zehn-size-playbar-height) !important;
+  min-width: var(--zehn-size-playbar-height) !important;
+  max-width: var(--zehn-size-playbar-height) !important;
+  line-height: var(--zehn-size-playbar-height) !important;
 }
 
 .fbu3l7kPiBeb3EKCjIb8n ._3ZLaTxSHxeGcoKlIy_-Z0L,
@@ -4425,6 +4437,21 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
 
 .zehnToggleActivity .zehnIcon {
   -webkit-mask-image: var(--zehn-icon-event);
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity:is(*),
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity:is(*),
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails:is(*) {
+  background-color: var(--zehn-color-button-app-background-disabled) !important;
+  pointer-events: none !important;
+
+  &.zehnReveal::before {
+    opacity: 0;
+  }
+
+  .zehnIcon {
+    background-color: var(--zehn-color-button-app-icon-disabled) !important;
+  }
 }
 
 #zehnToggleWhatsNew .zehnIcon {

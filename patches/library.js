@@ -122,6 +122,13 @@ Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._39RheXihcN6H2k2muQTjkI', 'zehnStickyHeader');
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._3WJCt_OkjPA6npxOtguSt5', 'zehnLibraryOpened');
 
+
+/* TOGGLE GAME PAGE CLASSES BASED ON WHAT SECTIONS ARE AVAILABLE ---------------------------------------------------- */
+
+Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._2Dd4T78PcCTUVgOtDGFY5j', '#zehnGameActivity' , 'zehnWithActivity');
+Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._2Dd4T78PcCTUVgOtDGFY5j', '#zehnGameCommunity' , 'zehnWithCommunity');
+Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._2Dd4T78PcCTUVgOtDGFY5j', '#zehnGameDetails' , 'zehnWithDetails');
+
 /* TOGGLE ROOT MENU ------------------------------------------------------------------------------------------------- */
 
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', ['#zehnToggleNavigation', '.zehnButton'], (root, target, button) => {
@@ -151,19 +158,19 @@ Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz
 
 Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.OhSdLYuggDtBcWjYP0j_9', (root, target) => {
   const featured = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(1)');
-  const event = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)');
+  const activity = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(2)');
   const community = target.querySelector('._1sZgBDTw5NH-yuVDZK1SUU .vzLedtsu3TtTlKLEKzIhH:nth-of-type(3)');
   const details = target.querySelector('._2aor4XVOYzN1PBSREk0UbO');
 
   if (featured) {
-    if (featured.id != 'zehnGameFeaturedEvent') {
-      featured.id = 'zehnGameFeaturedEvent';
+    if (featured.id != 'zehnGameFeatured') {
+      featured.id = 'zehnGameFeatured';
     }
   }
 
-  if (event) {
-    if (event.id != 'zehnGameEvent') {
-      event.id = 'zehnGameEvent';
+  if (activity) {
+    if (activity.id != 'zehnGameActivity') {
+      activity.id = 'zehnGameActivity';
     }
   }
 
@@ -214,15 +221,15 @@ function togglePage(root, target, button) {
 
   if (btnActivity && btnCommunity && btnDetails) {
     const container = root.querySelector('.OhSdLYuggDtBcWjYP0j_9');
-    const featured = document.getElementById('zehnGameFeaturedEvent');
-    const event = document.getElementById('zehnGameEvent');
+    const featured = document.getElementById('zehnGameFeatured');
+    const activity = document.getElementById('zehnGameActivity');
     const community = document.getElementById('zehnGameCommunity');
     const details = document.getElementById('zehnGameDetails');
-    const pages = [featured, event, community, details];
+    const pages = [featured, activity, community, details];
 
     pages.forEach((page) => {
       if (button == btnActivity) {
-        if (page && (page == featured || page == event)) {
+        if (page && (page == featured || page == activity)) {
           page.classList.add('zehnDisplayed');
           container.id = 'zehnActivityDisplayed';
         } else if (page) {
