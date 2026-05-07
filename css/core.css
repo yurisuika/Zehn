@@ -7,6 +7,7 @@
   font-family: var(--zehn-font-family) !important;
   text-shadow: none !important;
   letter-spacing: normal !important;
+  font-variant-emoji: text !important;
 }
 
 ::-webkit-resizer {
@@ -19,7 +20,7 @@
 
 ::selection {
   background: var(--zehn-color-accent-100) !important;
-  text-shadow: 0 0 0 transparent !important;
+  text-shadow: none !important;
   color: var(--zehn-color-text-primary) !important;
 }
 
@@ -3620,7 +3621,7 @@ button.DialogButton.Small,
 /* ACTIVITY POST EMOTE */
 ._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 .bACIuqv-b_9TztCczFK19,
 /* ACTIVITY POST SUBMIT */
-._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR.bGfjajFo4DI-ULSQxw1KY,
+._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR,
 /* DETAILS PANEL EMPTY */
 ._2RSxEUPGL8Bj016q0Sp3Hx,
 /* ADD REVIEW */
@@ -3654,9 +3655,35 @@ button.DialogButton.MillenniumIconButton.Secondary,
 /* SETTINGS - RECORDING DELETE */
 ._1IsPTEXf7ua_4XbMa3sXyW
 .Yc3_Ah2ZI5nQUvQh_3nXP,
-/* CONTROLLER SETTINGS - LAYOUTS */
-._2luCNihqvaHXeE1nGg0AXj,
-._2luCNihqvaHXeE1nGg0AXj._2v9eLFWF0ktRTlXWzGMij1,
+/* CONTROLLER SETTINGS - COMMUNITY CONFIGS */
+._1xfC8oO6JVNnioU1NPTN9s,
+/* CONTROLLER SETTINGS - FAKE BUTTON */
+.tGJeFkznK3-BCMgr4GSHi,
+/* CONTROLLER SETTINGS - FOOTER ACTION BUTTONS */
+.MbyhbxIetM7FOAmCQSW83,
+/* CONTROLLER SETTINGS - BINDING KEYS */
+._3U3h5KQ5DocAUo4lO8cL5l,
+._2MjBd1kKOEyVfqBN5OQOb1,
+._2swvcAycL4d0UoHFDoe6-d,
+._3i-XV362MvNEX3j_oWQDmQ,
+._3s28A0XlOXUOAWRIuBKHuH,
+.NoRFSLSfwRijJQt7R51OT,
+._19SMSHLlXqSLnXM3NjDNBS,
+._3yP_pf4vx1Q4W0mt2DR32P,
+._3U3h5KQ5DocAUo4lO8cL5l.CX4Dp8XyHswkGEEnWeUpq,
+._2MjBd1kKOEyVfqBN5OQOb1.CX4Dp8XyHswkGEEnWeUpq,
+._2swvcAycL4d0UoHFDoe6-d.CX4Dp8XyHswkGEEnWeUpq,
+._3i-XV362MvNEX3j_oWQDmQ.CX4Dp8XyHswkGEEnWeUpq,
+._3s28A0XlOXUOAWRIuBKHuH.CX4Dp8XyHswkGEEnWeUpq,
+.NoRFSLSfwRijJQt7R51OT.CX4Dp8XyHswkGEEnWeUpq,
+._19SMSHLlXqSLnXM3NjDNBS.CX4Dp8XyHswkGEEnWeUpq,
+._3yP_pf4vx1Q4W0mt2DR32P.CX4Dp8XyHswkGEEnWeUpq,
+/* CONTROLLER SETTINGS - CAMERA */
+._1Ze1RZ7I8e5cSlaWAl48bh,
+/* GAME OVERVIEW - PLAYERS */
+._27m9Qbg4ShilOgwvYZWV8l ._1vG-vFfwpDeNStVbyo1Qy6 ._2fYjCJSwdJxdjbi7ysISdL ._2NLwfYHr9KUJZ7LD9nkyva,
+/* REMOTE PLAY TOGETHER - CANCEL */
+._3ZHIBZbKR6DCeKpSDqwlMg,
 /* ARTWORK - COMMENTS */
 ._39nnaT_CLE0m_WXVIrAwaG .FPxfNOUIyMTxA5iyxVWGX,
 /* COLLECTION NEW */
@@ -3771,21 +3798,25 @@ button.DialogButton.MillenniumIconButton.Secondary,
     }
   }
 
+  /* BINDING KEYS */
+  &._1QZJBdB3tUQkzngq0rXWsK,
   /* MEDIA */
   &._36CGU2t5Vavx0_9dwem6kb,
   /* NO RECORDING AVAILABLE */
   &.rq1uEI9jHMgnF1LIsVsJg,
   &:disabled,
-  &:disabled:is(:hover, :active, :focus),
+  &:disabled:is(:focus, :hover, :hover:focus, :active, :active:focus),
   &.Disabled,
-  &.Disabled:is(:hover, :active, :focus) {
+  &.Disabled:is(:focus, :hover, :hover:focus, :active, :active:focus) {
     background-color: var(--zehn-color-button-dialog-background-disabled) !important;
     color: var(--zehn-color-button-dialog-text-disabled) !important;
     outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
     opacity: 1 !important;
+    filter: none !important;
 
     .SVGIcon_Button,
     svg {
+      opacity: 1 !important;
       filter: none !important;
       background-color: var(--zehn-color-button-dialog-icon-disabled) !important;
     }
@@ -3807,9 +3838,11 @@ button.DialogButton.MillenniumIconButton.Secondary,
   }
 }
 
-/* OVERRIDES */
+/* SQUARE BUTTONS */
+._3S8RX620BmLdH407KK505 .Htkkt1r5GiHi-0US69HQ_.DialogButton,
+.BRmrC-jnwpXqye4oYB21C button.DialogButton.Small,
 ._2sULyQvjazul5EYSVGwl1T button.DialogButton.cXzBZxhPBl7fZs9LODEnc,
-.CRoS_SRbuEPM5uUV3Vrz1 button.DialogButton.cXzBZxhPBl7fZs9LODEnc,
+.CRoS_SRbuEPM5uUV3Vrz1 button.DialogButton.cXzBZxhPBl7fZs9LODEnc.uRlY9Z2GZ7c7swKaeLLx-,
 button._2fSou9jd8XxWeNoWYp06XN.DialogButton,
 ._1ABCOz8DSrl-YJdh1xD-m0,
 ._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c,
@@ -3832,16 +3865,17 @@ button.DialogButton.MillenniumIconButton.Secondary,
   padding: var(--zehn-size-button-dialog-padding-square) !important;
 }
 
-._2luCNihqvaHXeE1nGg0AXj,
-._2luCNihqvaHXeE1nGg0AXj._2v9eLFWF0ktRTlXWzGMij1,
+/* LARGE BUTTONS */
+._3lO3wa99qU2ExNsm6la1zR.DialogButton._DialogLayout.Secondary.cXzBZxhPBl7fZs9LODEnc.Focusable,
 ._2Ae5emb7JLG4NvS2OmutTx ._1moqKkq1K4nAp1XqDtnRdQ .rglD9tOi-qd15GgYT2iJK .y1gug7JSW8Vst7YSxkKV- .p9KmcbRBNrAiCVV-9x7FJ {
-  height: var(--zehn-size-button-dialog-large) !important;
+  height: fit-content !important;
   min-height: var(--zehn-size-button-dialog-large) !important;
   max-height: fit-content !important;
   line-height: var(--zehn-size-button-dialog-large) !important;
   padding: var(--zehn-size-button-dialog-padding-column) !important;
 }
 
+/* COLLUMN BUTTONS */
 .DialogBody.aFxOaYcllWYkCfVYQJFs0>.DialogControlsSection.MillenniumButtonsSection ._3epr8QYWw_FqFgMx38YEEm.DialogButton,
 ._2XSsNSGcWjGZ6z3fvqaRd5._30JCQLfpdL0ZuA8VTUd7tb ._2LQjjxR3ZOcEZU73abIsw- .TEWmsM70ZLEOxLAjDMpcv {
   height: 100% !important;
@@ -3869,37 +3903,27 @@ button.DialogButton.MillenniumIconButton.Secondary,
   display: flex !important;
 }
 
+/* CIRCLE BUTTONS */
 ._1t_97P9KMsEBaPq9y-6OUl,
 ._1_vCR1dPfyJ7_yukwDqblf,
 .HruWVPwIDh2FFOOH7OiSs .gioyPMOZttYFcnmgLnsWf .iYW5hWQwg14WYT4PV3xe_ {
   border-radius: var(--zehn-size-radius-circle) !important;
 }
 
+/* REMOVE BACKGROUND IMAGE */
 ._3notzMjxQtogi11XHZMYXI,
 ._1djkdp7OAd0mF3a90RKf27 {
   background-image: none !important;
 }
 
+/* SPECIAL DISABLE CASES */
 /* SUBMIT BUTTON THAT IS DISABLED WITHOUT THE ADDITIONAL CLASS */
-._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR:not(.bGfjajFo4DI-ULSQxw1KY) {
-  appearance: unset !important;
-  box-sizing: border-box !important;
-  text-align: center !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background-position: unset !important;
-  border: none !important;
-  margin: 0 !important;
-  transition: none !important;
-  filter: none !important;
-  gap: var(--zehn-size-spacing-xs) !important;
-  height: var(--zehn-size-button-dialog) !important;
-  line-height: var(--zehn-size-button-dialog-line) !important;
-  padding: var(--zehn-size-button-dialog-padding) !important;
-  font-size: var(--zehn-size-button-dialog-text) !important;
-  border-radius: var(--zehn-size-button-dialog-radius) !important;
+._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR:not(.bGfjajFo4DI-ULSQxw1KY),
+._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR:not(.bGfjajFo4DI-ULSQxw1KY):is(:focus, :hover, :hover:focus, :active, :active:focus),
+/* NEW COLLECTIONS DISABLED ON OUTER CLASS */
+._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX._3Jmn39gWVcTTHWXW-ydfWy ._25n_zgE_sgrYzl4G-YE8VN,
+._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX._3Jmn39gWVcTTHWXW-ydfWy ._25n_zgE_sgrYzl4G-YE8VN:is(:focus, :hover, :hover:focus, :active, :active:focus) {
   outline: var(--zehn-size-button-dialog-border) solid var(--zehn-color-button-dialog-border-disabled) !important;
-  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
   background-color: var(--zehn-color-button-dialog-background-disabled) !important;
   color: var(--zehn-color-button-dialog-text-disabled) !important;
 
@@ -3929,6 +3953,8 @@ button.DialogButton.MillenniumIconButton.Secondary,
 .inviteAnotherFriendButton,
 /* CHAT MESSAGE INVITE */
 .msg.ChatMessageInvite .closeButton,
+.ChatMessageInvite .DialogButton,
+.inviteButtonJoinChat,
 /* FRIEND INVITE */
 .friendInviteButton,
 /* FRIENDS CONFIRM INVITE */
@@ -4439,9 +4465,9 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
   -webkit-mask-image: var(--zehn-icon-event);
 }
 
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity:is(*),
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity:is(*),
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails:is(*) {
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails {
   background-color: var(--zehn-color-button-app-background-disabled) !important;
   pointer-events: none !important;
 
