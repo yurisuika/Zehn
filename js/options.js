@@ -144,6 +144,12 @@ const Options = {
             }
 
             // LIBRARY -----------------------------------------------------------
+            if (options.library.content == "panel") {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/content/panel.css"/>');
+            } else if (options.library.content== "flat") {
+              document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/content/flat.css"/>');
+            }
+
             if (options.library.mascot) {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/mascot/show.css"/>');
             } else {
