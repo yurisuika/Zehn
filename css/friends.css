@@ -90,22 +90,23 @@ body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
 
 /* FRIENDS SCROLL UNDER BEHAVIOR */
 .friendsListContainer {
-  --friends-quickaccess-spacing: var(--zehn-size-friends-quickaccess-height);
+  --friends-favorites-spacing: var(--zehn-size-friends-favorites-height);
   --friends-buttons-spacing: var(--zehn-size-friends-buttons-height);
   --friends-search-spacing: 0px;
   --friends-user-spacing: 0px;
+  --friends-voice-spacing: 0px;
 }
 
 .friendsListContainer:has(.quickAccessFriends.emptyQuickAccess) {
-  --friends-quickaccess-spacing: 0px;
+  --friends-favorites-spacing: 0px;
 }
 
 body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAccess) {
-  --friends-quickaccess-spacing: var(--zehn-size-panel-lg);
+  --friends-favorites-spacing: var(--zehn-size-friends-favorites-empty-height);
 }
 
 body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAccess.compactQuickAccess) {
-  --friends-quickaccess-spacing: var(--zehn-size-panel-md);
+  --friends-favorites-spacing: var(--zehn-size-friends-favorites-empty-compact-height);
 }
 
 .friendsListContainer:not(:has(.friendsTabButtonsContainer)),
@@ -123,8 +124,20 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   --friends-user-spacing: var(--zehn-size-friends-user-height);
 }
 
+.friendsListContainer.zehnCurrentUserOpened:has(>.compactView) {
+  --friends-user-spacing: var(--zehn-size-friends-user-compact-height);
+}
+
+.friendsListContainer.zehnCurrentUserOpened:has(.activeVoiceButtons) {
+  --friends-voice-spacing: var(--zehn-size-friends-voice-height);
+}
+
+.friendsListContainer.zehnCurrentUserOpened:has(.compactView .activeVoiceButtons) {
+  --friends-voice-spacing: var(--zehn-size-friends-voice-compact-height);
+}
+
 .friendlistListContainer {
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-quickaccess-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing)) !important;
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing) + var(--friends-voice-spacing)) !important;
 }
 
 .FriendsListContent::before {
@@ -133,7 +146,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   position: absolute;
   inset: 0;
   background: var(--zehn-color-app);
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-quickaccess-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing));
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing) + var(--friends-voice-spacing));
 }
 
 .FriendsListContent>div,
@@ -216,7 +229,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   border-bottom: unset !important;
   height: 0 !important;
   min-height: 0 !important;
-  max-height: var(--zehn-size-panel-lg) !important;
+  max-height: var(--zehn-size-friends-user-height) !important;
   padding: 0 var(--zehn-size-padding-md) !important;
   align-items: center !important;
   display: flex !important;
@@ -228,19 +241,19 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 .zehnCurrentUserOpened .currentUserContainer {
   transform: none !important;
-  height: var(--zehn-size-panel-lg) !important;
-  min-height: var(--zehn-size-panel-lg) !important;
+  height: var(--zehn-size-friends-user-height) !important;
+  min-height: var(--zehn-size-friends-user-height) !important;
 }
 
 .compactView .currentUserContainer {
   height: 0 !important;
   min-height: 0 !important;
-  max-height: var(--zehn-size-panel-md) !important;
+  max-height: var(--zehn-size-friends-user-compact-height) !important;
 }
 
 .zehnCurrentUserOpened .compactView .currentUserContainer {
-  height: var(--zehn-size-panel-md) !important;
-  min-height: var(--zehn-size-panel-md) !important;
+  height: var(--zehn-size-friends-user-compact-height) !important;
+  min-height: var(--zehn-size-friends-user-compact-height) !important;
 }
 
 .statusHeaderGlow {
@@ -620,8 +633,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 }
 
 /* REMOTE PLAY TOGETHER */
-._14S4rlGAAqfqW6lMKYB2GM {}
-
 ._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
@@ -636,31 +647,8 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   padding: 0 var(--zehn-size-padding-md) !important;
 }
 
-._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D {
-  margin: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  background: var(--zehn-color-button-app-background) !important;
-}
-
-._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
-
-._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D:active {
-  background: var(--zehn-color-button-app-background-active) !important;
-}
-
 ._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3UDCWUbI0_05r9ATmvC2HD {
-  width: 32px !important;
-  height: 32px !important;
-  background-color: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-controller-split) !important;
-
-  * { display: none !important; }
 }
 
 /* REMOTE PLAY TOGETHER INFO */
@@ -816,30 +804,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   min-width: calc(var(--zehn-size-panel-md) * 3) !important;
   height: var(--zehn-size-panel-md) !important;
   flex: 1 1 calc(var(--zehn-size-panel-md) * 3) !important;
-}
-
-.VoiceControlPanelButton svg {
-  background-color: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  max-height: 100% !important;
-}
-
-.VoiceControlPanelButton:focus {
-  background-color: transparent !important;
-}
-
-.VoiceControlPanelButton {
-  background-color: var(--zehn-color-button-app-background) !important;
-}
-
-.VoiceControlPanelButton:hover {
-  background-color: var(--zehn-color-button-app-background-hover) !important;
-}
-
-.VoiceControlPanelButton:active {
-  background-color: var(--zehn-color-button-app-background-active) !important;
 }
 
 .activeVoiceFlexBox .activeVoiceButtons button {
@@ -2675,7 +2639,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
 ._18bmBH7zyngCgHtgY3IEL_ {
   background-color: transparent !important;
   overflow: hidden !important;
-  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-quickaccess-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing)) !important;
+  margin-top: calc(var(--zehn-size-titlebar-height) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing)) !important;
 }
 
 ._3t-tVOpu2n074cjZsygYfm {

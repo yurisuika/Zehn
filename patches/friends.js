@@ -41,7 +41,7 @@ Zehn.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zeh
 
 /* SET VARIABLE FOR HEADER HEIGHT ----------------------------------------------------------------------------------- */
 
-Zehn.storeTargetHeightAsVariable('.friendsui-container', '.quickAccessFriends', '--zehn-size-friends-quickaccess-height');
+Zehn.storeTargetHeightAsVariable('.friendsui-container', '.quickAccessFriends', '--zehn-size-friends-favorites-height');
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
