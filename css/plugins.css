@@ -208,42 +208,29 @@
   color: transparent !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  width: var(--zehn-size-button-app) !important;
-  height: var(--zehn-size-button-app) !important;
-}
-
-.steam-hunters-achievements-page .expand-button::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--zehn-size-button-app);
-  height: var(--zehn-size-button-app);
-  background-color: var(--zehn-color-button-app-background);
-}
-
-.steam-hunters-achievements-page .expand-button:hover::before {
-  background-color: var(--zehn-color-button-app-background-hover);
-}
-
-.steam-hunters-achievements-page .expand-button:active::before {
-  background-color: var(--zehn-color-button-app-background-active);
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
 }
 
 .steam-hunters-achievements-page .expand-button::after {
   content: "";
   display: block;
   position: absolute;
-  width: var(--zehn-size-button-app);
-  height: var(--zehn-size-button-app);
+  width: var(--zehn-size-icon-md);
+  height: var(--zehn-size-icon-md);
   background-color: var(--zehn-color-icon-primary);
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-size: var(--zehn-size-icon-md);
-  -webkit-mask-image: var(--zehn-icon-chevron-up);
+  mask-size: var(--zehn-size-icon-sm);
+  -webkit-mask-image: var(--zehn-icon-chevron-up-thick);
 }
 
 .steam-hunters-achievements-page .achievement-group:has(.group-content) .expand-button::after {
-  -webkit-mask-image: var(--zehn-icon-chevron-down);
+  -webkit-mask-image: var(--zehn-icon-chevron-down-thick);
+}
+
+.steam-hunters-achievements-page .expand-button:active::after{
+  background-color: var(--zehn-color-icon-primary) !important;
 }
 
 /* ACHIEVEMENT ENTRY */
@@ -898,7 +885,11 @@
 /* EXTENDIUM MANAGE EXTENSIONS */
 .extension-manager-popup {
   margin: 0 !important;
-  padding: 0 var(--zehn-size-padding-md) !important;
+  padding: var(--zehn-size-padding-md) !important;
+}
+
+.DialogContent_InnerWidth>form:has(.extension-manager-popup) {
+  padding: 0 !important;
 }
 
 .root-buttons {
@@ -1072,27 +1063,9 @@
   margin: 0 !important;
 }
 
-.md-button {
-  height: var(--zehn-size-button-lg) !important;
-  width: var(--zehn-size-button-lg) !important;
-  line-height: var(--zehn-size-button-lg) !important;
-  border-radius: var(--zehn-size-radius-square) !important;
-  color: var(--zehn-color-text-primary) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  transition: none !important;
-  background: var(--zehn-color-button-app-background) !important;
-}
-
-.md-button:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
-
-.md-button:active {
-  background: var(--zehn-color-button-app-background-active) !important;
-}
-
 .md-button:has([d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"]) {
+  border-radius: var(--zehn-size-radius-square) !important;
+  transition: none !important;
   height: var(--zehn-size-titlebar-height) !important;
   width: var(--zehn-size-titlebar-width) !important;
   line-height: var(--zehn-size-titlebar-height) !important;
@@ -1258,6 +1231,7 @@
 
 .storage-manager .storage-manager-row {
   border: none !important;
+  margin-bottom: var(--zehn-size-spacing-xs) !important;
 }
 
 .storage-manager .storage-manager-item {
@@ -1277,34 +1251,14 @@
   padding-left: 0 !important;
 }
 
-.storage-manager .storage-manager-row button {
-  height: var(--zehn-size-button-md) !important;
-  width: var(--zehn-size-button-md) !important;
-  line-height: var(--zehn-size-button-md) !important;
-  background: var(--zehn-color-button-app-background) !important;
-}
-
-.storage-manager .storage-manager-row button:hover {
-  background: var(--zehn-color-button-app-background-hover) !important;
-}
-
-.storage-manager .storage-manager-row button:active {
-  background: var(--zehn-color-button-app-background-active) !important;
-}
-
 .storage-manager .storage-manager-row button>svg {
-  background-color: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-delete) !important;
-
-  * { display: none !important; }
 }
 
 /* EXTENDIUM SETTINGS */
 .extension-manager-popup>.DialogBody {
   padding: 0 !important;
+  /* max-width: var(--zehn-size-settings-content-width) !important; */
 }
 
 .extension-manager-popup>.DialogBody .header h1 {
