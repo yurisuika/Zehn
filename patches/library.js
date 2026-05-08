@@ -24,7 +24,7 @@ Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 /* REVEAL DROPDOWN -------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
-  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE)' // DROPDOWN ENTRY
+  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE):not(._1Sa12sphmVOOs0on58tDn7)' // DROPDOWN ENTRY
 ]);
 
 Zehn.revealSelf('._2oAiZidGyUxL-hfupFDQ2m.zehnReveal');
@@ -271,8 +271,8 @@ Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX
 
 /* WRAP NAVIGATION CONTROLS FOR BACKGROUND -------------------------------------------------------------------------- */
 
-Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8:nth-child(2)', ['#zehnForwardsWrapper'], false);
-Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8', ['#zehnBackwardsWrapper'], false);
+Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8:nth-child(2)', ['.zehnForwardsWrapper'], false);
+Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8', ['.zehnBackwardsWrapper'], false);
 
 /* ADD SPACER FOR NAVBAR DOWNLOADS STATUS --------------------------------------------------------------------------- */
 
@@ -364,8 +364,8 @@ Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl'
 
 /* WRAP LOAD MORE --------------------------------------------------------------------------------------------------- */
 
-Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._1EC1xjjUGqI7fqX6PVzJA3', ['#zehnNews']);
-Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj', ['#zehnLoad']);
+Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._1EC1xjjUGqI7fqX6PVzJA3', ['.zehnNews']);
+Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj', ['.zehnLoad']);
 
 /* ADD PLAY ICON INTO CONTAINER ------------------------------------------------------------------------------------- */
 
