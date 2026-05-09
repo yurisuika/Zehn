@@ -104,7 +104,9 @@ Zehn.addRevealClass('.FriendsListContent', [
   '.groupHeaderContainer', // FRIEND GROUP
   '.friendsListSectionTitle.chatSectionTitle', // GROUP CHATS TOGGLE
   '.chatRoomListContainer .ChatRoomListGroupItem', // GROUP CHAT
-  '.friend' // FRIEND
+  '.friendCategoryContainer>.friend', // FRIEND
+  '.friendsContainer>.friend', // GROUPED FRIEND
+  '.chatRoomVoiceChannel' // VOICE CHANNEL
 ], [
   'zehnRevealBackgroundOnly'
 ]);
@@ -113,7 +115,9 @@ Zehn.revealSelf('.FriendsListContent .friendGroup>.groupName');
 Zehn.revealSelf('.FriendsListContent .groupHeaderContainer');
 Zehn.revealSelf('.FriendsListContent .friendsListSectionTitle.chatSectionTitle');
 Zehn.revealSelf('.FriendsListContent .chatRoomListContainer .ChatRoomListGroupItem');
-Zehn.revealSelf('.FriendsListContent .friend');
+Zehn.revealSelf('.FriendsListContent .friendCategoryContainer>.friend');
+Zehn.revealSelf('.FriendsListContent .friendsContainer>.friend');
+Zehn.revealSelf('.FriendsListContent .chatRoomVoiceChannel');
 
 /* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
 
@@ -144,7 +148,7 @@ Zehn.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomGroupNavCollapseExpand' // PIN
 ]);
 Zehn.addRevealClass('.chatRoomGroupNavColumn', [
-  '.chatRoomTextChannel', // TEXT
+  '.chatRoomTextChannelsGroup>.chatRoomTextChannel', // TEXT
   '.chatRoomVoiceChannel' // VOICE
 ], [
   'zehnRevealBackgroundOnly'
