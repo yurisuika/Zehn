@@ -18,8 +18,12 @@ Zehn.setGlyphColor();
 Zehn.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
 ]);
+Zehn.addRevealClass('.friendsui-container ._2KpxNwIOJq2xElKzUwTadQ', [
+  '._1m5_CGXeD2EYKUBjfSk05m' // VIDEO
+]);
 
 Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+Zehn.revealSelf('._2KpxNwIOJq2xElKzUwTadQ ._1m5_CGXeD2EYKUBjfSk05m.zehnReveal');
 
 /* TOGGLE CLASSES BASED ON WHAT HEADER CONTENT IS OPEN -------------------------------------------------------------- */
 
