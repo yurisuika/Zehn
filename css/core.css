@@ -3515,8 +3515,8 @@ button.TextButton {
   font-size: var(--zehn-size-tablist-text) !important;
   letter-spacing: normal !important;
   border-radius: var(--zehn-size-tablist-radius) !important;
-  height: var(--zehn-size-tablist-height) !important;
-  line-height: var(--zehn-size-tablist-height) !important;
+  height: var(--zehn-size-tablist) !important;
+  line-height: var(--zehn-size-tablist) !important;
   padding: 0 var(--zehn-size-padding-md) !important;
   text-align: center !important;
   background-color: var(--zehn-color-list-background) !important;
@@ -3617,6 +3617,9 @@ button.DialogButton.Primary,
 button.DialogButton.Small,
 /* CHAT INVITE */
 .inviteButton,
+.inviteButtonJoinChat,
+.ChatMessageInvite .DialogButton,
+.DialogButton.Primary.inviteButtonWatchBroadcast,
 /* CHAT ACCEPT GROUP */
 .acceptButtonsGroup button.DialogButton.GreenPlay,
 /* FRIENDS OFFLINE */
@@ -3972,12 +3975,15 @@ button.DialogButton.MillenniumIconButton.Secondary,
 
 /* CUSTOM */
 .zehnButton,
+/* BROADCAST */
+._39xGjKkRIIE7HwloXCWT41,
+.STV_BroadcastClose,
+/* CHAT HEADER */
+.doGxCBJrGimabHm365bOV,
 /* CHAT INVITE ANOTHER FRIEND */
 .inviteAnotherFriendButton,
 /* CHAT MESSAGE INVITE */
 .msg.ChatMessageInvite .closeButton,
-.ChatMessageInvite .DialogButton,
-.inviteButtonJoinChat,
 /* FRIEND INVITE */
 .friendInviteButton,
 /* FRIENDS CONFIRM INVITE */
@@ -3985,10 +3991,14 @@ button.DialogButton.MillenniumIconButton.Secondary,
 /* FRIENDS REMOTE PLAY TOGETHER */
 ._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D,
 /* CANCEL ADD FRIENDS */
+.addFriendButton
 .confirmInviteRequestContainer .cancelAddFriends,
+/* FRIENDS BUTTONS */
+.addFriendButton,
+.searchIconButton,
+.friendRequestButton,
 /* FRIENDS CONTROLS */
 .VoiceControlPanelButton,
-.searchIconButton,
 .chatRoomVoiceChannel .chatRoomTextChannel,
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel,
 /* NAVMENU CONTROLS */
@@ -4195,6 +4205,7 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe,
   }
 }
 
+.STV_BroadcastClose,
 .VoiceControlPanelButton,
 ._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D,
 ._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary,
@@ -4236,6 +4247,7 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
   border-radius: var(--zehn-size-radius-circle) !important;
 }
 
+._39xGjKkRIIE7HwloXCWT41,
 .inviteAnotherFriendButton,
 .friendInviteButton,
 ._3cK5jtEHkhfw50DntUGWjp,
@@ -4257,38 +4269,60 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
 .friendListHeaderContainer .activeVoiceFlexBox .activeVoiceButtons button {
   flex-grow: 1 !important;
   padding: var(--zehn-size-button-app-padding) !important;
-  height: var(--zehn-size-friends-voice-height) !important;
-  min-height: var(--zehn-size-friends-voice-height) !important;
-  max-height: var(--zehn-size-friends-voice-height) !important;
+  height: var(--zehn-size-friends-voice) !important;
+  min-height: var(--zehn-size-friends-voice) !important;
+  max-height: var(--zehn-size-friends-voice) !important;
   width: auto !important;
   max-width: 100% !important;
-  min-width: var(--zehn-size-friends-voice-height) !important;
-  line-height: var(--zehn-size-friends-voice-height) !important;
+  min-width: var(--zehn-size-friends-voice) !important;
+  line-height: var(--zehn-size-friends-voice) !important;
 }
 
 .compactView .friendListHeaderContainer .activeVoiceFlexBox .activeVoiceButtons button {
   padding: var(--zehn-size-button-app-padding) !important;
-  height: var(--zehn-size-friends-voice-compact-height) !important;
-  min-height: var(--zehn-size-friends-voice-compact-height) !important;
-  max-height: var(--zehn-size-friends-voice-compact-height) !important;
+  height: var(--zehn-size-friends-voice-compact) !important;
+  min-height: var(--zehn-size-friends-voice-compact) !important;
+  max-height: var(--zehn-size-friends-voice-compact) !important;
   width: auto !important;
   max-width: 100% !important;
-  min-width: var(--zehn-size-friends-voice-compact-height) !important;
-  line-height: var(--zehn-size-friends-voice-compact-height) !important;
+  min-width: var(--zehn-size-friends-voice-compact) !important;
+  line-height: var(--zehn-size-friends-voice-compact) !important;
 }
 
+.friendRequestButton,
+.addFriendButton,
 .searchIconButton {
   padding: var(--zehn-size-button-app-padding) !important;
-  height: var(--zehn-size-friends-button-height) !important;
-  min-height: var(--zehn-size-friends-button-height) !important;
-  max-height: var(--zehn-size-friends-button-height) !important;
+  height: var(--zehn-size-friends-buttons) !important;
+  min-height: var(--zehn-size-friends-buttons) !important;
+  max-height: var(--zehn-size-friends-buttons) !important;
   width: auto !important;
-  max-width: auto !important;
-  min-width: var(--zehn-size-friends-button-height) !important;
-  line-height: var(--zehn-size-friends-buttons-height) !important;
+  max-width: 100% !important;
+  min-width: var(--zehn-size-friends-buttons) !important;
+  line-height: var(--zehn-size-friends-buttons) !important;
   cursor: pointer !important;
   flex-grow: 1 !important;
 }
+
+.doGxCBJrGimabHm365bOV {
+  height: var(--zehn-size-chat-header) !important;
+  min-height: var(--zehn-size-chat-header) !important;
+  max-height: var(--zehn-size-chat-header) !important;
+  width: var(--zehn-size-chat-header) !important;
+  min-width: var(--zehn-size-chat-header) !important;
+  max-width: var(--zehn-size-chat-header) !important;
+  line-height: var(--zehn-size-chat-header) !important;
+}
+
+/* ._39xGjKkRIIE7HwloXCWT41 {
+  height: var(--zehn-size-chat-entry) !important;
+  min-height: var(--zehn-size-chat-entry) !important;
+  max-height: var(--zehn-size-chat-entry) !important;
+  width: var(--zehn-size-chat-entry) !important;
+  min-width: var(--zehn-size-chat-entry) !important;
+  max-width: var(--zehn-size-chat-entry) !important;
+  line-height: var(--zehn-size-chat-entry) !important;
+} */
 
 ._1GdR5LbENV7LOGROJBxohI._1GdR5LbENV7LOGROJBxohI.DialogButton,
 .confirmInviteRequestContainer .confirmInviteButton {
@@ -4297,8 +4331,8 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
   min-height: var(--zehn-size-button-app) !important;
   max-height: var(--zehn-size-button-app) !important;
   width: auto !important;
-  max-width: auto !important;
-  min-width: auto !important;
+  max-width: 100% !important;
+  min-width: var(--zehn-size-button-app) !important;
   line-height: var(--zehn-size-button-app) !important;
 }
 
@@ -4353,24 +4387,24 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 }
 
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._2_4_nZy-T2C3pHa81tGH76 ._3mCrTKGesl-jD-k-buQ13_ {
-  height: var(--zehn-size-table-header-height) !important;
-  min-height: var(--zehn-size-table-header-height) !important;
-  max-height: var(--zehn-size-table-header-height) !important;
-  width: var(--zehn-size-table-header-height) !important;
-  min-width: var(--zehn-size-table-header-height) !important;
-  max-width: var(--zehn-size-table-header-height) !important;
-  line-height: var(--zehn-size-table-header-height) !important;
+  height: var(--zehn-size-table-header) !important;
+  min-height: var(--zehn-size-table-header) !important;
+  max-height: var(--zehn-size-table-header) !important;
+  width: var(--zehn-size-table-header) !important;
+  min-width: var(--zehn-size-table-header) !important;
+  max-width: var(--zehn-size-table-header) !important;
+  line-height: var(--zehn-size-table-header) !important;
 }
 
 .uE7Pj4tb2n3_Bx4vjEX0a {
   flex: 1 !important;
-  height: var(--zehn-size-library-sidebar-height) !important;
-  min-height: var(--zehn-size-library-sidebar-height) !important;
-  max-height: var(--zehn-size-library-sidebar-height) !important;
+  height: var(--zehn-size-library-sidebar) !important;
+  min-height: var(--zehn-size-library-sidebar) !important;
+  max-height: var(--zehn-size-library-sidebar) !important;
   width: 0 !important;
   min-width: 0 !important;
   max-width: 0 !important;
-  line-height: var(--zehn-size-library-sidebar-height) !important;
+  line-height: var(--zehn-size-library-sidebar) !important;
 }
 
 .uE7Pj4tb2n3_Bx4vjEX0a.rkfSfuCLRt8sqpkXJqxYo,
@@ -4379,13 +4413,13 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 ._2CEKFex6JMsAse2lqMMjUp,
 ._3mzKdQXht__YHo6PX1LmB6 {
   flex: 1 !important;
-  height: var(--zehn-size-library-sidebar-height) !important;
-  min-height: var(--zehn-size-library-sidebar-height) !important;
-  max-height: var(--zehn-size-library-sidebar-height) !important;
+  height: var(--zehn-size-library-sidebar) !important;
+  min-height: var(--zehn-size-library-sidebar) !important;
+  max-height: var(--zehn-size-library-sidebar) !important;
   width: auto !important;
-  min-width: var(--zehn-size-library-sidebar-height) !important;
+  min-width: var(--zehn-size-library-sidebar) !important;
   max-width: unset !important;
-  line-height: var(--zehn-size-library-sidebar-height) !important;
+  line-height: var(--zehn-size-library-sidebar) !important;
 }
 
 ._2rxrVvbku0AC8Qbequ4-z9 button.DialogButton {
@@ -4409,13 +4443,13 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 ._2q-gZ3XJzlvSGHSF-GvSmi,
 ._2q-gZ3XJzlvSGHSF-GvSmi._2AzIX5kl9k6JnxLfR5H4kX,
 ._3qDWQGB0rtwM3qpXTb11Q- {
-  height: var(--zehn-size-library-playbar-height) !important;
-  min-height: var(--zehn-size-library-playbar-height) !important;
-  max-height: var(--zehn-size-library-playbar-height) !important;
-  width: var(--zehn-size-library-playbar-height) !important;
-  min-width: var(--zehn-size-library-playbar-height) !important;
-  max-width: var(--zehn-size-library-playbar-height) !important;
-  line-height: var(--zehn-size-library-playbar-height) !important;
+  height: var(--zehn-size-library-playbar) !important;
+  min-height: var(--zehn-size-library-playbar) !important;
+  max-height: var(--zehn-size-library-playbar) !important;
+  width: var(--zehn-size-library-playbar) !important;
+  min-width: var(--zehn-size-library-playbar) !important;
+  max-width: var(--zehn-size-library-playbar) !important;
+  line-height: var(--zehn-size-library-playbar) !important;
 }
 
 ._3ydigb6zZAjJ0JCDgHwSYA,
@@ -4459,26 +4493,26 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 ._1cWmu5TUWFAVHlv1EVaF8e {
   top: 0 !important;
   left: 0 !important;
-  height: var(--zehn-size-titlebar-height) !important;
-  min-height: var(--zehn-size-titlebar-height) !important;
-  max-height: var(--zehn-size-titlebar-height) !important;
-  width: var(--zehn-size-titlebar-width) !important;
-  min-width: var(--zehn-size-titlebar-width) !important;
-  max-width: var(--zehn-size-titlebar-width) !important;
-  line-height: var(--zehn-size-titlebar-height) !important;
+  height: var(--zehn-size-titlebar) !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  max-height: var(--zehn-size-titlebar) !important;
+  width: var(--zehn-size-titlebar-control) !important;
+  min-width: var(--zehn-size-titlebar-control) !important;
+  max-width: var(--zehn-size-titlebar-control) !important;
+  line-height: var(--zehn-size-titlebar) !important;
 }
 
 .zehnBackwardsWrapper,
 .zehnForwardsWrapper {
   display: block !important;
   position: relative !important;
-  height: var(--zehn-size-navbar-height) !important;
-  min-height: var(--zehn-size-navbar-height) !important;
-  max-height: var(--zehn-size-navbar-height) !important;
-  width: var(--zehn-size-navbar-width) !important;
-  min-width: var(--zehn-size-navbar-width) !important;
-  max-width: var(--zehn-size-navbar-width) !important;
-  line-height: var(--zehn-size-navbar-height) !important;
+  height: var(--zehn-size-navbar) !important;
+  min-height: var(--zehn-size-navbar) !important;
+  max-height: var(--zehn-size-navbar) !important;
+  width: var(--zehn-size-navbar-control) !important;
+  min-width: var(--zehn-size-navbar-control) !important;
+  max-width: var(--zehn-size-navbar-control) !important;
+  line-height: var(--zehn-size-navbar) !important;
 
   &:is(*, :focus, :hover, :active):has(._2cO0HdvLEGAdhosLekWsmo) {
     background-color: var(--zehn-color-button-app-background-disabled) !important;
@@ -4524,10 +4558,10 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 }
 
 #zehnToggleNavigation {
-  width: var(--zehn-size-navbar-width);
-  min-width: var(--zehn-size-navbar-width);
-  height: var(--zehn-size-navbar-height);
-  line-height: var(--zehn-size-navbar-height);
+  width: var(--zehn-size-navbar-control);
+  min-width: var(--zehn-size-navbar-control);
+  height: var(--zehn-size-navbar);
+  line-height: var(--zehn-size-navbar);
   -webkit-app-region: no-drag;
   align-self: baseline;
   order: 0;
@@ -4544,9 +4578,9 @@ body:not(.WindowFocus) #zehnToggleNavigation {
 
 #zehnToggleSidebarSearch {
   width: auto;
-  min-width: var(--zehn-size-library-sidebar-height);
-  height: var(--zehn-size-library-sidebar-height);
-  line-height: var(--zehn-size-library-sidebar-height);
+  min-width: var(--zehn-size-library-sidebar);
+  height: var(--zehn-size-library-sidebar);
+  line-height: var(--zehn-size-library-sidebar);
   flex: 1;
   justify-content: center;
   display: flex;
@@ -4574,10 +4608,10 @@ body:not(.WindowFocus) #zehnToggleNavigation {
 }
 
 #zehnToggleTheaterMode {
-  min-width: var(--zehn-size-navbar-width);
-  width: var(--zehn-size-navbar-width);
-  height: var(--zehn-size-navbar-height);
-  line-height: var(--zehn-size-navbar-height);
+  min-width: var(--zehn-size-navbar-control);
+  width: var(--zehn-size-navbar-control);
+  height: var(--zehn-size-navbar);
+  line-height: var(--zehn-size-navbar);
   order: 99;
   -webkit-app-region: no-drag;
 }
@@ -4595,9 +4629,9 @@ body:not(.WindowFocus) #zehnToggleTheaterMode .zehnIcon {
 }
 
 #zehnToggleFriendsHeader {
-  width: var(--zehn-size-titlebar-width);
-  height: var(--zehn-size-titlebar-height);
-  line-height: var(--zehn-size-titlebar-height);
+  width: var(--zehn-size-titlebar-control);
+  height: var(--zehn-size-titlebar);
+  line-height: var(--zehn-size-titlebar);
   position: relative;
   left: 0;
   top: 0;
@@ -4614,8 +4648,9 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
 }
 
 #zehnToggleUser {
-  height: var(--zehn-size-button-lg);
-  width: var(--zehn-size-button-lg);
+  height: var(--zehn-size-friends-buttons);
+  width: auto;
+  min-width: var(--zehn-size-friends-buttons);
   border-radius: var(--zehn-size-radius-square);
   position: relative;
   left: 0;
@@ -4652,9 +4687,9 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
 .zehnToggleDetails,
 .zehnToggleCommunity,
 .zehnToggleActivity {
-  width: var(--zehn-size-library-playbar-height);
-  height: var(--zehn-size-library-playbar-height);
-  line-height: var(--zehn-size-library-playbar-height);
+  width: var(--zehn-size-library-playbar);
+  height: var(--zehn-size-library-playbar);
+  line-height: var(--zehn-size-library-playbar);
   border: none;
   position: relative;
 }
@@ -4865,7 +4900,7 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
 .ModalDialogPopup:has(.TitleBar) .DialogContent,
 .ModalOverlayContent:has(.ModalPosition_Dismiss) .DialogContent,
 .ModalOverlayContent:has(.DialogHeader) .DialogContent {
-  padding-top: var(--zehn-size-titlebar-height) !important;
+  padding-top: var(--zehn-size-titlebar) !important;
 }
 
 .ModalDialogPopup:has(.TitleBar) .DialogContentTransition.ZjHHXZlnZhCahNrBFplWc .DialogContent {
@@ -4907,13 +4942,13 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
 
 .ModalDialogPopup:has(.PageListColumn) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>* {
   /* LIMIT WIDTH FOR SETTINGS */
-  max-width: var(--zehn-size-settings-content-width) !important;
+  max-width: var(--zehn-size-settings-content) !important;
   flex-wrap: wrap !important;
 }
 
 .ModalDialogPopup:has(.xSTLmzylFJdIfak7ZdhuA) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>* {
   /* LIMIT WIDTH FOR CHAT SETTINGS */
-  max-width: var(--zehn-size-settings-content-width) !important;
+  max-width: var(--zehn-size-settings-content) !important;
   flex-wrap: wrap !important;
 }
 
@@ -4980,7 +5015,7 @@ body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
   top: 0 !important;
   left: 0 !important;
   padding: var(--zehn-size-titlebar-text-padding) !important;
-  line-height: var(--zehn-size-titlebar-height) !important;
+  line-height: var(--zehn-size-titlebar) !important;
   color: var(--zehn-color-text-page-title) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-page-title) !important;
@@ -5405,8 +5440,8 @@ body.zXrpABNQHpWKgSzqnGlL {
 
 /* WINDOW CONTROLS */
 ._39oUCO1OuizVPwcnnv88no .qP17eBPXkfezFfexZ4hC3 {
-  flex: 0 1 calc(var(--zehn-size-titlebar-width) * 3) !important;
-  min-width: calc(var(--zehn-size-titlebar-width) * 3) !important;
+  flex: 0 1 calc(var(--zehn-size-titlebar-control) * 3) !important;
+  min-width: calc(var(--zehn-size-titlebar-control) * 3) !important;
   margin-left: auto !important;
 }
 
@@ -5426,9 +5461,9 @@ body.zXrpABNQHpWKgSzqnGlL {
   padding: 0 !important;
   border-radius: var(--zehn-size-radius-square) !important;
   margin: 0 !important;
-  height: var(--zehn-size-titlebar-height) !important;
-  min-height: var(--zehn-size-titlebar-height) !important;
-  max-height: var(--zehn-size-titlebar-height) !important;
+  height: var(--zehn-size-titlebar) !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  max-height: var(--zehn-size-titlebar) !important;
 }
 
 .DesktopUI .title-area-icon,
@@ -5446,9 +5481,9 @@ body.zXrpABNQHpWKgSzqnGlL {
 
 .title-area-highlight {
   background: transparent !important;
-  height: var(--zehn-size-titlebar-height) !important;
-  min-height: var(--zehn-size-titlebar-height) !important;
-  max-height: var(--zehn-size-titlebar-height) !important;
+  height: var(--zehn-size-titlebar) !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  max-height: var(--zehn-size-titlebar) !important;
   display: none !important;
 }
 
@@ -5459,19 +5494,19 @@ body.zXrpABNQHpWKgSzqnGlL {
 .title-area-icon,
 .title-bar-actions {
   width: fit-content !important;
-  height: var(--zehn-size-titlebar-height) !important;
-  min-width: var(--zehn-size-titlebar-width) !important;
-  min-height: var(--zehn-size-titlebar-height) !important;
+  height: var(--zehn-size-titlebar) !important;
+  min-width: var(--zehn-size-titlebar-control) !important;
+  min-height: var(--zehn-size-titlebar) !important;
   max-width: fit-content !important;
-  max-height: var(--zehn-size-titlebar-height) !important;
+  max-height: var(--zehn-size-titlebar) !important;
 }
 
 ._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon,
 ._3Z7VQ1IMk4E3HsHvrkLNgo .title-bar-actions {
-  height: var(--zehn-size-navbar-height) !important;
-  min-width: var(--zehn-size-navbar-width) !important;
-  min-height: var(--zehn-size-navbar-height) !important;
-  max-height: var(--zehn-size-navbar-height) !important;
+  height: var(--zehn-size-navbar) !important;
+  min-width: var(--zehn-size-navbar-control) !important;
+  min-height: var(--zehn-size-navbar) !important;
+  max-height: var(--zehn-size-navbar) !important;
 }
 
 .title-area-icon-inner {
@@ -5487,8 +5522,8 @@ body.zXrpABNQHpWKgSzqnGlL {
 .minimizeButton,
 .restoreButton,
 .closeButton {
-  width: var(--zehn-size-titlebar-width) !important;
-  height: var(--zehn-size-titlebar-height) !important;
+  width: var(--zehn-size-titlebar-control) !important;
+  height: var(--zehn-size-titlebar) !important;
 }
 
 .closeButton:not(._1JXI4j2_xSpVK1YjyEuebr):hover {
@@ -5610,9 +5645,9 @@ body:not(.WindowFocus) .closeButton:hover .title-area-icon-inner {
   padding: 0 !important;
   border-radius: var(--zehn-size-radius-square) !important;
   margin: 0 !important;
-  height: var(--zehn-size-titlebar-height) !important;
-  min-height: var(--zehn-size-titlebar-height) !important;
-  max-height: var(--zehn-size-titlebar-height) !important;
+  height: var(--zehn-size-titlebar) !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  max-height: var(--zehn-size-titlebar) !important;
 }
 
 .ModalPosition_Dismiss .closeButton svg {
@@ -6133,35 +6168,35 @@ div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrem
 div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div.FriendsListContent:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-titlebar-height) + var(--friends-remoteplay-spacing) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing) + var(--friends-voice-spacing);
+  --header-height: var(--zehn-size-titlebar) + var(--friends-remoteplay-spacing) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing) + var(--friends-voice-spacing);
 }
 
 /* CHAT */
 div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-titlebar-height);
+  --header-height: var(--zehn-size-titlebar);
 }
 
 /* GROUP CHAT */
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-titlebar-height) + var(--zehn-size-chat-header-height);
+  --header-height: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
 }
 
 /* LIBRARY */
 div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-navbar-height) + var(--library-playbar-spacing);
+  --header-height: var(--zehn-size-navbar) + var(--library-playbar-spacing);
 }
 
 /* DOWNLOADS */
 div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-navbar-height) + var(--library-downloads-spacing);
+  --header-height: var(--zehn-size-navbar) + var(--library-downloads-spacing);
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */

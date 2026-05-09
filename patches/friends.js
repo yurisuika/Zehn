@@ -41,8 +41,8 @@ Zehn.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zeh
 
 /* SET VARIABLE FOR HEADER HEIGHT ----------------------------------------------------------------------------------- */
 
-Zehn.storeTargetHeightAsVariable('.friendsui-container', '.quickAccessFriends', '--zehn-size-friends-favorites-height');
-Zehn.storeTargetHeightAsVariable('.friendsui-container', '._14S4rlGAAqfqW6lMKYB2GM', '--zehn-size-friends-remoteplay-height');
+Zehn.storeTargetHeightAsVariable('.friendsui-container', '.quickAccessFriends', '--zehn-size-friends-favorites');
+Zehn.storeTargetHeightAsVariable('.friendsui-container', '._14S4rlGAAqfqW6lMKYB2GM', '--zehn-size-friends-remoteplay');
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
@@ -73,6 +73,7 @@ Zehn.moveAppend('.MultiUserChat', '.chatRoomOptions', [
 Zehn.movePrepend('.MultiUserChat', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG / BROADCAST
 ]);
+Zehn.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnIconContainer']);
 
 /* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
 
