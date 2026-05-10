@@ -75,7 +75,8 @@ Zehn.moveAppend('.MultiUserChat', '.chatRoomOptions', [
 /* MOVE GROUP CHAT BROADCAST BUTTON INTO HEADER --------------------------------------------------------------------- */
 
 Zehn.movePrepend('.MultiUserChat', '.chatRoomOptions', [
-  '.doGxCBJrGimabHm365bOV' // YULE LOG / BROADCAST
+  '.doGxCBJrGimabHm365bOV', // YULE LOG
+  '.broadcastInfoContainer' // BROADCAST
 ]);
 Zehn.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnIconContainer']);
 
