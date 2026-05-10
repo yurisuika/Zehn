@@ -551,6 +551,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
   font-size: calc(var(--zehn-size-avatar-md) / 2) !important;
 }
 
+._2NdiftmP-B3C4LPWnNGTCB:has(._1iutOH026zK2dbpsMFDmMm) ._32niVn3s7EKoKY0-pASwDJ,
 ._3h-QRJGxnVOIExtHD1R0f2 {
   transition: none !important;
   border: unset !important;
@@ -560,6 +561,9 @@ img.AB86vEzEKPL0y5fK_m4pT {
   -webkit-mask-image: var(--zehn-mask-avatar) !important;
 }
 
+._2NdiftmP-B3C4LPWnNGTCB:has(._1iutOH026zK2dbpsMFDmMm.online) ._32niVn3s7EKoKY0-pASwDJ,
+._2NdiftmP-B3C4LPWnNGTCB:has(._1iutOH026zK2dbpsMFDmMm.offline) ._32niVn3s7EKoKY0-pASwDJ,
+._2NdiftmP-B3C4LPWnNGTCB:has(._1iutOH026zK2dbpsMFDmMm.ingame) ._32niVn3s7EKoKY0-pASwDJ,
 .nibodjvvrm86uCfnnAn4g:has(._3xUpb5DWXPFNcHHIcv-9pe) ._3h-QRJGxnVOIExtHD1R0f2 {
   -webkit-mask-image: var(--zehn-mask-avatar-status) !important;
 }
@@ -589,21 +593,31 @@ img.AB86vEzEKPL0y5fK_m4pT {
 }
 
 ._1iutOH026zK2dbpsMFDmMm,
-._3xUpb5DWXPFNcHHIcv-9pe,
-._3xUpb5DWXPFNcHHIcv-9pe.bottom,
-._3xUpb5DWXPFNcHHIcv-9pe.right {
+._3xUpb5DWXPFNcHHIcv-9pe {
   position: absolute !important;
   width: 100% !important;
   height: 100% !important;
   border-radius: var(--zehn-size-radius-square) !important;
   border: unset !important;
   box-sizing: content-box !important;
+  z-index: 999 !important;
+  -webkit-mask-image: var(--zehn-mask-status) !important;
+}
+
+._3xUpb5DWXPFNcHHIcv-9pe,
+._3xUpb5DWXPFNcHHIcv-9pe.bottom,
+._3xUpb5DWXPFNcHHIcv-9pe.right {
   right: 0 !important;
   bottom: 0 !important;
   left: unset !important;
   top: unset !important;
-  z-index: 999 !important;
-  -webkit-mask-image: var(--zehn-mask-status) !important;
+}
+
+._2NdiftmP-B3C4LPWnNGTCB ._1iutOH026zK2dbpsMFDmMm {
+  height: 44px !important;
+  width: 44px !important;
+  /* left: 16px !important; */
+  /* top: 16px !important; */
 }
 
 .nibodjvvrm86uCfnnAn4g.X-Small ._3xUpb5DWXPFNcHHIcv-9pe,
@@ -1864,7 +1878,6 @@ select,
 
 ._2o2fXzn99OddeqZMjbDuxQ:has(select)::after,
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu,
-.SVGIcon_DownArrowContextMenu,
 .v8oJcDOQF6xmlVTw4VhOr.DialogButton._DialogLayout.cXzBZxhPBl7fZs9LODEnc ._3OHR1e3u08hK7hMx4fFy_L .DialogDropDown_CurrentDisplay~svg,
 .DialogContent.GenericConfirmDialog .zeGUOeW3Cat4UJGCGwXPZ svg {
   padding: 0 !important;
@@ -3987,6 +4000,14 @@ button.DialogButton.MillenniumIconButton.Secondary,
 .chatTabSelector,
 /* CHAT HEADER */
 .doGxCBJrGimabHm365bOV,
+.chatRoomButton,
+.MemberListOption,
+.MemberListOption.ToggleMemberListView,
+/* CHAT BROADCAST */
+.BroadcastChatExpander,
+.chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab,
+.chatBody .ChatBodyControls .showBothTabs,
+.chatBody .ChatBodyControls .Close,
 /* CHAT INVITE ANOTHER FRIEND */
 .inviteAnotherFriendButton,
 /* CHAT EMBED */
@@ -4000,6 +4021,12 @@ button.DialogButton.MillenniumIconButton.Secondary,
 .chatImageURL,
 .msg .chatVideoContainer a.chatImageURL,
 .msg .chatImageContainer a.chatImageURL,
+/* CHAT CHANNEL LIST */
+.chatRoomGroupNavCollapseExpand,
+/* CHAT ENTRY */
+.RVIs84dAE6wHcjH9tkinc,
+.ChatMessageEntryVoice.Inactive,
+.ChatMessageEntryVoice.Active,
 /* FRIEND INVITE */
 .friendInviteButton,
 /* FRIENDS CONFIRM INVITE */
@@ -4098,13 +4125,13 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe,
 ._1AL7l2CN6z-vuLfp1iCLa ._1fu6xumTI1nCY5wc6FG_N2 .DialogButton,
 /* MILLENNIUM */
 ._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary {
+  display: flex !important;
   background-position: center !important;
   background-size: auto !important;
   box-sizing: border-box !important;
   margin: 0 !important;
   opacity: 1 !important;
   transition: none !important;
-  /* display: flex !important; */
   place-content: center !important;
   align-content: center !important;
   text-align: center !important;
@@ -4184,6 +4211,10 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe,
     }
   }
 
+  /* NAv CONTROLS */
+  &:has(._2cO0HdvLEGAdhosLekWsmo),
+  /* CHAT ENTRY */
+  &.jaQN2IyN4P8LZXJ6P11qy,
   /* URL */
   &._1f6yYACTilZQ2dmqGd5zXk,
   &.confirmInvites.dim,
@@ -4200,6 +4231,11 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe,
       background-color: var(--zehn-color-button-app-icon-disabled) !important;
       transform: none !important;
     }
+  }
+
+  .tool-tip-source {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   svg {
@@ -4231,7 +4267,9 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe,
 .msg .chatVideoContainer a.chatImageURL,
 .msg .chatImageContainer a.chatImageURL,
 .STV_BroadcastClose,
-.VoiceControlPanelButton,
+.VoiceControlPanelButton.ToggleMicrophoneButton,
+.VoiceControlPanelButton.ToggleVoiceOutputButton,
+.VoiceControlPanelButton.chatEndVoiceChat,
 ._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D,
 ._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary,
 ._12aBP1DmpEKuMxfFuCMbiN,
@@ -4259,6 +4297,7 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton,
 .chatRoomVoiceChannel .chatRoomTextChannel,
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel,
+.chatRoomVoiceChannel .VoiceControlPanelButton,
 .chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton,
 ._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton,
 ._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton ._sGyh60_xjv7maN2X2ZXu {
@@ -4272,6 +4311,10 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
   border-radius: var(--zehn-size-radius-circle) !important;
 }
 
+.BroadcastChatExpander,
+.chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab,
+.chatBody .ChatBodyControls .showBothTabs,
+.chatBody .ChatBodyControls .Close,
 ._39xGjKkRIIE7HwloXCWT41,
 .inviteAnotherFriendButton,
 .friendInviteButton,
@@ -4329,6 +4372,9 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
   flex-grow: 1 !important;
 }
 
+.MemberListOption,
+.MemberListOption.ToggleMemberListView,
+.chatRoomButton,
 .doGxCBJrGimabHm365bOV {
   height: var(--zehn-size-chat-header) !important;
   min-height: var(--zehn-size-chat-header) !important;
@@ -4339,7 +4385,9 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
   line-height: var(--zehn-size-chat-header) !important;
 }
 
-/* ._39xGjKkRIIE7HwloXCWT41 {
+.ChatMessageEntryVoice.Inactive,
+.ChatMessageEntryVoice.Active,
+.RVIs84dAE6wHcjH9tkinc {
   height: var(--zehn-size-chat-entry) !important;
   min-height: var(--zehn-size-chat-entry) !important;
   max-height: var(--zehn-size-chat-entry) !important;
@@ -4347,7 +4395,8 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
   min-width: var(--zehn-size-chat-entry) !important;
   max-width: var(--zehn-size-chat-entry) !important;
   line-height: var(--zehn-size-chat-entry) !important;
-} */
+  display: block !important;
+}
 
 ._3YKzzMnXjrp4XBGh0BPUP4,
 ._1GdR5LbENV7LOGROJBxohI._1GdR5LbENV7LOGROJBxohI.DialogButton,
@@ -4362,6 +4411,7 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
   line-height: var(--zehn-size-button-app) !important;
 }
 
+.chatRoomGroupNavCollapseExpand,
 ._1AL7l2CN6z-vuLfp1iCLa ._1fu6xumTI1nCY5wc6FG_N2 .DialogButton,
 .ut0YcLYGAoSTz2Dnjw9U1 .R2VdUtWzknAHBOsdRzG_d,
 ._23SnllqT_AqZ1C_QHcNQ4Z._2Ho8z58cxQIJljp55uGkdt,
@@ -4532,9 +4582,8 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
   line-height: var(--zehn-size-titlebar) !important;
 }
 
-.zehnBackwardsWrapper,
-.zehnForwardsWrapper {
-  display: block !important;
+#zehnBackwardsWrapper.zehnBackwardsWrapper,
+#zehnForwardsWrapper.zehnForwardsWrapper {
   position: relative !important;
   height: var(--zehn-size-navbar) !important;
   min-height: var(--zehn-size-navbar) !important;
@@ -4544,16 +4593,8 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
   max-width: var(--zehn-size-navbar-control) !important;
   line-height: var(--zehn-size-navbar) !important;
 
-  &:is(*, :focus, :hover, :active):has(._2cO0HdvLEGAdhosLekWsmo) {
-    background-color: var(--zehn-color-button-app-background-disabled) !important;
-    color: var(--zehn-color-button-app-text-disabled) !important;
-    border-color: var(--zehn-color-button-app-border-disabled) !important;
-    outline: none !important;
-
-    svg._25lBLzuVeYAUG279up4xP8._2cO0HdvLEGAdhosLekWsmo {
-      background-color: var(--zehn-color-button-app-icon-disabled) !important;
-      transform: none !important;
-    }
+  svg._25lBLzuVeYAUG279up4xP8 {
+    width: 100% !important;
   }
 }
 

@@ -818,6 +818,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   -webkit-mask-image: var(--zehn-icon-chat-leave) !important;
 }
 
+.VoiceControlPanelButton.chatPinRoom svg {
+  -webkit-mask-image: var(--zehn-icon-navigation) !important;
+}
+
 .VoiceControlPanelButton.ToggleVoiceOutputButton .SVGIcon_Headphones,
 .VoiceControlPanelButton.ToggleMicrophoneButton .SVGIcon_Microphone {
   width: 32px !important;
@@ -1481,6 +1485,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   transition: none !important;
 }
 
+.MemberListColumn .nibodjvvrm86uCfnnAn4g,
 .CompactFriendsList .friend .avatarHolder,
 .compactView .currentUserAvatar .avatarHolder {
   width: var(--zehn-size-avatar-sm) !important;
@@ -2106,15 +2111,12 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   background-color: transparent !important;
 }
 
-.friendsListContainer .chatRoomVoiceChannelName {
-  margin: 0 !important;
-  text-align: left !important;
-}
-
 .friendsListContainer .chatRoomVoiceChannelNameContainer,
 .friendsListContainer .CompactFriendsList .chatRoomVoiceChannelNameContainer {
   height: var(--zehn-size-chat-pagelist-entry) !important;
   line-height: var(--zehn-size-chat-pagelist-entry) !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .friendsListContainer .chatRoomVoiceChannelName,
@@ -2213,18 +2215,10 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
   background-color: var(--zehn-color-list-background-active) !important;
 }
 
-.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
+.chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
   position: relative !important;
-  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) !important;
+  right: var(--zehn-size-spacing-xs) !important;
   top: var(--zehn-size-spacing-xs) !important;
-
-  svg {
-    -webkit-mask-image: var(--zehn-icon-navigation) !important;
-  }
-}
-
-.VoiceControlPanelButton.chatPinRoom .SVGIcon_Button {
-  transform: none !important;
 }
 
 .VoiceChannelParticipants.CompactFriendsList {}
@@ -2234,12 +2228,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
 }
 
 .chatRoomGroupNavColumn .DropTarget.chatRoomVoiceChannel.ActiveVoiceChannel.Panel.Focusable .VoiceChannelParticipants.CompactFriendsList {
-  margin-top: 0 !important;
-}
-
-.VoiceControlPanelButton.chatPinRoom {
-  width: 32px !important;
-  height: 32px !important;
   margin-top: 0 !important;
 }
 
@@ -2346,7 +2334,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
   inset: unset !important;
   top: var(--zehn-size-spacing-xs) !important;
-  right: var(--zehn-size-spacing-xs) !important;
+  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) !important;
 }
 
 /* SCRATCH PAD WHATEVER THIS ACTUALLY IS */
