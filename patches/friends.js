@@ -75,9 +75,9 @@ Zehn.moveAppend('.MultiUserChat', '.chatRoomOptions', [
 /* MOVE GROUP CHAT BROADCAST BUTTON INTO HEADER --------------------------------------------------------------------- */
 
 Zehn.movePrepend('.MultiUserChat', '.chatRoomOptions', [
-  '.doGxCBJrGimabHm365bOV', // YULE LOG
-  '.broadcastInfoContainer' // BROADCAST
+  '.doGxCBJrGimabHm365bOV' // YULE LOG
 ]);
+Zehn.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnIconContainer']);
 Zehn.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnIconContainer']);
 
 /* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
@@ -128,7 +128,8 @@ Zehn.revealSelf('.FriendsListContent .chatRoomVoiceChannel');
 /* REVEAL CHAT GROUP HEADER ----------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.chatRoomHeader', [
-  '.doGxCBJrGimabHm365bOV', // STREAM
+  '.broadcastInfoContainer .thumbnail', // STREAM
+  '.doGxCBJrGimabHm365bOV', // STREAM YULE
   '.chatRoomButton.ManageNotifications', // NOTIFICATION SETTINGS
   '.chatRoomButton.InviteToGroupChat', // INVITE TO GROUP CHAT
   '.chatRoomButton.GroupChatSettings', // GROUP CHAT SETTINGS

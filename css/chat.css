@@ -3,9 +3,12 @@
 /* CHAT LOADING */
 ._21nVi2jNuF_prxLY1mAaKK,
 ._2wAKy-0ZkO_vhbiQCP9MgE ._21nVi2jNuF_prxLY1mAaKK {
-  color: var(--zehn-color-accent-100) !important;
+  color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
+  margin-top: var(--zehn-size-spacing-xs) !important;
+  text-transform: none !important;
+  flex: 0 !important;
 }
 
 /* BORDER */
@@ -3921,8 +3924,8 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .doGxCBJrGimabHm365bOV .zehnIconContainer {
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
 }
 
 .doGxCBJrGimabHm365bOV .zehnIconContainer .zehnIcon {
@@ -3944,6 +3947,85 @@ div:hover>.BBCodeCollapseControl {
   position: absolute;
 }
 
+/* BROADCAST DETAILS */
+.broadcastInfoContainer {
+  transition: none !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: var(--zehn-size-radius-square) !important;
+  padding: 0 !important;
+  align-content: center !important;
+  position: relative !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails {
+  line-height: var(--zehn-size-16) !important;
+  padding: 0 !important;
+  margin-right: var(--zehn-size-spacing-xs) !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails .nowWatching {
+  font-size: var(--zehn-size-10) !important;
+  line-height: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text-tertiary) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails .gameTitle {
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text-secondary) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails .broadcastTitle {
+  font-size: var(--zehn-size-10) !important;
+  line-height: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text-tertiary) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .thumbnail {}
+
+.chatRoomGroupHeader .broadcastInfoContainer .thumbnail .zehnIconContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .thumbnail .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-stream);
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .actions {
+  min-width: var(--zehn-size-icon-md) !important;
+  min-height: var(--zehn-size-icon-md) !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  padding: 0 !important;
+  position: absolute !important;
+  top: calc(50% - (var(--zehn-size-icon-md) / 2)) !important;
+  right: 100% !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .actions:hover,
+.chatRoomGroupHeader .broadcastInfoContainer:has(.broadcastDetails:hover) .actions {
+  opacity: 1 !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .actions .SVGIcon_X {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-sm) !important;
+  -webkit-mask-image: var(--zehn-icon-clear) !important;
+
+  * { display: none !important; }
+}
+
 /* BROADCAST */
 .ChatRoomGroup_Main_Content.Vertical,
 .ChatRoomGroup_Main_Content.Horizontal,
@@ -3958,6 +4040,7 @@ div:hover>.BBCodeCollapseControl {
   background-color: var(--zehn-color-section) !important;
   padding: var(--zehn-size-padding-md) !important;
   gap: var(--zehn-size-spacing-md) !important;
+  width: auto !important;
 }
 
 .BroadcastSection {
@@ -4020,7 +4103,6 @@ div:hover>.BBCodeCollapseControl {
 
 .videoContainerSizer {}
 
-
 .BroadcastDetailsSection .BroadcastDetails {
   margin: 0 !important;
   background: var(--zehn-color-panel) !important;
@@ -4046,12 +4128,12 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .BroadcastDetailsSection .BroadcastDetails .BroadcastDetailsHeader {
-  height: 64px !important;
+  height: fit-content !important;
   font-size: var(--zehn-size-14) !important;
   color: var(--zehn-color-text-primary) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  padding: var(--zehn-size-padding-md) 0 !important;
-  line-height: 16px !important;
+  padding: 0 !important;
+  line-height: var(--zehn-size-16) !important;
 }
 
 .BroadcastDetailsSection .BroadcastDetails .BroadcastDetailsHeader .Info {}
@@ -4063,6 +4145,9 @@ div:hover>.BBCodeCollapseControl {
 .BroadcastDetails .BroadcastDetailsHeader .BroadcastTitle {
   color: var(--zehn-color-text-secondary) !important;
 }
+
+/* BROADCAST DETAILS IMPRESSION */
+.BroadcastDetailsSection .BroadcastDetails .ImpressionTrackedElement {}
 
 /* BROADCAST CHAT */
 .BroadcastChat {
@@ -4115,12 +4200,49 @@ div:hover>.BBCodeCollapseControl {
   -webkit-mask-image: var(--zehn-icon-chat-group) !important;
 }
 
-
 /* CHANNELS */
 .chatBody .ChatBodyControls {
   border: none !important;
-  background-color: var(--zehn-color-section) !important;
+  margin: var(--zehn-size-spacing-md) !important;
+  margin-top: 0 !important;
+  background: var(--zehn-color-panel) !important;
+  padding: var(--zehn-size-padding-md) !important;
+  border-radius: var(--zehn-size-panel-radius) !important;
+  transition: background-color 0.2s ease !important;
+
+  &:hover {
+    background-color: var(--zehn-color-panel-hover) !important;
+  }
 }
+
+.chatBody .ChatBodyControls .InnerChatTabs {
+  height: 100% !important;
+}
+
+.chatBody .InnerChatTab,
+.chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab {
+  box-sizing: border-box !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+  min-height: 100% !important;
+  border-radius: var(--zehn-size-radius-square) !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-padding-xs) !important;
+  height: 100% !important;
+  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  min-width: fit-content !important;
+  background: var(--zehn-color-list-background) !important;
+
+  &:hover {
+    background: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-list-background-active) !important;
+  }
+}
+
 
 .chatBody .ChatBodyControls .InnerChatTabs .InnerChatTab .InnerChatTabLabel {
   overflow: hidden !important;
@@ -4129,6 +4251,14 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .chatBody .InnerChatTab .SVGIcon_Globe {
+  background-color: var(--zehn-color-icon-primary) !important;
+  margin: 0 !important;
+  border: none !important;
+  height: var(--zehn-size-icon-md) !important;
+  width: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-globe) !important;
 }
 
@@ -4159,7 +4289,7 @@ div:hover>.BBCodeCollapseControl {
 
 ._3soy-wJhd4RZ8SNtC31AOz {
   padding: 0 !important;
-  background-color: var(--zehn-color-section) !important;
+  background-color: var(--zehn-color-panel) !important;
   transition: none !important;
 }
 
@@ -4227,7 +4357,7 @@ div:hover>.BBCodeCollapseControl {
 }
 
 /* BOTH CHATS */
-.BothChatsSeparator {
+.BothChatsSeperator {
   background-color: transparent !important;
   border: none !important;
   z-index: 1 !important;
@@ -4236,13 +4366,13 @@ div:hover>.BBCodeCollapseControl {
   min-height: 0 !important;
 }
 
-.ChatRoomGroup_Main_Content.Vertical .BothChatsSeparator {
+.ChatRoomGroup_Main_Content.Vertical .BothChatsSeperator {
   width: 8px !important;
   margin-right: -8px !important;
   min-width: 0 !important;
 }
 
-.ChatRoomGroup_Main_Content.Horizontal .BothChatsSeparator {
+.ChatRoomGroup_Main_Content.Horizontal .BothChatsSeperator {
   height: 8px !important;
   margin-top: -8px !important;
 }
