@@ -88,9 +88,17 @@ html.web_chat_frame body {
   margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
 }
 
-.chatHistory,
 .chatRoomGroupNavColumn {
   margin-top: var(--zehn-size-titlebar) !important;
+}
+
+.chatHistory {
+  margin: 0 !important;
+  margin-top: var(--zehn-size-titlebar) !important;
+  padding: 0 !important;
+  position: relative;
+  flex-grow: 1 !important;
+  align-content: flex-end !important;
 }
 
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) .chatHistory {
@@ -455,15 +463,6 @@ body:not(.WindowFocus) .chatTabSelector svg {
 .chatDialogs {
   /* background: var(--zehn-color-app) !important; */
   background: transparent !important;
-}
-
-.chatHistory {
-  margin: 0 !important;
-  padding-bottom: 0 !important;
-  padding-top: var(--zehn-size-padding-lg) !important;
-  position: relative;
-  flex-grow: 1 !important;
-  align-content: flex-end !important;
 }
 
 .chatHistoryScroll {
