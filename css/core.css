@@ -206,8 +206,8 @@ tr {
 .DialogSpanningTable.InvitedUsersTable tr.hoverRow,
 .DialogSpanningTable.InviteLinksTable tbody tr {
   background: var(--zehn-color-table-odd) !important;
-  height: 48px !important;
-  min-height: 48px !important;
+  height: var(--zehn-size-table-entry-large) !important;
+  min-height: var(--zehn-size-table-entry-large) !important;
 }
 
 .DialogSpanningTable.BannedUsersTable tr.hoverRow:nth-child(2n),
@@ -3287,6 +3287,14 @@ textarea._1H8F9Z-889HGdHeC5msAZ0 {
   margin: var(--slider-margin) 0 !important;
   border: unset !important;
   margin-right: 0 !important;
+
+  &:hover {
+    background: var(--zehn-color-slider-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-slider-background-active) !important;
+  }
 }
 
 .DialogSlider_Slider {
@@ -3304,18 +3312,6 @@ textarea._1H8F9Z-889HGdHeC5msAZ0 {
   --left-track-color: var(--zehn-color-slider-track) !important;
   overflow: visible !important;
   transition: none !important;
-}
-
-.DialogSlider_Slider:hover,
-._2_vG6TwMW2XtyLlTEaODH9:hover,
-.SliderTrack:hover {
-  background: var(--zehn-color-slider-background-hover) !important;
-}
-
-.DialogSlider_Slider:active,
-._2_vG6TwMW2XtyLlTEaODH9:active,
-.SliderTrack:active {
-  background: var(--zehn-color-slider-background-active) !important;
 }
 
 /* TRACK VALUE ????? */
@@ -3552,13 +3548,14 @@ button.TextButton {
   box-sizing: border-box !important;
   position: relative !important;
   z-index: 2 !important;
-}
-._3eEbSktrstBdLk0dVpnKVI:hover {
-  background-color: var(--zehn-color-list-background-hover) !important;
-}
 
-._3eEbSktrstBdLk0dVpnKVI:active {
-  background-color: var(--zehn-color-list-background-active) !important;
+  &:hover {
+    background-color: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-list-background-active) !important;
+  }
 }
 
 ._3eEbSktrstBdLk0dVpnKVI._3Gp1bACHx__POxmy6Gd3kG {
@@ -5625,14 +5622,14 @@ body.zXrpABNQHpWKgSzqnGlL {
 
 .DesktopUI .title-area-icon,
 .friendsui-container .title-area-icon {
-  background-color: var(--zehn-color-button-app-background) !important;
+  background-color: var(--zehn-color-titlebar-control) !important;
 
   &:hover {
-    background-color: var(--zehn-color-button-app-background-hover) !important;
+    background-color: var(--zehn-color-titlebar-control-hover) !important;
   }
 
   &:active {
-    background-color: var(--zehn-color-button-app-background-active) !important;
+    background-color: var(--zehn-color-titlebar-control-active) !important;
   }
 }
 
@@ -5681,42 +5678,30 @@ body.zXrpABNQHpWKgSzqnGlL {
 .closeButton {
   width: var(--zehn-size-titlebar-control) !important;
   height: var(--zehn-size-titlebar) !important;
+
+  &:hover {}
+
+  &:active {}
 }
 
-.closeButton:not(._1JXI4j2_xSpVK1YjyEuebr):hover {
-  background-color: var(--zehn-color-close-hover) !important;
+.closeButton:not(._1JXI4j2_xSpVK1YjyEuebr) {
+  background-color: var(--zehn-color--titlebar-close) !important;
+
+  &:hover {
+    background-color: var(--zehn-color--titlebarclose-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-titlebar-close-pressed) !important;
+  }
 }
-
-.closeButton:not(._1JXI4j2_xSpVK1YjyEuebr):active {
-  background-color: var(--zehn-color-close-pressed) !important;
-}
-
-.closeButton:hover,
-.maximizeButton:hover,
-.minimizeButton:hover,
-.restoreButton:hover {}
-
-.closeButton:active,
-.maximizeButton:active,
-.minimizeButton:active,
-.restoreButton:active {}
 
 /* WINDOWS BUTTONS ICONS */
-.title-area-icon .SVGIcon_Minimize,
-.title-area-icon .SVGIcon_Maximize,
-.title-area-icon .SVGIcon_X_Line,
-.title-area-icon .SVGIcon_Restore,
-.title-area-icon .SVGIcon_X_Line {
+.title-area-icon svg {
   width: 100% !important;
   height: 100% !important;
-}
 
-.title-area-icon svg {
   * { display: none !important; }
-}
-
-.title-area-icon .SVGIcon_X_Line line {
-  stroke: transparent !important;
 }
 
 body:not(.WindowFocus) .title-area-icon-inner {
