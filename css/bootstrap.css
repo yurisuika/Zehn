@@ -16766,6 +16766,11 @@ textarea._1H8F9Z-889HGdHeC5msAZ0 {
   transform: none !important;
 }
 
+.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after {
+  position: absolute !important;
+  left: 0 !important;
+}
+
 .DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after,
 ._3Sl0QHQ69uK7ZMQo5vBfrA:has(._2Fw7gGOSCr7y9elv8iszxw:not(._317lekDG36odwSaDLtFQgd))::after,
 ._9Ql-oVe_j8E-vsDdyVdWo::after {
@@ -16855,8 +16860,10 @@ textarea._1H8F9Z-889HGdHeC5msAZ0 {
   height: var(--zehn-size-slider-handle-height) !important;
 }
 
+.VoiceSettings .DialogSlider_Container .DialogSlider_Slider,
 ._1aw7cA3mAZfWt8idAlVJWi .SliderControlPanelGroup .SliderControl {
   width: var(--zehn-size-slider-width) !important;
+  min-width: var(--zehn-size-slider-width) !important;
 }
 
 .ContextMenuPopupBody ._1aw7cA3mAZfWt8idAlVJWi .SliderControlPanelGroup .SliderControl {
@@ -17625,7 +17632,7 @@ label > .DialogLabel {
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-control) !important;
   line-height: normal !important;
-  align-self: center !important;
+  align-self: left !important;
 }
 
 .Disabled .DialogToggle_Label {
@@ -17638,7 +17645,7 @@ label > .DialogLabel {
   font-size: var(--zehn-size-text-description) !important;
   padding: 0 !important;
   line-height: normal !important;
-  align-self: center !important;
+  align-self: left !important;
 }
 
 .DialogRequirementLabel {
@@ -23493,6 +23500,11 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
 /* GROUP CHAT SETTINGS */
 .dwmx.LegacyPopup:has(.xSTLmzylFJdIfak7ZdhuA) {
   background: var(--zehn-acrylic-color-base) !important;
+}
+
+/* FRIENDS SETTINGS */
+.dwmx.ModalDialogPopup.LegacyPopup:has(.PageListColumn) {
+  background-color: var(--zehn-acrylic-color-base) !important;
 }
 
 /* FRIENDS LIST */
@@ -40973,18 +40985,7 @@ span[title="Unfold line"]::after {
 
 ._3Sf_ShCtdfWp5P04k2cIgp ._3Sjbkvk647UKKVLX6J7gsW svg {
   float: left !important;
-  margin: 0 !important;
-  width: var(--zehn-size-icon-md);
-  height: var(--zehn-size-icon-md);
-  fill: transparent !important;
-  background-color: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-add-list) !important;
-}
-._3Sf_ShCtdfWp5P04k2cIgp ._3Sjbkvk647UKKVLX6J7gsW svg * {
-  display: none !important;
 }
 
 ._3LLH_F43MTu6UtG4Z3kudv svg[direction=left] {
@@ -40996,6 +40997,11 @@ span[title="Unfold line"]::after {
   -webkit-mask-image: var(--zehn-icon-chevron-right) !important;
 }
 
+@media screen and (min-width: 501px) {
+  ._1cWmu5TUWFAVHlv1EVaF8e {
+    display: none !important;
+  }
+}
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* NOTES ------------------------------------------------------------------------------------------------------------ */
 /* GAMENOTES */
@@ -42324,7 +42330,7 @@ form:has(.zhaKeChn9HPNSMtk0ami_) {
   color: var(--zehn-color-text-primary) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  line-height: 32px !important;
+  line-height: 24px !important;
   background-color: transparent !important;
   margin-bottom: 0 !important;
 }
@@ -42345,6 +42351,7 @@ form:has(.zhaKeChn9HPNSMtk0ami_) {
 
 .DialogBody.useDefaults .FriendsSettingsNotificationRow.FriendsSettingsNotificationRow_Header .FriendsSettingsNotificationRow_Checkbox {
   filter: var(--zehn-filter-unfocus) saturate(0) !important;
+  text-align: left !important;
 }
 
 /* LABEL */
@@ -42355,7 +42362,7 @@ form:has(.zhaKeChn9HPNSMtk0ami_) {
 
 /* DROPDOWN*/
 .ChatRoomNotificationSettingsDialog ._DialogInputContainer:not(._30wJO3MC4x-I1OWpy1TAeE):not(.DialogToggleField):not(.DialogSlider_Container) {
-  min-width: 300px !important;
+  min-width: var(--zehn-size-dropdown-dialog-width) !important;
 }
 
 .notificationsChannelListContainer ._DialogInputContainer:not(._30wJO3MC4x-I1OWpy1TAeE):not(.DialogToggleField):not(.DialogSlider_Container) {
@@ -47516,43 +47523,28 @@ div[role=radiogroup] {
   transform: scale(0.98) !important;
 }
 
-.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO div::after {
-  content: "";
-  position: relative;
-  width: var(--zehn-size-icon-md);
-  height: var(--zehn-size-icon-md);
-  margin-right: var(--zehn-size-spacing-md);
-  background-color: var(--zehn-color-icon-primary);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: var(--zehn-size-icon-md);
-  display: block;
-  align-self: center;
-  flex-shrink: 0;
-}
-
 /* FRIENDS LIST */
-.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(1) div::after {
+.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(1) ._2PPbMrzl8PKBwpkjYs9b0i::before {
   -webkit-mask-image: var(--zehn-icon-contacts) !important;
 }
 
 /* CHAT */
-.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(2) div::after {
+.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(2) ._2PPbMrzl8PKBwpkjYs9b0i::before {
   -webkit-mask-image: var(--zehn-icon-chat) !important;
 }
 
 /* SIZE & SCALING */
-.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(3) div::after {
+.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(3) ._2PPbMrzl8PKBwpkjYs9b0i::before {
   -webkit-mask-image: var(--zehn-icon-text-size) !important;
 }
 
 /* NOTIFICATIONS */
-.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(4) div::after {
+.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(4) ._2PPbMrzl8PKBwpkjYs9b0i::before {
   -webkit-mask-image: var(--zehn-icon-notification) !important;
 }
 
 /* VOICE */
-.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(5) div::after {
+.FriendSettingsContainer ._1-vlriAtKYDViAEunue4VO:nth-of-type(5) ._2PPbMrzl8PKBwpkjYs9b0i::before {
   -webkit-mask-image: var(--zehn-icon-mic) !important;
 }
 
@@ -47584,8 +47576,13 @@ div[role=radiogroup] {
   margin-bottom: 0 !important;
 }
 
+.FriendSettingsContainer .SettingsGroup .DialogToggleField._DialogInputContainer {
+  flex-direction: column !important;
+}
+
 .FriendsSettingsChatFontSizeSection_ButtonRow {
   margin-top: 0 !important;
+  justify-content: left !important;
 }
 
 button.DialogButton.smallFontSetting.Primary,
@@ -47618,6 +47615,7 @@ button.DialogButton.largeFontSetting.Primary {
 .FriendsSettingsFlashSection_ButtonRow {
   padding: 0 !important;
   background-color: transparent !important;
+  justify-content: left !important;
 }
 
 .FriendsSettingsFlashSection_Header {
@@ -47735,7 +47733,7 @@ button.DialogButton.largeFontSetting.Primary {
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   color: var(--zehn-color-text-primary) !important;
-  line-height: 32px !important;
+  line-height: normal !important;
   min-width: 100% !important;
 }
 
@@ -47744,7 +47742,7 @@ button.DialogButton.largeFontSetting.Primary {
   align-items: center !important;
   text-align: left !important;
   padding: 0 !important;
-  gap: 0 16px !important;
+  gap: var(--zehn-size-spacing-button) !important;
   flex-wrap: wrap !important;
 }
 
@@ -47780,7 +47778,6 @@ button.DialogButton.largeFontSetting.Primary {
 }
 
 ._3bRmSOJUVj1nNIriZ3YeMF .jTR51Ds1KV4MXKsqBWBPD:last-of-type {
-  flex-direction: column !important;
   align-self: start !important;
   gap: 0 !important;
 }
@@ -47816,6 +47813,7 @@ button.DialogButton.largeFontSetting.Primary {
   font-size: var(--zehn-size-14) !important;
   color: var(--zehn-color-text-primary) !important;
   text-transform: none !important;
+  margin-left: var(--zehn-size-spacing-xxs) !important;
 }
 
 /* ADVANCED */
