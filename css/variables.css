@@ -195,6 +195,7 @@
   --zehn-color-button-dialog-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-button-dialog-background-active-focus: var(--zehn-color-button-dialog-background-active);
   --zehn-color-button-dialog-background-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-dialog-background-selected: var(--zehn-color-accent-100);
   --zehn-color-button-dialog-border: transparent;
   --zehn-color-button-dialog-border-focus: var(--zehn-color-button-dialog-border);
   --zehn-color-button-dialog-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
@@ -202,6 +203,7 @@
   --zehn-color-button-dialog-border-active: transparent;
   --zehn-color-button-dialog-border-active-focus: var(--zehn-color-button-dialog-border-active);
   --zehn-color-button-dialog-border-disabled: transparent;
+  --zehn-color-button-dialog-border-selected: transparent;
   --zehn-color-button-dialog-text: var(--zehn-color-text-primary);
   --zehn-color-button-dialog-text-focus: var(--zehn-color-button-dialog-text);
   --zehn-color-button-dialog-text-hover: var(--zehn-color-text-primary);
@@ -209,6 +211,7 @@
   --zehn-color-button-dialog-text-active: var(--zehn-color-text-primary);
   --zehn-color-button-dialog-text-active-focus: var(--zehn-color-button-dialog-text-active);
   --zehn-color-button-dialog-text-disabled: var(--zehn-color-text-tertiary);
+  --zehn-color-button-dialog-text-selected: var(--zehn-color-text-primary);
   --zehn-color-button-dialog-icon: var(--zehn-color-icon-primary);
   --zehn-color-button-dialog-icon-focus: var(--zehn-color-button-dialog-icon);
   --zehn-color-button-dialog-icon-hover: var(--zehn-color-icon-primary);
@@ -216,6 +219,7 @@
   --zehn-color-button-dialog-icon-active: var(--zehn-color-icon-primary);
   --zehn-color-button-dialog-icon-active-focus: var(--zehn-color-button-dialog-icon-active);
   --zehn-color-button-dialog-icon-disabled: var(--zehn-color-icon-tertiary);
+  --zehn-color-button-dialog-icon-selected: var(--zehn-color-icon-primary);
 
   --zehn-color-button-app-background: transparent;
   --zehn-color-button-app-background-focus: var(--zehn-color-button-app-background);
@@ -224,6 +228,7 @@
   --zehn-color-button-app-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
   --zehn-color-button-app-background-active-focus: var(--zehn-color-button-app-background-active);
   --zehn-color-button-app-background-disabled: transparent;
+  --zehn-color-button-app-background-selected: var(--zehn-color-accent-100);
   --zehn-color-button-app-border: transparent;
   --zehn-color-button-app-border-focus: var(--zehn-color-button-app-border);
   --zehn-color-button-app-border-hover: transparent;
@@ -231,6 +236,7 @@
   --zehn-color-button-app-border-active: transparent;
   --zehn-color-button-app-border-active-focus: var(--zehn-color-button-app-border);
   --zehn-color-button-app-border-disabled: transparent;
+  --zehn-color-button-app-border-selected: transparent;
   --zehn-color-button-app-text: var(--zehn-color-text-primary);
   --zehn-color-button-app-text-focus: var(--zehn-color-button-app-text);
   --zehn-color-button-app-text-hover: var(--zehn-color-text-primary);
@@ -238,6 +244,7 @@
   --zehn-color-button-app-text-active: var(--zehn-color-text-primary);
   --zehn-color-button-app-text-active-focus: var(--zehn-color-button-app-text-active);
   --zehn-color-button-app-text-disabled: var(--zehn-color-text-tertiary);
+  --zehn-color-button-app-text-selected: var(--zehn-color-text-primary);
   --zehn-color-button-app-icon: var(--zehn-color-icon-primary);
   --zehn-color-button-app-icon-focus: var(--zehn-color-button-app-icon);
   --zehn-color-button-app-icon-hover: var(--zehn-color-icon-primary);
@@ -245,6 +252,7 @@
   --zehn-color-button-app-icon-active: var(--zehn-color-icon-primary);
   --zehn-color-button-app-icon-active-focus: var(--zehn-color-button-app-icon-active);
   --zehn-color-button-app-icon-disabled: var(--zehn-color-icon-tertiary);
+  --zehn-color-button-app-icon-selected: var(--zehn-color-icon-primary);
 
   --zehn-color-dropdown-dialog-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
   --zehn-color-dropdown-dialog-background-focus: var(--zehn-color-dropdown-dialog-background);
@@ -1677,13 +1685,13 @@
   --zehn-size-padding-xxxl: 64px;
 
   /* CORNER RADIUS */
-  --zehn-size-radius-square: 0px;
+  --zehn-size-radius-angular: 0px;
   --zehn-size-radius-xs: 2px;
   --zehn-size-radius-sm: 4px;
   --zehn-size-radius-md: 8px;
   --zehn-size-radius-lg: 16px;
   --zehn-size-radius-round: 9001px;
-  --zehn-size-radius-circle: 50%;
+  --zehn-size-radius-circular: 50%;
 
   /* STATUS DOT */
   --zehn-size-status-sm: 6px;
@@ -1733,31 +1741,32 @@
   --zehn-size-button-app: var(--zehn-size-button-md);
   --zehn-size-button-app-large: var(--zehn-size-button-lg);
   --zehn-size-button-app-border: 0;
-  --zehn-size-button-app-radius: var(--zehn-size-radius-square);
+  --zehn-size-button-app-radius: var(--zehn-size-radius-angular);
   --zehn-size-button-app-padding: 0;
   --zehn-size-button-app-padding-wide: 0 var(--zehn-size-padding-md);
+  --zehn-size-button-app-padding-dynamic: var(--zehn-size-padding-xs);
   --zehn-size-button-app-text: var(--zehn-size-14);
 
   --zehn-size-button-dialog: var(--zehn-size-button-md);
   --zehn-size-button-dialog-large: var(--zehn-size-button-lg);
   --zehn-size-button-dialog-border: 2px;
-  --zehn-size-button-dialog-radius: var(--zehn-size-radius-square);
-  --zehn-size-button-dialog-padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md);
-  --zehn-size-button-dialog-padding-column: var(--zehn-size-padding-md);
-  --zehn-size-button-dialog-padding-square: var(--zehn-size-padding-xs);
+  --zehn-size-button-dialog-radius: var(--zehn-size-radius-angular);
+  --zehn-size-button-dialog-padding: var(--zehn-size-padding-xs);
+  --zehn-size-button-dialog-padding-wide: var(--zehn-size-padding-xs) var(--zehn-size-padding-md);
+  --zehn-size-button-dialog-padding-dynamic: var(--zehn-size-padding-md);
   --zehn-size-button-dialog-text: var(--zehn-size-14);
   --zehn-size-button-dialog-line: 16px;
 
   /* CHECKBOX BUTTONS */
   --zehn-size-checkbox-dialog: 20px;
   --zehn-size-checkbox-dialog-border: 2px;
-  --zehn-size-checkbox-dialog-radius: var(--zehn-size-radius-square);
+  --zehn-size-checkbox-dialog-radius: var(--zehn-size-radius-angular);
   --zehn-size-checkbox-dialog-toggle: 16px;
 
   /* RADIO BUTTONS */
   --zehn-size-radio: 20px;
   --zehn-size-radio-border: 2px;
-  --zehn-size-radio-radius: var(--zehn-size-radius-circle);
+  --zehn-size-radio-radius: var(--zehn-size-radius-circular);
   --zehn-size-radio-toggle: 10px;
 
   /* SWITCH BUTONS */
@@ -1771,7 +1780,7 @@
   --zehn-size-input-app: 32px;
   --zehn-size-input-app-width: 100%;
   --zehn-size-input-app-border: 0;
-  --zehn-size-input-app-radius: var(--zehn-size-radius-square);
+  --zehn-size-input-app-radius: var(--zehn-size-radius-angular);
   --zehn-size-input-app-padding: 0 var(--zehn-size-padding-sm);
   --zehn-size-input-app-padding-search: 0 calc(var(--zehn-size-padding-sm) + var(--zehn-size-input-app)) 0 var(--zehn-size-padding-sm);
   --zehn-size-input-app-text: var(--zehn-size-14);
@@ -1780,7 +1789,7 @@
   --zehn-size-input-dialog: 32px;
   --zehn-size-input-dialog-width: 300px;
   --zehn-size-input-dialog-border: 2px;
-  --zehn-size-input-dialog-radius: var(--zehn-size-radius-square);
+  --zehn-size-input-dialog-radius: var(--zehn-size-radius-angular);
   --zehn-size-input-dialog-padding: 0 calc(var(--zehn-size-padding-sm) - var(--zehn-size-input-dialog-border));
   --zehn-size-input-dialog-text: var(--zehn-size-14);
   --zehn-size-input-dialog-line: 24px;
@@ -1789,7 +1798,7 @@
   --zehn-size-input-bar-context: var(--zehn-size-context-entry-height);
   --zehn-size-input-bar-width: 100%;
   --zehn-size-input-bar-border: 0;
-  --zehn-size-input-bar-radius: var(--zehn-size-radius-square);
+  --zehn-size-input-bar-radius: var(--zehn-size-radius-angular);
   --zehn-size-input-bar-padding: 0 var(--zehn-size-padding-md);
   --zehn-size-input-bar-text: var(--zehn-size-14);
   --zehn-size-input-bar-line: 24px;
@@ -1798,7 +1807,7 @@
   --zehn-size-input-url-context: var(--zehn-size-context-entry-height);
   --zehn-size-input-url-width: 100%;
   --zehn-size-input-url-border: 1px;
-  --zehn-size-input-url-radius: var(--zehn-size-radius-square);
+  --zehn-size-input-url-radius: var(--zehn-size-radius-angular);
   --zehn-size-input-url-padding: 0 var(--zehn-size-padding-md) 0 calc(var(--zehn-size-button-app) + var(--zehn-size-padding-xs));
   --zehn-size-input-url-text: var(--zehn-size-14);
   --zehn-size-input-url-line: 24px;
@@ -1807,7 +1816,7 @@
   --zehn-size-dropdown-app: 48px;
   --zehn-size-dropdown-app-width: fit-content;
   --zehn-size-dropdown-app-border: 0;
-  --zehn-size-dropdown-app-radius: var(--zehn-size-radius-square);
+  --zehn-size-dropdown-app-radius: var(--zehn-size-radius-angular);
   --zehn-size-dropdown-app-padding:  8px 16px;
   --zehn-size-dropdown-app-text: var(--zehn-size-14);
   --zehn-size-dropdown-app-text-other: var(--zehn-size-14);
@@ -1817,7 +1826,7 @@
   --zehn-size-dropdown-dialog: 32px;
   --zehn-size-dropdown-dialog-width: 300px;
   --zehn-size-dropdown-dialog-border: 2px;
-  --zehn-size-dropdown-dialog-radius: var(--zehn-size-radius-square);
+  --zehn-size-dropdown-dialog-radius: var(--zehn-size-radius-angular);
   --zehn-size-dropdown-dialog-padding: 0 8px 0 10px;
   --zehn-size-dropdown-dialog-text: var(--zehn-size-14);
   --zehn-size-dropdown-dialog-text-other: var(--zehn-size-12);
@@ -1828,7 +1837,7 @@
   --zehn-size-sorting: 100%;
   --zehn-size-sorting-width: fit-content;
   --zehn-size-sorting-border: 0;
-  --zehn-size-sorting-radius: var(--zehn-size-radius-square);
+  --zehn-size-sorting-radius: var(--zehn-size-radius-angular);
   --zehn-size-sorting-padding: 0;
   --zehn-size-sorting-text: var(--zehn-size-14);
   --zehn-size-sorting-line: 100%;
@@ -1836,7 +1845,7 @@
   /* SLIDERS */
   --zehn-size-slider-width: 400px;
   --zehn-size-slider-track: 2px;
-  --zehn-size-slider-track-radius: var(--zehn-size-radius-square);
+  --zehn-size-slider-track-radius: var(--zehn-size-radius-angular);
   --zehn-size-slider-handle-height: 24px;
   --zehn-size-slider-handle-width: 8px;
   --zehn-size-slider-handle-radius: var(--zehn-size-radius-round);
@@ -1846,7 +1855,7 @@
   --zehn-size-progressbar-thin: 2px;
   --zehn-size-progressbar-normal: 4px;
   --zehn-size-progressbar-thick: 8px;
-  --zehn-size-progressbar-radius: var(--zehn-size-radius-square);
+  --zehn-size-progressbar-radius: var(--zehn-size-radius-angular);
 
   /* TIMELINE */
   --zehn-size-timeline: 2px;
@@ -1887,14 +1896,14 @@
   --zehn-size-context-padding-nav: 0 0 8px 0;
   --zehn-size-context-padding-controls: 16px;
   --zehn-size-context-border: 1px;
-  --zehn-size-context-radius: var(--zehn-size-radius-square);
+  --zehn-size-context-radius: var(--zehn-size-radius-angular);
   --zehn-size-context-entry-height: 32px;
   --zehn-size-context-entry-height-large: 48px;
   --zehn-size-context-entry-width: 100%;
   --zehn-size-context-entry-border: 1px;
   --zehn-size-context-entry-padding: 8px 16px;
   --zehn-size-context-entry-padding-large: 16px 16px;
-  --zehn-size-context-entry-radius: var(--zehn-size-radius-square);
+  --zehn-size-context-entry-radius: var(--zehn-size-radius-angular);
   --zehn-size-context-text: 14px;
   --zehn-size-context-text-other: 12px;
   --zehn-size-context-line: 16px;
@@ -1906,7 +1915,7 @@
   --zehn-size-tooltip-width: 300px;
   --zehn-size-tooltip-width-app: 220px;
   --zehn-size-tooltip-border: 1px;
-  --zehn-size-tooltip-radius: var(--zehn-size-radius-square);
+  --zehn-size-tooltip-radius: var(--zehn-size-radius-angular);
   --zehn-size-tooltip-padding: 8px;
   --zehn-size-tooltip-text: 12px;
   --zehn-size-tooltip-gap: var(--zehn-size-spacing-xs);
@@ -1966,6 +1975,7 @@
 
   /* DOWNLOADS */
   --zehn-size-downloads: 200px;
+  --zehn-size-downloads-section-header: 48px;
 
   /* DIALOG */
   --zehn-size-dialog-padding: 16px;
@@ -1987,15 +1997,18 @@
   --zehn-size-friends-voice: 48px;
   --zehn-size-friends-voice-compact: 32px;
   --zehn-size-friends-group: 32px;
+  --zehn-size-friends-entry: 48px;
+  --zehn-size-friends-entry-compact: 32px;
 
   /* CHAT */
   --zehn-size-chat-header: 48px;
   --zehn-size-chat-embed: 640px;
-  --zehn-size-chat-embed-radius: var(--zehn-size-radius-square);
+  --zehn-size-chat-embed-radius: var(--zehn-size-radius-angular);
   --zehn-size-chat-embed-border: 0 0 2px 0;
   --zehn-size-chat-embed-padding: 16px;
   --zehn-size-chat-tab: 200px;
   --zehn-size-chat-entry: 48px;
+  --zehn-size-chat-broadcast-channelbar: 48px;
 
   /* MEDIA */
   --zehn-size-media-controlbar: 48px;
@@ -2003,6 +2016,13 @@
 
   /* SERVERS */
   --zehn-size-server-controlbar: 48px;
+
+  /* CLOCK */
+  --zehn-size-clock-tab: 48px;
+  --zehn-size-clock-timer: 48px;
+
+  /* NOTES */
+  --zehn-size-notes-format: 48px;
 
   /* BROWSER */
   --zehn-size-browser-tab: 200px;

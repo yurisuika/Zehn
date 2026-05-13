@@ -271,8 +271,8 @@ Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX
 
 /* WRAP NAVIGATION CONTROLS FOR BACKGROUND -------------------------------------------------------------------------- */
 
-Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8:nth-child(2)', ['.zehnForwardsWrapper', '#zehnForwardsWrapper'], false);
-Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8', ['.zehnBackwardsWrapper', '#zehnBackwardsWrapper'], false);
+Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8:nth-child(2)', ['#zehnForwardsWrapper'], false);
+Zehn.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._25lBLzuVeYAUG279up4xP8', ['#zehnBackwardsWrapper'], false);
 
 /* ADD SPACER FOR NAVBAR DOWNLOADS STATUS --------------------------------------------------------------------------- */
 
