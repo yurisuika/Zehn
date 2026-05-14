@@ -1,0 +1,57 @@
+@use 'checkbox/dialog' as dialog;
+
+// GENERIC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.DialogCheckbox_Container,
+.DialogCheckbox_Container.Disabled {
+  padding: 0 !important;
+  margin: 0 !important;
+  align-items: center !important;
+  display: flex !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+// LABEL
+.DialogBody .useDefaultsCheckBox,
+.DialogBody.useDefaults .useDefaultsCheckBox {
+  color: var(--zehn-color-text-control) !important;
+  size: var(--zehn-size-text-control) !important;
+}
+
+input[type=checkbox] {
+  @include dialog.preset("", ":checked", "::after", ":checked::after");
+}
+
+.DialogCheckbox {
+  @include dialog.preset("", ".Active", " svg.SVGIcon_DialogCheck", ".Active svg.SVGIcon_DialogCheck", ".Disabled");
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOGIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.LBS7IDpob52Sb4ZoKobh0 ._28MB9LhS2kVTalIp0NHDv4 {
+  width: var(--zehn-size-checkbox-dialog-toggle) !important;
+  height: var(--zehn-size-checkbox-dialog-toggle) !important;
+  position: absolute !important;
+  inset: 0 !important;
+}
+
+.LBS7IDpob52Sb4ZoKobh0 {
+  @include dialog.preset("", ":has(._28MB9LhS2kVTalIp0NHDv4)", ":empty::after", " ._28MB9LhS2kVTalIp0NHDv4 svg.SVGIcon_Check");
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

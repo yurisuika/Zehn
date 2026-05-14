@@ -1,0 +1,287 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  opacity: 1 !important;
+
+  filter: none !important;
+
+  margin: auto 0 !important;
+
+  border-width: var(--zehn-size-checkbox-dialog-border) !important;
+  border-style: solid !important;
+
+  outline: none !important;
+
+  svg {
+    * {
+      display: none !important; 
+    }
+  }
+}
+
+@mixin base-check {
+  content: "" !important;
+  display: block !important;
+  transition: none !important;
+  position: absolute !important;
+
+  stroke: transparent !important;
+
+  margin: auto !important;
+
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-checkbox-dialog-toggle) !important;
+  -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size {
+  width: var(--zehn-size-checkbox-dialog) !important;
+  min-width: var(--zehn-size-checkbox-dialog) !important;
+
+  height: var(--zehn-size-checkbox-dialog) !important;
+  min-height: var(--zehn-size-checkbox-dialog) !important;
+}
+
+@mixin size-check {
+  width: var(--zehn-size-checkbox-dialog-toggle) !important;
+
+  height: var(--zehn-size-checkbox-dialog-toggle) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape-default {
+  border-radius: var(--zehn-size-checkbox-dialog-radius) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin look-off {
+  background: var(--zehn-color-checkbox-dialog-background-off) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-off) !important;
+}
+
+@mixin look-off-focus {
+  background: var(--zehn-color-checkbox-dialog-background-off-focus) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-off-focus) !important;
+}
+
+@mixin look-off-hover {
+  background: var(--zehn-color-checkbox-dialog-background-off-hover) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-off-hover) !important;
+}
+
+@mixin look-off-hover-focus {
+  background: var(--zehn-color-checkbox-dialog-background-off-hover-focus) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-off-hover-focus) !important;
+}
+
+@mixin look-off-active {
+  background: var(--zehn-color-checkbox-dialog-background-off-active) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-off-active) !important;
+}
+
+@mixin look-off-active-focus {
+  background: var(--zehn-color-checkbox-dialog-background-off-active-focus) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-off-active-focus) !important;
+}
+
+@mixin look-off-disabled {
+  background: var(--zehn-color-checkbox-dialog-background-off-disabled) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-off-disabled) !important;
+}
+
+@mixin look-on {
+  background: var(--zehn-color-checkbox-dialog-background-on) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-on) !important;
+}
+
+@mixin look-on-focus {
+  background: var(--zehn-color-checkbox-dialog-background-on-focus) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-on-focus) !important;
+}
+
+@mixin look-on-hover {
+  background: var(--zehn-color-checkbox-dialog-background-on-hover) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-on-hover) !important;
+}
+
+@mixin look-on-hover-focus {
+  background: var(--zehn-color-checkbox-dialog-background-on-hover-focus) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-on-hover-focus) !important;
+}
+
+@mixin look-on-active {
+  background: var(--zehn-color-checkbox-dialog-background-on-active) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-on-active) !important;
+}
+
+@mixin look-on-active-focus {
+  background: var(--zehn-color-checkbox-dialog-background-on-active-focus) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-on-active-focus) !important;
+}
+
+@mixin look-on-disabled {
+  background: var(--zehn-color-checkbox-dialog-background-on-disabled) !important;
+  border-color: var(--zehn-color-checkbox-dialog-border-on-disabled) !important;
+}
+
+@mixin looks($off, $on, $disabled) {
+  &#{$off} { @include look-off; }
+  &#{$off}:is(:focus) { @include look-off-focus; }
+  &#{$off}:is(:hover) { @include look-off-hover; }
+  &#{$off}:is(:hover:focus) { @include look-off-hover-focus; }
+  &#{$off}:is(:active) { @include look-off-active; }
+  &#{$off}:is(:active:focus) { @include look-off-active-focus; }
+  &#{$off}:is(#{$disabled}) { @include look-off-disabled; }
+
+  &#{$on} { @include look-on; }
+  &#{$on}:is(:focus) { @include look-on-focus; }
+  &#{$on}:is(:hover) { @include look-on-hover; }
+  &#{$on}:is(:hover:focus) { @include look-on-hover-focus; }
+  &#{$on}:is(:active) { @include look-on-active; }
+  &#{$on}:is(:active:focus) { @include look-on-active-focus; }
+  &#{$on}:is(#{$disabled}) { @include look-on-disabled; }
+}
+
+@mixin look-check-off {
+  background: var(--zehn-color-checkbox-dialog-toggle-off) !important;
+}
+
+@mixin look-check-off-focus {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-off-focus) !important;
+}
+
+@mixin look-check-off-hover {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-off-hover) !important;
+}
+
+@mixin look-check-off-hover-focus {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-off-hover-focus) !important;
+}
+
+@mixin look-check-off-active {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-off-active) !important;
+}
+
+@mixin look-check-off-active-focus {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-off-active-focus) !important;
+}
+
+@mixin look-check-off-disabled {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-off-disabled) !important;
+}
+
+@mixin look-check-on {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-on) !important;
+}
+
+@mixin look-check-on-focus {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-on-focus) !important;
+}
+
+@mixin look-check-on-hover {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-on-hover) !important;
+}
+
+@mixin look-check-on-hover-focus {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-on-hover-focus) !important;
+}
+
+@mixin look-check-on-active {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-on-active) !important;
+}
+
+@mixin look-check-on-active-focus {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-on-active-focus) !important;
+}
+
+@mixin look-check-on-disabled {
+  background-color: var(--zehn-color-checkbox-dialog-toggle-on-disabled) !important;
+}
+
+@mixin looks-check($check-off, $check-on, $disabled) {
+  &#{$check-off} { @include look-check-off; }
+  &:is(:focus)#{$check-off} { @include look-check-off-focus; }
+  &:is(:hover)#{$check-off} { @include look-check-off-hover; }
+  &:is(:hover:focus)#{$check-off} { @include look-check-off-hover-focus; }
+  &:is(:active)#{$check-off} { @include look-check-off-active; }
+  &:is(:active:focus)#{$check-off} { @include look-check-off-active-focus; }
+  &:is(#{$disabled})#{$check-off} { @include look-check-off-disabled; }
+
+  &#{$check-on} { @include look-check-on; }
+  &:is(:focus)#{$check-on} { @include look-check-on-focus; }
+  &:is(:hover)#{$check-on} { @include look-check-on-hover; }
+  &:is(:hover:focus)#{$check-on} { @include look-check-on-hover-focus; }
+  &:is(:active)#{$check-on} { @include look-check-on-active; }
+  &:is(:active:focus)#{$check-on} { @include look-check-on-active-focus; }
+  &:is(#{$disabled})#{$check-on} { @include look-check-on-disabled; }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset($off, $on, $check-off, $check-on, $disabled: ":disabled") {
+  @include base;
+  @include size;
+  @include shape-default;
+  @include looks($off, $on, $disabled);
+
+  &#{$check-off},
+  &#{$check-on} {
+    @include base-check;
+    @include size-check;
+  }
+  @include looks-check($check-off, $check-on, $disabled);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

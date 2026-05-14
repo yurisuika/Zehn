@@ -1,0 +1,311 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  // display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  margin: 0 !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
+
+  border: none !important;
+
+  outline-width: var(--zehn-size-button-dialog-border) !important;
+  outline-style: solid !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
+
+  svg {
+    // display: block !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+
+    width: var(--zehn-size-icon-md) !important;
+    min-height: var(--zehn-size-icon-md) !important;
+    height: var(--zehn-size-icon-md) !important;
+    min-width: var(--zehn-size-icon-md) !important;
+
+    margin: auto 0 !important;
+    padding: 0 !important;
+
+    mask-size: var(--zehn-size-icon-md) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+
+    * {
+      display: none !important; 
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size-symmetric($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: $height !important;
+  min-width: $height !important;
+  max-width: $height !important;
+
+  line-height: var(--zehn-size-button-dialog-line) !important;
+
+  padding: var(--zehn-size-button-dialog-padding) !important;
+}
+
+@mixin size-asymmetric($height, $width) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: $width !important;
+  min-width: $width !important;
+  max-width: $width !important;
+
+  line-height: var(--zehn-size-button-dialog-line) !important;
+
+  padding: var(--zehn-size-button-dialog-padding) !important;
+}
+
+@mixin size-wide($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: fit-content !important;
+  min-width: fit-content !important;
+  max-width: fit-content !important;
+
+  line-height: var(--zehn-size-button-dialog-line) !important;
+
+  padding: var(--zehn-size-button-dialog-padding-wide) !important;
+}
+
+@mixin size-dynamic($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: auto !important;
+  min-width: fit-content !important;
+  max-width: 100% !important;
+
+  line-height: var(--zehn-size-button-dialog-line) !important;
+
+  padding: var(--zehn-size-button-dialog-padding-dynamic) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape-default {
+  border-radius: var(--zehn-size-button-dialog-radius) !important;
+}
+
+@mixin shape-angular {
+  border-radius: var(--zehn-size-radius-angular) !important;
+}
+
+@mixin shape-circular {
+  border-radius: var(--zehn-size-radius-circular) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin look {
+  background: var(--zehn-color-button-dialog-background) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon) !important;
+  }
+}
+
+@mixin look-focus {
+  background: var(--zehn-color-button-dialog-background-focus) !important;
+  color: var(--zehn-color-button-dialog-text-focus) !important;
+  outline-color: var(--zehn-color-button-dialog-border-focus) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon-focus) !important;
+  }
+}
+
+@mixin look-hover {
+  background: var(--zehn-color-button-dialog-background-hover) !important;
+  color: var(--zehn-color-button-dialog-text-hover) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon-hover) !important;
+  }
+}
+
+@mixin look-hover-focus {
+  background: var(--zehn-color-button-dialog-background-hover-focus) !important;
+  color: var(--zehn-color-button-dialog-text-hover-focus) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover-focus) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon-hover-focus) !important;
+  }
+}
+
+@mixin look-active {
+  background: var(--zehn-color-button-dialog-background-active) !important;
+  color: var(--zehn-color-button-dialog-text-active) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon-active) !important;
+  }
+}
+
+@mixin look-active-focus {
+  background: var(--zehn-color-button-dialog-background-active-focus) !important;
+  color: var(--zehn-color-button-dialog-text-active-focus) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active-focus) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon-active-focus) !important;
+  }
+}
+
+@mixin look-disabled {
+  pointer-events: none !important;
+  background: var(--zehn-color-button-dialog-background-disabled) !important;
+  color: var(--zehn-color-button-dialog-text-disabled) !important;
+  outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon-disabled) !important;
+  }
+}
+
+@mixin looks($disabled) {
+  @include look;
+  &:is(:focus, :enabled:focus) { @include look-focus; }
+  &:is(:hover, :enabled:hover) { @include look-hover; }
+  &:is(:hover:focus, :enabled:hover:focus) { @include look-hover-focus; }
+  &:is(:active, :enabled:active) { @include look-active; }
+  &:is(:active:focus, :enabled:active:focus) { @include look-active-focus; }
+  &:is(:disabled, #{$disabled}) { @include look-disabled; }
+}
+
+@mixin look-selected {
+  pointer-events: none !important;
+  background: var(--zehn-color-button-dialog-background-selected) !important;
+  color: var(--zehn-color-button-dialog-text-selected) !important;
+  border-color: var(--zehn-color-button-dialog-border-selected) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-dialog-icon-selected) !important;
+  }
+}
+
+@mixin looks-selected($selected) {
+  &:is(#{$selected}, #{$selected}:is(:focus, :hover, :hover:focus, :active, :active:focus)) { @include look-selected; }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset-symmetric($height, $disabled: ".Disabled") {
+  @include base;
+  @include size-symmetric($height);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+@mixin preset-asymmetric($height, $width, $disabled: ".Disabled") {
+  @include base;
+  @include size-asymmetric($height, $width);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+@mixin preset-wide($height, $disabled: ".Disabled") {
+  @include base;
+  @include size-wide($height);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+@mixin preset-tall($height, $disabled: ".Disabled") {
+  @include base;
+  @include size-tall($height);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+@mixin preset-dynamic($height, $disabled: ".Disabled") {
+  @include base;
+  @include size-dynamic($height);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

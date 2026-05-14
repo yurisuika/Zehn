@@ -1,0 +1,41 @@
+// REVEAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.zehnReveal {
+  position: relative;
+  mask-position: -9001px -9001px;
+}
+
+.zehnReveal:hover::before {
+  background-color: var(--zehn-color-reveal);
+}
+
+.zehnReveal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--zehn-size-reveal-border) solid var(--zehn-color-reveal-border);
+  -webkit-mask-image: radial-gradient(circle closest-side, white, transparent);
+  mask-origin: border-box;
+  mask-position: inherit;
+  mask-size: inherit;
+  mask-repeat: no-repeat;
+  opacity: var(--zehn-reveal);
+  pointer-events: none;
+}
+
+.zehnReveal.zehnRevealBackgroundOnly::before {
+  border: none;
+}
+
+.zehnReveal.zehnRevealBorderOnly::before {
+  background-color: transparent;
+}
+
+.zehnReveal._36CGU2t5Vavx0_9dwem6kb::before,
+.zehnReveal:disabled::before,
+.zehnReveal.Disabled::before,
+.zehnReveal._1f6yYACTilZQ2dmqGd5zXk::before {
+  opacity: 0;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,195 @@
+// CONTAINER
+.DialogSlider_Container,
+._198v6zB5mZ5FWG0wpQU_3m,
+.SliderControlPanelGroup {
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+  flex-wrap: wrap !important;
+}
+
+// INNER CONTAINER
+._1udlGGE4F5pggcpxovorUd,
+.SliderControl {
+  height: var(--zehn-size-slider-handle-height) !important;
+}
+
+.VoiceSettings .DialogSlider_Container .DialogSlider_Slider,
+._1aw7cA3mAZfWt8idAlVJWi .SliderControlPanelGroup .SliderControl {
+  width: var(--zehn-size-slider-width) !important;
+  min-width:var(--zehn-size-slider-width) !important;
+}
+
+.ContextMenuPopupBody ._1aw7cA3mAZfWt8idAlVJWi .SliderControlPanelGroup .SliderControl {
+  // FOR SOUNDTRACK NAVBAR POPOUT
+  width: 100% !important;
+}
+
+// SLIDER
+:root {
+  --slider-margin: calc((var(--zehn-size-slider-handle-height) - var(--zehn-size-slider-track)) / 2);
+  --slider-margin-negative: calc(-1 * var(--slider-margin));
+  --track-end: calc(var(--zehn-size-slider-handle-width) / 2);
+  --track-end-negative: calc(-1 * var(--track-end));
+}
+
+.DialogSlider_Slider,
+._2_vG6TwMW2XtyLlTEaODH9,
+.SliderTrack {
+  background: var(--zehn-color-slider-background) !important;
+  border-radius: var(--zehn-size-slider-track-radius) !important;
+  height: var(--zehn-size-slider-track) !important;
+  width: 100% !important;
+  margin: var(--slider-margin) 0 !important;
+  border: unset !important;
+  margin-right: 0 !important;
+
+  &:hover {
+    background: var(--zehn-color-slider-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-slider-background-active) !important;
+  }
+}
+
+.DialogSlider_Slider {
+  width: 100% !important;
+  margin: var(--slider-margin) 0 !important;
+  border: unset !important;
+  margin-right: 0 !important;
+  border-left: var(--track-end) solid var(--zehn-color-slider-track) !important;
+  border-right: var(--track-end) solid transparent !important;
+  order: 3 !important;
+}
+
+._2_vG6TwMW2XtyLlTEaODH9,
+.SliderTrack {
+  --left-track-color: var(--zehn-color-slider-track) !important;
+  overflow: visible !important;
+  transition: none !important;
+}
+
+// TRACK VALUE ?????
+.DialogSlider_Value {
+  background: var(--zehn-color-slider-track) !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+}
+
+// HANDLE
+.DialogSlider_Grabber,
+._11PBfip2UlKlY3vWSz8PA4,
+._11PBfip2UlKlY3vWSz8PA4.SliderHandle
+._3DLyrg7YP5cNP9HKda62qd ._1AJ4um4afrf4IzK9Sg4jPH .SliderControlPanelGroup ._2_vG6TwMW2XtyLlTEaODH9::after {
+  background: var(--zehn-color-slider-handle) !important;
+  border-radius: var(--zehn-size-slider-handle-radius) !important;
+  width: var(--zehn-size-slider-handle-width) !important;
+  height: var(--zehn-size-slider-handle-height) !important;
+  margin: 0 !important;
+  box-sizing: content-box !important;
+}
+
+.DialogSlider_Grabber {
+  top: var(--slider-margin-negative) !important;
+  bottom: 0 !important;
+  margin-left: var(--track-end-negative) !important;
+}
+
+._3DLyrg7YP5cNP9HKda62qd ._1AJ4um4afrf4IzK9Sg4jPH .SliderControlPanelGroup ._2_vG6TwMW2XtyLlTEaODH9::after {
+  content: "" !important;
+  position: absolute !important;
+  --normalized-fill-start: calc((100% - var(--zehn-size-slider-handle-width)) * min(var(--normalized-slider-value), 0)) !important;
+  --normalized-fill-end: calc((100% - var(--zehn-size-slider-handle-width)) * max(var(--normalized-slider-value), 0)) !important;
+  --normalized-width-handle: calc(var(--normalized-fill-end) - var(--normalized-fill-start)) !important;
+  --inverse-normalized-default-value: calc(1 - var(--normalized-slider-default-value)) !important;
+  left: var(--normalized-width-handle) !important;
+  top: var(--slider-margin-negative) !important;
+}
+
+.DialogSlider_Slider:hover .DialogSlider_Grabber,
+._1udlGGE4F5pggcpxovorUd:hover ._11PBfip2UlKlY3vWSz8PA4,
+._3DLyrg7YP5cNP9HKda62qd ._1AJ4um4afrf4IzK9Sg4jPH .SliderControlPanelGroup ._23hjXB5XSry64xirVGpWAY:hover ._2_vG6TwMW2XtyLlTEaODH9::after {
+  background: var(--zehn-color-slider-handle-hover) !important;
+}
+
+.DialogSlider_Slider:active .DialogSlider_Grabber,
+._1udlGGE4F5pggcpxovorUd:active ._11PBfip2UlKlY3vWSz8PA4,
+._3DLyrg7YP5cNP9HKda62qd ._1AJ4um4afrf4IzK9Sg4jPH .SliderControlPanelGroup ._23hjXB5XSry64xirVGpWAY:active ._2_vG6TwMW2XtyLlTEaODH9::after {
+  background: var(--zehn-color-slider-handle-active) !important;
+}
+
+// NOTCH LABEL
+.dbACWBb8zr4cf4u05jQ4x {
+  color: var(--zehn-color-text-secondary) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: var(--zehn-size-24) !important;
+}
+
+._2yM7SDNRgnEnGEZIf-WSoG {
+  width: var(--zehn-size-slider-width) !important;
+}
+
+// SETTINGS SLIDER
+._2_vG6TwMW2XtyLlTEaODH9::before,
+.SliderTrack::before {
+  border-radius: var(--zehn-size-radius-angular) !important;
+}
+
+._8xNY6EWVZsDfOfUqDrus-,
+.SliderHandleContainer {
+  transform: translateX(calc(-100% * var(--inverse-normalized-value) + var(--zehn-size-slider-handle-width) * var(--inverse-normalized-value))) !important;
+}
+
+._2aCoHO7mXYYdPXMN0USBAW {
+  transform: translateX(calc(-100% * var(--inverse-normalized-default-value) + var(--track-end) * var(--inverse-normalized-default-value))) translateY(17px) !important;
+}
+
+._23hjXB5XSry64xirVGpWAY._2vIQRDODaxmltxEdCSbuYf {
+  padding-top: 0 !important;
+}
+
+// TICK
+._1NgUy7a2LKuF-moe-rzsiH {
+  width: 1px !important;
+  height: 4px !important;
+}
+
+._1NgUy7a2LKuF-moe-rzsiH::before {
+  position: absolute !important;
+  content: "" !important;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: var(--zehn-color-slider-default) !important;
+}
+
+._1NgUy7a2LKuF-moe-rzsiH>svg {
+  width: 1px !important;
+  margin-top: 0 !important;
+  color: var(--zehn-color-slider-default) !important;
+  opacity: 0 !important;
+}
+
+// EXPLAINER
+.DialogLabelExplainer {
+  margin: 0 !important;
+  color: var(--zehn-color-text-description) !important;
+  font-size: var(--zehn-size-text-description) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  text-align: left !important;
+  line-height: var(--zehn-size-24) !important;
+  order: 2 !important;
+}
+
+// LABEL
+.DialogSlider_Container .DialogLabel {
+  color: var(--zehn-color-text-label) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  min-width: fit-content !important;
+  line-height: var(--zehn-size-24) !important;
+  order: 1 !important;
+}

@@ -1,0 +1,976 @@
+@use 'button/dialog' as dialog;
+@use 'button/app' as app;
+
+// GLOBAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+button {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+button.DialogButton::before {
+  box-shadow: none !important;
+  transition: none !important;
+  opacity: 1;
+}
+
+button .tool-tip-source {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+// GENERIC
+button.DialogButton,
+button.DialogButton:where(.Primary, .Small) {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// TABLE HEADER
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._2_4_nZy-T2C3pHa81tGH76 ._3mCrTKGesl-jD-k-buQ13_ {
+  @include app.preset-symmetric(var(--zehn-size-table-header));
+}
+
+// FIND BAR
+._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd.DialogButton._DialogLayout {
+  @include app.preset-symmetric(var(--zehn-size-find));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOGIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// USERS - MENU
+._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton,
+._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton ._sGyh60_xjv7maN2X2ZXu {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include app.shape-circular;
+}
+
+// LOGIN - QR
+._464mFQmvIW2e9TQypXX7W ._2ltn2BK4fnrPEGzNwxx6bx button.DialogButton {
+  @include app.preset-symmetric(100%);
+}
+
+// LOGIN - SUBMIT INFO
+.DjSvCZoKKfoNSmarsEcTS {
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FRIENDS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// TITLEBAR
+#zehnToggleFriendsHeader {
+  position: relative;
+  left: 0;
+  top: 0;
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control));
+}
+
+// HEADER - REMOTE PLAY TOGETHER
+._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// HEADER - PRIMARY BUTTONS
+#zehnToggleUser,
+.friendRequestButton,
+.addFriendButton,
+.searchIconButton {
+  cursor: pointer !important;
+  flex-grow: 1 !important;
+  @include app.preset-dynamic(var(--zehn-size-friends-buttons));
+}
+
+// HEADER - INVITE CONFIRMATION
+.friendInviteButton {
+  position: relative !important;
+  @include app.preset-symmetric(var(--zehn-size-friends-entry));
+}
+
+.compactView .friendInviteButton {
+  position: relative !important;
+  @include app.preset-symmetric(var(--zehn-size-friends-entry-compact));
+}
+
+// HEADER - INVITE CANCEL
+.confirmInviteRequestContainer .confirmInviteButton {
+  @include app.preset-dynamic(var(--zehn-size-button-app), ".dim");
+}
+
+// HEADER - VOICE CONTROLS
+.friendListHeaderContainer .VoiceControlPanelButton {
+  flex-grow: 1 !important;
+  @include app.preset-dynamic(var(--zehn-size-friends-voice));
+}
+
+.compactView .friendListHeaderContainer .VoiceControlPanelButton {
+  flex-grow: 1 !important;
+  @include app.preset-dynamic(var(--zehn-size-friends-voice-compact));
+}
+
+// LIST - VOICE CONTROLS
+.chatRoomVoiceChannel .chatRoomTextChannel,
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel,
+.chatRoomVoiceChannel .VoiceControlPanelButton,
+.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include app.shape-circular;
+}
+
+// OFFLINE
+._3t-tVOpu2n074cjZsygYfm .hL2FPh5NpOjzuylSWv4GY {
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CHAT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// TITLEBAR
+.chatTabSelector,
+.friendSettingsButton,
+.chatTabOpenFriendsList,
+.friendCollapseButton {
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control));
+}
+
+// HEADER
+.zehnToggleChannelList,
+.zehnToggleSettingsButtons,
+.chatRoomGroupHeader .broadcastInfoContainer .thumbnail,
+.MemberListOption,
+.MemberListOption.ToggleMemberListView,
+.chatRoomButton,
+.doGxCBJrGimabHm365bOV {
+  @include app.preset-symmetric(var(--zehn-size-chat-header));
+}
+
+// CHANNEL LIST - PIN/UNPIN
+.chatRoomGroupNavCollapseExpand {
+  @include app.preset-asymmetric(var(--zehn-size-pagelist-entry), 100%);
+}
+
+// ENTRY
+._39xGjKkRIIE7HwloXCWT41,
+.ChatMessageEntryVoice.Inactive,
+.ChatMessageEntryVoice.Active,
+.RVIs84dAE6wHcjH9tkinc {
+  display: block !important;
+  @include app.preset-symmetric(var(--zehn-size-chat-entry), ".jaQN2IyN4P8LZXJ6P11qy");
+}
+
+// EMBED - INVITE CLOSE
+.msg.ChatMessageInvite .closeButton {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// EMBED - VIDEO CLOSE
+._1FRLI2bl5lQd1WTvywZUl0._3C_TSOqWcAoh-WTAh3LLLd>div:not([class]) {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// EMBED - VIEW STORE
+._3YKzzMnXjrp4XBGh0BPUP4 {
+  @include app.preset-dynamic(var(--zehn-size-button-app));
+}
+
+// EMBED - COPY LINK
+._3SCtLxKknXT2PcQStMloQh {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// EMBED - CONTROLS
+a.chatImageURL,
+.BBCodeCollapseControl,
+.BBCodeResizeControl,
+.BBCodeRestoreControl {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// EMBED - INVITES
+.inviteButton,
+.inviteButtonJoinChat,
+.ChatMessageInvite .DialogButton,
+.DialogButton.Primary.inviteButtonWatchBroadcast {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// EMBED - GROUP INVITE ACCEPT
+.acceptButtonsGroup button.DialogButton.GreenPlay {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// BROADCAST - CLOSE
+.STV_BroadcastClose {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// BROADCAST - CHANNEL TAB PANEL
+.BroadcastChatExpander,
+.chatBody .ChatBodyControls .showBothTabs,
+.chatBody .ChatBodyControls .Close {
+  @include app.preset-symmetric(var(--zehn-size-chat-broadcast-channelbar));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+// LIBRARY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// NAVBAR - ROOT TOGGLE
+#zehnToggleNavigation {
+  align-self: baseline;
+  order: 0;
+  z-index: 10;
+  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
+}
+
+// NAVBAR - FORWARD/BACKWARD
+#zehnBackwardsWrapper,
+#zehnForwardsWrapper {
+  position: relative;
+  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), ":has(._2cO0HdvLEGAdhosLekWsmo)");
+
+  svg._25lBLzuVeYAUG279up4xP8 {
+    width: 100% !important;
+  }
+}
+
+#zehnToggleTheaterMode {
+  order: 99;
+  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
+}
+
+// UPDATE BAR ALERT
+._2ohOQgahhMYnIEfAQmv9B8 {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// SIDEBAR
+#zehnToggleSidebarSearch,
+.uE7Pj4tb2n3_Bx4vjEX0a.rkfSfuCLRt8sqpkXJqxYo,
+._2TKEazUUS3TlniZfpc8OOe>div,
+._3AhYljPF4e4E8LaBt-FoY0,
+._2CEKFex6JMsAse2lqMMjUp,
+._3mzKdQXht__YHo6PX1LmB6 {
+  cursor: pointer !important;
+  flex: 1 !important;
+  @include app.preset-dynamic(var(--zehn-size-library-sidebar));
+}
+
+// SIDEBAR - BUTTON NOT DISPLAYED
+.uE7Pj4tb2n3_Bx4vjEX0a {
+  flex: 1 !important;
+  @include app.preset-asymmetric(var(--zehn-size-library-sidebar), 0px);
+}
+
+// HOME - PREPURCHASE RELEASE
+._2Ae5emb7JLG4NvS2OmutTx ._1moqKkq1K4nAp1XqDtnRdQ .rglD9tOi-qd15GgYT2iJK .y1gug7JSW8Vst7YSxkKV- .p9KmcbRBNrAiCVV-9x7FJ {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog-large));
+}
+
+// SHOWCASE - HEADER
+#zehnToggleWhatsNew,
+.steam-easygrid .easygrid-button.DialogButton,
+._3cK5jtEHkhfw50DntUGWjp {
+  @include app.preset-symmetric(var(--zehn-size-library-showcase));
+}
+
+// SHOWCASE - COLLECTION EDIT
+._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._8JUfQypf4Uxt2i_hxBk_t,
+._3vDj4xewvplaiGsjeunxyx ._1qkt419yLi7E3LkTrMtdm4 {
+  @include app.preset-wide(var(--zehn-size-library-showcase));
+}
+
+// SHOWCASE - REORDER
+._1dy2s5YuBOYnRrupJmLfRR .MXh6nju1KU9_oaQCaR06e.DialogButton.Primary,
+._23SnllqT_AqZ1C_QHcNQ4Z._2Ho8z58cxQIJljp55uGkdt {
+  @include app.preset-asymmetric(var(--zehn-size-library-showcase), 100%);
+}
+
+// SHOWCASE - WHAT'S NEW - PRIORITY NOTICE
+._17uEBe5Ri8TMsnfELvs8-N ._2sdvic79rOzTYDZw2nrgmL {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  margin: auto 0 !important;
+}
+
+// GAME - PRELOAD
+.p9KmcbRBNrAiCVV-9x7FJ {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// GAME - PLAYBAR
+.zehnToggleDetails,
+.zehnToggleCommunity,
+.zehnToggleActivity,
+._2q-gZ3XJzlvSGHSF-GvSmi,
+._2q-gZ3XJzlvSGHSF-GvSmi._2AzIX5kl9k6JnxLfR5H4kX,
+._3qDWQGB0rtwM3qpXTb11Q- {
+  @include app.preset-symmetric(var(--zehn-size-library-playbar));
+}
+
+// GAME - PLAYBAR - ACTION
+._3ydigb6zZAjJ0JCDgHwSYA,
+._3ydigb6zZAjJ0JCDgHwSYA._2AzIX5kl9k6JnxLfR5H4kX {
+  @include app.preset-dynamic(var(--zehn-size-library-playbar));
+}
+
+// GAME - SPOTLIGHT - POST GAME SUMMARY
+._14b-hQsLwSwYcELtknxCUX._3qlJ0L41KQFqUTzVQKFERC,
+._3IIEUTw03Vm3Mk54jlnUaT._3qlJ0L41KQFqUTzVQKFERC,
+._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._14b-hQsLwSwYcELtknxCUX,
+._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._3IIEUTw03Vm3Mk54jlnUaT {
+  @include app.preset-symmetric(var(--zehn-size-button-app), "._16nHYucq6xgfe67DrVWLCI");
+}
+
+// GAME SPOTLIGHT - DEMO/PLAYTEST/INVITE
+._3SdsgvPAsO-ewAaupsOhHy,
+._1qKFBvABqbDgrOvtdhYh17 {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// GAME - NEW DLC
+.ut0YcLYGAoSTz2Dnjw9U1 .R2VdUtWzknAHBOsdRzG_d {
+  @include app.preset-asymmetric(var(--zehn-size-button-app-large), 100%);
+}
+
+// GAME - ACTIVITY - CONDITIONAL BUTTONS
+.zehnNews .zehnTitle,
+._1EC1xjjUGqI7fqX6PVzJA3,
+.zehnLoad .zehnTitle,
+._3yTl3RiWfo-Itg-xp967wP ._39ZurKJQex6v69aXzvc_nj._DialogLayout.DialogButton {
+  position: relative !important;
+  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-panel-activity-padding))));
+  margin: var(--zehn-size-panel-activity-padding) !important;
+}
+
+// GAME - ACTIVITY - POST EMOTE
+._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 .bACIuqv-b_9TztCczFK19 {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// GAME - ACTIVITY - POST SUBMIT
+._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), ":not(.bGfjajFo4DI-ULSQxw1KY)");
+}
+
+// GAME - DETAILS - BOTTOM BUTTONS
+button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
+  @include app.preset-asymmetric(var(--zehn-size-button-app-large), 100%);
+}
+
+// GAME - DETAILS - EMPTY PANEL
+._2RSxEUPGL8Bj016q0Sp3Hx {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  margin: 0 var(--zehn-size-spacing-md) !important;
+  display: flex !important;
+}
+
+// EVENT OVERLAY - CONTROLS
+._1t_97P9KMsEBaPq9y-6OUl,
+._1_vCR1dPfyJ7_yukwDqblf,
+.HruWVPwIDh2FFOOH7OiSs .gioyPMOZttYFcnmgLnsWf .iYW5hWQwg14WYT4PV3xe_ {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include dialog.shape-circular;
+}
+
+// EVENT OVERLAY - WISHLIST
+._3notzMjxQtogi11XHZMYXI,
+._1djkdp7OAd0mF3a90RKf27 {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// EVENT OVERLAY - ACTION
+._2zssEuiPfY5YdQlnihDfVD {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// DOWNLOADS - HEADER - SETTINGS
+._3Tfp8-wTAttW3WVa_X9JVC._3Tfp8-wTAttW3WVa_X9JVC._DialogLayout.DialogButton {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// DOWNLOADS - HEADER - PAUSE/RESUME
+._3Mbhnlk1Go2j8yCdjthzc7.IbePLaw-vSvhG1GTenYFg.IbePLaw-vSvhG1GTenYFg ._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi.DialogButton,
+._3Mbhnlk1Go2j8yCdjthzc7.IbePLaw-vSvhG1GTenYFg.IbePLaw-vSvhG1GTenYFg ._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi._2xR-V97DWI7svSjgiCb3N-.DialogButton {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// DOWNLOADS - SECTION HEADER
+._1GdR5LbENV7LOGROJBxohI._1GdR5LbENV7LOGROJBxohI.DialogButton {
+  @include app.preset-wide(var(--zehn-size-downloads-section-header));
+}
+
+// DOWNLOADS - ENTRY
+._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi.DialogButton,
+._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi._2xR-V97DWI7svSjgiCb3N-.DialogButton {
+  @include app.preset-symmetric(var(--zehn-size-button-app-large));
+}
+
+// DIALOG - NEW COLLECTION
+._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX ._25n_zgE_sgrYzl4G-YE8VN {
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+}
+
+._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX._3Jmn39gWVcTTHWXW-ydfWy ._25n_zgE_sgrYzl4G-YE8VN,
+._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX._3Jmn39gWVcTTHWXW-ydfWy ._25n_zgE_sgrYzl4G-YE8VN:is(:focus, :hover, :hover:focus, :active, :active:focus) {
+  @include dialog.look-disabled;
+}
+
+// DIALOG - REVIEW GAME
+.lNPFwADeWOcU-YOPlwMzV ._2gJ9F_Ox8xa-jD-JD0eNrB {
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+}
+
+// DIALOG - ADD REVIEW
+._1kCN0pAntrcGCSmcc-vYdk,
+._35_OgqfHHZfSzTYfv367K6 {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include dialog.looks-selected(".Z3L6KGVxi4ZjGUzbYUjBC");
+}
+
+// DIALOG - SHARE
+._1ABCOz8DSrl-YJdh1xD-m0,
+._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MILLENNIUM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SETTINGS
+._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// UPDATES
+.MillenniumSettings ._2o2fXzn99OddeqZMjbDuxQ button.DialogButton {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+.MillenniumSettings ._2o2fXzn99OddeqZMjbDuxQ button.DialogButton._DialogLayout:has(svg),
+button.DialogButton.MillenniumIconButton.Secondary,
+.DialogHeader ._3epr8QYWw_FqFgMx38YEEm.DialogButton {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// PRIMARY BUTTONS
+.DialogBody.aFxOaYcllWYkCfVYQJFs0>.DialogControlsSection.MillenniumButtonsSection ._3epr8QYWw_FqFgMx38YEEm.DialogButton {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  @include dialog.preset-dynamic(100%);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GAME LAUNCH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LAUNCH OPTIONS
+.LclHwcOfHFpwObYMD1HLa ._3H2GezG50hog8gSDj-qbx1>div {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// OVERLAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.fbu3l7kPiBeb3EKCjIb8n ._3ZLaTxSHxeGcoKlIy_-Z0L,
+.fi6UDkxJq66MLo2z9wabQ ._DialogLayout.DialogButton,
+.fi6UDkxJq66MLo2z9wabQ .BoygotvcKo4DC4dSix8G3.DialogButton,
+.fi6UDkxJq66MLo2z9wabQ ._2uM3ouyTdzAtXR3ffa7oRg ._2LJMRr1_5XUK4wlt7YMyPi .mh8m9p4PBg_Qrev1bfTzc {
+  @include app.preset-symmetric(var(--zehn-size-overlay-bar));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// BROWSER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// URL BAR
+.UkR3sY319PuaUNuUWks2K ._3KaB94Jl4r0hFkthDPJy09,
+.UkR3sY319PuaUNuUWks2K ._3izqEKa-zuPIrUDSm1bRvf,
+.extensions-bar-container .extension-button {
+  @include app.preset-symmetric(var(--zehn-size-browser-urlbar-button));
+}
+
+._26Gmfe09NRsnF7eprTZYdY ._1oXr_GpvIgjHasLyU3tBn {
+  @include app.preset-symmetric(var(--zehn-size-browser-urlbar-button), "._1f6yYACTilZQ2dmqGd5zXk");
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// ARTWORK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// COMMENTS
+._39nnaT_CLE0m_WXVIrAwaG .FPxfNOUIyMTxA5iyxVWGX {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MEDIA ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTROLS
+._36KTbApKz0VLY9Q6lGt4aH,
+.RightButtons ._2Zj3UdtDQ2KmjXjKU3_Oy-.DialogButton,
+._34dlBrUZP054ElsvOp5hQm ._1-ooPvEW2c6SHuhnz6SK3t ._32vHJA51iTnZgyk7drRCvc,
+.HYloJyr41RFbSFoc8RY3w,
+._26uPMBCPxQYJ8EBcqiNu8P,
+._3LzXZkJi8bsPoHzXEDbLER,
+.TimelineAndControls._3LzXZkJi8bsPoHzXEDbLER {
+  @include app.preset-symmetric(var(--zehn-size-media-controlbar));
+}
+
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._2T45kYJmyvQWyxytQeohuY {
+  @include app.preset-symmetric(var(--zehn-size-media-controlbar), "._36CGU2t5Vavx0_9dwem6kb");
+}
+
+// TEXT CONTROLS
+._1JVlcXVvv0OCD_p5RuW1fy .mZYRu1dN5Q9aQ1r3Cq_NE,
+.UJBbMi55kmyA6ZDu_OVUX .DialogButton,
+._367uBQpzonX0o4-Y0f-wYl .DialogButton {
+  @include app.preset-wide(var(--zehn-size-media-controlbar));
+}
+
+._30e-kSx-yfm4pjA0_ysT3n ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy:not(.zeGUOeW3Cat4UJGCGwXPZ):not(._2T45kYJmyvQWyxytQeohuY),
+.DKXVRVBokaW_Xxo6kyKq0 ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy:not(.zeGUOeW3Cat4UJGCGwXPZ):not(._2T45kYJmyvQWyxytQeohuY) {
+  @include app.preset-wide(var(--zehn-size-media-controlbar), "._36CGU2t5Vavx0_9dwem6kb");
+}
+
+// CLOSE
+._3aw8rnUVmbcILzeqlj7uuP ._1XMsukW7tjbY8BC341fPNa {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// TIMELINE - SCRUB
+._2__OPNuJ5jPGfN7LuKW-Qw ._15dYncysqGpt47Cy4LxDu6 {
+  @include app.preset-symmetric(var(--zehn-size-media-scrub));
+}
+
+// ???
+._365PZ8BVgd7sz6-xR9E9yb ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._1vrXP23Jvmwoj70Yk81cnc,
+._365PZ8BVgd7sz6-xR9E9yb ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy.rYp_PTAXV9D7Jc5c756Re,
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._2kVw_wgJd5TfnNePlpwmN {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), "._36CGU2t5Vavx0_9dwem6kb");
+}
+
+// NO RECORDING AVAILABLE
+._2Jhopz5mqnwHwBUX9sMIGY {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), ".rq1uEI9jHMgnF1LIsVsJg");
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SERVERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTROLS
+._2rxrVvbku0AC8Qbequ4-z9 button.DialogButton {
+  @include app.preset-symmetric(var(--zehn-size-server-controlbar));
+}
+
+// CONTROLS - TEXT
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._341mdPDkZV7JkbIxGBREsd button.DialogButton,
+._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX button._1jEPp-_Fn1YtGfHenAZ7fT {
+  @include app.preset-wide(var(--zehn-size-server-controlbar));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// NOTES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// TITLEBAR - COLLAPSE/EXPAND PAGELIST
+._3LLH_F43MTu6UtG4Z3kudv,
+._1cWmu5TUWFAVHlv1EVaF8e {
+  top: 0 !important;
+  left: 0 !important;
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control));
+}
+
+// FORMATTING BUTTONS
+.gdKTXjvFuMeVN2qa6o8EL button.DialogButton {
+  flex: 1 !important;
+  @include app.preset-dynamic(var(--zehn-size-notes-format));
+}
+
+// NEW NOTE
+._1AL7l2CN6z-vuLfp1iCLa ._1fu6xumTI1nCY5wc6FG_N2 .DialogButton {
+  @include app.preset-asymmetric(var(--zehn-size-pagelist-entry), 100%);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CLOCK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// TIMER CONTROLS
+._2j-W28YC1xAizcE7x9KkDT button.DialogButton {
+  @include app.preset-dynamic(var(--zehn-size-clock-timer));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GAME OVERVIEW ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// PLAYERS
+._27m9Qbg4ShilOgwvYZWV8l ._1vG-vFfwpDeNStVbyo1Qy6 ._2fYjCJSwdJxdjbi7ysISdL ._2NLwfYHr9KUJZ7LD9nkyva {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// ACHIEVEMENTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ACHIEVEMENT GROUPS
+.steam-hunters-achievements-page button {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// REMOTE PLAY TOGETHER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CANCEL
+._3ZHIBZbKR6DCeKpSDqwlMg {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ACCOUNT - PRIMARY BUTTONS
+._2XSsNSGcWjGZ6z3fvqaRd5._30JCQLfpdL0ZuA8VTUd7tb ._2LQjjxR3ZOcEZU73abIsw- .TEWmsM70ZLEOxLAjDMpcv {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  @include dialog.preset-dynamic(100%);
+}
+
+// NOTIFICATIONS - EXPAND CHEVRON
+.BRmrC-jnwpXqye4oYB21C button.DialogButton.Small {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// IN GAME
+.DialogControlsSection ._2o2fXzn99OddeqZMjbDuxQ ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy,
+._2sssIwe0duyIrFvat2oXzH ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), "._36CGU2t5Vavx0_9dwem6kb");
+}
+
+// STORAGE
+._12aBP1DmpEKuMxfFuCMbiN {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// STORAGE - MORE
+._1WKUOT3FdB9-48MMP0Tz9l {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// CONTROLLER
+._30w46ktz76K_Rnqk02ZfT0._1zkgQm67ell-zVB965M-D5 {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// RECORDING - DELETE
+._1IsPTEXf7ua_4XbMa3sXyW
+.Yc3_Ah2ZI5nQUvQh_3nXP {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// APP PROPERTIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// PRIVACY
+._3S8RX620BmLdH407KK505 .Htkkt1r5GiHi-0US69HQ_.DialogButton {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FRIENDS SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// VOICE
+._DialogLayout.DialogButton._18hAy_dZBqoqEz65RkI5OK {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CONTROLLER SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// COMMUNITY CONFIGS
+._1xfC8oO6JVNnioU1NPTN9s {
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+}
+
+// CURRENT CONFIGURATION
+._3lO3wa99qU2ExNsm6la1zR.DialogButton._DialogLayout.Secondary.cXzBZxhPBl7fZs9LODEnc.Focusable {
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog-large), 100%);
+}
+
+// CURRENT CONFIGURATION - INFO
+._2sULyQvjazul5EYSVGwl1T button.DialogButton.cXzBZxhPBl7fZs9LODEnc,
+.CRoS_SRbuEPM5uUV3Vrz1 button.DialogButton.cXzBZxhPBl7fZs9LODEnc.uRlY9Z2GZ7c7swKaeLLx- {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// MODAL - FAKE BUTTON
+.tGJeFkznK3-BCMgr4GSHi {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// FOOTER ACTION BUTTONS
+.MbyhbxIetM7FOAmCQSW83 {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// BINDING KEYS
+._3U3h5KQ5DocAUo4lO8cL5l,
+._2MjBd1kKOEyVfqBN5OQOb1,
+._2swvcAycL4d0UoHFDoe6-d,
+._3i-XV362MvNEX3j_oWQDmQ,
+._3s28A0XlOXUOAWRIuBKHuH,
+.NoRFSLSfwRijJQt7R51OT,
+._19SMSHLlXqSLnXM3NjDNBS,
+._3yP_pf4vx1Q4W0mt2DR32P,
+._3U3h5KQ5DocAUo4lO8cL5l.CX4Dp8XyHswkGEEnWeUpq,
+._2MjBd1kKOEyVfqBN5OQOb1.CX4Dp8XyHswkGEEnWeUpq,
+._2swvcAycL4d0UoHFDoe6-d.CX4Dp8XyHswkGEEnWeUpq,
+._3i-XV362MvNEX3j_oWQDmQ.CX4Dp8XyHswkGEEnWeUpq,
+._3s28A0XlOXUOAWRIuBKHuH.CX4Dp8XyHswkGEEnWeUpq,
+.NoRFSLSfwRijJQt7R51OT.CX4Dp8XyHswkGEEnWeUpq,
+._19SMSHLlXqSLnXM3NjDNBS.CX4Dp8XyHswkGEEnWeUpq,
+._3yP_pf4vx1Q4W0mt2DR32P.CX4Dp8XyHswkGEEnWeUpq {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), "._1QZJBdB3tUQkzngq0rXWsK");
+}
+
+// CAMERA
+._1Ze1RZ7I8e5cSlaWAl48bh {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// INFO
+button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// FURTHER SETTINGS
+button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
+  @include dialog.preset-symmetric(var(--zehn-size-button-app));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// EXTENDIUM SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LINKS
+.ext-links-manager .ext-links-remove,
+.ext-links-manager .ext-links-add {
+  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+}
+
+// STORAGE
+.storage-manager .storage-manager-row button {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+}
+
+// STORAGE - RELOAD
+.storage-manager .md-button:last-of-type {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog-large));
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

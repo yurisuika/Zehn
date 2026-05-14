@@ -1,0 +1,411 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::-webkit-scrollbar {
+  border-radius: var(--zehn-size-radius-angular) !important;
+  -webkit-box-shadow: none !important;
+  border: none !important;
+  background: var(--zehn-scrollbar-unfocused-background) !important;
+}
+
+div:hover::-webkit-scrollbar:not(:window-inactive) {
+  background: var(--zehn-scrollbar-focused-background) !important;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar:window-inactive  {
+  width: var(--zehn-scrollbar-width) !important;
+  height: 0 !important;
+}
+
+::-webkit-scrollbar:horizontal,
+::-webkit-scrollbar:horizontal:window-inactive {
+  width: 0 !important;
+  height: var(--zehn-scrollbar-width) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// TRACK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::-webkit-scrollbar-track {
+  border-radius: var(--zehn-size-radius-angular) !important;
+  background: transparent !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CORNER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-corner:window-inactive {
+  border: none !important;
+  background-color: var(--zehn-color-scrollbar-corner) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// BUTTON ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::-webkit-scrollbar-button {
+  border: none !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: var(--zehn-size-icon-sm) !important;
+  --button-size: var(--zehn-scrollbar-unfocused-button-size);
+}
+
+*::-webkit-scrollbar-button {
+  display: block !important;
+}
+
+::-webkit-scrollbar-button:vertical {
+  height: var(--button-size) !important;
+  width: var(--zehn-scrollbar-width) !important;
+  max-height: var(--button-size) !important;
+  max-width: var(--zehn-scrollbar-width) !important;
+}
+
+::-webkit-scrollbar-button:horizontal {
+  height: var(--zehn-scrollbar-width) !important;
+  width: var(--button-size) !important;
+  max-height: var(--zehn-scrollbar-width) !important;
+  max-width: var(--button-size) !important;
+}
+
+::-webkit-scrollbar-button:single-button:window-inactive {
+  --button-size: var(--zehn-scrollbar-unfocused-button-size);
+  background-color: var(--zehn-color-scrollbar-button-unfocused) !important;
+}
+
+::-webkit-scrollbar-button:single-button:window-inactive:hover {
+  background-color: var(--zehn-color-scrollbar-button-unfocused-hover) !important;
+}
+
+::-webkit-scrollbar-button:single-button:window-inactive:active {
+  background-color: var(--zehn-color-scrollbar-button-unfocused-active) !important;
+}
+
+div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive) {
+  --button-size: var(--zehn-scrollbar-focused-button-size);
+  background-color: var(--zehn-color-scrollbar-button-focused) !important;
+}
+
+div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive):hover {
+  background-color: var(--zehn-color-scrollbar-button-focused-hover) !important;
+}
+
+div:hover::-webkit-scrollbar-button:single-button:not(:window-inactive):active {
+  background-color: var(--zehn-color-scrollbar-button-focused-active) !important;
+}
+
+::-webkit-scrollbar-button {
+  color: var(--zehn-color-scrollbar-button-glyph) !important;
+}
+
+::-webkit-scrollbar-button:active {
+  color: var(--zehn-color-scrollbar-button-glyph-active) !important;
+}
+
+@media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-button:single-button:decrement {
+    background-image: var(--zehn-icon-scroll-up-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal {
+    background-image: var(--zehn-icon-scroll-left-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment {
+    background-image: var(--zehn-icon-scroll-down-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:horizontal {
+    background-image: var(--zehn-icon-scroll-right-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:active {
+    background-image: var(--zehn-icon-scroll-up-active-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal:active {
+    background-image: var(--zehn-icon-scroll-left-active-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:active {
+    background-image: var(--zehn-icon-scroll-down-active-light) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:horizontal:active {
+    background-image: var(--zehn-icon-scroll-right-active-light) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-button:single-button:decrement {
+    background-image: var(--zehn-icon-scroll-up-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal {
+    background-image: var(--zehn-icon-scroll-left-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment {
+    background-image: var(--zehn-icon-scroll-down-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:horizontal {
+    background-image: var(--zehn-icon-scroll-right-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:active {
+    background-image: var(--zehn-icon-scroll-up-active-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:decrement:horizontal:active {
+    background-image: var(--zehn-icon-scroll-left-active-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:active {
+    background-image: var(--zehn-icon-scroll-down-active-dark) !important;
+  }
+
+  ::-webkit-scrollbar-button:single-button:increment:horizontal:active {
+    background-image: var(--zehn-icon-scroll-right-active-dark) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// THUMB ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::-webkit-scrollbar-thumb {
+  background-clip: padding-box !important;
+  -webkit-box-shadow: none !important;
+  transition: background-color 0.2s ease !important;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:window-inactive {
+  width: var(--zehn-scrollbar-unfocused-thumb-width) !important;
+  height: var(--zehn-scrollbar-unfocused-thumb-width) !important;
+  border-top: var(--zehn-scrollbar-unfocused-end-spacing) solid transparent !important;
+  border-bottom: var(--zehn-scrollbar-unfocused-end-spacing) solid transparent !important;
+  border-right: var(--zehn-scrollbar-unfocused-outer-spacing) solid transparent !important;
+  border-left: var(--zehn-scrollbar-unfocused-inner-spacing) solid transparent !important;
+  border-radius: var(--zehn-scrollbar-unfocused-thumb-radius) !important;
+  background-color: var(--zehn-scrollbar-unfocused-foreground) !important;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:window-inactive:hover {
+  background-color: var(--zehn-scrollbar-unfocused-foreground-hover) !important;
+}
+
+::-webkit-scrollbar-thumb:active,
+::-webkit-scrollbar-thumb:window-inactive:active {
+  background-color: var(--zehn-scrollbar-unfocused-foreground-active) !important;
+}
+
+::-webkit-scrollbar-thumb:horizontal,
+::-webkit-scrollbar-thumb:horizontal:window-inactive {
+  border-top: var(--zehn-scrollbar-unfocused-inner-spacing) solid transparent !important;
+  border-bottom: var(--zehn-scrollbar-unfocused-outer-spacing) solid transparent !important;
+  border-right: var(--zehn-scrollbar-unfocused-end-spacing) solid transparent !important;
+  border-left: var(--zehn-scrollbar-unfocused-end-spacing) solid transparent !important;
+}
+
+div:hover::-webkit-scrollbar-thumb:not(:window-inactive) {
+  width: var(--zehn-scrollbar-focused-thumb-width) !important;
+  height: var(--zehn-scrollbar-focused-thumb-width) !important;
+  border-top: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
+  border-bottom: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
+  border-right: var(--zehn-scrollbar-focused-outer-spacing) solid transparent !important;
+  border-left: var(--zehn-scrollbar-focused-inner-spacing) solid transparent !important;
+  border-radius: var(--zehn-scrollbar-focused-thumb-radius) !important;
+  background-color: var(--zehn-scrollbar-focused-foreground) !important;
+}
+
+div:hover::-webkit-scrollbar-thumb:not(:window-inactive):hover {
+  background-color: var(--zehn-scrollbar-focused-foreground-hover) !important;
+}
+
+div:hover::-webkit-scrollbar-thumb:not(:window-inactive):active {
+  background-color: var(--zehn-scrollbar-focused-foreground-active) !important;
+}
+
+div:hover::-webkit-scrollbar-thumb:horizontal:not(:window-inactive) {
+  border-top: var(--zehn-scrollbar-focused-inner-spacing) solid transparent !important;
+  border-bottom: var(--zehn-scrollbar-focused-outer-spacing) solid transparent !important;
+  border-right: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
+  border-left: var(--zehn-scrollbar-focused-end-spacing) solid transparent !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// OVERFLOWS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._2TAQYpbxatDYN3Ex76KX5u .DialogBody .DialogBodyText ._7jaC6UFFrvcKq2UlJr1Pb .Cw--cBWy7v1Ey1JF0VkBN,
+.ModalDialogPopup .DialogContentTransition .DialogBody,
+// SIDEBAR GAMES
+.ReactVirtualized__Grid.ReactVirtualized__List,
+._2AUVZlzQq67qe3yhLZsPPB,
+// FRIENDS LIST
+.FriendsListContent,
+// CHAT */
+.chatHistoryScroll,
+// PAGELIST
+._18QCu-7MTzd51UpVbYysDy,
+._1fuML-ekRbTEzgzC597yGP .GTdO0X-5EOwChz3fc2iLU,
+._2r485O6B51u64d19eTbK1a,
+// CONTEXT MENU
+._2EstNjFIIZm_WUSKm5Wt7n,
+.u1xD3KJEgksF_J_5TLZzO,
+._1vHgYmF_74E0SSuDevSI9j,
+._27m9Qbg4ShilOgwvYZWV8l,
+._2l416KfEtI4CL0mCUEmOBw,
+._1Ve4VFO2EEkeNZdel_Asky,
+._1ugNiylO2vKXhirsGocAxa {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+// LIBRARY CONTEXT MENU
+._1UOkn2fGQ25jnyqcEJbnlo {
+  overflow-y: visible;
+}
+
+._29WypCpglgRKsR_fMPsoFX,
+.BasicUI .DialogContent_InnerWidth>._29WypCpglgRKsR_fMPsoFX,
+._1mUVXuz86pA_4wBlB3suqI,
+.BasicUI .DialogContent_InnerWidth>._1mUVXuz86pA_4wBlB3suqI {
+  overflow-y: unset;
+}
+
+._1X4dtbZ_AMX_DXT-SGiK01,
+._1UXC2lGcmNTGepRJTwtuH0 {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.DialogBody,
+div[role=rowgroup] {
+  overflow-x: visible;
+  overflow-y: auto;
+}
+
+.HorizontalMiniSliderScroll {}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// TRICK TO USE BUTTON BORDER FOR HEADER UNDERSCROLL MARGIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.FriendsListContent:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  display: block !important;
+  height: calc(var(--button-size) + var(--header-height)) !important;
+  max-height: calc(var(--button-size) + var(--header-height)) !important;
+  border-top: calc(var(--header-height)) solid var(--zehn-color-base) !important;
+  background-clip: padding-box !important;
+}
+
+// FRIENDS LIST
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.FriendsListContent:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-titlebar) + var(--friends-remoteplay-spacing) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing) + var(--friends-voice-spacing);
+}
+
+// CHAT
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-titlebar);
+}
+
+// GROUP CHAT
+.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
+}
+
+// LIBRARY
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-navbar) + var(--library-playbar-spacing);
+}
+
+// DOWNLOADS
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  --header-height: var(--zehn-size-navbar) + var(--library-downloads-spacing);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

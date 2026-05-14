@@ -1,0 +1,309 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow:  ellipsis !important;
+
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  margin: 0 !important;
+  gap: var(--zehn-size-spacing-md) !important;
+
+  background-position: center !important;
+  background-size: auto !important;
+
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-app-text) !important;
+
+  border-width: var(--zehn-size-button-app-border) !important;
+  border-style: solid !important;
+
+  outline: none !important;
+
+  svg {
+    // display: block !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+
+    justify-self: center !important;
+
+    height: 100% !important;
+    min-height: 100% !important;
+    width: var(--zehn-size-icon-md) !important;
+    min-width: var(--zehn-size-icon-md) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    mask-size: var(--zehn-size-icon-md) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+
+    * {
+      display: none !important; 
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size-symmetric($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: $height !important;
+  min-width: $height !important;
+  max-width: $height !important;
+
+  line-height: $height !important;
+
+  padding: var(--zehn-size-button-app-padding) !important;
+}
+
+@mixin size-asymmetric($height, $width) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: $width !important;
+  min-width: $width !important;
+  max-width: $width !important;
+
+  line-height: $height !important;
+
+  padding: var(--zehn-size-button-app-padding) !important;
+}
+
+@mixin size-wide($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: fit-content !important;
+  max-width: fit-content !important;
+  max-width: fit-content !important;
+
+  line-height: $height !important;
+
+  padding: var(--zehn-size-button-app-padding-wide) !important;
+}
+
+@mixin size-dynamic($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: auto !important;
+  max-width: fit-content !important;
+  max-width: 100% !important;
+
+  line-height: $height !important;
+
+  padding: var(--zehn-size-button-app-padding-dynamic) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape-default {
+  border-radius: var(--zehn-size-button-app-radius) !important;
+}
+
+@mixin shape-angular {
+  border-radius: var(--zehn-size-radius-angular) !important;
+}
+
+@mixin shape-circular {
+  border-radius: var(--zehn-size-radius-circular) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin look {
+  background: var(--zehn-color-button-app-background) !important;
+  color: var(--zehn-color-button-app-text) !important;
+  border-color: var(--zehn-color-button-app-border) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon) !important;
+  }
+}
+
+@mixin look-focus {
+  background: var(--zehn-color-button-app-background-focus) !important;
+  color: var(--zehn-color-button-app-text-focus) !important;
+  border-color: var(--zehn-color-button-app-border-focus) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon-focus) !important;
+  }
+}
+
+@mixin look-hover {
+  background: var(--zehn-color-button-app-background-hover) !important;
+  color: var(--zehn-color-button-app-text-hover) !important;
+  border-color: var(--zehn-color-button-app-border-hover) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon-hover) !important;
+  }
+}
+
+@mixin look-hover-focus {
+  background: var(--zehn-color-button-app-background-hover-focus) !important;
+  color: var(--zehn-color-button-app-text-hover-focus) !important;
+  border-color: var(--zehn-color-button-app-border-hover-focus) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon-hover-focus) !important;
+  }
+}
+
+@mixin look-active {
+  background: var(--zehn-color-button-app-background-active) !important;
+  color: var(--zehn-color-button-app-text-active) !important;
+  border-color: var(--zehn-color-button-app-border-active) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon-active) !important;
+  }
+}
+
+@mixin look-active-focus {
+  background: var(--zehn-color-button-app-background-active-focus) !important;
+  color: var(--zehn-color-button-app-text-active-focus) !important;
+  border-color: var(--zehn-color-button-app-border-active-focus) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon-active-focus) !important;
+  }
+}
+
+@mixin look-disabled {
+  pointer-events: none !important;
+  background: var(--zehn-color-button-app-background-disabled) !important;
+  color: var(--zehn-color-button-app-text-disabled) !important;
+  border-color: var(--zehn-color-button-app-border-disabled) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon-disabled) !important;
+  }
+}
+
+@mixin looks($disabled) {
+  @include look;
+  &:is(:focus, :enabled:focus) { @include look-focus; }
+  &:is(:hover, :enabled:hover) { @include look-hover; }
+  &:is(:hover:focus, :enabled:hover:focus) { @include look-hover-focus; }
+  &:is(:active, :enabled:active) { @include look-active; }
+  &:is(:active:focus, :enabled:active:focus) { @include look-active-focus; }
+  &:is(:disabled, #{$disabled}) { @include look-disabled; }
+}
+
+@mixin look-selected {
+  pointer-events: none !important;
+  background: var(--zehn-color-button-app-background-selected) !important;
+  color: var(--zehn-color-button-app-text-selected) !important;
+  border-color: var(--zehn-color-button-app-border-selected) !important;
+
+  svg {
+    background-color: var(--zehn-color-button-app-icon-selected) !important;
+  }
+}
+
+@mixin looks-selected($selected) {
+  &:is(#{$selected}) { @include look-selected; }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset-symmetric($height, $disabled: ".Disabled") {
+  @include base;
+  @include size-symmetric($height);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+@mixin preset-asymmetric($height, $width, $disabled: ".Disabled") {
+  @include base;
+  @include size-asymmetric($height, $width);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+@mixin preset-wide($height, $disabled: ".Disabled") {
+  @include base;
+  @include size-wide($height);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+@mixin preset-dynamic($height, $disabled: ".Disabled") {
+  @include base;
+  @include size-dynamic($height);
+  @include shape-default;
+  @include looks($disabled);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
