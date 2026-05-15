@@ -4,7 +4,6 @@ const Options = {
       fetch("https://steamloopback.host/skins/Zehn/config/options.json").then((response) => response.json()).then(
         (options) => {
           if (options.enable) {
-            // THEME -------------------------------------------------------------
             if (options.theme.mode == "auto") {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/mode/auto.css"/>');
             } else if (options.theme.mode == "dark") {
@@ -69,7 +68,6 @@ const Options = {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/space/oklab.css"/>');
             }
 
-            // GENERAL -----------------------------------------------------------
             if (options.general.avatar == "round") {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/avatar/round.css"/>');
             } else if (options.general.avatar == "square") {
@@ -98,7 +96,6 @@ const Options = {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/general/titlebars/wide.css"/>');
             }
 
-            // NAVIGATION --------------------------------------------------------
             if (options.navigation.accountAvatar) {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/account avatar/show.css"/>');
             } else {
@@ -143,7 +140,6 @@ const Options = {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/navigation/url bar/hide.css"/>');
             }
 
-            // LIBRARY -----------------------------------------------------------
             if (options.library.content == "panel") {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/library/content/panel.css"/>');
             } else if (options.library.content== "flat") {
