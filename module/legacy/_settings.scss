@@ -49,18 +49,6 @@
 }
 
 /* TEXT */
-.ModalDialogPopup .DialogContent_InnerWidth .eKmEXJCm_lgme24Fp_HWt.xIITXDcM70faUNqssgUyx:not(:last-child) {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.ModalDialogPopup .DialogContent_InnerWidth .eKmEXJCm_lgme24Fp_HWt.xIITXDcM70faUNqssgUyx:last-child {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
 .GxgIyq8R5xTOeu4ftGrgX {
   display: flex !important;
   gap: var(--zehn-size-spacing-md) !important;
@@ -390,12 +378,6 @@
   border-bottom: unset;
 }
 
-/* SETTINGS BODY */
-.CFTLX2wIKOK3hNV-fS7_V.DesktopUI .DialogBody,
-.DesktopUI .CFTLX2wIKOK3hNV-fS7_V .DialogBody {
-  padding: 0 16px 16px 16px !important;
-}
-
 /* STEAM GUARD */
 .eYz3vzuTb_a2I4dRJ-vf9 {
   display: none !important;
@@ -611,8 +593,7 @@ div:not(:first-child)>.DialogSubHeader {
 .aFxOaYcllWYkCfVYQJFs0.DesktopUI,
 .DesktopUI .aFxOaYcllWYkCfVYQJFs0 {
   -webkit-mask-image: none !important;
-  padding-top: 0 !important;
-  padding-bottom: 16px !important;
+  padding: var(--zehn-size-dialog-padding) !important;
   gap: var(--zehn-size-spacing-md) !important;
 }
 
@@ -1323,54 +1304,56 @@ div:not(:first-child)>.DialogSubHeader {
   margin-bottom: 16px !important;
 }
 
-._3epr8QYWw_FqFgMx38YEEm {
-  padding: 0 var(--zehn-size-padding-md) !important;
-  line-height: 32px !important;
-  box-sizing: border-box !important;
-  /*max-height: 32px !important;*/
-  max-width: fit-content !important;
-  margin: 0 !important;
-}
-
-._1S-PihOJGJBAP5oCKeB7jy.DialogButton {
-  height: 32px !important;
-  color: transparent !important;
-}
-
 ._1S-PihOJGJBAP5oCKeB7jy.DialogButton svg {
-  background-color: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
   -webkit-mask-image: var(--zehn-icon-settings) !important;
-  width: 32px !important;
-  height: 32px !important;
-
-  * { display: none !important; }
 }
 
 ._3KH4CAWiBX2hESrbRk4DBn {
   gap: var(--zehn-size-spacing-md) !important;
 }
 
-button._1S-PihOJGJBAP5oCKeB7jy.DialogButton {
-  width: 32px !important;
-  min-height: 32px !important;
+/* CONTROLLER SETTINGS REFRESH 2026 */
+.DialogContent_InnerWidth:not(:has(>.DialogHeader))>.DialogBody.aFxOaYcllWYkCfVYQJFs0 {
+  padding: 0 !important;
+  overflow: hidden !important;
+
+  >.Panel {
+    max-width: 100% !important;
+    overflow-y: auto !important;
+    flex-wrap: nowrap !important;
+    margin-top: calc(var(--zehn-size-settings-header) + var(--zehn-size-dialog-padding)) !important;
+  }
 }
 
-/* CONTROLLER SETTINGS REFRESH 2026 */
-.DialogContent_InnerWidth .aFxOaYcllWYkCfVYQJFs0>.Panel .DialogHeader._3tCuPMe6ubabJ1MKix8lgq,
+.DialogContent_InnerWidth .aFxOaYcllWYkCfVYQJFs0>.Panel>.Panel>.DialogHeader
 .DialogContent_InnerWidth .aFxOaYcllWYkCfVYQJFs0>.Panel>.DialogHeader {
   color: var(--zehn-color-text-page-header) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-page-header) !important;
-  line-height: 32px !important;
-  padding: 0 !important;
-  padding-top: var(--zehn-size-padding-md) !important;
+  line-height: var(--zehn-size-settings-header) !important;
+}
+
+.DialogContent_InnerWidth:not(:has(>.DialogHeader))>.DialogBody.aFxOaYcllWYkCfVYQJFs0>.Panel>.Panel>.DialogHeader,
+.DialogContent_InnerWidth:not(:has(>.DialogHeader))>.DialogBody.aFxOaYcllWYkCfVYQJFs0>.Panel>.DialogHeader {
+  padding: var(--zehn-size-dialog-padding) !important;
+  padding-bottom: 0 !important;
+  position: absolute !important;
+  top: var(--zehn-size-titlebar);
+}
+
+.DialogContent_InnerWidth:not(:has(>.DialogHeader))>.DialogBody.aFxOaYcllWYkCfVYQJFs0>.Panel>.Panel>.eKmEXJCm_lgme24Fp_HWt,
+.DialogContent_InnerWidth:not(:has(>.DialogHeader))>.DialogBody.aFxOaYcllWYkCfVYQJFs0>.Panel>.Panel>.DialogControlsSection,
+.DialogContent_InnerWidth:not(:has(>.DialogHeader))>.DialogBody.aFxOaYcllWYkCfVYQJFs0>.Panel>.DialogControlsSection {
+  padding: var(--zehn-size-dialog-padding) !important;
+  max-width: var(--zehn-size-settings-content) !important;
+}
+
+.DialogContent_InnerWidth:not(:has(>.DialogHeader))>.DialogBody.aFxOaYcllWYkCfVYQJFs0>.Panel .DialogControlsSection .SettingsDialogSubHeader:first-of-type {
+  margin: 0 !important;
 }
 
 .DialogContent_InnerWidth .aFxOaYcllWYkCfVYQJFs0>.Panel>.Panel {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: 0 !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -3991,13 +3974,13 @@ button.DialogButton.largeFontSetting.Primary {
 }
 
 .e600t61ObcLA11pIZAVb9 {
-  color: var(--zehn-color-text-primary) !important;
+  color: var(--zehn-color-text-page-header) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-28) !important;
+  font-size: var(--zehn-size-text-page-header) !important;
+  line-height: var(--zehn-size-settings-header) !important;
   text-transform: capitalize !important;
   letter-spacing: unset !important;
   margin: 0 !important;
-  line-height: 32px !important;
 }
 
 ._38sRYifM5bHCBBAIeuABUx ._3-e9k12ttwoC0nGNdXyJeV {
@@ -4041,20 +4024,25 @@ button.DialogButton.largeFontSetting.Primary {
 ._3t8HxXdv4QoWO7f3awdiCQ {
   padding: var(--zehn-size-titlebar) 0 0 0 !important;
   margin: 0 !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: 0 !important;
+}
+
+._3t8HxXdv4QoWO7f3awdiCQ>div,
+._3t8HxXdv4QoWO7f3awdiCQ>form {
+  padding: var(--zehn-size-dialog-padding) !important;
+}
+
+._3t8HxXdv4QoWO7f3awdiCQ .eKmEXJCm_lgme24Fp_HWt.xIITXDcM70faUNqssgUyx {
+  padding: var(--zehn-size-dialog-padding) !important;
 }
 
 ._3t8HxXdv4QoWO7f3awdiCQ>.e600t61ObcLA11pIZAVb9 {
-  padding-top: 16px !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  padding-bottom: 0 !important;
 }
 
 ._3t8HxXdv4QoWO7f3awdiCQ>div:empty {
   display: none !important;
-}
-
-._3t8HxXdv4QoWO7f3awdiCQ>*,
-._3t8HxXdv4QoWO7f3awdiCQ>.eKmEXJCm_lgme24Fp_HWt._3nLNLFMUMSt4jvxIayuPV3 {
-  padding: 0 var(--zehn-size-padding-md) !important;
 }
 
 ._2VY6HOZXxO2AsBaLssl0Uy {
@@ -4069,6 +4057,7 @@ button.DialogButton.largeFontSetting.Primary {
 .xSTLmzylFJdIfak7ZdhuA {
   min-width: var(--zehn-size-pagelist-width-collapsed) !important;
   max-width: var(--zehn-size-pagelist-width) !important;
+  position: relative !important;
 }
 
 .xSTLmzylFJdIfak7ZdhuA .uyoPtKbi4K01XGuYF5-C_ {
@@ -4457,10 +4446,15 @@ button.DialogButton.roleButton .roleSubtitle {
   font-size: var(--zehn-size-14) !important;
   color: var(--zehn-color-text-secondary) !important;
   font-weight: var(--zehn-weight-normal) !important;
+  text-transform: none !important;
 }
 
 .roleSubtitle {
   margin: 0 !important;
+}
+
+button.DialogButton.createNewRoleButton svg {
+  -webkit-mask-image: var(--zehn-icon-add-list) !important;
 }
 
 /* INVITED */

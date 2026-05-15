@@ -1,0 +1,210 @@
+// DIALOG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// TRANSITION
+.DialogContentTransition {
+  background: transparent !important;
+}
+
+@media (prefers-contrast: more) {
+  .DialogContentTransition {
+    background: transparent !important;
+  }
+}
+
+// CONTENT WHERE PADDING IS APPLIED FOR TITLEBARS
+.DialogContent {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+@media (prefers-contrast: more) {
+  .DialogContent {
+    background: transparent !important;
+  }
+}
+
+// DIALOGS WITHOUT ANY HEADER CONTENT OR TITLEBARS
+.ModalDialogPopup .DialogContent,
+.ModalOverlayContent .DialogContent {
+  padding-top: 0 !important;
+}
+
+// MODAL OVERLAYS W/O ACTUAL TITLEBARS
+.ModalDialogPopup:has(.TitleBar) .DialogContent,
+.ModalOverlayContent:has(.ModalPosition_Dismiss) .DialogContent,
+.ModalOverlayContent:has(.DialogHeader) .DialogContent {
+  padding-top: var(--zehn-size-titlebar) !important;
+}
+
+// NOTES WITH PAGELIST
+.ModalDialogPopup .DialogContent:has(._3Sf_ShCtdfWp5P04k2cIgp) {
+  padding-top: 0 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// INNER CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// INNER CONTAINER
+.DialogContent_InnerWidth {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+// DIALOG SPACING TO FIX SCROLLBAR POS
+.DialogContent._DialogLayout.GenericConfirmDialog._DialogCenterVertically .DialogContent_InnerWidth {
+  min-height: fit-content !important;
+}
+
+// SETTINGS ETC
+.ModalDialogPopup .DialogContent_InnerWidth {
+  gap: 0 !important;
+  overflow: hidden !important;
+  max-width: 100% !important;
+  height: 100% !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// INNER PADDING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// HEADER
+.DialogContent_InnerWidth>.DialogHeader {
+  padding: var(--zehn-size-dialog-padding) !important;
+  padding-bottom: 0 !important;
+}
+
+// BODY
+.DialogContent_InnerWidth>.DialogBody {
+  padding: var(--zehn-size-dialog-padding) !important;
+}
+
+.DialogContent_InnerWidth>.DialogBodyText {
+  padding: var(--zehn-size-dialog-padding) !important;
+}
+
+.DialogContent_InnerWidth>div:not([class]) {
+  padding: var(--zehn-size-dialog-padding) !important;
+  overflow-y: auto !important;
+}
+
+// FORM AFTER INNER APPLY PADDING HERE
+.DialogContent_InnerWidth>form {
+  gap: var(--zehn-size-dialog-padding) !important;
+  display: flex !important;
+  flex-shrink: 0 !important;
+  flex-direction: column !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+}
+
+.DialogContent_InnerWidth>form>div,
+.DialogContent_InnerWidth>form>.DialogBody,
+.DialogContent_InnerWidth>form>.DialogFooter {
+  padding: 0 !important;
+}
+
+.DialogContent_InnerWidth>form>.Panel {
+  gap: var(--zehn-size-spacing-md) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// FULL SIZE HEADER
+.DialogHeader {
+  color: var(--zehn-color-text-page-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-page-header) !important;
+  line-height: var(--zehn-size-settings-header) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.DialogHeader:has(button) {
+  gap: var(--zehn-size-spacing-md) !important;
+}
+
+// HEADER NOT ON SETTINGS - MAKE IT GO IN THE TITLEBAR
+.DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  padding: var(--zehn-size-titlebar-text-padding) !important;
+  line-height: var(--zehn-size-titlebar) !important;
+  color: var(--zehn-color-text-page-title) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-page-title) !important;
+  margin-bottom: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader .DialogHeaderSubtitle {
+  color: var(--zehn-color-text-primary) !important;
+  font-size: var(--zehn-size-text-page-title) !important;
+}
+
+.DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V) .DialogHeader .DialogHeaderSubtitle::before {
+  content: "\00a0-\00a0" !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// BODY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// STANDARD BODY
+.DialogBody {
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.DialogBody.Panel {
+  gap: var(--zehn-size-spacing-md) !important;
+}
+
+// CANCEL DOUBLE DIALOG PADDING
+.DialogBody>.DialogBody {
+  padding: 0 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
