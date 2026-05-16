@@ -142,6 +142,18 @@ button.DialogButton:where(.Primary, .Small) {
   @include app.preset-dynamic(var(--zehn-size-friends-voice-compact));
 }
 
+// LIST - USER
+.ContextMenuButton {
+  @include app.preset-symmetric(var(--zehn-size-friends-entry-inner));
+  @include app.shape-circular;
+}
+
+.chatRoomVoiceChannel .ContextMenuButton,
+.CompactView .ContextMenuButton {
+  @include app.preset-symmetric(var(--zehn-size-friends-entry-compact-inner));
+  @include app.shape-circular;
+}
+
 // LIST - VOICE CONTROLS
 .chatRoomVoiceChannel .chatRoomTextChannel,
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel,
@@ -387,13 +399,22 @@ a.chatImageURL,
 }
 
 // GAME - ACTIVITY - CONDITIONAL BUTTONS
-.zehnNews .zehnTitle,
 ._1EC1xjjUGqI7fqX6PVzJA3,
-.zehnLoad .zehnTitle,
-._3yTl3RiWfo-Itg-xp967wP ._39ZurKJQex6v69aXzvc_nj._DialogLayout.DialogButton {
+._3yTl3RiWfo-Itg-xp967wP ._39ZurKJQex6v69aXzvc_nj.DialogButton {
   position: relative !important;
   @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-panel-activity-padding))));
   margin: var(--zehn-size-panel-activity-padding) !important;
+  overflow: visible !important;
+  cursor: default !important;
+}
+
+.zehnNews .zehnTitle,
+.zehnLoad .zehnTitle {
+  position: relative !important;
+  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-panel-activity-padding))));
+  margin: var(--zehn-size-panel-activity-padding) !important;
+  overflow: visible !important;
+  cursor: pointer !important;
 }
 
 // GAME - ACTIVITY - POST EMOTE

@@ -18,10 +18,6 @@
   pointer-events: all !important;
 }
 
-body:not(.WindowFocus) .titleBarContainer .ContextMenuButton {
-  filter: var(--zehn-filter-unfocus) !important;
-}
-
 /* FRIENDS LIST */
 .friendlist {
   /* background-color: var(--zehn-color-app) !important; */
@@ -241,6 +237,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   transition: color 0.2s ease, background-color 0.2s ease !important;
   transform: scaleY(0) !important;
   order: 999 !important;
+  position: relative !important;
 }
 
 .zehnCurrentUserOpened .currentUserContainer {
@@ -269,7 +266,8 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   border-radius: var(--zehn-size-radius-angular) !important;
   width: var(--zehn-size-avatar-md) !important;
   height: var(--zehn-size-avatar-md) !important;
-  margin-right: 0 !important;
+  margin: 0 !important;
+  z-index: 0 !important;
 }
 
 .currentUserAvatar:hover {
@@ -285,7 +283,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 }
 
 .AvatarAndUser {
-  width: fit-content !important;
+  width: 100% !important;
   height: var(--zehn-size-avatar-md) !important;
   max-width: 100% !important;
   align-items: center !important;
@@ -297,18 +295,15 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   padding: 0 !important;
 }
 
-.friendlist .ContextMenuButton {
-  margin-left: 0 !important;
-  opacity: 1 !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  display: none !important;
+.nOdcT-MoOaXGePXLyPe0H,
+._2saJTAocZ9TnYXTGvnqUMC {
+  transition: none !important;
+  line-height: var(--zehn-size-16) !important;
 }
 
 .currentUserContainer .nOdcT-MoOaXGePXLyPe0H,
 .currentUserContainer ._2saJTAocZ9TnYXTGvnqUMC {
-  line-height: 16px !important;
+  line-height: var(--zehn-size-16) !important;
 }
 
 .currentUserContainer ._4ZTzGZ5TTgFyfw1DcXLXS {
@@ -371,52 +366,6 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 .compactView .currentUserContainer .labelHolder {
   padding-left: var(--zehn-size-padding-xs) !important;
-}
-
-.friendlist .ContextMenuButton {
-  opacity: 1 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-}
-
-.friendlist .ContextMenuButton .SVGIcon_DownArrowContextMenu {
-  padding-left: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background-color: var(--zehn-color-icon-primary) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  -webkit-mask-image: var(--zehn-icon-navigation) !important;
-  filter: none !important;
-  height: 32px !important;
-  width: 32px !important;
-
-  * { display: none !important; }
-}
-
-.currentUserContainer .ContextMenuButton {
-  background-color: var(--zehn-color-list-background) !important;
-
-  &:hover {
-    background-color: var(--zehn-color-list-background-hover) !important;
-  }
-
-  &:active {
-    background-color: var(--zehn-color-list-background-active) !important;
-  }
-}
-
-.FriendsListContent .ContextMenuButton,
-.MemberListColumn .ContextMenuButton,
-.VoiceChannelParticipants .ContextMenuButton {
-  opacity: 0 !important;
-  display: none !important;
 }
 
 ._3IswZMeeD6ORStUjgv6Xh8 {
@@ -1283,12 +1232,17 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   font-weight: var(--zehn-weight-normal) !important;
 }
 
+.friend>div:not([class]) {
+  z-index: 0 !important;
+}
+
 .friend .labelHolder {
   padding: 0 !important;
   margin: 0 0 0 var(--zehn-size-spacing-md) !important;
   height: 32px !important;
   display: grid !important;
   align-content: center !important;
+  transition: opacity 0.2s ease !important;
 }
 
 .friendlistListContainer .friend .labelHolder {
@@ -1917,6 +1871,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   padding: 0 !important;
   line-height: 100% !important;
   padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md) !important;
+  position: relative !important;
 }
 
 .ChatRoomListGroupItem_header>div:has(.openGroupButton) {
@@ -1955,6 +1910,7 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName {
   margin-left: 0 !important;
+  position: relative !important;
 }
 
 .ChatRoomListGroupItem:not(.NonGroupHovered) .ChatRoomListGroupItem_header:hover .chatRoomName {
@@ -1975,17 +1931,28 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 /* GROUP NAME */
 .groupNameStatusContainer {
-  padding-left: 0 !important;
-  margin-left: 12px !important;
+  padding: 0 !important;
+  margin-left: var(--zehn-size-spacing-sm) !important;
+}
+
+.compactView .groupNameStatusContainer {
+  margin-left: var(--zehn-size-spacing-xs) !important;
 }
 
 .HasLinkedBroadcast .groupNameStatusContainer {
-  margin-left: 12px !important;
+  margin-left: var(--zehn-size-spacing-sm) !important;
+}
+
+.compactView .HasLinkedBroadcast .groupNameStatusContainer {
+  margin-left: var(--zehn-size-spacing-xs) !important;
 }
 
 .HasLinkedBroadcast .groupNameStatusContainer .chatRoomName {
-  top: -8px !important;
-  position: relative !important;
+  top: calc(-1 * var(--zehn-size-spacing-xs)) !important;
+}
+
+.compactView .HasLinkedBroadcast .groupNameStatusContainer .chatRoomName {
+  top: unset !important;
 }
 
 .ChatRoomListGroupItem .openGroupButton {
@@ -2005,18 +1972,21 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   height: 100% !important;
 }
 
-.ChatRoomListGroupItem .openGroupButton svg {
+.openGroupButton .SVGIcon_DoubleArrow {
   background-color: var(--zehn-color-icon-secondary) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-sm) !important;
   -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
-  width: var(--zehn-size-icon-md) !important;
-  height: var(--zehn-size-icon-md) !important;
   position: relative !important;
   inset: 0 !important;
+  margin: 0 !important;
   width: 100% !important;
   height: 100% !important;
+  display: block !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 
   * { display: none !important; }
 }
@@ -2027,17 +1997,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
 
 .ChatRoomListGroupItem.ShowAllChannels .openGroupButton {
   transform: none !important;
-}
-
-.openGroupButton .SVGIcon_DoubleArrow {
-  width: 32px !important;
-  height: 32px !important;
-  margin: 0 !important;
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-
-  * { display: none !important; }
 }
 
 .ChatRoomListGroupItem.ShowAllChannels .openGroupButton .SVGIcon_DoubleArrow {
@@ -2070,7 +2029,6 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   margin-bottom: auto !important;
 }
 
-.compactView .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle,
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
   color: var(--zehn-color-text-secondary) !important;
   font-size: var(--zehn-size-12) !important;
@@ -2086,6 +2044,10 @@ body.in_global_drag .quickAccessFriends.emptyQuickAccess {
   white-space: nowrap !important;
   display: block !important;
   max-width: calc(100% - 96px) !important;
+}
+
+.compactView .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
+  display: none !important;
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::before {
@@ -2413,14 +2375,14 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
 /* USER LIST AFTER REFRESH */
 .VoiceChannelParticipants .friend {
   margin-top: 0 !important;
-  height: 32px !important;
+  height: var(--zehn-size-friends-entry-compact) !important;
   padding: 8px 16px !important;
   align-items: center !important;
 }
 
 .VoiceChannelParticipants.CompactFriendsList .friend {
   margin-top: 0 !important;
-  height: 32px !important;
+  height: var(--zehn-size-friends-entry-compact) !important;
   padding: 0 var(--zehn-size-padding-md) !important;
 }
 
