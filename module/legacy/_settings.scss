@@ -3991,6 +3991,7 @@ button.DialogButton.largeFontSetting.Primary {
 ._3t8HxXdv4QoWO7f3awdiCQ>.e600t61ObcLA11pIZAVb9 {
   padding: var(--zehn-size-dialog-padding) !important;
   padding-bottom: 0 !important;
+  margin: 0 !important;
 }
 
 ._3t8HxXdv4QoWO7f3awdiCQ>div:empty {
@@ -4175,7 +4176,6 @@ button.DialogButton.largeFontSetting.Primary {
   gap: var(--zehn-size-spacing-md) !important;
 }
 
-
 .ChatGroupSettingsChannels_Row ._DialogRow {
   background: var(--zehn-color-table-odd) !important;
   color: var(--zehn-color-text-primary) !important;
@@ -4353,25 +4353,33 @@ button.DialogButton.largeFontSetting.Primary {
 }
 
 /* GROUP CHAT PERMISSIONS */
+.meKey .SVGIcon_Crown,
 button.DialogButton.roleButton .SVGIcon_Crown {
-  width: 0 !important;
-  height: 0 !important;
-  opacity: 0 !important;
-  display: none !important;
+  -webkit-mask-image: var(--zehn-icon-crown) !important;
+}
+
+.meKey .SVGIcon_DialogCheck,
+button.DialogButton.roleButton .SVGIcon_DialogCheck {
+  -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+}
+
+.meKey .SVGIcon_Crown,
+.meKey .SVGIcon_DialogCheck {
+  background-color: var(--zehn-color-icon-secondary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  margin: 0 !important;
+  margin-right: var(--zehn-size-spacing-xs) !important;
+
+  * { display: none !important; }
 }
 
 .meKey .SVGIcon_Crown,
 .meKey .SVGIcon_DialogCheck,
-button.DialogButton.roleButton .SVGIcon_DialogCheck {
-  width: 0 !important;
-  height: 0 !important;
-  opacity: 0 !important;
-  display: none !important;
-}
-
-button.DialogButton.roleButton {
-  width: 100% !important;
-  max-width: none !important;
+button.DialogButton.roleButton.currentUserRole .SVGIcon_DialogCheck,
+.DialogButton.roleButton:disabled .SVGIcon_Button {
+  opacity: 1 !important;
 }
 
 .roleButton:last-child {
@@ -4380,8 +4388,6 @@ button.DialogButton.roleButton {
 
 button.DialogButton.createNewRoleButton {
   margin-top: 16px !important;
-  padding: 0 var(--zehn-size-padding-md) !important;
-  height: 32px !important;
 }
 
 ._29XR1SNMJVrwOTq4Ssc0HJ {
@@ -4393,6 +4399,8 @@ button.DialogButton.createNewRoleButton {
 .DialogLabel._DialogLayout.meKey {
   font-size: var(--zehn-size-14) !important;
   color: var(--zehn-color-text-secondary) !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 button.DialogButton.roleButton .roleSubtitle {
@@ -4400,6 +4408,8 @@ button.DialogButton.roleButton .roleSubtitle {
   color: var(--zehn-color-text-secondary) !important;
   font-weight: var(--zehn-weight-normal) !important;
   text-transform: none !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 .roleSubtitle {
