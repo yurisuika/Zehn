@@ -60,6 +60,18 @@ const Options = {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/amount/foreground/100%.css"/>');
             }
 
+            // const css = `
+            //   :root {
+            //     --option-blend-amount-background: ${options.theme.blend.amount.background};
+            //     --option-blend-amount-foreground: ${options.theme.blend.amount.foreground};
+            //   }
+            // `;
+
+            // const style = document.createElement('style');
+            // style.id = 'zehnOptions';
+            // style.textContent = css;
+            // document.head.appendChild(style);
+
             if (options.theme.blend.space == "srgb") {
               document.head.insertAdjacentHTML('beforebegin', '<link rel="stylesheet" href="https://steamloopback.host/skins/Zehn/config/theme/blend/space/srgb.css"/>');
             } else if (options.theme.blend.space == "lab") {
