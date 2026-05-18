@@ -240,6 +240,7 @@
 }
 
 // HEADER NOT ON SETTINGS PAGE - MAKE IT GO IN THE TITLEBAR
+.ModalPosition_Content .DialogHeader,
 .DialogContent .DialogHeader {
   position: absolute !important;
   top: 0 !important;
@@ -287,6 +288,59 @@
 // CANCEL DOUBLE DIALOG PADDING
 .DialogBody>.DialogBody {
   padding: 0 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SUBHEADERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.DialogHeaderSubtitle {
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+}
+
+.DialogSubHeader {
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  margin-right: 0 !important;
+}
+
+.DialogSubHeader:empty {
+  display: none !important;
+}
+
+// FOCUS BAR???
+.DialogHighlight {
+  color: var(--zehn-color-accent-100) !important;
+}
+
+// SETTINGS
+.SettingsDialogSubHeader {
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  text-transform: none !important;
+  margin: 0 !important;
+  line-height: normal !important;
+}
+
+// ADD MORE PADDING WHEN IT IS DOWN THE LINE
+.DialogControlsSection:not(:first-child)>.SettingsDialogSubHeader,
+div:not(:first-child)>.DialogSubHeader {
+  margin-top: var(--zehn-size-spacing-md) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -369,6 +423,42 @@
 
 
 
+// LABELS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.DialogLabel,
+.DialogLabelStrong {
+  color: var(--zehn-color-text-control) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  text-transform: none !important;
+  margin: 0 !important;
+}
+
+label>.DialogLabel {
+  line-height: 32px !important;
+}
+
+// TREAT SOME WHAT'S NEW LABELS AS SUBHEADERS
+._1n-sV5GdQis4Wh9XN3GJ7L>.DialogLabel._DialogLayout:not(.fyxt0H7Cwfirf9908slPp) {
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  text-transform: none !important;
+  margin-right: 0 !important;
+  line-height: 32px !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // CONTROL SeCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .DialogContent .DialogControlsSection {
@@ -416,6 +506,58 @@
   gap: var(--zehn-size-spacing-md) !important;
   display: flex !important;
   flex-direction: column !important;
+}
+
+// LIMIT CONTROL SECTION WIDTH FOR SETTINGS AND CHAT SETTINGS
+.ModalDialogPopup:has(.PageListColumn) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>* {
+  max-width: var(--zehn-size-settings-content) !important;
+  flex-wrap: wrap !important;
+}
+
+.ModalDialogPopup:has(.xSTLmzylFJdIfak7ZdhuA) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>* {
+  max-width: var(--zehn-size-settings-content) !important;
+  flex-wrap: wrap !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// ERROR BOUNDARY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.ErrorBoundary {
+  margin: 0 !important;
+  background-color: transparent !important;
+  font-size: var(--zehn-size-16) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-padding-xl) !important;
+  gap: var(--zehn-size-spacing-md) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.ErrorBoundary>h1 {
+  font-size: var(--zehn-size-20) !important;
+  color: var(--zehn-color-text-primary) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0 !important;
+}
+
+.ErrorBoundary>pre {
+  font-size: var(--zehn-size-16) !important;
+  color: var(--zehn-color-text-secondary) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  white-space: pre-wrap !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

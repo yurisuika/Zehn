@@ -571,24 +571,6 @@
   flex-direction: column !important;
 }
 
-/* SUB HEADER */
-div:not(:first-child)>.DialogSubHeader {
-  margin-top: 16px !important;
-}
-
-.SettingsDialogSubHeader {
-  color: var(--zehn-color-text-section-header) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-text-section-header) !important;
-  text-transform: none !important;
-  margin: 0 !important;
-  line-height: normal !important;
-}
-
-.DialogControlsSection:not(:first-child)>.SettingsDialogSubHeader {
-  margin-top: var(--zehn-size-padding-md) !important;
-}
-
 /* FADE */
 .aFxOaYcllWYkCfVYQJFs0.DesktopUI,
 .DesktopUI .aFxOaYcllWYkCfVYQJFs0 {
@@ -1239,9 +1221,6 @@ div:not(:first-child)>.DialogSubHeader {
 }
 
 /* ACCESSIBILITY */
-.DialogContent:has(.dbACWBb8zr4cf4u05jQ4x) .aFxOaYcllWYkCfVYQJFs0>.eKmEXJCm_lgme24Fp_HWt ._198v6zB5mZ5FWG0wpQU_3m::before {
-  display: none !important;
-}
 
 /* CONTROLLER */
 ._3Ebb3ha_Q86-lxguhjfyE1 {
@@ -2318,7 +2297,8 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe ._7uqoPx5Q7bdrbtNEh3iZn .
 }
 
 /* VOICE SLIDER */
-.aFxOaYcllWYkCfVYQJFs0>.eKmEXJCm_lgme24Fp_HWt ._198v6zB5mZ5FWG0wpQU_3m::before {
+.DialogContent[id$="/settings/music_Content"] .aFxOaYcllWYkCfVYQJFs0>.eKmEXJCm_lgme24Fp_HWt ._198v6zB5mZ5FWG0wpQU_3m::before,
+.DialogContent[id$="/settings/voice_Content"] .aFxOaYcllWYkCfVYQJFs0>.eKmEXJCm_lgme24Fp_HWt ._198v6zB5mZ5FWG0wpQU_3m::before {
   content: "" !important;
   display: block !important;
   margin-right: var(--zehn-size-spacing-xs) !important;
@@ -2331,7 +2311,7 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe ._7uqoPx5Q7bdrbtNEh3iZn .
   -webkit-mask-image: var(--zehn-icon-volume) !important;
 }
 
-.aFxOaYcllWYkCfVYQJFs0>.eKmEXJCm_lgme24Fp_HWt:nth-of-type(5) ._198v6zB5mZ5FWG0wpQU_3m::before {
+.DialogContent[id$="/settings/voice_Content"] .aFxOaYcllWYkCfVYQJFs0>.eKmEXJCm_lgme24Fp_HWt:nth-of-type(5) ._198v6zB5mZ5FWG0wpQU_3m::before {
   -webkit-mask-image: var(--zehn-icon-mic) !important;
 }
 
@@ -3377,16 +3357,6 @@ div[role="radiogroup"] {
 }
 
 /* HEADER */
-._2JKpGzeAiwmBdY73bfRXz- .DialogHeader {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  padding: var(--zehn-size-titlebar-text-padding) !important;
-  line-height: var(--zehn-size-titlebar) !important;
-  font-size: var(--zehn-size-12) !important;
-  margin-bottom: 0 !important;
-}
-
 ._1n-sV5GdQis4Wh9XN3GJ7L>div:last-child {
   margin: 0 !important;
 }
@@ -3431,16 +3401,6 @@ div[role="radiogroup"] {
 /* BLATHER */
 .DialogLabel._DialogLayout.fyxt0H7Cwfirf9908slPp._3Hf53stS1-9flruoPqwO0O {
   display: none !important;
-}
-
-/* SECTIONS */
-._1n-sV5GdQis4Wh9XN3GJ7L>.DialogLabel._DialogLayout:not(.fyxt0H7Cwfirf9908slPp) {
-  color: var(--zehn-color-text-primary) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-20) !important;
-  text-transform: none !important;
-  margin-right: 0 !important;
-  line-height: 32px !important;
 }
 
 /* VISIBILITY SETTINGS */
@@ -3842,7 +3802,9 @@ button.DialogButton.largeFontSetting.Primary {
 ._3bRmSOJUVj1nNIriZ3YeMF .jTR51Ds1KV4MXKsqBWBPD:last-of-type {
   // flex-direction: column !important;
   align-self: start !important;
-  gap: 0 !important;
+  // gap: 0 !important;
+  gap: var(--zehn-size-spacing-label) !important;
+  /* NOT SURE WHAT THIS WAS SET FOR */
 }
 
 /* THRESHOLD */
@@ -4222,6 +4184,8 @@ button.DialogButton.largeFontSetting.Primary {
   border-radius: var(--zehn-size-radius-angular) !important;
   padding: 0 16px 0 0 !important;
   margin: 0 !important;
+  max-width: calc(100% - (var(--zehn-size-table-entry-large) / 2)) !important;;
+  box-sizing: border-box !important;
 }
 
 .ChatGroupSettingsChannels_Row:nth-child(2n) ._DialogRow {
@@ -4263,8 +4227,13 @@ button.DialogButton.largeFontSetting.Primary {
   font-weight: var(--zehn-weight-normal) !important;
 }
 
-.rolePriorityButton {
+.rolePriorityContainer {
   --row-half: var(--zehn-size-table-entry-large) / 2;
+  width: var(--row-half) !important;
+  height: var(--zehn-size-table-entry-large) !important;
+}
+
+.rolePriorityButton {
   width: calc(var(--row-half)) !important;
   height: calc(var(--row-half)) !important;
   background-color: var(--zehn-color-table-odd) !important;
@@ -4334,18 +4303,17 @@ button.DialogButton.largeFontSetting.Primary {
   opacity: 1 !important;
 }
 
+.rolePriorityButton:active svg {
+  background-color: var(--zehn-color-icon-secondary) !important;
+}
+
 .rolePriorityButton.Disabled svg {
   background-color: var(--zehn-color-icon-tertiary) !important;
   display: block !important;
 }
 
-.rolePriorityContainer {
-  width: 24px !important;
-  height: 32px !important;
-}
-
 .rolePriorityContainer .rolePriorityButton.roleDown {
-  top: 16px !important;
+  top: calc(var(--row-half)) !important;
 }
 
 .rolePriorityButton.roleUp svg {
