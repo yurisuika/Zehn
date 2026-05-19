@@ -404,22 +404,20 @@ const Zehn = {
   },
 
   revealInner(containerSelector) {
-    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
-
     this.findRootsAndTargets(containerSelector, '.zehnReveal', (container, revealed) => {
       this.reveal(container, revealed);
     });
   },
 
   revealSelf(selfSelector) {
-    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
-
     this.findTargets(document, selfSelector, (revealed) => {
       this.reveal(revealed, revealed);
     }, false);
   },
 
   reveal(container, revealed) {
+    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
+
     const targets = [revealed];
     const maskSize = 200;
     const halfMask = maskSize / 2;
