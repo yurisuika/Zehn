@@ -333,6 +333,54 @@
 
 
 
+// lAYOUTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// COLUMNS
+._DialogColLayout {
+  gap: var(--zehn-size-spacing-button) !important;
+  justify-content: center !important;
+  flex-flow: row !important;
+  max-width: 100% !important;
+  min-width: fit-content !important;
+}
+
+._DialogColLayout.DialogThreeColLayout {
+  gap: var(--zehn-size-spacing-button) !important;
+}
+
+._DialogColLayout.DialogTwoColLayout {
+  gap: var(--zehn-size-spacing-button) !important;
+}
+
+._DialogColLayout>._DialogLayout {
+  --gap-total: 0;
+  --column-count: 1;
+  flex: 1 !important;
+  min-width: calc((100% - var(--gap-total)) / var(--column-count)) !important;
+  max-width: calc((100% - var(--gap-total)) / var(--column-count)) !important;
+}
+
+.DialogTwoColLayout>._DialogLayout {
+  --gap-total: var(--zehn-size-spacing-xs);
+  --column-count: 3;
+}
+
+.DialogThreeColLayout>._DialogLayout {
+  --gap-total: (2 * var(--zehn-size-spacing-xs));
+  --column-count: 3;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // SUBHEADERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .DialogHeaderSubtitle {
@@ -620,6 +668,44 @@ label>.DialogLabel {
 // SPAN THE DIALOG
 .DialogFooter ._DialogLayout.DialogButton {
   max-width: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GENERIC CONFIRM DIALOG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.GenericConfirmDialog {
+  min-height: fit-content !important;
+  max-height: none !important;
+}
+
+.GenericConfirmDialog._DialogCenterVertically {
+  justify-content: center !important;
+}
+
+// MAKE INPUT FIELDS FULL WIDTH
+.GenericConfirmDialog ._DialogLayout:not(.DialogButton) {
+  flex: 1 !important;
+  max-width: none !important;
+}
+
+.GenericConfirmDialog .DialogInput_Wrapper {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.GenericConfirmDialog .DialogInput_Wrapper>input.DialogInput {
+  min-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
