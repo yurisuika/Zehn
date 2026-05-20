@@ -1,6 +1,6 @@
 // BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin base {
+@mixin base($icon) {
   appearance: unset !important;
   box-sizing: border-box !important;
   // display: flex !important;
@@ -32,7 +32,7 @@
   outline-style: solid !important;
   outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
 
-  svg {
+  #{$icon} {
     // display: block !important;
     transition: none !important;
     transform: none !important;
@@ -260,36 +260,36 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset-symmetric($height, $disabled: ".Disabled") {
-  @include base;
+@mixin preset-symmetric($height, $disabled: ".Disabled", $icon: "svg") {
+  @include base($icon);
   @include size-symmetric($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-asymmetric($height, $width, $disabled: ".Disabled") {
-  @include base;
+@mixin preset-asymmetric($height, $width, $disabled: ".Disabled", $icon: "svg") {
+  @include base($icon);
   @include size-asymmetric($height, $width);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-wide($height, $disabled: ".Disabled") {
-  @include base;
+@mixin preset-wide($height, $disabled: ".Disabled", $icon: "svg") {
+  @include base($icon);
   @include size-wide($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-tall($height, $disabled: ".Disabled") {
-  @include base;
+@mixin preset-tall($height, $disabled: ".Disabled", $icon: "svg") {
+  @include base($icon);
   @include size-tall($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-dynamic($height, $disabled: ".Disabled") {
-  @include base;
+@mixin preset-dynamic($height, $disabled: ".Disabled", $icon: "svg") {
+  @include base($icon);
   @include size-dynamic($height);
   @include shape-default;
   @include looks($disabled);
