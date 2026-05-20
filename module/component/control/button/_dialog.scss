@@ -1,6 +1,6 @@
 // BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin base($icon) {
+@mixin base($icon, $icon-size) {
   appearance: unset !important;
   box-sizing: border-box !important;
   // display: flex !important;
@@ -48,7 +48,7 @@
     margin: auto 0 !important;
     padding: 0 !important;
 
-    mask-size: var(--zehn-size-icon-md) !important;
+    mask-size: $icon-size !important;
     mask-repeat: no-repeat !important;
     mask-position: center !important;
 
@@ -260,36 +260,36 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset-symmetric($height, $disabled: ".Disabled", $icon: "svg") {
-  @include base($icon);
+@mixin preset-symmetric($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
+  @include base($icon, $icon-size);
   @include size-symmetric($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-asymmetric($height, $width, $disabled: ".Disabled", $icon: "svg") {
-  @include base($icon);
+@mixin preset-asymmetric($height, $width, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
+  @include base($icon, $icon-size);
   @include size-asymmetric($height, $width);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-wide($height, $disabled: ".Disabled", $icon: "svg") {
-  @include base($icon);
+@mixin preset-wide($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
+  @include base($icon, $icon-size);
   @include size-wide($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-tall($height, $disabled: ".Disabled", $icon: "svg") {
-  @include base($icon);
+@mixin preset-tall($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
+  @include base($icon, $icon-size);
   @include size-tall($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-dynamic($height, $disabled: ".Disabled", $icon: "svg") {
-  @include base($icon);
+@mixin preset-dynamic($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
+  @include base($icon, $icon-size);
   @include size-dynamic($height);
   @include shape-default;
   @include looks($disabled);
