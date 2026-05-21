@@ -4,7 +4,7 @@ Zehn is a Steam skin based on Windows 10's transitional design language. It come
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is technically known as MDL2, the first iteration of Fluent Design. It is a transitional design language that retains the sharp lines and minimalistic icons of Metro and merges them with reactive Fluent effects such as Acrylic and Reveal that evolved into Fluent 2 for Windows 11. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
 > [!IMPORTANT]
-> Zehn is presently going massive internal restructuring. Years of natural growth are being reworked into a highly organized and structured form. Things may temporarily become misaligned or broken during this process, but the final result will be a skin that may be completely personalized with ease. See #66 and #103 for more details.
+> Zehn is presently going massive internal restructuring. Years of natural growth are being reworked into a highly organized and structured form. Things may temporarily become misaligned or broken during this process, but the final result will be a skin that may be completely personalized with ease.
 
 ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/zehn.png)
 
@@ -105,7 +105,7 @@ You can also choose between using light or dark mode, or let Zehn sync with your
 > Use Millennium's Library Manager to select Zehn's options inside of Steam. You will be prompted to reload Steam when done.
 >
 > #### SFP
-> Edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the values in `~/skin.json` for now to know what they do. The skin folder must be named `Zehn` for this to work at the present time!
+> Edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be. The skin folder must be named `Zehn` for this to work at the present time!
 
 > [!IMPORTANT]
 > Please note that if you are not using Millennium, you must now set the `enable` option to `true` in `options.json`, and vice versa. This is to prevent the JSON config patches from being injected in addition to the patches already selected through Millennium's own settings system.
