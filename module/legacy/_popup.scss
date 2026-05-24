@@ -656,26 +656,27 @@
 /* HEADER */
 .FriendsSettingsNotificationRow.FriendsSettingsNotificationRow_Header .FriendsSettingsNotificationRow_Label {
   text-transform: none !important;
-  color: var(--zehn-color-text-secondary) !important;
+  color: var(--zehn-color-text-description) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-description) !important;
 }
 
-.DialogBody.useDefaults .FriendsSettingsNotificationRow.FriendsSettingsNotificationRow_Header .FriendsSettingsNotificationRow_Label {
-  filter: var(--zehn-filter-unfocus) saturate(0) !important;
-}
+.DialogBody.useDefaults .FriendsSettingsNotificationRow.FriendsSettingsNotificationRow_Header .FriendsSettingsNotificationRow_Label {}
 
 .FriendsSettingsNotificationRow.FriendsSettingsNotificationRow_Header .FriendsSettingsNotificationRow_Checkbox {
-  color: var(--zehn-color-text-secondary) !important;
+  color: var(--zehn-color-text-description) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-description) !important;
   text-align: left !important;
 }
 
-.DialogBody.useDefaults .FriendsSettingsNotificationRow.FriendsSettingsNotificationRow_Header .FriendsSettingsNotificationRow_Checkbox {
-  filter: var(--zehn-filter-unfocus) saturate(0) !important;
-}
+.DialogBody.useDefaults .FriendsSettingsNotificationRow.FriendsSettingsNotificationRow_Header .FriendsSettingsNotificationRow_Checkbox {}
 
 /* LABEL */
 .DialogBody.useDefaults .FriendsSettingsNotificationRow:not(.FriendsSettingsNotificationRow_Header) .FriendsSettingsNotificationRow_Label {
-  color: var(--zehn-color-text-primary) !important;
-  filter: var(--zehn-filter-unfocus) saturate(0) !important;
+  color: var(--zehn-color-text-control) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-control) !important;
 }
 
 /* DROPDOWN*/
@@ -766,6 +767,7 @@
 
 .indicatorOption {
   background: transparent !important;
+  flex-direction: column !important;
 }
 
 .ChatRoomNotificationSettingsDialog .indicatorOptionContainer .DialogToggle_Label {
@@ -1031,7 +1033,8 @@
   overflow-y: auto !important;
   margin: 0 -16px !important;
   padding: 0 16px !important;
-  max-height: 326px !important;
+  max-height: unset !important;
+  // max-height: 326px !important;
   /* MANUAL OVERRIDE BECAUSE I DON'T KNOW WHY IT IS GOING PAST THE FOOTER */
 }
 
@@ -1336,25 +1339,34 @@
   right: 0 !important;
   bottom: 0 !important;
   line-height: 16px !important;
-}
 
-.dropGroupInviteDialog .addMoreFriendsButton:hover {
-  color: var(--zehn-color-text-secondary) !important;
-}
+  &:hover {
+    color: var(--zehn-color-text-secondary) !important;
 
-.dropGroupInviteDialog .addMoreFriendsButton:hover {
-  color: var(--zehn-color-text-tertiary) !important;
+    .ExpandArrow {
+      background-color: var(--zehn-color-icon-secondary) !important;
+    }
+  }
+
+  &:hover {
+    color: var(--zehn-color-text-tertiary) !important;
+
+    .ExpandArrow {
+      background-color: var(--zehn-color-icon-tertiary) !important;
+    }    
+  }
 }
 
 .dropGroupInviteDialog .ExpandArrow {
   width: 16px !important;
   height: 16px !important;
-  transform: rotate(0deg) !important;
+  transform: none !important;
   margin: 0 0 0 8px !important;
-}
-
-.dropGroupInviteDialog .addMoreFriendsButton:hover .ExpandArrow {
-  filter: var(--zehn-filter-unfocus) !important;
+  background-color: var(--zehn-color-icon-primary) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-sm) !important;
+  -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */

@@ -37,7 +37,7 @@
 .multiChatDialog .ChatTabs::before {
   background: var(--zehn-color-section-acrylic);
   transition: background-color 0.2s ease;
-  backdrop-filter: var(--zehn-acrylic-filter);
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter);
   background-blend-mode: exclusion;
 }
 
@@ -49,12 +49,12 @@
   opacity: 0;
   pointer-events: none;
   background-size: auto;
-  background-image: var(--zehn-acrylic-texture);
+  background-image: var(--zehn-transparency-effects-acrylic-texture);
   transition: opacity 0.2s ease;
 }
 
 .WindowFocus .multiChatDialog .ChatTabs::after {
-  opacity: var(--zehn-acrylic);
+  opacity: var(--zehn-transparency-effects-acrylic);
 }
 
 .MultiUserChat::before {
@@ -124,16 +124,8 @@
   margin: 0 !important;
 }
 
-body:not(.WindowFocus) .friendCollapseButton .SVGIcon_DoubleArrow {
-  filter: var(--zehn-filter-unfocus) !important;
-}
-
 .friendCollapseButton .SVGIcon_DoubleArrow {
   -webkit-mask-image: var(--zehn-icon-chevron-left) !important;
-}
-
-body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
-  filter: var(--zehn-filter-unfocus) !important;
 }
 
 .chatTabOpenFriendsList .SVGIcon_Group {
@@ -236,13 +228,24 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 }
 
 ._1HNpQBKKKQ1tG2OZH3CSsh {
-  color: var(--zehn-color-text-primary) !important;
-  font-size: var(--zehn-size-14) !important;
-  margin-left: 12px !important;
-  font-weight: var(--zehn-weight-thick) !important;
   line-height: 100% !important;
+  margin-left: 12px !important;
   text-overflow: ellipsis !important;
   -webkit-mask: none !important;
+}
+
+._2XZq-_f6npaQdAgeRzKIkz .nOdcT-MoOaXGePXLyPe0H,
+._2XZq-_f6npaQdAgeRzKIkz ._1HNpQBKKKQ1tG2OZH3CSsh {
+  color: var(--zehn-color-text-secondary) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-thick) !important;
+}
+
+._2XZq-_f6npaQdAgeRzKIkz:hover .nOdcT-MoOaXGePXLyPe0H,
+._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ .nOdcT-MoOaXGePXLyPe0H,
+._2XZq-_f6npaQdAgeRzKIkz:hover ._1HNpQBKKKQ1tG2OZH3CSsh,
+._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ ._1HNpQBKKKQ1tG2OZH3CSsh {
+  color: var(--zehn-color-text-primary) !important;
 }
 
 /* TAB CONTENT */
@@ -268,9 +271,8 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
   background: transparent !important;
 }
 
-._2XZq-_f6npaQdAgeRzKIkz:not(.Yd-DsWkYiFiYwpci--Yk_):not(:hover):not(:active) .c9l09VKqQIXJvsl0gqItO {
-  filter: var(--zehn-filter-tab-unfocus) !important;
-  transition: none !important;
+._2XZq-_f6npaQdAgeRzKIkz:not(.Yd-DsWkYiFiYwpci--Yk_):not(:hover):not(:active) .c9l09VKqQIXJvsl0gqItO svg {
+  background-color: var(--zehn-color-icon-secondary);
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz .c9l09VKqQIXJvsl0gqItO {
@@ -362,19 +364,10 @@ body:not(.WindowFocus) .chatTabOpenFriendsList .SVGIcon_Group {
 
 /* NON-ACTIVE TAB */
 ._2XZq-_f6npaQdAgeRzKIkz .vs5AhAWHJLa_eDOBkDcMy {
-  transition: filter 0.2s ease !important;
-  filter: none !important;
-}
-
-._2XZq-_f6npaQdAgeRzKIkz:not(.Yd-DsWkYiFiYwpci--Yk_):not(:hover) .vs5AhAWHJLa_eDOBkDcMy {
-  filter: var(--zehn-filter-tab-unfocus) !important;
+  transition: none !important;
 }
 
 /* TAB SELECTOR */
-body:not(.WindowFocus) .chatTabSelector svg {
-  filter: var(--zehn-filter-unfocus) !important;
-}
-
 .chatTabSelector .SVGIcon_DownArrowContextMenu {
   -webkit-mask-image: var(--zehn-icon-chevron-down) !important;
 }
@@ -523,7 +516,7 @@ span.mention {
   transition: none !important;
   position: relative !important;
   inset: unset !important;
-  border-radius: var(--zehn-mask-avatar-roundness) !important;
+  border-radius: var(--zehn-avatar-shape-radius) !important;
 }
 
 span.mentionSearchMatch {
@@ -1540,10 +1533,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   white-space: nowrap !important;
   overflow: hidden !important;
   background-color: var(--zehn-color-acrylic) !important;
-  backdrop-filter: var(--zehn-acrylic-filter) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-blend-mode: exclusion !important;
   background-size: auto !important;
-  background-image: var(--zehn-acrylic-texture) !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
 }
 
 .chatFileUploadCancel {
@@ -1620,10 +1613,10 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
 .chatFileUploadProgressContainer {
   border-radius: var(--zehn-size-radius-angular) !important;
   background-color: var(--zehn-color-acrylic) !important;
-  backdrop-filter: var(--zehn-acrylic-filter) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-blend-mode: exclusion !important;
   background-size: auto !important;
-  background-image: var(--zehn-acrylic-texture) !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
   padding: 16px !important;
   width: 250px !important;
   bottom: calc(32px + 16px) !important;
@@ -1870,9 +1863,9 @@ body:not(.WindowFocus) .inviteAnotherFriendButton {
   border-radius: var(--zehn-size-radius-circular) !important;
   background-color: var(--zehn-color-acrylic) !important;
   background-blend-mode: exclusion !important;
-  backdrop-filter: var(--zehn-acrylic-filter) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-size: auto !important;
-  background-image: var(--zehn-acrylic-texture) !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
   transition: 0.2s cubic-bezier(0.165, 0.840, 0.440, 1.000) !important;
   transition-property: opacity, transform, filter !important;
   opacity: 0 !important;
@@ -2567,9 +2560,9 @@ div:hover>.BBCodeCollapseControl {
   border-radius: var(--zehn-size-radius-circular) !important;
   background-color: var(--zehn-color-acrylic) !important;
   background-blend-mode: exclusion !important;
-  backdrop-filter: var(--zehn-acrylic-filter) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-size: auto !important;
-  background-image: var(--zehn-acrylic-texture) !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
   transition: 0.2s cubic-bezier(0.165, 0.840, 0.440, 1.000) !important;
   transition-property: opacity, transform, filter !important;
   opacity: 0 !important;
@@ -2807,9 +2800,9 @@ div:hover>.BBCodeCollapseControl {
 
 ._2KpxNwIOJq2xElKzUwTadQ {
   background: var(--zehn-color-acrylic) !important;
-  backdrop-filter: var(--zehn-acrylic-filter) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-blend-mode: exclusion !important;
-  background-image: var(--zehn-acrylic-texture) !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
   border-radius: var(--zehn-size-context-radius) !important;
   color: var(--zehn-color-context-text) !important;
   font-size: var(--zehn-size-context-text) !important;

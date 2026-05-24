@@ -319,37 +319,31 @@ a.chatImageURL,
 // ACCOUNT
 ._3yD46y5pd3zOGR7CzKs0mC {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
-  float: right !important;
 }
 
 // VR
 ._3lRfTo8Wo3phXfE1DvK6QW {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._1QQWjaXmb1eTHZpeIhQA_5");
-  display: var(--zehn-display-vr) !important;
 }
 
 // BIG PICTURE
 ._3LKQ3S_yqrebeNLF6aeiog {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
-  display: var(--zehn-display-big-picture) !important;
 }
 
 // ADD GAME
 ._2foCkpRXhqq0UGVE50BWqj {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._2Sdix9OOEHP6z_b4W2oaU9");
-  float: right !important;
   -webkit-app-region: no-drag !important;
-  display: var(--zehn-display-add-game) !important;
 }
 
 // FRIENDS
 ._1TdaAqMFadi0UTqilrkelR {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._2Sdix9OOEHP6z_b4W2oaU9");
-  float: right !important;
   -webkit-app-region: no-drag !important;
 }
 
-// ALERT
+// NOTIFICATIONS
 .RtSv39ZoBOySnb8XQ5hJf,
 .RtSv39ZoBOySnb8XQ5hJf._9YK5IY219Pm_F53DAxyYp,
 .RtSv39ZoBOySnb8XQ5hJf._3qhGkQ5qLVNQQ-J2-uPoHt,
@@ -360,28 +354,27 @@ a.chatImageURL,
 // ANNOUNCEMENT
 ._5wILZhsLODVwGfcJ0hKmJ {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._1QQWjaXmb1eTHZpeIhQA_5");
-  float: right !important;
   -webkit-app-region: no-drag !important;
-  display: var(--zehn-display-announcements) !important;
 }
 
 // SOUNDTRACK
 .Utdt7JrpIm5JlpQmqyj1v,
 .Utdt7JrpIm5JlpQmqyj1v._1nKxf9MhTV5zdB5iUjAgYb {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
-  float: right !important;
   -webkit-app-region: no-drag !important;
 }
 
 // DOWNLOAD
 .ip-YZhijAMZcuRoXBGiye {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._2Sdix9OOEHP6z_b4W2oaU9", $icon: "._1KrJ3sFAqPBN9mfpaNTU5F");
+  @include app.preset-asymmetric(var(--zehn-size-navbar), 100%, $disabled: "._2Sdix9OOEHP6z_b4W2oaU9", $icon: "._1KrJ3sFAqPBN9mfpaNTU5F");
   position: relative !important;
-  overflow: visible !important;
 }
 
-// ACCOUNT ALERT
-._32TmRVFkc8HMIUZ-KnnKby._3E5iVG630BkOHTaJJaMEMw {
+// SUPPORT / OS END OF LIFE / KIOSK / TRANSPORT ERROR
+._32TmRVFkc8HMIUZ-KnnKby,
+._1AcQ7PwcnBGsbAmuKOZHvd,
+._3arz-hc3FJ0QKXLPRUSaah,
+.EdtW0igyTLSSiXq1Mcc8F {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
 }
 
@@ -393,7 +386,11 @@ a.chatImageURL,
 
 // THEATER MODE
 #zehnToggleTheaterMode {
-  order: 99;
+  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
+}
+
+// EXPANDED NAVBAR
+#zehnToggleExpandedNavbar {
   @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control));
 }
 
@@ -736,7 +733,7 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // MILLENNIUM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// SETTINGS
+// SETTINGS FLYOUT HEADER
 ._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary {
   @include app.preset-symmetric(var(--zehn-size-button-app));
 }
@@ -1078,9 +1075,15 @@ button.DialogButton.MillenniumIconButton.Secondary,
 }
 
 // RECORDING - DELETE
-._1IsPTEXf7ua_4XbMa3sXyW
-.Yc3_Ah2ZI5nQUvQh_3nXP {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+._1IsPTEXf7ua_4XbMa3sXyW {
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $icon: "svg.Yc3_Ah2ZI5nQUvQh_3nXP");
+}
+
+// RECORDING - QUALITY
+._3epr8QYWw_FqFgMx38YEEm.DialogButton:has(span._1UpteyCApeHSfG-Tw-3H3m) {
+  @include dialog.preset-wide(fit-content);
+  display: flex !important;
+  flex-direction: row !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1281,6 +1284,23 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 
 
 
+// SOUNDTRACK MENU ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._20v4MHXd0kP4rRu6ZTAGQU ._DialogLayout.DialogButton.EmptyButton {
+  @include dialog.preset-asymmetric(fit-content, 100%);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // ZEHN ADDITIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .zehnButton {
@@ -1297,20 +1317,11 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 .zehnIcon {
   width: 100%;
   height: 100%;
-  background-color: var(--zehn-color-icon-primary);
+  background-color: var(--icon-color);
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: var(--zehn-size-icon-md);
   margin: auto;
-}
-
-body:not(.WindowFocus) #zehnBackwardsWrapper svg,
-body:not(.WindowFocus) #zehnForwardsWrapper svg {
-  filter: var(--zehn-filter-unfocus) !important;
-}
-
-body:not(.WindowFocus) #zehnToggleNavigation .zehnIcon {
-  filter: var(--zehn-filter-unfocus) !important;
 }
 
 #zehnToggleNavigation .zehnIcon {
@@ -1337,23 +1348,19 @@ body:not(.WindowFocus) #zehnToggleNavigation .zehnIcon {
 }
 
 #zehnToggleTheaterMode .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-theater-mode-disabled);
+  -webkit-mask-image: var(--zehn-icon-full-view);
 }
 
 .zehnToggled#zehnToggleTheaterMode .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-theater-mode-enabled);
+  -webkit-mask-image: var(--zehn-icon-focus-view);
 }
 
-body:not(.WindowFocus) #zehnToggleTheaterMode .zehnIcon {
-  filter: var(--zehn-filter-unfocus);
+#zehnToggleExpandedNavbar .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-more);
 }
 
 #zehnToggleFriendsHeader .zehnIcon {
   -webkit-mask-image: var(--zehn-icon-navigation);
-}
-
-body:not(.WindowFocus) #zehnToggleFriendsHeader .zehnIcon {
-  filter: var(--zehn-filter-unfocus);
 }
 
 #zehnToggleUser .zehnIcon {

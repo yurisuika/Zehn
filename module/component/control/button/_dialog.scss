@@ -172,7 +172,7 @@
   color: var(--zehn-color-button-dialog-text) !important;
   outline-color: var(--zehn-color-button-dialog-border) !important;
 
-  --icon-color: var(--zehn-color-button-dialog-icon) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon);
 }
 
 @mixin look-focus {
@@ -180,7 +180,7 @@
   color: var(--zehn-color-button-dialog-text-focus) !important;
   outline-color: var(--zehn-color-button-dialog-border-focus) !important;
 
-  --icon-color: var(--zehn-color-button-dialog-icon-focus) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-focus);
 }
 
 @mixin look-hover {
@@ -188,7 +188,7 @@
   color: var(--zehn-color-button-dialog-text-hover) !important;
   outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 
-  --icon-color: var(--zehn-color-button-dialog-icon-hover) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-hover);
 }
 
 @mixin look-hover-focus {
@@ -196,7 +196,7 @@
   color: var(--zehn-color-button-dialog-text-hover-focus) !important;
   outline-color: var(--zehn-color-button-dialog-border-hover-focus) !important;
 
-  --icon-color: var(--zehn-color-button-dialog-icon-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-hover-focus);
 }
 
 @mixin look-active {
@@ -204,7 +204,7 @@
   color: var(--zehn-color-button-dialog-text-active) !important;
   outline-color: var(--zehn-color-button-dialog-border-active) !important;
 
-  --icon-color: var(--zehn-color-button-dialog-icon-active) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-active);
 }
 
 @mixin look-active-focus {
@@ -212,7 +212,7 @@
   color: var(--zehn-color-button-dialog-text-active-focus) !important;
   outline-color: var(--zehn-color-button-dialog-border-active-focus) !important;
 
-  --icon-color: var(--zehn-color-button-dialog-icon-active-focus) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-active-focus);
 }
 
 @mixin look-disabled {
@@ -221,7 +221,7 @@
   color: var(--zehn-color-button-dialog-text-disabled) !important;
   outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
 
-  --icon-color: var(--zehn-color-button-dialog-icon-disabled) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-disabled);
 }
 
 @mixin looks($disabled) {
@@ -240,7 +240,7 @@
   color: var(--zehn-color-button-dialog-text-selected) !important;
   border-color: var(--zehn-color-button-dialog-border-selected) !important;
 
-  --icon-color:  var(--zehn-color-button-dialog-icon-selected) !important;
+  --icon-color:  var(--zehn-color-button-dialog-icon-selected);
 }
 
 @mixin looks-selected($selected) {
@@ -277,13 +277,6 @@
 @mixin preset-wide($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
   @include base($icon, $icon-size);
   @include size-wide($height);
-  @include shape-default;
-  @include looks($disabled);
-}
-
-@mixin preset-tall($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
-  @include base($icon, $icon-size);
-  @include size-tall($height);
   @include shape-default;
   @include looks($disabled);
 }
