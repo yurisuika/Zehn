@@ -3,14 +3,11 @@ Zehn is a Steam skin based on Windows 10's transitional design language. It come
 
 Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a stock Windows 10 experience. The design language behind this OS is technically known as MDL2, the first iteration of Fluent Design. It is a transitional design language that retains the sharp lines and minimalistic icons of Metro and merges them with reactive Fluent effects such as Acrylic and Reveal that evolved into Fluent 2 for Windows 11. So, I took the German word for "ten", as it also sounds like the Japanese "禅". My mind is clear knowing that this theme fits seamlessly into a Windows 10 environment.
 
-> [!IMPORTANT]
-> Zehn is presently going massive internal restructuring. Years of natural growth are being reworked into a highly organized and structured form. Things may temporarily become misaligned or broken during this process, but the final result will be a skin that may be completely personalized with ease.
-
 ![zehn](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/zehn.png)
 
 ----------
 
-## Make Steam Look Like A Native App!
+## Make Steam Look Like It Belongs in Windows 10
 
 Part of the design philosophy behind Zehn is to only show what is always going to be relevant to your needs. The rest can be displayed when the ephemeral moment comes. Steam has a lot of visual clutter and redundancy, so Zehn seeks to alleviate you of this and let you navigate Steam without all the distraction. This is the elegent simplicity of Windows 10 Fluent Design that you love brought to Steam!
 
