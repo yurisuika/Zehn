@@ -1,7 +1,7 @@
 /* COLORS ----------------------------------------------------------------------------------------------------------- */
 
 :root {
-  color-scheme: var(--option-color-scheme, light dark);
+  color-scheme: var(--zehn-color-mode);
 }
 
 @media (prefers-contrast: more) {
@@ -80,8 +80,8 @@
 }
 
 :root {
-  --zehn-color-blend-background: var(--option-accent-blend-background, var(--zehn-color-accent-positive-minor));
-  --zehn-color-blend-foreground: var(--option-accent-blend-foreground, var(--zehn-color-accent-negative-minor));
+  --zehn-color-blend-background: var(--custom-color-background, 210, 115, 138);
+  --zehn-color-blend-foreground: var(--custom-color-foreground, 193, 180, 146);
 }
 
 :root {
@@ -89,8 +89,8 @@
   --zehn-color-gray: 127, 127, 127;
   --zehn-color-black: 0, 0, 0;
 
-  --zehn-color-border: color-mix(in var(--zehn-blend-space), rgba(85, 85, 85, 0.5), rgba(var(--zehn-color-blend-background), 0.5) var(--zehn-blend-amount-background));
-  --zehn-color-border-focus: var(--option-accent-borders, var(--zehn-color-accent-100));
+  --zehn-color-border: color-mix(in var(--zehn-color-space), rgba(85, 85, 85, 0.5), rgba(var(--zehn-color-blend-background), 0.5) var(--zehn-background-saturation));
+  --zehn-color-border-focus: var(--zehn-show-accent-color-on-window-borders);
 
   --zehn-color-foreground-primary-light: 0, 0, 0;
   --zehn-color-foreground-primary-dark: 255, 255, 255;
@@ -111,22 +111,22 @@
   --zehn-color-bg4-light: 237, 237, 237;
   --zehn-color-bg4-dark: 28, 28, 28;
 
-  --zehn-color-base: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-white)), rgb(var(--zehn-color-black))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
-  --zehn-color-app: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-bg1-light)), rgb(var(--zehn-color-bg1-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
+  --zehn-color-base: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-white)), rgb(var(--zehn-color-black))), rgb(var(--zehn-color-blend-background)) var(--zehn-background-saturation));
+  --zehn-color-app: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-bg1-light)), rgb(var(--zehn-color-bg1-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-background-saturation));
 
-  --zehn-color-backdrop: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.6), rgba(var(--zehn-color-black), 0.6)), rgba(var(--zehn-color-blend-background), 0.6) var(--zehn-blend-amount-background));
-  --zehn-color-acrylic: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-bg2-light), 0.7), rgba(var(--zehn-color-bg2-dark), 0.7)), rgba(var(--zehn-color-blend-background), 0.7) var(--zehn-blend-amount-background));
-  --zehn-color-translucent: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-bg2-light), 0.85), rgba(var(--zehn-color-bg2-dark), 0.85)), rgba(var(--zehn-color-blend-background), 0.85) var(--zehn-blend-amount-background));
+  --zehn-color-backdrop: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.6), rgba(var(--zehn-color-black), 0.6)), rgba(var(--zehn-color-blend-background), 0.6) var(--zehn-background-saturation));
+  --zehn-color-acrylic: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-bg2-light), 0.7), rgba(var(--zehn-color-bg2-dark), 0.7)), rgba(var(--zehn-color-blend-background), 0.7) var(--zehn-background-saturation));
+  --zehn-color-translucent: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-bg2-light), 0.85), rgba(var(--zehn-color-bg2-dark), 0.85)), rgba(var(--zehn-color-blend-background), 0.85) var(--zehn-background-saturation));
 
-  --zehn-color-detail: var(--zehn-acrylic-color-detail);
+  --zehn-color-detail: var(--zehn-transparency-effects-acrylic-color-detail);
 
-  --zehn-color-section: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-bg2-light)), rgb(var(--zehn-color-bg2-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
+  --zehn-color-section: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-bg2-light)), rgb(var(--zehn-color-bg2-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-background-saturation));
   --zehn-color-section-acrylic: var(--zehn-color-section);
-  --zehn-color-section-acrylic-focus: var(--zehn-acrylic-color-section);
+  --zehn-color-section-acrylic-focus: var(--zehn-transparency-effects-acrylic-color-section);
 
-  --zehn-color-panel: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-bg3-light)), rgb(var(--zehn-color-bg3-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
-  --zehn-color-panel-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-bg4-light)), rgb(var(--zehn-color-bg4-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
-  --zehn-color-panel-inset: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.05), rgba(var(--zehn-color-white), 0.05)), rgba(var(--zehn-color-blend-foreground), 0.05) var(--zehn-blend-amount-foreground));
+  --zehn-color-panel: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-bg3-light)), rgb(var(--zehn-color-bg3-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-background-saturation));
+  --zehn-color-panel-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-bg4-light)), rgb(var(--zehn-color-bg4-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-background-saturation));
+  --zehn-color-panel-inset: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.05), rgba(var(--zehn-color-white), 0.05)), rgba(var(--zehn-color-blend-foreground), 0.05) var(--zehn-foreground-saturation));
 
   --zehn-color-dialog-inset: var(--zehn-color-panel);
 
@@ -138,9 +138,9 @@
   --zehn-color-embed-background-hover: var(--zehn-color-panel-hover);
   --zehn-color-embed-border: var(--zehn-color-accent-100);
 
-  --zehn-color-text-primary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-text-secondary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-text-tertiary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-text-primary: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-text-secondary: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-text-tertiary: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   
   --zehn-color-text-page-title: var(--zehn-color-text-primary);
   --zehn-color-text-page-header: var(--zehn-color-text-primary);
@@ -151,9 +151,9 @@
   --zehn-color-text-control: var(--zehn-color-text-primary);
   --zehn-color-text-control-disabled: var(--zehn-color-text-tertiary);
 
-  --zehn-color-icon-primary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-icon-secondary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-icon-tertiary: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-icon-primary: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-icon-secondary: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-icon-tertiary: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-foreground-tertiary-light)), rgb(var(--zehn-color-foreground-tertiary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
 
   --zehn-color-link: var(--zehn-color-accent-100);
   --zehn-color-link-hover: var(--zehn-color-text-secondary);
@@ -164,7 +164,7 @@
   --zehn-color-context-border-light: 204, 204, 204;
   --zehn-color-context-border-dark: 118, 118, 118;
 
-  --zehn-color-context: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
+  --zehn-color-context: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-context-background-light)), rgb(var(--zehn-color-context-background-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-background-saturation));
   /* --zehn-color-context-acrylic: var(--zehn-color-acrylic); */
   --zehn-color-context-acrylic: var(--zehn-color-context);
 
@@ -173,36 +173,36 @@
   --zehn-color-tooltip-text: light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark)));
   --zehn-color-tooltip-text-other: light-dark(rgb(var(--zehn-color-foreground-secondary-light)), rgb(var(--zehn-color-foreground-secondary-dark)));
 
-  --zehn-color-context-menu-background: var(--zehn-acrylic-color-context);
-  --zehn-color-context-menu-border: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-context-border-light)), rgb(var(--zehn-color-context-border-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-blend-amount-background));
-  --zehn-color-context-dropdown-background: var(--zehn-acrylic-color-context);
-  --zehn-color-context-dropdown-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.17), rgba(var(--zehn-color-black), 0.35)), light-dark(rgba(var(--zehn-color-blend-background), 0.17), rgba(var(--zehn-color-blend-background), 0.35)) var(--zehn-blend-amount-background));
+  --zehn-color-context-menu-background: var(--zehn-transparency-effects-acrylic-color-context);
+  --zehn-color-context-menu-border: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-context-border-light)), rgb(var(--zehn-color-context-border-dark))), rgb(var(--zehn-color-blend-background)) var(--zehn-background-saturation));
+  --zehn-color-context-dropdown-background: var(--zehn-transparency-effects-acrylic-color-context);
+  --zehn-color-context-dropdown-border: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.17), rgba(var(--zehn-color-black), 0.35)), light-dark(rgba(var(--zehn-color-blend-background), 0.17), rgba(var(--zehn-color-blend-background), 0.35)) var(--zehn-background-saturation));
   --zehn-color-context-entry-border: transparent;
   --zehn-color-context-text: var(--zehn-color-text-primary);
   --zehn-color-context-text-other: var(--zehn-color-text-secondary);
 
   --zehn-color-titlebar-control: transparent;
-  --zehn-color-titlebar-control-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
-  --zehn-color-titlebar-control-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-titlebar-control-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
+  --zehn-color-titlebar-control-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
 
   --zehn-color-titlebar-close: transparent;
   --zehn-color-titlebar-close-hover: light-dark(rgb(232, 18, 35), rgb(232, 18, 35));
   --zehn-color-titlebar-close-pressed: light-dark(rgb(241, 112, 121), rgb(241, 112, 121));
 
-  --zehn-color-control-light: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-control-dark: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-control-light: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-control-dark: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
 
-  --zehn-color-button-dialog-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-dialog-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-button-dialog-background-focus: var(--zehn-color-button-dialog-background);
-  --zehn-color-button-dialog-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-dialog-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-button-dialog-background-hover-focus: var(--zehn-color-button-dialog-background-hover);
-  --zehn-color-button-dialog-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-dialog-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-button-dialog-background-active-focus: var(--zehn-color-button-dialog-background-active);
-  --zehn-color-button-dialog-background-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-dialog-background-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-button-dialog-background-selected: var(--zehn-color-accent-100);
   --zehn-color-button-dialog-border: transparent;
   --zehn-color-button-dialog-border-focus: var(--zehn-color-button-dialog-border);
-  --zehn-color-button-dialog-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-dialog-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
   --zehn-color-button-dialog-border-hover-focus: var(--zehn-color-button-dialog-border-hover);
   --zehn-color-button-dialog-border-active: transparent;
   --zehn-color-button-dialog-border-active-focus: var(--zehn-color-button-dialog-border-active);
@@ -227,9 +227,9 @@
 
   --zehn-color-button-app-background: transparent;
   --zehn-color-button-app-background-focus: var(--zehn-color-button-app-background);
-  --zehn-color-button-app-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-app-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
   --zehn-color-button-app-background-hover-focus: var(--zehn-color-button-app-background-hover);
-  --zehn-color-button-app-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-button-app-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-button-app-background-active-focus: var(--zehn-color-button-app-background-active);
   --zehn-color-button-app-background-disabled: transparent;
   --zehn-color-button-app-background-selected: var(--zehn-color-accent-100);
@@ -258,20 +258,20 @@
   --zehn-color-button-app-icon-disabled: var(--zehn-color-icon-tertiary);
   --zehn-color-button-app-icon-selected: var(--zehn-color-icon-primary);
 
-  --zehn-color-dropdown-dialog-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-dialog-background-focus: var(--zehn-color-dropdown-dialog-background);
-  --zehn-color-dropdown-dialog-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.6), rgba(var(--zehn-color-black), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.6), rgba(var(--zehn-color-black), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-dialog-background-hover-focus: var(--zehn-color-dropdown-dialog-background-hover);
-  --zehn-color-dropdown-dialog-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.3), rgba(var(--zehn-color-white), 0.3)), rgba(var(--zehn-color-blend-foreground), 0.3) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.3), rgba(var(--zehn-color-white), 0.3)), rgba(var(--zehn-color-blend-foreground), 0.3) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-dialog-background-active-focus: var(--zehn-color-dropdown-dialog-background-active);
-  --zehn-color-dropdown-dialog-background-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-dropdown-dialog-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-background-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-dropdown-dialog-border: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-dialog-border-focus: var(--zehn-color-dropdown-dialog-border);
-  --zehn-color-dropdown-dialog-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-dialog-border-hover-focus: var(--zehn-color-dropdown-dialog-border-hover);
-  --zehn-color-dropdown-dialog-border-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-border-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-dialog-border-active-focus: var(--zehn-color-dropdown-dialog-border-active);
-  --zehn-color-dropdown-dialog-border-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-dialog-border-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-dialog-text: var(--zehn-color-text-primary);
   --zehn-color-dropdown-dialog-text-focus: var(--zehn-color-dropdown-dialog-text);
   --zehn-color-dropdown-dialog-text-hover: var(--zehn-color-text-primary);
@@ -289,9 +289,9 @@
 
   --zehn-color-dropdown-app-background: transparent;
   --zehn-color-dropdown-app-background-focus: var(--zehn-color-dropdown-app-background);
-  --zehn-color-dropdown-app-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-app-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-app-background-hover-focus: var(--zehn-color-dropdown-app-background-hover);
-  --zehn-color-dropdown-app-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-dropdown-app-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-dropdown-app-background-active-focus: var(--zehn-color-dropdown-app-background-active);
   --zehn-color-dropdown-app-background-disabled: transparent;
   --zehn-color-dropdown-app-border: transparent;
@@ -330,43 +330,43 @@
   --zehn-color-sorting-border-active: transparent;
   --zehn-color-sorting-border-active-focus: var(--zehn-color-sorting-border-active);
   --zehn-color-sorting-border-disabled: transparent;
-  --zehn-color-sorting-text: var(--zehn-color-text-primary);
-  --zehn-color-sorting-text-focus: var(--zehn-color-sorting-text);
-  --zehn-color-sorting-text-hover: var(--zehn-color-text-secondary);
-  --zehn-color-sorting-text-hover-focus: var(--zehn-color-sorting-text-hover);
-  --zehn-color-sorting-text-active: var(--zehn-color-text-tertiary);
-  --zehn-color-sorting-text-active-focus: var(--zehn-color-sorting-text-active);
-  --zehn-color-sorting-text-disabled: var(--zehn-color-text-tertiary);
+  --zehn-color-sorting-foreground: var(--zehn-color-text-primary);
+  --zehn-color-sorting-foreground-focus: var(--zehn-color-sorting-foreground);
+  --zehn-color-sorting-foreground-hover: var(--zehn-color-text-secondary);
+  --zehn-color-sorting-foreground-hover-focus: var(--zehn-color-sorting-foreground-hover);
+  --zehn-color-sorting-foreground-active: var(--zehn-color-text-tertiary);
+  --zehn-color-sorting-foreground-active-focus: var(--zehn-color-sorting-foreground-active);
+  --zehn-color-sorting-foreground-disabled: var(--zehn-color-text-tertiary);
 
-  --zehn-color-input-dialog-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-background-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.6), rgba(var(--zehn-color-black), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-background-hover-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.3), rgba(var(--zehn-color-white), 0.3)), rgba(var(--zehn-color-blend-foreground), 0.3) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-background-active-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-background-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-dialog-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-dialog-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-input-dialog-background-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-input-dialog-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.6), rgba(var(--zehn-color-black), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
+  --zehn-color-input-dialog-background-hover-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-input-dialog-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.3), rgba(var(--zehn-color-white), 0.3)), rgba(var(--zehn-color-blend-foreground), 0.3) var(--zehn-foreground-saturation));
+  --zehn-color-input-dialog-background-active-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-input-dialog-background-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-input-dialog-border: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-input-dialog-border-focus: var(--zehn-color-accent-100);
-  --zehn-color-input-dialog-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-dialog-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-input-dialog-border-hover-focus: var(--zehn-color-accent-100);
-  --zehn-color-input-dialog-border-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-dialog-border-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
   --zehn-color-input-dialog-border-active-focus: var(--zehn-color-accent-100);
-  --zehn-color-input-dialog-border-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-dialog-border-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-input-dialog-text: var(--zehn-color-text-primary);
-  --zehn-color-input-dialog-text-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-dialog-text-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-input-dialog-text-hover: var(--zehn-color-text-primary);
-  --zehn-color-input-dialog-text-hover-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-dialog-text-hover-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-input-dialog-text-active: var(--zehn-color-text-primary);
-  --zehn-color-input-dialog-text-active-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-dialog-text-active-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-input-dialog-text-disabled: var(--zehn-color-text-tertiary);
   --zehn-color-input-dialog-text-placeholder: var(--zehn-color-text-secondary);
 
-  --zehn-color-input-app-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-app-background-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-app-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-app-background-hover-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-app-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-app-background-active-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-app-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-input-app-background-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-input-app-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-input-app-background-hover-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-input-app-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.4), rgba(var(--zehn-color-black), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-input-app-background-active-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-input-app-background-disabled: transparent;
   --zehn-color-input-app-border: transparent;
   --zehn-color-input-app-border-focus: var(--zehn-color-input-app-border);
@@ -376,11 +376,11 @@
   --zehn-color-input-app-border-active-focus: var(--zehn-color-input-app-border-active);
   --zehn-color-input-app-border-disabled: transparent;
   --zehn-color-input-app-text: var(--zehn-color-text-primary);
-  --zehn-color-input-app-text-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-app-text-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-input-app-text-hover: var(--zehn-color-text-primary);
-  --zehn-color-input-app-text-hover-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-app-text-hover-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-input-app-text-active: var(--zehn-color-text-primary);
-  --zehn-color-input-app-text-active-focus: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-app-text-active-focus: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-input-app-text-disabled:var(--zehn-color-text-tertiary);
   --zehn-color-input-app-text-placeholder: var(--zehn-color-text-secondary);
 
@@ -407,20 +407,20 @@
   --zehn-color-input-bar-text-disabled: var(--zehn-color-text-tertiary);
   --zehn-color-input-bar-text-placeholder: var(--zehn-color-text-secondary);
 
-  --zehn-color-input-url-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-url-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
   --zehn-color-input-url-background-focus: var(--zehn-color-input-url-background);
-  --zehn-color-input-url-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-url-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
   --zehn-color-input-url-background-hover-focus: var(--zehn-color-input-url-background-hover);
-  --zehn-color-input-url-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-url-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
   --zehn-color-input-url-background-active-focus: var(--zehn-color-input-url-background-active);
-  --zehn-color-input-url-background-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
-  --zehn-color-input-url-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-url-background-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.14), rgba(var(--zehn-color-white), 0.14)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
+  --zehn-color-input-url-border: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
   --zehn-color-input-url-border-focus: var(--zehn-color-input-url-border);
-  --zehn-color-input-url-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-url-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
   --zehn-color-input-url-border-hover-focus: var(--zehn-color-input-url-border-hover);
-  --zehn-color-input-url-border-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-url-border-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
   --zehn-color-input-url-border-active-focus: var(--zehn-color-input-url-border-active);
-  --zehn-color-input-url-border-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-blend-amount-foreground));
+  --zehn-color-input-url-border-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.18), rgba(var(--zehn-color-white), 0.18)), rgba(var(--zehn-color-blend-foreground), 0.18) var(--zehn-foreground-saturation));
   --zehn-color-input-url-text: var(--zehn-color-text-primary);
   --zehn-color-input-url-text-focus: var(--zehn-color-input-url-text);
   --zehn-color-input-url-text-hover: var(--zehn-color-text-primary);
@@ -434,30 +434,30 @@
   --zehn-color-checkbox-dialog-background-off-focus: var(--zehn-color-checkbox-dialog-background-off);
   --zehn-color-checkbox-dialog-background-off-hover: transparent;
   --zehn-color-checkbox-dialog-background-off-hover-focus: var(--zehn-color-checkbox-dialog-background-off-hover);
-  --zehn-color-checkbox-dialog-background-off-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-background-off-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-background-off-active-focus: var(--zehn-color-checkbox-dialog-background-off-active);
   --zehn-color-checkbox-dialog-background-off-disabled: transparent;
   --zehn-color-checkbox-dialog-background-on: var(--zehn-color-accent-100);
   --zehn-color-checkbox-dialog-background-on-focus: var(--zehn-color-checkbox-dialog-background-on);
   --zehn-color-checkbox-dialog-background-on-hover: var(--zehn-color-accent-100);
   --zehn-color-checkbox-dialog-background-on-hover-focus: var(--zehn-color-checkbox-dialog-background-on-hover);
-  --zehn-color-checkbox-dialog-background-on-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-background-on-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-background-on-active-focus: var(--zehn-color-checkbox-dialog-background-on-active);
   --zehn-color-checkbox-dialog-background-on-disabled: transparent;
-  --zehn-color-checkbox-dialog-border-off: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.8), rgba(var(--zehn-color-white), 0.8)), rgba(var(--zehn-color-blend-foreground), 0.8) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-border-off: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.8), rgba(var(--zehn-color-white), 0.8)), rgba(var(--zehn-color-blend-foreground), 0.8) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-border-off-focus: var(--zehn-color-checkbox-dialog-border-off);
-  --zehn-color-checkbox-dialog-border-off-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-border-off-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-border-off-hover-focus: var(--zehn-color-checkbox-dialog-border-off-hover);
   --zehn-color-checkbox-dialog-border-off-active: transparent;
   --zehn-color-checkbox-dialog-border-off-active-focus: var(--zehn-color-checkbox-dialog-border-off-active);
-  --zehn-color-checkbox-dialog-border-off-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-border-off-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-border-on: transparent;
   --zehn-color-checkbox-dialog-border-on-focus: var(--zehn-color-checkbox-dialog-border-on);
-  --zehn-color-checkbox-dialog-border-on-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-border-on-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-border-on-hover-focus: var(--zehn-color-checkbox-dialog-border-on-hover);
   --zehn-color-checkbox-dialog-border-on-active: transparent;
   --zehn-color-checkbox-dialog-border-on-active-focus: var(--zehn-color-checkbox-dialog-border-on-active);
-  --zehn-color-checkbox-dialog-border-on-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-border-on-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-toggle-off: transparent;
   --zehn-color-checkbox-dialog-toggle-off-focus: var(--zehn-color-checkbox-dialog-toggle-off);
   --zehn-color-checkbox-dialog-toggle-off-hover: transparent;
@@ -465,27 +465,27 @@
   --zehn-color-checkbox-dialog-toggle-off-active: transparent;
   --zehn-color-checkbox-dialog-toggle-off-active-focus: var(--zehn-color-checkbox-dialog-toggle-off-active);
   --zehn-color-checkbox-dialog-toggle-off-disabled: transparent;
-  --zehn-color-checkbox-dialog-toggle-on: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-toggle-on: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-toggle-on-focus: var(--zehn-color-checkbox-dialog-toggle-on);
-  --zehn-color-checkbox-dialog-toggle-on-hover: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-toggle-on-hover: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-toggle-on-hover-focus: var(--zehn-color-checkbox-dialog-toggle-on-hover);
-  --zehn-color-checkbox-dialog-toggle-on-active: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-toggle-on-active: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-dialog-toggle-on-active-focus: var(--zehn-color-checkbox-dialog-toggle-on-active);
-  --zehn-color-checkbox-dialog-toggle-on-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-dialog-toggle-on-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
 
-  --zehn-color-checkbox-media-background-off: color-mix(in var(--zehn-blend-space), rgba(204, 204, 204, 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-checkbox-media-background-off-hover: color-mix(in var(--zehn-blend-space), rgb(204, 204, 204), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-media-background-off: color-mix(in var(--zehn-color-space), rgba(204, 204, 204, 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-checkbox-media-background-off-hover: color-mix(in var(--zehn-color-space), rgb(204, 204, 204), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-media-background-on: var(--zehn-color-accent-100);
   --zehn-color-checkbox-media-background-on-hover: var(--zehn-color-accent-40);
-  --zehn-color-checkbox-media-border-off: color-mix(in var(--zehn-blend-space), rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-checkbox-media-border-off-hover: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-media-border-off: color-mix(in var(--zehn-color-space), rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-checkbox-media-border-off-hover: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-media-border-on: var(--zehn-color-accent-100);
   --zehn-color-checkbox-media-border-on-hover: var(--zehn-color-accent-40);
-  --zehn-color-checkbox-media-outline-off: color-mix(in var(--zehn-blend-space), rgba(var(--zehn-color-gray), 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-checkbox-media-outline-off-hover: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-gray)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-media-outline-off: color-mix(in var(--zehn-color-space), rgba(var(--zehn-color-gray), 0.4), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-checkbox-media-outline-off-hover: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-gray)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-checkbox-media-outline-on: var(--zehn-color-accent-100);
   --zehn-color-checkbox-media-outline-on-hover: var(--zehn-color-accent-40);
-  --zehn-color-checkbox-media-toggle: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-checkbox-media-toggle: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
 
   --zehn-color-radio-background-off: transparent;
   --zehn-color-radio-background-off-focus: var(--zehn-color-radio-background-off);
@@ -501,18 +501,18 @@
   --zehn-color-radio-background-on-active: transparent;
   --zehn-color-radio-background-on-active-focus: var(--zehn-color-radio-background-on-active);
   --zehn-color-radio-background-on-disabled: transparent;
-  --zehn-color-radio-border-off: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.8), rgba(var(--zehn-color-white), 0.8)), rgba(var(--zehn-color-blend-foreground), 0.8) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-border-off: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.8), rgba(var(--zehn-color-white), 0.8)), rgba(var(--zehn-color-blend-foreground), 0.8) var(--zehn-foreground-saturation));
   --zehn-color-radio-border-off-focus: var(--zehn-color-radio-border-off);
-  --zehn-color-radio-border-off-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-border-off-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-radio-border-off-hover-focus: var(--zehn-color-radio-border-off-hover);
-  --zehn-color-radio-border-off-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-border-off-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-radio-border-off-active-focus: var(--zehn-color-radio-border-off-active);
-  --zehn-color-radio-border-off-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-border-off-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-radio-border-on: var(--zehn-color-accent-100);
   --zehn-color-radio-border-on-focus: var(--zehn-color-radio-border-on);
   --zehn-color-radio-border-on-hover: var(--zehn-color-accent-100);
   --zehn-color-radio-border-on-hover-focus: var(--zehn-color-radio-border-on-hover);
-  --zehn-color-radio-border-on-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-border-on-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-radio-border-on-active-focus: var(--zehn-color-radio-border-on-active);
   --zehn-color-radio-border-on-disabled: transparent;
   --zehn-color-radio-toggle-off: transparent;
@@ -522,95 +522,95 @@
   --zehn-color-radio-toggle-off-active: transparent;
   --zehn-color-radio-toggle-off-active-focus: var(--zehn-color-radio-toggle-off-active);
   --zehn-color-radio-toggle-off-disabled: transparent;
-  --zehn-color-radio-toggle-on: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.8), rgba(var(--zehn-color-white), 0.8)), rgba(var(--zehn-color-blend-foreground), 0.8) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-toggle-on: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.8), rgba(var(--zehn-color-white), 0.8)), rgba(var(--zehn-color-blend-foreground), 0.8) var(--zehn-foreground-saturation));
   --zehn-color-radio-toggle-on-focus: var(--zehn-color-radio-toggle-on);
-  --zehn-color-radio-toggle-on-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-toggle-on-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-radio-toggle-on-hover-focus: var(--zehn-color-radio-toggle-on-hover);
-  --zehn-color-radio-toggle-on-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-toggle-on-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-radio-toggle-on-active-focus: var(--zehn-color-radio-toggle-on-active);
-  --zehn-color-radio-toggle-on-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-radio-toggle-on-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
 
   --zehn-color-switch-background-off: transparent;
   --zehn-color-switch-background-off-hover: transparent;
-  --zehn-color-switch-background-off-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(102, 102, 102), rgb(162, 162, 162)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-switch-background-off-active: color-mix(in var(--zehn-color-space), light-dark(rgb(102, 102, 102), rgb(162, 162, 162)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-switch-background-off-disabled: transparent;
   --zehn-color-switch-background-on: var(--zehn-color-accent-100);
   --zehn-color-switch-background-on-hover: light-dark(rgb(var(--zehn-color-accent-lighten-minor)), rgb(var(--zehn-color-accent-darken-minor)));
-  --zehn-color-switch-background-on-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(102, 102, 102), rgb(162, 162, 162)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-background-on-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-border-off: color-mix(in var(--zehn-blend-space), light-dark(rgb(70, 70, 70), rgb(215, 215, 215)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-border-off-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-switch-background-on-active: color-mix(in var(--zehn-color-space), light-dark(rgb(102, 102, 102), rgb(162, 162, 162)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-background-on-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-switch-border-off: color-mix(in var(--zehn-color-space), light-dark(rgb(70, 70, 70), rgb(215, 215, 215)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-border-off-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-switch-border-off-active: transparent;
-  --zehn-color-switch-border-off-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-switch-border-off-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-switch-border-on: transparent;
   --zehn-color-switch-border-on-hover: transparent;
   --zehn-color-switch-border-on-active: transparent;
   --zehn-color-switch-border-on-disabled: transparent;
-  --zehn-color-switch-toggle-off: color-mix(in var(--zehn-blend-space), light-dark(rgb(70, 70, 70), rgb(215, 215, 215)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-toggle-off-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-toggle-off-active: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-toggle-off-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-toggle-on: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-toggle-on-hover: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-toggle-on-active: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-switch-toggle-on-disabled: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-switch-toggle-off: color-mix(in var(--zehn-color-space), light-dark(rgb(70, 70, 70), rgb(215, 215, 215)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-toggle-off-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-toggle-off-active: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-toggle-off-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-switch-toggle-on: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-toggle-on-hover: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-toggle-on-active: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-switch-toggle-on-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
 
-  --zehn-color-slider-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-slider-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
-  --zehn-color-slider-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-slider-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-slider-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
+  --zehn-color-slider-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-slider-handle: var(--zehn-color-accent-100);
-  --zehn-color-slider-handle-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-slider-handle-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(204, 204, 204), rgb(118, 118, 118)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-slider-handle-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-slider-handle-active: color-mix(in var(--zehn-color-space), light-dark(rgb(204, 204, 204), rgb(118, 118, 118)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-slider-track: var(--zehn-color-accent-100);
-  --zehn-color-slider-default: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-slider-default: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
 
   --zehn-color-picker-border: transparent;
-  --zehn-color-picker-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-picker-border-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-picker-border-focus: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-picker-checkmark: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-white)), rgba(var(--zehn-color-black))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-picker-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-picker-border-active: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-picker-border-focus: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-picker-checkmark: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-white)), rgba(var(--zehn-color-black))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
 
   --zehn-color-list-background: transparent;
-  --zehn-color-list-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
-  --zehn-color-list-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-list-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
+  --zehn-color-list-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-list-background-focus: var(--zehn-color-accent-100);
 
   --zehn-color-table-odd: transparent;
-  --zehn-color-table-even: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-table-even: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-table-header-content: var(--zehn-color-text-primary);
   --zehn-color-table-header-content-hover: var(--zehn-color-text-secondary);
   --zehn-color-table-header-content-active: var(--zehn-color-text-tertiary);
 
   --zehn-color-music-list-odd: transparent;
-  --zehn-color-music-list-odd-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-list-odd-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.35), rgba(var(--zehn-color-white), 0.35)), rgba(var(--zehn-color-blend-foreground), 0.35) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-list-even: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-list-even-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-list-even-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.35), rgba(var(--zehn-color-white), 0.35)), rgba(var(--zehn-color-blend-foreground), 0.35) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-button-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-button-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-button-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-music-button-background-focus: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-white), 0.5), rgba(var(--zehn-color-black), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
+  --zehn-color-music-list-odd-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-music-list-odd-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.35), rgba(var(--zehn-color-white), 0.35)), rgba(var(--zehn-color-blend-foreground), 0.35) var(--zehn-foreground-saturation));
+  --zehn-color-music-list-even: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
+  --zehn-color-music-list-even-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-music-list-even-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.35), rgba(var(--zehn-color-white), 0.35)), rgba(var(--zehn-color-blend-foreground), 0.35) var(--zehn-foreground-saturation));
+  --zehn-color-music-button-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-music-button-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-music-button-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-music-button-background-focus: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-white), 0.5), rgba(var(--zehn-color-black), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
   --zehn-color-music-button-border: transparent;
-  --zehn-color-music-button-border-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
+  --zehn-color-music-button-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
   --zehn-color-music-button-border-active: transparent;
   --zehn-color-music-button-border-focus: transparent;
 
   --zehn-color-chat-background: transparent;
-  --zehn-color-chat-background-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.025), rgba(var(--zehn-color-white), 0.025)), rgba(var(--zehn-color-blend-foreground), 0.025) var(--zehn-blend-amount-foreground));
-  --zehn-color-chat-background-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.025), rgba(var(--zehn-color-white), 0.025)), rgba(var(--zehn-color-blend-foreground), 0.025) var(--zehn-blend-amount-foreground));
+  --zehn-color-chat-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.025), rgba(var(--zehn-color-white), 0.025)), rgba(var(--zehn-color-blend-foreground), 0.025) var(--zehn-foreground-saturation));
+  --zehn-color-chat-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.025), rgba(var(--zehn-color-white), 0.025)), rgba(var(--zehn-color-blend-foreground), 0.025) var(--zehn-foreground-saturation));
   --zehn-color-chat-mention-background: var(--zehn-color-accent-10);
   --zehn-color-chat-mention-background-hover: var(--zehn-color-accent-10);
   --zehn-color-chat-mention-background-active: var(--zehn-color-accent-10);
 
-  --zehn-color-placeholder: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
+  --zehn-color-placeholder: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
 
   --zehn-color-selection: transparent;
-  --zehn-color-selection-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.65), rgba(var(--zehn-color-white), 0.65)), rgba(var(--zehn-color-blend-foreground), 0.65) var(--zehn-blend-amount-foreground));
-  --zehn-color-selection-active: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-selection-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.65), rgba(var(--zehn-color-white), 0.65)), rgba(var(--zehn-color-blend-foreground), 0.65) var(--zehn-foreground-saturation));
+  --zehn-color-selection-active: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
 
-  --zehn-color-separator: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-separator-context: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-separator: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-separator-context: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
 
   --zehn-color-focusbar: var(--zehn-color-accent-100);
 
@@ -618,56 +618,56 @@
 
   --zehn-color-video: black;
 
-  --zehn-color-tag: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
-  --zehn-color-tag-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-tag-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.35), rgba(var(--zehn-color-white), 0.35)), rgba(var(--zehn-color-blend-foreground), 0.35) var(--zehn-blend-amount-foreground));
+  --zehn-color-tag: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
+  --zehn-color-tag-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-tag-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.35), rgba(var(--zehn-color-white), 0.35)), rgba(var(--zehn-color-blend-foreground), 0.35) var(--zehn-foreground-saturation));
   --zehn-color-tag-text: var(--zehn-color-text-primary);
 
-  --zehn-color-progress-empty: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-progress-empty: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-progress-filled: var(--zehn-color-accent-100);
 
-  --zehn-color-timeline-empty: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
+  --zehn-color-timeline-empty: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
   --zehn-color-timeline-filled: var(--zehn-color-accent-100);
-  --zehn-color-timeline-buffer: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-timeline-buffer: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-timeline-handle: var(--zehn-color-accent-100);
-  --zehn-color-timeline-handle-hover: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-timeline-handle-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
-  --zehn-color-timeline-selection: color-mix(in var(--zehn-blend-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-timeline-handle-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-black)), rgb(var(--zehn-color-white))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-timeline-handle-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
+  --zehn-color-timeline-selection: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-foreground-primary-dark))), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-timeline-control: var(--zehn-color-icon-primary);
   --zehn-color-timeline-control-hover: var(--zehn-color-icon-primary);
   --zehn-color-timeline-control-active: var(--zehn-color-icon-primary);
 
   --zehn-color-scrollbar-unfocused: transparent;
-  --zehn-color-scrollbar-focused: color-mix(in var(--zehn-blend-space), light-dark(rgba(230, 230, 230, 0.9), rgba(30, 30, 30, 0.9)), rgba(var(--zehn-color-blend-foreground), 0.9) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-thumb-unfocused: color-mix(in var(--zehn-blend-space), rgb(133, 133, 133), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-thumb-unfocused-hover: color-mix(in var(--zehn-blend-space), rgb(133, 133, 133), rgba(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-thumb-unfocused-active: color-mix(in var(--zehn-blend-space), rgb(133, 133, 133), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-thumb-focused: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-thumb-focused-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-thumb-focused-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
+  --zehn-color-scrollbar-focused: color-mix(in var(--zehn-color-space), light-dark(rgba(230, 230, 230, 0.9), rgba(30, 30, 30, 0.9)), rgba(var(--zehn-color-blend-foreground), 0.9) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-thumb-unfocused: color-mix(in var(--zehn-color-space), rgb(133, 133, 133), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-thumb-unfocused-hover: color-mix(in var(--zehn-color-space), rgb(133, 133, 133), rgba(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-thumb-unfocused-active: color-mix(in var(--zehn-color-space), rgb(133, 133, 133), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-thumb-focused: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-thumb-focused-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.4), rgba(var(--zehn-color-white), 0.4)), rgba(var(--zehn-color-blend-foreground), 0.4) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-thumb-focused-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
   --zehn-color-scrollbar-button-unfocused: transparent;
   --zehn-color-scrollbar-button-unfocused-hover: transparent;
   --zehn-color-scrollbar-button-unfocused-active: transparent;
   --zehn-color-scrollbar-button-focused: transparent;
-  --zehn-color-scrollbar-button-focused-hover: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-button-focused-active: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-glyph-light: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-glyph-active-light: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-glyph-dark: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-  --zehn-color-scrollbar-glyph-active-dark: color-mix(in var(--zehn-blend-space), rgba(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+  --zehn-color-scrollbar-button-focused-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-button-focused-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.6), rgba(var(--zehn-color-white), 0.6)), rgba(var(--zehn-color-blend-foreground), 0.6) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-glyph-light: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-glyph-active-light: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-glyph-dark: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-white)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+  --zehn-color-scrollbar-glyph-active-dark: color-mix(in var(--zehn-color-space), rgba(var(--zehn-color-black)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
   --zehn-color-scrollbar-corner: transparent;
 
-  --zehn-color-keyboard-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
-  --zehn-color-keyboard-key: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
-  --zehn-color-keyboard-key-mod: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-blend-amount-foreground));
+  --zehn-color-keyboard-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
+  --zehn-color-keyboard-key: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
+  --zehn-color-keyboard-key-mod: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.2), rgba(var(--zehn-color-white), 0.2)), rgba(var(--zehn-color-blend-foreground), 0.2) var(--zehn-foreground-saturation));
   --zehn-color-keyboard-key-focus: var(--zehn-color-accent-100);
 
-  --zehn-color-virtualmenu-background: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
+  --zehn-color-virtualmenu-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
   --zehn-color-virtualmenu-background-selected: var(--zehn-color-accent-50);
   --zehn-color-virtualmenu-border: var(--zehn-color-accent-100);
 
-  --zehn-color-reveal: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-blend-amount-foreground));
-  --zehn-color-reveal-border: color-mix(in var(--zehn-blend-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-blend-amount-foreground));
+  --zehn-color-reveal: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.1), rgba(var(--zehn-color-white), 0.1)), rgba(var(--zehn-color-blend-foreground), 0.1) var(--zehn-foreground-saturation));
+  --zehn-color-reveal-border: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-color-black), 0.5), rgba(var(--zehn-color-white), 0.5)), rgba(var(--zehn-color-blend-foreground), 0.5) var(--zehn-foreground-saturation));
 }
 
 @media (prefers-contrast: more) {
@@ -703,8 +703,8 @@
 
     --zehn-color-button-app-background-hover: var(--zehn-color-accent-100);
     --zehn-color-button-app-background-active: var(--zehn-color-accent-100);
-    --zehn-color-button-app-text-hover: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
-    --zehn-color-button-app-text-active: color-mix(in var(--zehn-blend-space), rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-blend-amount-foreground));
+    --zehn-color-button-app-text-hover: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
+    --zehn-color-button-app-text-active: color-mix(in var(--zehn-color-space), rgb(var(--zehn-color-foreground-primary-light)), rgb(var(--zehn-color-blend-foreground)) var(--zehn-foreground-saturation));
 
     --zehn-color-list-background-hover: var(--zehn-color-accent-100);
     --zehn-color-list-background-active: var(--zehn-color-accent-100);
@@ -748,22 +748,24 @@
 /* FILTERS ---------------------------------------------------------------------------------------------------------- */
 
 :root {
-  --zehn-filter-unfocus: opacity(0.5);
-  --zehn-filter-tab-unfocus: opacity(0.5) saturate(0);
-  --zehn-filter-acrylic-blur: blur(30px) saturate(2);
+  --zehn-filter-unfocus: contrast(50%);
+  --zehn-filter-acrylic-blur: blur(30px) saturate(200%);
   --zehn-filter-light-blur: blur(4px);
-  --zehn-filter-defocus: blur(10px) opacity(50%) saturate(0.7);
-  --zehn-filter-selected-light: brightness(1.55) saturate(0.55);
-  --zehn-filter-selected-dark: brightness(0.55) saturate(1.45);
+  --zehn-filter-defocus: blur(10px) opacity(50%) saturate(70%);
+  --zehn-filter-selected-light: brightness(155%) saturate(55%);
+  --zehn-filter-selected-dark: brightness(55%) saturate(145%);
   --zehn-filter-mono: grayscale(1);
 }
 
 @media (prefers-contrast: more) {
   :root {
     --zehn-filter-unfocus: none;
-    --zehn-filter-tab-unfocus: none;
+    --zehn-filter-acrylic-blur: none;
+    --zehn-filter-light-blur: none;
+    --zehn-filter-defocus: none;
     --zehn-filter-selected-light: none;
     --zehn-filter-selected-dark: none;
+    --zehn-filter-mono: none;
   }
 }
 
@@ -922,8 +924,6 @@
 
   --zehn-icon-cancel: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-cancel' style='fill:white' viewBox='0 0 16 16'><path d='M 8 0 q 1.1016 0 2.125 0.2891 q 1.0234 0.2813 1.9063 0.8047 q 0.8906 0.5234 1.6172 1.2578 Q 14.3828 3.0781 14.9063 3.9688 Q 15.4297 4.8516 15.7109 5.875 Q 16 6.8984 16 8 q 0 1.1016 -0.2891 2.125 q -0.2813 1.0234 -0.8047 1.9141 q -0.5234 0.8828 -1.2578 1.6172 q -0.7266 0.7266 -1.6172 1.25 q -0.8828 0.5234 -1.9063 0.8125 Q 9.1016 16 8 16 Q 6.8984 16 5.875 15.7188 Q 4.8516 15.4297 3.9609 14.9141 q -0.8906 -0.5234 -1.625 -1.25 q -0.7266 -0.7344 -1.25 -1.625 Q 0.5703 11.1484 0.2813 10.1328 Q 0 9.1094 0 8 Q 0 6.8984 0.2813 5.875 Q 0.5703 4.8516 1.0938 3.9688 Q 1.6172 3.0781 2.3438 2.3516 Q 3.0781 1.6172 3.9609 1.0938 Q 4.8516 0.5703 5.875 0.2891 Q 6.8984 0 8 0 Z M 8 15 Q 9.2734 15 10.4453 14.5625 Q 11.625 14.125 12.5859 13.2891 L 2.7109 3.4141 Q 1.875 4.375 1.4375 5.5547 Q 1 6.7266 1 8 Q 1 8.9688 1.25 9.8672 Q 1.5 10.7578 1.9531 11.5391 Q 2.4063 12.3125 3.0469 12.9531 Q 3.6875 13.5938 4.4609 14.0469 Q 5.2422 14.5 6.1328 14.75 Q 7.0313 15 8 15 Z M 13.2891 12.5859 Q 14.125 11.625 14.5625 10.4531 Q 15 9.2734 15 8 Q 15 7.0313 14.75 6.1406 Q 14.5 5.2422 14.0391 4.4688 Q 13.5859 3.6875 12.9453 3.0547 Q 12.3125 2.4141 11.5313 1.9609 Q 10.7578 1.5 9.8594 1.25 Q 8.9688 1 8 1 Q 6.7266 1 5.5469 1.4375 Q 4.375 1.875 3.4141 2.7109 Z'/></svg>");
 
-  --zehn-icon-category: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-category' style='fill:white' viewBox='0 0 16 16'><path d='M 12.5 8 H 14 v 7 H 1 V 2 H 8 V 3.5 L 11.5 0 L 16 4.5 Z M 8.2344 4.5 L 11.5 7.7656 L 14.7656 4.5 L 11.5 1.2344 Z M 8 5.5 V 8 h 2.5 z M 2 8 H 7 V 3 H 2 Z M 7 9 H 2 v 5 h 5 Z M 8 9 v 5 h 5 V 9 Z'/></svg>");
-
   --zehn-icon-channels: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-channels' style='fill:white' viewBox='0 0 16 16'><path d='M 5 5 H 16 V 6 H 5 Z M 16 2 V 3 H 5 V 2 Z M 3 1 V 2 H 2 V 6 H 3 V 7 H 1 V 1 Z m 2 11 h 11 v 1 H 5 Z M 5 9 h 11 v 1 H 5 Z M 3 8 V 9 H 2 v 4 h 1 v 1 H 1 V 8 Z'/></svg>");
 
   --zehn-icon-chat: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-chat' style='fill:white' viewBox='0 0 16 16'><path d='M 0 1 H 16 V 12 H 5.7109 L 2 15.7109 V 12 H 0 Z M 15 11 V 2 H 1 v 9 h 2 v 2.2891 L 5.2891 11 Z'/></svg>");
@@ -980,9 +980,11 @@
 
   --zehn-icon-color: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-color' style='fill:white' viewBox='0 0 16 16'><path d='M 8 0 q 1.1016 0 2.125 0.2891 q 1.0234 0.2813 1.9141 0.8047 q 0.8906 0.5156 1.6172 1.25 q 0.7344 0.7266 1.25 1.6172 Q 15.4297 4.8516 15.7109 5.875 Q 16 6.8984 16 8 q 0 1.1016 -0.2891 2.125 q -0.2813 1.0234 -0.8047 1.9141 q -0.5156 0.8906 -1.25 1.625 q -0.7266 0.7266 -1.6172 1.25 Q 11.1484 15.4297 10.125 15.7188 Q 9.1016 16 8 16 Q 7.5859 16 7.2188 15.8438 Q 6.8594 15.6797 6.5859 15.4141 Q 6.3203 15.1406 6.1563 14.7813 Q 6 14.4141 6 14 Q 6 13.6172 6.0703 13.3359 Q 6.1484 13.0469 6.2578 12.8125 Q 6.3672 12.5781 6.5 12.375 Q 6.6328 12.1719 6.7422 11.9688 Q 6.8516 11.7578 6.9219 11.5313 Q 7 11.2969 7 11 Q 7 10.5938 6.8359 10.2266 Q 6.6797 9.8594 6.4063 9.5938 Q 6.1406 9.3203 5.7734 9.1641 Q 5.4063 9 5 9 Q 4.7031 9 4.4688 9.0781 Q 4.2422 9.1484 4.0313 9.2578 Q 3.8281 9.3672 3.625 9.5 Q 3.4219 9.6328 3.1875 9.7422 Q 2.9531 9.8516 2.6641 9.9297 Q 2.375 10 2 10 Q 1.5859 10 1.2188 9.8438 Q 0.8594 9.6797 0.5859 9.4141 Q 0.3203 9.1406 0.1563 8.7813 Q 0 8.4141 0 8 Q 0 6.8984 0.2813 5.875 Q 0.5703 4.8516 1.0859 3.9609 q 0.5234 -0.8906 1.25 -1.6172 q 0.7344 -0.7344 1.625 -1.25 q 0.8906 -0.5234 1.9063 -0.8047 Q 6.8906 0 8 0 Z M 8 15 Q 8.9609 15 9.8516 14.75 Q 10.75 14.5 11.5234 14.0469 q 0.7813 -0.4609 1.4219 -1.1016 q 0.6406 -0.6406 1.0938 -1.4141 Q 14.5 10.75 14.75 9.8594 Q 15 8.9609 15 8 Q 15 7.0391 14.75 6.1484 Q 14.5 5.25 14.0391 4.4766 Q 13.5859 3.6953 12.9453 3.0547 Q 12.3047 2.4141 11.5234 1.9609 Q 10.75 1.5 9.8516 1.25 Q 8.9609 1 8 1 Q 7.0391 1 6.1406 1.25 Q 5.25 1.5 4.4688 1.9609 Q 3.6953 2.4141 3.0547 3.0547 Q 2.4141 3.6953 1.9531 4.4766 Q 1.5 5.25 1.25 6.1484 Q 1 7.0391 1 8 Q 1 8.2109 1.0781 8.3906 Q 1.1563 8.5703 1.2891 8.7109 Q 1.4297 8.8438 1.6094 8.9219 Q 1.7891 9 2 9 Q 2.2969 9 2.5234 8.9297 Q 2.7578 8.8516 2.9609 8.7422 Q 3.1719 8.6328 3.3672 8.5 Q 3.5703 8.3672 3.7969 8.2578 Q 4.0313 8.1484 4.3203 8.0781 Q 4.6094 8 5 8 Q 5.625 8 6.1719 8.2344 Q 6.7188 8.4688 7.125 8.875 Q 7.5313 9.2813 7.7656 9.8281 Q 8 10.375 8 11 Q 8 11.3828 7.9219 11.6797 Q 7.8516 11.9688 7.7422 12.2031 Q 7.6328 12.4297 7.5 12.6328 q -0.1328 0.1953 -0.2422 0.4063 q -0.1094 0.2031 -0.1875 0.4375 Q 7 13.7031 7 14 Q 7 14.2109 7.0781 14.3906 Q 7.1563 14.5703 7.2891 14.7109 Q 7.4297 14.8438 7.6094 14.9219 Q 7.7891 15 8 15 Z M 4 5 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 Q 5 5.7891 5 6 Q 5 6.2109 4.9219 6.3906 Q 4.8438 6.5703 4.7031 6.7109 Q 4.5703 6.8438 4.3906 6.9219 Q 4.2109 7 4 7 Q 3.7891 7 3.6094 6.9219 Q 3.4297 6.8438 3.2891 6.7109 Q 3.1563 6.5703 3.0781 6.3906 Q 3 6.2109 3 6 Q 3 5.7891 3.0781 5.6094 Q 3.1563 5.4297 3.2891 5.2969 Q 3.4297 5.1563 3.6094 5.0781 Q 3.7891 5 4 5 Z M 7 3 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 Q 8 3.7891 8 4 Q 8 4.2109 7.9219 4.3906 Q 7.8438 4.5703 7.7031 4.7109 Q 7.5703 4.8438 7.3906 4.9219 Q 7.2109 5 7 5 Q 6.7891 5 6.6094 4.9219 Q 6.4297 4.8438 6.2891 4.7109 Q 6.1563 4.5703 6.0781 4.3906 Q 6 4.2109 6 4 Q 6 3.7891 6.0781 3.6094 Q 6.1563 3.4297 6.2891 3.2969 Q 6.4297 3.1563 6.6094 3.0781 Q 6.7891 3 7 3 Z m 4 3 Q 10.7891 6 10.6094 5.9219 Q 10.4297 5.8438 10.2891 5.7109 Q 10.1563 5.5703 10.0781 5.3906 Q 10 5.2109 10 5 Q 10 4.7891 10.0781 4.6094 Q 10.1563 4.4297 10.2891 4.2969 Q 10.4297 4.1563 10.6094 4.0781 Q 10.7891 4 11 4 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 Q 12 4.7891 12 5 Q 12 5.2109 11.9219 5.3906 Q 11.8438 5.5703 11.7031 5.7109 Q 11.5703 5.8438 11.3906 5.9219 Q 11.2109 6 11 6 Z m 1 2 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 Q 13 8.7891 13 9 Q 13 9.2109 12.9219 9.3906 Q 12.8437 9.5703 12.7031 9.7109 Q 12.5703 9.8438 12.3906 9.9219 Q 12.2109 10 12 10 Q 11.7891 10 11.6094 9.9219 Q 11.4297 9.8438 11.2891 9.7109 Q 11.1563 9.5703 11.0781 9.3906 Q 11 9.2109 11 9 Q 11 8.7891 11.0781 8.6094 Q 11.1563 8.4297 11.2891 8.2969 Q 11.4297 8.1563 11.6094 8.0781 Q 11.7891 8 12 8 Z m -2 3 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 Q 11 11.7891 11 12 q 0 0.2109 -0.0781 0.3906 q -0.0781 0.1797 -0.2188 0.3203 q -0.1328 0.1328 -0.3125 0.2109 Q 10.2109 13 10 13 Q 9.7891 13 9.6094 12.9219 Q 9.4297 12.8438 9.2891 12.7109 Q 9.1563 12.5703 9.0781 12.3906 Q 9 12.2109 9 12 Q 9 11.7891 9.0781 11.6094 Q 9.1563 11.4297 9.2891 11.2969 Q 9.4297 11.1563 9.6094 11.0781 Q 9.7891 11 10 11 Z'/></svg>");
 
+  --zehn-icon-command: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-command' style='fill:white' viewBox='0 0 16 16'><path d='M 16 1 V 14 H 0 V 1 Z M 1 2 V 3 H 15 V 2 Z M 15 13 V 4 H 1 v 9 Z M 10.875 6 l 2.0078 5 H 12.1719 L 10.1641 6 Z M 5.75 6.5938 q -0.4141 0 -0.7578 0.1328 q -0.3359 0.125 -0.5781 0.375 Q 4.1797 7.3438 4.0469 7.7109 Q 3.9141 8.0703 3.9141 8.5313 q 0 0.4297 0.1172 0.7813 q 0.125 0.3516 0.3516 0.6016 q 0.2344 0.2422 0.5703 0.375 q 0.3359 0.1328 0.7656 0.1328 q 0.2734 0 0.5391 -0.0547 q 0.2734 -0.0547 0.4531 -0.1406 l 0.125 0.4844 q -0.1719 0.0859 -0.4922 0.1563 q -0.3203 0.0625 -0.75 0.0625 q -0.4922 0 -0.9219 -0.1563 Q 4.25 10.6172 3.9375 10.3203 Q 3.625 10.0156 3.4453 9.5781 Q 3.2734 9.1328 3.2734 8.5547 q 0 -0.5469 0.1797 -1 q 0.1797 -0.4609 0.5 -0.7813 q 0.3281 -0.3281 0.7734 -0.5078 q 0.4531 -0.1797 1 -0.1797 q 0.4453 0 0.7188 0.0781 Q 6.7188 6.2344 6.8438 6.2969 L 6.6953 6.7891 Q 6.5234 6.7031 6.2813 6.6484 Q 6.0469 6.5938 5.75 6.5938 Z M 8 7 H 9 V 8 H 8 Z M 8 9 h 1 v 1 H 8 Z'/></svg>");
+
   --zehn-icon-compatibility: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-compatibility' style='fill:white' viewBox='0 0 16 16'><path d='M 12.8906 15 H 15 v 1 H 1 v -1 h 2.1094 l 3.5 -14 h 2.7813 z m -8 -3 l -0.75 3 h 7.7188 l -3.25 -13 h -1.2188 l -1.5 6 H 9.125 l 0.25 1 H 5.6406 l -0.5 2 H 9.875 l 0.25 1 Z'/></svg>");
 
-  --zehn-icon-command: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-command' style='fill:white' viewBox='0 0 16 16'><path d='M 16 1 V 14 H 0 V 1 Z M 1 2 V 3 H 15 V 2 Z M 15 13 V 4 H 1 v 9 Z M 10.875 6 l 2.0078 5 H 12.1719 L 10.1641 6 Z M 5.75 6.5938 q -0.4141 0 -0.7578 0.1328 q -0.3359 0.125 -0.5781 0.375 Q 4.1797 7.3438 4.0469 7.7109 Q 3.9141 8.0703 3.9141 8.5313 q 0 0.4297 0.1172 0.7813 q 0.125 0.3516 0.3516 0.6016 q 0.2344 0.2422 0.5703 0.375 q 0.3359 0.1328 0.7656 0.1328 q 0.2734 0 0.5391 -0.0547 q 0.2734 -0.0547 0.4531 -0.1406 l 0.125 0.4844 q -0.1719 0.0859 -0.4922 0.1563 q -0.3203 0.0625 -0.75 0.0625 q -0.4922 0 -0.9219 -0.1563 Q 4.25 10.6172 3.9375 10.3203 Q 3.625 10.0156 3.4453 9.5781 Q 3.2734 9.1328 3.2734 8.5547 q 0 -0.5469 0.1797 -1 q 0.1797 -0.4609 0.5 -0.7813 q 0.3281 -0.3281 0.7734 -0.5078 q 0.4531 -0.1797 1 -0.1797 q 0.4453 0 0.7188 0.0781 Q 6.7188 6.2344 6.8438 6.2969 L 6.6953 6.7891 Q 6.5234 6.7031 6.2813 6.6484 Q 6.0469 6.5938 5.75 6.5938 Z M 8 7 H 9 V 8 H 8 Z M 8 9 h 1 v 1 H 8 Z'/></svg>");
+  --zehn-icon-component: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-component' style='fill:white' viewBox='0 0 16 16'><path d='M 12.5 8 H 14 v 7 H 1 V 2 H 8 V 3.5 L 11.5 0 L 16 4.5 Z M 8.2344 4.5 L 11.5 7.7656 L 14.7656 4.5 L 11.5 1.2344 Z M 8 5.5 V 8 h 2.5 z M 2 8 H 7 V 3 H 2 Z M 7 9 H 2 v 5 h 5 Z M 8 9 v 5 h 5 V 9 Z'/></svg>");
 
   --zehn-icon-contact: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-contact' style='fill:white' viewBox='0 0 16 16'><path d='M 10.3906 9.3984 q 1.0625 0.3672 1.9141 1.0313 q 0.8594 0.6563 1.4531 1.5234 q 0.6016 0.8672 0.9219 1.8984 Q 15 14.8828 15 16 H 14 Q 14 14.7188 13.5391 13.625 Q 13.0859 12.5234 12.2813 11.7188 Q 11.4766 10.9141 10.375 10.4609 Q 9.2813 10 8 10 Q 7.1641 10 6.3906 10.2109 Q 5.6172 10.4219 4.9453 10.8125 Q 4.2813 11.1953 3.7344 11.7422 Q 3.1953 12.2813 2.8047 12.9531 Q 2.4219 13.6172 2.2109 14.3906 Q 2 15.1641 2 16 H 1 Q 1 14.875 1.3281 13.8516 Q 1.6563 12.8203 2.2578 11.9609 Q 2.8594 11.1016 3.7109 10.4453 Q 4.5703 9.7891 5.625 9.4063 Q 5.0156 9.0781 4.5313 8.6094 Q 4.0469 8.1406 3.7031 7.5703 Q 3.3672 6.9922 3.1797 6.3438 Q 3 5.6875 3 5 Q 3 3.9609 3.3906 3.0547 Q 3.7813 2.1406 4.4609 1.4609 Q 5.1406 0.7813 6.0469 0.3906 Q 6.9609 0 8 0 Q 9.0391 0 9.9453 0.3906 Q 10.8594 0.7813 11.5391 1.4609 Q 12.2188 2.1406 12.6094 3.0547 Q 13 3.9609 13 5 Q 13 5.6875 12.8125 6.3359 Q 12.6328 6.9844 12.2891 7.5547 Q 11.9531 8.125 11.4688 8.6016 Q 10.9922 9.0703 10.3906 9.3984 Z M 4 5 Q 4 5.8281 4.3125 6.5547 Q 4.6328 7.2813 5.1719 7.8281 Q 5.7188 8.3672 6.4453 8.6875 Q 7.1719 9 8 9 Q 8.8281 9 9.5547 8.6875 Q 10.2813 8.3672 10.8203 7.8281 Q 11.3672 7.2813 11.6797 6.5547 Q 12 5.8281 12 5 Q 12 4.1719 11.6797 3.4453 Q 11.3672 2.7188 10.8203 2.1797 Q 10.2813 1.6328 9.5547 1.3203 Q 8.8281 1 8 1 Q 7.1719 1 6.4453 1.3203 Q 5.7188 1.6328 5.1719 2.1797 Q 4.6328 2.7188 4.3125 3.4453 Q 4 4.1719 4 5 Z'/></svg>");
 
@@ -1074,9 +1076,13 @@
 
   --zehn-icon-flag: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-flag' style='fill:white' viewBox='0 0 16 16'><path d='M 9 2 h 6 v 8 H 8 V 8 H 3 v 8 H 2 V 0 H 9 Z M 3 7 H 8 V 1 H 3 Z M 14 9 V 3 H 9 v 6 Z'/></svg>");
 
+  --zehn-icon-focus-view: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-focus-view' style='fill:white' viewBox='0 0 16 16'><path d='M 5 5 V 2 h 1 v 4 H 2 V 5 Z M 2 11 v -1 h 4 v 4 H 5 v -3 Z M 10 14 v -4 h 4 v 1 h -3 v 3 Z M 11 5 h 3 v 1 h -4 V 2 h 1 Z'/></svg>");
+
   --zehn-icon-folder: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-folder' style='fill:white' viewBox='0 0 16 16'><path d='M 13 0 q 0.2109 0 0.3906 0.0781 q 0.1797 0.0781 0.3125 0.2188 q 0.1406 0.1328 0.2188 0.3125 Q 14 0.7891 14 1 v 7.75 q 0 0.2422 0.0703 0.4297 q 0.0781 0.1797 0.1875 0.3438 q 0.1094 0.1563 0.2422 0.3125 q 0.1328 0.1563 0.2422 0.3594 q 0.1094 0.1953 0.1797 0.4531 Q 15 10.8984 15 11.25 V 15 q 0 0.2109 -0.0781 0.3906 q -0.0781 0.1797 -0.2188 0.3203 q -0.1328 0.1328 -0.3125 0.2109 Q 14.2109 16 14 16 H 2 V 0 Z M 3 15 h 9 v -3.75 q 0 -0.3516 0.0703 -0.6016 q 0.0781 -0.2578 0.1875 -0.4531 q 0.1094 -0.2031 0.2422 -0.3594 q 0.1328 -0.1563 0.2422 -0.3125 q 0.1094 -0.1641 0.1797 -0.3438 Q 13 8.9922 13 8.75 V 1 H 3 Z M 14 11.25 q 0 -0.1875 -0.0391 -0.3281 q -0.0313 -0.1406 -0.1016 -0.2578 q -0.0625 -0.1172 -0.1563 -0.2266 q -0.0859 -0.1172 -0.2031 -0.25 q -0.1172 0.1328 -0.2109 0.25 q -0.0859 0.1094 -0.1563 0.2266 q -0.0625 0.1172 -0.1016 0.2578 Q 13 11.0625 13 11.25 V 15 h 1 Z'/></svg>");
 
   --zehn-icon-frame-play: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-frame-play' style='fill:white' viewBox='0 0 16 16'><path d='M 9 8.5 Q 9 8.2969 9.1484 8.1484 Q 9.2969 8 9.5 8 Q 9.7031 8 9.8516 8.1484 Q 10 8.2969 10 8.5 Q 10 8.7031 9.8516 8.8516 Q 9.7031 9 9.5 9 Q 9.2969 9 9.1484 8.8516 Q 9 8.7031 9 8.5 Z M 3 5 H 2 V 4 H 3 Z M 3 7 H 2 V 6 H 3 Z M 3 9 H 2 V 8 h 1 Z M 2 10 h 1 v 1 H 2 Z M 14 5 H 13 V 4 h 1 Z M 13 6 h 1 v 1 h -1 Z M 13 8 h 1 v 1 h -1 Z M 11 10 l 5 3 l -5 3 Z M 12 14.2344 L 14.0547 13 L 12 11.7656 Z M 16 2 v 9.5391 l -1 -0.5938 V 3 H 1 V 13 H 2.2891 L 6.5 8.7969 L 10 12.2891 V 14 H 0 V 2 Z M 3.7109 13 h 5.5781 L 6.5 10.2031 Z'/></svg>");
+
+  --zehn-icon-full-view: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-full-view' style='fill:white' viewBox='0 0 16 16'><path d='M 13 13 V 10 h 1 v 4 H 10 v -1 z M 10 2 h 4 v 4 h -1 V 3 H 10 z M 2 6 V 2 h 4 v 1 H 3 v 3 z m 1 4 v 3 h 3 v 1 H 2 V 10 z'/></svg>");
 
   --zehn-icon-gift: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-gift' style='fill:white' viewBox='0 0 16 16'><path d='M 14 4 V 14 H 1 V 4 H 3.2813 Q 3.0078 3.5391 3.0078 3 q 0 -0.4141 0.1563 -0.7734 q 0.1563 -0.3672 0.4219 -0.6406 Q 3.8594 1.3125 4.2188 1.1563 Q 4.5859 1 5 1 Q 5.7578 1 6.4141 1.3594 Q 7.0781 1.7109 7.5 2.3438 Q 7.9219 1.7109 8.5781 1.3594 Q 9.2422 1 10 1 Q 10.4141 1 10.7734 1.1563 Q 11.1406 1.3125 11.4141 1.5859 Q 11.6875 1.8594 11.8438 2.2266 Q 12 2.5859 12 3 Q 12 3.2656 11.9219 3.5234 Q 11.8516 3.7734 11.7188 4 Z M 7 5 H 2 v 8 H 7 Z M 7 4 Q 7 3.5859 6.8438 3.2266 Q 6.6875 2.8594 6.4141 2.5859 Q 6.1406 2.3125 5.7734 2.1563 Q 5.4141 2 5 2 Q 4.7891 2 4.6094 2.0781 Q 4.4297 2.1563 4.2891 2.2969 Q 4.1563 2.4297 4.0781 2.6094 Q 4 2.7891 4 3 Q 4 3.2109 4.0781 3.3906 Q 4.1563 3.5703 4.2891 3.7109 Q 4.4297 3.8438 4.6094 3.9219 Q 4.7891 4 5 4 Z M 10 2 Q 9.5859 2 9.2188 2.1563 Q 8.8594 2.3125 8.5859 2.5859 Q 8.3125 2.8594 8.1563 3.2266 Q 8 3.5859 8 4 h 2 Q 10.2109 4 10.3906 3.9219 Q 10.5703 3.8438 10.7031 3.7109 Q 10.8438 3.5703 10.9219 3.3906 Q 11 3.2109 11 3 Q 11 2.7891 10.9219 2.6094 Q 10.8438 2.4297 10.7031 2.2969 Q 10.5703 2.1563 10.3906 2.0781 Q 10.2109 2 10 2 Z M 13 5 H 8 v 8 h 5 Z'/></svg>");
 
@@ -1191,7 +1197,7 @@
 
   --zehn-icon-notification-solid: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-notification-solid' style='fill:white' viewBox='0 0 16 16'><path d='M 1 2 H 15 V 13 H 10 L 8 15 L 6 13 H 1 Z M 12 7 H 4 V 8 H 12 Z M 12 5 H 4 V 6 H 12 Z M 9 9 H 4 v 1 h 5 Z'/></svg>");
 
-  --zehn-icon-os-linux: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-os-linux' style='fill:white' viewBox='0 0 16 16'><path d='M 14.9473 11.771 l -0.8619 -1.7236 a 0.9997 0.9997 90 0 0 -0.8943 -0.5527 h -0.2341 a 7.4435 7.4435 90 0 0 -0.9096 -2.2988 C 11.5323 6.2214 11 5.2138 11 4 A 3 3 90 0 0 5 4 a 6.502 6.502 90 0 1 -1.0243 3.1077 a 7.3511 7.3511 90 0 0 -0.9354 2.388 H 2.8092 a 1.0004 1.0004 90 0 0 -0.8946 0.553 L 1.0528 11.772 a 0.5 0.5 90 0 0 0.0486 0.5254 L 3.116 14.96 a 1.4997 1.4997 90 0 0 1.9241 0.326 l 0.9367 -0.5621 A 6.9112 6.9112 90 0 0 8 15 a 6.9017 6.9017 90 0 0 2.0244 -0.2763 L 10.96 15.285 a 1.4909 1.4909 90 0 0 0.7692 0.215 a 1.5192 1.5192 90 0 0 1.1695 -0.5594 l 2 -2.6442 A 0.5005 0.5005 90 0 0 14.9473 11.771 Z m -3.7841 -4.1079 a 7.4155 7.4155 90 0 1 0.7795 1.8316 H 10.869 a 8.3295 8.3295 90 0 0 -0.49 -1.3228 a 6.3541 6.3541 90 0 1 -0.4395 -1.2227 a 4.4023 4.4023 90 0 0 0.5017 -0.7138 l 0.0192 -0.0359 A 15.373 15.373 90 0 0 11.1631 7.6631 Z M 6 10.5 a 4.6979 4.6979 90 0 1 0.5364 -1.9258 c 0.1281 -0.2913 0.2579 -0.5878 0.363 -0.8996 a 2.0237 2.0237 90 0 0 2.2012 0 c 0.105 0.3118 0.235 0.6084 0.363 0.8996 A 4.6979 4.6979 90 0 1 10 10.5 c 0 0.6441 -0.2073 1.5 -2 1.5 S 6 11.1441 6 10.5 Z m 3.2553 -4.2876 A 1.8133 1.8133 90 0 1 8 7 a 1.8136 1.8136 90 0 1 -1.2553 -0.7879 a 3.8178 3.8178 90 0 1 2.5106 0 Z M 6 4 a 2 2 90 0 1 4 0 a 5.4582 5.4582 90 0 0 0.2336 1.5576 A 3.9905 3.9905 90 0 0 9.5 5.2424 V 4 H 8.5 v 1.0271 a 4.6261 4.6261 90 0 0 -1 0 V 4 H 6.5 v 1.2425 a 3.951 3.951 90 0 0 -0.7392 0.3186 A 5.3547 5.3547 90 0 0 6 4 Z M 4.8573 7.5796 A 14.9003 14.9003 90 0 0 5.5347 6.19 l 0.0242 0.045 a 4.4023 4.4023 90 0 0 0.5017 0.7138 a 6.3541 6.3541 90 0 1 -0.4395 1.2227 a 8.3287 8.3287 90 0 0 -0.4905 1.3237 H 4.0523 A 7.0284 7.0284 90 0 1 4.8573 7.5796 Z m 0.6854 6.2387 L 4.5254 14.4287 a 0.4933 0.4933 90 0 1 -0.6264 -0.0903 L 2.0862 11.9416 l 0.7229 -1.4461 h 1.853 L 5.745 13.1927 A 0.5018 0.5018 90 0 1 5.5427 13.8184 Z m 1.158 0.0588 a 1.4786 1.4786 90 0 0 -0.0281 -1.055 A 4.515 4.515 90 0 0 8 13 a 4.5118 4.5118 90 0 0 1.3281 -0.1782 a 1.4945 1.4945 90 0 0 -0.0273 1.055 a 6.9361 6.9361 90 0 1 -2.6 0 Z m 5.415 0.4416 a 0.498 0.498 90 0 1 -0.6413 0.1089 l -1.0171 -0.6103 h 0 a 0.505 0.505 90 0 1 -0.198 -0.6365 l 1.0785 -2.6862 h 1.8529 l 0.723 1.446 Z'/></svg>");
+  --zehn-icon-os-linux: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-os-linux' style='fill:white' viewBox='0 0 16 16'><path d='M 13.2813 11.1563 q 0.25 0.1094 0.375 0.2969 t 0.1797 0.4531 q 0.0313 0.1563 0.0703 0.2891 t 0.0938 0.25 t 0.125 0.2266 t 0.1875 0.2422 q 0.1016 0.1094 0.1797 0.2813 t 0.0781 0.3281 q 0 0.1797 -0.0938 0.3047 t -0.2344 0.2188 q -0.1797 0.125 -0.375 0.2188 t -0.3906 0.1953 q -0.3203 0.1563 -0.5547 0.3281 t -0.4688 0.4375 q -0.125 0.1406 -0.2813 0.2734 t -0.3438 0.25 t -0.3828 0.1719 t -0.3906 0.0703 q -0.4531 0 -0.75 -0.1563 t -0.5156 -0.5703 q -0.0625 -0.1172 -0.125 -0.1484 t -0.2031 -0.0547 q -0.3984 -0.0313 -0.7891 -0.0625 t -0.7969 -0.0313 q -0.3281 0 -0.6719 0.0547 t -0.6797 0.1328 q -0.0703 0.0156 -0.1406 0.1172 t -0.1953 0.2266 t -0.3359 0.2188 t -0.5547 0.1016 q -0.2578 0 -0.5547 -0.0547 t -0.5313 -0.1797 q -0.4844 -0.2422 -0.9531 -0.3281 t -0.9922 -0.1563 q -0.1797 -0.0234 -0.3438 -0.0625 t -0.2891 -0.1328 t -0.1953 -0.2188 t -0.0781 -0.3516 q 0 -0.2422 0.0625 -0.4688 t 0.0703 -0.4766 q 0 -0.1719 -0.0234 -0.3359 t -0.0313 -0.3516 q 0 -0.3984 0.1875 -0.5859 t 0.5469 -0.2969 q 0.1719 -0.0547 0.2969 -0.1484 t 0.2344 -0.2031 t 0.2031 -0.2422 t 0.2109 -0.2656 q 0.0234 -0.0313 0.0234 -0.0703 q 0 -0.0938 -0.0078 -0.1797 t -0.0156 -0.1875 q 0 -0.5313 0.1641 -1.0703 t 0.4297 -1.0547 t 0.5938 -0.9922 t 0.6484 -0.8828 q 0.4531 -0.5781 0.6797 -1.2031 t 0.2344 -1.3594 q 0 -0.3125 -0.0313 -0.6172 t -0.0313 -0.625 q 0 -0.625 0.1406 -1.125 t 0.4375 -0.8594 t 0.7734 -0.5391 t 1.1406 -0.1953 q 0.7891 0 1.2578 0.3125 t 0.7188 0.8203 t 0.3203 1.1328 t 0.0781 1.2656 v 0.1328 q 0 0.3203 0.0078 0.5703 t 0.0625 0.4922 t 0.1641 0.4844 t 0.3281 0.5234 q 0.375 0.4922 0.7656 0.9922 t 0.7109 1.0313 t 0.5234 1.1094 t 0.2109 1.25 q 0 0.5391 -0.1641 1.0391 M 6.7266 3.0156 q 0.1094 0 0.1797 0.0547 t 0.1094 0.1484 t 0.0547 0.1875 t 0.0156 0.1953 q 0 0.0781 -0.0234 0.125 t -0.0703 0.0859 t -0.0938 0.0781 t -0.0938 0.0938 q -0.0547 0.0859 -0.1484 0.1406 t -0.1797 0.1172 t -0.1563 0.1328 t -0.0703 0.1953 q 0 0.0703 0.0703 0.1172 q 0.1875 0.125 0.2656 0.3047 t 0.1719 0.3516 t 0.2422 0.2891 t 0.4609 0.1172 h 0.0469 q 0.3125 -0.0156 0.5938 -0.1641 t 0.5625 -0.3125 q 0.0391 -0.0234 0.1016 -0.0469 t 0.1016 -0.0547 l 0.5703 -0.4453 q 0.0156 -0.0547 0.0234 -0.1016 t 0.0156 -0.1094 q 0 -0.0859 -0.0391 -0.1406 t -0.0938 -0.0938 t -0.1328 -0.0547 t -0.1406 -0.0391 q -0.1875 -0.0391 -0.3516 -0.1406 t -0.3438 -0.1563 q -0.0313 -0.0078 -0.0469 -0.0469 t -0.0313 -0.0938 t -0.0078 -0.1016 t -0.0078 -0.0781 q 0 -0.0938 0.0156 -0.1953 t 0.0703 -0.1953 t 0.125 -0.1406 t 0.2031 -0.0547 q 0.2422 0 0.3516 0.1797 t 0.1172 0.3906 q 0 0.1016 -0.0391 0.1797 t -0.0391 0.1719 q 0 0.0625 0.0391 0.0859 t 0.1016 0.0313 q 0.1797 0 0.2344 -0.0859 t 0.0625 -0.2578 q 0 -0.1797 -0.0313 -0.3984 t -0.125 -0.4063 t -0.2422 -0.3125 t -0.3828 -0.125 q -0.4063 0 -0.5859 0.2031 t -0.1875 0.6094 q 0 0.1172 0.0156 0.2344 t 0.0156 0.2344 q 0 0.0391 -0.0078 0.0391 t -0.0469 -0.0156 t -0.0938 -0.0391 t -0.1172 -0.0391 t -0.125 -0.0156 q -0.0156 0 -0.0781 0.0078 t -0.125 0.0078 q -0.1094 0 -0.1094 -0.0391 q 0 -0.1172 -0.0156 -0.2969 t -0.0781 -0.3594 t -0.1563 -0.2969 t -0.2813 -0.125 q -0.1328 0 -0.2266 0.0859 t -0.1641 0.2031 t -0.0859 0.2656 t -0.0313 0.25 q 0 0.0469 0.0156 0.1641 t 0.0547 0.2422 t 0.0859 0.2188 t 0.1094 0.0938 q 0.0391 0 0.1016 -0.0547 t 0.0625 -0.1016 q 0 -0.0234 -0.0234 -0.0313 t -0.0469 -0.0078 q -0.0547 0 -0.0938 -0.0547 t -0.0625 -0.125 t -0.0469 -0.1484 t -0.0156 -0.1172 q 0 -0.1563 0.0703 -0.2813 t 0.2578 -0.1328 M 5.0234 15.1797 q 0.1875 0 0.3672 -0.0313 t 0.3359 -0.125 t 0.2344 -0.2422 t 0.0938 -0.375 q 0 -0.1406 -0.0469 -0.2734 t -0.1328 -0.25 q -0.0938 -0.1484 -0.2031 -0.2813 t -0.2031 -0.2813 q -0.1484 -0.2188 -0.2891 -0.4297 t -0.2813 -0.4453 q -0.125 -0.2031 -0.2344 -0.4063 t -0.2656 -0.3984 q -0.0938 -0.1172 -0.2188 -0.2109 t -0.2891 -0.0938 q -0.1719 0 -0.2969 0.1094 t -0.2578 0.2656 t -0.2969 0.3047 t -0.4219 0.2344 q -0.2031 0.0625 -0.3125 0.1719 t -0.1094 0.3359 q 0 0.1563 0.0234 0.3125 t 0.0313 0.3125 q 0 0.2109 -0.0625 0.3984 t -0.0625 0.3672 q 0 0.2109 0.1484 0.2969 t 0.3359 0.1172 q 0.2344 0.0391 0.4453 0.0625 t 0.4141 0.0703 t 0.4063 0.1016 t 0.4297 0.1719 q 0.0469 0.0234 0.1406 0.0547 t 0.2109 0.0703 t 0.2188 0.0625 t 0.1484 0.0234 m 2.8594 -0.9375 q 0.2188 0 0.4688 -0.0469 t 0.5 -0.1328 t 0.4766 -0.2031 t 0.4063 -0.2578 q 0.0156 -0.0156 0.0313 -0.0469 t 0.0234 -0.0625 v -0.0078 q 0.0469 -0.1719 0.0781 -0.375 t 0.0547 -0.4141 t 0.0547 -0.4141 t 0.0547 -0.3984 q 0.0313 -0.2109 0.0781 -0.4063 t 0.125 -0.3672 t 0.2109 -0.3047 t 0.3438 -0.25 v -0.0156 l -0.0078 -0.0234 q 0 -0.0703 0.0469 -0.1484 t 0.1172 -0.1641 t 0.1484 -0.1328 t 0.1641 -0.0781 q -0.0469 -0.1875 -0.1016 -0.375 t -0.0938 -0.375 q -0.0469 -0.2813 -0.0938 -0.4766 t -0.1094 -0.3594 t -0.1797 -0.3203 t -0.2891 -0.375 q -0.0859 -0.1016 -0.1172 -0.1563 t -0.0469 -0.1953 q -0.0078 -0.0547 -0.0469 -0.2031 t -0.1016 -0.3438 t -0.1406 -0.4063 t -0.1719 -0.3828 t -0.1719 -0.2891 t -0.1641 -0.1172 q -0.1875 0 -0.4453 0.1484 t -0.5469 0.3281 t -0.5625 0.3359 t -0.4922 0.1484 q -0.2344 0 -0.4297 -0.1484 t -0.3594 -0.3438 t -0.2734 -0.3359 t -0.1641 -0.1563 q -0.0625 0 -0.0703 0.0938 t -0.0078 0.2109 v 0.1328 q 0 0.0469 -0.0156 0.0625 q -0.0859 0.1797 -0.1875 0.3516 t -0.2031 0.3516 t -0.1563 0.3672 t -0.0625 0.3906 q 0 0.1172 0.0156 0.2344 t 0.0781 0.2266 l -0.0156 0.0313 q -0.0625 0.0859 -0.1328 0.1563 t -0.1328 0.1641 q -0.2891 0.4297 -0.4063 0.9297 t -0.125 1.0156 q 0 0.1328 0.0156 0.2656 t 0.0156 0.2656 q 0 0.0391 -0.0078 0.0859 t -0.0078 0.0859 q 0.1328 0.0078 0.3125 0.1094 t 0.3906 0.2578 t 0.3984 0.3594 t 0.3594 0.3984 t 0.25 0.3906 t 0.1016 0.3203 q 0 0.2031 -0.125 0.3281 t -0.3125 0.2031 q 0.1328 0.2344 0.3281 0.3984 t 0.4219 0.2656 t 0.4922 0.1484 t 0.5156 0.0469 m 3.1328 1.1094 q 0.1641 0 0.3203 -0.0469 q 0.2422 -0.0703 0.4453 -0.2031 t 0.375 -0.3281 q 0.2109 -0.2422 0.4453 -0.4219 t 0.5313 -0.3281 q 0.1328 -0.0625 0.2578 -0.1172 t 0.2578 -0.1328 q 0.0859 -0.0547 0.1641 -0.1328 t 0.0781 -0.1875 q 0 -0.0625 -0.0234 -0.1172 t -0.0703 -0.1172 q -0.1172 -0.1641 -0.2031 -0.3047 t -0.1484 -0.2969 t -0.125 -0.3125 t -0.1094 -0.3516 q -0.0078 -0.0391 -0.0547 -0.1016 q -0.1641 -0.2344 -0.4609 -0.2344 q -0.1406 0 -0.2656 0.0703 t -0.2656 0.1484 t -0.2813 0.1484 t -0.2969 0.0703 t -0.2578 -0.0781 t -0.1719 -0.2109 t -0.1172 -0.2578 t -0.0938 -0.2578 q -0.0625 0.1016 -0.1406 0.1875 t -0.125 0.2031 q -0.1016 0.2344 -0.125 0.5234 q -0.0391 0.4531 -0.1016 0.8828 t -0.2109 0.8594 q -0.0391 0.125 -0.0625 0.2734 t -0.0313 0.2891 q 0 0.3828 0.2344 0.6328 t 0.6328 0.25'/></svg>");
 
   --zehn-icon-os-mac: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-os-mac' style='fill:white' viewBox='0 0 16 16'><path d='M 6.1094 4.9063 C 4.709 4.9063 3.6094 6.1074 3.6094 8.0782 C 3.6094 9.3809 4.0644 10.6524 4.6563 11.5782 C 4.9512 12.041 5.2793 12.4121 5.5781 12.6563 C 5.8769 12.9004 6.1426 13 6.2656 13 C 6.5235 13 6.6758 12.9258 6.9688 12.7969 C 7.2617 12.6679 7.6817 12.5 8.25 12.5 C 8.791 12.5 9.1836 12.6719 9.4688 12.7969 S 9.9199 13 10.2032 13 C 10.3907 13 10.627 12.8926 10.8907 12.6563 C 11.1543 12.4199 11.4297 12.0664 11.6563 11.7032 C 11.8828 11.3399 12.0684 10.9649 12.2032 10.6719 C 12.2383 10.5957 12.2539 10.5469 12.2813 10.4844 C 12.0703 10.3633 11.9004 10.2969 11.625 10.0157 C 11.1816 9.5605 10.7657 8.8438 10.7657 7.8906 C 10.7657 6.9726 11.1504 6.2851 11.5313 5.8438 C 11.6328 5.7265 11.7168 5.664 11.8125 5.5781 C 11.2676 5.0723 10.6211 4.9063 10.3594 4.9063 C 9.9668 4.9063 9.5645 5.0117 9.1875 5.1406 C 8.8105 5.2695 8.4883 5.4375 8.0625 5.4375 C 7.6348 5.4375 7.336 5.2695 7.0156 5.1406 C 6.6953 5.0117 6.3887 4.9063 6.1094 4.9063 Z M 9.8282 2.1563 C 9.5215 2.2813 9.2188 2.4688 9 2.7188 C 8.9961 2.7246 8.9883 2.7285 8.9844 2.7344 C 8.7871 2.9844 8.6446 3.3144 8.5625 3.6406 C 8.8574 3.5274 9.1524 3.3359 9.3438 3.0781 L 9.375 3.0469 C 9.6015 2.8008 9.7422 2.4863 9.8282 2.1563 Z M 10.8907 1 L 10.9219 1.4688 C 10.9688 2.291 10.6738 3.0918 10.1407 3.6875 H 10.125 C 10.1211 3.6934 10.1152 3.6972 10.1094 3.7031 C 10.1074 3.7051 10.1113 3.7168 10.1094 3.7188 C 10.0117 3.8476 9.8554 3.9179 9.7344 4.0313 C 9.9492 3.9903 10.1191 3.9063 10.3594 3.9063 C 10.877 3.9063 12.1836 4.0723 13 5.3281 L 13.2813 5.75 L 12.8594 6.0156 C 12.8066 6.0488 12.8125 6.043 12.7813 6.0625 S 12.709 6.1015 12.6563 6.1406 C 12.5527 6.2188 12.414 6.3457 12.2813 6.5 C 12.0137 6.8106 11.7657 7.2442 11.7657 7.8906 C 11.7657 8.5586 12.0313 8.9941 12.3438 9.3125 S 13.0059 9.8047 13.0938 9.8438 L 13.4688 10.0157 L 13.375 10.4219 C 13.3457 10.5469 13.3242 10.5782 13.2813 10.6875 C 13.2383 10.7969 13.1836 10.9316 13.1094 11.0938 C 12.961 11.4179 12.7578 11.8223 12.5 12.2344 C 12.2422 12.6465 11.9316 13.0742 11.5625 13.4063 S 10.7383 14 10.2032 14 C 9.709 14 9.336 13.8399 9.0625 13.7188 S 8.6074 13.5 8.25 13.5 C 7.8535 13.5 7.6445 13.5996 7.375 13.7188 S 6.7461 14 6.2656 14 C 5.7851 14 5.3594 13.7676 4.9531 13.4375 S 4.1563 12.664 3.8125 12.125 C 3.125 11.0488 2.6094 9.6113 2.6094 8.0782 C 2.6094 5.709 4.1192 3.9063 6.1094 3.9063 C 6.6172 3.9063 7.0449 4.0625 7.3906 4.2031 C 7.4629 4.2324 7.4668 4.2246 7.5313 4.25 C 7.3965 3.3574 7.8242 2.584 8.2188 2.0938 V 2.0781 C 8.7735 1.4258 9.6015 1 10.4219 1 Z'/></svg>");
 
@@ -1305,6 +1311,8 @@
 
   --zehn-icon-square: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-square' style='fill:white' viewBox='0 0 16 16'><path d='M 1 1 H 14 V 14 H 1 Z M 13 13 V 2 H 2 v 11 Z'/></svg>");
 
+  --zehn-icon-stack: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-stack' style='fill:white' viewBox='0 0 16 16'><path d='M 14 5 h 2 v 9 H 4 v -2 H 2 v -2 H 0 V 1 h 12 v 2 h 2 Z M 1 2 v 7 h 10 V 2 Z M 3 10 v 1 h 10 V 4 h -1 v 6 Z M 15 13 V 6 h -1 v 6 H 5 v 1 Z'/></svg>");
+
   --zehn-icon-stats: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-stats' style='fill:white' viewBox='0 0 16 16'><path d='M 15 1 V 15 H 1 V 1 Z M 2 2 v 8 H 3.1719 L 4.0234 9.1484 Q 4.1719 9 4.375 9 Q 4.5781 9 4.7266 9.1484 l 1.3828 1.375 L 8.0156 3.125 Q 8.0547 2.9609 8.1875 2.8594 Q 8.3281 2.75 8.5 2.75 q 0.1797 0 0.3125 0.1094 q 0.1328 0.1016 0.1719 0.2734 L 9.7813 6.3906 H 11 q 0.1719 0 0.3047 0.1094 q 0.1406 0.1016 0.1797 0.2656 L 12.0469 9 H 14 V 2 Z M 14 14 v -4 h -2.3438 q -0.1797 0 -0.3125 -0.1016 q -0.1328 -0.1094 -0.1719 -0.2813 l -0.5625 -2.2266 h -1.2188 q -0.1797 0 -0.3125 -0.1016 Q 8.9453 7.1797 8.9063 7.0078 L 8.4844 5.3047 L 6.8594 11.625 Q 6.8203 11.7891 6.6797 11.8984 Q 6.5469 12 6.375 12 Q 6.1719 12 6.0234 11.8516 L 4.375 10.2031 L 3.7266 10.8516 Q 3.5781 11 3.375 11 H 2 v 3 Z'/></svg>");
 
   --zehn-icon-status-away: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-status-away' style='fill:white' viewBox='0 0 16 16'><path d='M 13 2 V 14 H 3 V 2 Z M 12 11 H 4 v 2 h 8 Z M 12 3 H 4 v 7 h 8 Z M 5.5 7 Q 5.2969 7 5.1484 6.8516 Q 5 6.7031 5 6.5 Q 5 6.2969 5.1484 6.1484 Q 5.2969 6 5.5 6 Q 5.7031 6 5.8516 6.1484 Q 6 6.2969 6 6.5 Q 6 6.7031 5.8516 6.8516 Q 5.7031 7 5.5 7 Z M 8 7 Q 7.7969 7 7.6484 6.8516 Q 7.5 6.7031 7.5 6.5 Q 7.5 6.2969 7.6484 6.1484 Q 7.7969 6 8 6 Q 8.2031 6 8.3516 6.1484 Q 8.5 6.2969 8.5 6.5 Q 8.5 6.7031 8.3516 6.8516 Q 8.2031 7 8 7 Z M 10.5 7 Q 10.2969 7 10.1484 6.8516 Q 10 6.7031 10 6.5 Q 10 6.2969 10.1484 6.1484 Q 10.2969 6 10.5 6 Q 10.7031 6 10.8516 6.1484 Q 11 6.2969 11 6.5 Q 11 6.7031 10.8516 6.8516 Q 10.7031 7 10.5 7 Z'/></svg>");
@@ -1339,6 +1347,8 @@
 
   --zehn-icon-tag-close: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-tag-close' style='fill:white' viewBox='0 0 16 16'><path d='M 13.25 4.6328 L 9.8906 8 L 13.25 11.3672 L 11.3672 13.25 L 8 9.8906 L 4.6328 13.25 L 2.75 11.3672 L 6.1094 8 L 2.75 4.6328 L 4.6328 2.75 L 8 6.1094 L 11.3672 2.75 Z'/></svg>");
 
+  --zehn-icon-tag-group: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-tag-group' style='fill:white' viewBox='0 0 16 16'><path d='M 12.5 6.5 q -0.2109 0 -0.3906 -0.0781 t -0.3125 -0.2109 t -0.2188 -0.3203 t -0.0781 -0.3906 q 0 -0.2109 0.0781 -0.3906 t 0.2109 -0.3125 t 0.3203 -0.2188 t 0.3906 -0.0781 q 0.2109 0 0.3906 0.0781 t 0.3125 0.2109 t 0.2188 0.3203 t 0.0781 0.3906 q 0 0.2109 -0.0781 0.3906 t -0.2109 0.3125 t -0.3203 0.2188 t -0.3906 0.0781 m 1.5 -4.5 h 2 v 6.7109 l -7 7 l -4.3438 -4.3594 Q 2.4844 9.1719 0.2891 7 L 7.2891 0 h 6.7109 Z M 7.7109 1 L 1.7109 7 l 1.2891 1.2891 l 6.2891 -6.2891 h 3.7109 V 1 Z M 15 8.2891 V 3 h -5.2891 l -6 6 l 5.2891 5.2891 Z'/></svg>");
+
   --zehn-icon-text-bold: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-text-bold' style='fill:white' viewBox='0 0 16 16'><path d='M 9.25 7.5 q 0.7734 0 1.4531 0.2969 q 0.6875 0.2891 1.1953 0.8047 q 0.5156 0.5078 0.8047 1.1953 Q 13 10.4766 13 11.25 q 0 0.7734 -0.2969 1.4609 q -0.2891 0.6797 -0.8047 1.1953 q -0.5078 0.5078 -1.1953 0.8047 Q 10.0234 15 9.25 15 H 3 V 1 h 6.25 q 0.6719 0 1.2656 0.2578 q 0.5938 0.25 1.0313 0.6953 q 0.4453 0.4375 0.6953 1.0313 Q 12.5 3.5781 12.5 4.25 q 0 0.6719 -0.2578 1.2656 q -0.25 0.5938 -0.6953 1.0391 q -0.4375 0.4375 -1.0313 0.6953 Q 9.9219 7.5 9.25 7.5 Z M 6 7 H 7.5 Q 7.9063 7 8.2734 6.8438 Q 8.6406 6.6797 8.9063 6.4141 Q 9.1797 6.1406 9.3359 5.7813 Q 9.5 5.4141 9.5 5.0078 Q 9.5 4.5938 9.3359 4.2266 Q 9.1797 3.8594 8.9063 3.5938 Q 8.6406 3.3203 8.2734 3.1641 Q 7.9063 3 7.5 3 H 6 Z m 2 6 Q 8.4063 13 8.7734 12.8438 Q 9.1406 12.6797 9.4063 12.4141 Q 9.6797 12.1406 9.8359 11.7813 Q 10 11.4141 10 11.0078 Q 10 10.5938 9.8359 10.2266 Q 9.6797 9.8594 9.4063 9.5938 Q 9.1406 9.3203 8.7734 9.1641 Q 8.4063 9 8 9 H 6 v 4 Z'/></svg>");
 
   --zehn-icon-text-code: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-text-code' style='fill:white' viewBox='0 0 16 16'><path d='M 3.6484 4.6484 L 4.3516 5.3516 L 1.7109 8 L 4.3516 10.6484 L 3.6484 11.3516 L 0.2891 8 Z m 8.7031 0 L 15.7109 8 L 12.3516 11.3516 L 11.6484 10.6484 L 14.2891 8 L 11.6484 5.3516 Z M 5.4766 14 l 4 -12 H 10.5234 L 6.5234 14 Z'/></svg>");
@@ -1370,10 +1380,6 @@
   --zehn-icon-text-strikethrough: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-text-strikethrough' style='fill:white' viewBox='0 0 16 16'><path d='M 4 12.7604 V 10.9557 Q 4.3099 11.2292 4.7383 11.4479 Q 5.1758 11.6667 5.6497 11.8216 Q 6.1328 11.9675 6.6159 12.0495 Q 7.099 12.1315 7.5091 12.1315 Q 8.9219 12.1315 9.6146 11.612 Q 10.3164 11.0834 10.3164 10.099 Q 10.3164 9.5703 10.0794 9.1784 Q 9.8516 8.7865 9.4414 8.4675 Q 9.0313 8.1393 8.4662 7.8477 Q 7.9102 7.5469 7.263 7.2188 Q 6.5794 6.8724 5.987 6.5169 Q 5.3945 6.1615 4.957 5.7331 Q 4.5195 5.3047 4.2643 4.7669 Q 4.0182 4.2201 4.0182 3.4909 Q 4.0182 2.5977 4.4102 1.9414 Q 4.8021 1.276 5.4401 0.8477 Q 6.0781 0.4193 6.8893 0.2096 Q 7.7096 0 8.5573 0 Q 10.4896 0 11.3737 0.4648 V 2.1875 Q 10.2162 1.3854 8.4024 1.3854 Q 7.901 1.3854 7.3997 1.4948 Q 6.8984 1.5951 6.5065 1.832 Q 6.1146 2.069 5.8685 2.4427 Q 5.6224 2.8164 5.6224 3.3542 Q 5.6224 3.8555 5.8047 4.2201 Q 5.9961 4.5846 6.3607 4.8854 Q 6.7253 5.1862 7.2448 5.4688 Q 7.7734 5.7513 8.457 6.0886 Q 9.1589 6.4349 9.7878 6.8177 Q 10.4167 7.2005 10.8906 7.6654 Q 11.3646 8.1302 11.638 8.6953 Q 11.9206 9.2604 11.9206 9.9896 Q 11.9206 10.9557 11.5378 11.6302 Q 11.1641 12.2956 10.5169 12.7149 Q 9.8789 13.1341 9.0404 13.3164 Q 8.2018 13.5078 7.2721 13.5078 Q 6.9622 13.5078 6.5065 13.4531 Q 6.0508 13.4076 5.5768 13.3073 Q 5.1029 13.2162 4.6745 13.0794 Q 4.2552 12.9336 4 12.7604 Z M 1 6 H 15 V 8 H 1 V 6 Z'/></svg>");
 
   --zehn-icon-text-underline: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-text-underline' style='fill:white' viewBox='0 0 16 16'><path d='M 13 0 v 9 q 0 1.0391 -0.3906 1.9531 q -0.3906 0.9063 -1.0703 1.5859 Q 10.8594 13.2188 9.9453 13.6094 Q 9.0391 14 8 14 Q 6.9609 14 6.0469 13.6094 Q 5.1406 13.2188 4.4609 12.5391 Q 3.7813 11.8594 3.3906 10.9531 Q 3 10.0391 3 9 V 0 H 4 V 9 Q 4 9.8281 4.3125 10.5547 Q 4.6328 11.2813 5.1719 11.8281 Q 5.7188 12.3672 6.4453 12.6875 Q 7.1719 13 8 13 Q 8.8281 13 9.5547 12.6875 Q 10.2813 12.3672 10.8203 11.8281 Q 11.3672 11.2813 11.6797 10.5547 Q 12 9.8281 12 9 V 0 Z M 3 15 h 10 v 1 H 3 Z'/></svg>");
-
-  --zehn-icon-theater-mode-disabled: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-theater-mode-disabled' style='fill:white' viewBox='0 0 16 16'><path d='M 0 2 V 14 H 16 V 2 Z M 1 3 H 15 V 4 H 1 Z M 1 5 h 3 v 8 H 1 Z M 5 5 h 10 v 8 H 5 Z M 8.2734 6.0234 L 5.7969 8.5 L 8.2734 10.9766 L 8.9766 10.2734 L 7.7109 9 H 11 V 8 H 7.7109 L 8.9766 6.7266 Z'/></svg>");
-
-  --zehn-icon-theater-mode-enabled: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-theater-mode-enabled' style='fill:white' viewBox='0 0 16 16'><path d='M 0 2 L 0 14 L 16 14 L 16 2 L 0 2 Z M 1 3 L 15 3 L 15 4 L 1 4 L 1 3 Z M 1 5 L 15 5 L 15 13 L 1 13 L 1 5 Z M 8.7266 6.0234 L 8.0234 6.7266 L 9.2891 8 L 6 8 L 6 9 L 9.2891 9 L 8.0234 10.2734 L 8.7266 10.9766 L 11.2031 8.5 L 8.7266 6.0234 Z'/></svg>");
 
   --zehn-icon-theme: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' id='icon-theme' style='fill:white' viewBox='0 0 16 16'><path d='M 7.5 3 Q 8.4297 3 9.25 3.3594 Q 10.0703 3.7109 10.6797 4.3203 Q 11.2891 4.9297 11.6406 5.75 Q 12 6.5703 12 7.5 Q 12 8.4297 11.6406 9.25 Q 11.2891 10.0703 10.6797 10.6797 Q 10.0703 11.2891 9.25 11.6484 Q 8.4297 12 7.5 12 Q 6.5703 12 5.75 11.6484 Q 4.9297 11.2891 4.3203 10.6797 Q 3.7109 10.0703 3.3516 9.25 Q 3 8.4297 3 7.5 Q 3 6.5703 3.3516 5.75 Q 3.7109 4.9297 4.3203 4.3203 Q 4.9297 3.7109 5.75 3.3594 Q 6.5703 3 7.5 3 Z M 7.5 4 Q 6.7734 4 6.1328 4.2813 Q 5.5 4.5547 5.0234 5.0313 Q 4.5547 5.5 4.2734 6.1406 Q 4 6.7734 4 7.5 q 0 0.6641 0.2344 1.2578 q 0.2969 0.125 0.6172 0.1875 q 0.3203 0.0547 0.6484 0.0547 q 0.7266 0 1.3594 -0.2734 q 0.6406 -0.2734 1.1172 -0.75 q 0.4766 -0.4766 0.75 -1.1094 Q 9 6.2266 9 5.5 Q 9 5.1719 8.9375 4.8516 Q 8.8828 4.5313 8.7578 4.2344 Q 8.1563 4 7.5 4 Z M 8 2 H 7 V 0 H 8 Z M 7 13 h 1 v 2 H 7 Z M 15 7 V 8 H 13 V 7 Z M 2 8 H 0 V 7 H 2 Z M 3.2578 3.9609 L 1.8438 2.5469 L 2.5469 1.8438 L 3.9609 3.2578 Z M 11.7422 11.0391 l 1.4141 1.4141 l -0.7031 0.7031 l -1.4141 -1.4141 Z M 3.2578 11.0391 l 0.7031 0.7031 L 2.5469 13.1563 L 1.8438 12.4531 Z M 11.7422 3.9609 L 11.0391 3.2578 L 12.4531 1.8438 L 13.1563 2.5469 Z'/></svg>");
 
@@ -1518,108 +1524,165 @@
 
 
 
-/* OPTIONS ---------------------------------------------------------------------------------------------------------- */
+/* OPTIONS - PERSONALIZATION - -------------------------------------------------------------------------------------- */
 
+/* APPEARANCE */
 :root {
-  /* GENERAL */
-  --zehn-mask-avatar: var(--option-mask-avatar, var(--zehn-mask-avatar-round));
-  --zehn-mask-avatar-status: var(--option-mask-avatar-status, var(--zehn-mask-avatar-round-status));
-  --zehn-mask-avatar-status-mobile: var(--option-mask-avatar-status-mobile, var(--zehn-mask-avatar-round-status-mobile));
-  --zehn-mask-avatar-status-deck: var(--option-mask-avatar-status-deck, var(--zehn-mask-avatar-round-status-deck));
-  --zehn-mask-avatar-status-vr: var(--option-mask-avatar-status-vr, var(--zehn-mask-avatar-round-status-vr));
-  --zehn-mask-avatar-status-bigpicture: var(--option-mask-avatar-status-bigpicture, var(--zehn-mask-avatar-round-status-bigpicture));
-  --zehn-mask-avatar-roundness: var(--option-mask-avatar-roundness, 50%);
+    /* AVATAR SHAPE */
+  --zehn-mask-avatar: var(--option-avatar-shape, var(--zehn-mask-avatar-round));
+  --zehn-avatar-shape-status: var(--option-avatar-shape-status, var(--zehn-mask-avatar-round-status));
+  --zehn-avatar-shape-status-mobile: var(--option-avatar-shape-status-mobile, var(--zehn-mask-avatar-round-status-mobile));
+  --zehn-avatar-shape-status-deck: var(--option-avatar-shape-status-deck, var(--zehn-mask-avatar-round-status-deck));
+  --zehn-avatar-shape-status-vr: var(--option-avatar-shape-status-vr, var(--zehn-mask-avatar-round-status-vr));
+  --zehn-avatar-shape-status-bigpicture: var(--option-avatar-shape-status-bigpicture, var(--zehn-mask-avatar-round-status-bigpicture));
+  --zehn-avatar-shape-radius: var(--option-avatar-shape-radius, 50%);
 
-  --zehn-scrollbar-width: var(--option-scrollbar-width, 0px);
-  --zehn-scrollbar-unfocused-button-size: var(--option-scrollbar-unfocused-button-size, 0px);
-  --zehn-scrollbar-unfocused-inner-spacing: var(--option-scrollbar-unfocused-inner-spacing, 0px);
-  --zehn-scrollbar-unfocused-outer-spacing: var(--option-scrollbar-unfocused-outer-spacing, 0px);
-  --zehn-scrollbar-unfocused-end-spacing: var(--option-scrollbar-unfocused-end-spacing, 0px);
-  --zehn-scrollbar-unfocused-thumb-width: var(--option-scrollbar-unfocused-thumb-width, 0px);
-  --zehn-scrollbar-unfocused-thumb-radius: var(--option-scrollbar-unfocused-thumb-radius, 0px);
-  --zehn-scrollbar-unfocused-background: var(--option-scrollbar-unfocused-background, var(--zehn-color-scrollbar-unfocused));
-  --zehn-scrollbar-unfocused-foreground: var(--option-scrollbar-unfocused-foreground, var(--zehn-color-scrollbar-thumb-unfocused));
-  --zehn-scrollbar-unfocused-foreground-hover: var(--option-scrollbar-unfocused-foreground-hover, var(--zehn-color-scrollbar-thumb-unfocused-hover));
-  --zehn-scrollbar-unfocused-foreground-active: var(--option-scrollbar-unfocused-foreground-active, var(--zehn-color-scrollbar-thumb-unfocused-active));
-  --zehn-scrollbar-focused-button-size: var(--option-scrollbar-focused-button-size, 0px);
-  --zehn-scrollbar-focused-inner-spacing: var(--option-scrollbar-focused-inner-spacing, 0px);
-  --zehn-scrollbar-focused-outer-spacing: var(--option-scrollbar-focused-outer-spacing, 0px);
-  --zehn-scrollbar-focused-end-spacing: var(--option-scrollbar-focused-end-spacing, 0px);
-  --zehn-scrollbar-focused-thumb-width: var(--option-scrollbar-focused-thumb-width, 0px);
-  --zehn-scrollbar-focused-thumb-radius: var(--option-scrollbar-focused-thumb-radius, 0px);
-  --zehn-scrollbar-focused-background: var(--option-scrollbar-focused-background, var(--zehn-color-scrollbar-focused));
-  --zehn-scrollbar-focused-foreground: var(--option-scrollbar-focused-foreground, var(--zehn-color-scrollbar-thumb-focused));
-  --zehn-scrollbar-focused-foreground-hover: var(--option-scrollbar-focused-foreground-hover, var(--zehn-color-scrollbar-thumb-focused-hover));
-  --zehn-scrollbar-focused-foreground-active: var(--option-scrollbar-focused-foreground-active, var(--zehn-color-scrollbar-thumb-focused-active));
+  /* SCROLLBAR STYLE */
+  --zehn-scrollbar-style-width: var(--option-scrollbar-style-width, 0px);
+  --zehn-scrollbar-style-unfocused-button-size: var(--option-scrollbar-style-unfocused-button-size, 0px);
+  --zehn-scrollbar-style-unfocused-inner-spacing: var(--option-scrollbar-style-unfocused-inner-spacing, 0px);
+  --zehn-scrollbar-style-unfocused-outer-spacing: var(--option-scrollbar-style-unfocused-outer-spacing, 0px);
+  --zehn-scrollbar-style-unfocused-end-spacing: var(--option-scrollbar-style-unfocused-end-spacing, 0px);
+  --zehn-scrollbar-style-unfocused-thumb-width: var(--option-scrollbar-style-unfocused-thumb-width, 0px);
+  --zehn-scrollbar-style-unfocused-thumb-radius: var(--option-scrollbar-style-unfocused-thumb-radius, 0px);
+  --zehn-scrollbar-style-unfocused-background: var(--option-scrollbar-style-unfocused-background, var(--zehn-color-scrollbar-unfocused));
+  --zehn-scrollbar-style-unfocused-foreground: var(--option-scrollbar-style-unfocused-foreground, var(--zehn-color-scrollbar-thumb-unfocused));
+  --zehn-scrollbar-style-unfocused-foreground-hover: var(--option-scrollbar-style-unfocused-foreground-hover, var(--zehn-color-scrollbar-thumb-unfocused-hover));
+  --zehn-scrollbar-style-unfocused-foreground-active: var(--option-scrollbar-style-unfocused-foreground-active, var(--zehn-color-scrollbar-thumb-unfocused-active));
+  --zehn-scrollbar-style-focused-button-size: var(--option-scrollbar-style-focused-button-size, 0px);
+  --zehn-scrollbar-style-focused-inner-spacing: var(--option-scrollbar-style-focused-inner-spacing, 0px);
+  --zehn-scrollbar-style-focused-outer-spacing: var(--option-scrollbar-style-focused-outer-spacing, 0px);
+  --zehn-scrollbar-style-focused-end-spacing: var(--option-scrollbar-style-focused-end-spacing, 0px);
+  --zehn-scrollbar-style-focused-thumb-width: var(--option-scrollbar-style-focused-thumb-width, 0px);
+  --zehn-scrollbar-style-focused-thumb-radius: var(--option-scrollbar-style-focused-thumb-radius, 0px);
+  --zehn-scrollbar-style-focused-background: var(--option-scrollbar-style-focused-background, var(--zehn-color-scrollbar-focused));
+  --zehn-scrollbar-style-focused-foreground: var(--option-scrollbar-style-focused-foreground, var(--zehn-color-scrollbar-thumb-focused));
+  --zehn-scrollbar-style-focused-foreground-hover: var(--option-scrollbar-style-focused-foreground-hover, var(--zehn-color-scrollbar-thumb-focused-hover));
+  --zehn-scrollbar-style-focused-foreground-active: var(--option-scrollbar-style-focused-foreground-active, var(--zehn-color-scrollbar-thumb-focused-active));
+}
 
-  --zehn-display-tooltips: var(--option-display-tooltips, flex);
-  --zehn-display-tooltips-store: var(--option-display-tooltips-store, block);
-
-  --zehn-titlebar: var(--option-titlebar, 32px);
-  --zehn-navbar: var(--option-navbar, 32px);
-
-  /* LIBRARY */
-  --zehn-content-library-spacing: var(--option-content-library-spacing, 16px);
-  --zehn-content-library-panel-radius: var(--option-content-library-panel-radius, var(--zehn-size-panel-radius));
-  --zehn-content-library-panel-color: var(--option-content-library-panel-color, var(--zehn-color-panel));
-  --zehn-content-library-panel-color-hover: var(--option-content-library-panel-color-hover, var(--zehn-color-panel-hover));
-
-  --zehn-content-downloads-spacing: var(--option-content-downloads-spacing, 16px);
-  --zehn-content-downloads-panel-radius: var(--option-content-downloads-panel-radius, var(--zehn-size-panel-radius));
-  --zehn-content-downloads-panel-color: var(--option-content-downloads-panel-color, var(--zehn-color-panel));
-  --zehn-content-downloads-panel-color-hover: var(--option-content-downloads-panel-color-hover, var(--zehn-color-panel-hover));
-
-  --zehn-content-activity-spacing: var(--option-content-activity-spacing, 16px);
-  --zehn-content-activity-panel-radius: var(--option-content-activity-panel-radius, var(--zehn-size-panel-radius));
-  --zehn-content-activity-panel-color: var(--option-content-activity-panel-color, var(--zehn-color-panel));
-  --zehn-content-activity-panel-color-hover: var(--option-content-activity-panel-color-hover, var(--zehn-color-panel-hover));
-
-  --zehn-content-community-spacing: var(--option-content-community-spacing, 16px);
-  --zehn-content-community-panel-radius: var(--option-content-community-panel-radius, var(--zehn-size-panel-radius));
-  --zehn-content-community-panel-color: var(--option-content-community-panel-color, var(--zehn-color-panel));
-  --zehn-content-community-panel-color-hover: var(--option-content-community-panel-color-hover, var(--zehn-color-panel-hover));
-
-  --zehn-content-details-spacing: var(--option-content-details-spacing, 16px);
-  --zehn-content-details-panel-radius: var(--option-content-details-panel-radius, var(--zehn-size-panel-radius));
-  --zehn-content-details-panel-color: var(--option-content-details-panel-color, var(--zehn-color-panel));
-  --zehn-content-details-panel-color-hover: var(--option-content-details-panel-color-hover, var(--zehn-color-panel-hover));
-
-  --zehn-display-add-shelf: var(--option-display-add-shelf, flex);
-
-  --zehn-display-whats-new: var(--option-display-whats-new, flex);
-
-  --zehn-display-mascot: var(--option-display-mascot, 1);
-  --zehn-mascot-type: var(--option-mascot-type, url("https://steamloopback.host/mascots/waifu.png"));
-
-  /* NAVIGATION */
-  --zehn-display-account-avatar: var(--option-display-account-avatar, none);
-  --zehn-display-account-icon: var(--option-display-account-icon, block);
-
-  --zehn-display-add-game: var(--option-display-add-game, none);
-  --zehn-display-announcements: var(--option-display-announcements, none);
-  --zehn-display-big-picture: var(--option-display-big-picture, none);
-  --zehn-display-vr: var(--option-display-vr, none);
-
-  --zehn-download-bar-width: var(--option-download-bar-width, 200px);
-
-  --zehn-display-url-bar: var(--option-display-url-bar, none);
-
-  /* COLOR BLENDING */
-  --zehn-blend-amount-background: var(--option-blend-amount-background, 0%);
-  --zehn-blend-amount-foreground: var(--option-blend-amount-foreground, 0%);
-
-  --zehn-blend-space: var(--option-blend-space, oklab);
+/* COLORS */
+:root {
+  /* COLOR SCHEME */
+  --zehn-color-mode: var(--option-color-mode, light dark);
 
   /* TRANSPARENCY EFFECTS */
-  --zehn-acrylic-color-base: var(--option-acrylic-color-base, transparent);
-  --zehn-acrylic-color-section: var(--option-acrylic-color-section, var(--zehn-color-acrylic));
-  --zehn-acrylic-color-context: var(--option-acrylic-color-context, var(--zehn-color-context-acrylic));
-  --zehn-acrylic-color-detail: var(--option-acrylic-color-detail, var(--zehn-color-acrylic));
-  --zehn-acrylic-filter: var(--option-acrylic-filter, var(--zehn-filter-acrylic-blur));
-  --zehn-acrylic-texture: var(--option-acrylic-texture, var(--zehn-texture-noise));
-  --zehn-acrylic: var(--option-acrylic, 1);
+  --zehn-transparency-effects-acrylic-color-base: var(--option-transparency-effects-acrylic-color-base, transparent);
+  --zehn-transparency-effects-acrylic-color-section: var(--option-transparency-effects-acrylic-color-section, var(--zehn-color-acrylic));
+  --zehn-transparency-effects-acrylic-color-context: var(--option-transparency-effects-acrylic-color-context, var(--zehn-color-context-acrylic));
+  --zehn-transparency-effects-acrylic-color-detail: var(--option-transparency-effects-acrylic-color-detail, var(--zehn-color-acrylic));
+  --zehn-transparency-effects-acrylic-filter: var(--option-transparency-effects-acrylic-filter, var(--zehn-filter-acrylic-blur));
+  --zehn-transparency-effects-acrylic-texture: var(--option-transparency-effects-acrylic-texture, var(--zehn-texture-noise));
+  --zehn-transparency-effects-acrylic: var(--option-transparency-effects-acrylic, 1);
+  --zehn-transparency-effects-reveal: var(--option-transparency-effects-reveal, 1);
 
-  --zehn-reveal: var(--option-reveal, 1);
+  /* ACCENT COLOR ON SURFACES */
+  --zehn-show-accent-color-on-window-borders: var(--option-show-accent-color-on-window-borders, var(--zehn-color-accent-100));
+}
+
+/* THEMES */
+:root {
+  /* BACKGROUND SATURATION */
+  --zehn-background-saturation: var(--option-background-saturation, 0%);
+
+  /* FOREGROUND SATURATION */
+  --zehn-foreground-saturation: var(--option-foreground-saturation, 0%);
+
+  /* COLOR SPACE */
+  --zehn-color-space: var(--option-color-space, oklab);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* OPTIONS - SCALE AND LAYOUT  -------------------------------------------------------------------------------------- */
+
+/* GENERAL */
+:root {
+  /* SHOW TOOLTIPS */
+  --zehn-show-tooltips: var(--option-show-tooltips, flex);
+}
+
+/* NAVIGATION */
+:root {
+  /* TITLEBAR SIZE */
+  --zehn-titlebar-size: var(--option-titlebar-size, 32px);
+
+  /* NAVBAR SIZE */
+  --zehn-navbar-size: var(--option-navbar-size, 32px);
+
+  /* DOWNLOAD PROGRESS SIZE */
+  --zehn-download-progress-size: var(--option-download-progress-size, 250px);
+
+  /* SHOW ACCOUNT AVATAR */
+  --zehn-show-account-avatar: var(--option-show-account-avatar, block);
+
+  /* SHOW URL BAR */
+  --zehn-show-url-bar: var(--option-show-url-bar, flex);
+}
+
+/* LIBRARY */
+:root {
+  /* CONTENT MODE */
+  --zehn-content-mode-library-spacing: var(--option-content-mode-library-spacing, 16px);
+  --zehn-content-mode-library-panel-radius: var(--option-content-mode-library-panel-radius, var(--zehn-size-panel-radius));
+  --zehn-content-mode-library-panel-color: var(--option-content-mode-library-panel-color, var(--zehn-color-panel));
+  --zehn-content-mode-library-panel-color-hover: var(--option-content-mode-library-panel-color-hover, var(--zehn-color-panel-hover));
+
+  --zehn-content-mode-downloads-spacing: var(--option-content-mode-downloads-spacing, 16px);
+  --zehn-content-mode-downloads-panel-radius: var(--option-content-mode-downloads-panel-radius, var(--zehn-size-panel-radius));
+  --zehn-content-mode-downloads-panel-color: var(--option-content-mode-downloads-panel-color, var(--zehn-color-panel));
+  --zehn-content-mode-downloads-panel-color-hover: var(--option-content-mode-downloads-panel-color-hover, var(--zehn-color-panel-hover));
+
+  --zehn-content-mode-activity-spacing: var(--option-content-mode-activity-spacing, 16px);
+  --zehn-content-mode-activity-panel-radius: var(--option-content-mode-activity-panel-radius, var(--zehn-size-panel-radius));
+  --zehn-content-mode-activity-panel-color: var(--option-content-mode-activity-panel-color, var(--zehn-color-panel));
+  --zehn-content-mode-activity-panel-color-hover: var(--option-content-mode-activity-panel-color-hover, var(--zehn-color-panel-hover));
+
+  --zehn-content-mode-community-spacing: var(--option-content-mode-community-spacing, 16px);
+  --zehn-content-mode-community-panel-radius: var(--option-content-mode-community-panel-radius, var(--zehn-size-panel-radius));
+  --zehn-content-mode-community-panel-color: var(--option-content-mode-community-panel-color, var(--zehn-color-panel));
+  --zehn-content-mode-community-panel-color-hover: var(--option-content-mode-community-panel-color-hover, var(--zehn-color-panel-hover));
+
+  --zehn-content-mode-details-spacing: var(--option-content-mode-details-spacing, 16px);
+  --zehn-content-mode-details-panel-radius: var(--option-content-mode-details-panel-radius, var(--zehn-size-panel-radius));
+  --zehn-content-mode-details-panel-color: var(--option-content-mode-details-panel-color, var(--zehn-color-panel));
+  --zehn-content-mode-details-panel-color-hover: var(--option-content-mode-details-panel-color-hover, var(--zehn-color-panel-hover));
+
+  /* SHOW ADD SHELF */
+  --zehn-show-add-shelf: var(--option-show-add-shelf, flex);
+
+  /* SHOW WHAT'S NEW */
+  --zehn-show-whats-new: var(--option-show-whats-new, flex);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+/* OPTIONS - FEATURES ----------------------------------------------------------------------------------------------- */
+
+/* MASCOT */
+:root {
+  /* DISPLAY MASCOT */
+  --zehn-display-mascot: var(--option-display-mascot, 1);
+
+  /* MASCOT EXTENSION */
+  --zehn-mascot-extension: var(--option-mascot-extension, url("https://steamloopback.host/mascots/waifu.png"));
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -1858,7 +1921,7 @@
   --zehn-size-sorting-border: 0;
   --zehn-size-sorting-radius: var(--zehn-size-radius-angular);
   --zehn-size-sorting-padding: 0;
-  --zehn-size-sorting-text: var(--zehn-size-14);
+  --zehn-size-sorting-foreground: var(--zehn-size-14);
   --zehn-size-sorting-line: 100%;
 
   /* SLIDERS */
@@ -1966,14 +2029,14 @@
   /* WINDOWS */
   --zehn-size-border: 1px;
 
-  --zehn-size-titlebar: var(--zehn-titlebar);
+  --zehn-size-titlebar: var(--zehn-titlebar-size);
   --zehn-size-titlebar-control: 48px;
   --zehn-size-titlebar-text: 12px;
   --zehn-size-titlebar-text-padding-x: var(--zehn-size-padding-sm);
   --zehn-size-titlebar-text-padding-y: 0;
   --zehn-size-titlebar-text-padding: var(--zehn-size-titlebar-text-padding-y) var(--zehn-size-titlebar-text-padding-x);
 
-  --zehn-size-navbar: var(--zehn-navbar);
+  --zehn-size-navbar: var(--zehn-navbar-size);
   --zehn-size-navbar-control: var(--zehn-size-titlebar-control);
 
   /* LIBRARY */

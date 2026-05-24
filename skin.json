@@ -1,553 +1,447 @@
 {
   "Conditions": {
-    "Color Mode": {
-      "description": "Choose your color.\n\nAuto mode will select either light or dark mode based on your system settings.",
-      "tab": "Theme",
-      "section": "Colors",
-      "default": "Auto",
-      "values": {
-        "Auto": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/mode/auto.css"
-          }
-        },
-        "Dark": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/mode/dark.css"
-          }
-        },
-        "Light": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/mode/light.css"
-          }
-        }
-      }
-    },
-    "Transparency Effects": {
-      "description": "Windows and surfaces appear translucent.\n\nEnables support for Reveal and Acrylic effects.\n\nAcrylic blurs behind supported windows when DWMX plugin is enabled.",
-      "tab": "Theme",
-      "section": "Colors",
-      "default": "yes",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/transparency/disable.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/transparency/enable.css"
-          }
-        }
-      }
-    },
-    "Accent Color": {
-      "description": "Show accent color on focused window borders.",
-      "tab": "Theme",
-      "section": "Colors",
-      "default": "yes",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/accent/borders/disable.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/accent/borders/enable.css"
-          }
-        }
-      }
-    },
-    "Accented Background Color": {
-      "description": "Use accent color for the background color blend.\n\nOverrides the color chosen in the Colors section.",
-      "tab": "Theme",
-      "section": "Blending",
-      "default": "false",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/accent/blend/background/disable.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/accent/blend/background/enable.css"
-          }
-        }
-      }
-    },
-    "Accented Foreground Color": {
-      "description": "Use accent color for the foreground color blend.\n\nOverrides the color chosen in the Colors section.",
-      "tab": "Theme",
-      "section": "Blending",
-      "default": "false",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/accent/blend/foreground/disable.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/accent/blend/foreground/enable.css"
-          }
-        }
-      }
-    },
-    "Background Blend Amount": {
-      "description": "Select how much color is blended into the theme's background. This includes window backgrounds and acrylic effects.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
-      "tab": "Theme",
-      "section": "Blending",
-      "default": "0%",
-      "values": {
-        "0%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/background/0%.css"
-          }
-        },
-        "25%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/background/25%.css"
-          }
-        },
-        "50%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/background/50%.css"
-          }
-        },
-        "75%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/background/75%.css"
-          }
-        },
-        "100%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/background/100%.css"
-          }
-        }
-      }
-    },
-    "Foreground Blend Amount": {
-      "description": "Select how much color is blended into the theme's foreground. This includes text, buttons, and other foreground elements.\n\nLower values produce a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
-      "tab": "Theme",
-      "section": "Blending",
-      "default": "0%",
-      "values": {
-        "0%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/foreground/0%.css"
-          }
-        },
-        "25%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/foreground/25%.css"
-          }
-        },
-        "50%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/foreground/50%.css"
-          }
-        },
-        "75%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/foreground/75%.css"
-          }
-        },
-        "100%": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/amount/foreground/100%.css"
-          }
-        }
-      }
-    },
-    "Color Blend Color Space": {
-      "description": "Select the color space used in blending.",
-      "tab": "Theme",
-      "section": "Blending",
-      "default": "sRGB",
-      "values": {
-        "sRGB": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/space/srgb.css"
-          }
-        },
-        "LAB": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/space/lab.css"
-          }
-        },
-        "okLAB": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/theme/blend/space/oklab.css"
-          }
-        }
-      }
-    },
     "Avatar Shape": {
       "description": "Select the avatar shape.",
-      "tab": "General",
+      "tab": "Personalization",
       "section": "Appearance",
       "default": "Round",
       "values": {
         "Round": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/general/avatar/round.css"
+            "src": "option/personalization/appearance/avatar shape/round.css"
           }
         },
         "Square": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/general/avatar/square.css"
-          }
-        }
-      }
-    },
-    "Show Tooltips": {
-      "description": "Show tooltips and miniprofiles in the client.",
-      "tab": "General",
-      "section": "Appearance",
-      "default": "yes",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/general/tooltips/hide.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/general/tooltips/show.css"
-          }
-        }
-      }
-    },
-    "Titlebar Size": {
-      "description": "Choose the size of window titlebars.\n\nOptionally, only set the main Steam window titlebar as wide.",
-      "tab": "General",
-      "section": "Scale & Layout",
-      "default": "Normal",
-      "values": {
-        "Normal": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/general/titlebars/normal.css"
-          }
-        },
-        "Mixed": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/general/titlebars/mixed.css"
-          }
-        },
-        "Wide": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/general/titlebars/wide.css"
+            "src": "option/personalization/appearance/avatar shape/square.css"
           }
         }
       }
     },
     "Scrollbar Style": {
       "description": "Select the style of scrollbar.",
-      "tab": "General",
-      "section": "Scale & Layout",
-      "default": "None",
+      "tab": "Personalization",
+      "section": "Appearance",
+      "default": "Hidden",
       "values": {
-        "None": {
+        "Hidden": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/general/scrollbars/none.css"
+            "src": "option/personalization/appearance/scrollbar style/hidden.css"
           }
         },
         "Windows": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/general/scrollbars/windows.css"
+            "src": "option/personalization/appearance/scrollbar style/windows.css"
           }
         },
         "Steam": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/general/scrollbars/steam.css"
+            "src": "option/personalization/appearance/scrollbar style/steam.css"
+          }
+        }
+      }
+    },
+    "Color Mode": {
+      "description": "Choose your color.\n\nAuto mode will select either light or dark mode based on your system settings.",
+      "tab": "Personalization",
+      "section": "Colors",
+      "default": "Auto",
+      "values": {
+        "Auto": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/colors/color mode/auto.css"
+          }
+        },
+        "Dark": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/colors/color mode/dark.css"
+          }
+        },
+        "Light": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/colors/color mode/light.css"
+          }
+        }
+      }
+    },
+    "Transparency Effects": {
+      "description": "Windows and surfaces appear translucent.\n\nEnables support for Reveal and Acrylic effects.\n\nAcrylic blurs behind supported windows when DWMX plugin is enabled.",
+      "tab": "Personalization",
+      "section": "Colors",
+      "default": "yes",
+      "values": {
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/colors/transparency effects/off.css"
+          }
+        },
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/colors/transparency effects/on.css"
+          }
+        }
+      }
+    },
+    "Show Accent Color on Window Borders": {
+      "description": "Show accent color on window borders when focused.",
+      "tab": "Personalization",
+      "section": "Colors",
+      "default": "yes",
+      "values": {
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/colors/show accent color on window borders/off.css"
+          }
+        },
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/colors/show accent color on window borders/on.css"
+          }
+        }
+      }
+    },
+    "Background Saturation": {
+      "description": "Select how much color is blended into the theme's background. This includes window backgrounds and acrylic effects.\n\nLower values preserve a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
+      "tab": "Personalization",
+      "section": "Themes",
+      "default": "None",
+      "values": {
+        "none": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/background saturation/none.css"
+          }
+        },
+        "light": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/background saturation/light.css"
+          }
+        },
+        "Medium": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/background saturation/medium.css"
+          }
+        },
+        "Heavy": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/background saturation/heavy.css"
+          }
+        },
+        "Full": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/background saturation/full.css"
+          }
+        }
+      }
+    },
+    "Foreground Saturation": {
+      "description": "Select how much color is blended into the theme's foreground. This includes text, buttons, and other foreground elements.\n\nLower values preserve a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
+      "tab": "Personalization",
+      "section": "Themes",
+      "default": "None",
+      "values": {
+        "none": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/foreground saturation/none.css"
+          }
+        },
+        "light": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/foreground saturation/light.css"
+          }
+        },
+        "Medium": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/foreground saturation/medium.css"
+          }
+        },
+        "Heavy": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/foreground saturation/heavy.css"
+          }
+        },
+        "Full": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/foreground saturation/full.css"
+          }
+        }
+      }
+    },
+    "Color Space": {
+      "description": "Select the color space used in blending.",
+      "tab": "Personalization",
+      "section": "Themes",
+      "default": "sRGB",
+      "values": {
+        "sRGB": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/color space/srgb.css"
+          }
+        },
+        "LAB": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/color space/lab.css"
+          }
+        },
+        "okLAB": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/personalization/themes/color space/oklab.css"
+          }
+        }
+      }
+    },
+    "Show Tooltips": {
+      "description": "Show tooltips and miniprofiles in the client.",
+      "tab": "Scale and Layout",
+      "section": "General",
+      "default": "yes",
+      "values": {
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/general/show tooltips/off.css"
+          }
+        },
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/general/show tooltips/on.css"
+          }
+        }
+      }
+    },
+    "Titlebar Size": {
+      "description": "Choose the size of window titlebars.",
+      "tab": "Scale and Layout",
+      "section": "Navigation",
+      "default": "Normal",
+      "values": {
+        "Normal": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/titlebar size/normal.css"
+          }
+        },
+        "Thick": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/titlebar size/thick.css"
+          }
+        }
+      }
+    },
+    "Navbar Size": {
+      "description": "Choose the size of the navbar (the titlebar of the library window).",
+      "tab": "Scale and Layout",
+      "section": "Navigation",
+      "default": "Normal",
+      "values": {
+        "Normal": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/navbar size/normal.css"
+          }
+        },
+        "Thick": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/navbar size/thick.css"
+          }
+        }
+      }
+    },
+    "Download Progress Size": {
+      "description": "Choose the size of the download progress displayed on the navbar.",
+      "tab": "Scale and Layout",
+      "section": "Navigation",
+      "default": "Normal",
+      "values": {
+        "Narrow": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/download progress size/narrow.css"
+          }
+        },
+        "Normal": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/download progress size/normal.css"
+          }
+        },
+        "Wide": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/download progress size/wide.css"
           }
         }
       }
     },
     "Show Account Avatar": {
       "description": "Show your avatar on the account button instead of an icon.",
-      "tab": "Navigation",
-      "section": "Visibility",
-      "default": "no",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/account avatar/hide.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/account avatar/show.css"
-          }
-        }
-      }
-    },
-    "Show Announcements Button": {
-      "description": "Show the announcements button on the navbar.",
-      "tab": "Navigation",
-      "section": "Visibility",
-      "default": "no",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/announcements/hide.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/announcements/show.css"
-          }
-        }
-      }
-    },
-    "Show Add Game Button": {
-      "description": "Show the add game button on the navbar.",
-      "tab": "Navigation",
-      "section": "Visibility",
-      "default": "no",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/add game/hide.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/add game/show.css"
-          }
-        }
-      }
-    },
-    "Show VR Button": {
-      "description": "Show the VR button on the navbar.",
-      "tab": "Navigation",
-      "section": "Visibility",
-      "default": "no",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/vr/hide.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/vr/show.css"
-          }
-        }
-      }
-    },
-    "Show Big Picture Button": {
-      "description": "Show the Big Picture button on the navbar.",
-      "tab": "Navigation",
-      "section": "Visibility",
-      "default": "no",
-      "values": {
-        "no": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/big picture/hide.css"
-          }
-        },
-        "yes": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/big picture/show.css"
-          }
-        }
-      }
-    },
-    "Download Progress Width": {
-      "description": "Adjust the download progress width on the navbar.",
-      "tab": "Navigation",
-      "section": "Scale & Layout",
-      "default": "Normal",
-      "values": {
-        "Narrow": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/download bar/narrow.css"
-          }
-        },
-        "Normal": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/download bar/normal.css"
-          }
-        },
-        "Wide": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "config/navigation/download bar/wide.css"
-          }
-        }
-      }
-    },
-    "Show URL Bar": {
-      "description": "Show the URL bar in the main Steam window.",
-      "tab": "Navigation",
-      "section": "Scale & Layout",
+      "tab": "Scale and Layout",
+      "section": "Navigation",
       "default": "yes",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navigation/url bar/hide.css"
+            "src": "option/scale and layout/navigation/show account avatar/off.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/navigation/url bar/show.css"
+            "src": "option/scale and layout/navigation/show account avatar/on.css"
+          }
+        }
+      }
+    },
+    "Show URL Bar": {
+      "description": "Show the URL bar on internal browser tab pages.",
+      "tab": "Scale and Layout",
+      "section": "Navigation",
+      "default": "yes",
+      "values": {
+        "no": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/show url bar/off.css"
+          }
+        },
+        "yes": {
+          "TargetCss": {
+            "affects": [".*"],
+            "src": "option/scale and layout/navigation/show url bar/on.css"
           }
         }
       }
     },
     "Content Mode": {
       "description": "Select how content is displayed in the library.\n\nPresently only affects collections and showcases. WIP!",
-      "tab": "Library",
-      "section": "Scale & Layout",
+      "tab": "Scale and Layout",
+      "section": "Library",
       "default": "Panel",
       "values": {
         "Panel": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/content/panel.css"
+            "src": "option/scale and layout/library/content mode/panel.css"
           }
         },
         "Flat": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/content/flat.css"
+            "src": "option/scale and layout/library/content mode/flat.css"
           }
         }
       }
     },
-    "Show Add Shelf Button": {
-      "description": "Show the add shelf button on the library.",
-      "tab": "Library",
-      "section": "Scale & Layout",
+    "Show Add Shelf": {
+      "description": "Show the Add Shelf panel.",
+      "tab": "Scale and Layout",
+      "section": "Library",
       "default": "yes",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/add shelf/hide.css"
+            "src": "option/scale and layout/library/show add shelf/off.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/add shelf/show.css"
+            "src": "option/scale and layout/library/show add shelf/on.css"
           }
         }
       }
     },
-    "Show What's New Section": {
-      "description": "Show the What's New section on the library.",
-      "tab": "Library",
-      "section": "Scale & Layout",
+    "Show What's New": {
+      "description": "Show the What's New panel.",
+      "tab": "Scale and Layout",
+      "section": "Library",
       "default": "yes",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/whats new/hide.css"
+            "src": "option/scale and layout/library/show whats new/off.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/whats new/show.css"
+            "src": "option/scale and layout/library/show whats new/on.css"
           }
         }
       }
     },
-    "Mascot": {
-      "description": "Show a mascot in the library.\n\nFrom your main Steam folder, place a compatible image named `waifu` in the `~/steamui/mascots/` directory.",
-      "tab": "Library",
+    "Display Mascot": {
+      "description": "Display a mascot on the library.\n\nPlace a compatible image named `waifu` in the `~/steamui/mascots/` directory of your Steam folder.",
+      "tab": "Features",
       "section": "Mascot",
       "default": "no",
       "values": {
         "no": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/mascot/hide.css"
+            "src": "option/features/mascot/display mascot/off.css"
           }
         },
         "yes": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/mascot/show.css"
+            "src": "option/features/mascot/display mascot/on.css"
           }
         }
       }
     },
-    "Mascot File Type": {
-      "description": "Select the file type for your mascot.",
-      "tab": "Library",
+    "Mascot Extension": {
+      "description": "Select the file type used as the extension for your mascot `waifu` image.",
+      "tab": "Features",
       "section": "Mascot",
       "default": "PNG",
       "values": {
         "GIF": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/mascot type/gif.css"
+            "src": "option/features/mascot/mascot extension/gif.css"
           }
         },
         "JPG": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/mascot type/jpg.css"
+            "src": "option/features/mascot/mascot extension/jpg.css"
           }
         },
         "PNG": {
           "TargetCss": {
             "affects": [".*"],
-            "src": "config/library/mascot type/png.css"
+            "src": "option/features/mascot/mascot extension/png.css"
           }
         }
       }
@@ -556,113 +450,113 @@
   "Patches": [
     {
       "MatchRegexString": "Extensions",
-      "TargetCss": "patches/plugins.css",
-      "TargetJs": "patches/plugins.js"
+      "TargetCss": "patch/plugins.css",
+      "TargetJs": "patch/plugins.js"
     },
     {
       "MatchRegexString": "l25AfossKXBOZGYoty0tM",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "/Iniciar a sessão no Steam|Вписване в Steam|Přihlášení do služby Steam|Log på Steam|Aanmelden bij Steam|Sign in to Steam|Kirjaudu Steamiin|Se connecter à Steam|Bei Steam anmelden|Σύνδεση στο Steam|Bejelentkezés a Steambe|Login ke Steam|Accedi a Steam|Steamにサインイン|Steam 로그인|Iniciar sesión en Steam|Logg inn på Steam|Zaloguj się do Steam|Iniciar sessão no Steam|Conectează-te la Steam|Войти в Steam|登录蒸汽平台|登录 Steam|Iniciar sesión en Steam|Logga in på Steam|登入 Steam|เข้าสู่ระบบ Steam|Steam'e Giriş Yap|Увійти до Steam|Đăng nhập vào Steam/",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "https://.*.steampowered.com",
-      "TargetCss": "patches/webkit.css",
-      "TargetJs": "patches/webkit.js"
+      "TargetCss": "patch/webkit.css",
+      "TargetJs": "patch/webkit.js"
     },
     {
       "MatchRegexString": "https://steamcommunity.com",
-      "TargetCss": "patches/webkit.css",
-      "TargetJs": "patches/webkit.js"
+      "TargetCss": "patch/webkit.css",
+      "TargetJs": "patch/webkit.js"
     },
     {
       "MatchRegexString": "^Steam$",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "/Steam — Lista de jogos|Steam: spellenlijst|Liste der Steam-Spiele|Steam : liste de jeux|Steam-pelien lista|Lista jocurilor de pe Steam|Steam-spilliste|Steam – seznam her|Steam Games List|Danh sách trò chơi Steam|Списък със Steam игри|Λίστα παιχνιδιών Steam|Steam-spellista|Steam 游戏列表|Steam 게임 목록|Steam – liste over spill|Список игр в Steam|Steam: Lista de jogos|蒸汽平台游戏列表|รายชื่อเกมบน Steam|Lista de juegos de Steam|Cписок ігор у Steam|Steam 遊戲列表|Lista de juegos de Steam|Steam Oyun Listesi|Daftar Game Steam|Steamゲームリスト|Lista gier Steam|Steam játéklista|Elenco dei giochi di Steam/",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "^OverlayBrowser_Browser$",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "^SP Overlay:",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "Supernav$",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "^notificationtoasts_",
-      "TargetCss": "patches/notifications.css",
-      "TargetJs": "patches/notifications.js"
+      "TargetCss": "patch/notifications.css",
+      "TargetJs": "patch/notifications.js"
     },
     {
       "MatchRegexString": "^SteamBrowser_Find$",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "^OverlayTab\\d+_Find$",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "^Steam Big Picture Mode$",
-      "TargetCss": "patches/bigpicture.css",
-      "TargetJs": "patches/bigpicture.js"
+      "TargetCss": "patch/bigpicture.css",
+      "TargetJs": "patch/bigpicture.js"
     },
     {
       "MatchRegexString": "^QuickAccess_",
-      "TargetCss": "patches/bigpicture.css",
-      "TargetJs": "patches/bigpicture.js"
+      "TargetCss": "patch/bigpicture.css",
+      "TargetJs": "patch/bigpicture.js"
     },
     {
       "MatchRegexString": "^MainMenu_",
-      "TargetCss": "patches/bigpicture.css",
-      "TargetJs": "patches/bigpicture.js"
+      "TargetCss": "patch/bigpicture.css",
+      "TargetJs": "patch/bigpicture.js"
     },
     {
       "MatchRegexString": ".friendsui-container",
-      "TargetCss": "patches/friends.css",
-      "TargetJs": "patches/friends.js"
+      "TargetCss": "patch/friends.css",
+      "TargetJs": "patch/friends.js"
     },
     {
       "MatchRegexString": "Menu$",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": ".ModalDialogPopup",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": ".FullModalOverlay",
-      "TargetCss": "patches/library.css",
-      "TargetJs": "patches/library.js"
+      "TargetCss": "patch/library.css",
+      "TargetJs": "patch/library.js"
     },
     {
       "MatchRegexString": "broadcaststatus",
-      "TargetCss": "patches/broadcast.css",
-      "TargetJs": "patches/broadcast.js"
+      "TargetCss": "patch/broadcast.css",
+      "TargetJs": "patch/broadcast.js"
     }
   ],
   "UseDefaultPatches": false,
-  "Steam-WebKit": "patches/webkit.css",
-  "RootColors": "config/colors.css",
+  "Steam-WebKit": "patch/webkit.css",
+  "RootColors": "option/colors.css",
   "name": "Zehn",
   "author": "yurisuika",
   "description": "Windows 10 Fluent Design for Steam - Minimal, colorable, light/dark, and more!",
@@ -671,7 +565,7 @@
     "owner": "yurisuika",
     "repo_name": "Zehn"
   },
-  "version": "2026.5.21",
+  "version": "2026.5.23",
   "tags": [
     "Minimal",
     "Color",

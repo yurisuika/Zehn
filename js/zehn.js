@@ -1,243 +1,293 @@
-const Zehn = {
-  addUserAgent() {
-    if (navigator.userAgent.includes('Linux')) {
-      document.documentElement.classList.add('Linux');
-    } else if (navigator.userAgent.includes('Windows')) {
-      document.documentElement.classList.add('Windows');
-    }
-  },
+export const Zehn = {
+  addUserAgent,
+  setGlyphColor,
+  findRootsAndTargets,
+  findTargets,
+  handleOnMutation,
+  storeTargetHeightAsVariable,
+  toggleClassWithPresence,
+  nameElement,
+  createButton,
+  createIconTitleContainer,
+  createIconContainer,
+  createTitleContainer,
+  createContainer,
+  createAdjacentElement,
+  addRootClassOnToggle,
+  checkButtonToggle,
+  checkTargetToggle,
+  moveAppend,
+  moveAppendAndObserve,
+  movePrepend,
+  movePrependAndObserve,
+  moveBefore,
+  moveBeforeAndObserve,
+  removeDuplicatedElement,
+  addRevealClass,
+  revealInner,
+  revealSelf,
+  reveal
+};
+export default Zehn;
 
-  setGlyphColor() {
-    const lightColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-light').trim();
-    const darkColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-dark').trim();
+function addUserAgent() {
+  if (navigator.userAgent.includes('Linux')) {
+    document.documentElement.classList.add('Linux');
+  } else if (navigator.userAgent.includes('Windows')) {
+    document.documentElement.classList.add('Windows');
+  } else if (navigator.userAgent.includes('Macintosh')) {
+    document.documentElement.classList.add('Macintosh');
+  }
+};
 
-    const lightActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-light').trim();
-    const darkActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-dark').trim();
+function setGlyphColor() {
+  const lightColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-light').trim();
+  const darkColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-dark').trim();
 
-    const downLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-    const leftLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-    const rightLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-    const upLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const lightActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-light').trim();
+  const darkActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-dark').trim();
 
-    const downActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-    const leftActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-    const rightActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-    const upActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const downLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const leftLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const rightLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const upLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-    const downDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-    const leftDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-    const rightDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-    const upDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const downActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const leftActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const rightActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const upActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-    const downActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-    const leftActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-    const rightActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-    const upActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const downDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const leftDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const rightDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const upDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-    const css = `
-      :root {
-        --zehn-icon-scroll-down-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downLight)}");
-        --zehn-icon-scroll-left-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftLight)}");
-        --zehn-icon-scroll-right-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightLight)}");
-        --zehn-icon-scroll-up-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upLight)}");
+  const downActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const leftActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const rightActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const upActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-        --zehn-icon-scroll-down-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveLight)}");
-        --zehn-icon-scroll-left-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveLight)}");
-        --zehn-icon-scroll-right-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveLight)}");
-        --zehn-icon-scroll-up-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveLight)}");
-        
-        --zehn-icon-scroll-down-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downDark)}");
-        --zehn-icon-scroll-left-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftDark)}");
-        --zehn-icon-scroll-right-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightDark)}");
-        --zehn-icon-scroll-up-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upDark)}");
+  const css = `:root {
+  --zehn-icon-scroll-down-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downLight)}");
+  --zehn-icon-scroll-left-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftLight)}");
+  --zehn-icon-scroll-right-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightLight)}");
+  --zehn-icon-scroll-up-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upLight)}");
 
-        --zehn-icon-scroll-down-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveDark)}");
-        --zehn-icon-scroll-left-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveDark)}");
-        --zehn-icon-scroll-right-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveDark)}");
-        --zehn-icon-scroll-up-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveDark)}");
-      }
-    `;
+  --zehn-icon-scroll-down-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveLight)}");
+  --zehn-icon-scroll-left-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveLight)}");
+  --zehn-icon-scroll-right-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveLight)}");
+  --zehn-icon-scroll-up-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveLight)}");
+      
+  --zehn-icon-scroll-down-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downDark)}");
+  --zehn-icon-scroll-left-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftDark)}");
+  --zehn-icon-scroll-right-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightDark)}");
+  --zehn-icon-scroll-up-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upDark)}");
 
-    const style = document.createElement('style');
-    style.id = 'glyphs';
-    style.textContent = css;
-    document.head.appendChild(style);
-  },
+  --zehn-icon-scroll-down-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveDark)}");
+  --zehn-icon-scroll-left-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveDark)}");
+  --zehn-icon-scroll-right-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveDark)}");
+  --zehn-icon-scroll-up-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveDark)}");
+}`;
 
-  findRootsAndTargets(rootSelector, targetSelector, callback) {
-    const processed = new WeakSet();
-    const rootObservers = new Map();
+  const style = document.createElement('style');
+  style.id = 'zehnGlyphs';
+  style.textContent = css;
+  document.head.appendChild(style);
+};
 
-    function handleTarget(root, target) {
-      if (processed.has(target)) return;
-      processed.add(target);
-      try { callback(root, target); } catch (e) { console.error(e); }
-    }
+function findRootsAndTargets(rootSelector, targetSelector, callback) {
+  const processed = new WeakSet();
+  const rootObservers = new Map();
 
-    function scanAndObserveRoot(root) {
-      if (rootObservers.has(root)) return;
-      root.querySelectorAll(targetSelector).forEach(target => handleTarget(root, target));
+  function handleTarget(root, target) {
+    if (processed.has(target)) return;
+    processed.add(target);
+    try { callback(root, target); } catch (e) { console.error(e); }
+  }
 
-      const rootObserver = new MutationObserver(mutations => {
-        for (const mutation of mutations) {
-          if (mutation.type === 'childList') {
-            for (const node of mutation.addedNodes) {
-              if (!(node instanceof Element)) continue;
-              if (node.matches && node.matches(targetSelector)) handleTarget(root, node);
-              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(root, n));
-            }
-          }
-        }
-      });
-      rootObserver.observe(root, { childList: true, subtree: true });
-      rootObservers.set(root, rootObserver);
-    }
+  function scanAndObserveRoot(root) {
+    if (rootObservers.has(root)) return;
+    root.querySelectorAll(targetSelector).forEach(target => handleTarget(root, target));
 
-    document.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
-
-    const documentObserver = new MutationObserver(mutations => {
+    const rootObserver = new MutationObserver(mutations => {
       for (const mutation of mutations) {
         if (mutation.type === 'childList') {
           for (const node of mutation.addedNodes) {
             if (!(node instanceof Element)) continue;
-            if (node.matches && node.matches(rootSelector)) scanAndObserveRoot(node);
-            if (node.querySelectorAll) node.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
+            if (node.matches && node.matches(targetSelector)) handleTarget(root, node);
+            if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(root, n));
           }
         }
       }
     });
-    documentObserver.observe(document.body || document, { childList: true, subtree: true });
+    rootObserver.observe(root, { childList: true, subtree: true });
+    rootObservers.set(root, rootObserver);
+  }
 
-    return {
-      disconnect() {
-        documentObserver.disconnect();
-        for (const rootObserver of rootObservers.values()) rootObserver.disconnect();
-        rootObservers.clear();
+  document.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
+
+  const documentObserver = new MutationObserver(mutations => {
+    for (const mutation of mutations) {
+      if (mutation.type === 'childList') {
+        for (const node of mutation.addedNodes) {
+          if (!(node instanceof Element)) continue;
+          if (node.matches && node.matches(rootSelector)) scanAndObserveRoot(node);
+          if (node.querySelectorAll) node.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
+        }
       }
-    };
-  },
-
-  findTargets(root, targetSelector, callback, shouldDisconnect = true) {
-    const processed = new WeakSet();
-
-    function handleTarget(target) {
-      if (processed.has(target)) return;
-      processed.add(target);
-      try { callback(target); } catch (e) { console.error(e); }
     }
+  });
+  documentObserver.observe(document.body || document, { childList: true, subtree: true });
 
-    document.querySelectorAll(targetSelector).forEach(t => handleTarget(t));
+  return {
+    disconnect() {
+      documentObserver.disconnect();
+      for (const rootObserver of rootObservers.values()) rootObserver.disconnect();
+      rootObservers.clear();
+    }
+  };
+};
 
-    const observer = new MutationObserver(mutations => {
-      for (const mutation of mutations) {
-        if (mutation.type === 'childList') {
-          for (const node of mutation.addedNodes) {
-            if (!(node instanceof Element)) continue;
-              if (node.matches && node.matches(targetSelector)) handleTarget(node);
-              if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(n));
-          }
+function findTargets(root, targetSelector, callback, shouldDisconnect = true) {
+  const processed = new WeakSet();
+
+  function handleTarget(target) {
+    if (processed.has(target)) return;
+    processed.add(target);
+    try { callback(target); } catch (e) { console.error(e); }
+  }
+
+  document.querySelectorAll(targetSelector).forEach(t => handleTarget(t));
+
+  const observer = new MutationObserver(mutations => {
+    for (const mutation of mutations) {
+      if (mutation.type === 'childList') {
+        for (const node of mutation.addedNodes) {
+          if (!(node instanceof Element)) continue;
+            if (node.matches && node.matches(targetSelector)) handleTarget(node);
+            if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(n));
         }
       }
+    }
+  });
+  observer.observe(root, { childList: true, subtree: true });
+
+  return shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
+};
+
+function handleOnMutation(rootSelector, targetSelector, callback, options = {}) {
+  const defaults = {
+    shouldObserveTarget: false,
+    shouldDisconnect: true,
+    shouldAddAttributeFilter: false
+  };
+  const config = { ...defaults, ...options };
+
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const update = () => callback(root, target);
+
+    update();
+
+    const observer = new MutationObserver(update);
+    observer.observe((config.shouldObserveTarget ? target : root), {
+      childList: true,
+      subtree: true,
+      ...(config.shouldAddAttributeFilter ? { attributeFilter: ['class', 'id'] } : {})
     });
-    observer.observe(root, { childList: true, subtree: true });
 
-    return shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
-  },
+    return config.shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
+  });
+};
 
-  handleOnMutation(rootSelector, targetSelector, callback, options = {}) {
-    const defaults = {
-      shouldObserveTarget: false,
-      shouldDisconnect: true,
-      shouldAddAttributeFilter: false
-    };
-    const config = { ...defaults, ...options };
+function storeTargetHeightAsVariable(rootSelector, targetSelector, variableName) {
+  this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+    document.documentElement.style.setProperty(variableName, `${target.offsetHeight}px`);
+  }, { shouldObserveTarget: true, shouldDisconnect: false, shouldAddAttributeFilter: false });
+};
 
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const update = () => callback(root, target);
+function toggleClassWithPresence(rootSelector, targetSelector, presentSelector, toggleName) {
+  this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+    const present = !!root.querySelector(presentSelector);
+    target.classList.toggle(toggleName, present);
+  }, { shouldObserveTarget: true, shouldDisconnect: true,  shouldAddAttributeFilter: true });
+};
 
-      update();
+function nameElement(element, nameSelector) {
+  const name = nameSelector.slice(1);
+  const isId = nameSelector.charAt(0) === '#';
 
-      const observer = new MutationObserver(update);
-      observer.observe((config.shouldObserveTarget ? target : root), {
-        childList: true,
-        subtree: true,
-        ...(config.shouldAddAttributeFilter ? { attributeFilter: ['class', 'id'] } : {})
-      });
+  if (isId) {
+    element.id = name;
+  } else {
+    element.classList.add(name);
+  }
+};
 
-      return config.shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
+function createButton(rootSelector, targetSelector, nameSelectors, callback, shouldAppend = true) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const button = document.createElement('button');
+    button.name = 'button';
+    button.onclick = () => callback(root, target, button);
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(button, nameSelector);
     });
-  },
-
-  storeTargetHeightAsVariable(rootSelector, targetSelector, variableName) {
-    this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-      document.documentElement.style.setProperty(variableName, `${target.offsetHeight}px`);
-    }, { shouldObserveTarget: true, shouldDisconnect: false, shouldAddAttributeFilter: false });
-  },
-
-  toggleClassWithPresence(rootSelector, targetSelector, presentSelector, toggleName) {
-    this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-      const present = !!root.querySelector(presentSelector);
-      target.classList.toggle(toggleName, present);
-    }, { shouldObserveTarget: true, shouldDisconnect: true,  shouldAddAttributeFilter: true });
-  },
-
-  nameElement(element, nameSelector) {
-    const name = nameSelector.slice(1);
-    const isId = nameSelector.charAt(0) === '#';
-
-    if (isId) {
-      element.id = name;
+    if (shouldAppend) {
+      target.append(button);
     } else {
-      element.classList.add(name);
+      target.prepend(button);
     }
-  },
 
-  createButton(rootSelector, targetSelector, nameSelectors, callback, shouldAppend = true) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const button = document.createElement('button');
-      button.name = 'button';
-      button.onclick = () => callback(root, target, button);
-      nameSelectors.forEach((nameSelector) => {
-        this.nameElement(button, nameSelector);
-      });
+    const icon = document.createElement('div');
+    icon.classList.add(`zehnIcon`);
+    button.append(icon);
+  });
+};
+
+function createIconTitleContainer(rootSelector, targetSelector, shouldAppend = true) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    if (target.children.length == 0) {
+      const container = document.createElement('div');
+      container.classList.add('zehnListContainer');
       if (shouldAppend) {
-        target.append(button);
+        target.append(container);
       } else {
-        target.prepend(button);
+        target.prepend(container);
       }
+
+      const title = document.createElement('div');
+      title.classList.add('zehnListTitle');
+      container.append(title);
+      title.textContent = target.childNodes[0].textContent;
+      target.childNodes[0].remove();
 
       const icon = document.createElement('div');
-      icon.classList.add(`zehnIcon`);
-      button.append(icon);
+      icon.classList.add('zehnListIcon');
+      container.prepend(icon);
+    }
+  });
+};
+
+function createIconContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const container = document.createElement('div');
+    container.classList.add('zehnContainer');
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(container, nameSelector);
     });
-  },
+    if (shouldAppend) {
+      target.append(container);
+    } else {
+      target.prepend(container);
+    }
 
-  createIconTitleContainer(rootSelector, targetSelector, shouldAppend = true) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      if (target.children.length == 0) {
-        const container = document.createElement('div');
-        container.classList.add('zehnListContainer');
-        if (shouldAppend) {
-          target.append(container);
-        } else {
-          target.prepend(container);
-        }
+    const icon = document.createElement('div');
+    icon.classList.add('zehnIcon');
+    container.prepend(icon);
+  });
+};
 
-        const title = document.createElement('div');
-        title.classList.add('zehnListTitle');
-        container.append(title);
-        title.textContent = target.childNodes[0].textContent;
-        target.childNodes[0].remove();
-
-        const icon = document.createElement('div');
-        icon.classList.add('zehnListIcon');
-        container.prepend(icon);
-      }
-    });
-  },
-
-  createIconContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+function createTitleContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
       container.classList.add('zehnContainer');
       nameSelectors.forEach((nameSelector) => {
@@ -249,277 +299,255 @@ const Zehn = {
         target.prepend(container);
       }
 
-      const icon = document.createElement('div');
-      icon.classList.add('zehnIcon');
-      container.prepend(icon);
-    });
-  },
-
-  createTitleContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-        const container = document.createElement('div');
-        container.classList.add('zehnContainer');
-        nameSelectors.forEach((nameSelector) => {
-          this.nameElement(container, nameSelector);
-        });
-        if (shouldAppend) {
-          target.append(container);
-        } else {
-          target.prepend(container);
-        }
-
-        const title = document.createElement('div');
-        title.classList.add('zehnTitle');
-        container.append(title);
-        title.textContent = target.childNodes[0].textContent;
-        target.childNodes[0].remove();
-    });
-  },
-
-  createContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const container = document.createElement('div');
-      container.classList.add('zehnContainer');
-      nameSelectors.forEach((nameSelector) => {
-        this.nameElement(container, nameSelector);
-      });
-      if (shouldAppend) {
-        root.append(container);
-      } else {
-        root.prepend(container);
-      }
-
-      container.append(target);
-    });
-  },
-
-  createAdjacentElement(rootSelector, targetSelector, nameSelectors, shouldPlaceBefore = true, elementType = 'div') {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const element = document.createElement(elementType);
-      nameSelectors.forEach((nameSelector) => {
-        this.nameElement(element, nameSelector);
-      });
-      if (shouldPlaceBefore) {
-        target.before(element || '');
-      } else {
-        target.after(element || '');
-      }
-    });
-  },
-
-  addRootClassOnToggle(root, target, button, buttonTargetToggleName) {
-    button.classList.toggle('zehnToggled');
-    root.classList.toggle(buttonTargetToggleName, button.classList.contains('zehnToggled'));
-  },
-
-  checkButtonToggle(rootSelector, targetSelector, additionName) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      if (root.classList.contains(additionName)) target.classList.toggle('zehnToggled', true);
-    });
-  },
-
-  checkTargetToggle(rootSelector, targetSelector, additionName, toggleSelector) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const toggle = root.querySelector(toggleSelector);
-      if (target.classList.contains('zehnToggled')) toggle.classList.toggle(additionName, true);
-    });
-  },
-
-  moveAppend(rootSelector, targetSelector, movingSelectors) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((movingSelector) => {
-        root.querySelectorAll(movingSelector).forEach((moving) => {
-          target.append(moving);
-        });
-      });
-    });
-  },
-
-  moveAppendAndObserve(rootSelector, targetSelector, movingSelectors) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((movingSelector) => {
-        this.findTargets(root, movingSelector, (moving) => {
-          target.append(moving);
-        });
-      });
-    });
-  },
-
-  movePrepend(rootSelector, targetSelector, movingSelectors) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((movingSelector) => {
-        root.querySelectorAll(movingSelector).forEach((moving) => {
-          target.prepend(moving || '');
-        })
-      });
-    });
-  },
-
-  movePrependAndObserve(rootSelector, targetSelector, movingSelectors) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((movingSelector) => {
-        this.findTargets(root, movingSelector, (moving) => {
-          target.prepend(moving || '');
-        })
-      });
-    });
-  },
-
-  moveBefore(rootSelector, targetSelector, movingSelectors) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((movingSelector) => {
-        root.querySelectorAll(movingSelector).forEach((moving) => {
-          target.before(moving || '');
-        })
-      });
-    });
-  },
-
-  moveBeforeAndObserve(rootSelector, targetSelector, movingSelectors) {
-    this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      movingSelectors.forEach((movingSelector) => {
-        this.findTargets(root, movingSelector, (moving) => {
-          target.before(moving || '');
-        })
-      });
-    });
-  },
-
-  removeDuplicatedElement(rootSelector, targetSelector, removeableSelector, ordinal) {
-    this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-      const removables = target.querySelectorAll(removeableSelector);
-      if (removables.length > 1) {
-        removables[ordinal].remove();
-      }
-    }, { shouldObserveTarget: false, shouldDisconnect: false, shouldAddAttributeFilter: false });
-  },
-
-  addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
-    targetSelectors.forEach((targetSelector) => {
-      this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-        target.classList.toggle('zehnReveal', true);
-        additionalNames.forEach(name => {target.classList.toggle(name, true)});
-      }, { shouldObserveTarget: false, shouldDisconnect: true, shouldAddAttributeFilter: true });
-    });
-  },
-
-  revealInner(containerSelector) {
-    this.findRootsAndTargets(containerSelector, '.zehnReveal', (container, revealed) => {
-      this.reveal(container, revealed);
-    });
-  },
-
-  revealSelf(selfSelector) {
-    this.findTargets(document, selfSelector, (revealed) => {
-      this.reveal(revealed, revealed);
-    }, false);
-  },
-
-  reveal(container, revealed) {
-    if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-reveal').trim() == 0) return;
-
-    const targets = [revealed];
-    const maskSize = 200;
-    const halfMask = maskSize / 2;
-
-    let containerRect = container.getBoundingClientRect();
-    let targetOffsets = new Map();
-    let pending = false;
-    let pointerX = 0, pointerY = 0;
-    let pointerInside = false;
-
-    function refreshRects() {
-      containerRect = container.getBoundingClientRect();
-      targetOffsets.clear();
-      for (const t of targets) {
-        const r = t.getBoundingClientRect();
-        targetOffsets.set(t, {
-          left: r.left - containerRect.left,
-          top: r.top - containerRect.top,
-          width: r.width,
-          height: r.height,
-        });
-      }
-    }
-
-    function applyMaskToTarget(t, px, py) {
-      const pos = `${px}px ${py}px`;
-      const size = `${maskSize}px ${maskSize}px`;
-      t.style.maskPosition = pos;
-      t.style.webkitMaskPosition = pos;
-      t.style.maskSize = size;
-      t.style.webkitMaskSize = size;
-    }
-
-    function hideMaskOnTarget(t) {
-      const pos = '0px 0px';
-      const size = '0px 0px';
-      t.style.maskPosition = pos;
-      t.style.webkitMaskPosition = pos;
-      t.style.maskSize = size;
-      t.style.webkitMaskSize = size;
-    }
-
-    function updateMasks() {
-      if (!pointerInside) {
-        for (const t of targets) hideMaskOnTarget(t);
-      } else {
-        for (const t of targets) {
-          const off = targetOffsets.get(t);
-          if (!off) continue;
-
-          const px = Math.round(pointerX - off.left - halfMask);
-          const py = Math.round(pointerY - off.top - halfMask);
-
-          const key = `${px},${py}`;
-          if (t.__lastMaskPos === key) continue;
-          t.__lastMaskPos = key;
-
-          applyMaskToTarget(t, px, py);
-        }
-      }
-      pending = false;
-    }
-
-    container.addEventListener('pointermove', (e) => {
-      pointerX = e.clientX - containerRect.left;
-      pointerY = e.clientY - containerRect.top;
-
-      pointerInside =
-        pointerX >= 0 &&
-        pointerX <= containerRect.width &&
-        pointerY >= 0 &&
-        pointerY <= containerRect.height;
-
-      if (!pending) {
-        pending = true;
-        requestAnimationFrame(updateMasks);
-      }
-    }, { passive: true });
-
-    container.addEventListener('pointerleave', () => {
-      pointerInside = false;
-      if (!pending) {
-        pending = true;
-        requestAnimationFrame(updateMasks);
-      }
-    });
-
-    container.addEventListener('pointerenter', () => {
-      refreshRects();
-      pointerInside = true;
-    });
-
-    let refreshTimer = 100;
-    function scheduleRefreshRects() {
-      clearTimeout(refreshTimer);
-      refreshTimer = setTimeout(refreshRects, 100);
-    }
-    window.addEventListener('resize', scheduleRefreshRects, { passive: true });
-    window.addEventListener('scroll', scheduleRefreshRects, { passive: true });
-
-    refreshRects();
-  }
+      const title = document.createElement('div');
+      title.classList.add('zehnTitle');
+      container.append(title);
+      title.textContent = target.childNodes[0].textContent;
+      target.childNodes[0].remove();
+  });
 };
 
-export default Zehn;
+function createContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const container = document.createElement('div');
+    container.classList.add('zehnContainer');
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(container, nameSelector);
+    });
+    if (shouldAppend) {
+      root.append(container);
+    } else {
+      root.prepend(container);
+    }
+
+    container.append(target);
+  });
+};
+
+function createAdjacentElement(rootSelector, targetSelector, nameSelectors, shouldPlaceBefore = true, elementType = 'div') {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const element = document.createElement(elementType);
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(element, nameSelector);
+    });
+    if (shouldPlaceBefore) {
+      target.before(element || '');
+    } else {
+      target.after(element || '');
+    }
+  });
+};
+
+function addRootClassOnToggle(root, target, button, buttonTargetToggleName) {
+  button.classList.toggle('zehnToggled');
+  root.classList.toggle(buttonTargetToggleName, button.classList.contains('zehnToggled'));
+};
+
+function checkButtonToggle(rootSelector, targetSelector, additionName) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    if (root.classList.contains(additionName)) target.classList.toggle('zehnToggled', true);
+  });
+};
+
+function checkTargetToggle(rootSelector, targetSelector, additionName, toggleSelector) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const toggle = root.querySelector(toggleSelector);
+    if (target.classList.contains('zehnToggled')) toggle.classList.toggle(additionName, true);
+  });
+};
+
+function moveAppend(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      root.querySelectorAll(movingSelector).forEach((moving) => {
+        target.append(moving);
+      });
+    });
+  });
+};
+
+function moveAppendAndObserve(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      this.findTargets(root, movingSelector, (moving) => {
+        target.append(moving);
+      });
+    });
+  });
+};
+
+function movePrepend(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      root.querySelectorAll(movingSelector).forEach((moving) => {
+        target.prepend(moving || '');
+      })
+    });
+  });
+};
+
+function movePrependAndObserve(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      this.findTargets(root, movingSelector, (moving) => {
+        target.prepend(moving || '');
+      })
+    });
+  });
+};
+
+function moveBefore(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      root.querySelectorAll(movingSelector).forEach((moving) => {
+        target.before(moving || '');
+      })
+    });
+  });
+};
+
+function moveBeforeAndObserve(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      this.findTargets(root, movingSelector, (moving) => {
+        target.before(moving || '');
+      })
+    });
+  });
+};
+
+function removeDuplicatedElement(rootSelector, targetSelector, removeableSelector, ordinal) {
+  this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+    const removables = target.querySelectorAll(removeableSelector);
+    if (removables.length > 1) {
+      removables[ordinal].remove();
+    }
+  }, { shouldObserveTarget: false, shouldDisconnect: false, shouldAddAttributeFilter: false });
+};
+
+function addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
+  targetSelectors.forEach((targetSelector) => {
+    this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+      target.classList.toggle('zehnReveal', true);
+      additionalNames.forEach(name => {target.classList.toggle(name, true)});
+    }, { shouldObserveTarget: false, shouldDisconnect: true, shouldAddAttributeFilter: true });
+  });
+};
+
+function revealInner(containerSelector) {
+  this.findRootsAndTargets(containerSelector, '.zehnReveal', (container, revealed) => {
+    this.reveal(container, revealed);
+  });
+};
+
+function revealSelf(selfSelector) {
+  this.findTargets(document, selfSelector, (revealed) => {
+    this.reveal(revealed, revealed);
+  }, false);
+};
+
+function reveal(container, revealed) {
+  if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-transparency-effects-reveal').trim() == 0) return;
+
+  const targets = [revealed];
+  const maskSize = 200;
+  const halfMask = maskSize / 2;
+
+  let containerRect = container.getBoundingClientRect();
+  let targetOffsets = new Map();
+  let pending = false;
+  let pointerX = 0, pointerY = 0;
+  let pointerInside = false;
+
+  function refreshRects() {
+    containerRect = container.getBoundingClientRect();
+    targetOffsets.clear();
+    for (const t of targets) {
+      const r = t.getBoundingClientRect();
+      targetOffsets.set(t, {
+        left: r.left - containerRect.left,
+        top: r.top - containerRect.top,
+        width: r.width,
+        height: r.height,
+      });
+    }
+  }
+
+  function applyMaskToTarget(t, px, py) {
+    const pos = `${px}px ${py}px`;
+    const size = `${maskSize}px ${maskSize}px`;
+    t.style.maskPosition = pos;
+    t.style.webkitMaskPosition = pos;
+    t.style.maskSize = size;
+    t.style.webkitMaskSize = size;
+  }
+
+  function hideMaskOnTarget(t) {
+    const pos = '0px 0px';
+    const size = '0px 0px';
+    t.style.maskPosition = pos;
+    t.style.webkitMaskPosition = pos;
+    t.style.maskSize = size;
+    t.style.webkitMaskSize = size;
+  }
+
+  function updateMasks() {
+    if (!pointerInside) {
+      for (const t of targets) hideMaskOnTarget(t);
+    } else {
+      for (const t of targets) {
+        const off = targetOffsets.get(t);
+        if (!off) continue;
+
+        const px = Math.round(pointerX - off.left - halfMask);
+        const py = Math.round(pointerY - off.top - halfMask);
+
+        const key = `${px},${py}`;
+        if (t.__lastMaskPos === key) continue;
+        t.__lastMaskPos = key;
+
+        applyMaskToTarget(t, px, py);
+      }
+    }
+    pending = false;
+  }
+
+  container.addEventListener('pointermove', (e) => {
+    pointerX = e.clientX - containerRect.left;
+    pointerY = e.clientY - containerRect.top;
+
+    pointerInside =
+      pointerX >= 0 &&
+      pointerX <= containerRect.width &&
+      pointerY >= 0 &&
+      pointerY <= containerRect.height;
+
+    if (!pending) {
+      pending = true;
+      requestAnimationFrame(updateMasks);
+    }
+  }, { passive: true });
+
+  container.addEventListener('pointerleave', () => {
+    pointerInside = false;
+    if (!pending) {
+      pending = true;
+      requestAnimationFrame(updateMasks);
+    }
+  });
+
+  container.addEventListener('pointerenter', () => {
+    refreshRects();
+    pointerInside = true;
+  });
+
+  let refreshTimer = 100;
+  function scheduleRefreshRects() {
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(refreshRects, 100);
+  }
+  window.addEventListener('resize', scheduleRefreshRects, { passive: true });
+  window.addEventListener('scroll', scheduleRefreshRects, { passive: true });
+
+  refreshRects();
+};

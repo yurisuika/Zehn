@@ -12,10 +12,10 @@ Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a s
 
 ## Make Steam Look Like A Native App!
 
-Part of the design philosophy behind Zehn is to only show what is always going to be relevant to your needs. The rest can be displayed when the ephemeral moment comes. Steam has a lot of visual clutter and redundancy, so Zehn seeks to alleviate you of this and let you navigate Steam without all the distraction.
+Part of the design philosophy behind Zehn is to only show what is always going to be relevant to your needs. The rest can be displayed when the ephemeral moment comes. Steam has a lot of visual clutter and redundancy, so Zehn seeks to alleviate you of this and let you navigate Steam without all the distraction. This is the elegent simplicity of Windows 10 Fluent Design that you love brought to Steam!
 
 Some ways this is accomplished in Zehn:
-* Much is consolidated into the navigation bar in the main Steam window. The root menu is only shown when you open it via the menu button.
+* Most controls are consolidated into the navigation bar of the main Steam window. The root menu is only shown when you open it via the menu button.
 * Instead of a details sidebar always shown and a community content feed that you can only access after scrolling past all of the activity feed on a game page, Zehn offers three simple buttons in the play bar to switch between displaying these. You can focus solely on that of which you choose!
 * The game search is hidden by default; once you set up a bunch of filters, you don't need to constantly see their tags and other filter buttons displayed, so you can hide the search section and still retain its functionality while giving the list center stage.
 * You can toggle showing your own status and the friends search from the buttons bar. And you can even hide that bar as well to just view your contacts. Garner the ability to only view what matters most.
@@ -87,8 +87,6 @@ Some ways this is accomplished in Zehn:
 > 
 > </details>
 
-Zehn styles every control in either a dialog style or an app style. When opening a dialog, you are looking to get something done, so things like buttons and dropdowns are very distinct. But for windows that you will usually have open all the time, like the library or chat, controls displayed don't try to fight for your attention, but instead meld with the panel that they are part of. Evenly sized controls flow into eachother. Simple iconography is weighted proportionally with the typeface. This is the elegent simplicity of Windows 10 Fluent Design that you love brought to Steam!
-
 ----------
 
 ## What Does Zehn Offer?
@@ -96,56 +94,45 @@ Zehn styles every control in either a dialog style or an app style. When opening
 ### Customization
 Zehn features various options to change the look and layout of the skin, including hiding and showing content, changing avatar style, and more.
 
-There are several options that mirror settings in Windows 10, such as using transparency effects and showing the accent color on window borders.
+There are several options that mirror settings in Windows 10, such as using transparency effects and showing the accent color on window borders. Along with the choice of light or dark mode, you can ensure Zehn matches your Windows 10 setup! You can even let Zehn automatically sync with your system mode!
 
-You can also choose between using light or dark mode, or let Zehn sync with your system in auto mode!
+Zehn is built on the foundation of variables to make broad-sweeping changes a breeze and offer a high degree of consistency. You can use Millennium's Quick CSS feature or modify `~/custom.css` on SFP to override these variables found in `~/css/variables.css`!
 
 > [!NOTE]
 > #### Millennium
-> Use Millennium's Library Manager to select Zehn's options inside of Steam. You will be prompted to reload Steam when done.
+> Use Millennium's Library Manager to select Zehn's options inside of Steam.
 >
 > #### SFP
-> Edit the config in `~/config/options.json` to dynamically patch in options for the skin! Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be. The skin folder must be named `Zehn` for this to work at the present time!
+> Edit the config in `~/options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be. The skin folder must be named `Zehn` for this to work at the present time!
 
-> [!IMPORTANT]
-> Please note that if you are not using Millennium, you must now set the `enable` option to `true` in `options.json`, and vice versa. This is to prevent the JSON config patches from being injected in addition to the patches already selected through Millennium's own settings system.
-
-### Colorization
-You can colorize both the foreground and background of Zehn! Give Steam more than just a native look, give it your look!
-
-Choose between using your accent color or custom colors and how much color you want blended with Zehn in either light or dark mode!
+### Color Blending
+You can blend colors into both the foreground and background of Zehn. Give Steam more than just a native look, give it your look in either light or dark mode!
 
 ![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.png)
 
 > [!NOTE]
 > #### Millennium
-> Configure color blending under the `Theme` tab. You may manually set the colors under the `Colors` tab.
+> Configure color blending under the `Theme` tab and set the colors under the `Colors` tab.
 >
 > #### SFP
-> Edit the config in `~/config/options.json` as usual. Set the colors in `~/config/colors.css`.
+> Edit the config in `~/options.json` as usual. Set the colors in `~/config/colors.css`.
 
 ### Acrylic
-Acrylic is a Fluent Design material that blurs the background with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways.
+Acrylic is a Fluent Design material that blurs the background of a surface with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways when `Transparency Effects` is enabled in the options.
 
-Certain surfaces will always have an acrylic blur on them. These are small panels that blur content within a window. You'll often find this below details and descriptions laid atop of images.
+Certain surfaces will always have an Acrylic blur on them. These are generally small panels that blur images behind them.
 
-Some windows have reactive panels that change into an acrylic blur on window focus when `Transparency Effects` is enabled in the options. These fall into two categories:
+Some windows have reactive panels that change into an Acrylic surface on window focus. These fall into two categories:
 * Panels that overlay and blur Steam content below them, such as the main window navbar.
-* Panels that blur the window background. These include various settings windows, notes, friends and chat. Of these, some are supported to give Steam a transparent background when using the DWMX plugin for Millennium. This allows the Acrylic to actually show through below the window and blur whatever is below it.
+* Panels that blur behind the window when focused, such as the settings windows. This requires the DWMX plugin for Millennium to work.
 
 ![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.gif)
 
 > [!WARNING]
-> Behind-window Acrylic may require additional compositing software to function. At this present time, DWMX's blur is not noted to work, but it will still make window backgrounds transparent. Presently, the only windows that support this functionality in Zehn are the pagelisted settings windows.
->
-> I personally use the `Translucent Windows` mod for Windhawk. Your choices will depend on your OS. Feel free to chat in the Steam Group or use GitHub Discussions for support!
+> Behind-window Acrylic may require additional compositing software to function. See the [Acrylic](https://github.com/yurisuika/Zehn/wiki/Acrylic) page on the wiki for a guide on how to get it to work!
 
 ### Reveal
-Reveal is a Fluent Design effect that reveals hidden backgrounds and borders in a radial gradient around the pointer upon hover.
-
-In Zehn, when `Transparency Effects` is enabled, various interactive elements are given a Reveal effect. This is either done based on the mouse position within the surrounding container of the items, or base on the mouse position within the items themselves.
-
-Buttons take on with the first flavor. Both pagelist entries and context menu entries use the second flavor. Each has a distinction to how backgrounds and borders are styled.
+Reveal is a Fluent Design effect that reveals hidden backgrounds and borders where you mouse over. When `Transparency Effects` is enabled, certain buttons, lists, and more are given Reveal!
 
 ![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.gif)
 
@@ -161,13 +148,12 @@ Your mascot will display when you are not hovering over the main library content
 >
 > Supports JPG, GIF, and PNG file types (you must set the file type in the settings).
 
-### Features
-On Windows, Zehn's accent color will use your system's accent color by default. If you are on a system that does not support this variable, there is a fallback value. If you wish to override the system accent color, you may do so in the Millennium settings. If using SFP, please manually override the accent variables near the start of `~/css/variables.css`.
-
+### Other Features
 Zehn features several added buttons for an improved experience:
 * On the library window...
-  * The root menu is toggled via the menu button in the upper-left corner of the navbar. It is hidden by default.
-  * Theater Mode, which hides the game list sidebar, is toggled via the button in the navbar before the window controls.
+  * The root menu is toggled via the menu button in the left end of the navbar. It is hidden by default.
+  * Many navbar buttons that are simply redundant links that may be found in the root menus and supernav menus are collapsed until opened by a button added to the navbar buttons area.
+  * Theater Mode, which hides the game list sidebar, can be enabled from a button added to the navbar buttons area.
   * Several search and filter related controls in library sidebar can be toggled via a button in the upper-left corner of the sidebar. These controls are hidden by default.
   * The What's New container in the library may be collapsed via the button next to the carousel controls.
   * Three buttons to select between displaying the Activity feed, the Community feed, and the Details panels for a game entry are found added to the playbar.
@@ -197,27 +183,25 @@ Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy th
 
 ## Getting Zehn
 
-### Versions
-Zehn features both a static and a live version!
-
-The [static version](https://github.com/yurisuika/Zehn/tree/master) contains the whole skin source. You will need to download the skin for any updates, which come often as rolling releases! This version is recommended for users using a self-updating theme patcher.
-
-The [live version](https://github.com/yurisuika/Zehn/tree/live) references the latest static version on the web, so each time Steam is started or reloaded you will have the latest improvements. As this version only requires updating when patches and settings are changed, this is recommended for users without a self-updating skin patcher.
-
 ### Installation
-1. Download your preferred version.
-2. Extract the archive `Zehn`.
-3. Navigate to your Steam folder.
-4. Place the extracted skin folder in `~/steamui/skins`.
-5. Enable JavaScript support in your patcher of choice.
-6. Select the skin in the patcher.
+1. Download the latest release of Zehn and extract the archive.
+3. Navigate to your Steam installation.
+4. Move the extracted Zehn folder into the proper Steam directory.
+  - For Millennium 2.x or SFP, this folder is `~/steamui/skins`.
+  - For Millennium 3.x and up, this folder is `~/millennium/themes`.
+5. Enable JavaScript and CSS injection in your patcher of choice.
+6. Select Zehn in your patcher and enjoy!
 
-Currently this skin works fine on both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
+Zehn supports both [SteamFriendsPatcher](https://github.com/PhantomGamers/SFP/releases) and [Millennium](https://github.com/ShadowMonster99/millennium-steam-patcher/releases).
 
-### Update Documentation
-See Zehn's [Announcements](https://github.com/yurisuika/Zehn/discussions/categories/announcements) category in Discussions for details on recent updates! Noteable fixes, changes, and additions are described here, so you can know all about the latest improvements to Zehn.
+### Documentation
+For in-depth documentation, see the [wiki](https://github.com/yurisuika/Zehn/wiki)!
+
+Check out the [Announcements](https://github.com/yurisuika/Zehn/discussions/categories/announcements) discussions for details on recent major updates.
+
+Work in progress is also documented in the [Previews](https://github.com/yurisuika/Zehn/discussions/categories/previews) discussions. Find out what is being worked on and learn what is up-and-coming for Zehn!
 
 ### Support and Community
-Head over to [Discussions](https://github.com/yurisuika/Zehn/discussions) for support, to share your ideas, and more!
+Head on over to [Support](https://github.com/yurisuika/Zehn/discussions/categories/support) if you need help!
 
 Join the new [Steam Group](https://steamcommunity.com/groups/zehntheme) and drop into the chat room!
