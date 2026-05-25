@@ -554,12 +554,12 @@ a.chatImageURL,
 ._3IIEUTw03Vm3Mk54jlnUaT._3qlJ0L41KQFqUTzVQKFERC,
 ._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._14b-hQsLwSwYcELtknxCUX,
 ._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._3IIEUTw03Vm3Mk54jlnUaT {
-  @include app.preset-symmetric(var(--zehn-size-button-app), $disabled: "._16nHYucq6xgfe67DrVWLCI");
+  @include app.preset-symmetric(var(--zehn-size-spotlight-panel-header), $disabled: "._16nHYucq6xgfe67DrVWLCI");
 }
 
 // GAME - SPOTLIGHT - POST GAME SUMMARY - REMOVE
 ._2dB1oJFsqNThak1cFya2-q._3qlJ0L41KQFqUTzVQKFERC {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include app.preset-symmetric(var(--zehn-size-spotlight-panel-header));
 }
 
 // GAME SPOTLIGHT - DEMO/PLAYTEST/INVITE
@@ -577,8 +577,8 @@ a.chatImageURL,
 ._1EC1xjjUGqI7fqX6PVzJA3,
 ._3yTl3RiWfo-Itg-xp967wP ._39ZurKJQex6v69aXzvc_nj.DialogButton {
   position: relative !important;
-  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-panel-activity-padding))));
-  margin: var(--zehn-size-panel-activity-padding) !important;
+  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-activity-panel-padding))));
+  margin: var(--zehn-size-activity-panel-padding) !important;
   overflow: visible !important;
   cursor: default !important;
 }
@@ -586,8 +586,8 @@ a.chatImageURL,
 .zehnNews .zehnTitle,
 .zehnLoad .zehnTitle {
   position: relative !important;
-  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-panel-activity-padding))));
-  margin: var(--zehn-size-panel-activity-padding) !important;
+  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-activity-panel-padding))));
+  margin: var(--zehn-size-activity-panel-padding) !important;
   overflow: visible !important;
   cursor: pointer !important;
 }
@@ -644,11 +644,14 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // GAME - COMMUNITY - MENU
 .CwZqp0ZwInfY8H9jUO4Xy {
-  @include app.preset-symmetric(var(--zehn-size-panel-community-info));
+  --button-margin: var(--zehn-size-spacing-xxs);
+  --button-size: calc(var(--zehn-size-community-panel-info) - (2 * var(--button-margin)));
+  @include app.preset-symmetric(var(--button-size), $icon-size: var(--zehn-size-icon-sm));
+  @include dialog.shape-circular;
   transition: opacity 0.2s ease !important;
   top: unset !important;
-  right: var(--zehn-size-panel-community-padding) !important;
-  bottom: var(--zehn-size-panel-community-padding) !important;
+  right: calc(var(--zehn-size-community-panel-padding) + var(--button-margin)) !important;
+  bottom: calc(var(--zehn-size-community-panel-padding) + var(--button-margin)) !important;
 }
 
 // EVENT OVERLAY - CONTROLS
