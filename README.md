@@ -147,6 +147,7 @@ Zehn features several added buttons for an improved experience:
   * Several search and filter related controls in library sidebar can be toggled via a button in the upper-left corner of the sidebar. These controls are hidden by default.
   * The What's New container in the library may be collapsed via the button next to the carousel controls.
   * Three buttons to select between displaying the Activity feed, the Community feed, and the Details panels for a game entry are found added to the playbar.
+  * To match toggling the info panel on the game page, the game links panel may be toggled with a button added to the playbar.
 * On the friends list window...
   * The header containers are toggled via the menu button in the upper-left corner. These are shown by default.
   * The current user container is toggled via the button at the ends of the friends tab buttons container. It is hidden by default.

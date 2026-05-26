@@ -132,7 +132,6 @@ Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._39RheXihcN6H2k2muQTjkI', 'zehnStickyHeader');
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._3mz8wQ6Q44B8P7pzPP4Iyw', '._3WJCt_OkjPA6npxOtguSt5', 'zehnLibraryOpened');
 
-
 /* TOGGLE GAME PAGE CLASSES BASED ON WHAT SECTIONS ARE AVAILABLE ---------------------------------------------------- */
 
 Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._2Dd4T78PcCTUVgOtDGFY5j', '#zehnGameActivity' , 'zehnWithActivity');
@@ -367,6 +366,20 @@ Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
 Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl');
+
+/* TOGGLE GAME LINKS ------------------------------------------------------------------------------------------------ */
+
+Zehn.checkButtonToggle('._2Dd4T78PcCTUVgOtDGFY5j', '.zehnToggleGameLinks', 'zehnLinksOpened');
+
+function toggleLinks(root, target, button) {
+  Zehn.addRootClassOnToggle(root, target, button, 'zehnLinksOpened');
+  root.querySelectorAll('.zehnToggleGameLinks').forEach(linkButton => {
+    linkButton.classList.toggle('zehnToggled', root.classList.contains('zehnLinksOpened'));
+  });
+};
+
+Zehn.createButton('._2Dd4T78PcCTUVgOtDGFY5j', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks); // STICKY PLAYBAR
+Zehn.createButton('._2Dd4T78PcCTUVgOtDGFY5j', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks); // PLAYBAR
 
 /* WRAP LOAD MORE --------------------------------------------------------------------------------------------------- */
 
