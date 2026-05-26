@@ -1,9 +1,9 @@
 export const Secret = {
-  setup
+  discover
 };
 export default Secret;
 
-function setup() {
+function discover() {
   const code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
   let kpos = 0;
   let canvasApp = null;

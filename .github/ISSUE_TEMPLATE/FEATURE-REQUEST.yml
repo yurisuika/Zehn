@@ -1,26 +1,38 @@
-name: Feature Request
-description: Propose a feature for Zehn! This is for detailed proposals; for suggestions, use Discussions instead.
-title: "[Feature]"
-labels: [enhancement]
+name: "Feature Request"
+description: "Propose a feature. For support or ideas, use the proper forum in Discussions."
+title: "[Feature] "
+labels: ["enhancement"]
 body:
 - type: checkboxes
+  id: before_requesting
   attributes:
-    label: Before Requesting
-    description: "I have checked that the following are true:"
+    label: "Before Requesting"
+    description: "Please confirm the following:"
     options:
-    - label: There is no existing matching issue or discussion.
+    - label: "I have searched for existing issues"
       required: true
-    - label: My theme is up-to-date.
-      required: true
-- type: textarea
-  attributes:
-    label: Describe the feature you'd like!
-    description: A clear and detailed description of what you want to see in Zehn.
   validations:
     required: true
-- type: upload
+- type: textarea
+  id: describe_the_feature
   attributes:
-    label: Upload Screenshots
-    description: If applicable, add screenshots to show where your proposed feature would affect.
+    label: "Describe the Feature"
+    description: "A clear and detailed description of what the feature is."
+    placeholder: "I would like to see..."
+  validations:
+    required: true
+- type: textarea
+  id: alternatives_considered
+  attributes:
+    label: "Alternatives Considered"
+    description: "Describe any alternative solutions or features you've considered."
+    placeholder: "I also considered..."
+  validations:
+    required: false
+- type: upload
+  id: additional_context
+  attributes:
+    label: "Additional Context"
+    description: "Add any other context, mockups, or screenshots about the feature request."
   validations:
     required: false

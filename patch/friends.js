@@ -196,4 +196,4 @@ import Secret from './../js/secret.js';
 
 /* SUPER SECRET DO NOT LOOK ----------------------------------------------------------------------------------------- */
 
-Secret.setup();
+Secret.discover();

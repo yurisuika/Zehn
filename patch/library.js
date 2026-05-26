@@ -543,6 +543,20 @@ Zehn.revealSelf('.aqvbkhC1ejt4s8QvWA-c5');
 
 
 
+import Waifu from './../js/waifu.js';
+
+/* WAiFU DESU ------------------------------------------------------------------------------------------------------- */
+
+Waifu.findWaifu();
+
+
+
+
+
+
+
+
+
 import Canvas from './../js/canvas.js';
 
 /* STARS ON LOGIN --------------------------------------------------------------------------------------------------- */
@@ -566,4 +580,4 @@ import Secret from './../js/secret.js';
 
 /* SUPER SECRET DO NOT LOOK ----------------------------------------------------------------------------------------- */
 
-Secret.setup();
+Secret.discover();

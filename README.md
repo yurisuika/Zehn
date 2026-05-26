@@ -133,17 +133,10 @@ Reveal is a Fluent Design effect that reveals hidden backgrounds and borders whe
 
 ![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.gif)
 
-### Mascots
-You can give your waifu a home in your library by adding a mascot in Steam's UI folder.
-
-Your mascot will display when you are not hovering over the main library content, and fade away when you need to use it.
+### Waifus
+You can give your waifu a home in your library! Supports random image selection, adjustable placement, and more.
 
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
-
-> [!IMPORTANT]
-> From the Steam directory, place your `waifu` image in `~/steamui/mascots/` and enjoy.
->
-> Supports JPG, GIF, and PNG file types (you must set the file type in the settings).
 
 ### Other Features
 Zehn features several added buttons for an improved experience:

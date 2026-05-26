@@ -1,32 +1,77 @@
-name: Bug Report
-description: Illuminate an outstanding issue in Zehn. For support requests, use Discussions instead.
-title: "[Bug]"
-labels: [bug]
+name: "Bug Report"
+description: "File a bug report. For support or ideas, use the proper forum in Discussions."
+title: "[Bug] "
+labels: ["bug"]
 body:
 - type: checkboxes
+  id: before_reporting
   attributes:
-    label: Before Reporting
-    description: "I have checked that the following are true:"
+    label: "Before Reporting"
+    description: "Please confirm the following:"
     options:
-    - label: There is no existing matching issue or discussion.
+    - label: "I have searched for existing issues"
       required: true
-    - label: My theme is up-to-date.
+    - label: "I am using the latest version of Zehn"
       required: true
-- type: textarea
+    - label: "I am not using beta Steam/SFP/Millennium"
+      required: true
+    - label: "I have checked if a plugin is responsible"
+      required: true
+  validations:
+    required: true
+- type: dropdown
+  id: patcher
   attributes:
-    label: Describe the Problem
-    description: A clear and concise description of what you're experiencing.
+    label: "Patcher"
+    description: "Which patcher are you using?"
+    options:
+    - label: "SFP"
+    - label: "Millennium"
+  validations:
+    required: true
+- type: dropdown
+  id: operating_system
+  attributes:
+    label: "Operating System"
+    description: "Which operating system are you using?"
+    options:
+    - label: "Windows"
+    - label: "Linux"
+    - label: "MacOS"
   validations:
     required: true
 - type: textarea
+  id: describe_the_bug
   attributes:
-    label: Expected Behavior
-    description: A clear and concise description of what you expected to happen.
+    label: "Describe the Bug"
+    description: "A clear and concise description of what the bug is."
+    placeholder: "Tell us what happened..."
+  validations:
+    required: true
+- type: textarea
+  id: expected_behavior
+  attributes:
+    label: "Expected Behavior"
+    description: "What you expected to happen."
+    placeholder: "I expected..."
+  validations:
+    required: true
+- type: textarea
+  id: steps_to_reproduce
+  attributes:
+    label: "Steps to Reproduce"
+    description: "Steps to reproduce the behavior."
+    placeholder: |
+      1.
+      2.
+      3.
+      ...
   validations:
     required: true
 - type: upload
+  id: screenshots_logs
   attributes:
-    label: Upload Screenshots
-    description: If applicable, add screenshots to show your problem. These really help!
+    label: "Screenshots / Logs"
+    description: "If applicable, add screenshots or log output to help explain the problem."
   validations:
     required: false
