@@ -475,8 +475,7 @@ Zehn.revealInner('._2X_ZpO2X_CIOIEfml3ZTcX');
 
 Zehn.addRevealClass('.PageListColumn', [
   '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
-  '._2mL2HfT5AkDXRi1YBnRWKa', // CONTROLLER SETTINGS LIST ENTRY
-  '._3Sjbkvk647UKKVLX6J7gsW' // NEW NOTE
+  '._2mL2HfT5AkDXRi1YBnRWKa' // CONTROLLER SETTINGS LIST ENTRY
 ], [
   'zehnRevealBackgroundOnly'
 ]);
