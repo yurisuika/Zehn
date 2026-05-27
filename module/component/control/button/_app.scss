@@ -106,14 +106,14 @@
   padding: var(--zehn-size-button-app-padding) !important;
 }
 
-@mixin size-wide($height) {
+@mixin size-wide($height, $width) {
   height: $height !important;
   min-height: $height !important;
   max-height: $height !important;
 
-  width: fit-content !important;
-  min-width: fit-content !important;
-  max-width: fit-content !important;
+  width: $width !important;
+  min-width: $width !important;
+  max-width: $width !important;
 
   line-height: $height !important;
 
@@ -279,9 +279,9 @@
   @include looks($disabled);
 }
 
-@mixin preset-wide($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
+@mixin preset-wide($height, $width: fit-content, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
   @include base($icon, $icon-size);
-  @include size-wide($height);
+  @include size-wide($height, $width);
   @include shape-default;
   @include looks($disabled);
 }
