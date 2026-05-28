@@ -173,6 +173,7 @@
   &#{$off}:is(:active) { @include look-off-active; }
   &#{$off}:is(:active:focus) { @include look-off-active-focus; }
   &#{$off}:is(#{$disabled}) { @include look-off-disabled; }
+  &#{$off}:is(#{$disabled}):is(:focus, :hover, :hover:focus, :active, :active:focus) { @include look-off-disabled; }
 
   &#{$on} { @include look-on; }
   &#{$on}:is(:focus) { @include look-on-focus; }
@@ -181,6 +182,7 @@
   &#{$on}:is(:active) { @include look-on-active; }
   &#{$on}:is(:active:focus) { @include look-on-active-focus; }
   &#{$on}:is(#{$disabled}) { @include look-on-disabled; }
+  &#{$on}:is(#{$disabled}):is(:focus, :hover, :hover:focus, :active, :active:focus) { @include look-on-disabled; }
 }
 
 @mixin look-check-off {
@@ -247,6 +249,7 @@
   &:is(:active)#{$check-off} { @include look-check-off-active; }
   &:is(:active:focus)#{$check-off} { @include look-check-off-active-focus; }
   &:is(#{$disabled})#{$check-off} { @include look-check-off-disabled; }
+  &:is(#{$disabled}):is(:focus, :hover, :hover:focus, :active, :active:focus)#{$check-off} { @include look-check-off-disabled; }
 
   &#{$check-on} { @include look-check-on; }
   &:is(:focus)#{$check-on} { @include look-check-on-focus; }
@@ -255,6 +258,7 @@
   &:is(:active)#{$check-on} { @include look-check-on-active; }
   &:is(:active:focus)#{$check-on} { @include look-check-on-active-focus; }
   &:is(#{$disabled})#{$check-on} { @include look-check-on-disabled; }
+  &:is(#{$disabled}):is(:focus, :hover, :hover:focus, :active, :active:focus)#{$check-on} { @include look-check-on-disabled; }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
