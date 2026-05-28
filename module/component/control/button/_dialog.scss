@@ -1,6 +1,6 @@
 // BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin base($icon, $icon-size) {
+@mixin base($icon, $icon-size, $other) {
   appearance: unset !important;
   box-sizing: border-box !important;
   // display: flex !important;
@@ -25,12 +25,22 @@
 
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-button-dialog-text) !important;
+  line-height: var(--zehn-size-button-dialog-line) !important;
 
   border: none !important;
 
   outline-width: var(--zehn-size-button-dialog-border) !important;
   outline-style: solid !important;
   outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
+
+  @if $other != null {
+    #{$other} {
+    font-size: var(--zehn-size-button-dialog-text-other) !important;
+    line-height: var(--zehn-size-button-dialog-line-other) !important;
+
+    color: var(--other-color) !important;
+    }
+  }
 
   #{$icon} {
     // display: block !important;
@@ -45,7 +55,7 @@
     min-width: $icon-size !important;
 
     inset: unset !important;
-    margin: auto 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
 
     mask-size: $icon-size !important;
@@ -82,8 +92,6 @@
   min-width: $height !important;
   max-width: $height !important;
 
-  line-height: var(--zehn-size-button-dialog-line) !important;
-
   padding: var(--zehn-size-button-dialog-padding) !important;
 }
 
@@ -95,8 +103,6 @@
   width: $width !important;
   min-width: $width !important;
   max-width: $width !important;
-
-  line-height: var(--zehn-size-button-dialog-line) !important;
 
   padding: var(--zehn-size-button-dialog-padding) !important;
 }
@@ -110,8 +116,6 @@
   min-width: fit-content !important;
   max-width: fit-content !important;
 
-  line-height: var(--zehn-size-button-dialog-line) !important;
-
   padding: var(--zehn-size-button-dialog-padding-wide) !important;
 }
 
@@ -121,10 +125,8 @@
   max-height: $height !important;
 
   width: auto !important;
-  min-width: fit-content !important;
+  min-width: 0 !important;
   max-width: 100% !important;
-
-  line-height: var(--zehn-size-button-dialog-line) !important;
 
   padding: var(--zehn-size-button-dialog-padding-dynamic) !important;
 }
@@ -173,6 +175,7 @@
   outline-color: var(--zehn-color-button-dialog-border) !important;
 
   --icon-color: var(--zehn-color-button-dialog-icon);
+  --other-color: var(--zehn-color-button-dialog-text-other);
 }
 
 @mixin look-focus {
@@ -181,6 +184,7 @@
   outline-color: var(--zehn-color-button-dialog-border-focus) !important;
 
   --icon-color: var(--zehn-color-button-dialog-icon-focus);
+  --other-color: var(--zehn-color-button-dialog-text-other-focus);
 }
 
 @mixin look-hover {
@@ -189,6 +193,7 @@
   outline-color: var(--zehn-color-button-dialog-border-hover) !important;
 
   --icon-color: var(--zehn-color-button-dialog-icon-hover);
+  --other-color: var(--zehn-color-button-dialog-text-other-hover);
 }
 
 @mixin look-hover-focus {
@@ -197,6 +202,7 @@
   outline-color: var(--zehn-color-button-dialog-border-hover-focus) !important;
 
   --icon-color: var(--zehn-color-button-dialog-icon-hover-focus);
+  --other-color: var(--zehn-color-button-dialog-text-other-hover-focus);
 }
 
 @mixin look-active {
@@ -205,6 +211,7 @@
   outline-color: var(--zehn-color-button-dialog-border-active) !important;
 
   --icon-color: var(--zehn-color-button-dialog-icon-active);
+  --other-color: var(--zehn-color-button-dialog-text-other-active);
 }
 
 @mixin look-active-focus {
@@ -213,6 +220,7 @@
   outline-color: var(--zehn-color-button-dialog-border-active-focus) !important;
 
   --icon-color: var(--zehn-color-button-dialog-icon-active-focus);
+  --other-color: var(--zehn-color-button-dialog-text-other-active-focus);
 }
 
 @mixin look-disabled {
@@ -222,6 +230,7 @@
   outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
 
   --icon-color: var(--zehn-color-button-dialog-icon-disabled);
+  --other-color: var(--zehn-color-button-dialog-text-other-disabled);
 }
 
 @mixin looks($disabled) {
@@ -234,13 +243,14 @@
   &:is(:disabled, #{$disabled}) { @include look-disabled; }
 }
 
-@mixin look-selected {
+@mixin look-selected() {
   pointer-events: none !important;
   background: var(--zehn-color-button-dialog-background-selected) !important;
   color: var(--zehn-color-button-dialog-text-selected) !important;
   border-color: var(--zehn-color-button-dialog-border-selected) !important;
 
   --icon-color:  var(--zehn-color-button-dialog-icon-selected);
+  --other-color: var(--zehn-color-button-dialog-text-other-selected);
 }
 
 @mixin looks-selected($selected) {
@@ -260,29 +270,29 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset-symmetric($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
-  @include base($icon, $icon-size);
+@mixin preset-symmetric($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null) {
+  @include base($icon, $icon-size, $other);
   @include size-symmetric($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-asymmetric($height, $width, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
-  @include base($icon, $icon-size);
+@mixin preset-asymmetric($height, $width, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null) {
+  @include base($icon, $icon-size, $other);
   @include size-asymmetric($height, $width);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-wide($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
-  @include base($icon, $icon-size);
+@mixin preset-wide($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null) {
+  @include base($icon, $icon-size, $other);
   @include size-wide($height);
   @include shape-default;
   @include looks($disabled);
 }
 
-@mixin preset-dynamic($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md)) {
-  @include base($icon, $icon-size);
+@mixin preset-dynamic($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null) {
+  @include base($icon, $icon-size, $other);
   @include size-dynamic($height);
   @include shape-default;
   @include looks($disabled);
