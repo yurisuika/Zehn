@@ -573,13 +573,7 @@ import Canvas from './../js/canvas.js';
 
 /* STARS ON LOGIN --------------------------------------------------------------------------------------------------- */
 
-Zehn.createAdjacentElement('.QsvsRVwbsApgKt1MhM0fz', '._27A5ub1QLLIMmgywKVMg4z', ['#zehnLogin'], true, 'canvas');
-
-Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '#zehnLogin', (target) => {
-  Canvas.stars();
-});
-
-
+Canvas.stars();
 
 
 

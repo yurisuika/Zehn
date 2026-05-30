@@ -4,7 +4,33 @@ export const Canvas = {
 export default Canvas;
 
 function stars() {
-  const canvas = document.getElementById('zehnLogin');
+  let canvasApp = null;
+
+  function startCanvas() {
+    if (document.querySelector('#zehnLogin')) return;
+    if (canvasApp) return;
+    const canvas = document.createElement('canvas');
+    canvas.id = 'zehnLogin';
+    canvas.style.position = 'absolute';
+    canvas.style.inset = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+    document.querySelector('.VZ6x_grhNkIYJG__jEEyp').prepend(canvas);
+
+    canvasApp = createApp(canvas);
+    window.addEventListener('resize', resize);
+    function resize() {
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+    }
+  };
+
+  startCanvas();
+};
+
+function createApp(canvas) {
   const ctx = canvas.getContext('2d');
   let W = canvas.width = innerWidth;
   let H = canvas.height = innerHeight;
@@ -155,10 +181,8 @@ function stars() {
       return {
         type: 'vertical',
         stops: [
-          [0.00, '#071029'],
-          [0.30, '#2b2340'],
-          [0.60, '#c46a94'],
-          [0.85, '#ffcdb2'],
+          [0.00, '#c46a94'],
+          [0.50, '#ffcdb2'],
           [1.00, '#fff8ee']
         ],
         glow: ['rgba(255,180,200,0.26)', 'rgba(255,180,200,0)'],
