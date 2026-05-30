@@ -1,40 +1,26 @@
+@use 'link/dialog' as dialog;
+
+// LINKS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// GENERIC
 a,
-.DialogBody a,
-.textLink,
-button.TextButton,
+.DialogBody a {
+  @include dialog.preset();
+}
+
+// TEXT LINK
+.textLink {
+  @include dialog.preset();
+}
+
+// TEXT BUTTON
+button.TextButton {
+  @include dialog.preset();
+}
+
 // CLOUD SYNC ERROR
 button.DialogButton._3Cdin80d-hVsakHUZboheb._1qG6xUlNu-qvdhpSxwed5 {
-  line-height: inherit !important;
-  height: inherit !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  text-decoration: none !important;
-  border: unset !important;
-  font-size: inherit !important;
-  color: var(--zehn-color-link) !important;
-  outline: none !important;
-  border: none !important;
-  background: transparent !important;
-
-  &:focus {
-    color: var(--zehn-color-link) !important;
-    outline: none !important;
-    border: none !important;
-    background: transparent !important;
-  }
-
-  &:hover,
-  &:hover:focus {
-    color: var(--zehn-color-link-hover) !important;
-    outline: none !important;
-    border: none !important;
-    background: transparent !important;
-  }
-
-  &:active,
-  &:active:focus {
-    color: var(--zehn-color-link-active) !important;
-    outline: none !important;
-    border: none !important;
-    background: transparent !important;
-  }
+  @include dialog.preset($disabled: ".Disabled");
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

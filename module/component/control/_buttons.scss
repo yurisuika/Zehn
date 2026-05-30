@@ -23,7 +23,7 @@ button .tool-tip-source {
 // GENERIC
 button.DialogButton,
 button.DialogButton:where(.Primary, .Small) {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // TABLE HEADER
@@ -213,9 +213,12 @@ button.DialogButton:where(.Primary, .Small) {
 .chatRoomGroupHeader .broadcastInfoContainer .thumbnail,
 .MemberListOption,
 .MemberListOption.ToggleMemberListView,
-.chatRoomButton,
 .doGxCBJrGimabHm365bOV {
   @include app.preset-symmetric(var(--zehn-size-chat-header));
+}
+
+.chatRoomButton {
+  @include app.preset-symmetric(var(--zehn-size-chat-header), $disabled: ".Disabled");
 }
 
 // CHANNEL LIST - PIN/UNPIN
@@ -225,11 +228,15 @@ button.DialogButton:where(.Primary, .Small) {
 
 // ENTRY
 ._39xGjKkRIIE7HwloXCWT41,
-.ChatMessageEntryVoice.Inactive,
-.ChatMessageEntryVoice.Active,
 .RVIs84dAE6wHcjH9tkinc {
   display: block !important;
   @include app.preset-symmetric(var(--zehn-size-chat-entry), $disabled: ".jaQN2IyN4P8LZXJ6P11qy");
+}
+
+.ChatMessageEntryVoice.Inactive,
+.ChatMessageEntryVoice.Active {
+  display: block !important;
+  @include app.preset-symmetric(var(--zehn-size-chat-entry), $disabled: ".Disabled");
 }
 
 // EMBED - INVITE CLOSE
@@ -766,18 +773,18 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // SETTINGS FLYOUT HEADER
 ._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include app.preset-symmetric(var(--zehn-size-button-app), $disabled: ".Disabled");
 }
 
 // UPDATES
 .MillenniumSettings ._2o2fXzn99OddeqZMjbDuxQ button.DialogButton {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 .MillenniumSettings ._2o2fXzn99OddeqZMjbDuxQ button.DialogButton.MillenniumIconButton,
 button.DialogButton.MillenniumIconButton.Secondary,
 .DialogHeader ._3epr8QYWw_FqFgMx38YEEm.DialogButton {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // PRIMARY BUTTONS
@@ -785,12 +792,12 @@ button.DialogButton.MillenniumIconButton.Secondary,
   display: flex !important;
   flex-direction: column !important;
   flex: 1 !important;
-  @include dialog.preset-dynamic(100%);
+  @include dialog.preset-dynamic(100%, $disabled: ".Disabled");
 }
 
 // COLOR PICKER
 ._2o2fXzn99OddeqZMjbDuxQ:has(.MillenniumColorPicker) button.DialogButton {
-  @include app.preset-symmetric(20px);
+  @include app.preset-symmetric(20px, $disabled: ".Disabled");
   opacity: 0 !important;
   z-index: 999 !important;
   top: 2px !important;
@@ -830,11 +837,14 @@ button.DialogButton.MillenniumIconButton.Secondary,
 
 // OVERLAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.fbu3l7kPiBeb3EKCjIb8n ._3ZLaTxSHxeGcoKlIy_-Z0L,
 .fi6UDkxJq66MLo2z9wabQ ._DialogLayout.DialogButton,
 .fi6UDkxJq66MLo2z9wabQ .BoygotvcKo4DC4dSix8G3.DialogButton,
 .fi6UDkxJq66MLo2z9wabQ ._2uM3ouyTdzAtXR3ffa7oRg ._2LJMRr1_5XUK4wlt7YMyPi .mh8m9p4PBg_Qrev1bfTzc {
   @include app.preset-symmetric(var(--zehn-size-overlay-bar));
+}
+
+.fbu3l7kPiBeb3EKCjIb8n ._3ZLaTxSHxeGcoKlIy_-Z0L  {
+  @include app.preset-symmetric(var(--zehn-size-overlay-bar), $disabled: ".Disabled");
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -961,7 +971,7 @@ button.DialogButton.MillenniumIconButton.Secondary,
 
 // CONTROLS
 ._2rxrVvbku0AC8Qbequ4-z9 button.DialogButton {
-  @include app.preset-symmetric(var(--zehn-size-servers-controlbar));
+  @include app.preset-symmetric(var(--zehn-size-servers-controlbar), $disabled: ".Disabled");
 }
 
 // CONTROLS - TEXT
@@ -994,7 +1004,7 @@ button.DialogButton.MillenniumIconButton.Secondary,
 // FORMATTING BUTTONS
 .gdKTXjvFuMeVN2qa6o8EL button.DialogButton {
   flex: 1 !important;
-  @include app.preset-dynamic(var(--zehn-size-notes-format));
+  @include app.preset-dynamic(var(--zehn-size-notes-format), $disabled: ".Disabled");
 }
 
 // NEW NOTE
@@ -1022,7 +1032,7 @@ button.DialogButton.MillenniumIconButton.Secondary,
 
 // TIMER CONTROLS
 ._2j-W28YC1xAizcE7x9KkDT button.DialogButton {
-  @include app.preset-dynamic(var(--zehn-size-clock-timer));
+  @include app.preset-dynamic(var(--zehn-size-clock-timer), $disabled: ".Disabled");
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1190,19 +1200,19 @@ button.DialogButton.MillenniumIconButton.Secondary,
 
 // CHANNELS
 button.DialogButton.DialogButtonTall {
-  @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large));
+  @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large), $disabled: ".Disabled");
   flex: 1 !important;
 }
 
 // PERMISSIONS - ADD
 button.DialogButton.createNewRoleButton {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
   display: flex !important;
 }
 
 // PERMISSIONS - ROLE EDIT
 button.DialogButton.roleButton {
-  @include app.preset-asymmetric(var(--zehn-size-table-entry-large), 100%);
+  @include app.preset-asymmetric(var(--zehn-size-table-entry-large), 100%, $disabled: ".Disabled");
   padding: var(--zehn-size-button-app-padding-wide) !important;
   justify-content: flex-start !important;
 }
@@ -1222,28 +1232,28 @@ button.DialogButton.roleButton {
 
 // COMMUNITY CONFIGS
 ._1xfC8oO6JVNnioU1NPTN9s {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%, $disabled: ".Disabled");
 }
 
 // CURRENT CONFIGURATION
 ._3lO3wa99qU2ExNsm6la1zR.DialogButton._DialogLayout.cXzBZxhPBl7fZs9LODEnc {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog-large), 100%, $icon: "svg._2ZItjVml3BnUHCOjGK_gkF", $other: "._2fl-TfpJcuSi88OkNwGOCb");
+  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog-large), 100%, $disabled: ".Disabled", $icon: "svg._2ZItjVml3BnUHCOjGK_gkF", $other: "._2fl-TfpJcuSi88OkNwGOCb");
 }
 
 // CURRENT CONFIGURATION - INFO
 ._2sULyQvjazul5EYSVGwl1T button.DialogButton.cXzBZxhPBl7fZs9LODEnc,
 .CRoS_SRbuEPM5uUV3Vrz1 button.DialogButton.cXzBZxhPBl7fZs9LODEnc.uRlY9Z2GZ7c7swKaeLLx- {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // MODAL - FAKE BUTTON
 .tGJeFkznK3-BCMgr4GSHi {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // FOOTER ACTION BUTTONS
 .MbyhbxIetM7FOAmCQSW83 {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // BINDING KEYS
@@ -1268,17 +1278,17 @@ button.DialogButton.roleButton {
 
 // CAMERA
 ._1Ze1RZ7I8e5cSlaWAl48bh {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // INFO
 button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // FURTHER SETTINGS
 button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1454,16 +1464,18 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 ._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity,
 ._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails {
   background-color: var(--zehn-color-button-app-background-disabled) !important;
+  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
   pointer-events: none !important;
 
   &.zehnReveal::before {
     opacity: 0;
   }
 
-  .zehnIcon {
-    background-color: var(--zehn-color-button-app-icon-disabled) !important;
+  &::after {
+    background-color: var(--zehn-color-focusbar-disabled);
   }
 }
+
 
 .zehnToggleGameLinks .zehnIcon {
   -webkit-mask-image: var(--zehn-icon-globe-stand);
@@ -1478,6 +1490,20 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
   background-color: var(--zehn-color-focusbar);
   display: block;
   position: absolute;
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks {
+  background-color: var(--zehn-color-button-app-background-disabled) !important;
+  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
+  pointer-events: none !important;
+
+  &.zehnReveal::before {
+    opacity: 0;
+  }
+
+  &::after {
+    background-color: var(--zehn-color-focusbar-disabled);
+  }
 }
 
 // FRIENDS x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x

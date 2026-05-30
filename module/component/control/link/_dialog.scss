@@ -1,0 +1,86 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base() {
+  height: inherit !important;
+
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  text-decoration: none !important;
+
+  border: none !important;
+
+  outline: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin look {
+  color: var(--zehn-color-link) !important;
+}
+
+@mixin look-focus {
+  color: var(--zehn-color-link-focus) !important;
+}
+
+@mixin look-hover {
+  color: var(--zehn-color-link-hover) !important;
+}
+
+@mixin look-hover-focus {
+  color: var(--zehn-color-link-hover-focus) !important;
+}
+
+@mixin look-active {
+  color: var(--zehn-color-link-active) !important;
+}
+
+@mixin look-active-focus {
+  color: var(--zehn-color-link-active-focus) !important;
+}
+
+@mixin look-disabled {
+  pointer-events: none !important;
+  color: var(--zehn-color-link-disabled) !important;
+}
+
+@mixin looks($disabled) {
+  @include look;
+  &:is(:focus) { @include look-focus; }
+  &:is(:hover) { @include look-hover; }
+  &:is(:hover:focus) { @include look-hover-focus; }
+  &:is(:active) { @include look-active; }
+  &:is(:active:focus) { @include look-active-focus; }
+  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) { @include look-disabled; }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset($disabled: ":disabled") {
+  @include base();
+  @include looks($disabled);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

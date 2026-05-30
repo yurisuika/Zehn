@@ -341,7 +341,8 @@
   &:is(:hover:focus, :enabled:hover:focus) { @include look-hover-focus($style); }
   &:is(:active, :enabled:active) { @include look-active($style); }
   &:is(:active:focus, :enabled:active:focus) { @include look-active-focus($style); }
-  &:is(:disabled, #{$disabled}) { @include look-disabled($style); }
+  &:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) { @include look-disabled($style); }
+  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) { @include look-disabled($style); }
 }
 
 @mixin look-selected($style) {
@@ -386,28 +387,28 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset-symmetric($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
+@mixin preset-symmetric($height, $disabled: ":disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
   @include base($icon, $icon-size);
   @include size-symmetric($height);
   @include shape-default;
   @include looks($disabled, $style);
 }
 
-@mixin preset-asymmetric($height, $width, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
+@mixin preset-asymmetric($height, $width, $disabled: ":disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
   @include base($icon, $icon-size);
   @include size-asymmetric($height, $width);
   @include shape-default;
   @include looks($disabled, $style);
 }
 
-@mixin preset-wide($height, $width: fit-content, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
+@mixin preset-wide($height, $width: fit-content, $disabled: ":disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
   @include base($icon, $icon-size);
   @include size-wide($height, $width);
   @include shape-default;
   @include looks($disabled, $style);
 }
 
-@mixin preset-dynamic($height, $disabled: ".Disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
+@mixin preset-dynamic($height, $disabled: ":disabled", $icon: "svg", $icon-size: var(--zehn-size-icon-md), $style: "app") {
   @include base($icon, $icon-size);
   @include size-dynamic($height);
   @include shape-default;
