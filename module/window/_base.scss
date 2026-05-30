@@ -53,12 +53,33 @@ html:has(._3t4AGpHmFth4qnMdNTgSXR) {
 
 // BORDER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// client_chat_frame fullheight ModalDialogPopup LegacyPopup dwmx Windows
+// ModalDialogBody
+
+// LEGACY
+.LegacyPopup body,
+// POPUP
+body.ModalDialogBody,
+// OVERLAY POPUP
+body._1UJDmU3N-pkv7oTJ_Zf9nK,
+// LIBRARY AND MORE
+body.QsvsRVwbsApgKt1MhM0fz,
+// FRIENDS / CHAT
+.friendsui-container body,
+// CONTROLLER SETTINGS
+body.l25AfossKXBOZGYoty0tM {
 // WINDOWS - NOT THE FOLLOWING: CONTEXT MENU / OVERLAY TOOLBAR / NOTIFICATION TOAST / OVERLAY TIMELINE / INVITE OVERLAY / MINIPROFILE / FIND BAR
-body:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):not(.zXrpABNQHpWKgSzqnGlL):not(._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayTimeline)):not(:has(._1EZ0UEmDBwvbnExphoyjh4)):not(.HoverPopupBody.HoverfriendHover.miniProfileHover):not(:has(._1xLWmfPlWGV47FujycPN_c)) {
+// body:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):not(.zXrpABNQHpWKgSzqnGlL):not(._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayTimeline)):not(:has(._1EZ0UEmDBwvbnExphoyjh4)):not(.HoverPopupBody.HoverfriendHover.miniProfileHover):not(:has(._1xLWmfPlWGV47FujycPN_c)) {
   border: var(--zehn-size-border) solid var(--zehn-color-border) !important;
+
+  &.WindowFocus {
+    border-color: var(--zehn-color-border-focus) !important;
+  }
 }
 
-body.WindowFocus:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):not(.zXrpABNQHpWKgSzqnGlL):not(._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayTimeline)):not(:has(._1EZ0UEmDBwvbnExphoyjh4)):not(.HoverPopupBody.HoverfriendHover.miniProfileHover):not(:has(._1xLWmfPlWGV47FujycPN_c)) {
+body.WindowFocus.QsvsRVwbsApgKt1MhM0fz,
+body.WindowFocus.l25AfossKXBOZGYoty0tM {
+// body.WindowFocus:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):not(.zXrpABNQHpWKgSzqnGlL):not(._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayTimeline)):not(:has(._1EZ0UEmDBwvbnExphoyjh4)):not(.HoverPopupBody.HoverfriendHover.miniProfileHover):not(:has(._1xLWmfPlWGV47FujycPN_c)) {
   border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important;
 }
 
@@ -168,178 +189,6 @@ body,
   min-height: var(--zehn-size-titlebar) !important;
   max-height: var(--zehn-size-titlebar) !important;
   display: none !important;
-}
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
-
-
-
-
-
-
-// WINODW CONTROLS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// LIBRARY CONTROLS CONTAINER
-._39oUCO1OuizVPwcnnv88no .qP17eBPXkfezFfexZ4hC3 {
-  flex: 0 1 calc(var(--zehn-size-titlebar-control) * 3) !important;
-  min-width: calc(var(--zehn-size-titlebar-control) * 3) !important;
-  margin-left: auto !important;
-}
-
-// TITLE CONTAINER
-.title-area {
-  padding: 0 !important;
-  margin: 0 !important;
-  border-radius: var(--zehn-size-radius-angular) !important;
-  height: var(--zehn-size-titlebar) !important;
-  min-height: var(--zehn-size-titlebar) !important;
-  max-height: var(--zehn-size-titlebar) !important;
-}
-
-._3Z7VQ1IMk4E3HsHvrkLNgo .title-area {
-  height: var(--zehn-size-navbar) !important;
-  min-height: var(--zehn-size-navbar) !important;
-  max-height: var(--zehn-size-navbar) !important;
-}
-
-// OUTER CONTAINER
-.title-bar-actions {
-  width: fit-content !important;
-  min-width: fit-content !important;
-  max-width: fit-content !important;
-  height: var(--zehn-size-titlebar) !important;
-  min-height: var(--zehn-size-titlebar) !important;
-  max-height: var(--zehn-size-titlebar) !important;
-}
-
-._3Z7VQ1IMk4E3HsHvrkLNgo .title-bar-actions {
-  width: fit-content !important;
-  min-width: fit-content !important;
-  max-width: fit-content !important;
-  height: var(--zehn-size-navbar) !important;
-  min-height: var(--zehn-size-navbar) !important;
-  max-height: var(--zehn-size-navbar) !important;
-}
-
-// BUTTON SIZE
-.ModalPosition_Dismiss .closeButton,
-.title-area-icon {
-  padding: 0 !important;
-  margin: 0 !important;
-  transition: none !important;
-  border-radius: var(--zehn-size-radius-angular) !important;
-  width: var(--zehn-size-titlebar-control) !important;
-  min-width: var(--zehn-size-titlebar-control) !important;
-  max-width: var(--zehn-size-titlebar-control) !important;
-  height: var(--zehn-size-titlebar) !important;
-  min-height: var(--zehn-size-titlebar) !important;
-  max-height: var(--zehn-size-titlebar) !important;
-}
-
-._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon {
-  width: var(--zehn-size-navbar-control) !important;
-  min-width: var(--zehn-size-navbar-control) !important;
-  max-width: var(--zehn-size-navbar-control) !important;
-  height: var(--zehn-size-navbar) !important;
-  min-height: var(--zehn-size-navbar) !important;
-  max-height: var(--zehn-size-navbar) !important;
-}
-
-// BUTTONS COLORS
-.title-area-icon {
-  background-color: var(--zehn-color-titlebar-control) !important;
-
-  &:hover {
-    background-color: var(--zehn-color-titlebar-control-hover) !important;
-  }
-
-  &:active {
-    background-color: var(--zehn-color-titlebar-control-active) !important;
-  }
-}
-
-.ModalPosition_Dismiss .closeButton,
-.title-area-icon.closeButton {
-  background: var(--zehn-color-titlebar-close) !important;
-
-  &:hover {
-    background: var(--zehn-color-titlebar-close-hover) !important;
-  }
-
-  &:active {
-    background: var(--zehn-color-titlebar-close-pressed) !important;
-  }
-}
-
-// ICON CONTAINER
-.title-area-icon-inner {
-  width: 100% !important;
-}
-
-// ICONS
-.ModalPosition_Dismiss .closeButton svg,
-.title-area-icon svg {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  transform: none !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  background-color: var(--zehn-color-icon1) !important;
-
-  * { display: none !important; }
-}
-
-// TITLEBAR CONTROLS
-body:not(.WindowFocus) .ModalPosition_Dismiss .closeButton:not(:hover) svg,
-body:not(.WindowFocus) .title-area-icon:not(.closeButton:hover) .title-area-icon-inner svg {
-  background-color: var(--zehn-color-icon3) !important;
-}
-
-.ModalPosition_Dismiss .closeButton:hover svg,
-.title-area-icon.closeButton:hover svg {
-  background-color: var(--zehn-color-control-light) !important;
-}
-
-.ModalPosition_Dismiss .closeButton:active svg,
-.title-area-icon.closeButton:active svg {
-  background-color: var(--zehn-color-control-dark) !important;
-}
-
-.title-area-icon.minimizeButton svg {
-  -webkit-mask-image: var(--zehn-icon-window-minimize) !important;
-}
-
-.title-area-icon.maximizeButton svg {
-  -webkit-mask-image: var(--zehn-icon-window-maximize) !important;
-}
-
-.title-area-icon.restoreButton svg {
-  -webkit-mask-image: var(--zehn-icon-window-restore) !important;
-}
-
-.ModalPosition_Dismiss .closeButton svg,
-.title-area-icon.closeButton svg {
-  -webkit-mask-image: var(--zehn-icon-window-close) !important;
-}
-
-// CONTROLS POSTIION
-.TitleBar,
-.ModalDialogPopup .title-area {
-  right: 0 !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
-.ModalPosition_Dismiss {
-  right: 0 !important;
-  top: 0 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

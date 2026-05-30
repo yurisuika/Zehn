@@ -31,6 +31,32 @@ button.DialogButton:where(.Primary, .Small) {
   @include app.preset-symmetric(var(--zehn-size-table-header));
 }
 
+// WINDOW CONTROLS
+.title-area-icon:not(.closeButton),
+.title-area-icon.minimizeButton.windowControlButton,
+.title-area-icon.maximizeButton.windowControlButton {
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
+}
+
+.title-area-icon.closeButton.windowControlButton {
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "close");
+}
+
+// LIBRARY WINDOW CONTROLS
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton,
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton {
+  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+}
+
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton {
+  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "close");
+}
+
+// MODAL DISMISS
+.ModalPosition_Dismiss .closeButton {
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "close");
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -1324,6 +1350,11 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 // STORAGE - RELOAD
 .storage-manager .md-button:last-of-type {
   @include dialog.preset-symmetric(var(--zehn-size-button-dialog-large));
+}
+
+// CONTEXT MENU
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button {
+    @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
