@@ -17,7 +17,10 @@ function stars() {
     canvas.style.height = '100%';
     canvas.width = innerWidth;
     canvas.height = innerHeight;
-    document.querySelector('.VZ6x_grhNkIYJG__jEEyp').prepend(canvas);
+
+    const parent = document.querySelector('.VZ6x_grhNkIYJG__jEEyp');
+    if (!parent) return;
+    parent.prepend(canvas);
 
     canvasApp = createApp(canvas);
     window.addEventListener('resize', resize);

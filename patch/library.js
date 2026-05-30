@@ -367,14 +367,18 @@ Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
 
 Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl');
 
+/* DISABLE BUTTON IF THERE IS NO LINKS PANEL ------------------------------------------------------------------------ */
+
+Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._2Dd4T78PcCTUVgOtDGFY5j', '._2r4TK4BAuU-J4FuF_O7v_5._3-V8vjmrwuJM6Ws3tsjFJj' , 'zehnWithGameLinks');
+
 /* TOGGLE GAME LINKS ------------------------------------------------------------------------------------------------ */
 
-Zehn.checkButtonToggle('._2Dd4T78PcCTUVgOtDGFY5j', '.zehnToggleGameLinks', 'zehnLinksOpened');
+Zehn.checkButtonToggle('._2Dd4T78PcCTUVgOtDGFY5j', '.zehnToggleGameLinks', 'zehnGameLinksExpanded');
 
 function toggleLinks(root, target, button) {
-  Zehn.addRootClassOnToggle(root, target, button, 'zehnLinksOpened');
+  Zehn.addRootClassOnToggle(root, target, button, 'zehnGameLinksExpanded');
   root.querySelectorAll('.zehnToggleGameLinks').forEach(linkButton => {
-    linkButton.classList.toggle('zehnToggled', root.classList.contains('zehnLinksOpened'));
+    linkButton.classList.toggle('zehnToggled', root.classList.contains('zehnGameLinksExpanded'));
   });
 };
 
@@ -569,21 +573,24 @@ Waifu.findWaifu();
 
 
 
-import Canvas from './../js/canvas.js';
-
-/* STARS ON LOGIN --------------------------------------------------------------------------------------------------- */
-
-Canvas.stars();
-
-
-
-
-
-
-
 
 import Secret from './../js/secret.js';
 
 /* SUPER SECRET DO NOT LOOK ----------------------------------------------------------------------------------------- */
 
 Secret.discover();
+
+
+
+
+
+
+
+
+
+
+import Canvas from './../js/canvas.js';
+
+/* STARS ON LOGIN --------------------------------------------------------------------------------------------------- */
+
+Canvas.stars();
