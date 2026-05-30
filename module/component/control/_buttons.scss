@@ -62,6 +62,15 @@ button.DialogButton:where(.Primary, .Small) {
 
 // LOGIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// RETURN TITLEBAR
+.lat0M-V5X4uYd6Mpm1DJ1 ._14exBrSFDthVqeknXgFh4X ._2Jkgs1ZwjavbwnJy76UgUm {
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $icon: "svg._3NHpq7ZDgg4uYEzUF9RxaQ", $style: "return");
+  top: calc(-1 * var(--zehn-size-titlebar)) !important;
+  left: 0 !important;
+  position: absolute !important;
+  -webkit-app-region: no-drag !important;
+}
+
 // USERS - MENU
 ._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton,
 ._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton ._sGyh60_xjv7maN2X2ZXu {
@@ -76,7 +85,16 @@ button.DialogButton:where(.Primary, .Small) {
 
 // LOGIN - SUBMIT INFO
 .DjSvCZoKKfoNSmarsEcTS {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+  @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large));
+  flex: 1 !important;
+}
+
+// LOGIN - EXIT / OFFLINE / TRY AGAIN
+.lat0M-V5X4uYd6Mpm1DJ1 ._9Ig1o0jVRia2uf_FKR3rs,
+.lat0M-V5X4uYd6Mpm1DJ1 ._2Z68vjdOnUDA2ULQG41JVV,
+.lat0M-V5X4uYd6Mpm1DJ1 ._25eT23F0cV5lmT3tXAIA56 {
+  @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large));
+  flex: 1 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,10 +112,10 @@ button.DialogButton:where(.Primary, .Small) {
 
 // TITLEBAR
 #zehnToggleFriendsHeader {
+  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
   position: relative;
   left: 0;
   top: 0;
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
 }
 
 // HEADER - REMOTE PLAY TOGETHER
@@ -1173,6 +1191,7 @@ button.DialogButton.MillenniumIconButton.Secondary,
 // CHANNELS
 button.DialogButton.DialogButtonTall {
   @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large));
+  flex: 1 !important;
 }
 
 // PERMISSIONS - ADD
