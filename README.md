@@ -109,7 +109,7 @@ You can blend colors into both the foreground and background of Zehn. Give Steam
 
 > [!NOTE]
 > #### Millennium
-> Configure color blending under the `Theme` tab and set the colors under the `Colors` tab.
+> Configure color blending on the `Personalization` tab under the `Theme` subjection. Set the colors under the `Colors` tab.
 >
 > #### SFP
 > Edit the config in `~/options.json` as usual. Set the colors in `~/config/colors.css`.

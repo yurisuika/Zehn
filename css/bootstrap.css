@@ -840,6 +840,569 @@ button.DialogButton:where(.Primary, .Small):is(:disabled, .Disabled) {
   --icon-color: var(--zehn-color-button-app-icon-disabled);
 }
 
+.title-area-icon:not(.closeButton),
+.title-area-icon.minimizeButton.windowControlButton,
+.title-area-icon.maximizeButton.windowControlButton {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  gap: var(--zehn-size-button-app-gap) !important;
+  background-position: center !important;
+  background-size: auto !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-app-text) !important;
+  line-height: var(--zehn-size-button-app-line) !important;
+  border-width: var(--zehn-size-button-app-border) !important;
+  border-style: solid !important;
+  outline: none !important;
+}
+.title-area-icon:not(.closeButton) svg,
+.title-area-icon.minimizeButton.windowControlButton svg,
+.title-area-icon.maximizeButton.windowControlButton svg {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  justify-self: center !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  inset: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  background: var(--icon-color) !important;
+}
+.title-area-icon:not(.closeButton) svg *,
+.title-area-icon.minimizeButton.windowControlButton svg *,
+.title-area-icon.maximizeButton.windowControlButton svg * {
+  display: none !important;
+}
+.title-area-icon:not(.closeButton),
+.title-area-icon.minimizeButton.windowControlButton,
+.title-area-icon.maximizeButton.windowControlButton {
+  height: var(--zehn-size-titlebar) !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  max-height: var(--zehn-size-titlebar) !important;
+  width: var(--zehn-size-titlebar-control) !important;
+  min-width: var(--zehn-size-titlebar-control) !important;
+  max-width: var(--zehn-size-titlebar-control) !important;
+  padding: var(--zehn-size-button-app-padding) !important;
+  border-radius: var(--zehn-size-button-app-radius) !important;
+  background: var(--zehn-color-button-nav-background) !important;
+  color: var(--zehn-color-button-nav-text) !important;
+  border-color: var(--zehn-color-button-nav-border) !important;
+  --icon-color: var(--zehn-color-button-nav-icon);
+}
+.title-area-icon:not(.closeButton):is(:focus, :enabled:focus),
+.title-area-icon.minimizeButton.windowControlButton:is(:focus, :enabled:focus),
+.title-area-icon.maximizeButton.windowControlButton:is(:focus, :enabled:focus) {
+  background: var(--zehn-color-button-nav-background-focus) !important;
+  color: var(--zehn-color-button-nav-text-focus) !important;
+  border-color: var(--zehn-color-button-nav-border-focus) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-focus);
+}
+.title-area-icon:not(.closeButton):is(:hover, :enabled:hover),
+.title-area-icon.minimizeButton.windowControlButton:is(:hover, :enabled:hover),
+.title-area-icon.maximizeButton.windowControlButton:is(:hover, :enabled:hover) {
+  background: var(--zehn-color-button-nav-background-hover) !important;
+  color: var(--zehn-color-button-nav-text-hover) !important;
+  border-color: var(--zehn-color-button-nav-border-hover) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-hover);
+}
+.title-area-icon:not(.closeButton):is(:hover:focus, :enabled:hover:focus),
+.title-area-icon.minimizeButton.windowControlButton:is(:hover:focus, :enabled:hover:focus),
+.title-area-icon.maximizeButton.windowControlButton:is(:hover:focus, :enabled:hover:focus) {
+  background: var(--zehn-color-button-nav-background-hover-focus) !important;
+  color: var(--zehn-color-button-nav-text-hover-focus) !important;
+  border-color: var(--zehn-color-button-nav-border-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-hover-focus);
+}
+.title-area-icon:not(.closeButton):is(:active, :enabled:active),
+.title-area-icon.minimizeButton.windowControlButton:is(:active, :enabled:active),
+.title-area-icon.maximizeButton.windowControlButton:is(:active, :enabled:active) {
+  background: var(--zehn-color-button-nav-background-active) !important;
+  color: var(--zehn-color-button-nav-text-active) !important;
+  border-color: var(--zehn-color-button-nav-border-active) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-active);
+}
+.title-area-icon:not(.closeButton):is(:active:focus, :enabled:active:focus),
+.title-area-icon.minimizeButton.windowControlButton:is(:active:focus, :enabled:active:focus),
+.title-area-icon.maximizeButton.windowControlButton:is(:active:focus, :enabled:active:focus) {
+  background: var(--zehn-color-button-nav-background-active-focus) !important;
+  color: var(--zehn-color-button-nav-text-active-focus) !important;
+  border-color: var(--zehn-color-button-nav-border-active-focus) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-active-focus);
+}
+.title-area-icon:not(.closeButton):is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus),
+.title-area-icon.minimizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus),
+.title-area-icon.maximizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-nav-background-disabled) !important;
+  color: var(--zehn-color-button-nav-text-disabled) !important;
+  border-color: var(--zehn-color-button-nav-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-disabled);
+}
+.title-area-icon:not(.closeButton):is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus),
+.title-area-icon.minimizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus),
+.title-area-icon.maximizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-nav-background-disabled) !important;
+  color: var(--zehn-color-button-nav-text-disabled) !important;
+  border-color: var(--zehn-color-button-nav-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-disabled);
+}
+
+.title-area-icon.closeButton.windowControlButton {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  gap: var(--zehn-size-button-app-gap) !important;
+  background-position: center !important;
+  background-size: auto !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-app-text) !important;
+  line-height: var(--zehn-size-button-app-line) !important;
+  border-width: var(--zehn-size-button-app-border) !important;
+  border-style: solid !important;
+  outline: none !important;
+}
+.title-area-icon.closeButton.windowControlButton svg {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  justify-self: center !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  inset: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  background: var(--icon-color) !important;
+}
+.title-area-icon.closeButton.windowControlButton svg * {
+  display: none !important;
+}
+.title-area-icon.closeButton.windowControlButton {
+  height: var(--zehn-size-titlebar) !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  max-height: var(--zehn-size-titlebar) !important;
+  width: var(--zehn-size-titlebar-control) !important;
+  min-width: var(--zehn-size-titlebar-control) !important;
+  max-width: var(--zehn-size-titlebar-control) !important;
+  padding: var(--zehn-size-button-app-padding) !important;
+  border-radius: var(--zehn-size-button-app-radius) !important;
+  background: var(--zehn-color-button-close-background) !important;
+  color: var(--zehn-color-button-close-text) !important;
+  border-color: var(--zehn-color-button-close-border) !important;
+  --icon-color: var(--zehn-color-button-close-icon);
+}
+.title-area-icon.closeButton.windowControlButton:is(:focus, :enabled:focus) {
+  background: var(--zehn-color-button-close-background-focus) !important;
+  color: var(--zehn-color-button-close-text-focus) !important;
+  border-color: var(--zehn-color-button-close-border-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-focus);
+}
+.title-area-icon.closeButton.windowControlButton:is(:hover, :enabled:hover) {
+  background: var(--zehn-color-button-close-background-hover) !important;
+  color: var(--zehn-color-button-close-text-hover) !important;
+  border-color: var(--zehn-color-button-close-border-hover) !important;
+  --icon-color: var(--zehn-color-button-close-icon-hover);
+}
+.title-area-icon.closeButton.windowControlButton:is(:hover:focus, :enabled:hover:focus) {
+  background: var(--zehn-color-button-close-background-hover-focus) !important;
+  color: var(--zehn-color-button-close-text-hover-focus) !important;
+  border-color: var(--zehn-color-button-close-border-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-hover-focus);
+}
+.title-area-icon.closeButton.windowControlButton:is(:active, :enabled:active) {
+  background: var(--zehn-color-button-close-background-active) !important;
+  color: var(--zehn-color-button-close-text-active) !important;
+  border-color: var(--zehn-color-button-close-border-active) !important;
+  --icon-color: var(--zehn-color-button-close-icon-active);
+}
+.title-area-icon.closeButton.windowControlButton:is(:active:focus, :enabled:active:focus) {
+  background: var(--zehn-color-button-close-background-active-focus) !important;
+  color: var(--zehn-color-button-close-text-active-focus) !important;
+  border-color: var(--zehn-color-button-close-border-active-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-active-focus);
+}
+.title-area-icon.closeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-close-background-disabled) !important;
+  color: var(--zehn-color-button-close-text-disabled) !important;
+  border-color: var(--zehn-color-button-close-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-close-icon-disabled);
+}
+.title-area-icon.closeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-close-background-disabled) !important;
+  color: var(--zehn-color-button-close-text-disabled) !important;
+  border-color: var(--zehn-color-button-close-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-close-icon-disabled);
+}
+
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton,
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  gap: var(--zehn-size-button-app-gap) !important;
+  background-position: center !important;
+  background-size: auto !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-app-text) !important;
+  line-height: var(--zehn-size-button-app-line) !important;
+  border-width: var(--zehn-size-button-app-border) !important;
+  border-style: solid !important;
+  outline: none !important;
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton svg,
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton svg {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  justify-self: center !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  inset: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  background: var(--icon-color) !important;
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton svg *,
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton svg * {
+  display: none !important;
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton,
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton {
+  height: var(--zehn-size-navbar) !important;
+  min-height: var(--zehn-size-navbar) !important;
+  max-height: var(--zehn-size-navbar) !important;
+  width: var(--zehn-size-navbar-control) !important;
+  min-width: var(--zehn-size-navbar-control) !important;
+  max-width: var(--zehn-size-navbar-control) !important;
+  padding: var(--zehn-size-button-app-padding) !important;
+  border-radius: var(--zehn-size-button-app-radius) !important;
+  background: var(--zehn-color-button-nav-background) !important;
+  color: var(--zehn-color-button-nav-text) !important;
+  border-color: var(--zehn-color-button-nav-border) !important;
+  --icon-color: var(--zehn-color-button-nav-icon);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton:is(:focus, :enabled:focus),
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton:is(:focus, :enabled:focus) {
+  background: var(--zehn-color-button-nav-background-focus) !important;
+  color: var(--zehn-color-button-nav-text-focus) !important;
+  border-color: var(--zehn-color-button-nav-border-focus) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-focus);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton:is(:hover, :enabled:hover),
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton:is(:hover, :enabled:hover) {
+  background: var(--zehn-color-button-nav-background-hover) !important;
+  color: var(--zehn-color-button-nav-text-hover) !important;
+  border-color: var(--zehn-color-button-nav-border-hover) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-hover);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton:is(:hover:focus, :enabled:hover:focus),
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton:is(:hover:focus, :enabled:hover:focus) {
+  background: var(--zehn-color-button-nav-background-hover-focus) !important;
+  color: var(--zehn-color-button-nav-text-hover-focus) !important;
+  border-color: var(--zehn-color-button-nav-border-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-hover-focus);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton:is(:active, :enabled:active),
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton:is(:active, :enabled:active) {
+  background: var(--zehn-color-button-nav-background-active) !important;
+  color: var(--zehn-color-button-nav-text-active) !important;
+  border-color: var(--zehn-color-button-nav-border-active) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-active);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton:is(:active:focus, :enabled:active:focus),
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton:is(:active:focus, :enabled:active:focus) {
+  background: var(--zehn-color-button-nav-background-active-focus) !important;
+  color: var(--zehn-color-button-nav-text-active-focus) !important;
+  border-color: var(--zehn-color-button-nav-border-active-focus) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-active-focus);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus),
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-nav-background-disabled) !important;
+  color: var(--zehn-color-button-nav-text-disabled) !important;
+  border-color: var(--zehn-color-button-nav-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-disabled);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus),
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-nav-background-disabled) !important;
+  color: var(--zehn-color-button-nav-text-disabled) !important;
+  border-color: var(--zehn-color-button-nav-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-nav-icon-disabled);
+}
+
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  gap: var(--zehn-size-button-app-gap) !important;
+  background-position: center !important;
+  background-size: auto !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-app-text) !important;
+  line-height: var(--zehn-size-button-app-line) !important;
+  border-width: var(--zehn-size-button-app-border) !important;
+  border-style: solid !important;
+  outline: none !important;
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton svg {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  justify-self: center !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  inset: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  background: var(--icon-color) !important;
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton svg * {
+  display: none !important;
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton {
+  height: var(--zehn-size-navbar) !important;
+  min-height: var(--zehn-size-navbar) !important;
+  max-height: var(--zehn-size-navbar) !important;
+  width: var(--zehn-size-navbar-control) !important;
+  min-width: var(--zehn-size-navbar-control) !important;
+  max-width: var(--zehn-size-navbar-control) !important;
+  padding: var(--zehn-size-button-app-padding) !important;
+  border-radius: var(--zehn-size-button-app-radius) !important;
+  background: var(--zehn-color-button-close-background) !important;
+  color: var(--zehn-color-button-close-text) !important;
+  border-color: var(--zehn-color-button-close-border) !important;
+  --icon-color: var(--zehn-color-button-close-icon);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton:is(:focus, :enabled:focus) {
+  background: var(--zehn-color-button-close-background-focus) !important;
+  color: var(--zehn-color-button-close-text-focus) !important;
+  border-color: var(--zehn-color-button-close-border-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-focus);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton:is(:hover, :enabled:hover) {
+  background: var(--zehn-color-button-close-background-hover) !important;
+  color: var(--zehn-color-button-close-text-hover) !important;
+  border-color: var(--zehn-color-button-close-border-hover) !important;
+  --icon-color: var(--zehn-color-button-close-icon-hover);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton:is(:hover:focus, :enabled:hover:focus) {
+  background: var(--zehn-color-button-close-background-hover-focus) !important;
+  color: var(--zehn-color-button-close-text-hover-focus) !important;
+  border-color: var(--zehn-color-button-close-border-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-hover-focus);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton:is(:active, :enabled:active) {
+  background: var(--zehn-color-button-close-background-active) !important;
+  color: var(--zehn-color-button-close-text-active) !important;
+  border-color: var(--zehn-color-button-close-border-active) !important;
+  --icon-color: var(--zehn-color-button-close-icon-active);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton:is(:active:focus, :enabled:active:focus) {
+  background: var(--zehn-color-button-close-background-active-focus) !important;
+  color: var(--zehn-color-button-close-text-active-focus) !important;
+  border-color: var(--zehn-color-button-close-border-active-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-active-focus);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-close-background-disabled) !important;
+  color: var(--zehn-color-button-close-text-disabled) !important;
+  border-color: var(--zehn-color-button-close-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-close-icon-disabled);
+}
+._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-close-background-disabled) !important;
+  color: var(--zehn-color-button-close-text-disabled) !important;
+  border-color: var(--zehn-color-button-close-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-close-icon-disabled);
+}
+
+.ModalPosition_Dismiss .closeButton {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  gap: var(--zehn-size-button-app-gap) !important;
+  background-position: center !important;
+  background-size: auto !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-app-text) !important;
+  line-height: var(--zehn-size-button-app-line) !important;
+  border-width: var(--zehn-size-button-app-border) !important;
+  border-style: solid !important;
+  outline: none !important;
+}
+.ModalPosition_Dismiss .closeButton svg {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  justify-self: center !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  inset: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  background: var(--icon-color) !important;
+}
+.ModalPosition_Dismiss .closeButton svg * {
+  display: none !important;
+}
+.ModalPosition_Dismiss .closeButton {
+  height: var(--zehn-size-titlebar) !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  max-height: var(--zehn-size-titlebar) !important;
+  width: var(--zehn-size-titlebar-control) !important;
+  min-width: var(--zehn-size-titlebar-control) !important;
+  max-width: var(--zehn-size-titlebar-control) !important;
+  padding: var(--zehn-size-button-app-padding) !important;
+  border-radius: var(--zehn-size-button-app-radius) !important;
+  background: var(--zehn-color-button-close-background) !important;
+  color: var(--zehn-color-button-close-text) !important;
+  border-color: var(--zehn-color-button-close-border) !important;
+  --icon-color: var(--zehn-color-button-close-icon);
+}
+.ModalPosition_Dismiss .closeButton:is(:focus, :enabled:focus) {
+  background: var(--zehn-color-button-close-background-focus) !important;
+  color: var(--zehn-color-button-close-text-focus) !important;
+  border-color: var(--zehn-color-button-close-border-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-focus);
+}
+.ModalPosition_Dismiss .closeButton:is(:hover, :enabled:hover) {
+  background: var(--zehn-color-button-close-background-hover) !important;
+  color: var(--zehn-color-button-close-text-hover) !important;
+  border-color: var(--zehn-color-button-close-border-hover) !important;
+  --icon-color: var(--zehn-color-button-close-icon-hover);
+}
+.ModalPosition_Dismiss .closeButton:is(:hover:focus, :enabled:hover:focus) {
+  background: var(--zehn-color-button-close-background-hover-focus) !important;
+  color: var(--zehn-color-button-close-text-hover-focus) !important;
+  border-color: var(--zehn-color-button-close-border-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-hover-focus);
+}
+.ModalPosition_Dismiss .closeButton:is(:active, :enabled:active) {
+  background: var(--zehn-color-button-close-background-active) !important;
+  color: var(--zehn-color-button-close-text-active) !important;
+  border-color: var(--zehn-color-button-close-border-active) !important;
+  --icon-color: var(--zehn-color-button-close-icon-active);
+}
+.ModalPosition_Dismiss .closeButton:is(:active:focus, :enabled:active:focus) {
+  background: var(--zehn-color-button-close-background-active-focus) !important;
+  color: var(--zehn-color-button-close-text-active-focus) !important;
+  border-color: var(--zehn-color-button-close-border-active-focus) !important;
+  --icon-color: var(--zehn-color-button-close-icon-active-focus);
+}
+.ModalPosition_Dismiss .closeButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-close-background-disabled) !important;
+  color: var(--zehn-color-button-close-text-disabled) !important;
+  border-color: var(--zehn-color-button-close-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-close-icon-disabled);
+}
+.ModalPosition_Dismiss .closeButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+  background: var(--zehn-color-button-close-background-disabled) !important;
+  color: var(--zehn-color-button-close-text-disabled) !important;
+  border-color: var(--zehn-color-button-close-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-close-icon-disabled);
+}
+
 ._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd.DialogButton._DialogLayout {
   appearance: unset !important;
   box-sizing: border-box !important;
@@ -18738,6 +19301,110 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton:is(:disabled, .Disabled) {
   --other-color: var(--zehn-color-button-dialog-text-other-disabled);
 }
 
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  transition: none !important;
+  opacity: 1 !important;
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  gap: var(--zehn-size-button-dialog-gap) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-dialog-text) !important;
+  line-height: var(--zehn-size-button-dialog-line) !important;
+  border: none !important;
+  outline-width: var(--zehn-size-button-dialog-border) !important;
+  outline-style: solid !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-dialog-border)) !important;
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button svg {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-height: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  inset: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  background: var(--icon-color) !important;
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button svg * {
+  display: none !important;
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button {
+  height: var(--zehn-size-button-dialog) !important;
+  min-height: var(--zehn-size-button-dialog) !important;
+  max-height: var(--zehn-size-button-dialog) !important;
+  width: var(--zehn-size-button-dialog) !important;
+  min-width: var(--zehn-size-button-dialog) !important;
+  max-width: var(--zehn-size-button-dialog) !important;
+  padding: var(--zehn-size-button-dialog-padding) !important;
+  border-radius: var(--zehn-size-button-dialog-radius) !important;
+  background: var(--zehn-color-button-dialog-background) !important;
+  color: var(--zehn-color-button-dialog-text) !important;
+  outline-color: var(--zehn-color-button-dialog-border) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon);
+  --other-color: var(--zehn-color-button-dialog-text-other);
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button:is(:focus, :enabled:focus) {
+  background: var(--zehn-color-button-dialog-background-focus) !important;
+  color: var(--zehn-color-button-dialog-text-focus) !important;
+  outline-color: var(--zehn-color-button-dialog-border-focus) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-focus);
+  --other-color: var(--zehn-color-button-dialog-text-other-focus);
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button:is(:hover, :enabled:hover) {
+  background: var(--zehn-color-button-dialog-background-hover) !important;
+  color: var(--zehn-color-button-dialog-text-hover) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-hover);
+  --other-color: var(--zehn-color-button-dialog-text-other-hover);
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button:is(:hover:focus, :enabled:hover:focus) {
+  background: var(--zehn-color-button-dialog-background-hover-focus) !important;
+  color: var(--zehn-color-button-dialog-text-hover-focus) !important;
+  outline-color: var(--zehn-color-button-dialog-border-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-hover-focus);
+  --other-color: var(--zehn-color-button-dialog-text-other-hover-focus);
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button:is(:active, :enabled:active) {
+  background: var(--zehn-color-button-dialog-background-active) !important;
+  color: var(--zehn-color-button-dialog-text-active) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-active);
+  --other-color: var(--zehn-color-button-dialog-text-other-active);
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button:is(:active:focus, :enabled:active:focus) {
+  background: var(--zehn-color-button-dialog-background-active-focus) !important;
+  color: var(--zehn-color-button-dialog-text-active-focus) !important;
+  outline-color: var(--zehn-color-button-dialog-border-active-focus) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-active-focus);
+  --other-color: var(--zehn-color-button-dialog-text-other-active-focus);
+}
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button:is(:disabled, :disabled) {
+  pointer-events: none !important;
+  background: var(--zehn-color-button-dialog-background-disabled) !important;
+  color: var(--zehn-color-button-dialog-text-disabled) !important;
+  outline-color: var(--zehn-color-button-dialog-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-dialog-icon-disabled);
+  --other-color: var(--zehn-color-button-dialog-text-other-disabled);
+}
+
 .vaNI84b_TV6hw20mhGl_d ._2pnPQKKjSPKgzPwlaXMqu_ {
   appearance: unset !important;
   box-sizing: border-box !important;
@@ -22749,6 +23416,19 @@ div:has(> ._1m8iQOSVziKDHiInrfskv_) {
   display: none !important;
 }
 
+.extensions-bar-container .extension-button .update-dot {
+  position: absolute !important;
+  top: 3px !important;
+  right: 3px !important;
+  background: var(--zehn-color-indicator) !important;
+  width: var(--zehn-size-indicator) !important;
+  height: var(--zehn-size-indicator) !important;
+  border-radius: var(--zehn-size-indicator-radius) !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
 .zehnReveal {
   position: relative;
   mask-position: -9001px -9001px;
@@ -23043,11 +23723,25 @@ html:has(._3t4AGpHmFth4qnMdNTgSXR) {
   background: transparent !important;
 }
 
-body:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):not(.zXrpABNQHpWKgSzqnGlL):not(._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayTimeline)):not(:has(._1EZ0UEmDBwvbnExphoyjh4)):not(.HoverPopupBody.HoverfriendHover.miniProfileHover):not(:has(._1xLWmfPlWGV47FujycPN_c)) {
+.LegacyPopup body,
+body.ModalDialogBody,
+body._1UJDmU3N-pkv7oTJ_Zf9nK,
+body.QsvsRVwbsApgKt1MhM0fz,
+.friendsui-container body,
+body.l25AfossKXBOZGYoty0tM {
   border: var(--zehn-size-border) solid var(--zehn-color-border) !important;
 }
+.LegacyPopup body.WindowFocus,
+body.ModalDialogBody.WindowFocus,
+body._1UJDmU3N-pkv7oTJ_Zf9nK.WindowFocus,
+body.QsvsRVwbsApgKt1MhM0fz.WindowFocus,
+.friendsui-container body.WindowFocus,
+body.l25AfossKXBOZGYoty0tM.WindowFocus {
+  border-color: var(--zehn-color-border-focus) !important;
+}
 
-body.WindowFocus:not(.ContextMenuPopupBody):not(:has(._1EI98QaSW75zbVd3gxgBfS)):not(.zXrpABNQHpWKgSzqnGlL):not(._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayTimeline)):not(:has(._1EZ0UEmDBwvbnExphoyjh4)):not(.HoverPopupBody.HoverfriendHover.miniProfileHover):not(:has(._1xLWmfPlWGV47FujycPN_c)) {
+body.WindowFocus.QsvsRVwbsApgKt1MhM0fz,
+body.WindowFocus.l25AfossKXBOZGYoty0tM {
   border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important;
 }
 
@@ -23113,10 +23807,33 @@ body,
   display: none !important;
 }
 
+.ModalOverlayBackground {
+  background: var(--zehn-color-backdrop) !important;
+}
+
+.ModalPosition_Content {
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  color: var(--zehn-color-text1) !important;
+}
+
 ._39oUCO1OuizVPwcnnv88no .qP17eBPXkfezFfexZ4hC3 {
   flex: 0 1 calc(var(--zehn-size-titlebar-control) * 3) !important;
   min-width: calc(var(--zehn-size-titlebar-control) * 3) !important;
   margin-left: auto !important;
+}
+
+.TitleBar,
+.ModalDialogPopup .title-area {
+  right: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.ModalPosition_Dismiss {
+  right: 0 !important;
+  top: 0 !important;
 }
 
 .title-area {
@@ -23152,86 +23869,8 @@ body,
   max-height: var(--zehn-size-navbar) !important;
 }
 
-.ModalPosition_Dismiss .closeButton,
-.title-area-icon {
-  padding: 0 !important;
-  margin: 0 !important;
-  transition: none !important;
-  border-radius: var(--zehn-size-radius-angular) !important;
-  width: var(--zehn-size-titlebar-control) !important;
-  min-width: var(--zehn-size-titlebar-control) !important;
-  max-width: var(--zehn-size-titlebar-control) !important;
-  height: var(--zehn-size-titlebar) !important;
-  min-height: var(--zehn-size-titlebar) !important;
-  max-height: var(--zehn-size-titlebar) !important;
-}
-
-._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon {
-  width: var(--zehn-size-navbar-control) !important;
-  min-width: var(--zehn-size-navbar-control) !important;
-  max-width: var(--zehn-size-navbar-control) !important;
-  height: var(--zehn-size-navbar) !important;
-  min-height: var(--zehn-size-navbar) !important;
-  max-height: var(--zehn-size-navbar) !important;
-}
-
-.title-area-icon {
-  background-color: var(--zehn-color-titlebar-control) !important;
-}
-.title-area-icon:hover {
-  background-color: var(--zehn-color-titlebar-control-hover) !important;
-}
-.title-area-icon:active {
-  background-color: var(--zehn-color-titlebar-control-active) !important;
-}
-
-.ModalPosition_Dismiss .closeButton,
-.title-area-icon.closeButton {
-  background: var(--zehn-color-titlebar-close) !important;
-}
-.ModalPosition_Dismiss .closeButton:hover,
-.title-area-icon.closeButton:hover {
-  background: var(--zehn-color-titlebar-close-hover) !important;
-}
-.ModalPosition_Dismiss .closeButton:active,
-.title-area-icon.closeButton:active {
-  background: var(--zehn-color-titlebar-close-pressed) !important;
-}
-
 .title-area-icon-inner {
   width: 100% !important;
-}
-
-.ModalPosition_Dismiss .closeButton svg,
-.title-area-icon svg {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  transform: none !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  background-color: var(--zehn-color-icon1) !important;
-}
-.ModalPosition_Dismiss .closeButton svg *,
-.title-area-icon svg * {
-  display: none !important;
-}
-
-body:not(.WindowFocus) .ModalPosition_Dismiss .closeButton:not(:hover) svg,
-body:not(.WindowFocus) .title-area-icon:not(.closeButton:hover) .title-area-icon-inner svg {
-  background-color: var(--zehn-color-icon3) !important;
-}
-
-.ModalPosition_Dismiss .closeButton:hover svg,
-.title-area-icon.closeButton:hover svg {
-  background-color: var(--zehn-color-control-light) !important;
-}
-
-.ModalPosition_Dismiss .closeButton:active svg,
-.title-area-icon.closeButton:active svg {
-  background-color: var(--zehn-color-control-dark) !important;
 }
 
 .title-area-icon.minimizeButton svg {
@@ -23249,29 +23888,6 @@ body:not(.WindowFocus) .title-area-icon:not(.closeButton:hover) .title-area-icon
 .ModalPosition_Dismiss .closeButton svg,
 .title-area-icon.closeButton svg {
   -webkit-mask-image: var(--zehn-icon-window-close) !important;
-}
-
-.TitleBar,
-.ModalDialogPopup .title-area {
-  right: 0 !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
-.ModalPosition_Dismiss {
-  right: 0 !important;
-  top: 0 !important;
-}
-
-.ModalOverlayBackground {
-  background: var(--zehn-color-backdrop) !important;
-}
-
-.ModalPosition_Content {
-  color: var(--zehn-color-text1) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  color: var(--zehn-color-text1) !important;
 }
 
 ._2O7tjQ9VWj5nhZ0y-pdpX2 {
@@ -23293,6 +23909,12 @@ body:not(.WindowFocus) .title-area-icon:not(.closeButton:hover) .title-area-icon
   z-index: 6 !important;
 }
 
+.ModalDialogPopup:not(._20pOdcUEtPsMIA8YXWGQim) .C9tvuqqEXGcrkcAtHrQ_R:has(.GamepadMode) ._2O7tjQ9VWj5nhZ0y-pdpX2 {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
 ._2O7tjQ9VWj5nhZ0y-pdpX2 .title-area-children {
   order: 1 !important;
 }
@@ -23303,6 +23925,42 @@ body:not(.WindowFocus) .title-area-icon:not(.closeButton:hover) .title-area-icon
 
 ._2O7tjQ9VWj5nhZ0y-pdpX2 .title-bar-actions.window-controls {
   order: 3 !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R .title-area-children {
+  line-height: var(--zehn-size-titlebar) !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-titlebar-text-padding) !important;
+  font-size: var(--zehn-size-titlebar-text) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R .title-area-icon,
+.C9tvuqqEXGcrkcAtHrQ_R .title-bar-actions {
+  max-width: none !important;
+  width: unset !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R ._3EcEdRFCaMHk3xQ16qirtm svg {
+  -webkit-mask-image: var(--zehn-icon-pin) !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R ._3EcEdRFCaMHk3xQ16qirtm._1dJ6yrpvLYTTBOt2IhFPua svg {
+  -webkit-mask-image: var(--zehn-icon-pinned) !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R ._2yvoVvrGHYXwux1bLxYc9p svg {
+  -webkit-mask-image: var(--zehn-icon-sync) !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R ._2J5BIjURexcIYfVhbHmgRT svg {
+  -webkit-mask-image: var(--zehn-icon-visibility) !important;
+}
+
+body:not(.WindowFocus) .ModalPosition_Dismiss .closeButton:not(:hover) svg,
+body:not(.WindowFocus) .title-area-icon:not(.closeButton:hover) .title-area-icon-inner svg {
+  background-color: var(--zehn-color-icon3) !important;
 }
 
 body:not(.WindowFocus) ._39oUCO1OuizVPwcnnv88no ._3s0lkohH8wU2do0K1il28Y {
@@ -23551,6 +24209,7 @@ body:not(.WindowFocus) ._1cWmu5TUWFAVHlv1EVaF8e {
   flex-direction: row !important;
 }
 
+._16sYNwqxz6giarbVaRUl7R.DialogContent .DialogHeader,
 ._16sYNwqxz6giarbVaRUl7R.DialogContent._3mgb-3_dHk3POEOVOh0Dvp .DialogHeader,
 .DialogContent.CFTLX2wIKOK3hNV-fS7_V .DialogHeader {
   position: relative !important;
@@ -25794,6 +26453,14 @@ p._3lnqGBzYap-Z2T81XBiBUU {
   -webkit-mask-image: var(--zehn-icon-checkmark) !important;
 }
 
+.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.TabbedPopupBrowser,
+.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_Browser,
+.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_Guides,
+.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_Discussions,
+.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_DLC {
+  padding: 0 !important;
+}
+
 ._2OoAjT3o0Ieng7ycuy86vZ.OverlayBrowser_Browser ._26Gmfe09NRsnF7eprTZYdY,
 ._2OoAjT3o0Ieng7ycuy86vZ.OverlayBrowser_Guides ._26Gmfe09NRsnF7eprTZYdY,
 ._2OoAjT3o0Ieng7ycuy86vZ.OverlayBrowser_Discussions ._26Gmfe09NRsnF7eprTZYdY,
@@ -26586,6 +27253,51 @@ p._3lnqGBzYap-Z2T81XBiBUU {
   font-weight: var(--zehn-size-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   margin-right: var(--zehn-size-spacing-md) !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R {
+  background: transparent !important;
+  position: relative !important;
+}
+
+.C9tvuqqEXGcrkcAtHrQ_R.OverlayTimer,
+.C9tvuqqEXGcrkcAtHrQ_R.GameOverview,
+.C9tvuqqEXGcrkcAtHrQ_R.Players,
+.C9tvuqqEXGcrkcAtHrQ_R.GameNotes,
+.C9tvuqqEXGcrkcAtHrQ_R.ScreenshotManager,
+.C9tvuqqEXGcrkcAtHrQ_R.Achievements,
+.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Guides,
+.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Discussions,
+.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_DLC,
+.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Browser {
+  border: none !important;
+}
+
+.OverlayTimer .TitleBar {
+  background: var(--zehn-color-section-acrylic) !important;
+  transition: background-color 0.2s ease, backdrop-filter 0.2s ease !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+}
+
+.WindowFocus .OverlayTimer .TitleBar {
+  background-color: var(--zehn-color-section-acrylic-focus) !important;
+}
+
+.OverlayTimer .TitleBar::after {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background-size: auto;
+  background-image: var(--zehn-transparency-effects-acrylic-texture);
+  transition: opacity 0.2s ease;
+}
+
+.WindowFocus .OverlayTimer .TitleBar::after {
+  opacity: var(--zehn-transparency-effects-acrylic);
 }
 
 /* SHARED ----------------------------------------------------------------------------------------------------------- */
@@ -31515,6 +32227,8 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
 .extendium.Extensions .PP7LM0Ow1K5qkR8WElLpt > div:not(.extension-context-menu) {
   background-color: var(--zehn-color-context-menu-background) !important;
   padding: var(--zehn-size-context-padding-menu) !important;
+  border: var(--zehn-size-context-border) solid var(--zehn-color-context-menu-border) !important;
+  border-radius: var(--zehn-size-context-radius) !important;
 }
 
 /* URL BAR CONTEXT MENU - SECTIONS */
@@ -31556,7 +32270,7 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
 .extendium.Extensions .eKmEXJCm_lgme24Fp_HWt:not(._2HuzvKQ2QMUJ-JJOeApaF1) ._2VcTlXFC64Jtg9gvtT6cmY {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
-  margin: var(--zehn-size-padding-xxs) 0 !important;
+  margin: 0 !important;
 }
 
 /* URL BAR CONTEXT MENU - BUTTONS */
@@ -31565,45 +32279,25 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
   align-items: flex-start !important;
 }
 
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi {
-  /*width: 100% !important;*/
-}
-
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ {
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ {
   gap: var(--zehn-size-spacing-button) !important;
-  /*width: 100% !important;*/
   padding: 0 var(--zehn-size-padding-xs) 0 0 !important;
   box-sizing: border-box !important;
+  flex-direction: row !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
 }
 
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button {
-  /*width: 100% !important;*/
-  height: var(--zehn-size-button-md) !important;
-  padding: var(--zehn-size-button-dialog-padding-square) !important;
-  /*flex-grow: 1 !important;*/
-}
-
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button svg {
-  width: 100% !important;
-  height: 100% !important;
-  background-color: var(--zehn-color-icon1) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-}
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button svg * {
-  display: none !important;
-}
-
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button[title=Pin] svg {
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button[title=Pin] svg {
   -webkit-mask-image: var(--zehn-icon-pin) !important;
 }
 
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button[title=Unpin] svg {
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button[title=Unpin] svg {
   -webkit-mask-image: var(--zehn-icon-pinned) !important;
 }
 
-.extendium.Extensions ._2VcTlXFC64Jtg9gvtT6cmY ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button[title=Manage] svg {
+.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button[title=Manage] svg {
   -webkit-mask-image: var(--zehn-icon-settings) !important;
 }
 
@@ -31687,6 +32381,10 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
 /* EXTENDIUM MANAGE EXTENSIONS */
 .extension-manager-popup {
   margin: 0 !important;
+  padding: var(--zehn-size-padding-md) !important;
+}
+
+.DialogContent_InnerWidth > form > .extension-manager-popup {
   padding: var(--zehn-size-padding-md) !important;
 }
 
@@ -31790,6 +32488,54 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
 }
 .extension-main .icon svg * {
   display: none !important;
+}
+
+/* UPDATE */
+.extension-main .icon .update-badge {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  border-radius: var(--zehn-size-radius-circular) !important;
+  background: var(--zehn-color-indicator) !important;
+  border: none !important;
+  transition: none !important;
+}
+
+.extension-main .icon .update-badge svg {
+  color: transparent !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  mask-size: var(--zehn-size-icon-xs) !important;
+  -webkit-mask-image: var(--zehn-icon-update) !important;
+}
+
+.extension-main .content .name-and-version .update-pill {
+  border: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: normal !important;
+  align-items: center !important;
+  border-radius: var(--zehn-size-tag-radius) !important;
+  color: var(--zehn-color-tag-text) !important;
+  background: var(--zehn-color-tag) !important;
+  padding: var(--zehn-size-tag-padding) !important;
+  font-size: var(--zehn-size-tag-text) !important;
+  gap: var(--zehn-size-tag-gap) !important;
+  height: var(--zehn-size-tag) !important;
+  width: fit-content !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+.extension-main .content .name-and-version .update-pill:hover {
+  background-color: var(--zehn-color-tag-hover) !important;
+  color: var(--zehn-color-tag-text) !important;
+}
+.extension-main .content .name-and-version .update-pill:active {
+  background-color: var(--zehn-color-tag-active) !important;
+  color: var(--zehn-color-tag-text) !important;
 }
 
 .extension-main .content {
@@ -32060,7 +32806,6 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
 /* EXTENDIUM SETTINGS */
 .extension-manager-popup > .DialogBody {
   padding: 0 !important;
-  /* max-width: var(--zehn-size-settings-content) !important; */
 }
 
 .extension-manager-popup > .DialogBody .header h1 {
@@ -48936,10 +49681,6 @@ span[title="Unfold line"]::after {
   display: block !important;
 }
 
-.C9tvuqqEXGcrkcAtHrQ_R {
-  position: relative !important;
-}
-
 ._1itstBRykbCEZZrECYg_YU ._3few7361SOf4k_YuKCmM62 {
   height: 720px !important;
   width: 850px !important;
@@ -51544,6 +52285,7 @@ button.TEWmsM70ZLEOxLAjDMpcv ._3Wb9yDmYPUJksCr7HmaT9H {
   --zehn-controls-list-spacing: 0 !important;
   gap: var(--zehn-size-spacing-button) !important;
   flex-wrap: nowrap !important;
+  justify-content: center !important;
 }
 
 /* FAMILY */
@@ -60244,150 +60986,6 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* OVERLAY ---------------------------------------------------------------------------------------------------------- */
-.C9tvuqqEXGcrkcAtHrQ_R ._3EcEdRFCaMHk3xQ16qirtm {
-  color: var(--zehn-color-icon1) !important;
-  width: 32px !important;
-  height: 32px !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R ._3EcEdRFCaMHk3xQ16qirtm svg {
-  background-color: var(--zehn-color-icon1) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  -webkit-mask-image: var(--zehn-icon-pin) !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R ._3EcEdRFCaMHk3xQ16qirtm._1dJ6yrpvLYTTBOt2IhFPua svg {
-  -webkit-mask-image: var(--zehn-icon-pinned) !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R ._2yvoVvrGHYXwux1bLxYc9p {
-  width: 32px !important;
-  height: 32px !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R ._2yvoVvrGHYXwux1bLxYc9p svg {
-  background-color: var(--zehn-color-icon1) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  -webkit-mask-image: var(--zehn-icon-sync) !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R ._2J5BIjURexcIYfVhbHmgRT {
-  width: 32px !important;
-  height: 32px !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R ._2J5BIjURexcIYfVhbHmgRT svg {
-  background-color: var(--zehn-color-icon1) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  -webkit-mask-image: var(--zehn-icon-visibility) !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R ._3EcEdRFCaMHk3xQ16qirtm svg,
-.C9tvuqqEXGcrkcAtHrQ_R ._2yvoVvrGHYXwux1bLxYc9p svg,
-.C9tvuqqEXGcrkcAtHrQ_R ._2J5BIjURexcIYfVhbHmgRT svg {
-  /* display: none !important; */
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R .title-area-children {
-  line-height: var(--zehn-size-titlebar) !important;
-  padding: var(--zehn-size-titlebar-text-padding) !important;
-  font-size: var(--zehn-size-titlebar-text) !important;
-  color: var(--zehn-color-text1) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R .title-area-icon,
-.C9tvuqqEXGcrkcAtHrQ_R .title-bar-actions {
-  max-width: none !important;
-  width: unset !important;
-}
-
-/* POPUP */
-.ModalDialogPopup:not(._20pOdcUEtPsMIA8YXWGQim) .C9tvuqqEXGcrkcAtHrQ_R:has(.GamepadMode) ._2O7tjQ9VWj5nhZ0y-pdpX2 {
-  position: absolute !important;
-  top: 0px !important;
-  right: 0px !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R.GameOverview,
-.C9tvuqqEXGcrkcAtHrQ_R.Players,
-.C9tvuqqEXGcrkcAtHrQ_R.GameNotes,
-.C9tvuqqEXGcrkcAtHrQ_R.ScreenshotManager,
-.C9tvuqqEXGcrkcAtHrQ_R.Achievements,
-.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Guides,
-.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Discussions,
-.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_DLC,
-.C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Browser {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border) !important; */
-  /* width: calc(100% - 2px) !important; */
-  border: none !important;
-}
-
-.l25AfossKXBOZGYoty0tM {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border) !important; */
-  border: none !important;
-}
-
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.GameOverview,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.Players,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.GameNotes,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.ScreenshotManager,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.Achievements,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Guides,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Discussions,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_DLC,
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.OverlayBrowser_Browser,
-.WindowFocus.l25AfossKXBOZGYoty0tM {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important; */
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R.OverlayTimer {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border) !important; */
-  border: none !important;
-}
-
-.WindowFocus .C9tvuqqEXGcrkcAtHrQ_R.OverlayTimer {
-  /* border: var(--zehn-size-border) solid var(--zehn-color-border-focus) !important; */
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ:not(.ScreenshotManager):not(.OverlayBrowser_Browser):not(.OverlayBrowser_Guides):not(.OverlayBrowser_Discussions):not(.OverlayBrowser_DLC) {
-  padding-bottom: 0 !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_Browser,
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_Guides,
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_Discussions,
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.OverlayBrowser_DLC {
-  padding-bottom: 0 !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.GameNotes,
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ.ScreenshotManager {
-  /* height: calc(100% - 2px) !important; */
-}
-
-.l25AfossKXBOZGYoty0tM .C9tvuqqEXGcrkcAtHrQ_R {
-  height: 100% !important;
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R._290hvyptb3mP0rOSaapjgZ {
-  /* height: calc(100% - 2px) !important; */
-}
-
-.C9tvuqqEXGcrkcAtHrQ_R {
-  /* display: block !important; */
-}
-
-.DialogContentTransition {
-  /* max-width: 100%; */
-}
-
 /* GAME RECORDING NEW */
 ._2Pb44QTSnDyc5GLNnVtegN {
   background-color: var(--zehn-color-base) !important;
@@ -65507,19 +66105,16 @@ svg._1jEeo7zqm7N8CC0LXx29Py {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* SCREENSHOTS ------------------------------------------------------------------------------------------------------ */
-.C9tvuqqEXGcrkcAtHrQ_R:not(.OverlayTimeline) {
-  /* background: var(--zehn-color-base) !important; */
-  background: transparent !important;
-}
-
 .ScreenshotManager:has(._2dU9SCYnAxjOss_afiRpoP) {
   background: var(--zehn-color-section) !important;
 }
 
+/* NOT SURE WHERE THIS IS USED */
 ._2PHQwIscEa7Yndfspwck_R {
-  padding: 48px 16px 16px 16px !important;
-  height: 100% !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  padding-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-dialog-padding)) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  border: none !important;
 }
 
 .ModalDialogPopup:has(.ScreenshotManager) {
@@ -66095,38 +66690,6 @@ svg._1jEeo7zqm7N8CC0LXx29Py {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* TIMER & CLOCK ---------------------------------------------------------------------------------------------------- */
-/* TITLE BAR */
-.OverlayTimer .TitleBar {
-  background: var(--zehn-color-section-acrylic) !important;
-  transition: background-color 0.2s ease, backdrop-filter 0.2s ease !important;
-  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
-  background-blend-mode: exclusion !important;
-}
-
-.dwmx .OverlayTimer .TitleBar {
-  /* backdrop-filter: none !important; */
-}
-
-.WindowFocus .OverlayTimer .TitleBar {
-  background-color: var(--zehn-color-section-acrylic-focus) !important;
-}
-
-.OverlayTimer .TitleBar::after {
-  content: "";
-  z-index: 0;
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  background-size: auto;
-  background-image: var(--zehn-transparency-effects-acrylic-texture);
-  transition: opacity 0.2s ease;
-}
-
-.WindowFocus .OverlayTimer .TitleBar::after {
-  opacity: var(--zehn-transparency-effects-acrylic);
-}
-
 /* PINNED VIEW */
 ._2OoAjT3o0Ieng7ycuy86vZ ._2iKbt7g083TQdi7RqdGIjo {
   padding-top: 16px !important;
@@ -66176,10 +66739,6 @@ svg._1jEeo7zqm7N8CC0LXx29Py {
   transition: background-color 0.2s ease, backdrop-filter 0.2s ease !important;
   backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-blend-mode: exclusion !important;
-}
-
-.dwmx .jSQQl34mj8a4NOKubD6AT ._1JTFbdOLNdh4RmamEfRS39 {
-  /* backdrop-filter: none !important; */
 }
 
 .WindowFocus .jSQQl34mj8a4NOKubD6AT ._1JTFbdOLNdh4RmamEfRS39 {
