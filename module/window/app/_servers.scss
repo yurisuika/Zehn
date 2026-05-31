@@ -15,6 +15,42 @@
   margin: 0 !important;
 }
 
+// ACRYLIC
+.DialogContent:has(>.DialogContent_InnerWidth>._2rxrVvbku0AC8Qbequ4-z9)::before,
+.DialogContent:has(>.DialogContent_InnerWidth>._2rxrVvbku0AC8Qbequ4-z9)::after {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--zehn-size-titlebar) + var(--zehn-size-servers-controlbar));
+  pointer-events: none;
+}
+
+.DialogContent:has(>.DialogContent_InnerWidth>._2rxrVvbku0AC8Qbequ4-z9)::before {
+  background: var(--zehn-color-section-acrylic) !important;
+  transition: background-color 0.2s ease, backdrop-filter 0.2s ease !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+}
+
+.WindowFocus .DialogContent:has(>.DialogContent_InnerWidth>._2rxrVvbku0AC8Qbequ4-z9)::before {
+  background-color: var(--zehn-color-section-acrylic-focus) !important;
+}
+
+.DialogContent:has(>.DialogContent_InnerWidth>._2rxrVvbku0AC8Qbequ4-z9)::after {
+  opacity: 0;
+  background-size: auto;
+  background-image: var(--zehn-transparency-effects-acrylic-texture);
+  transition: opacity 0.2s ease;
+}
+
+.WindowFocus .DialogContent:has(>.DialogContent_InnerWidth>._2rxrVvbku0AC8Qbequ4-z9)::after {
+  opacity: var(--zehn-transparency-effects-acrylic);
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -36,10 +72,10 @@
 // ACTIVE TAB
 ._2rxrVvbku0AC8Qbequ4-z9 button.DialogButton.L3t04yaV4NIy6qhVIquGp::after {
   content: "";
-  bottom: var(--zehn-size-focusbar-spacing);
-  left: var(--zehn-size-focusbar-spacing);
-  right: var(--zehn-size-focusbar-spacing);
-  height: var(--zehn-size-focusbar);
+  bottom: var(--zehn-size-focusbar-tablist-spacing);
+  left: var(--zehn-size-focusbar-tablist-spacing);
+  right: var(--zehn-size-focusbar-tablist-spacing);
+  height: var(--zehn-size-focusbar-tablist);
   background-color: var(--zehn-color-focusbar);
   display: block;
   position: absolute;
