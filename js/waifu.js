@@ -3,7 +3,9 @@ export const Waifu = {
 };
 export default Waifu;
 
-async function findWaifu(primaryListUrl = '/waifus/waifus.json', fallbackRelative = './../waifus.json') {
+async function findWaifu() {
+  const steamListUrl = 'https://steamloopback.host/waifus/waifus.json';
+  const fallbackRelative = './../waifus.json';
   const scriptEl = document.currentScript || (() => {
     const scripts = document.getElementsByTagName('script');
     return scripts[scripts.length - 1];
@@ -25,7 +27,7 @@ async function findWaifu(primaryListUrl = '/waifus/waifus.json', fallbackRelativ
     }
   };
 
-  const listA = await tryList(primaryListUrl);
+  const listA = await tryList(steamListUrl);
   const listB = listA ? null : await tryList(resolveRelativeToScript(fallbackRelative));
   const list = listA || listB;
   if (!list) {
