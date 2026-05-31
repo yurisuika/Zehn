@@ -73,7 +73,7 @@
       }
     },
     "Transparency Effects": {
-      "description": "Windows and surfaces appear translucent.\n\nEnables support for Reveal and Acrylic effects.\n\nAcrylic blurs behind supported windows when DWMX plugin is enabled.",
+      "description": "Windows and surfaces appear translucent. Enables support for Reveal and Acrylic effects.\n\nAllows behind-window blur when used with DWMX plugin.",
       "tab": "Personalization",
       "section": "Colors",
       "default": "yes",
@@ -112,80 +112,30 @@
         }
       }
     },
-    "Background Saturation": {
-      "description": "Select how much color is blended into the theme's background. This includes window backgrounds and acrylic effects.\n\nLower values preserve a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
+    "Background Color Mix": {
+      "description": "Adjust how much color is blended into the background.",
       "tab": "Personalization",
       "section": "Themes",
-      "default": "None",
-      "values": {
-        "None": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/background saturation/none.css"
-          }
-        },
-        "Light": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/background saturation/light.css"
-          }
-        },
-        "Medium": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/background saturation/medium.css"
-          }
-        },
-        "Heavy": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/background saturation/heavy.css"
-          }
-        },
-        "Full": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/background saturation/full.css"
-          }
-        }
+      "default": 0,
+      "slider": {
+        "cssVariable": "--option-background-color-mix",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%"
       }
     },
-    "Foreground Saturation": {
-      "description": "Select how much color is blended into the theme's foreground. This includes text, buttons, and other foreground elements.\n\nLower values preserve a better blend contrast, but higher values produce a truer color.\n\nYou may choose the color from the Colors section.",
+    "Foreground Color Mix": {
+      "description": "Adjust how much color is blended into the foreground.",
       "tab": "Personalization",
       "section": "Themes",
-      "default": "None",
-      "values": {
-        "None": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/foreground saturation/none.css"
-          }
-        },
-        "Light": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/foreground saturation/light.css"
-          }
-        },
-        "Medium": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/foreground saturation/medium.css"
-          }
-        },
-        "Heavy": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/foreground saturation/heavy.css"
-          }
-        },
-        "Full": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/personalization/themes/foreground saturation/full.css"
-          }
-        }
+      "default": 0,
+      "slider": {
+        "cssVariable": "--option-foreground-color-mix",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%"
       }
     },
     "Color Space": {
@@ -274,30 +224,17 @@
         }
       }
     },
-    "Download Progress Size": {
-      "description": "Choose the size of the download progress displayed on the navbar.",
+    "Download Preview Width": {
+      "description": "Adjust the width of the download preview.",
       "tab": "Scale and Layout",
       "section": "Navigation",
-      "default": "Normal",
-      "values": {
-        "Narrow": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/scale and layout/navigation/download progress size/narrow.css"
-          }
-        },
-        "Normal": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/scale and layout/navigation/download progress size/normal.css"
-          }
-        },
-        "Wide": {
-          "TargetCss": {
-            "affects": [".*"],
-            "src": "option/scale and layout/navigation/download progress size/wide.css"
-          }
-        }
+      "default": 250,
+      "slider": {
+        "cssVariable": "--option-download-preview-width",
+        "min": 200,
+        "max": 500,
+        "step": 50,
+        "unit": "px"
       }
     },
     "Show Account Avatar": {
@@ -401,7 +338,7 @@
       }
     },
     "Display Waifu": {
-      "description": "Display your waifu on the library.\n\nList your waifus directly in `waifus.json` in the skin folder or in the `/waifus/waifus.json` in the Steam loopback directory.",
+      "description": "Display your waifu on the library.\n\nList your waifus directly in `waifus.json` within the skin folder or in `/waifus/waifus.json` within the Steam loopback directory.",
       "tab": "Features",
       "section": "Waifu",
       "default": "no",
