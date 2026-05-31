@@ -468,12 +468,11 @@ Zehn.revealInner('.YzIcpcz4oFx-nndxro5jE');
 
 /* REVEAL SERVERS --------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._2X_ZpO2X_CIOIEfml3ZTcX', [
-  '.DialogButton', // BUTTONS
-  '.DialogDropDown' // DROPDOWN
+Zehn.addRevealClass('._341mdPDkZV7JkbIxGBREsd', [
+  '.DialogButton' // FOOTER BUTTONS
 ]);
 
-Zehn.revealInner('._2X_ZpO2X_CIOIEfml3ZTcX');
+Zehn.revealInner('._341mdPDkZV7JkbIxGBREsd');
 
 /* REVEAL SETTINGS + NOTES ------------------------------------------------------------------------------------------ */
 
@@ -519,11 +518,11 @@ Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
 
 /* REVEAL CLOCK/TIMER ----------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._1JTFbdOLNdh4RmamEfRS39', [
-  '.HijmccPB1BKyhOwhX1EVl' // BUTTONS
+Zehn.addRevealClass('._2j-W28YC1xAizcE7x9KkDT', [
+  '.DialogButton' // BUTTONS
 ]);
 
-Zehn.revealInner('._1JTFbdOLNdh4RmamEfRS39');
+Zehn.revealInner('._2j-W28YC1xAizcE7x9KkDT');
 
 /* REVEAL URL BAR --------------------------------------------------------------------------------------------------- */
 

@@ -237,7 +237,7 @@ function createButton(rootSelector, targetSelector, nameSelectors, callback, sho
       target.prepend(button);
     }
 
-    const icon = document.createElement('div');
+    const icon = document.createElement('svg');
     icon.classList.add(`zehnIcon`);
     button.append(icon);
   });
@@ -260,7 +260,7 @@ function createIconTitleContainer(rootSelector, targetSelector, shouldAppend = t
       title.textContent = target.childNodes[0].textContent;
       target.childNodes[0].remove();
 
-      const icon = document.createElement('div');
+      const icon = document.createElement('svg');
       icon.classList.add('zehnListIcon');
       container.prepend(icon);
     }
@@ -280,7 +280,7 @@ function createIconContainer(rootSelector, targetSelector, nameSelectors, should
       target.prepend(container);
     }
 
-    const icon = document.createElement('div');
+    const icon = document.createElement('svg');
     icon.classList.add('zehnIcon');
     container.prepend(icon);
   });
