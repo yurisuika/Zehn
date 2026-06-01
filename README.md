@@ -100,7 +100,7 @@ Zehn is built on the foundation of variables to make broad-sweeping changes a br
 > Use Millennium's Library Manager to select Zehn's options inside of Steam.
 >
 > #### SFP
-> Edit the config in `~/options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be. The skin folder must be named `Zehn` for this to work at the present time!
+> Edit the config in `~/options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be.
 
 ### Color Blending
 You can blend colors into both the foreground and background of Zehn. Give Steam more than just a native look, give it your look in either light or dark mode!

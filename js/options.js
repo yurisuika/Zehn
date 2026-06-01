@@ -5,8 +5,6 @@ export default Options;
 
 async function applyOptions(options = {}) {
   const {
-    source = 'https://steamloopback.host/skins/Zehn/options.json',
-    baseDir = 'https://steamloopback.host/skins/Zehn/option/',
     ext = '.css',
     booleanNameMap = { true: 'on', false: 'off' },
     sanitizeSegments = true,
@@ -15,10 +13,19 @@ async function applyOptions(options = {}) {
     checkExists = false,
     skipNull = true,
     checkStyleId = 'MillenniumQuickCss',
-    forceApplyWhenVarsPresent = false,
     variableStyleId = 'zehnVarOptions',
     units = ['px', '%', 'em', 'rem', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'cm', 'mm', 'in', 'pt', 'pc']
   } = options;
+
+  if (document.getElementById(checkStyleId)) return;
+
+  const scriptUrl = (document.currentScript && document.currentScript.src) || (typeof importMetaUrl !== 'undefined' ? importMetaUrl : (typeof import.meta !== 'undefined' ? import.meta.url : null)) || window.location.href;
+
+  const m = scriptUrl && scriptUrl.match(/\/skins\/([^\/]+)\//);
+  const themeFolder = m ? m[1] : 'Zehn';
+
+  const source = `https://steamloopback.host/skins/${themeFolder}/options.json`;
+  const baseDir = `https://steamloopback.host/skins/${themeFolder}/option/`;
 
   const container = document.querySelector(containerSelector) || document.head;
   const linkStore = new Map();
@@ -30,7 +37,7 @@ async function applyOptions(options = {}) {
   function normalizePath(keyPath) {
     if (Array.isArray(keyPath)) return keyPath.slice();
     return String(keyPath).split('.').map(s => s.trim()).filter(Boolean);
-  }
+  };
 
   function safeSegmentKeepSpaces(seg) {
     let s = String(seg).trim();
@@ -38,7 +45,7 @@ async function applyOptions(options = {}) {
     s = s.replace(/[^\w\s\-\._]/g, '');
     s = s.replace(/\s+/g, ' ');
     return s;
-  }
+  };
 
   function safeVarNameFromFinalSegment(seg) {
     return String(seg)
@@ -48,7 +55,7 @@ async function applyOptions(options = {}) {
       .replace(/[^a-z0-9\-_]/g, '')
       .replace(/^-+/, '')
       .replace(/-+$/, '') || 'unnamed';
-  }
+  };
 
   function buildHrefFromPath(keyPathArray, value) {
     const segments = keyPathArray.map(safeSegmentKeepSpaces).filter(Boolean);
@@ -60,11 +67,11 @@ async function applyOptions(options = {}) {
 
     const parts = [baseDir.replace(/\/+$/, '')].concat(segments).concat([valueSegment]);
     return parts.join('/') + ext;
-  }
+  };
 
   function makeAttrName(keyPath) {
     return `${attributePrefix}${String(keyPath).replace(/\./g, '-').replace(/\s+/g, '-')}`;
-  }
+  };
 
   function addLink(keyPath, href, rawValue) {
     removeLink(keyPath);
@@ -76,7 +83,7 @@ async function applyOptions(options = {}) {
     link.setAttribute(attrName, attrValue);
     container.appendChild(link);
     linkStore.set(String(keyPath), link);
-  }
+  };
 
   function removeLink(keyPath) {
     const k = String(keyPath);
@@ -85,13 +92,9 @@ async function applyOptions(options = {}) {
       existing.remove();
       linkStore.delete(k);
     }
-  }
+  };
 
-  async function maybeAddLink(keyPath, href, rawValue, varsPresent) {
-    if (varsPresent && !forceApplyWhenVarsPresent) {
-      removeLink(keyPath);
-      return false;
-    }
+  async function maybeAddLink(keyPath, href, rawValue) {
     if (!checkExists) {
       addLink(keyPath, href, rawValue);
       return true;
@@ -105,14 +108,14 @@ async function applyOptions(options = {}) {
       removeLink(keyPath);
       return false;
     }
-  }
+  };
 
   async function loadData(src) {
     if (typeof src === 'object' && src !== null) return src;
     const resp = await fetch(String(src), { cache: 'no-store' });
     if (!resp.ok) throw new Error('Failed to load JSON: ' + resp.status);
     return await resp.json();
-  }
+  };
 
   function collectLeaves(obj, prefix = []) {
     const leaves = [];
@@ -129,7 +132,7 @@ async function applyOptions(options = {}) {
       }
     }
     return leaves;
-  }
+  };
 
   function applyRootVars(styleId = variableStyleId, prefix = 'theme') {
     const styleEl = document.getElementById(styleId) || (() => {
@@ -145,7 +148,7 @@ async function applyOptions(options = {}) {
       lines.push(`  --${prefix}-${varName}: ${safeVal};`);
     }
     styleEl.textContent = `:root {\n${lines.join('\n')}\n}`;
-  }
+  };
 
   async function applyFrom(src) {
     const data = await loadData(src);
@@ -153,8 +156,6 @@ async function applyOptions(options = {}) {
 
     Object.keys(generatedMapping).forEach(k => delete generatedMapping[k]);
     Object.keys(varMap).forEach(k => delete varMap[k]);
-
-    const varsPresent = !!document.getElementById(checkStyleId);
 
     const tasks = leaves.map(async ([pathArray, value]) => {
       const keyPath = pathArray.join('.');
@@ -175,18 +176,13 @@ async function applyOptions(options = {}) {
 
       const href = buildHrefFromPath(pathArray, value);
       generatedMapping[keyPath] = { value, href, type: 'link' };
-      return await maybeAddLink(keyPath, href, value, varsPresent);
+      return await maybeAddLink(keyPath, href, value);
     });
 
     await Promise.all(tasks);
 
-    if (!varsPresent || forceApplyWhenVarsPresent) {
-      if (Object.keys(varMap).length > 0) {
-        applyRootVars(variableStyleId, 'option');
-      } else {
-        const existingStyle = document.getElementById(variableStyleId);
-        if (existingStyle) existingStyle.remove();
-      }
+    if (Object.keys(varMap).length > 0) {
+      applyRootVars(variableStyleId, 'option');
     } else {
       const existingStyle = document.getElementById(variableStyleId);
       if (existingStyle) existingStyle.remove();
@@ -195,10 +191,9 @@ async function applyOptions(options = {}) {
     return {
       appliedLinks: Array.from(linkStore.keys()),
       mapping: { ...generatedMapping },
-      varsApplied: { ...varMap },
-      varsPresent
+      varsApplied: { ...varMap }
     };
-  }
+  };
 
   const result = await applyFrom(source);
 
@@ -206,7 +201,6 @@ async function applyOptions(options = {}) {
     appliedLinks: result.appliedLinks,
     mapping: result.mapping,
     varsApplied: result.varsApplied,
-    varsPresent: result.varsPresent,
     refresh: async (newSource = source) => await applyFrom(newSource),
     removeAll: () => {
       for (const k of Array.from(linkStore.keys())) removeLink(k);
