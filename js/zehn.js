@@ -307,20 +307,16 @@ function createTitleContainer(rootSelector, targetSelector, nameSelectors, shoul
   });
 };
 
-function createContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
+function createContainer(rootSelector, targetSelector, nameSelectors) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     const container = document.createElement('div');
     container.classList.add('zehnContainer');
     nameSelectors.forEach((nameSelector) => {
       this.nameElement(container, nameSelector);
     });
-    if (shouldAppend) {
-      root.append(container);
-    } else {
-      root.prepend(container);
-    }
 
-    container.append(target);
+    target.parentNode.insertBefore(container, target);
+    container.appendChild(target);
   });
 };
 

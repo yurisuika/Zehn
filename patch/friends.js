@@ -53,9 +53,14 @@ Zehn.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zeh
   Zehn.addRootClassOnToggle(root, target, button, 'zehnCurrentUserOpened');
 });
 
+/* MOVE SORT BY INTO GROUP HEADER ----------------------------------------------------------------------------------- */
+
+Zehn.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
+  '.friendGroup.offlineFriends .groupHeaderContainer .SortByRecent' // SORT BY BUTTON
+]);
+
 /* SET VARIABLE FOR HEADER HEIGHT ----------------------------------------------------------------------------------- */
 
-Zehn.storeTargetHeightAsVariable('.friendsui-container', '.quickAccessFriends', '--zehn-size-friends-favorites');
 Zehn.storeTargetHeightAsVariable('.friendsui-container', '._14S4rlGAAqfqW6lMKYB2GM', '--zehn-size-friends-remoteplay');
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
