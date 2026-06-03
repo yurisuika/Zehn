@@ -396,13 +396,6 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   display: flex !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
-}
-
-.quickAccessFriends::after {
-  content: "";
-  display: block;
-  position: absolute;
-  inset: 0;
   mask-image: linear-gradient(to right, transparent, black var(--zehn-size-spacing-md), black calc(100% - var(--zehn-size-spacing-md)), transparent) !important;
 }
 
@@ -650,6 +643,19 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .addFriendButton .SVGIcon_AddFriend {
   -webkit-mask-image: var(--zehn-icon-contact-add) !important;
 }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SEARCH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -924,6 +930,88 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   border: unset !important;
 }
 
+// GAME GROUP LINES
+.friend.firstInGroup .SteamPlayerGroupLines,
+.friend.inGroup .SteamPlayerGroupLines,
+.friend.lastInGroup .SteamPlayerGroupLines,
+.SteamPlayerGroupFooter .SteamPlayerGroupLines {
+  border-width: 0 !important;
+  margin: 0 !important;
+  width: 0 !important;
+}
+
+.friend.firstInGroup .SteamPlayerGroupLines {
+  height: 0 !important;
+  margin-top: 0;
+  border-left: unset !important;
+  border-top: unset !important;
+  border-top-left-radius: 0 !important;
+}
+
+.SteamPlayerGroupLines {
+  display: none !important;
+}
+
+// GAME GROUP FOOTER
+.SteamPlayerGroupFooter {
+  --footer-height: var(--zehn-size-24);
+  margin: 0 !important;
+  padding: var(--zehn-size-friends-entry-padding) !important;
+  align-items: center !important;
+  height: var(--footer-height) !important;
+}
+
+.CompactFriendsList .SteamPlayerGroupFooter {
+  display: none !important;
+}
+
+.SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
+  border: unset !important;
+  width: var(--zehn-size-persona-avatar) !important;
+  transform: none !important;
+  background: transparent !important;
+  margin: auto 0 !important;
+  padding: 0 var(--zehn-size-padding-xs) !important;
+  line-height: var(--footer-height) !important;
+  height: var(--footer-height) !important;
+  box-sizing: border-box !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+}
+
+.CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
+  width: var(--zehn-size-status) !important;
+  height: var(--footer-height) !important;
+  margin: auto 0 !important;
+  transition: none !important;
+}
+
+.SteamPlayerGroupFooterCount .count {
+  width: 100% !important;
+  display: table-cell !important;
+  line-height: var(--footer-height) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  text-align: center !important;
+  color: var(--zehn-color-text3) !important;
+  margin-top: 0 !important;
+}
+
+.SteamPlayerGroupFooterLabel {
+  align-self: center !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+  height: initial !important;
+  margin-left: var(--zehn-size-spacing-md) !important;
+  font-size: var(--zehn-size-12) !important;
+  text-align: left !important;
+  color: var(--zehn-color-text3) !important;
+  -webkit-mask: none !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  line-height: var(--footer-height) !important;
+}
+
 // SORT BY BUTTON
 .groupHeaderContainer .SortByRecent {
   position: absolute !important;
@@ -1024,6 +1112,11 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   .friendStatusHover.Friend_ContextMenuActive::after {
     filter: var(--zehn-filter-selected-dark);
   }
+}
+
+// DRAGGING GHOST
+.friend.dragOriginGhost {
+  opacity: 1 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
