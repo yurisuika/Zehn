@@ -171,7 +171,7 @@ Zehn.addRevealClass('.chatRoomGroupNavColumn', [
 ]);
 Zehn.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomTextChannelsGroup>.chatRoomTextChannel', // TEXT
-  '.chatRoomVoiceChannel' // VOICE
+  '.chatRoomVoiceChannelNameContainer' // VOICE
 ], [
   'zehnRevealBackgroundOnly'
 ]);
