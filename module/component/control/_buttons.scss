@@ -185,34 +185,21 @@ button.DialogButton:where(.Primary, .Small) {
   inset: unset !important;
 }
 
-// HEADER - VOICE CONTROLS
-.friendListHeaderContainer .VoiceControlPanelButton {
-  flex-grow: 1 !important;
-  @include app.preset-dynamic(var(--zehn-size-friends-voice));
-}
-
-.compactView .friendListHeaderContainer .VoiceControlPanelButton {
-  flex-grow: 1 !important;
-  @include app.preset-dynamic(var(--zehn-size-friends-voice-compact));
-}
-
 // LIST - USER
 .ContextMenuButton {
-  @include app.preset-symmetric(var(--zehn-size-friends-entry-inner));
+  @include app.preset-symmetric(var(--zehn-size-button-app));
   @include app.shape-circular;
 }
 
-.chatRoomVoiceChannel .ContextMenuButton,
-.CompactView .ContextMenuButton {
-  @include app.preset-symmetric(var(--zehn-size-friends-entry-compact-inner));
+// QUICK CHAT BUTTON
+.activeVoiceButtons .chatRoomTextChannel,
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
+  @include app.preset-symmetric(var(--zehn-size-button-app));
   @include app.shape-circular;
 }
 
-// LIST - VOICE CONTROLS
-.chatRoomVoiceChannel .chatRoomTextChannel,
-.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel,
-.chatRoomVoiceChannel .VoiceControlPanelButton,
-.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton {
+// VOICE CONTROLS
+.VoiceControlPanelButton {
   @include app.preset-symmetric(var(--zehn-size-button-app));
   @include app.shape-circular;
 }
@@ -259,7 +246,7 @@ button.DialogButton:where(.Primary, .Small) {
 
 // CHANNEL LIST - PIN/UNPIN
 .chatRoomGroupNavCollapseExpand {
-  @include app.preset-asymmetric(var(--zehn-size-pagelist-entry), 100%);
+  @include app.preset-asymmetric(var(--zehn-size-pagelist-height), 100%);
 }
 
 // ENTRY
@@ -1019,7 +1006,7 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // TABS
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX button._1jEPp-_Fn1YtGfHenAZ7fT {
-  @include app.preset-wide(var(--zehn-size-servers-controlbar), $selected: ".L3t04yaV4NIy6qhVIquGp", $style: "tab");
+  @include app.preset-wide(var(--zehn-size-servers-controlbar), $disabled: ".Disabled", $selected: ".L3t04yaV4NIy6qhVIquGp", $style: "tab");
 }
 
 // CONTROLS

@@ -1,0 +1,390 @@
+// CHANNEL LIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// COLUMN
+.chatRoomGroupNavColumn {
+  // MARGIN FOR TITLEBAR
+  margin: 0 !important;
+  margin-top: var(--zehn-size-titlebar) !important;
+  position: absolute !important;
+  transition: none !important;
+  background: var(--zehn-color-section) !important;
+  display: none !important;
+  width: var(--zehn-size-chatlist-width) !important;
+  max-width: var(--zehn-size-chatlist-width) !important;
+  min-width: var(--zehn-size-chatlist-width) !important;
+  height: calc(100% - (var(--zehn-size-titlebar) + var(--zehn-size-button-app-large))) !important;
+  // PADDING FOR BUTTON
+  padding-bottom: var(--zehn-size-button-app-large) !important;
+}
+
+.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
+  width: var(--zehn-size-chatlist-height) !important;
+  min-width: var(--zehn-size-chatlist-height) !important;
+  max-width: var(--zehn-size-chatlist-height) !important;
+  height: calc(100% - var(--zehn-size-titlebar)) !important;
+  // BECAUSE THE PIN BUTTON IS NOT SHOWN
+  padding-bottom: 0 !important;
+}
+
+.MultiUserChat.zehnChannelListOpened .chatRoomGroupNavColumn {
+  display: flex !important;
+}
+
+// CHANNEL CONTAINER
+.ChannelTypeTitle {
+  min-height: var(--zehn-size-chatlist-height) !important;
+  line-height: var(--zehn-size-chatlist-height) !important;
+  background-color: transparent !important;
+  transform: none !important;
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  position: relative !important;
+}
+
+.chatRoomTextChannel,
+.chatRoomVoiceChannel,
+.chatRoomTextChannel.ActiveTextChannel,
+.chatRoomVoiceChannel.ActiveVoiceChannel,
+.compactView .chatRoomTextChannel,
+.compactView .chatRoomVoiceChannel,
+.compactView .chatRoomTextChannel.ActiveTextChannel,
+.compactView .chatRoomVoiceChannel.ActiveVoiceChannel {
+  width: 100% !important;
+  min-height: var(--zehn-size-chatlist-height) !important;
+  line-height: var(--zehn-size-chatlist-height) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: none !important;
+  color: var(--zehn-color-text1) !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  border: none !important;
+  background-color: var(--zehn-color-list-background) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+.chatRoomVoiceChannelIconGlow {
+  background: transparent !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+// SELECTED
+.chatRoomVoiceChannel.ActiveVoiceChannel::after,
+.chatRoomTextChannel.ActiveTextChannel::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: var(--zehn-size-focusbar-pagelist);
+  height: var(--zehn-size-focusbar-pagelist-length);
+  left: 0;
+  top: calc((var(--zehn-size-chatlist-height) - var(--zehn-size-focusbar-pagelist-length)) / 2);
+  background: var(--zehn-color-focusbar);
+  transition: transform 0.05s ease;
+}
+
+.chatRoomVoiceChannel.ActiveVoiceChannel:active::after,
+.chatRoomTextChannel.ActiveTextChannel:active::after {
+  transform: scale(1.05);
+}
+
+// NAME
+.ChannelTypeLabel,
+.ChannelTypeLabel:not(.NoPermission) {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-align: left !important;
+  transition: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  order: 2 !important;
+  color: inherit !important;
+}
+
+.chatRoomVoiceChannelNameContainer,
+.chatRoomTextChannelNameContainer,
+.compactView .chatRoomVoiceChannelNameContainer,
+.compactView .chatRoomTextChannelNameContainer {
+  height: var(--zehn-size-chatlist-height) !important;
+  line-height: var(--zehn-size-chatlist-height) !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  background-color: transparent !important;
+}
+
+div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
+  background-color: var(--zehn-color-list-background) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+.chatRoomVoiceChannelName,
+.chatRoomTextChannelName,
+.compactView .chatRoomVoiceChannelName,
+.compactView .chatRoomTextChannelName {
+  height: var(--zehn-size-chatlist-height) !important;
+  line-height: var(--zehn-size-chatlist-height) !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-style: normal !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height:var(--zehn-size-chatlist-height) !important;
+  border: none !important;
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  inset: unset !important;
+  position: relative !important;
+  transition: none !important;
+  background: transparent !important;
+}
+
+.chatRoomGroupName,
+.chatRoomDirectMessageEntry {}
+
+// ICON
+.chatRoomTextChannelsGroup>.chatRoomTextChannel>.chatRoomTextChannelIcon,
+.chatRoomVoiceChannelsGroup>.chatRoomVoiceChannel>.chatRoomVoiceChannelIcon,
+.chatRoomTextChannelNameContainer .chatRoomTextChannelIcon,
+.chatRoomVoiceChannelNameContainer .chatRoomVoiceChannelIcon {
+  padding: calc((var(--zehn-size-chatlist-height) - var(--zehn-size-icon-md)) / 2) !important;
+}
+
+.chatRoomTextChannelIcon,
+.chatRoomVoiceChannelIcon {
+  color: transparent !important;
+  transition: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: var(--zehn-size-icon-md) !important;
+  min-height: var(--zehn-size-icon-md) !important;
+  max-height: var(--zehn-size-icon-md) !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  max-width: var(--zehn-size-icon-md) !important;
+}
+
+.chatRoomTextChannelIcon svg,
+.chatRoomVoiceChannelIcon svg {
+  width: 100%  !important;
+  height: 100% !important;
+  background-color: var(--zehn-color-icon1) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  display: block !important;
+
+ * { display: none !important; }
+}
+
+.chatRoomTextChannelIcon svg {
+  -webkit-mask-image: var(--zehn-icon-chat-bubbles) !important;
+}
+
+.chatRoomVoiceChannelIcon svg {
+  -webkit-mask-image: var(--zehn-icon-volume) !important;
+}
+
+// QUICK CHAT BUTTON
+.chatRoomVoiceChannel .chatRoomTextChannel,
+.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
+  inset: unset !important;
+  top: var(--zehn-size-spacing-xs) !important;
+  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) !important;
+}
+
+.chatRoomVoiceChannel:not(.ActiveVoiceChannel) .chatRoomTextChannel {
+  display: none !important;
+}
+
+// ACTIVE QUICK CHAT
+.ScratchPadConnect {
+  display: none !important;
+  position: absolute !important;
+  margin: var(--zehn-size-focusbar-spacing) !important;
+  padding: 0 !important;
+  inset: unset !important;
+  top: calc((var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) - (var(--zehn-size-focusbar-spacing) + var(--zehn-size-focusbar))) !important;
+  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) !important;
+  height: var(--zehn-size-focusbar) !important;
+  width: calc(var(--zehn-size-button-app) - (2 * var(--zehn-size-focusbar-spacing))) !important;
+  background: var(--zehn-color-focusbar) !important;
+  letter-spacing: normal !important;
+  font-size: var(--zehn-size-10) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+.InsetWindowOpen .ActiveVoiceChannel .ScratchPadConnect {
+  display: block !important;
+}
+
+// ACTIVE VOICE CHANNEL PANEL
+.chatRoomVoiceChannel:not(.ActiveVoiceChannel),
+.chatRoomVoiceChannel:not(.ActiveVoiceChannel):is(:focus, :hover, :focus:hover, :active, :focus:hover) {
+  background-color: transparent !important;
+}
+
+// PARTICIPANTS
+.VoiceChannelParticipants.CompactFriendsList,
+.VoiceChannelParticipants.CompactFriendsList:is(:focus, :hover, :hover:focus, :active, :active:focus) {
+  background: var(--zehn-color-panel) !important;
+}
+
+.VoiceChannelParticipants.CompactFriendsList .friend {
+  height: var(--zehn-size-friends-entry-compact) !important;
+  padding: var(--zehn-size-friends-entry-compact-padding) !important;
+  margin: 0 !important;
+  align-items: center !important;
+  filter: none !important;
+}
+
+// EMPTY CHANNEL
+.emptyChannelNotice,
+.emptyChannelNotice.Visible {
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-10) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height:var(--zehn-size-16) !important;
+  text-align: center !important;
+  background: var(--zehn-color-panel) !important;
+}
+
+.emptyChannelNotice.Visible {
+  display: none !important;
+}
+
+.emptyChannelNotice:not(.Visible) {
+  display: none !important;
+}
+
+// VOICE CONTROLS
+.chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceControls {
+  margin: 0 !important;
+  padding: var(--zehn-size-padding-xs) !important;
+  background: var(--zehn-color-panel) !important;
+}
+
+.activeVoiceFlexBox,
+.chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceFlexBox {
+  height: 100% !important;
+  align-items: center !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+}
+
+// VOICE LABELS
+.activeVoiceLabels,
+.compactView .activeVoiceLabels {
+  line-height: var(--zehn-size-16) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  padding: 0 !important;
+  display: none !important;
+}
+
+.activeVoiceLabels .activeVoiceHeader {
+  letter-spacing: normal !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  display: none !important;
+}
+
+.activeVoiceLabels .activeVoiceName {
+  color: var(--zehn-color-text1) !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  max-height: 100% !important;
+}
+
+.activeVoiceLabels .activeVoiceName::before {
+  content: "\00a0" !important;
+  font-size: var(--zehn-size-14) !important;
+  display: none !important;
+}
+
+// BUTTONS WRAPPER
+.activeVoiceButtons {
+  flex-grow: 1 !important;
+  padding: 0 !important;
+  min-width: 100% !important;
+  background-color: transparent !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  height: fit-content !important;
+  justify-content: center !important;
+  gap: var(--zehn-size-spacing-button) !important;
+}
+
+// MENU BUTTON
+.chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
+  position: relative !important;
+  right: var(--zehn-size-spacing-xs) !important;
+  top: var(--zehn-size-spacing-xs) !important;
+}
+
+.VoiceIconCtn,
+.VoiceIconCtn:hover:is(:hover, :active) {
+  color: transparent !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  svg {
+    color: inherit !important;
+  }
+}
+
+// BUTTON ICONS
+.VoiceControlPanelButton.ToggleMicrophoneButton.Focusable svg {
+  -webkit-mask-image: var(--zehn-icon-mic) !important;
+}
+
+.VoiceControlPanelButton.ToggleMicrophoneButton.disabled.Focusable svg {
+  -webkit-mask-image: var(--zehn-icon-mic-mute) !important;
+}
+
+.VoiceControlPanelButton.ToggleVoiceOutputButton.Focusable svg {
+  -webkit-mask-image: var(--zehn-icon-volume) !important;
+}
+
+.VoiceControlPanelButton.ToggleVoiceOutputButton.disabled.Focusable svg {
+  -webkit-mask-image: var(--zehn-icon-volume-mute) !important;
+}
+
+.VoiceControlPanelButton.chatEndVoiceChat.Focusable svg,
+.chatRoomVoiceChannel.ActiveVoiceChannel .VoiceControlPanelButton.chatEndVoiceChat svg {
+  -webkit-mask-image: var(--zehn-icon-chat-leave) !important;
+}
+
+.VoiceControlPanelButton.chatPinRoom svg {
+  -webkit-mask-image: var(--zehn-icon-navigation) !important;
+}
+
+// BUTTONS SPACER
+.activeVoiceButtonsSpacer,
+.activeVoiceButtonsSpacerAfter {
+  display: none !important;
+  transition: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

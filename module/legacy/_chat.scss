@@ -70,9 +70,6 @@
   margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
 }
 
-.chatRoomGroupNavColumn {
-  margin-top: var(--zehn-size-titlebar) !important;
-}
 
 .chatHistory {
   margin: 0 !important;
@@ -516,7 +513,7 @@ span.mention {
   transition: none !important;
   position: relative !important;
   inset: unset !important;
-  border-radius: var(--zehn-avatar-shape-radius) !important;
+  border-radius: var(--zehn-size-persona-radius) !important;
 }
 
 span.mentionSearchMatch {
@@ -3094,25 +3091,7 @@ div:hover>.BBCodeCollapseControl {
 }
 
 /* CHAT ROOM NAV COLUMN */
-.chatRoomGroupNavColumn {
-  padding-bottom: var(--zehn-size-button-app-large) !important;
-  position: absolute !important;
-  transition: none !important;
-  background: var(--zehn-color-section) !important;
-  display: none !important;
-  max-width: var(--zehn-size-chat-pagelist-width) !important;
-  min-width: var(--zehn-size-chat-pagelist-width) !important;
-  height: calc(100% - (var(--zehn-size-titlebar) + var(--zehn-size-button-app-large))) !important;
-}
 
-.MultiUserChat.zehnChannelListOpened .chatRoomGroupNavColumn {
-  display: flex !important;
-}
-
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
-  padding-bottom: 0 !important;
-  height: calc(100% - var(--zehn-size-titlebar)) !important;
-}
 
 .chatRoomChannelGroups {
   display: flex !important;
@@ -3134,14 +3113,14 @@ div:hover>.BBCodeCollapseControl {
 
 .MultiUserChat.zehnChannelListOpened .ChatRoomGroup_MainAndChatEntry,
 .MultiUserChat.zehnChannelListOpened .chatHeader {
-  margin-left: var(--zehn-size-chat-pagelist-width) !important;
-  width: calc(100% - var(--zehn-size-chat-pagelist-width)) !important;
+  margin-left: var(--zehn-size-chatlist-width) !important;
+  width: calc(100% - var(--zehn-size-chatlist-width)) !important;
 }
 
 .MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry,
 .MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .chatHeader {
-  margin-left: var(--zehn-size-chat-pagelist-width-collapsed) !important;
-  width: calc(100% - var(--zehn-size-chat-pagelist-width-collapsed)) !important;
+  margin-left: var(--zehn-size-chatlist-width-collapsed) !important;
+  width: calc(100% - var(--zehn-size-chatlist-width-collapsed)) !important;
 }
 
 .ChatHistoryContainer {
@@ -3166,39 +3145,7 @@ div:hover>.BBCodeCollapseControl {
   transition: none !important;
 }
 
-.ChannelTypeTitle,
-.chatRoomTextChannel,
-.chatRoomVoiceChannel {
-  min-height: var(--zehn-size-chat-pagelist-entry) !important;
-  line-height: var(--zehn-size-chat-pagelist-entry) !important;
-}
 
-.chatRoomTextChannel.ActiveTextChannel,
-.chatRoomVoiceChannel.ActiveVoiceChannel {
-  background-color: transparent !important;
-}
-
-.chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannelName {
-  right: calc(var(--zehn-size-button-app) + (2 * var(--zehn-size-spacing-xs))) !important;
-}
-
-.chatRoomVoiceChannelName,
-.chatRoomTextChannelName {
-  text-align: left !important;
-  inset: 0 !important;
-  transition: none !important;
-  background: transparent !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  bottom: unset !important;
-  top: unset !important;
-  border-radius: 0 !important;
-  position: relative !important;
-  color: var(--zehn-color-text1) !important;
-  font-style: normal !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  line-height:var(--zehn-size-chat-pagelist-entry) !important;
-}
 
 .ChannelTypeTitle {
   color: var(--zehn-color-text3) !important;
@@ -3208,45 +3155,6 @@ div:hover>.BBCodeCollapseControl {
   color: var(--zehn-color-text1) !important;
 }
 
-.chatRoomTextChannel,
-.chatRoomVoiceChannel,
-.chatRoomTextChannel.ActiveTextChannel,
-.chatRoomVoiceChannel.ActiveVoiceChannel {
-  color: var(--zehn-color-text1) !important;
-  background-color: var(--zehn-color-list-background) !important;
-  transition: none !important;
-}
-
-.chatRoomTextChannel:hover,
-.chatRoomVoiceChannel:hover,
-.chatRoomTextChannel.ActiveTextChannel:hover,
-.chatRoomVoiceChannel.ActiveVoiceChannel:hover {
-  color: var(--zehn-color-text1) !important;
-  background-color: var(--zehn-color-list-background-hover) !important;
-}
-
-.chatRoomTextChannel:active,
-.chatRoomVoiceChannel:active,
-.chatRoomTextChannel.ActiveTextChannel:active,
-.chatRoomVoiceChannel.ActiveVoiceChannel:active {
-  color: var(--zehn-color-text1) !important;
-  background-color: var(--zehn-color-list-background-active) !important;
-}
-
-.chatRoomGroupNavCollapsed .chatRoomTextChannel.ActiveTextChannel,
-.chatRoomGroupNavCollapsed .chatRoomVoiceChannel.ActiveVoiceChannel {
-  background-color: var(--zehn-color-list-background) !important;
-}
-
-.chatRoomGroupNavCollapsed .chatRoomTextChannel.ActiveTextChannel:hover,
-.chatRoomGroupNavCollapsed .chatRoomVoiceChannel.ActiveVoiceChannel:hover {
-  background-color: var(--zehn-color-list-background-hover) !important;
-}
-
-.chatRoomGroupNavCollapsed .chatRoomTextChannel.ActiveTextChannel:active,
-.chatRoomGroupNavCollapsed .chatRoomVoiceChannel.ActiveVoiceChannel:active {
-  background-color: var(--zehn-color-list-background-active) !important;
-}
 
 .chatRoomVoiceChannelsGroup,
 .chatRoomTextChannelsGroup {
@@ -3255,124 +3163,29 @@ div:hover>.BBCodeCollapseControl {
   padding-bottom: 0 !important;
 }
 
-.ChannelTypeLabel {
-  color: inherit !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  text-align: left !important;
-  transition: none !important;
-}
 
-.ChannelTypeTitle .ChannelTypeLabel {
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: var(--zehn-size-radius-angular) !important;
-  order: 2 !important;
-  color: inherit !important;
-}
 
-.ChannelTypeTitle .ChannelTypeLabel:hover:not(.NoPermission) {
-  color: inherit !important;
-}
 
-.ChannelTypeTitle .ChannelTypeLabel:active:not(.NoPermission) {
-  transform: none !important;
-  color: inherit !important;
-}
 
-.chatRoomVoiceChannelName,
-.chatRoomTextChannelName,
-.chatRoomDirectMessageEntry {
-  padding-left: 0 !important;
-}
 
-.chatRoomTextChannel,
-.chatRoomVoiceChannel {
-  padding-left: 0 !important;
-}
 
-.chatRoomTextChannel,
-.chatRoomVoiceChannel {
-  background-color: transparent !important;
-  border: unset !important;
-  padding-bottom: 0 !important;
-}
+// .chatRoomGroupNavColumn div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:hover {
+//   background-color: transparent !important;
+// }
 
-.chatRoomTextChannel.ActiveTextChannel::after {
-  position: absolute;
-  display: block;
-  width: var(--zehn-size-focusbar-pagelist);
-  top: 12px;
-  bottom: 12px;
-  content: "";
-  left: 0;
-  background: var(--zehn-color-focusbar);
-}
-
-.chatRoomVoiceChannelNameContainer,
-.chatRoomTextChannelNameContainer {
-  height: var(--zehn-size-chat-pagelist-entry) !important;
-  padding: 0 !important;
-}
-
-.chatRoomGroupNavColumn div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:hover {
-  background-color: transparent !important;
-}
-
-.chatRoomGroupNavColumn div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
-  background-color: transparent !important;
-}
+// .chatRoomGroupNavColumn div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer:active {
+//   background-color: transparent !important;
+// }
 
 /* CHANNEL LIST ICONS */
-.ChatRoomListGroupItem .chatRoomVoiceChannelIcon,
-.chatDialogs .chatRoomTextChannelIcon,
-.chatDialogs .chatRoomVoiceChannelIcon {
-  margin: auto 0 !important;
-  width: var(--zehn-size-chat-pagelist-width-collapsed) !important;
-  height: 100% !important;
-  min-width: var(--zehn-size-chat-pagelist-width-collapsed) !important;
-  min-height: 100% !important;
-  max-width: var(--zehn-size-chat-pagelist-width-collapsed) !important;
-  max-height: 100% !important;
-}
 
-.ChatRoomListGroupItem .chatRoomVoiceChannelIcon svg,
-.chatDialogs .chatRoomTextChannelIcon svg,
-.chatDialogs .chatRoomVoiceChannelIcon svg {
-  width: var(--zehn-size-icon-md) !important;
-  height: 100% !important;
-  background-color: var(--zehn-color-icon1) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  margin: auto 16px !important;
-  box-sizing: border-box !important;
-  vertical-align: middle !important;
-  display: block !important;
 
- * { display: none !important; }
-}
 
-.chatDialogs .chatRoomTextChannelIcon svg {
-  -webkit-mask-image: var(--zehn-icon-chat-bubbles) !important;
-}
-
-.ChatRoomListGroupItem .chatRoomVoiceChannelIcon svg,
-.chatDialogs .chatRoomVoiceChannelIcon svg {
-  -webkit-mask-image: var(--zehn-icon-volume) !important;
-}
-
-/* CHAT ROOM LIST COLLAPSED */
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
-  min-width: var(--zehn-size-chat-pagelist-width-collapsed) !important;
-  max-width: var(--zehn-size-chat-pagelist-width-collapsed) !important;
-  margin-bottom: 0 !important;
-}
 
 .ChatRoomAddRoomBtn {
   opacity: 1 !important;
-  height: var(--zehn-size-chat-pagelist-entry) !important;
-  width: var(--zehn-size-chat-pagelist-width-collapsed) !important;
+  height: var(--zehn-size-chatlist-height) !important;
+  width: var(--zehn-size-chatlist-height) !important;
   margin: auto 0 !important;
   position: relative !important;
   transition: none !important;
@@ -3398,17 +3211,7 @@ div:hover>.BBCodeCollapseControl {
   background-color: var(--zehn-color-icon1) !important;
 }
 
-.chatRoomGroupNavCollapsed .ChannelTypeTitle .ChannelTypeLabel,
-.chatRoomGroupNavCollapsed .chatRoomTextChannelName {
-  top: 0 !important;
-  left: var(--zehn-size-chat-pagelist-entry) !important;
-  position: absolute !important;
-  transform: none !important;
-}
 
-.chatRoomGroupNavCollapsed .ChannelTypeTitle {
-  transform: none !important;
-}
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
   margin-left: 0 !important;
@@ -3418,19 +3221,8 @@ div:hover>.BBCodeCollapseControl {
   flex: unset !important;
 }
 
-.chatRoomGroupNavCollapsed .chatRoomTextChannel,
-.chatRoomGroupNavCollapsed .chatRoomVoiceChannel {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.chatRoomGroupNavCollapsed .chatRoomVoiceChannelIcon {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
 .chatRoomGroupNavCollapsed .DropTarget.chatRoomVoiceChannel.ActiveVoiceChannel.Panel.Focusable {
-  height: var(--zehn-size-chat-pagelist-entry) !important;
+  height: var(--zehn-size-chatlist-height) !important;
 }
 
 .chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed) .chatRoomVoiceChannelsGroup .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomVoiceChannel:hover {
@@ -3552,8 +3344,8 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .MemberListViewCompact .groupName {
-  width: var(--zehn-size-pagelist-entry) !important;
-  height: var(--zehn-size-pagelist-entry) !important;
+  width: var(--zehn-size-pagelist-height) !important;
+  height: var(--zehn-size-pagelist-height) !important;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -3565,8 +3357,8 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .chatroomBucket_regular.Panel.Focusable {
-  height: var(--zehn-size-pagelist-entry) !important;
-  max-height: var(--zehn-size-pagelist-entry) !important;
+  height: var(--zehn-size-pagelist-height) !important;
+  max-height: var(--zehn-size-pagelist-height) !important;
   position: relative !important;
   display: block !important;
   top: 0 !important;
@@ -3585,7 +3377,7 @@ div:hover>.BBCodeCollapseControl {
 .MemberListViewCompact .CompactFriendsList .friendGroup .friend,
 .CompactFriendsList .friendGroup .ChatRoomMemberScrollList_List .friend {
   box-sizing: border-box !important;
-  height: var(--zehn-size-pagelist-entry) !important;
+  height: var(--zehn-size-pagelist-height) !important;
   margin: 0 !important;
   padding:  var(--zehn-size-padding-xs) var(--zehn-size-padding-md) !important;
 }
@@ -3595,7 +3387,7 @@ div:hover>.BBCodeCollapseControl {
 .MemberListColumn:not(.MemberListViewCompact) .chatroomBucket_regular {
   padding: 0 !important;
   margin: 0 !important;
-  scroll-margin: var(--zehn-size-pagelist-entry) 0 !important;
+  scroll-margin: var(--zehn-size-pagelist-height) 0 !important;
   transition: transform 0.2s ease !important;
   animation: none !important;
 }
@@ -3614,7 +3406,7 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .MemberListColumn .Panel:has(>.friend) {
-  height: var(--zehn-size-pagelist-entry) !important;
+  height: var(--zehn-size-pagelist-height) !important;
   position: relative !important;
   inset: unset !important;
 }
