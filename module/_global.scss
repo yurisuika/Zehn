@@ -3,11 +3,19 @@
 * {
   -webkit-font-smoothing: antialiased !important;
   -webkit-box-shadow: none !important;
+  text-rendering: geometricPrecision !important;
   box-shadow: none !important;
   font-family: var(--zehn-font-family) !important;
   text-shadow: none !important;
   letter-spacing: normal !important;
   font-variant-emoji: text !important;
+}
+
+// NUKE SUBPIXEL COLOR FRINGING
+._14wqdluDeDnnEcg3OSLEmd * {
+  text-shadow: 0 0 0 transparent !important;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 ::-webkit-resizer {
