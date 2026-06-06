@@ -320,9 +320,9 @@ function createContainer(rootSelector, targetSelector, nameSelectors) {
   });
 };
 
-function createAdjacentElement(rootSelector, targetSelector, nameSelectors, shouldPlaceBefore = true, elementType = 'div') {
+function createAdjacentElement(rootSelector, targetSelector, nameSelectors, shouldPlaceBefore = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const element = document.createElement(elementType);
+    const element = document.createElement(div);
     nameSelectors.forEach((nameSelector) => {
       this.nameElement(element, nameSelector);
     });

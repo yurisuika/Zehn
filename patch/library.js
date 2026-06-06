@@ -398,6 +398,10 @@ Zehn.createIconContainer('._3lh8aaHNMcFvupuNhQDfFt', '.jjN9CtYfeIJoHpKOCmKOx', [
 
 Zehn.createAdjacentElement('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE', ['.zehnSeparator']);
 
+/* ADD SEPARATOR ELEMENT IN NOTIFICATIONS DROPDOWN ------------------------------------------------------------------ */
+
+Zehn.createAdjacentElement('._1UgM1Pm8SbTWX7_2f-crGt', '.MCa4RMSvWJwwWjcZP2wTT', ['.zehnSeparator'], false);
+
 /* REVEAL SIDEBAR --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
