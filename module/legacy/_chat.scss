@@ -11,78 +11,11 @@
   flex: 0 !important;
 }
 
-/* BORDER */
-.multiChatDialog {
-  background: transparent !important;
-  position: relative !important;
-  /* background: var(--zehn-color-app) !important; */
-}
-
-/* BACKGROUND */
-.multiChatDialog .ChatTabs::before,
-.multiChatDialog .ChatTabs::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  height: var(--zehn-size-titlebar);
-}
-
-.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::before,
-.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::after {
-  height: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
-}
-
-.multiChatDialog .ChatTabs::before {
-  background: var(--zehn-color-section-acrylic);
-  transition: background-color 0.2s ease;
-  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter);
-  background-blend-mode: exclusion;
-}
-
-.WindowFocus .multiChatDialog .ChatTabs::before {
-  background-color: var(--zehn-color-section-acrylic-focus);
-}
-
-.multiChatDialog .ChatTabs::after {
-  opacity: 0;
-  pointer-events: none;
-  background-size: auto;
-  background-image: var(--zehn-transparency-effects-acrylic-texture);
-  transition: opacity 0.2s ease;
-}
-
-.WindowFocus .multiChatDialog .ChatTabs::after {
-  opacity: var(--zehn-transparency-effects-acrylic);
-}
-
-.MultiUserChat::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  inset: 0;
-  background: var(--zehn-color-app);
-  margin-top: var(--zehn-size-titlebar);
-}
-
-.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader)::before {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
-}
 
 
-.chatHistory {
-  margin: 0 !important;
-  margin-top: var(--zehn-size-titlebar) !important;
-  padding: 0 !important;
-  position: relative;
-  flex-grow: 1 !important;
-  align-content: flex-end !important;
-}
 
-.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) .chatHistory {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
-}
+
+
 
 /* EMPTY */
 .chatDialogs .emptyChatDialogs {
@@ -3605,10 +3538,6 @@ div:hover>.BBCodeCollapseControl {
   height: var(--zehn-size-titlebar) !important;
   top: 0 !important;
 }
-
-
-
-
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed~.ChatRoomGroup_MainAndChatEntry .VoiceRoomChatHistory .chatHistoryScroll {
   margin: 0 !important;
