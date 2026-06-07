@@ -279,7 +279,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
 }
 
 // SIZE
-
+.speakerAvatar,
 .ChatRoomMultiFriendAvatar,
 .ChatRoomGroupAvatar,
 .nibodjvvrm86uCfnnAn4g.avatarHolder {
@@ -333,6 +333,21 @@ img.AB86vEzEKPL0y5fK_m4pT {
 .compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar {
   --avatar-size: var(--zehn-size-persona-compact-avatar);
   border-radius: var(--zehn-size-persona-compact-radius) !important;
+}
+
+.ChatRoomSpeaker .speaker .speakerAvatar,
+.ChatMsgSlashEmote .speaker .speakerAvatar,
+.ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame,
+.ChatMsgSlashEmote .speaker .speakerAvatar.hasAvatarFrame {
+  --avatar-size: var(--zehn-size-persona-avatar);
+  border-radius: var(--zehn-size-persona-radius) !important;
+}
+
+.chatWindow.compactView .ChatRoomSpeaker .speaker .speakerAvatar,
+.chatWindow.compactView .ChatMsgSlashEmote .speaker .speakerAvatar,
+.chatWindow.compactView .ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame,
+.chatWindow.compactView .ChatMsgSlashEmote .speaker .speakerAvatar.hasAvatarFrame {
+  --avatar-size: var(--zehn-size-persona-compact-avatar);
 }
 
 // MASK
@@ -444,6 +459,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
 // STATUS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // COLOR
+.speaker.ingame .speakerStatus,
 ._1d4A6Fu8SM56Ofli_SOVHl.in-game,
 ._1mMC7Hv71CzO0jfm_66W4K.in-game,
 ._1iutOH026zK2dbpsMFDmMm.in-game,
@@ -452,6 +468,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
   background: var(--zehn-color-status-ingame) !important;
 }
 
+.speaker.online .speakerStatus,
 ._1d4A6Fu8SM56Ofli_SOVHl.online,
 ._1mMC7Hv71CzO0jfm_66W4K.online,
 ._1iutOH026zK2dbpsMFDmMm.online,
@@ -460,6 +477,8 @@ img.AB86vEzEKPL0y5fK_m4pT {
   background: var(--zehn-color-status-online) !important;
 }
 
+.speaker.online.away .speakerStatus,
+.speaker.ingame.away .speakerStatus,
 ._1d4A6Fu8SM56Ofli_SOVHl.awayOrSnooze,
 ._1mMC7Hv71CzO0jfm_66W4K.awayOrSnooze,
 ._1iutOH026zK2dbpsMFDmMm.awayOrSnooze,
@@ -468,10 +487,13 @@ img.AB86vEzEKPL0y5fK_m4pT {
   background: var(--zehn-color-status-away) !important;
 }
 
+.speaker.online:has(._3IswZMeeD6ORStUjgv6Xh8) .speakerStatus,
+.speaker.ingame:has(._3IswZMeeD6ORStUjgv6Xh8) .speakerStatus,
 .AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) ._3xUpb5DWXPFNcHHIcv-9pe.avatarStatus {
   background: var(--zehn-color-status-disturb) !important;
 }
 
+.speaker.offline .speakerStatus,
 ._1d4A6Fu8SM56Ofli_SOVHl.offline,
 ._1mMC7Hv71CzO0jfm_66W4K.offline,
 ._1iutOH026zK2dbpsMFDmMm.offline,
@@ -515,6 +537,11 @@ img.AB86vEzEKPL0y5fK_m4pT {
   -webkit-mask-image: var(--zehn-mask-status) !important;
 }
 
+.compactView .ChatSpeaker ._3xUpb5DWXPFNcHHIcv-9pe.avatarStatus {
+  -webkit-mask-image: none !important;
+  border-radius: var(--zehn-size-indicator-radius) !important;
+}
+
 ._1d4A6Fu8SM56Ofli_SOVHl.awayOrSnooze,
 ._1mMC7Hv71CzO0jfm_66W4K.awayOrSnooze,
 ._1iutOH026zK2dbpsMFDmMm.awayOrSnooze,
@@ -530,6 +557,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
 .offline ._3xUpb5DWXPFNcHHIcv-9pe.avatarStatus {
   -webkit-mask-image: var(--zehn-mask-status-offline) !important;
 }
+
 
 .AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) ._3xUpb5DWXPFNcHHIcv-9pe.avatarStatus,
 .friendCategoryContainer:has(._3IswZMeeD6ORStUjgv6Xh8) ._3xUpb5DWXPFNcHHIcv-9pe.avatarStatus {

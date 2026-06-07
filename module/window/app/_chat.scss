@@ -327,7 +327,7 @@
 
 
 
-// DIALOGS CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// CHATS CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // OUTER
 .chatDialogs {
@@ -577,6 +577,16 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .chatRoomGroupName,
 .chatRoomDirectMessageEntry {}
 
+// RENAME
+.chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
+  margin: auto 0 !important;
+  width: auto !important;
+}
+
+.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
+  display: none !important;
+}
+
 // ICON
 .chatRoomTextChannelsGroup>.chatRoomTextChannel>.chatRoomTextChannelIcon,
 .chatRoomVoiceChannelsGroup>.chatRoomVoiceChannel>.chatRoomVoiceChannelIcon,
@@ -682,6 +692,58 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   margin: 0 !important;
   align-items: center !important;
   filter: none !important;
+}
+
+.voiceStatusIconsContainer {
+  margin: 0 !important;
+  gap: var(--zehn-size-spacing-xxs) !important;
+}
+
+.voicestatusIcon,
+.voicestatusIcon.voiceStatusMic,
+.voicestatusIcon.voiceStatusOutput {
+  opacity: 1 !important;
+  transition: none !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+
+  svg {
+    display: block !important;
+    width: 100%  !important;
+    height: 100% !important;
+    background-color: var(--zehn-color-icon3) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-icon-md) !important;
+
+  * { display: none !important; }
+  }
+}
+
+.voicestatusIcon.voiceStatusOutput svg {
+  -webkit-mask-image: var(--zehn-icon-volume) !important;
+}
+
+.output_muted_self .voicestatusIcon.voiceStatusOutput svg,
+.output_muted_remotely .voicestatusIcon.voiceStatusOutput svg {
+  -webkit-mask-image: var(--zehn-icon-volume-mute) !important;
+}
+
+.voicestatusIcon.voiceStatusOutput.disabled svg {
+  -webkit-mask-image: var(--zehn-icon-volume-disabled) !important;
+}
+
+.voicestatusIcon.voiceStatusMic svg {
+  -webkit-mask-image: var(--zehn-icon-mic) !important;
+}
+
+.mic_muted_self .voicestatusIcon.voiceStatusMic svg,
+.mic_muted_remotely .voicestatusIcon.voiceStatusMic svg {
+  -webkit-mask-image: var(--zehn-icon-mic-mute) !important;
+}
+
+.no_mic_for_session .voicestatusIcon.voiceStatusMic svg {
+  -webkit-mask-image: var(--zehn-icon-mic-disabled) !important;
 }
 
 // EMPTY CHANNEL
@@ -843,6 +905,11 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // CHAT CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.chatWindow {
+  background: transparent !important;
+  font-size: var(--zehn-size-14) !important;
+}
+
 // ABSOLUTE BACKGROUND THAT DOES NOT GO BELOW ACRYLIC HEADER
 .MultiUserChat::before {
   content: "";
@@ -855,19 +922,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader)::before {
   margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
-}
-
-.chatHistory {
-  margin: 0 !important;
-  margin-top: var(--zehn-size-titlebar) !important;
-  padding: 0 !important;
-  position: relative;
-  flex-grow: 1 !important;
-  align-content: flex-end !important;
-}
-
-.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) .chatHistory {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
 }
 
 // MOVE OVER STUFF WHEN NAV COLUMN IS OPENED
@@ -1084,9 +1138,11 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // CHAT AND ENTRY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// CONTAINER
 .MultiUserChat .ChatRoomGroup_MainAndChatEntry {
   margin: 0 !important;
 }
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1104,6 +1160,621 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 // CONTAINER
 .ChatHistoryContainer {
   transition: none !important;
+}
+
+// SCROLL WRAPPER
+.chatHistoryScroll {
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  display: block !important;
+}
+
+// SCROLL CONTAINER
+.chatHistory {
+  margin: 0 !important;
+  margin-top: var(--zehn-size-titlebar) !important;
+  padding: 0 !important;
+  position: relative;
+  flex-grow: 1 !important;
+  align-content: flex-end !important;
+}
+
+.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) .chatHistory {
+  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+}
+
+// MESSAGES
+.msg {
+  transition: none !important;
+}
+
+.MultiUserChat .msg {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.MultiUserChat .ChatMessageBlock>.msg {
+  padding: var(--zehn-size-padding-xxs) 0 !important;
+}
+
+.MultiUserChat.compactView .ChatMessageBlock>.msg {
+  padding: var(--zehn-size-padding-xxs) 0 !important;
+}
+
+.MultiUserChat .ChatMessageBlock .msg.ChatMsgSlashEmote {
+  padding: 0 !important;
+}
+
+.ChatMessageBlock,
+.compactView .ChatMessageBlock,
+.ChatMessageBlock.LastMessageBlock,
+.compactView .ChatMessageBlock.LastMessageBlock,
+.MultiUserChat .msg.ChatMsgSlashEmote,
+.MultiUserChat .msg.serverMsg,
+.MultiUserChat .msg.timeDivision {
+  margin: 0 !important;
+  margin-bottom: var(--zehn-size-spacing-xs) !important;
+}
+
+// MESSAGE BACKGROUND
+.ChatMessageBlock .msg._3qYm9oxf8MdyvQDJgbfCrF,
+.ChatSpeaker+._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2),
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2)) .ChatSpeaker {
+  background-color: var(--zehn-color-chat-background) !important;
+}
+
+.ChatMessageBlock .msg._3qYm9oxf8MdyvQDJgbfCrF:hover,
+.ChatSpeaker:hover+._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2),
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2)) .ChatSpeaker:hover,
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2):hover) .ChatSpeaker {
+  background-color: var(--zehn-color-chat-background-hover) !important;
+}
+
+.ChatMessageBlock .msg._3qYm9oxf8MdyvQDJgbfCrF:active,
+.ChatSpeaker:active+._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2),
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2)) .ChatSpeaker:active,
+.ChatMessageBlock:has(._3qYm9oxf8MdyvQDJgbfCrF:nth-of-type(2):active) .ChatSpeaker {
+  background-color: var(--zehn-color-chat-background-active) !important;
+}
+
+// MESSAGE BACKGROUND WITH MENTION
+.ChatMessageBlock:has(.mention.me) {
+  background-color: var(--zehn-color-chat-mention-background) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-chat-mention-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-chat-mention-background-active) !important;
+  }
+}
+
+.ChatMessageBlock:has(.mention.me)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--zehn-size-focusbar);
+  background: var(--zehn-color-focusbar);
+  z-index: 5;
+}
+
+// CHAT SPEAKER
+.speakerHoverArea {
+  min-width: auto !important;
+  align-items: center !important;
+}
+
+.ChatRoomSpeaker {
+  margin: 0 !important;
+}
+
+.compactView .ChatRoomSpeaker {
+  margin: 0 !important;
+}
+
+.ChatRoomSpeaker .speaker,
+.msg.ChatMsgSlashEmote .speaker,
+.msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
+  margin: 0 !important;
+  padding: 0 var(--zehn-size-padding-xl) 0 var(--zehn-size-padding-xxxl) !important;
+  color: var(--zehn-color-text1) !important;
+  background: transparent !important;
+  line-height: var(--zehn-size-chat-speaker) !important;
+  overflow: visible !important;
+}
+
+.chatWindow.compactView .ChatRoomSpeaker .speaker,
+.chatWindow.compactView .msg.ChatMsgSlashEmote .speaker,
+.chatWindow.compactView .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
+  padding: 0 var(--zehn-size-padding-xl) !important;
+}
+
+// SPEAKER AVATAR
+.ChatRoomSpeaker .speaker .speakerAvatar,
+.ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame {
+  position: absolute !important;
+  top: var(--zehn-size-spacing-sm) !important;
+  left: var(--zehn-size-spacing-md) !important;
+}
+
+.ChatMsgSlashEmote .speaker .speakerAvatar,
+.ChatMsgSlashEmote .speaker .speakerAvatar.hasAvatarFrame {
+  position: absolute !important;
+  // MORE OFFSET BECAUSE THIS IS INLINE AND HAS THE MSG PADDING
+  top: var(--zehn-size-spacing-md) !important;
+  left: var(--zehn-size-spacing-md) !important;
+  opacity: 0 !important;
+}
+
+// SPEAKER STATUS
+.ChatRoomSpeaker .speaker .speakerStatus,
+.ChatMsgSlashEmote .speaker .speakerStatus {
+  height: var(--zehn-size-indicator-large) !important;
+  width: var(--zehn-size-indicator-large) !important;
+  border-radius: var(--zehn-size-indicator-radius) !important;
+  margin: 0 !important;
+  margin-right: var(--zehn-size-spacing-xs) !important;
+  align-self: center !important;
+  display: none !important;
+}
+
+// TIMESTAMP
+.speakerTimeStamp,
+.FriendChatTimeStamp,
+.FriendChatTimeStamp.ingame,
+.FriendChatTimeStamp.online,
+.FriendChatTimeStamp.offline {
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-12) !important;
+  top: 0 !important;
+  margin: 0 !important;
+  margin-left: var(--zehn-size-spacing-md) !important;
+  line-height: var(--zehn-size-chat-speaker) !important;
+  border: none !important;
+}
+
+// MESSAGE TEXT
+.msgText,
+.MultiUserChat .isCurrentUser .msgText {
+  color: var(--zehn-color-text1) !important;
+  display: inline-block !important;
+  gap: var(--zehn-size-spacing-xxs) !important;
+}
+
+.msgText {
+  padding: 0 var(--zehn-size-padding-xl) 0 var(--zehn-size-padding-xxxl) !important;
+  line-height: var(--zehn-size-chat-msg) !important;
+  font-size: var(--zehn-size-14) !important;
+}
+
+.chatWindow.compactView .msgText {
+  padding: 0 var(--zehn-size-padding-xl) !important;
+}
+
+.msgText span {
+  line-height: var(--zehn-size-chat-msg) !important;
+  display: contents !important;
+}
+
+// MESSAGE TEXT `/ME`
+.chatWindow .msg.ChatMsgSlashEmote .SpeakerLineBreak .msgText {
+  margin: 0 !important;
+  margin-left: var(--zehn-size-spacing-xxs) !important;
+  padding: 0 !important;
+  line-height: var(--zehn-size-chat-speaker) !important;
+}
+
+// MENTION
+span.mention {
+  border-radius: var(--zehn-size-radius-sm);
+  padding: 0 var(--zehn-size-padding-xxs) !important;
+  margin: auto 0 !important;
+  line-height: var(--zehn-size-chat-msg) !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  border: none !important;
+  max-width: fit-content !important;
+  background: var(--zehn-color-tag) !important;
+  font-weight: inherit !important;
+  display: inline-flex !important;
+  gap: 0 !important;
+  vertical-align: unset !important;
+}
+
+span.mention.me {
+  background: var(--zehn-color-accent-50) !important;
+}
+
+.MentionAtSymbol {
+  margin: 0 !important;
+  color: inherit !important;
+}
+
+// SPOILERS
+.msgText .spoilerMsgText {
+  border: none !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  padding: 0 !important;
+  background-color: var(--zehn-color-panel) !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.msgText .spoilerMsgText:hover {
+  background-color: transparent !important;
+}
+
+.spoilerMsg.spoilerMedia .BBCodeResizableComponent .BBCodeResizableElement,
+.msgText .spoilerMsgText .spoilerMsg {
+  opacity: 0 !important;
+  filter: none !important;
+  transition: none !important;
+  margin: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.spoilerMsg.spoilerMedia .BBCodeResizableComponent.ActivelyResizing .BBCodeResizableElement,
+.spoilerMsg.spoilerMedia .BBCodeResizableComponent:hover .BBCodeResizableElement,
+.msgText .spoilerMsgText:hover .spoilerMsg,
+.RevealSpoiler .msgText .spoilerMsgText .spoilerMsg {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+// FIXED WIDTH
+._1yc3xGYs2RUiAyvK1_R6uy {
+  color: inherit !important;
+  font-family: var(--zehn-font-family-mono) !important;
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+}
+
+// CODE BLOCK
+._3_ZYN6D580G5urr8K_TtLP {
+  font-family: var(--zehn-font-family-mono) !important;
+  color: var(--zehn-color-code-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-code-text) !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-code-padding) !important;
+  background: var(--zehn-color-code-background) !important;
+  border-radius: var(--zehn-size-code-radius) !important;
+  border: none !important;
+}
+
+._3_ZYN6D580G5urr8K_TtLP .pln {
+  color: var(--zehn-color-code-text-plain) !important;
+}
+
+._3_ZYN6D580G5urr8K_TtLP .lit {
+  color: var(--zehn-color-code-text-literal) !important;
+}
+
+._3_ZYN6D580G5urr8K_TtLP .pun {
+  color: var(--zehn-color-code-text-syntax) !important;
+}
+
+._3_ZYN6D580G5urr8K_TtLP .str {
+  color: var(--zehn-color-code-text-string) !important;
+}
+
+._3_ZYN6D580G5urr8K_TtLP .com {
+  color: var(--zehn-color-code-text-comment) !important;
+  font-style: italic !important;
+}
+
+._3_ZYN6D580G5urr8K_TtLP .typ {
+  color: var(--zehn-color-code-text-class) !important;
+}
+
+._3_ZYN6D580G5urr8K_TtLP .kwd {
+  color: var(--zehn-color-code-keyword) !important;
+}
+
+// QUOTE
+.qRqgef0RWpUsajcxlKiYn {
+  font-style: italic !important;
+  color: var(--zehn-color-text3) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-left: var(--zehn-size-padding-md) !important;
+  background: transparent !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  border-left: var(--zehn-size-focusbar) solid var(--zehn-color-focusbar-disabled) !important;
+}
+
+// COIN FLIP
+._3HJh0r_3r_Hpr7oB_JgnSF {
+  margin-left: var(--zehn-size-spacing-xxs) !important;
+  color: inherit !important;
+  text-transform: uppercase !important;
+}
+
+// RANDOM NUMBER
+._19oXzN3YaxYoemFb8MNa4P {
+  opacity: 1 !important;
+}
+
+.iBhRx5MTSqx8Ox_1CorlW {
+  min-width: var(--zehn-size-16) !important;
+  border: none !important;
+  border-radius: var(--zehn-size-radius-xs) !important;
+  color: var(--zehn-color-text1) !important;
+  background-color: var(--zehn-color-panel) !important;
+  position: relative !important;
+  max-height: var(--zehn-size-24) !important;
+  margin: 0 !important;
+  display: inline-grid !important;
+  margin-right: var(--zehn-size-spacing-xxxs) !important;
+}
+
+._3dRhiHtjVJeePaxVr8u3mF {
+  margin: 0 !important;
+}
+
+._297MYFa05D6dJMSX4QCpTR:not(.RjUvc4fvPfIokdvwIhM8c) ._3dRhiHtjVJeePaxVr8u3mF._2A7qLJ1CkYAU3R9iijCtgS {
+  opacity: 1 !important;
+  color: var(--zehn-color-text4) !important;
+}
+
+._8AKXz82J5EkgZ7VQMVw_z {
+  background: transparent !important;
+  inset: 0 !important;
+  border-radius: var(--zehn-size-radius-xs) !important;
+}
+
+// TEXT LINK
+.msg .msgText>a {
+  border-bottom: 1px dotted currentColor !important;
+}
+
+// SERVER MESSAGE
+.msg.serverMsg .msgText {
+  box-sizing: border-box !important;
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text3) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+.msg.serverMsg .msgText span:last-of-type {
+  margin: 0 !important;
+}
+
+// TIME DIVISION
+.msg.timeDivision {
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-10) !important;
+  width: 100% !important;
+  display: flex !important;
+  height: fit-content !important;
+  line-height: var(--zehn-size-16) !important;
+}
+
+.timeDivision.time_passes .preHorizDivider {
+  height: var(--zehn-size-separator) !important;
+  border: unset !important;
+  background: var(--zehn-color-separator) !important;
+  flex-grow: 1 !important;
+  margin: auto 0 auto var(--zehn-size-spacing-md) !important;
+  width: unset !important;
+}
+
+.timeDivision.time_passes .horizDivider {
+  height: var(--zehn-size-separator) !important;
+  border: unset !important;
+  background: var(--zehn-color-separator) !important;
+  flex-grow: 1 !important;
+  margin: auto var(--zehn-size-spacing-md) auto 0 !important;
+}
+
+.timeDivision .preHorizDivider {
+  background: var(--zehn-color-separator) !important;
+  flex-grow: 1 !important;
+  margin: auto var(--zehn-size-spacing-md) !important;
+  height: var(--zehn-size-separator) !important;
+  width: unset !important;
+}
+
+.timeDivision .horizDivider {
+  background: var(--zehn-color-separator) !important;
+  flex-grow: 1 !important;
+  margin: auto var(--zehn-size-spacing-md) !important;
+  height: var(--zehn-size-separator) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MENTION/COMMAND PICKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._1QU3cLCGXCmYTUvjYiqqz6 {
+  background: var(--zehn-color-modal-background) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-modal-radius-small) !important;
+  bottom: var(--zehn-size-spacing-xs) !important;
+  left: var(--zehn-size-spacing-xs) !important;
+  right: var(--zehn-size-spacing-xs) !important;
+  padding: var(--zehn-size-padding-xs) !important;
+  box-sizing: border-box !important;
+}
+
+// TOP DESCRIPTION
+.mentionSearchText {
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text3) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin-bottom: var(--zehn-size-spacing-xs) !important;
+}
+
+// MATCH ENTRY
+.vquL9mspYzz2tBtxrzqw9 {
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  transition: none !important;
+  padding: 0 var(--zehn-size-padding-xs) !important;
+  margin: 0 !important;
+  line-height: var(--zehn-size-24) !important;
+  background: var(--zehn-color-list-background) !important;
+
+  &:hover {
+    background: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+.vquL9mspYzz2tBtxrzqw9.boNOGnexLhWO9Nd0e6-0A {
+  padding: 0 var(--zehn-size-padding-xs) !important;
+  background: transparent !important;
+}
+
+.mentionSuggestion {
+  gap: 0 !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.mentionAvatar {
+  margin: 0 !important;
+  margin-right: var(--zehn-size-spacing-xxs) !important;
+  width: var(--zehn-size-avatar-xs) !important;
+  height: var(--zehn-size-avatar-xs) !important;
+  transition: none !important;
+  position: relative !important;
+  inset: unset !important;
+  border-radius: var(--zehn-size-persona-radius) !important;
+}
+
+.mentionSearchMatch {
+  color: inherit !important;
+}
+
+.SlashCommandSuggestion {
+  margin: 0 !important;
+}
+
+.SlashCommandSuggestion_SlashCommand {
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+// NO MATCHES
+.suggestOption {
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  transition: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: var(--zehn-size-24) !important;
+  background: transparent !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CHAT POPUP MESSAGES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.ScrollToBottomButton,
+.LoadingOlderMessages,
+.FriendChatTypingNotification {
+  color: var(--zehn-color-text1) !important;
+  border-radius: var(--zehn-size-modal-radius-small) !important;
+  background: var(--zehn-color-modal-background) !important;
+  font-size: var(--zehn-size-12) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  height: fit-content !important;
+  transition: transform 0.5s ease, bottom 0.5s ease, opacity 0.5s ease !important;
+  width: fit-content !important;
+  padding: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: unset !important;
+  left: unset !important;
+  margin: var(--zehn-size-spacing-xs) var(--zehn-size-spacing-md) !important;
+  line-height: var(--zehn-size-panel-sm) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  overflow: hidden !important;
+  z-index: 20 !important;
+  text-transform: uppercase !important;
+}
+
+.ScrollToBottomButton,
+.LoadingOlderMessages,
+.FriendChatTypingNotification.FriendIsTyping {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.FriendChatTypingNotification,
+.LoadingOlderMessages.Hidden,
+.ScrollToBottomButton.Hidden {
+  opacity: 0 !important;
+  transform: translateY(var(--zehn-size-panel-sm)) !important;
+}
+
+.FriendChatTypingNotification {
+  padding: 0 var(--zehn-size-padding-xs) !important;
+}
+
+.ChatHistoryContainer:has(.FriendIsTyping) .ScrollToBottomButton,
+.ChatHistoryContainer:has(.ScrollToBottomButton:not(.Hidden)) .LoadingOlderMessages {
+  bottom: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-panel-sm)) !important;
+}
+
+.ChatHistoryContainer:has(.ScrollToBottomButton:not(.Hidden)):has(.FriendIsTyping) .LoadingOlderMessages {
+  bottom: calc(2 * (var(--zehn-size-spacing-xs) + var(--zehn-size-panel-sm))) !important;
+}
+
+// INNER CLICKABLE
+.ScrollToBottomButton>span,
+.LoadingOlderMessages>span {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: var(--zehn-color-list-background) !important;
+  letter-spacing: normal !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: inherit !important;
+  text-transform: uppercase !important;
+  padding: 0 var(--zehn-size-padding-xs) !important;
+}
+
+.LoadingOlderMessages:hover>span,
+.ScrollToBottomButton:hover>span {
+  background: var(--zehn-color-list--background-hover) !important;
+}
+
+.LoadingOlderMessages:active>span,
+.ScrollToBottomButton:active>span {
+  background: var(--zehn-color-list-background-active) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1420,6 +2091,22 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .MemberListOptionsContainer {
   height: auto !important;
   order: 2 !important;
+  background-color: transparent !important;
+}
+
+// INNER CONTAINER
+.MemberListColumn .MemberListOptionsContainer .socialInputContainer {
+  width: 100% !important;
+  min-height: var(--zehn-size-input-app-wrapper) !important;
+  max-height: var(--zehn-size-input-app-wrapper) !important;
+  height: var(--zehn-size-input-app-wrapper) !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+}
+
+.MemberListViewCompact .MemberListOptionsContainer .socialInputContainer {
+  width: 0 !important;
+  margin: 0 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
