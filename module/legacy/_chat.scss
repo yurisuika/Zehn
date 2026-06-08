@@ -2253,15 +2253,17 @@ div:hover>.BBCodeCollapseControl {
 }
 
 .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
+  --groupchat-offset: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
   min-width: 180px !important;
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: calc(var(--groupchat-offset)) !important;
   min-width: 0 !important;
   max-width: 100% !important;
-  max-height: 100% !important;
+  max-height: calc(100% - var(--groupchat-offset)) !important;
   min-height: 0 !important;
   background-color: var(--zehn-color-section) !important;
   padding: var(--zehn-size-padding-md) !important;
   gap: var(--zehn-size-spacing-md) !important;
+  box-sizing: border-box !important;
 }
 
 .BroadcastSection {
@@ -2409,21 +2411,22 @@ div:hover>.BBCodeCollapseControl {
   min-height: 0 !important;
 }
 
-/* CHAT EXPANDER */
+/* CHAT EXPANDER SPACING IN HEADER */
 .chatWindow:has(.chatHidden) .chatRoomHeader {
-  padding-left: var(--zehn-size-panel-lg) !important;
+  padding-left: var(--zehn-size-chat-header) !important;
 }
 
 .chatRoomOptions .BroadcastChatExpander {
   position: relative !important;
 }
 
+// MOVE INTO HEADER AREA
 .BroadcastChatExpander.bottom,
 .BroadcastChatExpander.right {
   bottom: unset !important;
   left: 0 !important;
   right: unset !important;
-  top: -48px !important;
+  top: var(--zehn-size-titlebar) !important;
 }
 
 .SVGIcon_HideShowChat {

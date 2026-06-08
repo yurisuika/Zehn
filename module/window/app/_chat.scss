@@ -45,6 +45,14 @@
 
 // ACRYLIC HEADER CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.MultiUserChat {
+  --chat-margin: (var(--zehn-size-titlebar));
+}
+
+.MultiUserChat.namedGroup {
+  --chat-margin: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
+}
+
 .multiChatDialog .ChatTabs::before,
 .multiChatDialog .ChatTabs::after {
   content: "";
@@ -55,8 +63,8 @@
   height: var(--zehn-size-titlebar);
 }
 
-.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::before,
-.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::after {
+.multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::before,
+.multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::after {
   height: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
 }
 
@@ -928,11 +936,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   position: absolute;
   inset: 0;
   background: var(--zehn-color-app);
-  margin-top: var(--zehn-size-titlebar);
-}
-
-.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader)::before {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
+  margin-top: var(--chat-margin);
 }
 
 // MOVE OVER STUFF WHEN NAV COLUMN IS OPENED
@@ -1192,19 +1196,19 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .ChatRoomGroup_Main_Content .chatHistory,
 .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .ChatRoomGroup_Main_Content.Vertical .chatHistory {
-  margin-top: var(--zehn-size-titlebar) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 // GROUP CHAT
 .MultiUserChat.namedGroup .ChatRoomGroup_Main_Content .chatHistory,
 .MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Vertical .chatHistory {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 // GROUP CHAT W/ BROADCAST
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Horizontal .chatHistory {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Vertical .chatHistory {
@@ -1213,7 +1217,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // BROADCAST PUBLIC CHAT
 .ChatRoomGroup_Main_Content.Horizontal .ChatMessages {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 .BothChatsDisplayed .ChatRoomGroup_Main_Content.Horizontal .ChatMessages,
@@ -2070,12 +2074,8 @@ span.mention.me {
   height: auto !important;
   inset: var(--zehn-size-spacing-xl) !important;
   bottom: calc(var(--zehn-size-spacing-xl) + var(--zehn-size-input-bar)) !important;
-  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xl)) !important;
+  top: calc(var(--chat-margin) + var(--zehn-size-spacing-xl)) !important;
   overflow: hidden !important;
-}
-
-.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .MemberListColumn {
-  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xl) + var(--zehn-size-chat-header)) !important;
 }
 
 .MemberListColumn.MemberListViewCompact {
