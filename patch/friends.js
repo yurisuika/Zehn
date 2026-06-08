@@ -63,6 +63,10 @@ Zehn.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer
 
 Zehn.storeTargetHeightAsVariable('.friendsui-container', '._14S4rlGAAqfqW6lMKYB2GM', '--zehn-size-friends-remoteplay');
 
+/* WRAP ADD FRIENDS BUTTON ------------------------------------------------------------------------------------------ */
+
+Zehn.createContainer('.MultiUserChat', '.inviteAnotherFriendButton', ['.zehnAddFriendWrapper']);
+
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
 Zehn.createIconTitleContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV');
