@@ -803,10 +803,20 @@ a.chatImageURL,
   position: relative !important;
   line-height: var(--zehn-size-24) !important;
   height: var(--zehn-size-24) !important;
-  margin-top: var(--zehn-size-spacing-xs) !important;
-  max-width: 100% !important;
   opacity: 1 !important;
 
+  margin-top: var(--zehn-size-spacing-xs) !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: var(--zehn-size-panel-inset-padding) !important;
+  background: var(--zehn-color-panel-inset) !important;
+  border-radius: var(--zehn-size-panel-inset-radius) !important;
+
+  * {
+    color: var(--zehn-color-text-label) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    font-size: var(--zehn-size-text-label) !important;
+  }
 }
 
 .giphyImg .chatImageURL {
@@ -818,14 +828,15 @@ a.chatImageURL,
 .giphyImg a.chatImageURL .giphyTag {
   margin: 0 !important;
   padding: 0 !important;
-  font-size: var(--zehn-size-12) !important;
-  color: inherit !important;
+  color: var(--zehn-color-text-label) !important;
   font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
 }
 
 .giphyImg a.chatImageURL .giphyTag .giphySearch {
-  color: inherit !important;
+  color: var(--zehn-color-text-label) !important;
   font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
 }
 
 .msg .BBCodeResizableComponent:not(.Minimized, .Minimizing) a.chatImageURL {
@@ -1069,6 +1080,8 @@ a.chatImageURL,
   border-width: var(--zehn-size-chat-embed-border);
   border-style: solid !important;
   border-color: var(--zehn-color-embed-border) !important;
+  min-width: var(--zehn-size-chat-embed) !important;
+  box-sizing: border-box !important;
 }
 
 .BBCodeAlreadyCollapsed:hover {
