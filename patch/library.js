@@ -26,7 +26,7 @@ Zehn.setGlyphColor();
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
-  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable)' // CONTEXT ENTRY
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
 ]);
 
 Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
@@ -34,7 +34,7 @@ Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 /* REVEAL DROPDOWN -------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
-  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE):not(._1Sa12sphmVOOs0on58tDn7)' // DROPDOWN ENTRY
+  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE, ._1Sa12sphmVOOs0on58tDn7)' // DROPDOWN ENTRY
 ]);
 
 Zehn.revealSelf('._2oAiZidGyUxL-hfupFDQ2m.zehnReveal');
@@ -393,6 +393,10 @@ Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj',
 /* ADD PLAY ICON INTO CONTAINER ------------------------------------------------------------------------------------- */
 
 Zehn.createIconContainer('._3lh8aaHNMcFvupuNhQDfFt', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnIconContainer']); // COMMUNITY ICON
+
+/* WRAP FRIEND PICKER CLOSE SVG ------------------------------------------------------------------------------------- */
+
+Zehn.createContainer('.ChatRoomGroupInviteDialog', '.FriendPicker_ChosenFriend .SVGIcon_X_Line', ['.zehnBlurWrapper']);
 
 /* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
 
