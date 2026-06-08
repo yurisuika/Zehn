@@ -80,28 +80,31 @@
   white-space: nowrap !important;
 }
 
-.nOdcT-MoOaXGePXLyPe0H,
-.ingame .nOdcT-MoOaXGePXLyPe0H,
-.online .nOdcT-MoOaXGePXLyPe0H,
-.awayOrSnooze .nOdcT-MoOaXGePXLyPe0H,
-.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .nOdcT-MoOaXGePXLyPe0H {
-  color: var(--zehn-color-text1) !important;
-}
-
-.offline .nOdcT-MoOaXGePXLyPe0H {
-  color: var(--zehn-color-text3) !important;
-}
-
 .friend,
-.friend.ingame,
-.friend.online,
-.friend.awayOrSnooze,
-.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .friend {
-  color: var(--zehn-color-text1) !important;
+.nOdcT-MoOaXGePXLyPe0H,
+.friend.offline,
+.offline .nOdcT-MoOaXGePXLyPe0H {
+  color: var(--zehn-color-user-offline) !important;
 }
 
-.friend.offline {
-  color: var(--zehn-color-text3) !important;
+.friend.ingame,
+.ingame .nOdcT-MoOaXGePXLyPe0H {
+  color: var(--zehn-color-user-ingame) !important;
+}
+
+.friend.online,
+.online .nOdcT-MoOaXGePXLyPe0H {
+  color: var(--zehn-color-user-online) !important;
+}
+
+.friend.awayOrSnooze,
+.awayOrSnooze .nOdcT-MoOaXGePXLyPe0H {
+  color: var(--zehn-color-user-away) !important;
+}
+
+.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .friend,
+.AvatarAndUser:has(._3IswZMeeD6ORStUjgv6Xh8) .nOdcT-MoOaXGePXLyPe0H {
+  color: var(--zehn-color-disturb) !important;
 }
 
 // EMOTICON
@@ -124,8 +127,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
 // NICKNAME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ._3XEmWmfQy7gbYJ4KJ1N9tp {
-  font-size: var(--zehn-size-14) !important;
-  color: var(--zehn-color-text1) !important;
+  color: var(--zehn-color-nickname) !important;
   opacity: 1 !important;
   display: none !important;
 }
@@ -133,13 +135,11 @@ img.AB86vEzEKPL0y5fK_m4pT {
 ._2saJTAocZ9TnYXTGvnqUMC {
   padding-left: 0 !important;
   margin-left: var(--zehn-size-spacing-xxs) !important;
-  color: var(--zehn-color-text4) !important;
-  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-nickname) !important;
 }
 
 ._3bbRZyUiK-bfc5Qov6xukI .nOdcT-MoOaXGePXLyPe0H,
 ._3bbRZyUiK-bfc5Qov6xukI ._2saJTAocZ9TnYXTGvnqUMC {
-  font-size: var(--zehn-size-14) !important;
   margin-bottom: 0 !important;
   margin-bottom: unset !important;
 }
@@ -247,6 +247,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
 .ChatRoomGroupAvatar,
 .ChatRoomMultiFriendAvatar {
   position: relative !important;
+  transition: none !important;
   transform: none !important;
   border: none !important;
   padding: 0 !important;

@@ -21,6 +21,17 @@
   background-color: transparent !important;
 }
 
+// LOADING THROBBER TEXT
+._21nVi2jNuF_prxLY1mAaKK,
+._2wAKy-0ZkO_vhbiQCP9MgE ._21nVi2jNuF_prxLY1mAaKK {
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin-top: var(--zehn-size-spacing-xs) !important;
+  text-transform: none !important;
+  flex: 0 !important;
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -1143,7 +1154,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   margin: 0 !important;
 }
 
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -1172,19 +1182,47 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 // SCROLL CONTAINER
 .chatHistory {
   margin: 0 !important;
-  margin-top: var(--zehn-size-titlebar) !important;
   padding: 0 !important;
   position: relative;
   flex-grow: 1 !important;
   align-content: flex-end !important;
 }
 
-.MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) .chatHistory {
+// SINGLE CHAT
+.ChatRoomGroup_Main_Content .chatHistory,
+.ChatRoomGroup_Main_Content.Horizontal .chatHistory,
+.ChatRoomGroup_Main_Content.Vertical .chatHistory {
+  margin-top: var(--zehn-size-titlebar) !important;
+}
+
+// GROUP CHAT
+.MultiUserChat.namedGroup .ChatRoomGroup_Main_Content .chatHistory,
+.MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
+.MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Vertical .chatHistory {
   margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+}
+
+// GROUP CHAT W/ BROADCAST
+.MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Horizontal .chatHistory {
+  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+}
+
+.MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Vertical .chatHistory {
+  margin-top: 0 !important;
+}
+
+// BROADCAST PUBLIC CHAT
+.ChatRoomGroup_Main_Content.Horizontal .ChatMessages {
+  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+}
+
+.ChatRoomGroup_Main_Content.Vertical .ChatMessages {
+  margin-top: 0 !important;
 }
 
 // MESSAGES
 .msg {
+  display: flex !important;
   transition: none !important;
 }
 
@@ -1276,17 +1314,21 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   margin: 0 !important;
 }
 
+.ChatHistoryContainer .nameWidthLabel,
+.ChatSpeaker .speaker,
 .ChatRoomSpeaker .speaker,
 .msg.ChatMsgSlashEmote .speaker,
 .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
   margin: 0 !important;
   padding: 0 var(--zehn-size-padding-xl) 0 var(--zehn-size-padding-xxxl) !important;
-  color: var(--zehn-color-text1) !important;
+  color: inherit !important;
   background: transparent !important;
   line-height: var(--zehn-size-chat-speaker) !important;
   overflow: visible !important;
 }
 
+.chatWindow.compactView .ChatHistoryContainer .nameWidthLabel,
+.chatWindow.compactView .ChatSpeaker .speaker,
 .chatWindow.compactView .ChatRoomSpeaker .speaker,
 .chatWindow.compactView .msg.ChatMsgSlashEmote .speaker,
 .chatWindow.compactView .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
@@ -1322,6 +1364,113 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   display: none !important;
 }
 
+// SPEAKER NAME
+.speaker .speakerName,
+.ChatRoomSpeaker .speaker .speakerName {
+  transition: none !important;
+  margin: 0 !important;
+  line-height: inherit !important;
+  font-weight: var(--zehn-weight-thick) !important;
+}
+
+.speakerName._1KPraihJAKiBwLJWmOlju2,
+.isCurrentUser .speakerName._1KPraihJAKiBwLJWmOlju2 {
+  // IN GAME
+  color: var(--zehn-color-user-ingame) !important;
+}
+
+.speakerName._2m5YDddCyVhilOuWH-bTC1,
+.isCurrentUser .speakerName._2m5YDddCyVhilOuWH-bTC1 {
+  // ONLINE
+  color: var(--zehn-color-user-online) !important;
+}
+
+.speakerName._3BwaMxcd1CI9bmfnLJc7lo,
+.isCurrentUser .speakerName._3BwaMxcd1CI9bmfnLJc7lo {
+  // WATCHING BROADCAST
+  color: var(--zehn-color-user-online) !important;
+}
+
+.speakerName,
+.isCurrentUser .speakerName,
+.speakerName._1G1ACDfp4yn4cUO1xY7_d3,
+.isCurrentUser .speakerName._1G1ACDfp4yn4cUO1xY7_d3 {
+  // DEFAULT / OFFLINE
+  color: var(--zehn-color-user-offline) !important;
+}
+
+// SPEAKER NICKNAME
+.speakerName .playerNickname {
+  color: var(--zehn-color-nickname) !important;
+}
+
+// CHAT SCALING
+.smallChatFont .msg.serverMsg .msgText,
+.smallChatFont .msg.timeDivision,
+.smallChatFont .nameWidthLabel,
+.smallChatFont .msg {
+  line-height: var(--zehn-size-chat-msg-line-small) !important;
+}
+
+.msg.serverMsg .msgText,
+.msg.timeDivision,
+.nameWidthLabel,
+.msg {
+  line-height: var(--zehn-size-chat-msg-line-default) !important;
+}
+
+.largeChatFont .msg.serverMsg .msgText,
+.largeChatFont .msg.timeDivision,
+.largeChatFont .nameWidthLabel,
+.largeChatFont .msg {
+  line-height: var(--zehn-size-chat-msg-line-large) !important;
+}
+
+.FriendsSettingsChatFontSizeSection_ButtonRow .smallFontSetting,
+.smallChatFont .chatTextarea,
+.smallChatFont .ChatMessageOpenGraph_Title,
+.smallChatFont .nameWidthLabel,
+.smallChatFont .speaker {
+  font-size: var(--zehn-size-chat-msg-text-small) !important;
+}
+
+.FriendsSettingsChatFontSizeSection_ButtonRow .defaultFontSetting,
+.chatTextarea,
+.ChatMessageOpenGraph_Title,
+.nameWidthLabel,
+.speaker {
+  font-size: var(--zehn-size-chat-msg-text-default) !important;
+}
+
+.FriendsSettingsChatFontSizeSection_ButtonRow .largeFontSetting,
+.largeChatFont .chatTextarea,
+.largeChatFont .ChatMessageOpenGraph_Title,
+.largeChatFont .nameWidthLabel,
+.largeChatFont .speaker {
+  font-size: var(--zehn-size-chat-msg-text-large) !important;
+}
+
+.smallChatFont .speakerTimeStamp,
+.smallChatFont .FriendChatTimeStamp,
+.smallChatFont .msg.timeDivision,
+.smallChatFont .msg.serverMsg .msgText {
+  font-size: var(--zehn-size-chat-msg-subtext-small) !important;
+}
+
+.speakerTimeStamp,
+.FriendChatTimeStamp,
+.msg.timeDivision,
+.msg.serverMsg .msgText {
+  font-size: var(--zehn-size-chat-msg-subtext-default) !important;
+}
+
+.largeChatFont .speakerTimeStamp,
+.largeChatFont .FriendChatTimeStamp,
+.largeChatFont .msg.timeDivision,
+.largeChatFont .msg.serverMsg .msgText {
+  font-size: var(--zehn-size-chat-msg-subtext-large) !important;
+}
+
 // TIMESTAMP
 .speakerTimeStamp,
 .FriendChatTimeStamp,
@@ -1329,7 +1478,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .FriendChatTimeStamp.online,
 .FriendChatTimeStamp.offline {
   color: var(--zehn-color-text3) !important;
-  font-size: var(--zehn-size-12) !important;
   top: 0 !important;
   margin: 0 !important;
   margin-left: var(--zehn-size-spacing-md) !important;
@@ -1347,8 +1495,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .msgText {
   padding: 0 var(--zehn-size-padding-xl) 0 var(--zehn-size-padding-xxxl) !important;
-  line-height: var(--zehn-size-chat-msg) !important;
-  font-size: var(--zehn-size-14) !important;
 }
 
 .chatWindow.compactView .msgText {
@@ -1356,7 +1502,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 }
 
 .msgText span {
-  line-height: var(--zehn-size-chat-msg) !important;
+  line-height: inherit !important;
   display: contents !important;
 }
 
@@ -1373,7 +1519,7 @@ span.mention {
   border-radius: var(--zehn-size-radius-sm);
   padding: 0 var(--zehn-size-padding-xxs) !important;
   margin: auto 0 !important;
-  line-height: var(--zehn-size-chat-msg) !important;
+  line-height: inherit !important;
   font-size: inherit !important;
   color: inherit !important;
   border: none !important;
@@ -1383,6 +1529,8 @@ span.mention {
   display: inline-flex !important;
   gap: 0 !important;
   vertical-align: unset !important;
+  height: var(--zehn-size-tag) !important;
+  align-items: center !important;
 }
 
 span.mention.me {
@@ -1440,7 +1588,7 @@ span.mention.me {
   font-family: var(--zehn-font-family-mono) !important;
   color: var(--zehn-color-code-text) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-code-text) !important;
+  font-size: inherit !important;
   margin: 0 !important;
   padding: var(--zehn-size-code-padding) !important;
   background: var(--zehn-color-code-background) !important;
@@ -1491,6 +1639,10 @@ span.mention.me {
 }
 
 // COIN FLIP
+.wenLDeq20XUMWvJ2gb4Lt {
+  height: 100% !important;
+}
+
 ._3HJh0r_3r_Hpr7oB_JgnSF {
   margin-left: var(--zehn-size-spacing-xxs) !important;
   color: inherit !important;
@@ -1503,16 +1655,25 @@ span.mention.me {
 }
 
 .iBhRx5MTSqx8Ox_1CorlW {
-  min-width: var(--zehn-size-16) !important;
+  --random-size: var(--zehn-size-chat-msg-line-default);
   border: none !important;
   border-radius: var(--zehn-size-radius-xs) !important;
   color: var(--zehn-color-text1) !important;
   background-color: var(--zehn-color-panel) !important;
   position: relative !important;
-  max-height: var(--zehn-size-24) !important;
   margin: 0 !important;
   display: inline-grid !important;
   margin-right: var(--zehn-size-spacing-xxxs) !important;
+  min-width: calc(var(--random-size) * 0.75) !important;
+  max-height: var(--random-size) !important;
+}
+
+.smallChatFont .iBhRx5MTSqx8Ox_1CorlW {
+  --random-size: var(--zehn-size-chat-msg-line-small);
+}
+
+.largeChatFont .iBhRx5MTSqx8Ox_1CorlW {
+  --random-size: var(--zehn-size-chat-msg-line-large);
 }
 
 ._3dRhiHtjVJeePaxVr8u3mF {
@@ -1538,7 +1699,6 @@ span.mention.me {
 // SERVER MESSAGE
 .msg.serverMsg .msgText {
   box-sizing: border-box !important;
-  font-size: var(--zehn-size-12) !important;
   color: var(--zehn-color-text3) !important;
   font-weight: var(--zehn-weight-normal) !important;
 }
@@ -1550,11 +1710,9 @@ span.mention.me {
 // TIME DIVISION
 .msg.timeDivision {
   color: var(--zehn-color-text3) !important;
-  font-size: var(--zehn-size-10) !important;
   width: 100% !important;
   display: flex !important;
   height: fit-content !important;
-  line-height: var(--zehn-size-16) !important;
 }
 
 .timeDivision.time_passes .preHorizDivider {
