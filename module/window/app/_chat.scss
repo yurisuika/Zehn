@@ -49,6 +49,7 @@
   --chat-margin: (var(--zehn-size-titlebar));
 }
 
+.MultiUserChat:has(.chatRoomHeader),
 .MultiUserChat.namedGroup {
   --chat-margin: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
 }
@@ -63,6 +64,8 @@
   height: var(--zehn-size-titlebar);
 }
 
+.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::before,
+.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::after,
 .multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::before,
 .multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::after {
   height: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
@@ -1192,25 +1195,20 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   align-content: flex-end !important;
 }
 
-// SINGLE CHAT
+// NORMAL CHAT
 .ChatRoomGroup_Main_Content .chatHistory,
 .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .ChatRoomGroup_Main_Content.Vertical .chatHistory {
   margin-top: calc(var(--chat-margin)) !important;
 }
 
-// GROUP CHAT
-.MultiUserChat.namedGroup .ChatRoomGroup_Main_Content .chatHistory,
-.MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
-.MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Vertical .chatHistory {
-  margin-top: calc(var(--chat-margin)) !important;
-}
-
 // GROUP CHAT W/ BROADCAST
+.MultiUserChat.broadcastVisible:has(.chatRoomHeader) .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Horizontal .chatHistory {
   margin-top: calc(var(--chat-margin)) !important;
 }
 
+.MultiUserChat.broadcastVisible:has(.chatRoomHeader) .ChatRoomGroup_Main_Content.Vertical .chatHistory,
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Vertical .chatHistory {
   margin-top: 0 !important;
 }
@@ -1378,6 +1376,11 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   font-weight: var(--zehn-weight-thick) !important;
 }
 
+.speakerName,
+.isCurrentUser .speakerName {
+  color: var(--zehn-color-user-default) !important;
+}
+
 .speakerName._1KPraihJAKiBwLJWmOlju2,
 .isCurrentUser .speakerName._1KPraihJAKiBwLJWmOlju2 {
   // IN GAME
@@ -1396,8 +1399,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   color: var(--zehn-color-user-online) !important;
 }
 
-.speakerName,
-.isCurrentUser .speakerName,
 .speakerName._1G1ACDfp4yn4cUO1xY7_d3,
 .isCurrentUser .speakerName._1G1ACDfp4yn4cUO1xY7_d3 {
   // DEFAULT / OFFLINE
@@ -1410,33 +1411,29 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 }
 
 // CHAT SCALING
-.smallChatFont .msg.serverMsg .msgText,
-.smallChatFont .msg.timeDivision,
-.smallChatFont .nameWidthLabel,
-.smallChatFont .msg {
-  line-height: var(--zehn-size-chat-msg-line-small) !important;
+.ChatHistoryContainer.smallChatFont {
+  --chat-scale: var(--zehn-size-chat-msg-text-small);
+  --chat-scale-sub: var(--zehn-size-chat-msg-subtext-small);
+  --chat-line: var(--zehn-size-chat-msg-line-small);
+}
+
+.ChatHistoryContainer {
+  --chat-scale: var(--zehn-size-chat-msg-text-default);
+  --chat-scale-sub: var(--zehn-size-chat-msg-subtext-default);
+  --chat-line: var(--zehn-size-chat-msg-line-default);
+}
+
+.ChatHistoryContainer.largeChatFont {
+  --chat-scale: var(--zehn-size-chat-msg-text-large);
+  --chat-scale-sub: var(--zehn-size-chat-msg-subtext-large);
+  --chat-line: var(--zehn-size-chat-msg-line-large);
 }
 
 .msg.serverMsg .msgText,
 .msg.timeDivision,
 .nameWidthLabel,
 .msg {
-  line-height: var(--zehn-size-chat-msg-line-default) !important;
-}
-
-.largeChatFont .msg.serverMsg .msgText,
-.largeChatFont .msg.timeDivision,
-.largeChatFont .nameWidthLabel,
-.largeChatFont .msg {
-  line-height: var(--zehn-size-chat-msg-line-large) !important;
-}
-
-.FriendsSettingsChatFontSizeSection_ButtonRow .smallFontSetting,
-.smallChatFont .chatTextarea,
-.smallChatFont .ChatMessageOpenGraph_Title,
-.smallChatFont .nameWidthLabel,
-.smallChatFont .speaker {
-  font-size: var(--zehn-size-chat-msg-text-small) !important;
+  line-height: var(--chat-line) !important;
 }
 
 .FriendsSettingsChatFontSizeSection_ButtonRow .defaultFontSetting,
@@ -1444,36 +1441,14 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .ChatMessageOpenGraph_Title,
 .nameWidthLabel,
 .speaker {
-  font-size: var(--zehn-size-chat-msg-text-default) !important;
-}
-
-.FriendsSettingsChatFontSizeSection_ButtonRow .largeFontSetting,
-.largeChatFont .chatTextarea,
-.largeChatFont .ChatMessageOpenGraph_Title,
-.largeChatFont .nameWidthLabel,
-.largeChatFont .speaker {
-  font-size: var(--zehn-size-chat-msg-text-large) !important;
-}
-
-.smallChatFont .speakerTimeStamp,
-.smallChatFont .FriendChatTimeStamp,
-.smallChatFont .msg.timeDivision,
-.smallChatFont .msg.serverMsg .msgText {
-  font-size: var(--zehn-size-chat-msg-subtext-small) !important;
+  font-size: var(--chat-scale) !important;
 }
 
 .speakerTimeStamp,
 .FriendChatTimeStamp,
 .msg.timeDivision,
 .msg.serverMsg .msgText {
-  font-size: var(--zehn-size-chat-msg-subtext-default) !important;
-}
-
-.largeChatFont .speakerTimeStamp,
-.largeChatFont .FriendChatTimeStamp,
-.largeChatFont .msg.timeDivision,
-.largeChatFont .msg.serverMsg .msgText {
-  font-size: var(--zehn-size-chat-msg-subtext-large) !important;
+  font-size: var(--chat-scale-sub) !important;
 }
 
 // TIMESTAMP
@@ -1508,7 +1483,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .msgText span {
   line-height: inherit !important;
-  display: contents !important;
 }
 
 // MESSAGE TEXT `/ME`
@@ -1660,7 +1634,7 @@ span.mention.me {
 }
 
 .iBhRx5MTSqx8Ox_1CorlW {
-  --random-size: var(--zehn-size-chat-msg-line-default);
+  --random-size: var(--chat-line);
   border: none !important;
   border-radius: var(--zehn-size-radius-xs) !important;
   color: var(--zehn-color-text1) !important;
@@ -1671,14 +1645,6 @@ span.mention.me {
   margin-right: var(--zehn-size-spacing-xxxs) !important;
   min-width: calc(var(--random-size) * 0.75) !important;
   max-height: var(--random-size) !important;
-}
-
-.smallChatFont .iBhRx5MTSqx8Ox_1CorlW {
-  --random-size: var(--zehn-size-chat-msg-line-small);
-}
-
-.largeChatFont .iBhRx5MTSqx8Ox_1CorlW {
-  --random-size: var(--zehn-size-chat-msg-line-large);
 }
 
 ._3dRhiHtjVJeePaxVr8u3mF {
@@ -1694,6 +1660,33 @@ span.mention.me {
   background: transparent !important;
   inset: 0 !important;
   border-radius: var(--zehn-size-radius-xs) !important;
+}
+
+// ROOM EFFECT
+._1XsAtfmtiaoZzdStrvgJj9 {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  background: transparent !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: inherit !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+.VU5k4YWowv8bYlIGyl7D2 {
+  color: var(--zehn-color-text1) !important;
+  font-size: inherit !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin-right: var(--zehn-size-spacing-xs) !important;
+  line-height: inherit !important;
+  height: var(--zehn-size-icon-xl) !important;
+  width: var(--zehn-size-icon-xl) !important;
+}
+
+._1XsAtfmtiaoZzdStrvgJj9>div {
+  margin: 0 !important;
+  margin-left: var(--zehn-size-spacing-xs) !important;
 }
 
 // TEXT LINK
@@ -1849,6 +1842,56 @@ span.mention.me {
   margin: 0 !important;
   line-height: var(--zehn-size-24) !important;
   background: transparent !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// ADD FRIEND TO CHAT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.zehnAddFriendWrapper {
+  position: absolute !important;
+  background: var(--zehn-color-modal-background) !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  box-sizing: content-box !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-modal-radius-small) !important;
+  padding: var(--zehn-size-padding-xs) !important;
+  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xs)) !important;
+  right: var(--zehn-size-spacing-md) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  transition-delay: 1s !important;
+}
+
+.MultiUserChat:hover .zehnAddFriendWrapper {
+  opacity: 1 !important;
+  transition-delay: 1s !important;
+  transition: opacity 0.2s ease !important;
+}
+
+body:not(.WindowFocus) .zehnAddFriendWrapper {
+  opacity: 0 !important;
+}
+
+// BUTTON
+.inviteAnotherFriendButton {
+  position: relative !important;
+  inset: unset !important;
+}
+
+// ICON
+.inviteAnotherFriendButton .SVGIcon_Button {
+  -webkit-mask-image: var(--zehn-icon-contact-add) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
