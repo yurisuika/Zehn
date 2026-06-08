@@ -381,15 +381,15 @@
 .chatRoomGroupNavColumn {
   // MARGIN FOR TITLEBAR
   margin: 0 !important;
-  margin-top: var(--zehn-size-titlebar) !important;
-  position: absolute !important;
+  margin-top: calc(var(--chat-margin)) !important;
+  position: relative !important;
   transition: none !important;
   background: var(--zehn-color-section) !important;
   display: none !important;
   width: var(--zehn-size-chatlist-width) !important;
   max-width: var(--zehn-size-chatlist-width) !important;
   min-width: var(--zehn-size-chatlist-width) !important;
-  height: calc(100% - (var(--zehn-size-titlebar) + var(--zehn-size-button-app-large))) !important;
+  height: calc(100% - (var(--chat-margin) + var(--zehn-size-button-app-large))) !important;
   // PADDING FOR BUTTON
   padding-bottom: var(--zehn-size-button-app-large) !important;
 }
@@ -398,7 +398,7 @@
   width: var(--zehn-size-chatlist-height) !important;
   min-width: var(--zehn-size-chatlist-height) !important;
   max-width: var(--zehn-size-chatlist-height) !important;
-  height: calc(100% - var(--zehn-size-titlebar)) !important;
+  height: calc(100% - var(--chat-margin)) !important;
   // BECAUSE THE PIN BUTTON IS NOT SHOWN
   padding-bottom: 0 !important;
 }
@@ -950,16 +950,14 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   width: 100% !important;
 }
 
-.MultiUserChat.zehnChannelListOpened .ChatRoomGroup_MainAndChatEntry,
-.MultiUserChat.zehnChannelListOpened .chatHeader {
-  margin-left: var(--zehn-size-chatlist-width) !important;
-  width: calc(100% - var(--zehn-size-chatlist-width)) !important;
+.MultiUserChat.zehnChannelListOpened .ChatRoomGroup_MainAndChatEntry {
+  margin-left: 0 !important;
+  width: 100% !important;
 }
 
-.MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry,
-.MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .chatHeader {
-  margin-left: var(--zehn-size-chatlist-height) !important;
-  width: calc(100% - var(--zehn-size-chatlist-height)) !important;
+.MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry {
+  margin-left: 0 !important;
+  width: 100% !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1855,6 +1853,183 @@ span.mention.me {
 
 
 
+// FILE UPLOAD MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.chatFileUploadPreviewContainer {
+  position: fixed !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-self: center !important;
+  top: calc(var(--chat-margin) + var(--zehn-size-border)) !important;
+  bottom: calc(var(--zehn-size-chat-entry) + var(--zehn-size-border)) !important;
+  left: unset !important;
+  right: unset !important;
+  margin: auto !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  padding-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-dialog-padding)) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  min-width: 400px !important;
+  max-height: fit-content !important;
+  z-index: 10 !important;
+  background: var(--zehn-color-modal-background) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-modal-radius-small) !important;
+}
+
+// CLOSE BUTTON
+.chatFileUploadCancel {
+  top: 0 !important;
+  right: 0 !important;
+  padding: 0 !important;
+}
+
+.chatFileUploadCancel svg {
+  -webkit-mask-image: var(--zehn-icon-window-close) !important;
+}
+
+// FILE NAME AS TITLEBAR
+.chatFileUploadFileName {
+  padding: var(--zehn-size-titlebar-text-padding) !important;
+  padding-right: calc(var(--zehn-size-titlebar-control) + var(--zehn-size-titlebar-text-padding-x)) !important;
+  font-size: var(--zehn-size-titlebar-text) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: var(--zehn-size-titlebar) !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  text-align: left !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  max-height: var(--zehn-size-titlebar) !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+}
+
+// IMAGE
+.chatFileUploadPreviewContainer img.chatFileUploadPreview {
+  border-radius: var(--zehn-size-radius-angular) !important;
+  min-height: 0 !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+// VIDEO
+.chatFileUploadPreviewContainer .SVGIcon_Video {
+  max-width: 100% !important;
+  min-width: 100% !important;
+  width: 100% !important;
+  height: var(--zehn-size-icon-xxxl) !important;
+  fill: transparent !important;
+  background-color: var(--zehn-color-section) !important;
+  border-radius: var(--zehn-size-radius-angular) !important;
+  background-color: var(--zehn-color-icon1) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-xxxl) !important;
+  -webkit-mask-image: var(--zehn-icon-movie) !important;
+}
+
+// UPLOAD BUTTON
+.chatFileUploadBtn {
+  flex: 0 !important;
+}
+
+// SPOILER
+.spoilerCheckBox {
+  color: var(--zehn-color-text-control) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-control) !important;
+  place-content: left !important;
+  margin: auto 0 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// UPLOAD PROGRESS MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.chatFileUploadProgressContainer {
+  position: fixed !important;
+  top: calc(var(--chat-margin) + var(--zehn-size-border)) !important;
+  bottom: calc(var(--zehn-size-chat-entry) + var(--zehn-size-border)) !important;
+  left: unset !important;
+  right: unset !important;
+  margin: auto !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  height: fit-content !important;
+  width: fit-content !important;
+  min-width: 400px !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  background: var(--zehn-color-modal-background) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-modal-radius-small) !important;
+}
+
+// FILE NAME
+.chatFileUploadProgressName {
+  padding: 0 !important;
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text3) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: normal !important;
+  text-align: center !important;
+}
+
+// ERROR
+.chatFileUploadErrorDescription {
+  padding: 0 !important;
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-accent-100) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: normal !important;
+  text-align: center !important;
+}
+
+// PROGRESS BAR
+.DialogProgressBar_ProgressBarContainer {
+  border: none !important;
+  border-radius: var(--zehn-size-progressbar-radius) !important;
+  height: var(--zehn-size-progressbar-thin) !important;
+  background: var(--zehn-color-progress-empty) !important;
+}
+
+.DialogProgressBar_Value {
+  background: var(--zehn-color-progress-filled) !important;
+  border-radius: var(--zehn-size-progressbar-radius) !important;
+  height: 100% !important;
+  transition: width 0.2s linear !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // ADD FRIEND TO CHAT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .zehnAddFriendWrapper {
@@ -2007,12 +2182,15 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   background-color: var(--zehn-color-panel) !important;
 }
 
-.chatWindow .chatEntry>* {
-  margin-bottom: 0 !important;
+.chatWindow .chatEntry>form,
+.chatWindow .chatEntry.compactView>form {
+  margin: 0 !important;
   height: var(--zehn-size-chat-entry) !important;
 }
 
+.chatWindow .chatEntry>.compactableHeight
 .chatWindow .chatEntry.compactView>.compactableHeight {
+  margin: 0 !important;
   height: var(--zehn-size-chat-entry) !important;
 }
 
