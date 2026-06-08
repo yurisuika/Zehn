@@ -29664,6 +29664,14 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   flex: 0 !important;
 }
 
+.multiChatDialog {
+  --chat-margin: (var(--zehn-size-titlebar));
+}
+
+.multiChatDialog.namedGroup {
+  --chat-margin: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
+}
+
 .multiChatDialog .ChatTabs::before,
 .multiChatDialog .ChatTabs::after {
   content: "";
@@ -29674,8 +29682,8 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   height: var(--zehn-size-titlebar);
 }
 
-.multiChatDialog:has(.MultiUserChat[data-activechat=true] .chatRoomHeader) .ChatTabs::before,
-.multiChatDialog:has(.MultiUserChat[data-activechat=true] .chatRoomHeader) .ChatTabs::after {
+.multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat=true]) .ChatTabs::before,
+.multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat=true]) .ChatTabs::after {
   height: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
 }
 
@@ -30456,11 +30464,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   position: absolute;
   inset: 0;
   background: var(--zehn-color-app);
-  margin-top: var(--zehn-size-titlebar);
-}
-
-.MultiUserChat[data-activechat=true]:has(.chatRoomHeader)::before {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
+  margin-top: var(--chat-margin);
 }
 
 .MultiUserChat .ChatRoomGroup_MainAndChatEntry,
@@ -30662,17 +30666,17 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 .ChatRoomGroup_Main_Content .chatHistory,
 .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .ChatRoomGroup_Main_Content.Vertical .chatHistory {
-  margin-top: var(--zehn-size-titlebar) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 .MultiUserChat.namedGroup .ChatRoomGroup_Main_Content .chatHistory,
 .MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .MultiUserChat.namedGroup .ChatRoomGroup_Main_Content.Vertical .chatHistory {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Horizontal .chatHistory {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Vertical .chatHistory {
@@ -30680,7 +30684,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
 }
 
 .ChatRoomGroup_Main_Content.Horizontal .ChatMessages {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: var(--chat-margin) !important;
 }
 
 .BothChatsDisplayed .ChatRoomGroup_Main_Content.Horizontal .ChatMessages,
@@ -31442,12 +31446,8 @@ span.mention.me {
   height: auto !important;
   inset: var(--zehn-size-spacing-xl) !important;
   bottom: calc(var(--zehn-size-spacing-xl) + var(--zehn-size-input-bar)) !important;
-  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xl)) !important;
+  top: calc(var(--chat-margin) + var(--zehn-size-spacing-xl)) !important;
   overflow: hidden !important;
-}
-
-.multiChatDialog:has(.MultiUserChat[data-activechat=true] .chatRoomHeader) .MemberListColumn {
-  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xl) + var(--zehn-size-chat-header)) !important;
 }
 
 .MemberListColumn.MemberListViewCompact {
@@ -61691,15 +61691,17 @@ div:hover > .BBCodeCollapseControl {
 }
 
 .ChatRoomGroup_Main_Content > div:has(.BroadcastSection) {
+  --groupchat-offset: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
   min-width: 180px !important;
-  margin-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header)) !important;
+  margin-top: calc(var(--groupchat-offset)) !important;
   min-width: 0 !important;
   max-width: 100% !important;
-  max-height: 100% !important;
+  max-height: calc(100% - var(--groupchat-offset)) !important;
   min-height: 0 !important;
   background-color: var(--zehn-color-section) !important;
   padding: var(--zehn-size-padding-md) !important;
   gap: var(--zehn-size-spacing-md) !important;
+  box-sizing: border-box !important;
 }
 
 .BroadcastSection {
@@ -61838,9 +61840,9 @@ div:hover > .BBCodeCollapseControl {
   min-height: 0 !important;
 }
 
-/* CHAT EXPANDER */
+/* CHAT EXPANDER SPACING IN HEADER */
 .chatWindow:has(.chatHidden) .chatRoomHeader {
-  padding-left: var(--zehn-size-panel-lg) !important;
+  padding-left: var(--zehn-size-chat-header) !important;
 }
 
 .chatRoomOptions .BroadcastChatExpander {
@@ -61852,7 +61854,7 @@ div:hover > .BBCodeCollapseControl {
   bottom: unset !important;
   left: 0 !important;
   right: unset !important;
-  top: -48px !important;
+  top: var(--zehn-size-titlebar) !important;
 }
 
 .SVGIcon_HideShowChat {
