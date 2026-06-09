@@ -1152,25 +1152,12 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 
 
-// CHAT AND ENTRY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// CHAT HISTORY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// CONTAINER
+// CHAT CONTAINER
 .MultiUserChat .ChatRoomGroup_MainAndChatEntry {
   margin: 0 !important;
 }
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
-
-
-
-
-
-
-// CHAT HISTORY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // CONTAINER
 .ChatHistoryContainer {
@@ -1218,6 +1205,13 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .BothChatsDisplayed .ChatRoomGroup_Main_Content.Horizontal .ChatMessages,
 .ChatRoomGroup_Main_Content.Vertical .ChatMessages {
+  margin-top: 0 !important;
+}
+
+// QUICK CHAT
+.ChatRoomGroup_Main_Content .VoiceRoomChatHistory .chatHistory,
+.ChatRoomGroup_Main_Content.Horizontal .VoiceRoomChatHistory .chatHistory,
+.ChatRoomGroup_Main_Content.Vertical .VoiceRoomChatHistory .chatHistory {
   margin-top: 0 !important;
 }
 
@@ -1707,6 +1701,7 @@ span.mention.me {
 
 // TIME DIVISION
 .msg.timeDivision {
+  flex-direction: row !important;
   color: var(--zehn-color-text3) !important;
   width: 100% !important;
   display: flex !important;
@@ -1759,9 +1754,9 @@ span.mention.me {
 // MENTION/COMMAND PICKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ._1QU3cLCGXCmYTUvjYiqqz6 {
-  background: var(--zehn-color-modal-background) !important;
-  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
-  border-radius: var(--zehn-size-modal-radius-small) !important;
+  background: var(--zehn-color-alert-background) !important;
+  border: var(--zehn-size-alert-border) solid var(--zehn-color-alert-border) !important;
+  border-radius: var(--zehn-size-alert-radius) !important;
   bottom: var(--zehn-size-spacing-xs) !important;
   left: var(--zehn-size-spacing-xs) !important;
   right: var(--zehn-size-spacing-xs) !important;
@@ -1855,6 +1850,92 @@ span.mention.me {
 
 
 
+// QUICK CHAT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// MODAL BASE
+.VoiceRoomChatHistory {
+  background: transparent !important;
+}
+
+// MODAL
+.VoiceRoomChatWindow {
+  --quickchat-margin: 32px;
+  background: var(--zehn-color-modal-background) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-modal-radius) !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header) + var(--quickchat-margin)) !important;
+  left: var(--quickchat-margin) !important;
+  right: var(--quickchat-margin) !important;
+  bottom: calc(var(--quickchat-margin) + var(--zehn-size-chat-entry)) !important;
+  max-height: 100% !important;
+  height: auto !important;
+  max-width: calc(100% - (2 * var(--quickchat-margin))) !important;
+  overflow: hidden !important;
+}
+
+.ChatRoomGroupDialog_contents:has(.chatRoomGroupNavCollapsed) .VoiceRoomChatWindow {
+  left: var(--quickchat-margin) !important;
+  max-width: calc(100% - (2 * var(--quickchat-margin))) !important;
+}
+
+// TITLE AREA
+.VoiceRoomChatTitle .VoiceRoomTitleLabels {
+  margin-left: 0 !important;
+  justify-content: left !important;
+}
+
+.VoiceRoomChatTitle {
+  padding: 0 !important;
+  line-height: var(--zehn-size-titlebar) !important;
+  background: transparent !important;
+}
+
+.VoiceChatTextChannelName {
+  text-align: left !important;
+  padding: var(--zehn-size-titlebar-text-padding) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-titlebar-text) !important;
+}
+
+// CLOSE BUTTON
+.VoiceRoomChatTitle .MinimizeTextChat {
+  left: unset !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: unset !important;
+}
+
+.VoiceRoomChatTitle .MinimizeTextChat svg {
+  -webkit-mask-image: var(--zehn-icon-window-close) !important;
+}
+
+// DESCRIPTION - MOVE INTO TITLEBAR
+.VoiceChatTextChannelDesc {
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-titlebar-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  background: transparent !important;
+  padding-top: 0 !important;
+  line-height: var(--zehn-size-titlebar) !important;
+  height: var(--zehn-size-titlebar) !important;
+  top: 0 !important;
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // FILE UPLOAD MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // CONTAINER
@@ -1875,9 +1956,9 @@ span.mention.me {
   min-width: 400px !important;
   max-height: fit-content !important;
   z-index: 10 !important;
-  background: var(--zehn-color-modal-background) !important;
-  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
-  border-radius: var(--zehn-size-modal-radius-small) !important;
+  background: var(--zehn-color-alert-background) !important;
+  border: var(--zehn-size-alert-border) solid var(--zehn-color-alert-border) !important;
+  border-radius: var(--zehn-size-alert-radius) !important;
 }
 
 // CLOSE BUTTON
@@ -1981,9 +2062,9 @@ span.mention.me {
   width: fit-content !important;
   min-width: 400px !important;
   gap: var(--zehn-size-dialog-gap) !important;
-  background: var(--zehn-color-modal-background) !important;
-  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
-  border-radius: var(--zehn-size-modal-radius-small) !important;
+  background: var(--zehn-color-alert-background) !important;
+  border: var(--zehn-size-alert-border) solid var(--zehn-color-alert-border) !important;
+  border-radius: var(--zehn-size-alert-radius) !important;
 }
 
 // FILE NAME
@@ -2036,12 +2117,12 @@ span.mention.me {
 
 .zehnAddFriendWrapper {
   position: absolute !important;
-  background: var(--zehn-color-modal-background) !important;
   width: fit-content !important;
   height: fit-content !important;
   box-sizing: content-box !important;
-  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
-  border-radius: var(--zehn-size-modal-radius-small) !important;
+  background: var(--zehn-color-alert-background) !important;
+  border: var(--zehn-size-alert-border) solid var(--zehn-color-alert-border) !important;
+  border-radius: var(--zehn-size-alert-radius) !important;
   padding: var(--zehn-size-padding-xs) !important;
   top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xs)) !important;
   right: var(--zehn-size-spacing-md) !important;
@@ -2088,10 +2169,10 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 .LoadingOlderMessages,
 .FriendChatTypingNotification {
   color: var(--zehn-color-text1) !important;
-  border-radius: var(--zehn-size-modal-radius-small) !important;
-  background: var(--zehn-color-modal-background) !important;
+  background: var(--zehn-color-alert-background) !important;
+  border: var(--zehn-size-alert-border) solid var(--zehn-color-alert-border) !important;
+  border-radius: var(--zehn-size-alert-radius) !important;
   font-size: var(--zehn-size-12) !important;
-  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
   height: fit-content !important;
   transition: transform 0.5s ease, bottom 0.5s ease, opacity 0.5s ease !important;
   width: fit-content !important;
@@ -2184,6 +2265,12 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   background-color: var(--zehn-color-panel) !important;
 }
 
+// ENSURE VISIBILITY WITH QUICK CHAT
+.chatWindow .InsetWindowOpen .chatEntry {
+  z-index: 999 !important;
+}
+
+// CHILDREN
 .chatWindow .chatEntry>form,
 .chatWindow .chatEntry.compactView>form {
   margin: 0 !important;
