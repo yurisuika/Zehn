@@ -7,6 +7,7 @@ export const Zehn = {
   storeTargetHeightAsVariable,
   toggleClassWithPresence,
   nameElement,
+  createSpinner,
   createButton,
   createIconTitleContainer,
   createIconContainer,
@@ -221,6 +222,22 @@ function nameElement(element, nameSelector) {
   } else {
     element.classList.add(name);
   }
+};
+
+function createSpinner(rootSelector, targetSelector) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const spinner = document.createElement('div');
+    spinner.classList.add('zehnSpinner');
+
+    for (let i = 1; i <= 6; i++) {
+      const span = document.createElement('span');
+      span.className = `zehnDot${i}`;
+      spinner.appendChild(span);
+    }
+
+    target.appendChild(spinner);
+    return spinner;
+  });
 };
 
 function createButton(rootSelector, targetSelector, nameSelectors, callback, shouldAppend = true) {

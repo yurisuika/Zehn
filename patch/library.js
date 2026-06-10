@@ -23,6 +23,10 @@ Zehn.addUserAgent();
 
 Zehn.setGlyphColor();
 
+/* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
+
+Zehn.createSpinner('html', 'body');
+
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
@@ -397,6 +401,10 @@ Zehn.createIconContainer('._3lh8aaHNMcFvupuNhQDfFt', '.jjN9CtYfeIJoHpKOCmKOx', [
 /* WRAP FRIEND PICKER CLOSE SVG ------------------------------------------------------------------------------------- */
 
 Zehn.createContainer('.ChatRoomGroupInviteDialog', '.FriendPicker_ChosenFriend .SVGIcon_X_Line', ['.zehnBlurWrapper']);
+
+/* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
+
+Zehn.createIconTitleContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV');
 
 /* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
 

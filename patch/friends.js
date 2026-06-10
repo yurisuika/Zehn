@@ -23,6 +23,10 @@ Zehn.addUserAgent();
 
 Zehn.setGlyphColor();
 
+/* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
+
+Zehn.createSpinner('html', 'body');
+
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
@@ -66,10 +70,6 @@ Zehn.storeTargetHeightAsVariable('.friendsui-container', '._14S4rlGAAqfqW6lMKYB2
 /* WRAP ADD FRIENDS BUTTON ------------------------------------------------------------------------------------------ */
 
 Zehn.createContainer('.MultiUserChat', '.inviteAnotherFriendButton', ['.zehnAddFriendWrapper']);
-
-/* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
-
-Zehn.createIconTitleContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV');
 
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 

@@ -23,6 +23,10 @@ Zehn.addUserAgent();
 
 Zehn.setGlyphColor();
 
+/* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
+
+Zehn.createSpinner('html', 'body');
+
 /* REVEAL CONTEXT EXTENDIUM ----------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.extendium.Extensions .ContextMenuPopupBody', [
