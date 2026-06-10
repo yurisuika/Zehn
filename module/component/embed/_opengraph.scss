@@ -1,0 +1,230 @@
+// OPEN GRAPH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.ChatMessageOpenGraph {
+  flex-wrap: wrap !important;
+  display: flex !important;
+  filter: none !important;
+  box-sizing: border-box !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-embed-padding) !important;
+  width: var(--zehn-size-embed) !important;
+  max-width: var(--zehn-size-embed) !important;
+  min-width: 0 !important;
+  transition: background-color 0.2s var(--zehn-timing-ease) !important;
+  gap: var(--zehn-size-spacing-md) !important;
+  background: var(--zehn-color-embed-background) !important;
+  border-radius: var(--zehn-size-embed-radius) !important;
+  border-width: var(--zehn-size-embed-border) !important;
+  border-style: solid !important;
+  border-color: var(--zehn-color-embed-border) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-embed-background-hover) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTENT CONTAINER
+.ChatMessageOpenGraph .OpenGraphContent {
+  display: flex !important;
+  gap: var(--zehn-size-spacing-md) !important;
+}
+
+// HIDE EMPTY
+.OpenGraphContent>div:empty {
+  display: none !important;
+}
+
+// BACKGROUND BLUR IMAGE
+.OpenGraphImgBackground {
+  max-width: 100% !important;
+  left: 0 !important;
+  display: none !important;
+}
+
+.OpenGraphImgBackground .ChatMessageOpenGraph_Image {
+  filter: var(--zehn-filter-defocus) !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  display: none !important;
+}
+
+// IMAGE CONTAINER
+.OpenGraphImgContainer {
+  filter: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: var(--zehn-size-embed-image-radius) !important;
+  background-color: var(--zehn-color-placeholder) !important;
+  max-height: 256px !important;
+  max-width: 256px !important;
+  min-width: 256px !important;
+}
+
+.ChatMessageOpenGraph_Image {
+  border-radius: var(--zehn-size-embed-image-radius) !important;
+  max-height: 100% !important;
+  max-width: 100% !important;
+}
+
+// BODY CONTAINER
+.ChatMessageOpenGraph_Body {
+  padding: 0 !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: normal !important;
+  align-self: center !important;
+}
+
+.ChatMessageOpenGraph_Title {
+  font-size: var(--zehn-size-14) !important;
+  line-height: var(--zehn-size-16) !important;
+}
+
+.ChatMessageOpenGraph_Description {
+  margin: 0 !important;
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-12) !important;
+  line-height: var(--zehn-size-16) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+// FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// FOOTER CONTAINER
+.ChatMessageOpenGraph .OpenGraphFooter {
+  margin: 0 !important;
+  padding: var(--zehn-size-panel-inset-padding) !important;
+  background: var(--zehn-color-panel-inset) !important;
+  border-radius: var(--zehn-size-panel-inset-radius) !important;
+  width: 100% !important;
+  transform: none !important;
+  gap: var(--zehn-size-spacing-xxs) !important;
+  position: relative !important;
+  --link-size: var(--zehn-size-16);
+}
+
+.OpenGraphFooter .OpenGraphMessageURL {
+  border-radius: var(--zehn-size-radius-none) !important;
+  background: transparent !important;
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  border: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-overflow: ellipsis !important;
+  min-width: 0 !important;
+  order: 2 !important;
+  flex-grow: 1 !important;
+  line-height: var(--link-size) !important;
+  align-self: center !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.OpenGraphMessageURLPosition {
+  display: flex !important;
+  gap: var(--zehn-size-spacing-xxs) !important;
+}
+
+.OpenGraphMessageURL_short,
+.OpenGraphMessageURL_full {
+  text-transform: none !important;
+  max-height: 100% !important;
+  height: 100% !important;
+  align-self: center !important;
+  align-content: center !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-12) !important;
+  line-height: var(--link-size) !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: transform 0.2s var(--zehn-timing-ease) !important;
+  position: relative !important;
+  display: block !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  min-width: 0 !important;
+}
+
+// SITE NAME
+.OpenGraphMessageURL_short {
+  color: var(--zehn-color-text1) !important;
+}
+
+// URL
+.OpenGraphMessageURL_full {
+  transform: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--zehn-color-text3) !important;
+  flex: 1 !important;
+}
+
+// COPY BUTTON
+.OpenGraphFooter .OpenGraphURLButton,
+.OpenGraphFooter .OpenGraphURLButton.CopyToClipboard {
+  margin: 0 !important;
+  order: 1 !important;
+  width: var(--link-size) !important;
+  height: var(--link-size) !important;
+  z-index: 10 !important;
+  background: transparent !important;
+  line-height: var(--link-size) !important;
+  transition: none !important;
+  --icon-color: var(--zehn-color-glyph);
+
+  &:hover {
+    --icon-color: var(--zehn-color-glyph-hover);
+  }
+
+  &:active {
+    --icon-color: var(--zehn-color-glyph-active);
+  }
+}
+
+.OpenGraphFooter .OpenGraphURLButton .SVGIcon_Button.SVGIcon_CopyToClipboard {
+  transition: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  background-color: var(--icon-color) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-sm) !important;
+  -webkit-mask-image: var(--zehn-icon-clipboard) !important;
+
+  * { display: none !important; }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

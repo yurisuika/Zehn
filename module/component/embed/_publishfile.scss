@@ -1,0 +1,210 @@
+// PUBLISH FILE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.SteamPublishedFile {
+  display: flex !important;
+  filter: none !important;
+  box-sizing: border-box !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-embed-padding) !important;
+  width: var(--zehn-size-embed) !important;
+  max-width: var(--zehn-size-embed) !important;
+  min-width: 0 !important;
+  transition: background-color 0.2s var(--zehn-timing-ease) !important;
+  gap: var(--zehn-size-spacing-md) !important;
+  background: var(--zehn-color-embed-background) !important;
+  border-radius: var(--zehn-size-embed-radius) !important;
+  border-width: var(--zehn-size-embed-border) !important;
+  border-style: solid !important;
+  border-color: var(--zehn-color-embed-border) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-embed-background-hover) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// IMAGE
+.ChatLargeImageContainer {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: var(--zehn-size-embed-image-radius) !important;
+  background-color: transparent !important;
+  max-height: 256px !important;
+  max-width: 256px !important;
+  min-width: 256px !important;
+}
+
+.ChatLargeImageContainer_Image {
+  border-radius: var(--zehn-size-embed-image-radius) !important;
+  max-height: 100% !important;
+  max-width: 100% !important;
+}
+
+// BODY
+.ChatLargeImageContainer_Description {
+  align-content: center !important;
+}
+
+// LOGO
+.SteamPublishedFile_Logo {
+  position: absolute !important;
+  top: var(--zehn-size-embed-padding) !important;
+  right: var(--zehn-size-embed-padding) !important;
+  float: right !important;
+  width: var(--zehn-size-icon-xl) !important;
+  height: var(--zehn-size-icon-xl) !important;
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CONTROLS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// WRAPPER
+.SteamPublishedFile>div:has(.workshopItemControls) {
+  position: absolute !important;
+  right: var(--zehn-size-padding-md) !important;
+  bottom: var(--zehn-size-padding-md) !important;
+}
+
+// OUTER CONTAINER
+.workshopItemControls {
+  margin-top: 0 !important;
+  padding: 0 !important;
+  line-height: var(--control-inner) !important;
+  --control-inner: 24px;
+}
+
+// CONTAINER
+.workshopItemControlCtn {
+  gap: var(--zehn-size-spacing-xxs) !important;
+  display: flex !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+}
+
+// CONTROL
+.workshopItemControlCtn>span {
+  align-items: center !important;
+  display: flex !important;
+  margin: 0 !important;
+  padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md) !important;
+  height: var(--control-inner) !important;
+  line-height: var(--control-inner) !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+  background: var(--zehn-color-control-background) !important;
+  border: var(--zehn-size-control-border) solid var(--zehn-color-control-border) !important;
+  border-radius: var(--zehn-size-control-radius) !important;
+  transition: background-color 0.2s var(--zehn-timing-ease), transform 0.2s var(--zehn-timing-ease-out-quart), opacity 0.2s var(--zehn-timing-ease-out-quart), filter 0.2s var(--zehn-timing-ease-out-quart) !important;
+  opacity: 0 !important;
+  transform: scale(2) !important;
+  filter: var(--zehn-filter-light-blur) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-control-background-hover) !important;
+  }
+}
+
+.SteamPublishedFile:hover .workshopItemControlCtn>span {
+  transition: background-color 0.2s var(--zehn-timing-ease), transform 0.2s var(--zehn-timing-ease-in-sine), opacity 0.2s var(--zehn-timing-ease-in-sine), filter 0.2s var(--zehn-timing-ease-in-sine) !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  filter: none !important;
+}
+
+// CONTROL WITHOUT TEXT
+.workshopItemControlCtn>span:empty {
+  gap: 0 !important;
+}
+
+// BUTTONS
+.general_btn,
+.general_btn.voteUp,
+.general_btn.voteDown {
+  max-width: fit-content !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+
+  &:hover {
+    color: var(--zehn-color-text1) !important;
+  }
+}
+
+.upvoteCount,
+.commentCount,
+.general_btn.voteUp,
+.general_btn.voteDown {
+  width: fit-content !important;
+}
+
+// ICONS
+.SteamPublishedFile .upvoteCount::before,
+.SteamPublishedFile .commentCount::before,
+.SteamPublishedFile .general_btn::before {
+  content: "" !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  background-color: var(--zehn-color-icon1) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  float: left !important;
+}
+
+.SteamPublishedFile .upvoteCount::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-up) !important;
+}
+
+.SteamPublishedFile .commentCount::before {
+  -webkit-mask-image: var(--zehn-icon-discussion) !important;
+}
+
+.general_btn.voteUp::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-up) !important;
+}
+
+.general_btn.voteUp.toggled::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-up-solid) !important;
+}
+
+.general_btn.voteDown::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-down) !important;
+}
+
+.general_btn.voteDown.toggled::before {
+  -webkit-mask-image: var(--zehn-icon-thumb-down-solid) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

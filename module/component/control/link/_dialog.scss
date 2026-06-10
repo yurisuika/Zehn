@@ -1,11 +1,7 @@
 // BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @mixin base() {
-  height: inherit !important;
-
   font-weight: var(--zehn-weight-normal) !important;
-  font-size: inherit !important;
-  line-height: inherit !important;
   text-decoration: none !important;
 
   border: none !important;
@@ -26,43 +22,43 @@
 
 // LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin look {
-  color: var(--zehn-color-link) !important;
+@mixin look($style) {
+  color: var(--zehn-color-#{$style}) !important;
 }
 
-@mixin look-focus {
-  color: var(--zehn-color-link-focus) !important;
+@mixin look-focus($style) {
+  color: var(--zehn-color-#{$style}-focus) !important;
 }
 
-@mixin look-hover {
-  color: var(--zehn-color-link-hover) !important;
+@mixin look-hover($style) {
+  color: var(--zehn-color-#{$style}-hover) !important;
 }
 
-@mixin look-hover-focus {
-  color: var(--zehn-color-link-hover-focus) !important;
+@mixin look-hover-focus($style) {
+  color: var(--zehn-color-#{$style}-hover-focus) !important;
 }
 
-@mixin look-active {
-  color: var(--zehn-color-link-active) !important;
+@mixin look-active($style) {
+  color: var(--zehn-color-#{$style}-active) !important;
 }
 
-@mixin look-active-focus {
-  color: var(--zehn-color-link-active-focus) !important;
+@mixin look-active-focus($style) {
+  color: var(--zehn-color-#{$style}-active-focus) !important;
 }
 
-@mixin look-disabled {
+@mixin look-disabled($style) {
   pointer-events: none !important;
-  color: var(--zehn-color-link-disabled) !important;
+  color: var(--zehn-color-#{$style}-disabled) !important;
 }
 
-@mixin looks($disabled) {
-  @include look;
-  &:is(:focus) { @include look-focus; }
-  &:is(:hover) { @include look-hover; }
-  &:is(:hover:focus) { @include look-hover-focus; }
-  &:is(:active) { @include look-active; }
-  &:is(:active:focus) { @include look-active-focus; }
-  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) { @include look-disabled; }
+@mixin looks($disabled, $style) {
+  @include look($style);
+  &:is(:focus) { @include look-focus($style); }
+  &:is(:hover) { @include look-hover($style); }
+  &:is(:hover:focus) { @include look-hover-focus($style); }
+  &:is(:active) { @include look-active($style); }
+  &:is(:active:focus) { @include look-active-focus($style); }
+  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) { @include look-disabled($style); }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,9 +74,9 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset($disabled: ":disabled") {
+@mixin preset($disabled: ":disabled", $style: "link") {
   @include base();
-  @include looks($disabled);
+  @include looks($disabled, $style);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

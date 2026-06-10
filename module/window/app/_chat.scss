@@ -1152,6 +1152,26 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 
 
+// BROADCAST CHAT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.ChatMessages {
+  padding: var(--zehn-size-padding-md) 0 !important;
+  --message-scale: var(--zehn-size-msg-text-default);
+  --message-scale-sub: var(--zehn-size-msg-subtext-default);
+  --message-line: var(--zehn-size-msg-line-default);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // CHAT HISTORY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // CHAT CONTAINER
@@ -1174,10 +1194,13 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 // SCROLL CONTAINER
 .chatHistory {
   margin: 0 !important;
-  padding: 0 !important;
+  padding: var(--zehn-size-padding-md) 0 !important;
   position: relative;
   flex-grow: 1 !important;
   align-content: flex-end !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-spacing-xs) !important;
 }
 
 // NORMAL CHAT
@@ -1220,23 +1243,22 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   display: flex !important;
   flex-direction: column !important;
   transition: none !important;
+  padding: 0 !important;
 }
 
 .MultiUserChat .msg {
-  padding: 0 !important;
   margin: 0 !important;
 }
 
-.MultiUserChat .ChatMessageBlock>.msg {
+.MultiUserChat .ChatMessageBlock>.msg,
+.MultiUserChat.compactView .ChatMessageBlock>.msg,
+.MultiUserChat .ChatMessageBlock .msg.ChatMsgSlashEmote,
+.MultiUserChat.compactView .ChatMessageBlock .msg.ChatMsgSlashEmote,
+.MultiUserChat .msg.serverMsg,
+.MultiUserChat.compactView .msg.serverMsg
+.MultiUserChat .msg.timeDivision,
+.MultiUserChat.compactView .msg.timeDivision {
   padding: var(--zehn-size-padding-xxs) 0 !important;
-}
-
-.MultiUserChat.compactView .ChatMessageBlock>.msg {
-  padding: var(--zehn-size-padding-xxs) 0 !important;
-}
-
-.MultiUserChat .ChatMessageBlock .msg.ChatMsgSlashEmote {
-  padding: 0 !important;
 }
 
 .ChatMessageBlock,
@@ -1247,7 +1269,6 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .MultiUserChat .msg.serverMsg,
 .MultiUserChat .msg.timeDivision {
   margin: 0 !important;
-  margin-bottom: var(--zehn-size-spacing-xs) !important;
 }
 
 // MESSAGE BACKGROUND
@@ -1429,9 +1450,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   line-height: var(--chat-line) !important;
 }
 
-.FriendsSettingsChatFontSizeSection_ButtonRow .defaultFontSetting,
 .chatTextarea,
-.ChatMessageOpenGraph_Title,
 .nameWidthLabel,
 .speaker {
   font-size: var(--chat-scale) !important;
