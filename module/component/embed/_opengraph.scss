@@ -126,25 +126,25 @@
   border-radius: var(--zehn-size-panel-inset-radius) !important;
   width: 100% !important;
   transform: none !important;
-  gap: var(--zehn-size-spacing-xxs) !important;
+  gap: var(--zehn-size-spacing-xs) !important;
   position: relative !important;
-  --link-size: var(--zehn-size-16);
+  --footer-inner: var(--zehn-size-24);
 }
 
 .OpenGraphFooter .OpenGraphMessageURL {
-  border-radius: var(--zehn-size-radius-none) !important;
-  background: transparent !important;
   color: var(--zehn-color-text3) !important;
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   border: unset !important;
   margin: 0 !important;
   padding: 0 !important;
+  background: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
   text-overflow: ellipsis !important;
   min-width: 0 !important;
-  order: 2 !important;
+  order: 1 !important;
   flex-grow: 1 !important;
-  line-height: var(--link-size) !important;
+  line-height: var(--footer-inner) !important;
   align-self: center !important;
   max-width: 100% !important;
   max-height: 100% !important;
@@ -164,7 +164,7 @@
   align-content: center !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-12) !important;
-  line-height: var(--link-size) !important;
+  line-height: var(--footer-inner) !important;
   opacity: 1 !important;
   transform: none !important;
   transition: transform 0.2s var(--zehn-timing-ease) !important;
@@ -194,37 +194,12 @@
 // COPY BUTTON
 .OpenGraphFooter .OpenGraphURLButton,
 .OpenGraphFooter .OpenGraphURLButton.CopyToClipboard {
-  margin: 0 !important;
-  order: 1 !important;
-  width: var(--link-size) !important;
-  height: var(--link-size) !important;
+  order: 2 !important;
   z-index: 10 !important;
-  background: transparent !important;
-  line-height: var(--link-size) !important;
-  transition: none !important;
-  --icon-color: var(--zehn-color-glyph);
-
-  &:hover {
-    --icon-color: var(--zehn-color-glyph-hover);
-  }
-
-  &:active {
-    --icon-color: var(--zehn-color-glyph-active);
-  }
 }
 
 .OpenGraphFooter .OpenGraphURLButton .SVGIcon_Button.SVGIcon_CopyToClipboard {
-  transition: none !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  background-color: var(--icon-color) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-sm) !important;
   -webkit-mask-image: var(--zehn-icon-clipboard) !important;
-
-  * { display: none !important; }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
