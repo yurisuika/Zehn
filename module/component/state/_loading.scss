@@ -22,25 +22,6 @@
   content: url() !important;
 }
 
-// MAKE MASK ON CONTAINER SO WE CAN CUSTOMIZE COLOR
-div:has(>._39-WTtOSEPJqAEjOcNGE3j)::after,
-div:has(>._1DWH_4M4yAq8O2T06-3ckY)::after,
-div:has(>.loadingthrobber_Large_)::after,
-div:has(>._3sa1NXudhvcc1U7HrlLdNQ>img)::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: var(--zehn-size-icon-xxxxl);
-  height: var(--zehn-size-icon-xxxxl);
-  margin: auto;
-  -webkit-mask-image: url("https://steamloopback.host/images/steam_spinner.png");
-  background-color: var(--zehn-color-icon1);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: 100%;
-  opacity: 1;
-}
-
 ._3sa1NXudhvcc1U7HrlLdNQ img._39-WTtOSEPJqAEjOcNGE3j {
   width: 140px !important;
   height: 140px !important;
@@ -68,21 +49,6 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
   opacity: 0 !important;
 }
 
-._1m8iQOSVziKDHiInrfskv_::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  -webkit-mask-image: url("https://steamloopback.host/images/steam_spinner.png");
-  background-color: var(--zehn-color-icon1);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: 100%;
-}
-
-.SteamLogoThrobber_ {
-  opacity: 0 !important;
-}
-
 // GROUP CHAT SETTINGS
 ._2SwSJd-DlX2dRiDGxZWHI5 {
   margin: auto !important;
@@ -90,19 +56,96 @@ div:has(>._1m8iQOSVziKDHiInrfskv_) {
 
 // BROWSER
 .VicgWmz2sj_UUd0XKXvFQ {
-  width: 140px !important;
-  height: 140px !important;
-  margin: auto !important;
-  -webkit-mask-image: url("https://steamloopback.host/images/steam_spinner.png") !important;
-  background-color: var(--zehn-color-icon1) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: 100% !important;
-  opacity: 1 !important;
+  display: none !important;
 
   img {
     opacity: 0 !important;
   }
+}
+
+// CHAT, BROWSER, GENERIC
+._2wAKy-0ZkO_vhbiQCP9MgE,
+.VicgWmz2sj_UUd0XKXvFQ,
+._3rAIymq-pEYFB9bIdm-Aoz {
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// WINDOWS STYLE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// BACKUP OF OLD STYLE
+// .zehnSpinner {
+//   background-color: var(--zehn-color-spinner);
+//  mask-repeat: no-repeat;
+//  mask-position: center;
+//  mask-size: auto !important;
+//   -webkit-mask-image: url("https://steamloopback.host/images/steam_spinner.png");
+// }
+
+// BASE
+.zehnSpinner {
+  position: fixed;
+  display: flex;
+  top: 50%;
+  right: 50%;
+  height: 50px;
+  width: 50px;
+  transform: translate(-50%, -50%);
+  scale: 0.8;
+  z-index: 1337;
+  order: 1337;
+  opacity: 0;
+  transition: opacity 0.2s var(--zehn-timing-ease);
+}
+
+body:has(.VicgWmz2sj_UUd0XKXvFQ, ._3rAIymq-pEYFB9bIdm-Aoz, ._2wAKy-0ZkO_vhbiQCP9MgE) .zehnSpinner {
+  opacity: 1;
+}
+
+// DOTS
+.zehnSpinner>span {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  transform-origin: 50px 50px;
+  background-color: var(--zehn-color-spinner);
+  border-radius: var(--zehn-size-radius-circular);
+  opacity: 0;
+  z-index: 10;
+}
+
+.zehnDot1 {
+  animation: dot-1 4.2s var(--zehn-timing-linear) 0ms infinite, spinner-opacity 4.2s var(--zehn-timing-linear) 0ms infinite;
+}
+
+.zehnDot2 {
+  animation: dot-2 4.2s var(--zehn-timing-linear) 0.167s infinite, spinner-opacity 4.2s var(--zehn-timing-linear) 0.167s infinite;
+}
+
+.zehnDot3 {
+  animation: dot-3 4.2s var(--zehn-timing-linear) 0.334s infinite, spinner-opacity 4.2s var(--zehn-timing-linear) 0.334s infinite;
+}
+
+.zehnDot4 {
+  animation: dot-4 4.2s var(--zehn-timing-linear) 0.501s infinite, spinner-opacity 4.2s var(--zehn-timing-linear) 0.501s infinite;
+}
+
+.zehnDot5 {
+  animation: dot-5 4.2s var(--zehn-timing-linear) 0.668s infinite, spinner-opacity 4.2s var(--zehn-timing-linear) 0.668s infinite;
+}
+
+.zehnDot6 {
+  animation: dot-6 4.2s var(--zehn-timing-linear) 0.835s infinite, spinner-opacity 4.2s var(--zehn-timing-linear) 0.835s infinite;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
