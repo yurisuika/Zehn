@@ -73,7 +73,7 @@
 
 .multiChatDialog .ChatTabs::before {
   background: var(--zehn-color-section-acrylic);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s var(--zehn-timing-ease);
   backdrop-filter: var(--zehn-transparency-effects-acrylic-filter);
   background-blend-mode: exclusion;
 }
@@ -87,7 +87,7 @@
   pointer-events: none;
   background-size: auto;
   background-image: var(--zehn-transparency-effects-acrylic-texture);
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s var(--zehn-timing-ease);
 }
 
 .WindowFocus .multiChatDialog .ChatTabs::after {
@@ -451,22 +451,29 @@
 }
 
 .ChannelTypeLabel,
-.ChannelTypeLabel:not(.NoPermission) {
+.ChannelTypeLabel.NoPermission {
+  flex: 1 !important;
   color: inherit !important;
   font-size: inherit !important;
   font-weight: inherit !important;
   text-align: left !important;
-  transition: none !important;
   margin: 0px !important;
   padding: 0px !important;
   border-radius: var(--zehn-size-radius-none) !important;
   order: 2 !important;
   color: inherit !important;
   transform: none !important;
+  opacity: 1 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
-.ChannelTypeTitle .ChannelTypeLabel:active:not(.NoPermission) {
-  transform: none !important;
+.chatRoomGroupNavCollapsed {
+  .ChannelTypeLabel,
+  .ChannelTypeLabel.NoPermission {
+    flex: 1 !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
+  }
 }
 
 .ChatRoomAddRoomBtn {
@@ -480,6 +487,11 @@
   order: 1 !important;
   color: transparent !important;
   margin: 0px !important;
+  flex: 0 !important;
+}
+
+.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
+  flex: 0 !important;
 }
 
 .ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
@@ -494,7 +506,7 @@
   * { display: none !important; }
 }
 
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
+.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
   opacity: 1 !important;
   margin: auto 0px !important;
 }
@@ -603,8 +615,19 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   margin: 0px !important;
   inset: unset !important;
   position: relative !important;
-  transition: none !important;
   background: transparent !important;
+  opacity: 1 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
+}
+
+.chatRoomGroupNavCollapsed  {
+  .chatRoomVoiceChannelName,
+  .chatRoomTextChannelName,
+  .compactView .chatRoomVoiceChannelName,
+  .compactView .chatRoomTextChannelName {
+    opacity: 0 !important;
+    transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
+  }
 }
 
 .chatRoomGroupName,
@@ -616,7 +639,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   width: auto !important;
 }
 
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
+n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
   display: none !important;
 }
 
@@ -864,12 +887,12 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   right: var(--zehn-size-spacing-xs) !important;
   top: var(--zehn-size-spacing-xs) !important;
   opacity: 1 !important;
-  transition: opacity 0.2s ease 1s !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
+.chatRoomGroupNavCollapsed .chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
   opacity: 0 !important;
-  transition: opacity 0.2s ease 0s !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
 .VoiceIconCtn,
