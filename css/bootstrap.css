@@ -26139,7 +26139,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
   width: 100% !important;
   height: 100% !important;
   inset: 0px !important;
-  transition: all 0.2s var(--zehn-transition-ease) !important;
+  transition: all 0.2s var(--zehn-timing-ease) !important;
 }
 
 .m51jECFqnn3BZ5tMJ2WAN {
@@ -26318,7 +26318,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
 }
 
 ._1OFXTlU4FVAAUE-TYyLlPK {
-  transition: opacity 0.2s ease !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
 ._1OFXTlU4FVAAUE-TYyLlPK:empty {
@@ -26360,7 +26360,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
 }
 
 ._15cczWGd-yOWsvm-9HmolD {
-  transition: opacity 0.2s ease !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
 ._1h9dqa42zo9ZKLEyqbqZ7l {
@@ -26399,7 +26399,6 @@ img.AB86vEzEKPL0y5fK_m4pT {
   box-sizing: border-box !important;
   height: fit-content !important;
   min-height: 0px !important;
-  width: auto !important;
   max-width: var(--zehn-size-embed) !important;
   max-height: unset !important;
   background: var(--zehn-color-embed-background) !important;
@@ -26419,6 +26418,11 @@ img.AB86vEzEKPL0y5fK_m4pT {
 .BBCodeResizableComponent.chatVideoContainer:hover,
 .BBCodeResizableComponent.BBCodeYouTubeComponent:hover {
   background-color: var(--zehn-color-embed-background-hover) !important;
+}
+
+.chatImageContainer:not(.Restoring, .ActivelyResizing, .Resized),
+.BBCodeResizableComponent:not(.Restoring, .ActivelyResizing, .Resized) {
+  width: auto !important;
 }
 
 .chatImageContainer.Minimizing,
@@ -26518,6 +26522,11 @@ img.AB86vEzEKPL0y5fK_m4pT {
   gap: var(--zehn-size-spacing-xs) !important;
   display: flex !important;
   flex-direction: column !important;
+  --play-button-bottom: 0px;
+}
+
+.chatVideoContainer > .Panel:has(.zehnEmbedLinkWrapper) {
+  --play-button-bottom: 40px;
 }
 
 .chatVideoContainer video {
@@ -26531,6 +26540,9 @@ img.AB86vEzEKPL0y5fK_m4pT {
   background-color: transparent !important;
   padding: 0px !important;
   inset: 0px !important;
+  bottom: var(--play-button-bottom) !important;
+  height: auto !important;
+  width: 100% !important;
 }
 
 .chatVideoPlayControl .playButtonContainer {
@@ -26625,37 +26637,30 @@ a.test.HideWhenMinimized:is(:focus, :hover, :hover:focus, :active, :active:focus
   text-overflow: ellipsis !important;
 }
 
-.zehnImageURL {
+.zehnEmbedLinkWrapper {
   padding: var(--zehn-size-embed-inset-padding) !important;
   background: var(--zehn-color-embed-inset) !important;
   border-radius: var(--zehn-size-embed-inset-radius) !important;
 }
 
-.chatImageContainer .chatImageURL,
-.BBCodeAlreadyCollapsed .chatImageURL,
-.BBCodeResizableComponent .chatImageURL,
-.chatImageContainer .zehnImageURL,
-.BBCodeAlreadyCollapsed .zehnImageURL,
-.BBCodeResizableComponent .zehnImageURL {
-  opacity: 0 !important;
-  display: none !important;
-}
-
-.chatImageContainer:not(.Minimized) .chatImageURL,
-.BBCodeAlreadyCollapsed:not(.Minimized) .chatImageURL,
-.BBCodeResizableComponent:not(.Minimized) .chatImageURL,
-.chatImageContainer:not(.Minimized) .zehnImageURL,
-.BBCodeAlreadyCollapsed:not(.Minimized) .zehnImageURL,
-.BBCodeResizableComponent:not(.Minimized) .zehnImageURL {
+.zehnEmbedLinkWrapper {
   opacity: 1 !important;
   display: flex !important;
 }
 
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .zehnEmbedLinkWrapper,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .zehnEmbedLinkWrapper {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  display: none !important;
+}
+
 a.chatImageURL,
-.chatVideoContainer a.chatImageURL,
 .chatImageContainer a.chatImageURL,
-.chatImageContainer.giphyImg a.chatImageURL {
+.chatImageContainer.giphyImg a.chatImageURL,
+.BBCodeResizableComponent a.chatImageURL {
   --footer-inner: var(--zehn-size-24);
+  display: block !important;
   inset: 0px !important;
   transition: none !important;
   position: relative !important;
@@ -26670,9 +26675,9 @@ a.chatImageURL,
   border-radius: var(--zehn-size-radius-none) !important;
 }
 a.chatImageURL *,
-.chatVideoContainer a.chatImageURL *,
 .chatImageContainer a.chatImageURL *,
-.chatImageContainer.giphyImg a.chatImageURL * {
+.chatImageContainer.giphyImg a.chatImageURL *,
+.BBCodeResizableComponent a.chatImageURL * {
   color: var(--zehn-color-text-label) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-label) !important;
@@ -26696,13 +26701,8 @@ a.chatImageURL *,
   font-size: var(--zehn-size-text-label) !important;
 }
 
-.chatImageContainer.Minimized .chatImageURL,
-.chatVideoContainer.Minimized .chatImageURL {
-  display: none !important;
-}
-
 .chatImageContainer .chatImageURL .SVGIcon_Button,
-.chatVideoContainer .chatImageURL .SVGIcon_Button {
+.BBCodeResizableComponent .chatImageURL .SVGIcon_Button {
   inset: 0px !important;
   position: relative !important;
   height: var(--footer-inner) !important;
@@ -26713,60 +26713,72 @@ a.chatImageURL .SVGIcon_Button.SVGIcon_Popout {
   -webkit-mask-image: var(--zehn-icon-popout) !important;
 }
 
-.BBCodeResizeControl {
-  display: none !important;
-  position: relative !important;
+.BBCodeCollapseControl,
+.BBCodeResizeControl,
+.BBCodeRestoreControl {
   padding: 0px !important;
-  opacity: 1 !important;
-  order: 100 !important;
-}
-
-.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeCollapseControl,
-.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeResizeControl {
-  display: none !important;
-  opacity: 1 !important;
-}
-
-.BBCodeResizeControl .SVGIcon_Button.SVGIcon_ResizeIcon {
-  -webkit-mask-image: var(--zehn-icon-arrow-down-right) !important;
-}
-
-.BBCodeCollapseControl {
   inset: unset !important;
-  order: 90 !important;
   opacity: 0 !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
 .BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeCollapseControl,
-.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeCollapseControl {
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeResizeControl,
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeRestoreControl,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeCollapseControl,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeResizeControl,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeRestoreControl {
   position: relative !important;
-  left: 0px !important;
-  right: unset !important;
   opacity: 1 !important;
 }
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeResizeControl,
+.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeRestoreControl,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeResizeControl,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeRestoreControl {
+  pointer-events: none !important;
+  display: none !important;
+}
 
-.chatImageContainer .BBCodeCollapseControl,
-.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeCollapseControl {
+.chatImageContainer .BBCodeCollapseControl .BBCodeCollapseControl,
+.chatImageContainer .BBCodeCollapseControl .BBCodeResizeControl,
+.chatImageContainer .BBCodeCollapseControl .BBCodeRestoreControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeCollapseControl .BBCodeCollapseControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeCollapseControl .BBCodeResizeControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeCollapseControl .BBCodeRestoreControl {
   position: absolute !important;
   opacity: 0 !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
 .chatImageContainer .BBCodeCollapseControl,
-.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeCollapseControl {
-  top: calc(var(--zehn-size-embed-padding) + var(--zehn-size-spacing-xs)) !important;
+.chatImageContainer .BBCodeResizeControl,
+.chatImageContainer .BBCodeRestoreControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeCollapseControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeResizeControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing) .BBCodeRestoreControl {
+  top: calc(var(--zehn-size-embed-padding) + var(--zehn-size-spacing-xs) + var(--control-order) * (var(--zehn-size-button-app) + var(--zehn-size-spacing-xs))) !important;
   right: calc(var(--zehn-size-embed-padding) + var(--zehn-size-spacing-xs)) !important;
 }
 
-.chatImageContainer .BBCodeCollapseControl {
-  top: var(--zehn-size-embed-padding) !important;
+.chatImageContainer .BBCodeCollapseControl,
+.chatImageContainer .BBCodeResizeControl,
+.chatImageContainer .BBCodeRestoreControl {
+  top: calc(var(--zehn-size-embed-padding) + var(--control-order) * (var(--zehn-size-button-app) + var(--zehn-size-spacing-xs))) !important;
   right: var(--zehn-size-embed-padding) !important;
 }
 
 .chatImageContainer:hover .BBCodeCollapseControl,
-.BBCodeResizableComponent:not(.Minimized, .Minimizing):hover .BBCodeCollapseControl {
+.chatImageContainer:hover .BBCodeResizeControl,
+.chatImageContainer:hover .BBCodeRestoreControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing):hover .BBCodeCollapseControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing):hover .BBCodeResizeControl,
+.BBCodeResizableComponent:not(.Minimized, .Minimizing):hover .BBCodeRestoreControl {
   opacity: 1 !important;
+}
+
+.BBCodeCollapseControl {
+  --control-order: 0;
+  order: 90 !important;
 }
 
 .BBCodeCollapseControl .SVGIcon_Button {
@@ -26774,32 +26786,33 @@ a.chatImageURL .SVGIcon_Button.SVGIcon_Popout {
 }
 
 .Minimized .BBCodeCollapseControl .SVGIcon_Button {
-  transform: none !important;
   -webkit-mask-image: var(--zehn-icon-window-expand) !important;
+}
+
+.BBCodeResizeControl {
+  --control-order: 1;
+  order: 80 !important;
+}
+
+.BBCodeResizeControl .SVGIcon_Button.SVGIcon_ResizeIcon {
+  -webkit-mask-image: var(--zehn-icon-scale) !important;
 }
 
 .BBCodeRestoreControl {
-  order: 80 !important;
-  left: 0px !important;
-  top: 0px !important;
-  position: relative !important;
-  opacity: 1 !important;
+  --control-order: 2;
+  order: 70 !important;
 }
 
-.BBCodeResizableComponent.ActivelyResizing .BBCodeRestoreControl,
-.BBCodeResizableComponent:not(.Resized) .BBCodeRestoreControl,
-.BBCodeResizableComponent.Restoring .BBCodeRestoreControl {
-  display: none !important;
+.Minimized .BBCodeResizeControl {
+  display: poin;
 }
 
-.BBCodeAlreadyCollapsed:is(.Minimized, .Minimizing) .BBCodeCollapseControl,
-.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeRestoreControl {
+.BBCodeResizableComponent:not(.Restoring, .ActivelyResizing, .Resized) .BBCodeRestoreControl {
   display: none !important;
-  opacity: 1 !important;
 }
 
 .BBCodeRestoreControl .restoreSize {
-  -webkit-mask-image: var(--zehn-icon-window-expand) !important;
+  -webkit-mask-image: var(--zehn-icon-scale-restore) !important;
 }
 
 .ConnectionTrouble .ConnectionTroubleContent {
@@ -32278,7 +32291,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 .multiChatDialog .ChatTabs::before {
   background: var(--zehn-color-section-acrylic);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s var(--zehn-timing-ease);
   backdrop-filter: var(--zehn-transparency-effects-acrylic-filter);
   background-blend-mode: exclusion;
 }
@@ -32292,7 +32305,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   pointer-events: none;
   background-size: auto;
   background-image: var(--zehn-transparency-effects-acrylic-texture);
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s var(--zehn-timing-ease);
 }
 
 .WindowFocus .multiChatDialog .ChatTabs::after {
@@ -32582,22 +32595,27 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 }
 
 .ChannelTypeLabel,
-.ChannelTypeLabel:not(.NoPermission) {
+.ChannelTypeLabel.NoPermission {
+  flex: 1 !important;
   color: inherit !important;
   font-size: inherit !important;
   font-weight: inherit !important;
   text-align: left !important;
-  transition: none !important;
   margin: 0px !important;
   padding: 0px !important;
   border-radius: var(--zehn-size-radius-none) !important;
   order: 2 !important;
   color: inherit !important;
   transform: none !important;
+  opacity: 1 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
-.ChannelTypeTitle .ChannelTypeLabel:active:not(.NoPermission) {
-  transform: none !important;
+.chatRoomGroupNavCollapsed .ChannelTypeLabel,
+.chatRoomGroupNavCollapsed .ChannelTypeLabel.NoPermission {
+  flex: 1 !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
 .ChatRoomAddRoomBtn {
@@ -32611,6 +32629,11 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   order: 1 !important;
   color: transparent !important;
   margin: 0px !important;
+  flex: 0 !important;
+}
+
+.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
+  flex: 0 !important;
 }
 
 .ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
@@ -32626,7 +32649,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   display: none !important;
 }
 
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
+.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
   opacity: 1 !important;
   margin: auto 0px !important;
 }
@@ -32742,8 +32765,17 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   margin: 0px !important;
   inset: unset !important;
   position: relative !important;
-  transition: none !important;
   background: transparent !important;
+  opacity: 1 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
+}
+
+.chatRoomGroupNavCollapsed .chatRoomVoiceChannelName,
+.chatRoomGroupNavCollapsed .chatRoomTextChannelName,
+.chatRoomGroupNavCollapsed .compactView .chatRoomVoiceChannelName,
+.chatRoomGroupNavCollapsed .compactView .chatRoomTextChannelName {
+  opacity: 0 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
 .chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
@@ -32751,7 +32783,7 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   width: auto !important;
 }
 
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
+n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
   display: none !important;
 }
 
@@ -32994,12 +33026,12 @@ div:not(.ActiveVoiceChannel) > .chatRoomVoiceChannelNameContainer:active {
   right: var(--zehn-size-spacing-xs) !important;
   top: var(--zehn-size-spacing-xs) !important;
   opacity: 1 !important;
-  transition: opacity 0.2s ease 1s !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
-.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
+.chatRoomGroupNavCollapsed .chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
   opacity: 0 !important;
-  transition: opacity 0.2s ease 0s !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
 .VoiceIconCtn,

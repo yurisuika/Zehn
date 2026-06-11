@@ -107,7 +107,7 @@ Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogCo
 
 /* WRAP POPOUT SVG -------------------------------------------------------------------------------------------------- */
 
-Zehn.createContainer('.msg', '.chatImageURL', ['.zehnImageURL']);
+Zehn.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
 
 /* WRAP EMOTICON ADD SVG -------------------------------------------------------------------------------------------- */
 
