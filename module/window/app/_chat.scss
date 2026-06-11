@@ -13,7 +13,7 @@
   margin-right: calc(-1 * var(--zehn-size-divider)) !important;
   z-index: 999 !important;
   position: relative !important;
-  min-width: 0 !important;
+  min-width: 0px !important;
   border: unset !important;
 }
 
@@ -59,7 +59,7 @@
   content: "";
   z-index: -1;
   position: absolute;
-  inset: 0;
+  inset: 0px;
   pointer-events: none;
   height: var(--zehn-size-titlebar);
 }
@@ -111,7 +111,7 @@
 .titleBarContainer.ChatTabs,
 .titleBarContainer.ChatTabs.HasWindowControls,
 .singlewindow .titleBarContainer.ChatTabs {
-  padding: 0 !important;
+  padding: 0px !important;
   border: unset !important;
   position: absolute !important;
   z-index: 1 !important;
@@ -122,13 +122,13 @@
 // SINGLE WINDOW CONTROLS
 .friendListCollapse,
 .friendListButtons {
-  right: 0 !important;
-  top: 0 !important;
+  right: 0px !important;
+  top: 0px !important;
 }
 
 .friendListButton,
 .friendListButton:last-child:not(.addFriendButton) {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .friendCollapseButton .SVGIcon_DoubleArrow {
@@ -185,7 +185,7 @@
 ._2XZq-_f6npaQdAgeRzKIkz {
   width: var(--zehn-size-chat-tab) !important;
   height: 100% !important;
-  padding: 0 !important;
+  padding: 0px !important;
   border-radius: var(--zehn-size-radius-none) !important;
   transition: none !important;
   min-height: fit-content !important;
@@ -201,7 +201,7 @@
 // TAB SEPARATOR
 ._2XZq-_f6npaQdAgeRzKIkz::before,
 ._2XZq-_f6npaQdAgeRzKIkz:last-of-type::after {
-  width: 0 !important;
+  width: 0px !important;
   background: transparent !important;
   display: none !important;
 }
@@ -216,9 +216,9 @@
   position: absolute;
   display: block;
   margin: 4px 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
   width: var(--zehn-size-separator);
   background-color: var(--zehn-color-separator);
 }
@@ -239,7 +239,7 @@
 // AVATAR AND NAME
 ._21I8pyEfvklCsrYIcsBtYY,
 ._3hCFlMxf40SP2WVNOubSvf {
-  padding: 0 !important;
+  padding: 0px !important;
   height: fit-content !important;
 }
 
@@ -249,7 +249,7 @@
 .titleBarContainer.ChatTabs.compactView .labelHolder {
   line-height: 100% !important;
   height: 100% !important;
-  margin: 0 !important;
+  margin: 0px !important;
   margin-left: var(--zehn-size-persona-gap) !important
 }
 
@@ -275,9 +275,9 @@
   width: var(--status-size) !important;
   height: var(--status-size) !important;
   border-radius: var(--zehn-size-indicator-radius) !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  inset: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  inset: 0px !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
   position: absolute !important;
   order: 2 !important;
@@ -295,7 +295,7 @@
 ._2XZq-_f6npaQdAgeRzKIkz .c9l09VKqQIXJvsl0gqItO svg {
   width: 100% !important;
   height: 100% !important;
-  padding: 0 !important;
+  padding: 0px !important;
   color: transparent !important;
   background-color: var(--zehn-color-icon1) !important;
   mask-repeat: no-repeat !important;
@@ -322,7 +322,7 @@
 ._2XZq-_f6npaQdAgeRzKIkz:hover ._1JXI4j2_xSpVK1YjyEuebr,
 ._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ ._1JXI4j2_xSpVK1YjyEuebr {
   display: block !important;
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 ._2EstNjFIIZm_WUSKm5Wt7n ._1n7Wloe5jZ6fSuvV18NNW ._1JXI4j2_xSpVK1YjyEuebr .SVGIcon_X_Line,
@@ -379,11 +379,14 @@
 
 // COLUMN
 .chatRoomGroupNavColumn {
+  transition-duration: 0.2s !important;
+  transition-timing-function: var(--zehn-timing-ease) !important;
+  transition-property: min-width, max-width, width !important;
+  transition-delay: 0.5s !important;
   // MARGIN FOR TITLEBAR
-  margin: 0 !important;
+  margin: 0px !important;
   margin-top: calc(var(--chat-margin)) !important;
   position: relative !important;
-  transition: none !important;
   background: var(--zehn-color-section) !important;
   display: none !important;
   width: var(--zehn-size-chatlist-width) !important;
@@ -394,13 +397,21 @@
   padding-bottom: var(--zehn-size-button-app-large) !important;
 }
 
+@media screen and (max-width: 600px) {
+  .chatRoomGroupNavColumn:not(.chatRoomGroupNavCollapsed) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed {
   width: var(--zehn-size-chatlist-height) !important;
   min-width: var(--zehn-size-chatlist-height) !important;
   max-width: var(--zehn-size-chatlist-height) !important;
   height: calc(100% - var(--chat-margin)) !important;
   // BECAUSE THE PIN BUTTON IS NOT SHOWN
-  padding-bottom: 0 !important;
+  padding-bottom: 0px !important;
 }
 
 .MultiUserChat.zehnChannelListOpened .chatRoomGroupNavColumn {
@@ -422,8 +433,8 @@
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
   position: relative !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   transition: none !important;
   color: var(--zehn-color-glyph) !important;
   --icon-color: var(--zehn-color-glyph) !important;
@@ -446,8 +457,8 @@
   font-weight: inherit !important;
   text-align: left !important;
   transition: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
   border-radius: var(--zehn-size-radius-none) !important;
   order: 2 !important;
   color: inherit !important;
@@ -462,17 +473,17 @@
   opacity: 1 !important;
   height: var(--zehn-size-chatlist-height) !important;
   width: var(--zehn-size-chatlist-height) !important;
-  margin: auto 0 !important;
+  margin: auto 0px !important;
   position: relative !important;
   transition: none !important;
   display: flex !important;
   order: 1 !important;
   color: transparent !important;
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .ChatRoomAddRoomBtn .SVGIcon_PlusCircle {
-  width: 100% !important;
+  width: var(--zehn-size-chatlist-height) !important;
   height: 100% !important;
   background-color: var(--icon-color) !important;
   mask-repeat: no-repeat !important;
@@ -485,15 +496,15 @@
 
 .chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .ChatRoomAddRoomBtn {
   opacity: 1 !important;
-  margin: auto 0 !important;
+  margin: auto 0px !important;
 }
 
 // CHANNEL CONTAINER
 .chatRoomVoiceChannelsGroup,
 .chatRoomTextChannelsGroup {
   color: var(--zehn-color-text1) !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
 }
 
 .chatRoomTextChannel,
@@ -507,8 +518,8 @@
   width: 100% !important;
   min-height: var(--zehn-size-chatlist-height) !important;
   line-height: var(--zehn-size-chatlist-height) !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   transition: none !important;
   color: var(--zehn-color-text1) !important;
   border-radius: var(--zehn-size-radius-none) !important;
@@ -526,8 +537,8 @@
 
 .chatRoomVoiceChannelIconGlow {
   background: transparent !important;
-  width: 0 !important;
-  height: 0 !important;
+  width: 0px !important;
+  height: 0px !important;
   display: none !important;
 }
 
@@ -539,7 +550,7 @@
   display: block;
   width: var(--zehn-size-focusbar-pagelist);
   height: var(--zehn-size-focusbar-pagelist-length);
-  left: 0;
+  left: 0px;
   top: calc((var(--zehn-size-chatlist-height) - var(--zehn-size-focusbar-pagelist-length)) / 2);
   background: var(--zehn-color-focusbar);
   transition: transform 0.05s ease;
@@ -557,7 +568,7 @@
 .compactView .chatRoomTextChannelNameContainer {
   height: var(--zehn-size-chatlist-height) !important;
   line-height: var(--zehn-size-chatlist-height) !important;
-  padding: 0 !important;
+  padding: 0px !important;
   box-sizing: border-box !important;
   background-color: transparent !important;
 }
@@ -588,8 +599,8 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   line-height:var(--zehn-size-chatlist-height) !important;
   border: none !important;
   text-align: left !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   inset: unset !important;
   position: relative !important;
   transition: none !important;
@@ -601,7 +612,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // RENAME
 .chatRoomVoiceChannelNameContainer .RenameChatRoomInline {
-  margin: auto 0 !important;
+  margin: auto 0px !important;
   width: auto !important;
 }
 
@@ -621,8 +632,8 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .chatRoomVoiceChannelIcon {
   color: transparent !important;
   transition: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   height: var(--zehn-size-icon-md) !important;
   min-height: var(--zehn-size-icon-md) !important;
   max-height: var(--zehn-size-icon-md) !important;
@@ -639,7 +650,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   box-sizing: border-box !important;
   display: block !important;
 
@@ -671,7 +682,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   display: none !important;
   position: absolute !important;
   margin: var(--zehn-size-focusbar-spacing) !important;
-  padding: 0 !important;
+  padding: 0px !important;
   inset: unset !important;
   top: calc((var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) - (var(--zehn-size-focusbar-spacing) + var(--zehn-size-focusbar))) !important;
   right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) !important;
@@ -697,7 +708,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .chatRoomGroupNavCollapsed .VoiceChannelParticipants,
 .chatRoomGroupNavCollapsed .emptyChannelNotice,
 .chatRoomGroupNavCollapsed .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceControls {
-  height: 0 !important;
+  height: 0px !important;
   opacity: 0 !important;
   display: none !important;
 }
@@ -711,13 +722,13 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .VoiceChannelParticipants.CompactFriendsList .friend {
   height: var(--zehn-size-friends-entry-compact) !important;
   padding: var(--zehn-size-friends-entry-compact-padding) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   align-items: center !important;
   filter: none !important;
 }
 
 .voiceStatusIconsContainer {
-  margin: 0 !important;
+  margin: 0px !important;
   gap: var(--zehn-size-spacing-xxs) !important;
 }
 
@@ -789,7 +800,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // VOICE CONTROLS
 .chatRoomVoiceChannel.ActiveVoiceChannel .activeVoiceControls {
-  margin: 0 !important;
+  margin: 0px !important;
   padding: var(--zehn-size-padding-xs) !important;
   background: var(--zehn-color-panel) !important;
 }
@@ -808,7 +819,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   color: var(--zehn-color-text1) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  padding: 0 !important;
+  padding: 0px !important;
   display: none !important;
 }
 
@@ -836,7 +847,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 // BUTTONS WRAPPER
 .activeVoiceButtons {
   flex-grow: 1 !important;
-  padding: 0 !important;
+  padding: 0px !important;
   min-width: 100% !important;
   background-color: transparent !important;
   border-radius: var(--zehn-size-radius-none) !important;
@@ -852,6 +863,13 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   position: relative !important;
   right: var(--zehn-size-spacing-xs) !important;
   top: var(--zehn-size-spacing-xs) !important;
+  opacity: 1 !important;
+  transition: opacity 0.2s ease 1s !important;
+}
+
+.chatRoomGroupNavColumn.chatRoomGroupNavCollapsed .chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease 0s !important;
 }
 
 .VoiceIconCtn,
@@ -901,8 +919,8 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 // PIN OPEN WINDOW BUTTON
 .chatRoomGroupNavColumn .chatRoomGroupNavCollapseExpand {
   position: absolute !important;
-  bottom: 0 !important;
-  inset-inline: 0 !important;
+  bottom: 0px !important;
+  inset-inline: 0px !important;
   top: unset !important;
 }
 
@@ -937,7 +955,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   content: "";
   z-index: -1;
   position: absolute;
-  inset: 0;
+  inset: 0px;
   background: var(--zehn-color-app);
   margin-top: calc(var(--chat-margin));
 }
@@ -946,18 +964,23 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .MultiUserChat .ChatRoomGroup_MainAndChatEntry,
 .MultiUserChat .chatHeader {
   transition: none !important;
-  margin-left: 0 !important;
+  margin-left: 0px !important;
   width: 100% !important;
 }
 
 .MultiUserChat.zehnChannelListOpened .ChatRoomGroup_MainAndChatEntry {
-  margin-left: 0 !important;
+  margin-left: 0px !important;
   width: 100% !important;
 }
 
 .MultiUserChat.zehnChannelListOpened:has(.chatRoomGroupNavCollapsed) .ChatRoomGroup_MainAndChatEntry {
-  margin-left: 0 !important;
+  margin-left: 0px !important;
   width: 100% !important;
+}
+
+// CHANNEL LIST AND CHAT
+.ChatRoomGroupDialog_contents {
+  overflow: hidden !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -976,9 +999,9 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 // CONTAINER
 .chatWindow .chatHeader {
   background: transparent !important;
-  min-height: 0 !important;
+  min-height: 0px !important;
   transition: none !important;
-  margin: 0 !important;
+  margin: 0px !important;
   width: 100% !important;
   position: absolute !important;
   margin-top: var(--zehn-size-titlebar) !important;
@@ -994,7 +1017,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 // INNER CONTAINER
 .chatRoomHeader {
   height: var(--zehn-size-chat-header) !important;
-  padding: 0 !important;
+  padding: 0px !important;
   background-color: transparent !important;
 }
 
@@ -1002,7 +1025,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .namedGroup .chatRoomGroupHeader,
 .chatRoomGroupHeader {
   border: none !important;
-  padding: 0 !important;
+  padding: 0px !important;
   height: 100% !important;
   gap: var(--zehn-size-spacing-md) !important;
 }
@@ -1041,7 +1064,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
   color: var(--zehn-color-text1) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   display: none !important;
 }
 
@@ -1050,7 +1073,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   color: var(--zehn-color-text3) !important;
   font-weight: var(--zehn-weight-normal) !important;
   text-align: right !important;
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 // STATS AND OPTIONS
@@ -1067,13 +1090,13 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .statMemberStat {
   font-size: var(--zehn-size-14) !important;
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .statMemberStat.statMembersTotal {
   color: var(--zehn-color-text3) !important;
   line-height: var(--zehn-size-chat-header) !important;
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .statCircle {
@@ -1098,7 +1121,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // BUTTONS WRAPPER
 .chatRoomOptions {
-  margin-right: 0 !important;
+  margin-right: 0px !important;
   order: 2 !important;
 }
 
@@ -1158,6 +1181,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   padding: var(--zehn-size-padding-md) 0 !important;
   --message-scale: var(--zehn-size-msg-text-default);
   --message-scale-sub: var(--zehn-size-msg-subtext-default);
+  --message-scale-time: var(--zehn-size-msg-time-default);
   --message-line: var(--zehn-size-msg-line-default);
 }
 
@@ -1176,7 +1200,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // CHAT CONTAINER
 .MultiUserChat .ChatRoomGroup_MainAndChatEntry {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 // CONTAINER
@@ -1186,14 +1210,14 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // SCROLL WRAPPER
 .chatHistoryScroll {
-  padding: 0 !important;
+  padding: 0px !important;
   overflow-x: hidden !important;
   display: block !important;
 }
 
 // SCROLL CONTAINER
 .chatHistory {
-  margin: 0 !important;
+  margin: 0px !important;
   padding: var(--zehn-size-padding-md) 0 !important;
   position: relative;
   flex-grow: 1 !important;
@@ -1218,7 +1242,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .MultiUserChat.broadcastVisible:has(.chatRoomHeader) .ChatRoomGroup_Main_Content.Vertical .chatHistory,
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Vertical .chatHistory {
-  margin-top: 0 !important;
+  margin-top: 0px !important;
 }
 
 // BROADCAST PUBLIC CHAT
@@ -1228,14 +1252,14 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .BothChatsDisplayed .ChatRoomGroup_Main_Content.Horizontal .ChatMessages,
 .ChatRoomGroup_Main_Content.Vertical .ChatMessages {
-  margin-top: 0 !important;
+  margin-top: 0px !important;
 }
 
 // QUICK CHAT
 .ChatRoomGroup_Main_Content .VoiceRoomChatHistory .chatHistory,
 .ChatRoomGroup_Main_Content.Horizontal .VoiceRoomChatHistory .chatHistory,
 .ChatRoomGroup_Main_Content.Vertical .VoiceRoomChatHistory .chatHistory {
-  margin-top: 0 !important;
+  margin-top: 0px !important;
 }
 
 // MESSAGES
@@ -1243,11 +1267,11 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   display: flex !important;
   flex-direction: column !important;
   transition: none !important;
-  padding: 0 !important;
+  padding: 0px !important;
 }
 
 .MultiUserChat .msg {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .MultiUserChat .ChatMessageBlock>.msg,
@@ -1268,7 +1292,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .MultiUserChat .msg.ChatMsgSlashEmote,
 .MultiUserChat .msg.serverMsg,
 .MultiUserChat .msg.timeDivision {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 // MESSAGE BACKGROUND
@@ -1309,9 +1333,9 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   content: "";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
   width: var(--zehn-size-focusbar);
   background: var(--zehn-color-focusbar);
   z-index: 5;
@@ -1324,11 +1348,11 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 }
 
 .ChatRoomSpeaker {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .compactView .ChatRoomSpeaker {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .ChatHistoryContainer .nameWidthLabel,
@@ -1336,7 +1360,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .ChatRoomSpeaker .speaker,
 .msg.ChatMsgSlashEmote .speaker,
 .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
-  margin: 0 !important;
+  margin: 0px !important;
   padding: 0 var(--zehn-size-padding-xl) 0 var(--zehn-size-padding-xxxl) !important;
   color: inherit !important;
   background: transparent !important;
@@ -1375,7 +1399,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
   height: var(--zehn-size-indicator-large) !important;
   width: var(--zehn-size-indicator-large) !important;
   border-radius: var(--zehn-size-indicator-radius) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   margin-right: var(--zehn-size-spacing-xs) !important;
   align-self: center !important;
   display: none !important;
@@ -1385,7 +1409,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .speaker .speakerName,
 .ChatRoomSpeaker .speaker .speakerName {
   transition: none !important;
-  margin: 0 !important;
+  margin: 0px !important;
   line-height: inherit !important;
   font-weight: var(--zehn-weight-thick) !important;
 }
@@ -1428,18 +1452,21 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .ChatHistoryContainer.smallChatFont {
   --chat-scale: var(--zehn-size-msg-text-small);
   --chat-scale-sub: var(--zehn-size-msg-subtext-small);
+  --chat-scale-time: var(--zehn-size-msg-time-small);
   --chat-line: var(--zehn-size-msg-line-small);
 }
 
 .ChatHistoryContainer {
   --chat-scale: var(--zehn-size-msg-text-default);
   --chat-scale-sub: var(--zehn-size-msg-subtext-default);
+  --chat-scale-time: var(--zehn-size-msg-time-default);
   --chat-line: var(--zehn-size-msg-line-default);
 }
 
 .ChatHistoryContainer.largeChatFont {
   --chat-scale: var(--zehn-size-msg-text-large);
   --chat-scale-sub: var(--zehn-size-msg-subtext-large);
+  --chat-scale-time: var(--zehn-size-msg-time-large);
   --chat-line: var(--zehn-size-msg-line-large);
 }
 
@@ -1458,9 +1485,12 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 .speakerTimeStamp,
 .FriendChatTimeStamp,
-.msg.timeDivision,
 .msg.serverMsg .msgText {
   font-size: var(--chat-scale-sub) !important;
+}
+
+.msg.timeDivision {
+  font-size: var(--chat-scale-time) !important;
 }
 
 // TIMESTAMP
@@ -1470,8 +1500,8 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .FriendChatTimeStamp.online,
 .FriendChatTimeStamp.offline {
   color: var(--zehn-color-text3) !important;
-  top: 0 !important;
-  margin: 0 !important;
+  top: 0px !important;
+  margin: 0px !important;
   margin-left: var(--zehn-size-spacing-md) !important;
   line-height: var(--zehn-size-chat-speaker) !important;
   border: none !important;
@@ -1481,7 +1511,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 .msgText,
 .MultiUserChat .isCurrentUser .msgText {
   color: var(--zehn-color-text1) !important;
-  display: inline-block !important;
+  display: block !important;
   gap: var(--zehn-size-spacing-xxs) !important;
 }
 
@@ -1499,9 +1529,9 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 
 // MESSAGE TEXT `/ME`
 .chatWindow .msg.ChatMsgSlashEmote .SpeakerLineBreak .msgText {
-  margin: 0 !important;
+  margin: 0px !important;
   margin-left: var(--zehn-size-spacing-xxs) !important;
-  padding: 0 !important;
+  padding: 0px !important;
   line-height: var(--zehn-size-chat-speaker) !important;
 }
 
@@ -1509,7 +1539,7 @@ div:not(.ActiveVoiceChannel)>.chatRoomVoiceChannelNameContainer {
 span.mention {
   border-radius: var(--zehn-size-radius-sm);
   padding: 0 var(--zehn-size-padding-xxs) !important;
-  margin: auto 0 !important;
+  margin: auto 0px !important;
   line-height: inherit !important;
   font-size: inherit !important;
   color: inherit !important;
@@ -1518,7 +1548,7 @@ span.mention {
   background: var(--zehn-color-tag) !important;
   font-weight: inherit !important;
   display: inline-flex !important;
-  gap: 0 !important;
+  gap: 0px !important;
   vertical-align: unset !important;
   height: var(--zehn-size-tag) !important;
   align-items: center !important;
@@ -1529,7 +1559,7 @@ span.mention.me {
 }
 
 .MentionAtSymbol {
-  margin: 0 !important;
+  margin: 0px !important;
   color: inherit !important;
 }
 
@@ -1537,7 +1567,7 @@ span.mention.me {
 .msgText .spoilerMsgText {
   border: none !important;
   border-radius: var(--zehn-size-radius-none) !important;
-  padding: 0 !important;
+  padding: 0px !important;
   background-color: var(--zehn-color-panel) !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
 }
@@ -1551,7 +1581,7 @@ span.mention.me {
   opacity: 0 !important;
   filter: none !important;
   transition: none !important;
-  margin: 0 !important;
+  margin: 0px !important;
   transition: all 0.2s var(--zehn-timing-ease) !important;
 }
 
@@ -1568,8 +1598,8 @@ span.mention.me {
   color: inherit !important;
   font-family: var(--zehn-font-family-mono) !important;
   background: transparent !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
   border: none !important;
   border-radius: var(--zehn-size-radius-none) !important;
 }
@@ -1580,7 +1610,7 @@ span.mention.me {
   color: var(--zehn-color-code-text) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: inherit !important;
-  margin: 0 !important;
+  margin: 0px !important;
   padding: var(--zehn-size-code-padding) !important;
   background: var(--zehn-color-code-background) !important;
   border-radius: var(--zehn-size-code-radius) !important;
@@ -1622,8 +1652,8 @@ span.mention.me {
   font-style: italic !important;
   color: var(--zehn-color-text3) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
   padding-left: var(--zehn-size-padding-md) !important;
   background: transparent !important;
   border-radius: var(--zehn-size-radius-none) !important;
@@ -1653,7 +1683,7 @@ span.mention.me {
   color: var(--zehn-color-text1) !important;
   background-color: var(--zehn-color-panel) !important;
   position: relative !important;
-  margin: 0 !important;
+  margin: 0px !important;
   display: inline-grid !important;
   margin-right: var(--zehn-size-spacing-xxxs) !important;
   min-width: calc(var(--random-size) * 0.75) !important;
@@ -1661,7 +1691,7 @@ span.mention.me {
 }
 
 ._3dRhiHtjVJeePaxVr8u3mF {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 ._297MYFa05D6dJMSX4QCpTR:not(.RjUvc4fvPfIokdvwIhM8c) ._3dRhiHtjVJeePaxVr8u3mF._2A7qLJ1CkYAU3R9iijCtgS {
@@ -1671,14 +1701,15 @@ span.mention.me {
 
 ._8AKXz82J5EkgZ7VQMVw_z {
   background: transparent !important;
-  inset: 0 !important;
+  inset: 0px !important;
   border-radius: var(--zehn-size-radius-xs) !important;
 }
 
 // ROOM EFFECT
 ._1XsAtfmtiaoZzdStrvgJj9 {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  min-width: 0px !important;
   max-width: 100% !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background: transparent !important;
@@ -1698,7 +1729,7 @@ span.mention.me {
 }
 
 ._1XsAtfmtiaoZzdStrvgJj9>div {
-  margin: 0 !important;
+  margin: 0px !important;
   margin-left: var(--zehn-size-spacing-xs) !important;
 }
 
@@ -1715,7 +1746,7 @@ span.mention.me {
 }
 
 .msg.serverMsg .msgText span:last-of-type {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 // TIME DIVISION
@@ -1770,6 +1801,82 @@ span.mention.me {
 
 
 
+// REACTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+._1Ab0f8lGXvkC0tPjkFoYj8 {
+  margin-top: var(--zehn-size-spacing-xs) !important;
+  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xxxl) !important;
+  gap: var(--zehn-size-tag-gap) !important;
+}
+
+.compactView ._1Ab0f8lGXvkC0tPjkFoYj8 {
+  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xl) !important;
+}
+
+// REACTION
+.UA15KlVbtDSJkqSpIAMIN,
+.zehnAddEmoticon {
+  align-content: center !important;
+  margin: 0px !important;
+  height: var(--zehn-size-tag) !important;
+  padding: var(--zehn-size-tag-padding) !important;
+  border-radius: var(--zehn-size-tag-radius) !important;
+  background: var(--zehn-color-tag) !important;
+
+  &:hover {
+    background: var(--zehn-color-tag-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-tag-active) !important;
+  }
+}
+
+// EMOTICON
+.m89hcklEIZomEEXW7E4Ky {
+  width: var(--zehn-size-icon-sm) !important;
+  height: var(--zehn-size-icon-sm) !important;
+  padding: 0px !important;
+  align-self: center !important;
+}
+
+// COUNT
+.a2_2ffGgB_f8RBwW8D8Rj {
+  line-height: var(--zehn-size-tag) !important;
+  color: var(--zehn-color-tag-text) !important;
+  font-size: var(--zehn-size-tag-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0px !important;
+  margin-left: var(--zehn-size-spacing-xs) !important;
+}
+
+// ADD REACTION
+._2FJUPOjT7afeB0125mqdQt {
+  display: block !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  opacity: 1 !important;
+  background-color: var(--zehn-color-icon1) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-sm) !important;
+  -webkit-mask-image: var(--zehn-icon-emoticon) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // MENTION/COMMAND PICKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ._1QU3cLCGXCmYTUvjYiqqz6 {
@@ -1803,7 +1910,7 @@ span.mention.me {
   font-weight: var(--zehn-weight-normal) !important;
   transition: none !important;
   padding: 0 var(--zehn-size-padding-xs) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   line-height: var(--zehn-size-24) !important;
   background: var(--zehn-color-list-background) !important;
 
@@ -1822,14 +1929,14 @@ span.mention.me {
 }
 
 .mentionSuggestion {
-  gap: 0 !important;
+  gap: 0px !important;
   align-items: center !important;
   position: relative !important;
   z-index: 5 !important;
 }
 
 .mentionAvatar {
-  margin: 0 !important;
+  margin: 0px !important;
   margin-right: var(--zehn-size-spacing-xxs) !important;
   width: var(--zehn-size-avatar-xs) !important;
   height: var(--zehn-size-avatar-xs) !important;
@@ -1844,7 +1951,7 @@ span.mention.me {
 }
 
 .SlashCommandSuggestion {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 .SlashCommandSuggestion_SlashCommand {
@@ -1857,8 +1964,8 @@ span.mention.me {
   color: var(--zehn-color-text1) !important;
   font-weight: var(--zehn-weight-normal) !important;
   transition: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   line-height: var(--zehn-size-24) !important;
   background: transparent !important;
 }
@@ -1914,12 +2021,12 @@ span.mention.me {
 
 // TITLE AREA
 .VoiceRoomChatTitle .VoiceRoomTitleLabels {
-  margin-left: 0 !important;
+  margin-left: 0px !important;
   justify-content: left !important;
 }
 
 .VoiceRoomChatTitle {
-  padding: 0 !important;
+  padding: 0px !important;
   line-height: var(--zehn-size-titlebar) !important;
   background: transparent !important;
 }
@@ -1935,8 +2042,8 @@ span.mention.me {
 // CLOSE BUTTON
 .VoiceRoomChatTitle .MinimizeTextChat {
   left: unset !important;
-  top: 0 !important;
-  right: 0 !important;
+  top: 0px !important;
+  right: 0px !important;
   bottom: unset !important;
 }
 
@@ -1950,10 +2057,10 @@ span.mention.me {
   font-size: var(--zehn-size-titlebar-text) !important;
   font-weight: var(--zehn-weight-normal) !important;
   background: transparent !important;
-  padding-top: 0 !important;
+  padding-top: 0px !important;
   line-height: var(--zehn-size-titlebar) !important;
   height: var(--zehn-size-titlebar) !important;
-  top: 0 !important;
+  top: 0px !important;
 }
 
 
@@ -2003,9 +2110,9 @@ span.mention.me {
 
 // CLOSE BUTTON
 .chatFileUploadCancel {
-  top: 0 !important;
-  right: 0 !important;
-  padding: 0 !important;
+  top: 0px !important;
+  right: 0px !important;
+  padding: 0px !important;
 }
 
 .chatFileUploadCancel svg {
@@ -2021,9 +2128,9 @@ span.mention.me {
   font-weight: var(--zehn-weight-normal) !important;
   line-height: var(--zehn-size-titlebar) !important;
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
+  top: 0px !important;
+  left: 0px !important;
+  right: 0px !important;
   text-align: left !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -2038,10 +2145,10 @@ span.mention.me {
 // IMAGE
 .chatFileUploadPreviewContainer img.chatFileUploadPreview {
   border-radius: var(--zehn-size-radius-none) !important;
-  min-height: 0 !important;
+  min-height: 0px !important;
   object-fit: contain !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
   max-width: 100% !important;
   min-width: 100% !important;
 }
@@ -2073,7 +2180,7 @@ span.mention.me {
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-control) !important;
   place-content: left !important;
-  margin: auto 0 !important;
+  margin: auto 0px !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2117,7 +2224,7 @@ span.mention.me {
 
 // FILE NAME
 .chatFileUploadProgressName {
-  padding: 0 !important;
+  padding: 0px !important;
   font-size: var(--zehn-size-12) !important;
   color: var(--zehn-color-text3) !important;
   font-weight: var(--zehn-weight-normal) !important;
@@ -2127,7 +2234,7 @@ span.mention.me {
 
 // ERROR
 .chatFileUploadErrorDescription {
-  padding: 0 !important;
+  padding: 0px !important;
   font-size: var(--zehn-size-12) !important;
   color: var(--zehn-color-accent) !important;
   font-weight: var(--zehn-weight-normal) !important;
@@ -2226,9 +2333,9 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   height: fit-content !important;
   transition: background-color 0.2s var(--zehn-timing-ease), transform 0.5s var(--zehn-timing-ease), bottom 0.5s var(--zehn-timing-ease), opacity 0.5s var(--zehn-timing-ease) !important;
   width: fit-content !important;
-  padding: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  padding: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
   top: unset !important;
   left: unset !important;
   margin: var(--zehn-size-spacing-xs) var(--zehn-size-spacing-md) !important;
@@ -2310,7 +2417,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 // CONTAINER
 .chatWindow .chatEntry {
-  padding: 0 !important;
+  padding: 0px !important;
   background-color: var(--zehn-color-panel) !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
 }
@@ -2327,13 +2434,13 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 // CHILDREN
 .chatWindow .chatEntry>form,
 .chatWindow .chatEntry.compactView>form {
-  margin: 0 !important;
+  margin: 0px !important;
   height: var(--zehn-size-chat-entry) !important;
 }
 
 .chatWindow .chatEntry>.compactableHeight
 .chatWindow .chatEntry.compactView>.compactableHeight {
-  margin: 0 !important;
+  margin: 0px !important;
   height: var(--zehn-size-chat-entry) !important;
 }
 
@@ -2341,8 +2448,8 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 ._3Ule3rolhZJiBN4yNNtk1s {
   background-color: transparent !important;
   color: var(--zehn-color-text1) !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 // INPUT SUBMIT BUTTON - DON'T DISPLAY UNTIL THERE IS SOMETHING TO SUBMIT
@@ -2356,14 +2463,14 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 // BUTTONS CONTAINER
 .W0OhkJtz8zMUW8Mhu0BMO {
-  margin: 0 !important;
+  margin: 0px !important;
   max-height: var(--zehn-size-chat-entry) !important;
 }
 
 // ENTRY BUTTONS CONTAINER
 ._2WfNoLBdfKwyutA6ho4aSH {
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   background-color: transparent !important;
 }
 
@@ -2379,8 +2486,8 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 // VOICE BUTTON INNER
 .VoiceToggle {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
   width: 100% !important;
   height: 100% !important;
   min-width: 100% !important;
@@ -2394,10 +2501,10 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 }
 
 .VoiceToggleIconCtn {
-  padding: 0 !important;
+  padding: 0px !important;
   width: 100% !important;
   height: 100% !important;
-  inset: 0 !important;
+  inset: 0px !important;
   color: transparent !important;
 }
 
@@ -2411,7 +2518,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 // DISCONNECT BLOCKER
 .disconnectBlocker {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2451,7 +2558,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 }
 
 .MemberListColumn.MemberListViewCompact {
-  width: 0 !important;
+  width: 0px !important;
   display: none !important;
 }
 
@@ -2463,28 +2570,28 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 // ONE OF MANY INNER WRAPPERS
 .ChatRoomMemberScrollList_List {
   border: none !important;
-  margin: 0 !important;
+  margin: 0px !important;
   margin-bottom: var(--zehn-size-input-app-wrapper) !important;
 }
 
 // GROUP NAME AREA
 .chatRoomMembers .friendGroup .groupName {
   display: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 .MemberListColumn.MemberListViewCompact .chatRoomMembers .friendGroup .groupName {
   display: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  height: 0 !important;
-  width: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 0px !important;
+  width: 0px !important;
 }
 
 .friendGroup .groupIcon,
 .friendGroup .groupName .groupIcon {
-  margin: 0 !important;
+  margin: 0px !important;
   margin-right: var(--zehn-size-spacing-xs) !important;
   display: none !important;
 }
@@ -2542,8 +2649,8 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   inset: unset !important;
   transition: none !important;
   animation: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
 // INNER CONTAINER
@@ -2553,7 +2660,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 .CompactFriendsList .friendGroup .ChatRoomMemberScrollList_List .friend {
   box-sizing: border-box !important;
   height: var(--zehn-size-chat-memberlist-height) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   padding:  var(--zehn-size-chat-memberlist-padding) !important;
   align-items: center !important;
 }
@@ -2587,7 +2694,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   width: var(--zehn-size-icon-md) !important;
   
   svg {
-    inset: 0 !important;
+    inset: 0px !important;
     width: 100% !important;
     height: 100% !important;
     background-color: var(--zehn-color-icon1) !important;
@@ -2606,7 +2713,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   width: var(--zehn-size-icon-md) !important;
 
   svg {
-    inset: 0 !important;
+    inset: 0px !important;
     width: 100% !important;
     height: 100% !important;
     background-color: var(--zehn-color-icon1) !important;
@@ -2631,13 +2738,13 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   min-height: var(--zehn-size-input-app-wrapper) !important;
   max-height: var(--zehn-size-input-app-wrapper) !important;
   height: var(--zehn-size-input-app-wrapper) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   background-color: transparent !important;
 }
 
 .MemberListViewCompact .MemberListOptionsContainer .socialInputContainer {
-  width: 0 !important;
-  margin: 0 !important;
+  width: 0px !important;
+  margin: 0px !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

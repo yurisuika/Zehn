@@ -8,12 +8,12 @@
   color: var(--zehn-color-text1) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   padding: var(--zehn-size-embed-padding) !important;
   max-width: var(--zehn-size-embed) !important;
-  min-width: 0 !important;
+  min-width: 0px !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-embed-padding) !important;
   background: var(--zehn-color-embed-background) !important;
   border-radius: var(--zehn-size-embed-radius) !important;
   border-width: var(--zehn-size-embed-border) !important;
@@ -41,7 +41,7 @@
 // CONTENT CONTAINER
 .ChatMessageOpenGraph .OpenGraphContent {
   display: flex !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-embed-padding) !important;
 }
 
 // HIDE EMPTY
@@ -52,7 +52,7 @@
 // BACKGROUND BLUR IMAGE
 .OpenGraphImgBackground {
   max-width: 100% !important;
-  left: 0 !important;
+  left: 0px !important;
   display: none !important;
 }
 
@@ -66,16 +66,17 @@
 // IMAGE CONTAINER
 .OpenGraphImgContainer {
   filter: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   border-radius: var(--zehn-size-embed-image-radius) !important;
-  background-color: var(--zehn-color-placeholder) !important;
-  max-height: 256px !important;
-  max-width: 256px !important;
-  min-width: 256px !important;
+  background-color: transparent !important;
+  max-height: 160px !important;
+  max-width: 160px !important;
+  min-width: 40px !important;
 }
 
 .ChatMessageOpenGraph_Image {
+  background-color: var(--zehn-color-placeholder) !important;
   border-radius: var(--zehn-size-embed-image-radius) !important;
   max-height: 100% !important;
   max-width: 100% !important;
@@ -83,7 +84,7 @@
 
 // BODY CONTAINER
 .ChatMessageOpenGraph_Body {
-  padding: 0 !important;
+  padding: 0px !important;
   gap: var(--zehn-size-spacing-xs) !important;
   display: flex !important;
   flex-direction: column !important;
@@ -94,10 +95,11 @@
 .ChatMessageOpenGraph_Title {
   font-size: var(--zehn-size-14) !important;
   line-height: var(--zehn-size-16) !important;
+
 }
 
 .ChatMessageOpenGraph_Description {
-  margin: 0 !important;
+  margin: 0px !important;
   color: var(--zehn-color-text3) !important;
   font-size: var(--zehn-size-12) !important;
   line-height: var(--zehn-size-16) !important;
@@ -119,14 +121,15 @@
 
 // FOOTER CONTAINER
 .ChatMessageOpenGraph .OpenGraphFooter {
-  margin: 0 !important;
-  padding: var(--zehn-size-panel-inset-padding) !important;
-  background: var(--zehn-color-panel-inset) !important;
-  border-radius: var(--zehn-size-panel-inset-radius) !important;
+  margin: 0px !important;
+  padding: var(--zehn-size-embed-inset-padding) !important;
+  background: var(--zehn-color-embed-inset) !important;
+  border-radius: var(--zehn-size-embed-inset-radius) !important;
   width: 100% !important;
   transform: none !important;
   gap: var(--zehn-size-spacing-xs) !important;
   position: relative !important;
+  box-sizing: border-box !important;
   --footer-inner: var(--zehn-size-24);
 }
 
@@ -135,12 +138,12 @@
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   border: unset !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
   background: transparent !important;
   border-radius: var(--zehn-size-radius-none) !important;
   text-overflow: ellipsis !important;
-  min-width: 0 !important;
+  min-width: 0px !important;
   order: 1 !important;
   flex-grow: 1 !important;
   line-height: var(--footer-inner) !important;
@@ -152,6 +155,7 @@
 .OpenGraphMessageURLPosition {
   display: flex !important;
   gap: var(--zehn-size-spacing-xxs) !important;
+  min-width: 0px !important;
 }
 
 .OpenGraphMessageURL_short,
@@ -171,7 +175,11 @@
   display: block !important;
   width: fit-content !important;
   min-width: fit-content !important;
-  min-width: 0 !important;
+  min-width: 0px !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  flex-shrink: 1 !important;
 }
 
 // SITE NAME
@@ -182,12 +190,11 @@
 // URL
 .OpenGraphMessageURL_full {
   transform: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0px !important;
+  margin: 0px !important;
   border: none !important;
   background-color: transparent !important;
   color: var(--zehn-color-text3) !important;
-  flex: 1 !important;
 }
 
 // COPY BUTTON

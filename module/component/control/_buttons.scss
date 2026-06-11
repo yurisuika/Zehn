@@ -92,7 +92,7 @@ button.DialogButton:where(.Primary, .Small) {
 .lat0M-V5X4uYd6Mpm1DJ1 ._14exBrSFDthVqeknXgFh4X ._2Jkgs1ZwjavbwnJy76UgUm {
   @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $icon: "svg._3NHpq7ZDgg4uYEzUF9RxaQ", $style: "return");
   top: calc(-1 * var(--zehn-size-titlebar)) !important;
-  left: 0 !important;
+  left: 0px !important;
   position: absolute !important;
   -webkit-app-region: no-drag !important;
 }
@@ -140,8 +140,8 @@ button.DialogButton:where(.Primary, .Small) {
 #zehnToggleFriendsHeader {
   @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
   position: relative;
-  left: 0;
-  top: 0;
+  left: 0px;
+  top: 0px;
 }
 
 // HEADER - REMOTE PLAY TOGETHER
@@ -309,11 +309,22 @@ button.DialogButton:where(.Primary, .Small) {
   @include app.shape-circular;
 }
 
+// EMBED - POPOUT
+.chatVideoContainer a.chatImageURL:has(.SVGIcon_Popout) {
+  @include app.preset-symmetric(var(--footer-inner), $icon-size: var(--zehn-size-icon-sm));
+  @include app.shape-circular;
+}
+
 // EMBED - CONTROLS
 .BBCodeCollapseControl,
-.BBCodeResizeControl,
-.BBCodeRestoreControl {
+.BBCodeResizeControl {
   @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include app.shape-circular;
+}
+
+.BBCodeRestoreControl {
+  @include app.preset-symmetric(var(--zehn-size-button-app), $icon: ".restoreSize");
+  @include app.shape-circular;
 }
 
 // EMBED - INVITES
@@ -578,14 +589,14 @@ button.DialogButton:where(.Primary, .Small) {
 // SHOWCASE - WHAT'S NEW - PRIORITY NOTICE
 ._17uEBe5Ri8TMsnfELvs8-N ._2sdvic79rOzTYDZw2nrgmL {
   @include dialog.preset-wide(var(--zehn-size-button-dialog));
-  margin: auto 0 !important;
+  margin: auto 0px !important;
 }
 
 // SHOWCASE - WHAT'S NEW - EVENT OPTIONS
 ._2-p7shAZYrRijpaTU9bAFR {
   @include app.preset-symmetric(var(--zehn-size-button-app), $icon: "div");
-  top: 0 !important;
-  right: 0 !important;
+  top: 0px !important;
+  right: 0px !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
@@ -638,8 +649,8 @@ button.DialogButton:where(.Primary, .Small) {
 // GAME - INFO - ZOOM BOXART
 ._1Id6ZFEUVa5PKEMIvSg4nE ._2mMT5wI35EZKZ_XeO7BfPu {
   @include app.preset-symmetric(var(--zehn-size-button-app));
-  left: 0 !important;
-  bottom: 0 !important;
+  left: 0px !important;
+  bottom: 0px !important;
 }
 
 // GAME - SPOTLIGHT - POST GAME SUMMARY
@@ -723,16 +734,16 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 .gOv9M_tdWa0CEJbaLhOKY {
   @include app.preset-symmetric(var(--zehn-size-button-app));
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
-  top: 0 !important;
-  right: 0 !important;
+  top: 0px !important;
+  right: 0px !important;
 }
 
 // GAME - DETAILS - WORKSHOP - CLEAR
 ._1W34WpqfvufNgueNdZozwC .aZc8RQUeHL3YNHxrG4pXN {
   @include app.preset-symmetric(var(--zehn-size-button-app));
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
-  top: 0 !important;
-  right: 0 !important;
+  top: 0px !important;
+  right: 0px !important;
 }
 
 // GAME - COMMUNITY - MENU
@@ -1076,8 +1087,8 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 // TITLEBAR - COLLAPSE/EXPAND PAGELIST
 ._3LLH_F43MTu6UtG4Z3kudv,
 ._1cWmu5TUWFAVHlv1EVaF8e {
-  top: 0 !important;
-  left: 0 !important;
+  top: 0px !important;
+  left: 0px !important;
   @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
 }
 

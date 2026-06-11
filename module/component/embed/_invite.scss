@@ -13,18 +13,19 @@
 .ChatMessageInvite.TradeOfferInvite,
 .ChatMessageInvite.GroupAlreadyJoined,
 .ChatMessageInvite.Inviter {
+  flex-wrap: nowrap !important;
   display: flex !important;
   filter: none !important;
   box-sizing: border-box !important;
   color: var(--zehn-color-text1) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   padding: var(--zehn-size-embed-padding) !important;
   max-width: var(--zehn-size-embed) !important;
-  min-width: 0 !important;
+  min-width: 0px !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-embed-padding) !important;
   background: var(--zehn-color-embed-background) !important;
   border-radius: var(--zehn-size-embed-radius) !important;
   border-width: var(--zehn-size-embed-border) !important;
@@ -37,30 +38,42 @@
 }
 
 // LEFT CONTAINER
-.ChatMessageInvite .leftInviteContainer {
-  padding: 0 !important;
+.ChatMessageInvite .leftInviteContainer,
+.ChatMessageInvite.gameInviteMsg .leftInviteContainer,
+.ChatMessageInvite.broadcastInviteMsg .leftInviteContainer,
+.ChatMessageInvite.broadcastViewRequestMsg .leftInviteContainer,
+.ChatMessageInvite.playtestInviteMsg .leftInviteContainer {
+  background: transparent !important;
+  width: auto !important;
   align-self: center !important;
-  min-width: fit-content !important;
+  min-width: 0px !important;
+  max-width: 160px !important;
+  padding: 0px !important;
 }
 
 // RIGHT CONTAINER
 .ChatMessageInvite .rightInviteContainer,
-.ChatMessageInvite.NoBGSplitInvite .rightInviteContainer {
-  padding: 0 !important;
+.ChatMessageInvite.NoBGSplitInvite .rightInviteContainer,
+.ChatMessageInvite.InviteLink .rightInviteContainer,
+.ChatMessageInvite.TradeOfferInvite .rightInviteContainer {
+  padding: 0px !important;
   box-sizing: border-box !important;
-  width: 100% !important;
+  width: auto !important;
+  flex: 1 !important;
+  flex-wrap: nowrap !important;
   gap: var(--zehn-size-spacing-xs) !important;
   align-self: center !important;
+  overflow: hidden !important;
 }
 
 .rightInviteContainer.rightInvite_Horizontal {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-embed-padding) !important;
   flex-direction: row !important;
 }
 
 .ChatMessageInvite .rightInviteContainer .rightInviteContainerContent {
-  margin: 0 !important;
-  gap: var(--zehn-size-spacing-xxs) !important;
+  margin: 0px !important;
+  gap: var(--zehn-size-spacing-xs) !important;
   display: flex !important;
   flex-direction: column !important;
   align-self: center !important;
@@ -71,18 +84,24 @@
 .broadcastInviteMsg .centerBlock,
 .broadcastViewRequestMsg .centerBlock,
 .playtestInviteMsg .centerBlock {
-  margin: 0 !important;
+  margin: 0px !important;
 }
 
 // INVITE LABEL
 .ChatMessageInvite .inviteLabel,
 .ChatMessageInvite.Inviter .inviteLabel,
 .ChatMessageInvite.GroupAlreadyJoined .inviteLabel {
-  margin: 0 !important;
-  color: var(--zehn-color-text1) !important;
-  font-size: var(--zehn-size-14) !important;
+  margin: 0px !important;
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   line-height: var(--zehn-size-16) !important;
+  min-width: 160px !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  min-width: 0px !important;
+  flex: 2 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,10 +119,10 @@
 
 // INVITE URL
 .ChatMessageInvite .inviteURLContainer {
-  margin: 0 !important;
-  padding: var(--zehn-size-panel-inset-padding) !important;
-  background: var(--zehn-color-panel-inset) !important;
-  border-radius: var(--zehn-size-panel-inset-radius) !important;
+  margin: 0px !important;
+  padding: var(--zehn-size-embed-inset-padding) !important;
+  background: var(--zehn-color-embed-inset) !important;
+  border-radius: var(--zehn-size-embed-inset-radius) !important;
   --footer-inner: var(--zehn-size-24);
 }
 
@@ -111,14 +130,14 @@
   color: var(--zehn-color-text3) !important;
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  margin: 0 !important;
+  margin: 0px !important;
   line-height: var(--footer-inner) !important;
   display: none !important;
 }
 
 .ChatMessageInvite .inviteURLContainer .inviteURLAndCopy {
   transform: none !important;
-  margin: 0 !important;
+  margin: 0px !important;
   gap: var(--zehn-size-spacing-xxs) !important;
   position: relative !important;
 }
@@ -130,10 +149,10 @@
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   border: unset !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px !important;
+  padding: 0px !important;
   text-overflow: ellipsis !important;
-  min-width: 0 !important;
+  min-width: 0px !important;
   order: 1 !important;
   flex-grow: 1 !important;
   line-height: var(--footer-inner) !important;
@@ -155,7 +174,8 @@
 .ChatMessageInvite .inviteButton,
 .ChatMessageInvite .inviteButton.inviteButtonJoinChat {
   align-self: flex-end;
-  margin: var(--zehn-size-spacing-xxs) 0 !important;
+  min-width: 0px !important;
+  flex: 1 !important;
 }
 
 // EXPIRE TIME
@@ -197,6 +217,7 @@
   font-weight: var(--zehn-weight-normal) !important;
   line-height: var(--zehn-size-16) !important;
   text-transform: none !important;
+  min-width: 160px !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,22 +238,26 @@
 }
 
 // STREAM PLACEHOLDER IMAGE
-.ChatMessageInvite.broadcastInviteMsg .leftInviteContainer {
-  background: transparent !important;
-}
-
 .broadcastThumbnail {
   background: var(--zehn-color-placeholder) !important;
   border-radius: var(--zehn-size-radius-none) !important;
-  width: 196px !important;
-  height: 110px !important;
+  max-width: 160px !important;
+  min-width: 40px !important;
+  width: auto !important;
+  max-height: unset !important;
+  min-height: 0px !important;
+  height: auto !important;
 }
 
 .ChatMessageInvite.broadcastInviteMsg .leftInviteContainer .noisePattern {
   border-radius: var(--zehn-size-radius-none) !important;
   opacity: 0.1 !important;
-  width: 196px !important;
-  height: 110px !important;
+  max-width: 160px !important;
+  min-width: 40px !important;
+  width: auto !important;
+  max-height: unset !important;
+  min-height: 0px !important;
+  height: auto !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
