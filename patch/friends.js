@@ -25,7 +25,9 @@ Zehn.setGlyphColor();
 
 /* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
 
-Zehn.createSpinner('html', 'body');
+Zehn.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
+Zehn.createSpinner('html', '._3rAIymq-pEYFB9bIdm-Aoz');
+Zehn.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
 
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
 
