@@ -105,12 +105,13 @@ Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogCo
   '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // CHAT ROOM NAME
 ]);
 
-/* MOVE CHAT EMBED BUTTONS ------------------------------------------------------------------------------------------ */
+/* WRAP POPOUT SVG -------------------------------------------------------------------------------------------------- */
 
-Zehn.moveAppend('.msg', '.BBCodeResizableComponent.chatVideoContainer', [
-  '.Panel > .chatImageURL' // POP OUT VIDEO
-]);
-Zehn.removeDuplicatedElement('.msg', '.BBCodeResizableComponent.chatVideoContainer', '.chatImageURL', 0);
+Zehn.createContainer('.msg', '.chatImageURL', ['.zehnImageURL']);
+
+/* WRAP EMOTICON ADD SVG -------------------------------------------------------------------------------------------- */
+
+Zehn.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
 
 /* REVEAL FRRIENDS CONTROLS ----------------------------------------------------------------------------------------- */
 
