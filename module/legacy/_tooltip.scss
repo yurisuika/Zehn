@@ -688,21 +688,8 @@ div:has(>._1VGPO4xU5sgRK6DFt4t74O) {
 
 /* MINIPROFILE TOOLTIP ---------------------------------------------------------------------------------------------- */
 
-._2AWayy-K0ZoNKv_Fr3CT_R,
-html:has(.miniProfileHover:not(.friendHover)) {
-  background: var(--zehn-color-tooltip-background) !important;
-}
-
-._3vg1vYU7iTWqONciv9cuJN._1Ye_0niF2UqB8uQTbm8B6B:has(.miniProfileHoverInner) {
-  background: var(--zehn-color-tooltip-background) !important;
-}
-
-._3DelZ7HZu1TfU115lLc7vl {}
-
-._2QPdq7GZ_03AD1ioPixVXW {
-  margin: 0px !important;
-  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
-  background: var(--zehn-color-tooltip-background) !important;
+.HoverPopup {
+  display: var(--zehn-show-tooltips) !important;
 }
 
 ._2AWayy-K0ZoNKv_Fr3CT_R,
@@ -711,8 +698,24 @@ html:has(.miniProfileHover:not(.friendHover)) {
   display: var(--zehn-show-tooltips) !important;
 }
 
-.miniProfileHoverInner._2QPdq7GZ_03AD1ioPixVXW {
+.HoverPopupBody.miniProfileHover {
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+html:has(.miniProfileHover:not(.friendHover)) {
   background: transparent !important;
+}
+
+._3vg1vYU7iTWqONciv9cuJN._1Ye_0niF2UqB8uQTbm8B6B:has(.miniProfileHoverInner) {
+  background: transparent !important;
+}
+
+.miniProfileHoverInner,
+._2QPdq7GZ_03AD1ioPixVXW {
+  margin: 0px !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  background: var(--zehn-color-tooltip-background) !important;
 }
 
 ._1xTATKELHR-lRS_s3A4yzd {
@@ -827,6 +830,13 @@ html:has(.miniProfileHover:not(.friendHover)) {
   margin-top: auto !important;
   margin-bottom: auto !important;
   justify-content: center !important;
+}
+
+// WrAPPER FOR NICKNAME AND USERnAME
+._3c5GOobmMUyjAWTosaUKUS>div:not([class]) {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: var(--zehn-size-spacing-xxs) !important;
 }
 
 ._1xTATKELHR-lRS_s3A4yzd ._2jZ0A5VjGTNGTQm03FbLrF.ingame ._1SWhpi9ByGQrwHGQgTJCF5,
@@ -1426,7 +1436,7 @@ html:has(.miniProfileHover:not(.friendHover)) {
 }
 
 .game_hover_box .playerAvatar img {
-  -webkit-mask-image: var(--zehn-mask-avatar, var(--zehn-mask-avatar-round)) !important;
+  border-radius: var(--zehn-avatar-shape) !important;
 }
 
 .game_hover_box .playerAvatar,

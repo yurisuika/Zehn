@@ -13,6 +13,7 @@
   max-height: unset !important;
   background: var(--zehn-color-embed-background) !important;
   border-radius: var(--zehn-size-embed-radius) !important;
+  gap: var(--zehn-size-spacing-xs) !important;
   margin: 0px !important;
   padding: var(--zehn-size-embed-padding) !important;
   flex-direction: row !important;
@@ -30,6 +31,11 @@
 
 .chatImageContainer:not(.Restoring, .ActivelyResizing, .Resized),
 .BBCodeResizableComponent:not(.Restoring, .ActivelyResizing, .Resized) {
+  width: auto !important;
+}
+
+.chatImageContainer:is(.Restoring, .ActivelyResizing, .Resized).Minimized,
+.BBCodeResizableComponent:is(.Restoring, .ActivelyResizing, .Resized).Minimized {
   width: auto !important;
 }
 
@@ -70,8 +76,9 @@
   }
 }
 
-.BBCodeCollapsed_Friend,
-.BBCodeAlreadyCollapsedText {
+.BBCodeAlreadyCollapsedText,
+.BBCodeCollapsed,
+.BBCodeCollapsed_Friend {
   opacity: 1 !important;
   height: var(--zehn-size-panel-md) !important;
   padding: 0px !important;
@@ -90,6 +97,7 @@
 }
 
 .BBCodeAlreadyCollapsed.Minimized .BBCodeAlreadyCollapsedText,
+.BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeCollapsed,
 .BBCodeResizableComponent:is(.Minimized, .Minimizing) .BBCodeCollapsed_Friend {
   opacity: 1 !important;
   color: var(--zehn-color-text1) !important;
