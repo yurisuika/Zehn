@@ -1534,9 +1534,6 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .msgText,
 .MultiUserChat .isCurrentUser .msgText {
   color: var(--zehn-color-text1) !important;
-  display: flex !important;
-  gap: var(--zehn-size-spacing-xxs) !important;
-  flex-direction: column !important;
 }
 
 .msgText {
@@ -1816,6 +1813,57 @@ span.mention.me {
   margin-left: var(--zehn-size-spacing-xs) !important;
 }
 
+// INVITED SELF/ENDED
+.msg .gameInviteDismissed,
+.msg .gameInviteSelf,
+.msg .gameInviteAccepted,
+.msg .broadcastInviteDismissed,
+.msg .broadcastInviteSelf,
+.msg .broadcastViewRequestDismissed {
+  color: var(--zehn-color-text3) !important;
+  display: flex !important;
+  filter: none !important;
+
+  img {
+    width: var(--zehn-size-icon-md) !important;
+    height: var(--zehn-size-icon-md) !important;
+    margin: 0px var(--zehn-size-spacing-xxs) !important;
+    display: none !important;
+  }
+}
+
+.msg .gameInviteDismissed img,
+.msg .gameInviteSelf img,
+.msg .gameInviteAccepted img,
+.msg .broadcastInviteDismissed img,
+.msg .broadcastInviteSelf img,
+.msg .broadcastViewRequestDismissed img {
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 4px !important;
+  display: none !important;
+}
+
+.msg .productImage.productImageBlur {
+  display: none !important;
+}
+
+.msg .productName,
+.gameInviteMsg .productName,
+.broadcastInviteMsg .productName,
+.broadcastViewRequestMsg .productName {
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--chat-scale) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  letter-spacing: normal !important;
+}
+
+.msg .invitedTimeLabel {
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--chat-scale-sub) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
 // TEXT LINK
 .msg .msgText>a {
   border-bottom: 1px dotted currentColor !important;
@@ -1871,6 +1919,39 @@ span.mention.me {
   flex-grow: 1 !important;
   margin: auto var(--zehn-size-spacing-md) !important;
   height: var(--zehn-size-separator) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// EMOTES/STICKERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// EMOTE
+img._1ZQW1wV5cNj3sDpibfbUqs,
+img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
+  margin: 0px !important;
+  height: var(--zehn-size-emote) !important;
+  width: var(--zehn-size-emote) !important;
+  transition: none !important;
+}
+
+// STICKER
+div:has(>img[src^="https://community.steamstatic.com/economy/sticker/"]) {
+  width: var(--zehn-size-sticker) !important;
+  height: var(--zehn-size-sticker) !important;
+}
+
+img[src^="https://community.steamstatic.com/economy/sticker/"] {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
