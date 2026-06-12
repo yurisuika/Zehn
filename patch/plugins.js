@@ -23,7 +23,6 @@ Zehn.addUserAgent();
 
 Zehn.setGlyphColor();
 
-
 /* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
 
 Zehn.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
