@@ -32848,7 +32848,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 }
 
 .TheaterMode .MultiUserChat.broadcastVisible {
-  --chat-margin: (var(--zehn-size-titlebar));
+  --chat-margin: (0px);
 }
 
 .multiChatDialog .ChatTabs::before,
@@ -32870,7 +32870,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 .TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::before,
 .TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::after {
-  height: var(--zehn-size-titlebar) !important;
+  height: 0px !important;
 }
 
 .multiChatDialog .ChatTabs::before {
@@ -32907,6 +32907,10 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   background: transparent !important;
 }
 
+.TheaterMode .titleBarContainer.ChatTabs.HasWindowControls {
+  z-index: 9001 !important;
+}
+
 .TheaterMode .ChatTabs.activeTabHasBroadcast {
   margin: 0px !important;
 }
@@ -32919,6 +32923,21 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   height: 0px !important;
   background: transparent !important;
   transition: none !important;
+}
+
+.chatTabOpenFriendsList {
+  text-indent: -9999em !important;
+}
+
+.TheaterMode .chatTabOpenFriendsList {
+  background: var(--zehn-color-positive) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.WindowFocus .TheaterMode .chatTabOpenFriendsList {
+  background: var(--zehn-color-positive) !important;
+  opacity: 1 !important;
 }
 
 .friendListCollapse,
@@ -32942,12 +32961,12 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   position: absolute !important;
 }
 
-.chatTabOpenFriendsList {
-  text-indent: -9999em !important;
-}
-
 .chatTabSetContainer.inclient {
   padding-right: calc(Var(--zehn-size-titlebar-control) * 3) !important;
+}
+
+.TheaterMode .chatTabSetContainer {
+  display: none !important;
 }
 
 .HorizontalMiniSlider {
@@ -32960,6 +32979,17 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 .chatTabSelector .SVGIcon_DownArrowContextMenu {
   -webkit-mask-image: var(--zehn-icon-chevron-down) !important;
+}
+
+.TheaterMode .title-bar-actions.window-controls {
+  background: var(--zehn-color-positive) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.WindowFocus .TheaterMode .title-bar-actions.window-controls {
+  background: var(--zehn-color-positive) !important;
+  opacity: 1 !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz {
@@ -34079,7 +34109,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .TheaterMode .broadcastVisible .ChatRoomGroup_Main_Content > div:has(.BroadcastSection) {
   padding: 0px !important;
-  --groupchat-offset: (var(--zehn-size-titlebar));
+  --groupchat-offset: (0px);
 }
 
 .BroadcastSection {
@@ -34617,6 +34647,10 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .STV_BroadcastClose {
   top: var(--zehn-size-spacing-md) !important;
   right: var(--zehn-size-spacing-md) !important;
+}
+
+.TheaterMode .ChatRoomGroup_Main_Content.Vertical .STV_BroadcastClose {
+  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-md)) !important;
 }
 
 .STV_BroadcastClose svg {
