@@ -38,8 +38,16 @@ Zehn.addRevealClass('.friendsui-container ._10UNx2XXsFmsHb86RCyofu', [
   '._2Qsf4rHzNzK6Z3UYN7tOFx' // VIDEO
 ]);
 
-Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+Zehn.revealSelf('._2EstNjFIIZm_WUSKm5Wt7n ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 Zehn.revealSelf('._10UNx2XXsFmsHb86RCyofu ._2Qsf4rHzNzK6Z3UYN7tOFx.zehnReveal');
+
+/* REVEAL BROADCAST CONTEXT MENU ------------------------------------------------------------------------------------ */
+
+Zehn.addRevealClass('.STV_BroadcastSettingsPanel', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
+]);
+
+Zehn.revealSelf('.STV_BroadcastSettingsPanel ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 
 /* TOGGLE CLASSES BASED ON WHAT HEADER CONTENT IS OPEN -------------------------------------------------------------- */
 
