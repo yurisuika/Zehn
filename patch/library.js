@@ -29,12 +29,6 @@ Zehn.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
 Zehn.createSpinner('html', '._3rAIymq-pEYFB9bIdm-Aoz');
 Zehn.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
 
-// Zehn.createSpinner('._1UJDmU3N-pkv7oTJ_Zf9nK', '.TabbedPopupBrowser');
-// Zehn.createSpinner('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Browser');
-// Zehn.createSpinner('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Guides');
-// Zehn.createSpinner('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Discussions');
-// Zehn.createSpinner('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_DLC');
-
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
