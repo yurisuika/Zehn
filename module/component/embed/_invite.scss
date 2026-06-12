@@ -176,11 +176,12 @@
 }
 
 // INVITE BUTTON
-.ChatMessageInvite .inviteButton,
-.ChatMessageInvite .inviteButton.inviteButtonJoinChat {
-  align-self: flex-end;
+.rightInviteContainer.rightInvite_Horizontal .DialogButton,
+.rightInviteContainer.rightInvite_Horizontal .inviteButtonJoinChat {
+  align-self: flex-end !important;
   min-width: 0px !important;
   flex: 1 !important;
+  margin: 0px !important;
 }
 
 // EXPIRE TIME
@@ -236,6 +237,93 @@
 
 
 
+// TRADE OFFER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// AVATAR
+.TradeOfferInvite .leftInviteContainer .FriendAvatar {
+  filter: none !important;
+  transition: filter 0.2s ease !important;
+}
+
+.TradeOfferInvite .leftInviteContainer:hover .FriendAvatar {
+  filter: var(--zehn-filter-light-blur) !important;
+}
+
+// ICON
+.TradeOfferInvite .leftInviteContainer .SVGIcon_Trade {
+  transition: opacity 0.2s ease !important;
+  opacity: 0 !important;
+  z-index: 1337 !important;
+  inset: 0px !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: var(--zehn-color-icon1) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-xl) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  -webkit-mask-image: var(--zehn-icon-switch) !important;
+
+
+  * { display: none !important; }
+}
+
+.TradeOfferInvite .leftInviteContainer:hover .SVGIcon_Trade {
+  opacity: 1 !important;
+}
+
+// NAME
+.inviteeNameLabel {
+  color: inherit !important;
+}
+
+// NOTE
+.TradeOffer_NoteFromFriendCtn {
+  margin: 0px !important;
+  padding: var(--zehn-size-embed-inset-padding) !important;
+  background: var(--zehn-color-embed-inset) !important;
+  border-radius: var(--zehn-size-embed-inset-radius) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  --footer-inner: var(--zehn-size-24);
+}
+
+.TradeOffer_NoteFromFriend_QuoteArrow {
+  display: none !important;
+  height: var(--footer-inner) !important;
+  width: var(--footer-inner) !important;
+  position: relative !important;
+  inset: unset !important;
+  background-color: var(--zehn-color-icon3) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  -webkit-mask-image: var(--zehn-icon-note) !important;
+}
+
+.ChatMessageInvite .TradeOffer_NoteFromFriendCtn .inviteLabel.TradeOffer_NoteFromFriend {
+  padding: 0px !important;
+  margin: 0px !important;
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  border: none !important;
+  background: transparent !important;
+  line-height: var(--footer-inner) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // BROADCAST INVITE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .ChatMessageInvite.broadcastInviteMsg {
@@ -263,6 +351,27 @@
   max-height: unset !important;
   min-height: 0px !important;
   height: auto !important;
+}
+
+.msg .productImage.productImageBlur {
+  display: none !important;
+}
+
+// PRODUCT NAME
+.msg .productName,
+.gameInviteMsg .productName,
+.broadcastInviteMsg .productName,
+.broadcastViewRequestMsg .productName {
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--chat-scale) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  letter-spacing: normal !important;
+}
+
+.msg .invitedTimeLabel {
+  color: var(--zehn-color-text3) !important;
+  font-size: var(--chat-scale-sub) !important;
+  font-weight: var(--zehn-weight-normal) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
