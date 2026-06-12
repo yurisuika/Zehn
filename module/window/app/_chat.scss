@@ -55,7 +55,7 @@
 }
 
 .TheaterMode .MultiUserChat.broadcastVisible {
-  --chat-margin: (var(--zehn-size-titlebar));
+  --chat-margin: (0px);
 }
 
 .multiChatDialog .ChatTabs::before,
@@ -77,7 +77,7 @@
 
 .TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::before,
 .TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::after {
-  height: var(--zehn-size-titlebar) !important;
+  height: 0px !important;
 }
 
 .multiChatDialog .ChatTabs::before {
@@ -129,6 +129,10 @@
 }
 
 // BROADCAST THEATER MODE
+.TheaterMode .titleBarContainer.ChatTabs.HasWindowControls {
+  z-index: 9001 !important;
+}
+
 .TheaterMode .ChatTabs.activeTabHasBroadcast {
   margin: 0px !important;
 }
@@ -141,6 +145,22 @@
   height: 0px !important;
   background: transparent !important;
   transition: none !important;
+}
+
+// OPEN FRIENDS LIST - TELL TEXT TO FUCK OFF
+.chatTabOpenFriendsList {
+  text-indent: -9999em !important;
+}
+
+.TheaterMode .chatTabOpenFriendsList {
+  background: var(--zehn-color-positive) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.WindowFocus .TheaterMode .chatTabOpenFriendsList {
+  background: var(--zehn-color-positive) !important;
+  opacity: 1 !important;
 }
 
 // SINGLE WINDOW CONTROLS
@@ -165,14 +185,13 @@
   position: absolute !important;
 }
 
-// OPEN FRIENDS LIST - TELL TEXT TO FUCK OFF
-.chatTabOpenFriendsList {
-  text-indent: -9999em !important;
-}
-
 // TABS CONTAINER
 .chatTabSetContainer.inclient {
   padding-right: calc(Var(--zehn-size-titlebar-control) * 3) !important;
+}
+
+.TheaterMode .chatTabSetContainer {
+  display: none !important;
 }
 
 // TAB SCROLLER
@@ -190,6 +209,18 @@
 // OVERFLOW TABS SELECTOR
 .chatTabSelector .SVGIcon_DownArrowContextMenu {
   -webkit-mask-image: var(--zehn-icon-chevron-down) !important;
+}
+
+// THEATER MODE WINDOW CONTROLS
+.TheaterMode .title-bar-actions.window-controls {
+  background: var(--zehn-color-positive) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.WindowFocus .TheaterMode .title-bar-actions.window-controls {
+  background: var(--zehn-color-positive) !important;
+  opacity: 1 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1450,7 +1481,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .TheaterMode .broadcastVisible .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
   padding: 0px !important;
-  --groupchat-offset: (var(--zehn-size-titlebar));
+  --groupchat-offset: (0px);
 }
 
 // VIDEO SECTION
@@ -2025,6 +2056,10 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .STV_BroadcastClose {
   top: var(--zehn-size-spacing-md) !important;
   right: var(--zehn-size-spacing-md) !important;
+}
+
+.TheaterMode .ChatRoomGroup_Main_Content.Vertical .STV_BroadcastClose {
+  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-md)) !important;
 }
 
 .STV_BroadcastClose svg {
