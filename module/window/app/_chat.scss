@@ -54,6 +54,10 @@
   --chat-margin: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
 }
 
+.TheaterMode .MultiUserChat.broadcastVisible {
+  --chat-margin: (var(--zehn-size-titlebar));
+}
+
 .multiChatDialog .ChatTabs::before,
 .multiChatDialog .ChatTabs::after {
   content: "";
@@ -69,6 +73,11 @@
 .multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::before,
 .multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::after {
   height: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
+}
+
+.TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::before,
+.TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::after {
+  height: var(--zehn-size-titlebar) !important;
 }
 
 .multiChatDialog .ChatTabs::before {
@@ -117,6 +126,21 @@
   z-index: 1 !important;
   width: 100% !important;
   background: transparent !important;
+}
+
+// BROADCAST THEATER MODE
+.TheaterMode .ChatTabs.activeTabHasBroadcast {
+  margin: 0px !important;
+}
+
+.TheaterMode .ChatTabs.activeTabHasBroadcast .theaterModeHoverSpace {
+  display: none !important;
+}
+
+.theaterModeHoverSpace {
+  height: 0px !important;
+  background: transparent !important;
+  transition: none !important;
 }
 
 // SINGLE WINDOW CONTROLS
@@ -758,7 +782,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .chatRoomVoiceChannelIcon svg {
-  -webkit-mask-image: var(--zehn-icon-volume) !important;
+  -webkit-mask-image: var(--zehn-icon-volume-3) !important;
 }
 
 // QUICK CHAT BUTTON
@@ -850,7 +874,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .voicestatusIcon.voiceStatusOutput svg {
-  -webkit-mask-image: var(--zehn-icon-volume) !important;
+  -webkit-mask-image: var(--zehn-icon-volume-3) !important;
 }
 
 .output_muted_self .voicestatusIcon.voiceStatusOutput svg,
@@ -989,7 +1013,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .VoiceControlPanelButton.ToggleVoiceOutputButton.Focusable svg {
-  -webkit-mask-image: var(--zehn-icon-volume) !important;
+  -webkit-mask-image: var(--zehn-icon-volume-3) !important;
 }
 
 .VoiceControlPanelButton.ToggleVoiceOutputButton.disabled.Focusable svg {
@@ -1102,6 +1126,17 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   position: absolute !important;
   margin-top: var(--zehn-size-titlebar) !important;
   z-index: 1 !important;
+}
+
+// THEATER MODE
+.TheaterMode .chatWindow.broadcastVisible .chatHeader {
+  display: none !important;
+}
+
+.TheaterMode .broadcastVisible .MemberListColumn,
+.TheaterMode .broadcastVisible .chatRoomGroupNavColumn,
+.TheaterMode .broadcastVisible .chatRoomHeader {
+  display: none !important;
 }
 
 // GRADIENT
@@ -1299,6 +1334,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // DETAILS CONTAINER
 .chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails {
+  align-content: center !important;
   line-height: var(--zehn-size-16) !important;
   padding: 0px !important;
   margin-right: var(--zehn-size-spacing-xs) !important;
@@ -1350,6 +1386,10 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   margin: auto !important;
   opacity: 0 !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer:has(.thumbnailImg) .actions {
+  right: calc(2 * var(--zehn-size-chat-header)) !important;
 }
 
 .chatRoomGroupHeader .broadcastInfoContainer .actions:hover,
@@ -1408,6 +1448,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   box-sizing: border-box !important;
 }
 
+.TheaterMode .broadcastVisible .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
+  padding: 0px !important;
+  --groupchat-offset: (var(--zehn-size-titlebar));
+}
+
 // VIDEO SECTION
 .BroadcastSection {
   padding: 0px !important;
@@ -1419,19 +1464,24 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .BroadcastSection,
 .BroadcastContainerSection {
-  background-color: transparent !important;
-}
-
-.videoContainer {
-  margin: 0px !important;
-  background: var(--zehn-color-panel) !important;
-  padding: 0px !important;
   border-radius: var(--zehn-size-panel-radius) !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
+  border-radius: var(--zehn-size-panel-radius) !important;
 
   &:hover {
     background-color: var(--zehn-color-panel-hover) !important;
   }
+}
+
+.TheaterMode .broadcastVisible .BroadcastSection,
+.TheaterMode .broadcastVisible .BroadcastContainerSection {
+  border-radius: var(--zehn-size-radius-none) !important;
+}
+
+.videoContainer {
+  margin: 0px !important;
+  background: var(--zehn-color-video) !important;
+  padding: 0px !important;
 }
 
 .videoContainer .videoBackground {
@@ -1449,6 +1499,501 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   background-color: var(--zehn-color-video) !important;
 }
 
+// CONTROLS
+.videoContainer:hover.HidePlayerControls .videoControls {
+  transition-duration: 0.2s !important;
+  opacity: 1 !important;
+}
+
+.videoContainer.HidePlayerControls .videoControls {
+  opacity: 0 !important;
+  bottom: 0px !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+}
+
+// CONTROLS FADE
+.videoControls .videoControlsBottom {
+  padding: 0px !important;
+  margin: 0px !important;
+  margin-top: auto !important;
+  background: linear-gradient(0deg, var(--zehn-color-backdrop), transparent 80%) !important;
+}
+
+// TIMELINE CONTAINER
+.videoTimelineMain {
+  width: 100% !important;
+  padding-inline: var(--zehn-size-spacing-md) !important;
+  margin: 0px !important;
+  margin-top: var(--zehn-size-spacing-xxl) !important;
+  position: relative !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.videoTimelineMain .STV_timelineContainer {
+  padding: 0px !important;
+}
+
+// TIMELINE TIME
+.STV_timelineSegmentsContainer {
+  display: flex !important;
+  flex-direction: row !important;
+  overflow: hidden !important;
+  height: var(--zehn-size-16) !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.noSegments .STV_timelineSegmentsContainer {
+  display: none !important;
+}
+
+// TIMELINE SLIDER
+.VideoTimelineSlider {
+  border: none !important;
+  height: var(--zehn-size-timeline) !important;
+  margin: calc((var(--zehn-size-timeline-handle) - var(--zehn-size-timeline)) / 2) 0 !important;
+  border-radius: var(--zehn-size-timeline-radius) !important;
+  background: var(--zehn-color-timeline-empty) !important;
+}
+
+.videoTimelineMain .STV_timelineGhostValue,
+.videoTimelineMain .STV_timelineValue,
+.videoTimelineMain .STV_timelineNoVideo {
+  background: var(--zehn-color-timeline-filled) !important;
+  border-radius: var(--zehn-size-timeline-radius) !important;
+}
+
+.videoTimelineMain .STV_timelineValue {
+  -webkit-mask: none !important;
+  -webkit-mask-size: var(--zehn-size-timeline) var(--zehn-size-timeline) !important;
+  mask: none !important;
+  mask-size: var(--zehn-size-timeline) var(--zehn-size-timeline) !important;
+}
+
+.videoTimelineMain .STV_timelineGhostValue {
+  background: var(--zehn-color-timeline-filled) !important;
+  border-radius: var(--zehn-size-timeline-radius) !important;
+  transition: width 0.2s var(--zehn-timing-linear) !important;
+}
+
+.videoTimelineMain .STV_timelineNoVideo {
+  background: var(--zehn-color-timeline-filled) !important;
+  border-radius: var(--zehn-size-timeline-radius) !important;
+  transition: width 0.2s var(--zehn-timing-linear) !important;
+  background-image: none !important;
+  background-size: 0px !important;
+}
+
+// TIMELINE HANDLE
+.STV_timelineGrabber_Wrapper {
+  position: absolute !important;
+  margin: 0px !important;
+  margin-left: calc(var(--zehn-size-timeline-handle) / -2) !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  bottom: unset !important;
+  top: calc((var(--zehn-size-timeline-handle) - var(--zehn-size-timeline)) / -2) !important;
+  display: flex !important;
+  align-items: center !important;
+  backdrop-filter: var(--zehn-filter-heavy-blur) !important;
+}
+
+.videoTimelineMain .STV_timelineGrabber {
+  margin: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  -webkit-app-region: no-drag !important;
+  transition: none !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  border: var(--zehn-size-timeline-handle-border) solid var(--zehn-color-timeline-handle) !important;
+  border-radius: var(--zehn-size-radius-circular) !important;
+  width: var(--zehn-size-timeline-handle) !important;
+  height: var(--zehn-size-timeline-handle) !important;
+  box-sizing: border-box !important;
+}
+
+.STV_timelineGrabberArrow {
+  width: var(--zehn-size-timeline-handle) !important;
+  height: var(--zehn-size-timeline-handle) !important;
+  margin: 0px !important;
+  pointer-events: all !important;
+  opacity: 0 !important;
+
+  svg.SVGIcon_STVTimelineGrabber {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: var(--zehn-color-icon1) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-icon-md) !important;
+    -webkit-mask-image: var(--zehn-icon-move) !important;
+
+    * { display: none !important; }
+  }
+}
+
+// VIDEO CONTROLS
+.STV_BroadcastController {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  margin: 0px !important;
+  padding: var(--zehn-size-padding-md) !important;
+  padding-top: 0px !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+}
+
+.videoControlsButtons.LeftSpacer {
+  // HALF OF CENTER CONTROLS AND GAP
+  width: calc(50% - ((112px / 2) + var(--zehn-size-spacing-xs))) !important;
+  flex-shrink: 1 !important;
+}
+
+.STV_BroadcastSettings,
+.videoControlsButtons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+}
+
+.videoControlButton,
+.STV_BroadcastSettings .videoControlButton {
+  border-radius: var(--zehn-size-radius-circular) !important;
+  height: var(--zehn-size-timeline-control) !important;
+  width: var(--zehn-size-timeline-control) !important;
+  margin: 0px !important;
+  transition: none !important;
+  background: transparent !important;
+
+  svg {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: var(--icon-color) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-icon-md) !important;
+    --icon-color: var(--zehn-color-timeline-control);
+
+    * { display: none !important; }
+  }
+
+  &:hover {
+    background: transparent !important;
+
+    svg {
+      --icon-color: var(--zehn-color-timeline-control-hover);
+    }
+  }
+
+  &:active {
+    background: transparent !important;
+
+    svg {
+      --icon-color: var(--zehn-color-timeline-control-active);
+    }
+  }
+}
+
+.videoControlButton::before {
+  content: "";
+  position: absolute;
+  display: block;
+  inset: 0px;
+  opacity: 0;
+  transform: scale(0);
+  background: var(--zehn-color-list-background);
+  border-radius: var(--zehn-size-radius-circular);
+  transition: opacity 0.2s var(--zehn-timing-ease), transform 0.2s ease;
+}
+
+.videoControlButton:hover::before {
+  transform: scale(1);
+  opacity: 1;
+  background: var(--zehn-color-list-background-hover);
+}
+
+.videoControlButton:active::before {
+  background: var(--zehn-color-list-background-active);
+}
+
+.videoControlButton .SVGIcon_Button {
+  margin: 0px !important;
+  transform: none !important;
+}
+
+.videoControlButton.controlFlip .SVGIcon_Button {
+  margin: 0px !important;
+}
+
+// PLAY CONTROLS
+.videoControlsButtons.PlayControls {
+  flex: 0 !important;
+}
+
+.videoControlButton.buttonPlayPause {
+  border: none !important;
+
+  svg.SVGIcon_Pause {
+    -webkit-mask-image: var(--zehn-icon-pause) !important;
+  }
+
+  svg.SVGIcon_Play {
+    -webkit-mask-image: var(--zehn-icon-play) !important;
+  }
+}
+
+.videoControlButton.videoControlJump.controlFlip {
+  svg.SVGIcon_MediaControls {
+    -webkit-mask-image: var(--zehn-icon-skip-backward) !important;
+  }
+}
+
+.videoControlButton.videoControlJump {
+  svg.SVGIcon_MediaControls {
+    -webkit-mask-image: var(--zehn-icon-skip-forward) !important;
+  }
+}
+
+.videoControlButton .jumpAheadValue {
+  inset: 0px !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-10) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  align-content: center !important;
+  text-align: center !important;
+  align-self: flex-end !important;
+  margin-bottom: var(--zehn-size-spacing-xxs) !important;
+}
+
+.videoControlButton.jumpToMarker.controlFlip {
+  svg.SVGIcon_MediaControls {
+    -webkit-mask-image: var(--zehn-icon-playback-reverse) !important;
+  }
+}
+
+.videoControlButton.jumpToMarker {
+  svg.SVGIcon_MediaControls {
+    -webkit-mask-image: var(--zehn-icon-playback-forward) !important;
+  }
+}
+
+.videoControlButton.jumpToMarker.noMarkersOrSegments {
+  visibility: hidden !important;
+  display: none !important;
+}
+
+.videoControlButton.jumpToMarker.noMarkersInDirection {
+  cursor: default !important;
+}
+
+.videoControlsButtons.GoLive {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  width: var(--zehn-size-timeline-control) !important;
+  flex: 0 !important;
+}
+
+.videoControlButton.videoControlGoLive {
+  gap: var(--zehn-size-spacing-xxs) !important;
+  display: flex !important;
+  width: var(--zehn-size-timeline-control) !important;
+
+  svg.SVGIcon_MediaControls {
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-mask-image: var(--zehn-icon-playback-resume) !important;
+  }
+}
+
+.videoControlButton.videoControlGoLive.isLiveEdge {
+  display: none !important;
+  cursor: default !important;
+}
+
+.videoControlButton.videoControlGoLive.isLiveEdge svg {
+  display: none !important;
+}
+
+.videoControlButton.videoControlGoLive .jumpGoLive {
+  display: none !important;
+  color: var(--zehn-color-positive) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  background-color: var(--zehn-color-icon1) !important;
+  line-height: var(--zehn-size-24) !important;
+  height: var(--zehn-size-24) !important;
+  padding: 0 var(--zehn-size-padding-xs) !important;
+  text-align: center !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  transition: none !important;
+  margin: auto 0px !important;
+  margin-right: calc(-1 * (var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs))) !important;
+  text-transform: uppercase !important;
+  transition: color 0.2s var(--zehn-timing-ease), background-color 0.2s var(--zehn-timing-ease) !important;
+}
+
+.videoControlButton.videoControlGoLive.isLiveEdge:hover .jumpGoLive,
+.videoControlButton.videoControlGoLive.isLiveEdge .jumpGoLive {
+  background-color: var(--zehn-color-positive) !important;
+  color: var(--zehn-color-icon1) !important;
+}
+
+// VIDEO CONTROLS RIGHT
+.STV_BroadcastSettings {
+  justify-content: flex-end !important;
+  flex-grow: 1 !important;
+}
+
+// SETTINGS
+.videoControlButton.VideoSettings {
+  svg.SVGIcon_Settings {
+    -webkit-mask-image: var(--zehn-icon-settings) !important;
+  }
+}
+
+.STV_BroadcastSettingsPanel {
+  margin-left: 0px !important;
+  background: var(--zehn-color-acrylic) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
+  border-radius: var(--zehn-size-context-radius) !important;
+  color: var(--zehn-color-context-text) !important;
+  font-size: var(--zehn-size-context-text) !important;
+  line-height: var(--zehn-size-context-line) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  gap: 0px !important;
+  padding: var(--zehn-size-context-padding-menu) !important;
+  border: var(--zehn-size-context-border) solid var(--zehn-color-context-menu-border) !important;
+}
+
+.STV_BroadcastSettingsMenuItems {
+  background: transparent !important;
+  font-size: var(--zehn-size-context-text) !important;
+}
+
+// VOLUME
+.BroadcastVolumeControl {
+  width: var(--zehn-size-timeline-control) !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  transition: width 0.2s var(--zehn-timing-ease) !important;
+  --volume-width: 100px;
+}
+
+.BroadcastVolumeControl.ShowVolumeSlider {
+  width: calc(var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs) + var(--volume-width)) !important;
+}
+
+.BroadcastVolumeControl_FixedLayout {
+  width: calc(var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs) + var(--volume-width)) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: var(--zehn-size-gap-xs) !important;
+}
+
+.BroadcastVolumeControl.ShowVolumeSlider.muted .videoControlButton {
+  svg.SVGIcon_Volume {
+    -webkit-mask-image: var(--zehn-icon-volume-mute) !important;
+  }
+}
+
+.videoControlButton.LowVolume {
+  svg.SVGIcon_Volume {
+    -webkit-mask-image: var(--zehn-icon-volume-0) !important;
+  }
+}
+.videoControlButton.MedVolume {
+  svg.SVGIcon_Volume {
+    -webkit-mask-image: var(--zehn-icon-volume-1) !important;
+  }
+}
+
+.videoControlButton.HighVolume {
+  svg.SVGIcon_Volume {
+    -webkit-mask-image: var(--zehn-icon-volume-2) !important;
+  }
+}
+
+.videoControlButton.HighestVolume {
+  svg.SVGIcon_Volume {
+    -webkit-mask-image: var(--zehn-icon-volume-3) !important;
+  }
+}
+
+.BroadcastVolumeControl .videoControlButton {
+  margin: 0px !important;
+}
+
+.BroadcastVolumeSlider_Track {
+  inset: 0px !important;
+}
+
+.BroadcastVolumeSlider_Fill {
+  inset: 0px !important;
+}
+
+.BroadcastVolumeSlider_Thumb {
+  inset-block: 0px !important;
+}
+
+// MODE TOGGLES
+.BroadcastTheaterToggle,
+.BroadcastChatPositionToggle,
+.BroadcastFullscreenToggle {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: var(--zehn-color-timeline-control) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  margin: 0px !important;
+
+  &:hover {
+    background-color: var(--zehn-color-timeline-control-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-timeline-control-hover) !important;
+  }
+}
+
+.BroadcastChatPositionToggle.right {
+  background-image: var(--zehn-texture-clear) !important;
+  -webkit-mask-image: var(--zehn-icon-dock-right) !important;
+}
+
+.BroadcastChatPositionToggle.left {
+  background-image: var(--zehn-texture-clear) !important;
+  -webkit-mask-image: var(--zehn-icon-dock-left) !important;
+}
+
+.BroadcastChatPositionToggle.bottom {
+  background-image: var(--zehn-texture-clear) !important;
+  -webkit-mask-image: var(--zehn-icon-dock-bottom) !important;
+}
+
+.BroadcastTheaterToggle {
+  background-image: var(--zehn-texture-clear) !important;
+  -webkit-mask-image: var(--zehn-icon-full-view) !important;
+}
+
+.TheaterMode .broadcastVisible .BroadcastTheaterToggle {
+  -webkit-mask-image: var(--zehn-icon-focus-view) !important;
+}
+
+.BroadcastFullscreenToggle {
+  background-image: var(--zehn-texture-clear) !important;
+  -webkit-mask-image: var(--zehn-icon-window-expand) !important;
+}
+
+// SIZER, WHATEVER THE HELL THIS IS
 .videoContainerSizer {
   width: 100% !important;
   height: 100% !important;
@@ -1469,13 +2014,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 // CLOSE BROADCAST AND CONTROLS
-.videoContainer:hover.HidePlayerControls .videoControls,
 .videoContainer:hover.HidePlayerControls .STV_BroadcastClose {
   transition-duration: 0.2s !important;
   opacity: 1 !important;
 }
 
-.videoContainer.HidePlayerControls .videoControls,
 .videoContainer.HidePlayerControls .STV_BroadcastClose {
   opacity: 0 !important;
   bottom: unset !important;
@@ -1488,6 +2031,26 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .STV_BroadcastClose svg {
+  -webkit-mask-image: var(--zehn-icon-clear) !important;
+}
+
+// TECHNICAL STATS
+.dash_video_stats {
+  background: var(--zehn-color-acrylic) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
+  border-radius: var(--zehn-size-context-radius) !important;
+  color: var(--zehn-color-context-text) !important;
+  font-size: var(--zehn-size-context-text-other) !important;
+  line-height: var(--zehn-size-context-line-other) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-padding-xs) !important;
+  border: var(--zehn-size-context-border) solid var(--zehn-color-context-menu-border) !important;
+  margin: var(--zehn-size-spacing-md) !important;
+}
+
+.dash_video_stats .dash_stat_close_button svg {
   -webkit-mask-image: var(--zehn-icon-clear) !important;
 }
 
@@ -1535,6 +2098,20 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   filter: none !important;
   -webkit-mask-image: none !important;
   display: none !important;
+}
+
+.chatRoomGroupHeader .broadcastInfoContainer .thumbnail:has(.thumbnailImg) {
+  min-width: calc(2 * var(--zehn-size-chat-header)) !important;
+}
+
+// BROADCAST THUMBNAIL
+.chatRoomGroupHeader .broadcastInfoContainer .thumbnail .thumbnailImg {
+  border-radius: var(--zehn-size-embed-image-radius) !important;
+  position: absolute !important;
+  opacity: 0.5 !important;
+  inset: var(--zehn-size-spacing-xxs) !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 .crossfade-img {
@@ -1742,9 +2319,8 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // MESSAGE CONTAINER
 ._22PB4rET-Rx8JtZs34nMkf {
-  min-height: var(--message-line) !important;
   box-sizing: content-box !important;
-  padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md) !important;
+  padding: var(--zehn-size-padding-xxs) var(--zehn-size-padding-xl) !important;
   color: var(--zehn-color-text3) !important;
   background: var(--zehn-color-chat-background) !important;
 
@@ -1785,6 +2361,8 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // USER BADGE
 ._166wpHbAcQPnZog52jPZLN {
+  display: none !important;
+  position: absolute !important;
   width: var(--message-line) !important;
   height: var(--message-line) !important;
   margin-right: var(--zehn-size-spacing-xs) !important;
@@ -1797,6 +2375,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // USER NAME
 .BJe6CMne992juEIk9iv-k {
+  // margin-left: calc(var(--message-line) + var(--zehn-size-spacing-xs)) !important;
   font-size: var(--message-scale) !important;
   color: var(--zehn-color-text1) !important;
   font-weight: var(--zehn-weight-thicker) !important;
