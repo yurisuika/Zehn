@@ -1534,8 +1534,9 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .msgText,
 .MultiUserChat .isCurrentUser .msgText {
   color: var(--zehn-color-text1) !important;
-  display: block !important;
+  display: flex !important;
   gap: var(--zehn-size-spacing-xxs) !important;
+  flex-direction: column !important;
 }
 
 .msgText {
@@ -1546,7 +1547,8 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   padding: 0 var(--zehn-size-padding-xl) !important;
 }
 
-.msgText span {
+.msgText>span {
+  display: block !important;
   line-height: inherit !important;
 }
 
@@ -1749,6 +1751,41 @@ span.mention.me {
 ._1wu95XTcpkpdKpgg_n2HR ._3IBr8jcQ1xjVP0vGqDBE6R ._2MFeNzJ09KQdlTVbKR9C88 {
   line-height: var(--zehn-size-24) !important;
   font-size: var(--zehn-size-14) !important;
+}
+
+// NON-INLINE EMBED - NOT SURE WHERE THIS IS USED EITHER
+.NonInlinedEmbed .SVGIcon_Image {
+  height: var(--zehn-size-icon-md) !important;
+  width: var(--zehn-size-icon-md) !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.NonInlinedEmbed a svg,
+.NonInlinedEmbed a div.NonInlinedEmbedLogo {
+  opacity: 1 !important;
+  padding-right: var(--zehn-size-spacing-xxs) !important;
+}
+
+.NonInlinedEmbed .SVGIcon_Video,
+.NonInlinedEmbed .SVGIcon_Image {
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  background: var(--zehn-color-icon1) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+
+  * { display: none !important; }
+}
+
+.NonInlinedEmbed .SVGIcon_Video {
+  -webkit-mask-image: var(--zehn-icon-film) !important;
+}
+
+.NonInlinedEmbed .SVGIcon_Image {
+  -webkit-mask-image: var(--zehn-icon-picture) !important;
 }
 
 // ROOM EFFECT
@@ -2109,6 +2146,78 @@ span.mention.me {
   top: 0px !important;
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// INVITE TO CHAT DROP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// BACKDROP
+._3EwDM8E1LYILno1QNM0IAv {
+  background: transparent !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-16) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  position: fixed !important;
+}
+
+// CONTAINER
+._3zWGwYIQs01hkEl3N2sICI {
+  margin: auto !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+  width: 250px !important;
+  height: 250px !important;
+  z-index: 10 !important;
+  background: var(--zehn-color-modal-background) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-radius-circular) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
+  transition: background-color 0.2s var(--zehn-timing-ease) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-modal-background-hover) !important;
+  }
+}
+
+// AVATAR WRAPPER
+._3Z_AX1_BgHE0otB0eSOd-P {}
+
+// FRIEND NAME
+._2Zv5cfCFGysTDocUJaIMZm {
+  font-size: var(--zehn-size-20) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0px !important;
+}
+
+._240xakF0P6VQe4Qd843wIw {
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  line-height: var(--zehn-size-24) !important;
+  color: var(--zehn-color-text1) !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  margin: 0px !important;
+}
+
+// BACKGROUND CIRCLE - NOT USED
+.SDywUraoIhkLlnkW8IUyI {
+  border-radius: var(--zehn-size-radius-circular) !important;
+  margin: auto !important;
+  border: unset !important;
+  background: transparent !important;
+  display: none !important;
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
