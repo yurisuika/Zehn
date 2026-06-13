@@ -2070,7 +2070,8 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   right: var(--zehn-size-spacing-md) !important;
 }
 
-.TheaterMode .ChatRoomGroup_Main_Content.Vertical .STV_BroadcastClose {
+.TheaterMode .ChatRoomGroup_Main_Content.Vertical .STV_BroadcastClose,
+.TheaterMode .chatHidden .STV_BroadcastClose {
   top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-md)) !important;
 }
 
@@ -2235,6 +2236,20 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   left: 0px !important;
   right: unset !important;
   top: var(--zehn-size-titlebar) !important;
+}
+
+.TheaterMode .BroadcastChatExpander.bottom,
+.TheaterMode .BroadcastChatExpander.right {
+  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-md) + var(--zehn-size-button-app) + var(--zehn-size-spacing-md)) !important;
+  right: var(--zehn-size-spacing-md) !important;
+  left: unset !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+}
+
+.TheaterMode .chatWindow:hover .BroadcastChatExpander.bottom,
+.TheaterMode .chatWindow:hover .BroadcastChatExpander.right {
+  opacity: 1 !important;
 }
 
 .SVGIcon_HideShowChat {
