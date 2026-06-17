@@ -26,7 +26,7 @@ Zehn.setGlyphColor();
 /* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
 
 Zehn.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
-Zehn.createSpinner('html', '._3rAIymq-pEYFB9bIdm-Aoz');
+Zehn.createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v');
 Zehn.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
 
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
@@ -455,7 +455,7 @@ Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
   '.zehnButton#zehnToggleDetails', // DETAILS
   '._3oddBTkj_FjknCgBnPqcmQ ._3qDWQGB0rtwM3qpXTb11Q-', // SETTINGS
   '._3qDWQGB0rtwM3qpXTb11Q-._1oYt_BfxCHnA-_6sfUHiNn', // CONTROLLER
-  '._3qDWQGB0rtwM3qpXTb11Q- .zvLq1GUCH3yLuqv_TXBJ1', // INFO / SCROLL UP
+  '._3qDWQGB0rtwM3qpXTb11Q-', // INFO / SCROLL UP
   '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
 ]);
 

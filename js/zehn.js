@@ -229,13 +229,17 @@ function createSpinner(rootSelector, targetSelector) {
     const spinner = document.createElement('div');
     spinner.classList.add('zehnSpinner');
 
+    const holder = document.createElement('div');
+    holder.classList.add('zehnHolder');
+    spinner.appendChild(holder);
+
     for (let i = 1; i <= 6; i++) {
-      const span = document.createElement('span');
-      span.className = `zehnDot${i}`;
-      spinner.appendChild(span);
+      const dot = document.createElement('div');
+      dot.className = `zehnDot${i}`;
+      holder.appendChild(dot);
     }
 
-    target.appendChild(spinner);
+    target.prepend(spinner);
     return spinner;
   });
 };
@@ -264,7 +268,7 @@ function createIconTitleContainer(rootSelector, targetSelector, shouldAppend = t
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     if (target.children.length == 0) {
       const container = document.createElement('div');
-      container.classList.add('zehnListContainer');
+      container.classList.add('zehnContainer');
       if (shouldAppend) {
         target.append(container);
       } else {
@@ -272,13 +276,13 @@ function createIconTitleContainer(rootSelector, targetSelector, shouldAppend = t
       }
 
       const title = document.createElement('div');
-      title.classList.add('zehnListTitle');
+      title.classList.add('zehnTitle');
       container.append(title);
       title.textContent = target.childNodes[0].textContent;
       target.childNodes[0].remove();
 
       const icon = document.createElement('svg');
-      icon.classList.add('zehnListIcon');
+      icon.classList.add('zehnIcon');
       container.prepend(icon);
     }
   });
