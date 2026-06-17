@@ -60,6 +60,16 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   margin-top: calc(var(--zehn-size-titlebar) + var(--remoteplay-size) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size)) !important;
 }
 
+// BASE COLOR BEHIND HEADER ACRYLIC
+.friendlist::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0px;
+  background: var(--zehn-color-base);
+  height: calc(var(--zehn-size-titlebar) + var(--remoteplay-size) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size));
+}
+
 // CALCULATE BACKGROUND BEHIND LIST
 .FriendsListContent::before {
   content: "";
@@ -134,7 +144,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   pointer-events: none;
   background-size: auto;
   background-image: var(--zehn-transparency-effects-acrylic-texture);
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s var(--zehn-timing-ease);
 }
 
 .WindowFocus .friendListHeaderContainer::after {
@@ -471,7 +481,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   border-radius: var(--zehn-size-radius-none) !important;
   border: var(--zehn-size-focusbar) dashed var(--zehn-color-focusbar) !important;
   margin: 0px !important;
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   overflow: hidden !important;
@@ -490,7 +500,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   color: var(--zehn-color-text1) !important;
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background: var(--zehn-color-accent) !important;
   text-align: center !important;
@@ -924,6 +934,11 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   overflow: visible !important;
 }
 
+// BACK TO FRIENDS LIST - NEVER SHOW THIS
+.DialogButton.BackToFriendsListButton {
+  display: none !important;
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -989,8 +1004,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // BLOCK CHECKBOX
 .friendInviteBlockContainer .displayColumn {
-  margin: 0px !important;
-  margin-left: var(--zehn-size-spacing-label) !important;
+  margin: 0px 0px 0px var(--zehn-size-spacing-label) !important;
 }
 
 .friendInviteBlockContainer .blockCommunicationLabel,
@@ -1213,8 +1227,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .FriendInGameIcon img {
   width: var(--zehn-size-icon-md) !important;
   height: var(--zehn-size-icon-md) !important;
-  margin: 0px !important;
-  margin-right: var(--zehn-size-spacing-xs) !important;
+  margin: 0px var(--zehn-size-spacing-xs) 0px 0px !important;
   border-radius: var(--zehn-size-radius-xs) !important;
   border: unset !important;
 }
@@ -1261,7 +1274,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   transform: none !important;
   background: transparent !important;
   margin: auto 0px !important;
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
   line-height: var(--footer-height) !important;
   height: var(--footer-height) !important;
   box-sizing: border-box !important;
@@ -1468,7 +1481,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   font-size: var(--zehn-size-14) !important;
   line-height: var(--zehn-size-friends-group) !important;
   height: var(--zehn-size-friends-group) !important;
-  padding: 0 var(--zehn-size-padding-md) !important;
+  padding: 0px var(--zehn-size-padding-md) !important;
   border: none !important;
   background-color: var(--zehn-color-list-background) !important;
 
@@ -1660,8 +1673,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   line-height: var(--status-line) !important;
-  margin: 0px !important;
-  margin-left: calc(var(--zehn-size-persona-avatar) + var(--zehn-size-persona-gap)) !important;
+  margin: 0px 0px 0px calc(var(--zehn-size-persona-avatar) + var(--zehn-size-persona-gap)) !important;
   left: unset !important;
   top: calc(1.5 * var(--status-line)) !important;
   bottom: unset !important;

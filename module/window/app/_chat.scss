@@ -1,5 +1,10 @@
 // WINDOW ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// RElATIVE FOR THE EMOTE PICKER
+.popup_chat_frame {
+  position: relative !important;
+}
+
 // RELATIVE CONTAINER FOR TITLEBAR WIDTH
 .multiChatDialog,
 .singlewindow .multiChatDialog {
@@ -45,19 +50,21 @@
 
 // ACRYLIC HEADER CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.MultiUserChat {
-  --chat-margin: (var(--zehn-size-titlebar));
+// HEADER SIZE
+.multiChatDialog {
+  --tabs-and-header: var(--zehn-size-titlebar);
 }
 
-.MultiUserChat:has(.chatRoomHeader),
-.MultiUserChat.namedGroup {
-  --chat-margin: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
+.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader),
+.multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) {
+  --tabs-and-header: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
 }
 
-.TheaterMode .MultiUserChat.broadcastVisible {
-  --chat-margin: (0px);
+.TheaterMode .multiChatDialog:has(.MultiUserChat[data-activechat="true"].broadcastVisible) {
+  --tabs-and-header: 0px;
 }
 
+// HEADER BACKGROUND
 .multiChatDialog .ChatTabs::before,
 .multiChatDialog .ChatTabs::after {
   content: "";
@@ -65,19 +72,7 @@
   position: absolute;
   inset: 0px;
   pointer-events: none;
-  height: var(--zehn-size-titlebar);
-}
-
-.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::before,
-.multiChatDialog:has(.MultiUserChat[data-activechat="true"] .chatRoomHeader) .ChatTabs::after,
-.multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::before,
-.multiChatDialog:has(.MultiUserChat.namedGroup[data-activechat="true"]) .ChatTabs::after {
-  height: calc(var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
-}
-
-.TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::before,
-.TheaterMode .multiChatDialog .ChatTabs.activeTabHasBroadcast::after {
-  height: 0px !important;
+  height: calc(var(--tabs-and-header));
 }
 
 .multiChatDialog .ChatTabs::before {
@@ -101,6 +96,16 @@
 
 .WindowFocus .multiChatDialog .ChatTabs::after {
   opacity: var(--zehn-transparency-effects-acrylic);
+}
+
+// CHAT BACKGROUND
+.multiChatDialog::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  pointer-events: none;
+  background: var(--zehn-color-base);
+  height: calc(var(--tabs-and-header));
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -270,7 +275,7 @@
   content: "";
   position: absolute;
   display: block;
-  margin: 4px 0;
+  margin: var(--zehn-size-separator-margin) 0px;
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -304,8 +309,7 @@
 .titleBarContainer.ChatTabs.compactView .labelHolder {
   line-height: 100% !important;
   height: 100% !important;
-  margin: 0px !important;
-  margin-left: var(--zehn-size-persona-gap) !important
+  margin: 0px 0px 0px var(--zehn-size-persona-gap) !important;
 }
 
 ._2XZq-_f6npaQdAgeRzKIkz .nOdcT-MoOaXGePXLyPe0H,
@@ -413,7 +417,7 @@
 
 // EMPTY MESSAGE
 .chatDialogs .emptyChatDialogs {
-  padding: 0 var(--zehn-size-padding-xl) !important;
+  padding: 0px var(--zehn-size-padding-xl) !important;
   color: var(--zehn-color-text3) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
@@ -512,17 +516,16 @@
   transition-property: min-width, max-width, width !important;
   transition-delay: 0.5s !important;
   // MARGIN FOR TITLEBAR
-  margin: 0px !important;
-  margin-top: calc(var(--chat-margin)) !important;
+  margin: calc(var(--tabs-and-header)) 0px 0px 0px !important;
   position: relative !important;
   background: var(--zehn-color-section) !important;
   display: none !important;
   width: var(--zehn-size-chatlist-width) !important;
   max-width: var(--zehn-size-chatlist-width) !important;
   min-width: var(--zehn-size-chatlist-width) !important;
-  height: calc(100% - (var(--chat-margin) + var(--zehn-size-button-app-large))) !important;
+  height: calc(100% - (var(--tabs-and-header) + var(--zehn-size-button-lg))) !important;
   // PADDING FOR BUTTON
-  padding-bottom: var(--zehn-size-button-app-large) !important;
+  padding-bottom: var(--zehn-size-button-lg) !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -537,13 +540,20 @@
   width: var(--zehn-size-chatlist-height) !important;
   min-width: var(--zehn-size-chatlist-height) !important;
   max-width: var(--zehn-size-chatlist-height) !important;
-  height: calc(100% - var(--chat-margin)) !important;
+  height: calc(100% - (var(--tabs-and-header))) !important;
   // BECAUSE THE PIN BUTTON IS NOT SHOWN
   padding-bottom: 0px !important;
 }
 
 .MultiUserChat.zehnChannelListOpened .chatRoomGroupNavColumn {
   display: flex !important;
+}
+
+.chatRoomGroupNavColumn.defaultChatOnly {
+  // WITHOUT ANY CHANNELS, DO NOT SHOW
+  width: 0px !important;
+  min-width: 0px !important;
+  max-width: 0px !important;
 }
 
 // INNER CONTAINER
@@ -693,7 +703,7 @@
   left: 0px;
   top: calc((var(--zehn-size-chatlist-height) - var(--zehn-size-focusbar-pagelist-length)) / 2);
   background: var(--zehn-color-focusbar);
-  transition: transform 0.05s ease;
+  transition: transform 0.05s var(--zehn-timing-ease);
 }
 
 .chatRoomVoiceChannel.ActiveVoiceChannel:active::after,
@@ -821,7 +831,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
   inset: unset !important;
   top: var(--zehn-size-spacing-xs) !important;
-  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) !important;
+  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-md) + var(--zehn-size-spacing-xs)) !important;
 }
 
 .chatRoomVoiceChannel:not(.ActiveVoiceChannel) .chatRoomTextChannel {
@@ -835,10 +845,10 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   margin: var(--zehn-size-focusbar-spacing) !important;
   padding: 0px !important;
   inset: unset !important;
-  top: calc((var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) - (var(--zehn-size-focusbar-spacing) + var(--zehn-size-focusbar))) !important;
-  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-app) + var(--zehn-size-spacing-xs)) !important;
+  top: calc((var(--zehn-size-button-md) + var(--zehn-size-spacing-xs)) - (var(--zehn-size-focusbar-spacing) + var(--zehn-size-focusbar))) !important;
+  right: calc(var(--zehn-size-spacing-xs) + var(--zehn-size-button-md) + var(--zehn-size-spacing-xs)) !important;
   height: var(--zehn-size-focusbar) !important;
-  width: calc(var(--zehn-size-button-app) - (2 * var(--zehn-size-focusbar-spacing))) !important;
+  width: calc(var(--zehn-size-button-md) - (2 * var(--zehn-size-focusbar-spacing))) !important;
   background: var(--zehn-color-focusbar) !important;
   letter-spacing: normal !important;
   font-size: var(--zehn-size-10) !important;
@@ -1104,11 +1114,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // ABSOLUTE BACKGROUND THAT DOES NOT GO BELOW ACRYLIC HEADER
 .MultiUserChat::before {
   content: "";
-  z-index: -1;
+  z-index: 0;
   position: absolute;
   inset: 0px;
   background: var(--zehn-color-app);
-  margin-top: calc(var(--chat-margin));
+  margin-top: calc(var(--tabs-and-header));
 }
 
 // MOVE OVER STUFF WHEN NAV COLUMN IS OPENED
@@ -1467,11 +1477,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // CONTAINER
 .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
-  --groupchat-offset: (var(--zehn-size-titlebar) + var(--zehn-size-chat-header));
+  --groupchat-offset: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
   margin-top: calc(var(--groupchat-offset)) !important;
-  min-width: 430px !important;
+  min-width: 0px !important;
   max-width: 100% !important;
-  max-height: calc(100% - var(--groupchat-offset)) !important;
+  max-height: calc(100% - (var(--groupchat-offset))) !important;
   min-height: 0px !important;
   background-color: var(--zehn-color-section) !important;
   padding: var(--zehn-size-padding-md) !important;
@@ -1481,7 +1491,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .TheaterMode .broadcastVisible .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
   padding: 0px !important;
-  --groupchat-offset: (0px);
+  --groupchat-offset: 0px;
 }
 
 // VIDEO SECTION
@@ -1495,7 +1505,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .BroadcastSection,
 .BroadcastContainerSection {
-  border-radius: var(--zehn-size-panel-radius) !important;
+  background-color: var(--zehn-color-panel) !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
   border-radius: var(--zehn-size-panel-radius) !important;
 
@@ -1528,6 +1538,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   transition: filter 0.2s var(--zehn-timing-ease) !important;
   border: none !important;
   background-color: var(--zehn-color-video) !important;
+  z-index: 0 !important;
 }
 
 // CONTROLS
@@ -1545,8 +1556,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // CONTROLS FADE
 .videoControls .videoControlsBottom {
   padding: 0px !important;
-  margin: 0px !important;
-  margin-top: auto !important;
+  margin: auto 0px 0px 0px !important;
   background: linear-gradient(0deg, var(--zehn-color-backdrop), transparent 80%) !important;
 }
 
@@ -1554,8 +1564,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .videoTimelineMain {
   width: 100% !important;
   padding-inline: var(--zehn-size-spacing-md) !important;
-  margin: 0px !important;
-  margin-top: var(--zehn-size-spacing-xxl) !important;
+  margin: var(--zehn-size-spacing-xxl) 0px 0px 0px !important;
   position: relative !important;
   outline: none !important;
   box-sizing: border-box !important;
@@ -1615,8 +1624,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // TIMELINE HANDLE
 .STV_timelineGrabber_Wrapper {
   position: absolute !important;
-  margin: 0px !important;
-  margin-left: calc(var(--zehn-size-timeline-handle) / -2) !important;
+  margin: 0px 0px 0px calc(var(--zehn-size-timeline-handle) / -2) !important;
   width: fit-content !important;
   height: fit-content !important;
   bottom: unset !important;
@@ -1668,8 +1676,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   flex-direction: row !important;
   align-items: center !important;
   margin: 0px !important;
-  padding: var(--zehn-size-padding-md) !important;
-  padding-top: var(--zehn-size-padding-xs) !important;
+  padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md) var(--zehn-size-padding-md) var(--zehn-size-padding-md) !important;
   gap: var(--zehn-size-spacing-xs) !important;
 }
 
@@ -1736,7 +1743,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   transform: scale(0);
   background: var(--zehn-color-list-background);
   border-radius: var(--zehn-size-radius-circular);
-  transition: opacity 0.2s var(--zehn-timing-ease), transform 0.2s ease;
+  transition: opacity 0.2s var(--zehn-timing-ease), transform 0.2s var(--zehn-timing-ease);
 }
 
 .videoControlButton:hover::before {
@@ -1855,12 +1862,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   background-color: var(--zehn-color-icon1) !important;
   line-height: var(--zehn-size-24) !important;
   height: var(--zehn-size-24) !important;
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
   text-align: center !important;
   border-radius: var(--zehn-size-radius-none) !important;
   transition: none !important;
-  margin: auto 0px !important;
-  margin-right: calc(-1 * (var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs))) !important;
+  margin: auto calc(-1 * (var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs))) auto 0px !important;
   text-transform: uppercase !important;
   transition: color 0.2s var(--zehn-timing-ease), background-color 0.2s var(--zehn-timing-ease) !important;
 }
@@ -2044,6 +2050,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .BroadcastVideoWatchState,
 .BroadcastVideoUserInputNeeded {
   background: transparent !important;
+  z-index: 0 !important;
 }
 
 .BroadcastVideoWatchState_Text {
@@ -2072,6 +2079,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .TheaterMode .ChatRoomGroup_Main_Content.Vertical .STV_BroadcastClose,
 .TheaterMode .chatHidden .STV_BroadcastClose {
+  top: var(--zehn-size-spacing-md) !important;
+}
+
+.WindowFocus .TheaterMode .ChatRoomGroup_Main_Content.Vertical .STV_BroadcastClose,
+.WindowFocus .TheaterMode .chatHidden .STV_BroadcastClose {
   top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-md)) !important;
 }
 
@@ -2126,6 +2138,14 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .BroadcastDetailsSection:has(.BroadcastDetailsHeader:empty) {
   display: none !important;
+}
+
+@media screen and (max-width: 420px) and (min-height: 420px) {
+  .BroadcastDetailsSection {
+    flex-basis: auto;
+    max-height: var(--zehn-size-panel-md) !important;
+    display: none;
+  }
 }
 
 // INNER CONTAINER WITH MASK FOR OVERFLOW
@@ -2211,7 +2231,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   box-sizing: border-box !important;
   background: var(--zehn-color-panel) !important;
   padding: 0px !important;
-  border-radius: var(--zehn-size-radius-square) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
 }
 
@@ -2240,16 +2260,27 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .TheaterMode .BroadcastChatExpander.bottom,
 .TheaterMode .BroadcastChatExpander.right {
-  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-md) + var(--zehn-size-button-app) + var(--zehn-size-spacing-md)) !important;
-  right: var(--zehn-size-spacing-md) !important;
-  left: unset !important;
+  top: 0px !important;
   opacity: 0 !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
-.TheaterMode .chatWindow:hover .BroadcastChatExpander.bottom,
-.TheaterMode .chatWindow:hover .BroadcastChatExpander.right {
+.TheaterMode .multiChatDialog:has(>.ChatTabs>.chatTabOpenFriendsList) .BroadcastChatExpander.bottom,
+.TheaterMode .multiChatDialog:has(>.ChatTabs>.chatTabOpenFriendsList) .BroadcastChatExpander.right {
+  left: var(--zehn-size-titlebar-control) !important;
+}
+
+.WindowFocus .TheaterMode .BroadcastChatExpander.bottom,
+.WindowFocus .TheaterMode .BroadcastChatExpander.right {
   opacity: 1 !important;
+}
+
+.TheaterMode .BroadcastChatExpander::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  pointer-events: none;
+  background: var(--zehn-color-positive);
 }
 
 .SVGIcon_HideShowChat {
@@ -2367,9 +2398,8 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // MESSAGES
 ._3M5L0Ioa2wfgEXvySi1hr6.ChatMessages {
   flex-grow: 1 !important;
-  flex-basis: 1px !important;
-  padding: 0px !important;
-  padding: var(--zehn-size-padding-md) 0 !important;
+  flex-basis: 0px !important;
+  padding: var(--zehn-size-padding-md) 0px !important;
   --message-scale: var(--zehn-size-msg-text-default);
   --message-scale-sub: var(--zehn-size-msg-subtext-default);
   --message-scale-time: var(--zehn-size-msg-time-default);
@@ -2549,7 +2579,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // SCROLL CONTAINER
 .chatHistory {
   margin: 0px !important;
-  padding: var(--zehn-size-padding-md) 0 !important;
+  padding: var(--zehn-size-padding-md) 0px !important;
   position: relative;
   flex-grow: 1 !important;
   align-content: flex-end !important;
@@ -2562,13 +2592,13 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .ChatRoomGroup_Main_Content .chatHistory,
 .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .ChatRoomGroup_Main_Content.Vertical .chatHistory {
-  margin-top: calc(var(--chat-margin)) !important;
+  margin-top: calc(var(--tabs-and-header)) !important;
 }
 
 // GROUP CHAT W/ BROADCAST
 .MultiUserChat.broadcastVisible:has(.chatRoomHeader) .ChatRoomGroup_Main_Content.Horizontal .chatHistory,
 .MultiUserChat.namedGroup.broadcastVisible .ChatRoomGroup_Main_Content.Horizontal .chatHistory {
-  margin-top: calc(var(--chat-margin)) !important;
+  margin-top: calc(var(--tabs-and-header)) !important;
 }
 
 .MultiUserChat.broadcastVisible:has(.chatRoomHeader) .ChatRoomGroup_Main_Content.Vertical .chatHistory,
@@ -2578,7 +2608,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // BROADCAST PUBLIC CHAT
 .ChatRoomGroup_Main_Content.Horizontal .ChatMessages {
-  margin-top: calc(var(--chat-margin)) !important;
+  margin-top: calc(var(--tabs-and-header)) !important;
 }
 
 .BothChatsDisplayed .ChatRoomGroup_Main_Content.Horizontal .ChatMessages,
@@ -2692,7 +2722,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .msg.ChatMsgSlashEmote .speaker,
 .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
   margin: 0px !important;
-  padding: 0 var(--zehn-size-padding-xl) 0 var(--zehn-size-padding-xxxl) !important;
+  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xxxl) !important;
   color: inherit !important;
   background: transparent !important;
   line-height: var(--zehn-size-chat-speaker) !important;
@@ -2704,7 +2734,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .chatWindow.compactView .ChatRoomSpeaker .speaker,
 .chatWindow.compactView .msg.ChatMsgSlashEmote .speaker,
 .chatWindow.compactView .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
-  padding: 0 var(--zehn-size-padding-xl) !important;
+  padding: 0px var(--zehn-size-padding-xl) !important;
 }
 
 // SPEAKER AVATAR
@@ -2730,8 +2760,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   height: var(--zehn-size-indicator-large) !important;
   width: var(--zehn-size-indicator-large) !important;
   border-radius: var(--zehn-size-indicator-radius) !important;
-  margin: 0px !important;
-  margin-right: var(--zehn-size-spacing-xs) !important;
+  margin: 0px var(--zehn-size-spacing-xs) 0px 0px !important;
   align-self: center !important;
   display: none !important;
 }
@@ -2832,8 +2861,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .FriendChatTimeStamp.offline {
   color: var(--zehn-color-text3) !important;
   top: 0px !important;
-  margin: 0px !important;
-  margin-left: var(--zehn-size-spacing-md) !important;
+  margin: 0px 0px 0px var(--zehn-size-spacing-md) !important;
   line-height: var(--zehn-size-chat-speaker) !important;
   border: none !important;
 }
@@ -2845,22 +2873,20 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .msgText {
-  padding: 0 var(--zehn-size-padding-xl) 0 var(--zehn-size-padding-xxxl) !important;
+  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xxxl) !important;
 }
 
 .chatWindow.compactView .msgText {
-  padding: 0 var(--zehn-size-padding-xl) !important;
+  padding: 0px var(--zehn-size-padding-xl) !important;
 }
 
 .msgText>span {
-  display: block !important;
   line-height: inherit !important;
 }
 
 // MESSAGE TEXT `/ME`
 .chatWindow .msg.ChatMsgSlashEmote .SpeakerLineBreak .msgText {
-  margin: 0px !important;
-  margin-left: var(--zehn-size-spacing-xxs) !important;
+  margin: 0px 0px 0px var(--zehn-size-spacing-xxs) !important;
   padding: 0px !important;
   line-height: var(--zehn-size-chat-speaker) !important;
 }
@@ -2868,7 +2894,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // MENTION
 span.mention {
   border-radius: var(--zehn-size-radius-sm);
-  padding: 0 var(--zehn-size-padding-xxs) !important;
+  padding: 0px var(--zehn-size-padding-xxs) !important;
   margin: auto 0px !important;
   line-height: inherit !important;
   font-size: inherit !important;
@@ -2983,8 +3009,7 @@ span.mention.me {
   color: var(--zehn-color-text3) !important;
   font-weight: var(--zehn-weight-normal) !important;
   margin: 0px !important;
-  padding: 0px !important;
-  padding-left: var(--zehn-size-padding-md) !important;
+  padding: 0px 0px 0px var(--zehn-size-padding-md) !important;
   background: transparent !important;
   border-radius: var(--zehn-size-radius-none) !important;
   border-left: var(--zehn-size-focusbar) solid var(--zehn-color-focusbar-disabled) !important;
@@ -3117,8 +3142,7 @@ span.mention.me {
 }
 
 ._1XsAtfmtiaoZzdStrvgJj9>div {
-  margin: 0px !important;
-  margin-left: var(--zehn-size-spacing-xs) !important;
+  margin: 0px 0px 0px var(--zehn-size-spacing-xs) !important;
 }
 
 // INVITED SELF/ENDED
@@ -3138,18 +3162,6 @@ span.mention.me {
     margin: 0px var(--zehn-size-spacing-xxs) !important;
     display: none !important;
   }
-}
-
-.msg .gameInviteDismissed img,
-.msg .gameInviteSelf img,
-.msg .gameInviteAccepted img,
-.msg .broadcastInviteDismissed img,
-.msg .broadcastInviteSelf img,
-.msg .broadcastViewRequestDismissed img {
-  width: 16px !important;
-  height: 16px !important;
-  margin: 0 4px !important;
-  display: none !important;
 }
 
 // TEXT LINK
@@ -3231,8 +3243,15 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
   transition: none !important;
 }
 
-._22PB4rET-Rx8JtZs34nMkf,
 .msg {
+  img._1ZQW1wV5cNj3sDpibfbUqs,
+  img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
+    height: var(--chat-line) !important;
+    width: var(--chat-line) !important;
+  }
+}
+
+._22PB4rET-Rx8JtZs34nMkf {
   img._1ZQW1wV5cNj3sDpibfbUqs,
   img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
     height: var(--message-line) !important;
@@ -3308,8 +3327,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   color: var(--zehn-color-tag-text) !important;
   font-size: var(--zehn-size-tag-text) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  margin: 0px !important;
-  margin-left: var(--zehn-size-spacing-xs) !important;
+  margin: 0px 0px 0px var(--zehn-size-spacing-xs) !important;
 }
 
 // ADD REACTION
@@ -3370,7 +3388,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   color: var(--zehn-color-text1) !important;
   font-weight: var(--zehn-weight-normal) !important;
   transition: none !important;
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
   margin: 0px !important;
   line-height: var(--zehn-size-24) !important;
   background: var(--zehn-color-list-background) !important;
@@ -3385,7 +3403,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
 }
 
 .vquL9mspYzz2tBtxrzqw9.boNOGnexLhWO9Nd0e6-0A {
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
   background: transparent !important;
 }
 
@@ -3397,8 +3415,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
 }
 
 .mentionAvatar {
-  margin: 0px !important;
-  margin-right: var(--zehn-size-spacing-xxs) !important;
+  margin: 0px var(--zehn-size-spacing-xxs) 0px 0px !important;
   width: var(--zehn-size-avatar-xs) !important;
   height: var(--zehn-size-avatar-xs) !important;
   transition: none !important;
@@ -3612,21 +3629,23 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
 
 // CONTAINER
 .chatFileUploadPreviewContainer {
-  position: fixed !important;
+  box-sizing: border-box !important;
+  position: absolute !important;
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
   align-self: center !important;
-  top: calc(var(--chat-margin) + var(--zehn-size-border)) !important;
-  bottom: calc(var(--zehn-size-chat-entry) + var(--zehn-size-border)) !important;
-  left: unset !important;
-  right: unset !important;
+  inset-inline: var(--zehn-size-spacing-xl) !important;
+  top: calc(var(--tabs-and-header) + var(--zehn-size-spacing-xl)) !important;
+  bottom: calc(var(--zehn-size-chat-entry) + var(--zehn-size-spacing-xl)) !important;
   margin: auto !important;
   padding: var(--zehn-size-dialog-padding) !important;
   padding-top: calc(var(--zehn-size-titlebar) + var(--zehn-size-dialog-padding)) !important;
   gap: var(--zehn-size-dialog-gap) !important;
-  min-width: 400px !important;
-  max-height: fit-content !important;
+  min-width: 0px !important;
+  max-width: 400px !important;
+  min-height: 0px !important;
+  max-height: 400px !important;
   z-index: 10 !important;
   background: var(--zehn-color-modal-background) !important;
   border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
@@ -3639,6 +3658,11 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   &:hover {
     background-color: var(--zehn-color-modal-background-hover) !important;
   }
+}
+
+.broadcastVisible .ChatRoomGroup_Main_Content.Vertical .chatFileUploadPreviewContainer {
+  top: var(--zehn-size-spacing-xl) !important;
+  bottom: calc(var(--zehn-size-chat-broadcast-channelbar) + var(--zehn-size-chat-entry) + var(--zehn-size-spacing-xl)) !important;
 }
 
 // CLOSE BUTTON
@@ -3691,9 +3715,9 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   max-width: 100% !important;
   min-width: 100% !important;
   width: 100% !important;
+  max-height: 100% !important;
   height: var(--zehn-size-icon-xxxl) !important;
   fill: transparent !important;
-  background-color: var(--zehn-color-section) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: var(--zehn-color-icon1) !important;
   mask-repeat: no-repeat !important;
@@ -3732,7 +3756,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
 // CONTAINER
 .chatFileUploadProgressContainer {
   position: fixed !important;
-  top: calc(var(--chat-margin) + var(--zehn-size-border)) !important;
+  top: calc(var(--tabs-and-header) + var(--zehn-size-border)) !important;
   bottom: calc(var(--zehn-size-chat-entry) + var(--zehn-size-border)) !important;
   left: unset !important;
   right: unset !important;
@@ -3811,7 +3835,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   background: var(--zehn-color-control-background) !important;
   border: var(--zehn-size-control-border) solid var(--zehn-color-control-border) !important;
   border-radius: var(--zehn-size-control-radius) !important;
-  padding: var(--zehn-size-padding-xs) !important;
+  padding: var(--zehn-size-padding-xxs) !important;
   top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xs)) !important;
   right: var(--zehn-size-spacing-md) !important;
   opacity: 0 !important;
@@ -3898,7 +3922,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 }
 
 .FriendChatTypingNotification {
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
 }
 
 .ChatHistoryContainer:has(.FriendIsTyping) .ScrollToBottomButton,
@@ -3922,7 +3946,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   line-height: inherit !important;
   font-weight: inherit !important;
   text-transform: uppercase !important;
-  padding: 0 var(--zehn-size-padding-xs) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
 }
 
 .LoadingOlderMessages:hover>span,
@@ -3950,6 +3974,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 // CONTAINER
 .chatWindow .chatEntry {
+  position: static !important;
   padding: 0px !important;
   background-color: var(--zehn-color-panel) !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
@@ -4018,7 +4043,14 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 }
 
 // VOICE BUTTON INNER
+.ChatMessageEntryVoice .buttonsContainer {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .VoiceToggle {
+  justify-content: center !important;
+  align-items: center !important;
   margin: 0px !important;
   padding: 0px !important;
   width: 100% !important;
@@ -4030,15 +4062,17 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   border: unset !important;
   border-radius: var(--zehn-size-radius-none) !important;
   background-color: transparent !important;
-  color: var(--zehn-color-icon1) !important;
+  color: inherit !important;
 }
 
 .VoiceToggleIconCtn {
+  position: relative !important;
   padding: 0px !important;
-  width: 100% !important;
-  height: 100% !important;
+  width: fit-content !important;
+  height: fit-content !important;
   inset: 0px !important;
   color: transparent !important;
+  align-content: center !important;
 }
 
 .VoiceToggle svg {
@@ -4069,6 +4103,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 // CONTAINER
 .MemberListColumn {
+  z-index: 1 !important;
   position: absolute !important;
   transition: none !important;
   background: var(--zehn-color-modal-background) !important;
@@ -4079,15 +4114,20 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
   width: auto !important;
   height: auto !important;
-  inset: var(--zehn-size-spacing-xl) !important;
+  inset-inline: var(--zehn-size-spacing-xl) !important;
   bottom: calc(var(--zehn-size-spacing-xl) + var(--zehn-size-input-bar)) !important;
-  top: calc(var(--chat-margin) + var(--zehn-size-spacing-xl)) !important;
+  top: calc(var(--tabs-and-header) + var(--zehn-size-spacing-xl)) !important;
   overflow: hidden !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
 
   &:hover {
     background-color: var(--zehn-color-modal-background-hover) !important;
   }
+}
+
+.broadcastVisible .ChatRoomGroup_Main_Content.Vertical .MemberListColumn {
+  top: var(--zehn-size-spacing-xl) !important;
+  bottom: calc(var(--zehn-size-chat-broadcast-channelbar) + var(--zehn-size-chat-entry) + var(--zehn-size-spacing-xl)) !important;
 }
 
 .MemberListColumn.MemberListViewCompact {
@@ -4103,8 +4143,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 // ONE OF MANY INNER WRAPPERS
 .ChatRoomMemberScrollList_List {
   border: none !important;
-  margin: 0px !important;
-  margin-bottom: var(--zehn-size-input-app-wrapper) !important;
+  margin: 0px 0px var(--zehn-size-input-app-wrapper) 0px !important;
 }
 
 // GROUP NAME AREA
@@ -4124,8 +4163,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 .friendGroup .groupIcon,
 .friendGroup .groupName .groupIcon {
-  margin: 0px !important;
-  margin-right: var(--zehn-size-spacing-xs) !important;
+  margin: 0px var(--zehn-size-spacing-xs) 0px 0px !important;
   display: none !important;
 }
 

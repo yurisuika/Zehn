@@ -1,0 +1,174 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base($style, $check) {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  opacity: 1 !important;
+
+  filter: none !important;
+
+  margin: 0px !important;
+
+  border-width: var(--zehn-size-checkbox-#{$style}-border) !important;
+  border-style: solid !important;
+
+  outline-width: var(--zehn-size-checkbox-#{$style}-outline) !important;
+  outline-style: solid !important;
+  outline-offset: calc(-1 * var(--zehn-size-checkbox-#{$style}-outline)) !important;
+
+  &#{$check} {
+    display: block !important;
+    transition: none !important;
+    position: absolute !important;
+
+    margin: auto !important;
+
+    background-color: var(--check-color) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-checkbox-check) !important;
+    -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+
+    * { display: none !important; }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size($check) {
+  width: var(--zehn-size-checkbox) !important;
+  min-width: var(--zehn-size-checkbox) !important;
+
+  height: var(--zehn-size-checkbox) !important;
+  min-height: var(--zehn-size-checkbox) !important;
+
+  &#{$check} {
+    width: var(--zehn-size-checkbox-check) !important;
+
+    height: var(--zehn-size-checkbox-check) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape-default($check) {
+  border-radius: var(--zehn-size-checkbox-radius) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin look($style, $state, $mode: null) {
+  $mode: if(sass($mode != null): "-" + $mode; else: "");
+
+  background: var(--zehn-color-checkbox-#{$style}-background-#{$state}#{$mode}) padding-box !important;
+  border-color: var(--zehn-color-checkbox-#{$style}-border-#{$state}#{$mode}) !important;
+  outline-color: var(--zehn-color-checkbox-#{$style}-outline-#{$state}#{$mode}) !important;
+
+  --check-color: var(--zehn-color-checkbox-#{$style}-check#{$mode});
+}
+
+@mixin looks($off, $on, $disabled, $style) {
+  $state: "off";
+
+  &#{$off} {
+    @include look($style, $state);
+  }
+  &#{$off}:is(:focus) {
+    @include look($style, $state, $mode: "focus");
+  }
+  &#{$off}:is(:hover) {
+    @include look($style, $state, $mode: "hover");
+  }
+  &#{$off}:is(:hover:focus) {
+    @include look($style, $state, $mode: "focus-hover");
+  }
+  &#{$off}:is(:active) {
+    @include look($style, $state, $mode: "active");
+  }
+  &#{$off}:is(:active:focus) {
+    @include look($style, $state, $mode: "active-focus");
+  }
+  &#{$off}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include look($style, $state, $mode: "disabled");
+  }
+
+  $state: "on";
+
+  &#{$on} {
+    @include look($style, $state);
+  }
+  &#{$on}:is(:focus) {
+    @include look($style, $state, $mode: "focus");
+  }
+  &#{$on}:is(:hover) {
+    @include look($style, $state, $mode: "hover");
+  }
+  &#{$on}:is(:hover:focus) {
+    @include look($style, $state, $mode: "focus-hover");
+  }
+  &#{$on}:is(:active) {
+    @include look($style, $state, $mode: "active");
+  }
+  &#{$on}:is(:active:focus) {
+    @include look($style, $state, $mode: "active-focus");
+  }
+  &#{$on}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include look($style, $state, $mode: "disabled");
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset($off, $on, $check, $disabled: ":disabled", $style: "dialog") {
+  @include base($style, $check);
+  @include size($check);
+  @include shape-default($check);
+  @include looks($off, $on, $disabled, $style);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -11,16 +11,52 @@
   }
 }
 
-// CONTENT WHERE PADDING IS APPLIED FOR TITLEBARS
-.DialogContent {
-  background: transparent !important;
-  padding: 0px !important;
+// OVERLAY GAME OVERVIEW
+// ._290hvyptb3mP0rOSaapjgZ.GameOverview,
+// OVERLAY PLAYERS
+// ._290hvyptb3mP0rOSaapjgZ.Players,
+// GENERIC THAT ISN'T NOTES, GAME SERVERS, CONTROLLER SETTINGS OUTER CONTENT WRAPPER
+.DialogContent:not(.TODO, :has(._2rxrVvbku0AC8Qbequ4-z9), :has(.PageListColumn, ._2oua5ZJCOVQf0Vwgk7teo)),
+// SETTINGS
+.CFTLX2wIKOK3hNV-fS7_V {
+  background: var(--zehn-color-dialog) !important;
 }
 
 @media (prefers-contrast: more) {
-  .DialogContent {
+  .DialogContent:not(.TODO, :has(._2rxrVvbku0AC8Qbequ4-z9), :has(.PageListColumn, ._2oua5ZJCOVQf0Vwgk7teo)),
+  .CFTLX2wIKOK3hNV-fS7_V {
+    background: var(--zehn-color-dialog) !important;
+  }
+}
+
+// NOTES OUTER CONTENT WARPPER
+.DialogContent.TODO,
+.DialogContent:has(._2rxrVvbku0AC8Qbequ4-z9) {
+  background: transparent !important;
+}
+
+@media (prefers-contrast: more) {
+  .DialogContent.TODO,
+  .DialogContent:has(._2rxrVvbku0AC8Qbequ4-z9) {
     background: transparent !important;
   }
+}
+
+// MILLENNIUM SETTINGS
+.MillenniumSettings.ModalDialogPopup .DialogContent {
+  background: var(--zehn-color-app) !important;
+}
+
+@media (prefers-contrast: more) {
+  .MillenniumSettings.ModalDialogPopup .DialogContent {
+    background: var(--zehn-color-app) !important;
+  }
+}
+
+// CONTENT WHERE PADDING IS APPLIED FOR TITLEBARS
+.DialogContent {
+  padding: 0px !important;
+  box-sizing: border-box !important;
 }
 
 // DIALOGS WITHOUT ANY HEADER CONTENT OR TITLEBARS
@@ -33,6 +69,18 @@
 .ModalDialogPopup:has(.TitleBar) .DialogContent,
 .ModalOverlayContent:has(.ModalPosition_Dismiss) .DialogContent,
 .ModalOverlayContent:has(.DialogHeader) .DialogContent {
+  padding-top: var(--zehn-size-titlebar) !important;
+}
+
+.QsvsRVwbsApgKt1MhM0fz.l25AfossKXBOZGYoty0tM .DialogContent {
+  padding-top: 0px !important;
+
+  .DialogContent {
+    padding-top: var(--zehn-size-titlebar) !important;
+  }
+}
+
+.QsvsRVwbsApgKt1MhM0fz.l25AfossKXBOZGYoty0tM .DialogContent:not(:has(.DialogContent, ._2oua5ZJCOVQf0Vwgk7teo)) {
   padding-top: var(--zehn-size-titlebar) !important;
 }
 
@@ -265,6 +313,7 @@
 }
 
 // HEADER NOT ON SETTINGS PAGE - MAKE IT GO IN THE TITLEBAR
+.MillenniumErrorBoundary>h1,
 .Players .DialogHeader,
 .OverlayServerBrowser .DialogHeader,
 .ModalPosition_Content .DialogHeader,
@@ -373,7 +422,7 @@
   gap: var(--zehn-size-spacing-button) !important;
 }
 
-._DialogColLayout>._DialogLayout {
+._DialogColLayout>._DialogLayout:not(.DialogButton) {
   --gap-total: 0;
   --column-count: 1;
   flex: 1 !important;
@@ -381,12 +430,12 @@
   max-width: calc((100% - var(--gap-total)) / var(--column-count)) !important;
 }
 
-.DialogTwoColLayout>._DialogLayout {
+.DialogTwoColLayout>._DialogLayout:not(.DialogButton) {
   --gap-total: var(--zehn-size-spacing-xs);
   --column-count: 2;
 }
 
-.DialogThreeColLayout>._DialogLayout {
+.DialogThreeColLayout>._DialogLayout:not(.DialogButton) {
   --gap-total: (2 * var(--zehn-size-spacing-xs));
   --column-count: 3;
 }

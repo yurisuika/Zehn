@@ -1,0 +1,274 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base($style, $icon, $icon-size, $other) {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  transition: none !important;
+  opacity: 1 !important;
+
+  letter-spacing: normal !important;
+  filter: none !important;
+  scale: 1 !important;
+
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  margin: 0px !important;
+  gap: var(--zehn-size-button-#{$style}-gap) !important;
+
+  background-position: center !important;
+  background-size: auto !important;
+
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-text) !important;
+  line-height: var(--zehn-size-button-line) !important;
+
+  border: none !important;
+
+  outline-width: var(--zehn-size-button-#{$style}-border) !important;
+  outline-style: solid !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-#{$style}-border)) !important;
+
+  @if $other != null {
+    #{$other} {
+      overflow: visible !important;
+      white-space: wrap !important;
+
+      font-size: var(--zehn-size-button-text-other) !important;
+      line-height: var(--zehn-size-button-line-other) !important;
+
+      color: var(--other-color) !important;
+    }
+  }
+
+  #{$icon} {
+    display: block !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+
+    justify-self: center !important;
+
+    height: $icon-size !important;
+    min-height: $icon-size !important;
+    width: $icon-size !important;
+    min-width: $icon-size !important;
+
+    inset: unset !important;
+    margin: 0px !important;
+    padding: 0px !important;
+
+    mask-size: $icon-size !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+
+    background: var(--icon-color) !important;
+
+    * {
+      display: none !important; 
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size-fixed($height, $width) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  @if $width != null {
+    width: $width !important;
+    min-width: $width !important;
+    max-width: $width !important;
+  }
+
+  padding: var(--zehn-size-button-padding) !important;
+}
+
+@mixin size-wide($height, $width) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  @if $width != null {
+    width: $width !important;
+    min-width: $width !important;
+    max-width: $width !important;
+  }
+
+  padding: var(--zehn-size-button-padding-wide) !important;
+}
+
+@mixin size-dynamic($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: auto !important;
+  min-width: 0px !important;
+  max-width: 100% !important;
+
+  padding: var(--zehn-size-button-padding-dynamic) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape-default($style) {
+  border-radius: var(--zehn-size-button-#{$style}-radius) !important;
+}
+
+@mixin shape-circular {
+  border-radius: var(--zehn-size-radius-circular) !important;
+}
+
+@mixin shapes($shape, $style) {
+  @if $shape == "circular" {
+    @include shape-circular;
+  } @else {
+    @include shape-default($style);
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin look($style, $other, $selected: null, $mode: null) {
+  $mode: if(sass($mode != null): "-" + $mode; else: "");
+  $selected: if(sass($selected != null): "-selected"; else: "");
+
+  background: var(--zehn-color-button-#{$style}-background#{$selected}#{$mode}) !important;
+  color: var(--zehn-color-button-#{$style}-text#{$selected}#{$mode}) !important;
+  outline-color: var(--zehn-color-button-#{$style}-border#{$selected}#{$mode}) !important;
+
+  --icon-color: var(--zehn-color-button-#{$style}-icon#{$selected}#{$mode});
+
+  @if $other != null {
+    --other-color: var(--zehn-color-button-#{$style}-text-other#{$selected}#{$mode});
+  }
+}
+
+@mixin looks($selected, $disabled, $other, $style) {
+  & {
+    @include look($style, $other);
+  }
+  &:is(:focus, :enabled:focus) {
+    @include look($style, $other, $mode: "focus");
+  }
+  &:is(:hover, :enabled:hover) {
+    @include look($style, $other, $mode: "hover");
+  }
+  &:is(:hover:focus, :enabled:hover:focus) {
+    @include look($style, $other, $mode: "hover-focus");
+  }
+  &:is(:active, :enabled:active) {
+    @include look($style, $other, $mode: "active");
+  }
+  &:is(:active:focus, :enabled:active:focus) {
+    @include look($style, $other, $mode: "active-focus");
+  }
+  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include look($style, $other, $mode: "disabled");
+  }
+
+  @if $selected != null {
+    &#{$selected} {
+      @include look($style, $other, $selected);
+    }
+    &#{$selected}:is(:focus, :enabled:focus) {
+      @include look($style, $other, $selected, $mode: "focus");
+    }
+    &#{$selected}:is(:hover, :enabled:hover) {
+      @include look($style, $other, $selected, $mode: "hover");
+    }
+    &#{$selected}:is(:hover:focus, :enabled:hover:focus) {
+      @include look($style, $other, $selected, $mode: "hover-focus");
+    }
+    &#{$selected}:is(:active, :enabled:active) {
+      @include look($style, $other, $selected, $mode: "active");
+    }
+    &#{$selected}:is(:active:focus, :enabled:active:focus) {
+      @include look($style, $other, $selected, $mode: "active-focus");
+    }
+    &#{$selected}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+      @include look($style, $other, $selected, $mode: "disabled");
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset-fixed($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
+  @include base($style, $icon, $icon-size, $other);
+  @include size-fixed($height, $width);
+  @include shapes($shape, $style);
+  @include looks($selected, $disabled, $other, $style);
+}
+
+@mixin preset-wide($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
+  @include base($style, $icon, $icon-size, $other);
+  @include size-wide($height, $width);
+  @include shapes($shape, $style);
+  @include looks($selected, $disabled, $other, $style);
+}
+
+@mixin preset-dynamic($height, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
+  @include base($style, $icon, $icon-size, $other);
+  @include size-dynamic($height);
+  @include shapes($shape, $style);
+  @include looks($selected, $disabled, $other, $style);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

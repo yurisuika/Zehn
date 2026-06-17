@@ -1,5 +1,4 @@
-@use 'button/dialog' as dialog;
-@use 'button/app' as app;
+@use 'button/template' as template;
 
 // GLOBAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -15,46 +14,96 @@ button.DialogButton::before {
   opacity: 1;
 }
 
-button .tool-tip-source {
-  width: 100% !important;
-  height: 100% !important;
+.tool-tip-source {
+  // height: fit-content !important;
+  // width: fit-content !important;
+  align-content: center !important;
+}
+
+// button .tool-tip-source {
+//   width: 100% !important;
+//   height: 100% !important;
+//   align-content: center !important;
+// }
+
+.DialogButton span {
+  display: flex !important;
+  justify-content: center !important;
+  gap: inherit !important;
 }
 
 // GENERIC
 button.DialogButton,
-button.DialogButton:where(.Primary, .Small) {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+button.DialogButton:where(.Primary, .Secondary, .Small) {
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // TABLE HEADER
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._2_4_nZy-T2C3pHa81tGH76 ._3mCrTKGesl-jD-k-buQ13_ {
-  @include app.preset-symmetric(var(--zehn-size-table-header));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-table-header),
+    $width: var(--zehn-size-table-header)
+  );
 }
 
 // WINDOW CONTROLS
 .title-area-icon:not(.closeButton),
 .title-area-icon.minimizeButton.windowControlButton,
 .title-area-icon.maximizeButton.windowControlButton {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "nav"
+  );
 }
 
 .title-area-icon.closeButton.windowControlButton {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "close");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "close"
+  );
 }
 
 // LIBRARY WINDOW CONTROLS
 ._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.minimizeButton.windowControlButton,
 ._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.maximizeButton.windowControlButton {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
 }
 
 ._3Z7VQ1IMk4E3HsHvrkLNgo .title-area-icon.closeButton.windowControlButton {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "close");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "close"
+  );
 }
 
 // MODAL DISMISS
 .ModalPosition_Dismiss .closeButton {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "close");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "close"
+  );
+}
+
+// ERROR
+.MillenniumErrorBoundary button {
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,7 +121,10 @@ button.DialogButton:where(.Primary, .Small) {
 
 // CONTROLS
 ._1xLWmfPlWGV47FujycPN_c ._3to6URp0bMv5xyhZNs_2yd.DialogButton._DialogLayout {
-  @include app.preset-symmetric(var(--zehn-size-find));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-find),
+    $width: var(--zehn-size-find)
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,7 +142,13 @@ button.DialogButton:where(.Primary, .Small) {
 
 // RETURN TITLEBAR
 .lat0M-V5X4uYd6Mpm1DJ1 ._14exBrSFDthVqeknXgFh4X ._2Jkgs1ZwjavbwnJy76UgUm {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $icon: "svg._3NHpq7ZDgg4uYEzUF9RxaQ", $style: "return");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $icon: "svg._3NHpq7ZDgg4uYEzUF9RxaQ",
+    $style: "return"
+  );
+
   top: calc(-1 * var(--zehn-size-titlebar)) !important;
   left: 0px !important;
   position: absolute !important;
@@ -100,18 +158,28 @@ button.DialogButton:where(.Primary, .Small) {
 // USERS - MENU
 ._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton,
 ._2Won3URVLVnF6h_AN8traN._DialogLayout.DialogButton ._sGyh60_xjv7maN2X2ZXu {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // LOGIN - QR
 ._464mFQmvIW2e9TQypXX7W ._2ltn2BK4fnrPEGzNwxx6bx button.DialogButton {
-  @include app.preset-symmetric(100%);
+  @include template.preset-fixed(
+    $height: 100%,
+    $width: 100%
+  );
 }
 
 // LOGIN - SUBMIT INFO
 .DjSvCZoKKfoNSmarsEcTS {
-  @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large));
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-button-lg),
+    $style: "dialog"
+  );
+
   flex: 1 !important;
 }
 
@@ -119,7 +187,11 @@ button.DialogButton:where(.Primary, .Small) {
 .lat0M-V5X4uYd6Mpm1DJ1 ._9Ig1o0jVRia2uf_FKR3rs,
 .lat0M-V5X4uYd6Mpm1DJ1 ._2Z68vjdOnUDA2ULQG41JVV,
 .lat0M-V5X4uYd6Mpm1DJ1 ._25eT23F0cV5lmT3tXAIA56 {
-  @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large));
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-button-lg),
+    $style: "dialog"
+  );
+
   flex: 1 !important;
 }
 
@@ -138,7 +210,12 @@ button.DialogButton:where(.Primary, .Small) {
 
 // TITLEBAR
 #zehnToggleFriendsHeader {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "nav"
+  );
+
   position: relative;
   left: 0px;
   top: 0px;
@@ -146,11 +223,16 @@ button.DialogButton:where(.Primary, .Small) {
 
 // HEADER - REMOTE PLAY TOGETHER
 ._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._2sIHGS_555xUrHvjOwV0Y2 {
-  @include app.preset-dynamic(var(--zehn-size-button-app));
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-button-md)
+  );
 }
 
 ._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3voPlg-2HzAUhuCyVhXm_D {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
 }
 
 // HEADER - PRIMARY BUTTONS
@@ -158,55 +240,84 @@ button.DialogButton:where(.Primary, .Small) {
 .friendRequestButton,
 .addFriendButton,
 .searchIconButton {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-friends-controlbar)
+  );
+
   cursor: pointer !important;
   flex-grow: 1 !important;
-  @include app.preset-dynamic(var(--zehn-size-friends-controlbar));
 }
 
 // HEADER - INVITE CONFIRMATION
 .friendInviteButton {
   position: relative !important;
-  @include app.preset-symmetric(var(--zehn-size-friends-entry));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-friends-entry),
+    $width: var(--zehn-size-friends-entry)
+  );
 }
 
 .compactView .friendInviteButton {
   position: relative !important;
-  @include app.preset-symmetric(var(--zehn-size-friends-entry-compact));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-friends-entry-compact),
+    $width: var(--zehn-size-friends-entry-compact)
+  );
 }
 
 // HEADER - INVITE CANCEL
 .confirmInviteRequestContainer .confirmInviteButton {
-  @include app.preset-dynamic(var(--zehn-size-button-app), $disabled: ".dim");
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-button-md),
+    $disabled: ".dim"
+  );
 }
 
 .confirmInviteRequestContainer .cancelAddFriends {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
+
   position: relative !important;
   inset: unset !important;
 }
 
 // LIST - USER
 .ContextMenuButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // QUICK CHAT BUTTON
 .activeVoiceButtons .chatRoomTextChannel,
 .chatRoomVoiceChannel.ActiveVoiceChannel .chatRoomTextChannel {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // VOICE CONTROLS
 .VoiceControlPanelButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // OFFLINE
 ._3t-tVOpu2n074cjZsygYfm .hL2FPh5NpOjzuylSWv4GY {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: 100%,
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -227,7 +338,11 @@ button.DialogButton:where(.Primary, .Small) {
 .friendSettingsButton,
 .chatTabOpenFriendsList,
 .friendCollapseButton {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "nav"
+  );
 }
 
 // HEADER
@@ -237,100 +352,171 @@ button.DialogButton:where(.Primary, .Small) {
 .MemberListOption,
 .MemberListOption.ToggleMemberListView,
 .doGxCBJrGimabHm365bOV {
-  @include app.preset-symmetric(var(--zehn-size-chat-header));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-chat-header),
+    $width: var(--zehn-size-chat-header)
+  );
 }
 
 .chatRoomButton {
-  @include app.preset-symmetric(var(--zehn-size-chat-header), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-chat-header),
+    $width: var(--zehn-size-chat-header),
+    $disabled: ".Disabled"
+  );
 }
 
 // HEADER - CLOSE BROADCAST
 .broadcastInfoContainer .actions {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // CHANNEL LIST - PIN/UNPIN
 .chatRoomGroupNavCollapseExpand {
-  @include app.preset-asymmetric(var(--zehn-size-pagelist-height), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-pagelist-height),
+    $width: 100%
+  );
 }
 
 // ADD FRIEND BUTTON
 .inviteAnotherFriendButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app-large));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: var(--zehn-size-button-lg)
+  );
 }
 
 // QUICK ChAT CLOSE
 .VoiceRoomChatTitle .MinimizeTextChat {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "close");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "close"
+  );
 }
 
 // FILE UPLOAD TITLEBAR CLOSE
 .chatFileUploadCancel {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "close");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "close"
+  );
+}
+
+// EMOTE PICKER TABS
+._2CJ0LpiSgVs2JuTlwbzBM {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-tablist),
+    $selected: "._1ddEQAfz6GuVRSEqk-d0r",
+    $style: "tab"
+  );
 }
 
 // ENTRY
 .RVIs84dAE6wHcjH9tkinc {
-  display: block !important;
-  @include app.preset-symmetric(var(--zehn-size-chat-entry), $disabled: ".jaQN2IyN4P8LZXJ6P11qy");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-chat-entry),
+    $width: var(--zehn-size-chat-entry),
+    $disabled: ".jaQN2IyN4P8LZXJ6P11qy"
+  );
 }
 
 ._39xGjKkRIIE7HwloXCWT41 {
-  display: block !important;
-  @include app.preset-symmetric(var(--zehn-size-chat-entry), $icon: "._2vz6RRjc3uhVClPT9KmsWO");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-chat-entry),
+    $width: var(--zehn-size-chat-entry),
+    $icon: "._2vz6RRjc3uhVClPT9KmsWO"
+  );
 }
 
 .ChatMessageEntryVoice.Inactive,
 .ChatMessageEntryVoice.Active {
-  display: block !important;
-  @include app.preset-symmetric(var(--zehn-size-chat-entry), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-chat-entry),
+    $width: var(--zehn-size-chat-entry),
+    $disabled: ".Disabled"
+  );
 }
 
 // EMBED - INVITE CLOSE
 .msg.ChatMessageInvite .closeButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
 }
 
 // EMBED - VIDEO CLOSE
 ._1FRLI2bl5lQd1WTvywZUl0._3C_TSOqWcAoh-WTAh3LLLd>div:not([class]) {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // EMBED - COPY LINK
 ._3SCtLxKknXT2PcQStMloQh {
-  @include app.preset-symmetric(var(--footer-inner), $icon-size: var(--zehn-size-icon-sm));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--footer-inner),
+    $width: var(--footer-inner),
+    $icon-size: var(--zehn-size-icon-sm),
+    $shape: "circular"
+  );
 }
 
 .OpenGraphFooter .OpenGraphURLButton,
 .OpenGraphFooter .OpenGraphURLButton.CopyToClipboard {
-  @include app.preset-symmetric(var(--footer-inner), $icon-size: var(--zehn-size-icon-sm));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--footer-inner),
+    $width: var(--footer-inner),
+    $icon-size: var(--zehn-size-icon-sm),
+    $shape: "circular"
+  );
 }
 
 .inviteURLContainer .copyInviteLink {
-  @include app.preset-symmetric(var(--footer-inner), $icon-size: var(--zehn-size-icon-sm));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--footer-inner),
+    $width: var(--footer-inner),
+    $icon-size: var(--zehn-size-icon-sm),
+    $shape: "circular"
+  );
 }
 
 // EMBED - POPOUT
 .chatVideoContainer a.chatImageURL:has(.SVGIcon_Popout) {
-  @include app.preset-symmetric(var(--footer-inner), $icon-size: var(--zehn-size-icon-sm));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--footer-inner),
+    $width: var(--footer-inner),
+    $icon-size: var(--zehn-size-icon-sm),
+    $shape: "circular"
+  );
 }
 
 // EMBED - CONTROLS
 .BBCodeCollapseControl,
 .BBCodeResizeControl {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 .BBCodeRestoreControl {
-  @include app.preset-symmetric(var(--zehn-size-button-app), $icon: ".restoreSize");
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $icon: ".restoreSize",
+    $shape: "circular"
+  );
 }
 
 // EMBED - INVITES
@@ -338,49 +524,79 @@ button.DialogButton:where(.Primary, .Small) {
 .inviteButton.inviteButtonJoinChat,
 .ChatMessageInvite .DialogButton,
 .ChatMessageInvite .DialogButton.inviteButtonWatchBroadcast {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 .ChatMessageInvite .closeButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // EMBED - GROUP INVITE ACCEPT
 .acceptButtonsGroup button.DialogButton.GreenPlay {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // BROADCAST - CLOSE
 .STV_BroadcastClose {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // BROADCAST - STATS CLOSE
 .dash_video_stats .dash_stat_close_button {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular"
+  );
 }
 
 // BROADCAST - CHANNEL TAB PANEL
 .chatBody .ChatBodyControls .showBothTabs,
 .chatBody .ChatBodyControls .Close {
-  @include app.preset-symmetric(var(--zehn-size-chat-broadcast-channelbar));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-chat-broadcast-channelbar),
+    $width: var(--zehn-size-chat-broadcast-channelbar)
+  );
 }
 
 .BroadcastChatExpander {
-  @include app.preset-symmetric(var(--zehn-size-chat-header));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-chat-header),
+    $width: var(--zehn-size-chat-header)
+  );
 }
 
 .TheaterMode .BroadcastChatExpander {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "nav"
+  );
 }
 
 // BROADCAST - CHANNEL TABS
 .chatBody .InnerChatTab {
-  @include app.preset-dynamic(var(--zehn-size-chat-broadcast-channelbar), $selected: ".Active", $style: "tab");
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-chat-broadcast-channelbar),
+    $selected: ".Active",
+    $style: "tab"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -399,17 +615,28 @@ button.DialogButton:where(.Primary, .Small) {
 
 // ROOT TOGGLE
 #zehnToggleNavigation {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
+
   align-self: baseline;
   order: 0;
   z-index: 10;
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
 }
 
 // FORWARD/BACKWARD
 #zehnBackwardsWrapper,
 #zehnForwardsWrapper {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $disabled: ":has(._2cO0HdvLEGAdhosLekWsmo)",
+    $style: "nav"
+  );
+
   position: relative;
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: ":has(._2cO0HdvLEGAdhosLekWsmo)", $style: "nav");
 
   svg._25lBLzuVeYAUG279up4xP8 {
     width: 100% !important;
@@ -418,44 +645,78 @@ button.DialogButton:where(.Primary, .Small) {
 
 // ROOT MENUS
 ._2Lu3d-5qLmW4i19ysTt2jT._2UyOBeiSdBayaFdRa39N2O {
-  @include app.preset-wide(var(--zehn-size-navbar), $disabled: '._2hcblpUHuN5CYOoq6eU2y0', $icon: '.GG9wVQz6PLlhGHlJyZh4E', $style: "nav");
+  @include template.preset-wide(
+    $height: var(--zehn-size-navbar),
+    $width: fit-content,
+    $disabled: '._2hcblpUHuN5CYOoq6eU2y0',
+    $icon: '.GG9wVQz6PLlhGHlJyZh4E',
+    $style: "nav"
+  );
+
   -webkit-app-region: no-drag !important;
 }
 
 // SUPERNAV
 ._2Lu3d-5qLmW4i19ysTt2jT._7AlhCx3XGzBeIrQaCneUD {
-  @include app.preset-wide(var(--zehn-size-navbar), $style: "nav");
-  font-weight: var(--zehn-weight-thick) !important;
+  @include template.preset-wide(
+    $height: var(--zehn-size-navbar),
+    $width: fit-content,
+    $selected: "._3rgV8pPmQvZC-01x9l-q-N",
+    $style: "nav"
+  );
 
-  &._3rgV8pPmQvZC-01x9l-q-N {
-     @include app.look-hover($style: "nav");
-  }
+  font-weight: var(--zehn-weight-thick) !important;
 }
 
 // ACCOUNT
 ._3yD46y5pd3zOGR7CzKs0mC {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
 }
 
 // VR
 ._3lRfTo8Wo3phXfE1DvK6QW {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._1QQWjaXmb1eTHZpeIhQA_5", $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $disabled: "._1QQWjaXmb1eTHZpeIhQA_5",
+    $style: "nav"
+  );
 }
 
 // BIG PICTURE
 ._3LKQ3S_yqrebeNLF6aeiog {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
 }
 
 // ADD GAME
 ._2foCkpRXhqq0UGVE50BWqj {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._2Sdix9OOEHP6z_b4W2oaU9", $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $disabled: "._2Sdix9OOEHP6z_b4W2oaU9",
+    $style: "nav"
+  );
+
   -webkit-app-region: no-drag !important;
 }
 
 // FRIENDS
 ._1TdaAqMFadi0UTqilrkelR {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._2Sdix9OOEHP6z_b4W2oaU9", $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $disabled: "._2Sdix9OOEHP6z_b4W2oaU9",
+    $style: "nav"
+  );
+
   -webkit-app-region: no-drag !important;
 }
 
@@ -464,25 +725,48 @@ button.DialogButton:where(.Primary, .Small) {
 .RtSv39ZoBOySnb8XQ5hJf._9YK5IY219Pm_F53DAxyYp,
 .RtSv39ZoBOySnb8XQ5hJf._3qhGkQ5qLVNQQ-J2-uPoHt,
 .RtSv39ZoBOySnb8XQ5hJf._3L1c8C0o_xXzPy26aoLBFd {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._1QQWjaXmb1eTHZpeIhQA_5", $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $disabled: "._1QQWjaXmb1eTHZpeIhQA_5",
+    $style: "nav"
+  );
 }
 
 // ANNOUNCEMENT
 ._5wILZhsLODVwGfcJ0hKmJ {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $disabled: "._1QQWjaXmb1eTHZpeIhQA_5", $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $disabled: "._1QQWjaXmb1eTHZpeIhQA_5",
+    $style: "nav"
+  );
+
   -webkit-app-region: no-drag !important;
 }
 
 // SOUNDTRACK
 .Utdt7JrpIm5JlpQmqyj1v,
 .Utdt7JrpIm5JlpQmqyj1v._1nKxf9MhTV5zdB5iUjAgYb {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
+
   -webkit-app-region: no-drag !important;
 }
 
 // DOWNLOAD
 .ip-YZhijAMZcuRoXBGiye {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), 100%, $disabled: "._2Sdix9OOEHP6z_b4W2oaU9", $icon: "._1KrJ3sFAqPBN9mfpaNTU5F", $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: 100%,
+    $disabled: "._2Sdix9OOEHP6z_b4W2oaU9",
+    $icon: "._1KrJ3sFAqPBN9mfpaNTU5F",
+    $style: "nav"
+  );
+
   position: relative !important;
 }
 
@@ -491,23 +775,39 @@ button.DialogButton:where(.Primary, .Small) {
 ._1AcQ7PwcnBGsbAmuKOZHvd,
 ._3arz-hc3FJ0QKXLPRUSaah,
 .EdtW0igyTLSSiXq1Mcc8F {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
 }
 
 // FAMILY VIEW
 ._13vrqU6oOqmmxrsZSW5O39,
 ._3arz-hc3FJ0QKXLPRUSaah {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
 }
 
 // THEATER MODE
 #zehnToggleTheaterMode {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
 }
 
 // EXPANDED NAVBAR
 #zehnToggleExpandedNavbar {
-  @include app.preset-asymmetric(var(--zehn-size-navbar), var(--zehn-size-navbar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-navbar),
+    $width: var(--zehn-size-navbar-control),
+    $style: "nav"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -526,7 +826,11 @@ button.DialogButton:where(.Primary, .Small) {
 
 // UPDATE BAR ALERT
 ._2ohOQgahhMYnIEfAQmv9B8 {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // SIDEBAR
@@ -536,91 +840,137 @@ button.DialogButton:where(.Primary, .Small) {
 ._3AhYljPF4e4E8LaBt-FoY0,
 ._2CEKFex6JMsAse2lqMMjUp,
 ._3mzKdQXht__YHo6PX1LmB6 {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-library-sidebar)
+  );
+
   cursor: pointer !important;
   flex: 1 !important;
-  @include app.preset-dynamic(var(--zehn-size-library-sidebar));
-}
-
-// SIDEBAR - BUTTON NOT DISPLAYED
-.uE7Pj4tb2n3_Bx4vjEX0a {
-  flex: 1 !important;
-  @include app.preset-asymmetric(var(--zehn-size-library-sidebar), 0px);
 }
 
 // SIDEBAR - FILTER
 ._20QAC4WMXm8qFE8waUT5oo .vCCmYvn9yQ_V8CpKupllU ._1TxHdzOt3OD9ikR3xIseKe,
 ._20QAC4WMXm8qFE8waUT5oo .vCCmYvn9yQ_V8CpKupllU ._1TxHdzOt3OD9ikR3xIseKe._2rILnoW6swWh4_9TDWWc31 {
-  @include app.preset-symmetric(var(--zehn-size-library-sidebar));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-sidebar),
+    $width: var(--zehn-size-library-sidebar)
+  );
 }
 
 // SIDEBAR - FILTER CLEAR
 ._20QAC4WMXm8qFE8waUT5oo ._12vo5L1hsNGdao6_ssuirS ._38tIMc-4Ug-Akpa1pYlN0R {
-  @include app.preset-symmetric(var(--zehn-size-tag), $icon-size: var(--zehn-size-icon-sm));
-  @include app.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-tag),
+    $width: var(--zehn-size-tag),
+    $icon-size: var(--zehn-size-icon-sm),
+    $shape: "circular"
+  );
+
   position: relative !important;
   inset: unset !important;
 }
 
 // SIDEBAR - HIDDEN GAMES SHOW ALL
 #zehnShowAll {
-  @include app.preset-asymmetric(var(--zehn-size-library-sidebar), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-sidebar),
+    $width: 100%
+  );
 }
 
 // HOME - PREPURCHASE RELEASE
 ._2Ae5emb7JLG4NvS2OmutTx ._1moqKkq1K4nAp1XqDtnRdQ .rglD9tOi-qd15GgYT2iJK .y1gug7JSW8Vst7YSxkKV- .p9KmcbRBNrAiCVV-9x7FJ {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog-large));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-lg),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // SHOWCASE - HEADER
 #zehnToggleWhatsNew,
 .steam-easygrid .easygrid-button.DialogButton,
 ._3cK5jtEHkhfw50DntUGWjp {
-  @include app.preset-symmetric(var(--zehn-size-library-showcase));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: var(--zehn-size-library-showcase)
+  );
 }
 
 // SHOWCASE - HEADER - CAROUSEL CONTROLS
 ._29NTOneobxPjUfxHUk9N8Y ._3uMa3icVa3JTCGQKPeUikO,
 ._29NTOneobxPjUfxHUk9N8Y ._2kWWyBO7w_F76NB8sBw86c {
-  @include app.preset-symmetric(var(--zehn-size-library-showcase), $disabled: "._1MNhU5EYdeegJRmQ51prWb");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: var(--zehn-size-library-showcase),
+    $disabled: "._1MNhU5EYdeegJRmQ51prWb"
+  );
 }
 
 // SHOWCASE - HEADER - COLLAPSER
 ._23SnllqT_AqZ1C_QHcNQ4Z ._3sz4Ldugm_cV_JaHOErVR8 {
-  @include app.preset-symmetric(var(--zehn-size-library-showcase));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: var(--zehn-size-library-showcase)
+  );
 }
 
 // SHOWCASE - COLLECTION RENAME
 ._2q70uOe6xM3-c5XIVfBLe6 ._12pDikfkuNH_o3MHKU1skz {
-  @include app.preset-symmetric(var(--zehn-size-library-showcase));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: var(--zehn-size-library-showcase)
+  );
+
   position: relative !important;
 }
 
 // SHOWCASE - COLLECTION EDIT
 ._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._8JUfQypf4Uxt2i_hxBk_t,
 ._3vDj4xewvplaiGsjeunxyx ._1qkt419yLi7E3LkTrMtdm4 {
-  @include app.preset-wide(var(--zehn-size-library-showcase));
+  @include template.preset-wide(
+    $height: var(--zehn-size-library-showcase),
+    $width: fit-content
+  );
 }
 
 // SHOWCASE - WHAT'S NEW - OPTIONS
 ._1eFe5VbyACJE4RVGpOWKMC {
-  @include app.preset-symmetric(var(--zehn-size-library-showcase));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: var(--zehn-size-library-showcase)
+  );
 }
 
 // SHOWCASE - WHAT'S NEW - CAROUSEL CONTROLS
 ._17uEBe5Ri8TMsnfELvs8-N .bsNegRKT1Hbv4tqHrOk9- ._14b-hQsLwSwYcELtknxCUX,
 ._17uEBe5Ri8TMsnfELvs8-N .bsNegRKT1Hbv4tqHrOk9- ._3IIEUTw03Vm3Mk54jlnUaT {
-  @include app.preset-symmetric(var(--zehn-size-library-showcase), $disabled: "._16nHYucq6xgfe67DrVWLCI");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: var(--zehn-size-library-showcase),
+    $disabled: "._16nHYucq6xgfe67DrVWLCI"
+  );
 }
 
 // SHOWCASE - WHAT'S NEW - PRIORITY NOTICE
 ._17uEBe5Ri8TMsnfELvs8-N ._2sdvic79rOzTYDZw2nrgmL {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
+
   margin: auto 0px !important;
 }
 
 // SHOWCASE - WHAT'S NEW - EVENT OPTIONS
 ._2-p7shAZYrRijpaTU9bAFR {
-  @include app.preset-symmetric(var(--zehn-size-button-app), $icon: "div");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $icon: "div"
+  );
+
   top: 0px !important;
   right: 0px !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
@@ -629,52 +979,72 @@ button.DialogButton:where(.Primary, .Small) {
 // SHOWCASE - REORDER
 ._1dy2s5YuBOYnRrupJmLfRR .MXh6nju1KU9_oaQCaR06e.DialogButton.Primary,
 ._23SnllqT_AqZ1C_QHcNQ4Z._2Ho8z58cxQIJljp55uGkdt {
-  @include app.preset-asymmetric(var(--zehn-size-library-showcase), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: 100%
+  );
 }
 
 // SHOWCASE - ADD SHELF
 ._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5 {
-  @include app.preset-asymmetric(var(--zehn-size-library-showcase), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: 100%
+  );
 }
 
 // GAME - PRELOAD
 .p9KmcbRBNrAiCVV-9x7FJ {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // GAME - PLAYBAR - CONTROLS
 ._2q-gZ3XJzlvSGHSF-GvSmi,
 ._2q-gZ3XJzlvSGHSF-GvSmi._2AzIX5kl9k6JnxLfR5H4kX,
 ._3qDWQGB0rtwM3qpXTb11Q- {
-  @include app.preset-symmetric(var(--zehn-size-library-playbar));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-playbar),
+    $width: var(--zehn-size-library-playbar)
+  );
 }
 
 // GAME - PLAYBAR - LINKS
 .zehnToggleGameLinks {
-  @include app.preset-symmetric(var(--zehn-size-library-playbar));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-playbar),
+    $width: var(--zehn-size-library-playbar)
+  );
 }
 
 // GAME - PLAYBAR - PAGES
 .zehnToggleDetails,
 .zehnToggleCommunity,
 .zehnToggleActivity {
-  @include app.preset-symmetric(var(--zehn-size-library-playbar));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-playbar),
+    $width: var(--zehn-size-library-playbar)
+  );
 }
 
 // GAME - PLAYBAR - ACTION
 ._3ydigb6zZAjJ0JCDgHwSYA,
 ._3ydigb6zZAjJ0JCDgHwSYA._2AzIX5kl9k6JnxLfR5H4kX {
-  @include app.preset-dynamic(var(--zehn-size-library-playbar));
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-library-playbar)
+  );
 }
-
-// GAME - PLAYBAR - CLOUD SYNC ERROR
-// button.DialogButton._3Cdin80d-hVsakHUZboheb._1qG6xUlNu-qvdhpSxwed5 {
-//   @include app.preset-symmetric(fit-content, $disabled: ".Disabled", $style: "link");
-// }
 
 // GAME - INFO - ZOOM BOXART
 ._1Id6ZFEUVa5PKEMIvSg4nE ._2mMT5wI35EZKZ_XeO7BfPu {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
+
   left: 0px !important;
   bottom: 0px !important;
 }
@@ -684,81 +1054,130 @@ button.DialogButton:where(.Primary, .Small) {
 ._3IIEUTw03Vm3Mk54jlnUaT._3qlJ0L41KQFqUTzVQKFERC,
 ._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._14b-hQsLwSwYcELtknxCUX,
 ._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._3IIEUTw03Vm3Mk54jlnUaT {
-  @include app.preset-symmetric(var(--zehn-size-spotlight-panel-header), $disabled: "._16nHYucq6xgfe67DrVWLCI");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-spotlight-panel-header),
+    $width: var(--zehn-size-spotlight-panel-header),
+    $disabled: "._16nHYucq6xgfe67DrVWLCI"
+  );
 }
 
 // GAME - SPOTLIGHT - POST GAME SUMMARY - REMOVE
 ._2dB1oJFsqNThak1cFya2-q._3qlJ0L41KQFqUTzVQKFERC {
-  @include app.preset-symmetric(var(--zehn-size-spotlight-panel-header));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-spotlight-panel-header),
+    $width: var(--zehn-size-spotlight-panel-header)
+  );
 }
 
 // GAME SPOTLIGHT - DEMO/PLAYTEST/INVITE
 ._3SdsgvPAsO-ewAaupsOhHy,
 ._1qKFBvABqbDgrOvtdhYh17 {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // GAME - NEW DLC
 .ut0YcLYGAoSTz2Dnjw9U1 .R2VdUtWzknAHBOsdRzG_d {
-  @include app.preset-asymmetric(var(--zehn-size-button-app-large), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: 100%
+  );
 }
 
 // GAME - ACTIVITY - CONDITIONAL BUTTONS
 ._1EC1xjjUGqI7fqX6PVzJA3,
 ._3yTl3RiWfo-Itg-xp967wP ._39ZurKJQex6v69aXzvc_nj.DialogButton {
-  position: relative !important;
-  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-activity-panel-padding))));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: calc(100% - (2 * var(--zehn-size-activity-panel-padding)))
+  );
+
   margin: var(--zehn-size-activity-panel-padding) !important;
+  position: relative !important;
   overflow: visible !important;
   cursor: default !important;
 }
 
 .zehnNews .zehnTitle,
 .zehnLoad .zehnTitle {
-  position: relative !important;
-  @include app.preset-asymmetric(var(--zehn-size-library-showcase), calc(100% - (2 * var(--zehn-size-activity-panel-padding))));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: calc(100% - (2 * var(--zehn-size-activity-panel-padding)))
+  );
+
   margin: var(--zehn-size-activity-panel-padding) !important;
+  position: relative !important;
   overflow: visible !important;
   cursor: pointer !important;
 }
 
 // GAME - ACTIVITY - POST EMOTE
 ._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 .bACIuqv-b_9TztCczFK19 {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
 }
 
 // GAME - ACTIVITY - POST SUBMIT
 ._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ":not(.bGfjajFo4DI-ULSQxw1KY)");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ":not(.bGfjajFo4DI-ULSQxw1KY)",
+    $style: "dialog"
+  );
 }
 
 // GAME - ACTIVITY - DELETE EVENT
 .UVeN0kaD3zv1feMj_mMw5 .QCKBqF2k_sRLcXJ5qQIEl .djC4rZW-nnFRP0J5O3cHe {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
+
   margin-left: var(--zehn-size-spacing-md) !important;
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
 // GAME - DETAILS - BOTTOM BUTTONS
 button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
-  @include app.preset-asymmetric(var(--zehn-size-button-app-large), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: 100%
+  );
 }
 
 // GAME - DETAILS - EMPTY PANEL
 ._2RSxEUPGL8Bj016q0Sp3Hx {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
-  margin: 0 var(--zehn-size-spacing-md) !important;
-  display: flex !important;
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
+
+  margin: 0px var(--zehn-size-spacing-md) !important;
 }
 
 // GAME - DETAILS - ACHIEVEMENTS
 ._2aVnDeExEHiUFX0zwr_BTO {
-  @include app.preset-symmetric(var(--zehn-size-button-app-large));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: var(--zehn-size-button-lg)
+  );
 }
 
 // GAME - DETAILS - SCREENSHOTS - SHARE
 .gOv9M_tdWa0CEJbaLhOKY {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
+
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
   top: 0px !important;
   right: 0px !important;
@@ -766,7 +1185,11 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // GAME - DETAILS - WORKSHOP - CLEAR
 ._1W34WpqfvufNgueNdZozwC .aZc8RQUeHL3YNHxrG4pXN {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
+
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
   top: 0px !important;
   right: 0px !important;
@@ -776,8 +1199,14 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 .CwZqp0ZwInfY8H9jUO4Xy {
   --button-margin: var(--zehn-size-spacing-xxs);
   --button-size: calc(var(--zehn-size-community-panel-info) - (2 * var(--button-margin)));
-  @include app.preset-symmetric(var(--button-size), $icon-size: var(--zehn-size-icon-sm));
-  @include dialog.shape-circular;
+
+  @include template.preset-fixed(
+    $height: var(--button-size),
+    $width: var(--button-size),
+    $icon-size: var(--zehn-size-icon-sm),
+    $shape: "circular"
+  );
+
   transition: opacity 0.2s var(--zehn-timing-ease) !important;
   top: unset !important;
   right: calc(var(--zehn-size-community-panel-padding) + var(--button-margin)) !important;
@@ -788,74 +1217,121 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 ._1t_97P9KMsEBaPq9y-6OUl,
 ._1_vCR1dPfyJ7_yukwDqblf,
 .HruWVPwIDh2FFOOH7OiSs .gioyPMOZttYFcnmgLnsWf .iYW5hWQwg14WYT4PV3xe_ {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
-  @include dialog.shape-circular;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $shape: "circular",
+    $style: "dialog"
+  );
 }
 
 // EVENT OVERLAY - WISHLIST
 ._3notzMjxQtogi11XHZMYXI,
 ._1djkdp7OAd0mF3a90RKf27 {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // EVENT OVERLAY - ACTION
 ._2zssEuiPfY5YdQlnihDfVD {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
+}
+
+// EVENT OVERLAY - FOOTER
+.mKmrOjr9bGjKAolgp9NoD ._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c {
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // ACHIEVEMENTS OVERLAY - TABS
 ._3eEbSktrstBdLk0dVpnKVI {
-  @include app.preset-wide(var(--zehn-size-tablist), $selected: "._3Gp1bACHx__POxmy6Gd3kG", $style: "tab");
+  @include template.preset-wide(
+    $height: var(--zehn-size-tablist),
+    $width: fit-content,
+    $selected: "._3Gp1bACHx__POxmy6Gd3kG",
+    $style: "tab"
+  );
 }
 
 // DOWNLOADS - HEADER - SETTINGS
 ._3Tfp8-wTAttW3WVa_X9JVC._3Tfp8-wTAttW3WVa_X9JVC._DialogLayout.DialogButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
 }
 
 // DOWNLOADS - HEADER - PAUSE/RESUME
 ._3Mbhnlk1Go2j8yCdjthzc7.IbePLaw-vSvhG1GTenYFg.IbePLaw-vSvhG1GTenYFg ._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi.DialogButton,
 ._3Mbhnlk1Go2j8yCdjthzc7.IbePLaw-vSvhG1GTenYFg.IbePLaw-vSvhG1GTenYFg ._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi._2xR-V97DWI7svSjgiCb3N-.DialogButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
 }
 
 // DOWNLOADS - SECTION HEADER
 ._1GdR5LbENV7LOGROJBxohI._1GdR5LbENV7LOGROJBxohI.DialogButton {
-  @include app.preset-wide(var(--zehn-size-downloads-section-header));
+  @include template.preset-wide(
+    $height: var(--zehn-size-downloads-section-header),
+    $width: fit-content
+  );
 }
 
 // DOWNLOADS - ENTRY
 ._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi.DialogButton,
 ._1VNuYHM6BPBOJspC6zPf5r ._3oavRVhIS9tC3vBsFT4Ggi._2xR-V97DWI7svSjgiCb3N-.DialogButton {
-  @include app.preset-symmetric(var(--zehn-size-button-app-large));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: var(--zehn-size-button-lg)
+  );
 }
 
 // DIALOG - NEW COLLECTION
 ._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX ._25n_zgE_sgrYzl4G-YE8VN {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
-}
-
-._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX._3Jmn39gWVcTTHWXW-ydfWy ._25n_zgE_sgrYzl4G-YE8VN,
-._33bWWYKdaxI_uMvK0TPjm4 ._3vDq3loNLE6O8iHtj6rOfX._3Jmn39gWVcTTHWXW-ydfWy ._25n_zgE_sgrYzl4G-YE8VN:is(:focus, :hover, :hover:focus, :active, :active:focus) {
-  @include dialog.look-disabled;
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: 100%
+  );
 }
 
 // DIALOG - REVIEW GAME
 .lNPFwADeWOcU-YOPlwMzV ._2gJ9F_Ox8xa-jD-JD0eNrB {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: 100%
+  );
 }
 
 // DIALOG - ADD REVIEW
 ._1kCN0pAntrcGCSmcc-vYdk,
 ._35_OgqfHHZfSzTYfv367K6 {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
-  @include dialog.looks-selected(".Z3L6KGVxi4ZjGUzbYUjBC");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $selected: ".Z3L6KGVxi4ZjGUzbYUjBC",
+    $style: "dialog"
+  );
 }
 
 // DIALOG - SHARE
-._1ABCOz8DSrl-YJdh1xD-m0,
-._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+.EventDisplay_Share_Dialog ._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $icon: "img._3XZsWYaYpPd4DZvwdZqRLw",
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -873,37 +1349,68 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // SETTINGS FLYOUT HEADER
 ._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary {
-  @include app.preset-symmetric(var(--zehn-size-button-app), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled"
+  );
 }
 
 // UPDATES
 .MillenniumSettings ._2o2fXzn99OddeqZMjbDuxQ button.DialogButton {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 button.DialogButton.MillenniumIconButton.Secondary {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // PRIMARY BUTTONS
 .DialogBody.aFxOaYcllWYkCfVYQJFs0>.DialogControlsSection.MillenniumButtonsSection ._3epr8QYWw_FqFgMx38YEEm.DialogButton {
-  display: flex !important;
+  @include template.preset-dynamic(
+    $height: 100%,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+
   flex-direction: column !important;
   flex: 1 !important;
-  @include dialog.preset-dynamic(100%, $disabled: ".Disabled");
 }
 
 // COLOR PICKER
 ._2o2fXzn99OddeqZMjbDuxQ:has(.MillenniumColorPicker) button.DialogButton {
-  @include app.preset-symmetric(20px, $disabled: ".Disabled");
+  --picker-reset: 20px;
+  --picker-border: 2px;
+
+  @include template.preset-fixed(
+    $height: var(--picker-reset),
+    $width: var(--picker-reset),
+    $disabled: ".Disabled"
+  );
+
   opacity: 0 !important;
   z-index: 999 !important;
-  top: 2px !important;
-  left: 22px !important;
+  top: var(--picker-border) !important;
+  left: calc(var(--picker-reset) + var(--picker-border)) !important;
   order: 2 !important;
   position: absolute !important;
 }
@@ -923,7 +1430,11 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // LAUNCH OPTIONS
 .LclHwcOfHFpwObYMD1HLa ._3H2GezG50hog8gSDj-qbx1>div {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -942,17 +1453,28 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 // EXIT / BACK
 .fi6UDkxJq66MLo2z9wabQ .BoygotvcKo4DC4dSix8G3.DialogButton,
 .fi6UDkxJq66MLo2z9wabQ ._2uM3ouyTdzAtXR3ffa7oRg ._2LJMRr1_5XUK4wlt7YMyPi .mh8m9p4PBg_Qrev1bfTzc {
-  @include app.preset-symmetric(var(--zehn-size-overlay-bar));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-overlay-bar),
+    $width: var(--zehn-size-overlay-bar)
+  );
 }
 
 // APPS
 .fbu3l7kPiBeb3EKCjIb8n ._3ZLaTxSHxeGcoKlIy_-Z0L  {
-  @include app.preset-symmetric(var(--zehn-size-overlay-bar), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-overlay-bar),
+    $width: var(--zehn-size-overlay-bar),
+    $disabled: ".Disabled"
+  );
 }
 
 // APPS LIST MODE
 ._3gequ5PczEX5LwJ8tPrEGC ._3ZLaTxSHxeGcoKlIy_-Z0L {
-  @include app.preset-wide(var(--zehn-size-overlay-bar), $disabled: ".Disabled");
+  @include template.preset-wide(
+    $height: var(--zehn-size-overlay-bar),
+    $width: fit-content,
+    $disabled: ".Disabled"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -970,18 +1492,29 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // NEW TAB
 .aqvbkhC1ejt4s8QvWA-c5>.TSlxCkeUMGwzmg21_WU8- {
-  @include app.preset-symmetric(var(--zehn-size-titlebar), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar),
+    $style: "nav"
+  );
 }
 
 // URL BAR
 .UkR3sY319PuaUNuUWks2K ._3KaB94Jl4r0hFkthDPJy09,
 .UkR3sY319PuaUNuUWks2K ._3izqEKa-zuPIrUDSm1bRvf,
 .extensions-bar-container .extension-button {
-  @include app.preset-symmetric(var(--zehn-size-browser-urlbar-button));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-browser-urlbar-button),
+    $width: var(--zehn-size-browser-urlbar-button)
+  );
 }
 
 ._26Gmfe09NRsnF7eprTZYdY ._1oXr_GpvIgjHasLyU3tBn {
-  @include app.preset-symmetric(var(--zehn-size-browser-urlbar-button), $disabled: "._1f6yYACTilZQ2dmqGd5zXk");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-browser-urlbar-button),
+    $width: var(--zehn-size-browser-urlbar-button),
+    $disabled: "._1f6yYACTilZQ2dmqGd5zXk"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -999,7 +1532,11 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // COMMENTS
 ._39nnaT_CLE0m_WXVIrAwaG .FPxfNOUIyMTxA5iyxVWGX {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1023,50 +1560,84 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 ._26uPMBCPxQYJ8EBcqiNu8P,
 ._3LzXZkJi8bsPoHzXEDbLER,
 .TimelineAndControls._3LzXZkJi8bsPoHzXEDbLER {
-  @include app.preset-symmetric(var(--zehn-size-media-controlbar));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-media-controlbar),
+    $width: var(--zehn-size-media-controlbar)
+  );
 }
 
 ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._2T45kYJmyvQWyxytQeohuY {
-  @include app.preset-symmetric(var(--zehn-size-media-controlbar), $disabled: "._36CGU2t5Vavx0_9dwem6kb");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-media-controlbar),
+    $width: var(--zehn-size-media-controlbar),
+    $disabled: "._36CGU2t5Vavx0_9dwem6kb"
+  );
 }
 
 // TEXT CONTROLS
 ._1JVlcXVvv0OCD_p5RuW1fy .mZYRu1dN5Q9aQ1r3Cq_NE,
 .UJBbMi55kmyA6ZDu_OVUX .DialogButton,
 ._367uBQpzonX0o4-Y0f-wYl .DialogButton {
-  @include app.preset-wide(var(--zehn-size-media-controlbar));
+  @include template.preset-wide(
+    $height: var(--zehn-size-media-controlbar),
+    $width: fit-content
+  );
 }
 
 ._30e-kSx-yfm4pjA0_ysT3n ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy:not(.zeGUOeW3Cat4UJGCGwXPZ):not(._2T45kYJmyvQWyxytQeohuY),
 .DKXVRVBokaW_Xxo6kyKq0 ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy:not(.zeGUOeW3Cat4UJGCGwXPZ):not(._2T45kYJmyvQWyxytQeohuY) {
-  @include app.preset-wide(var(--zehn-size-media-controlbar), $disabled: "._36CGU2t5Vavx0_9dwem6kb");
+  @include template.preset-wide(
+    $height: var(--zehn-size-media-controlbar),
+    $width: fit-content,
+    $disabled: "._36CGU2t5Vavx0_9dwem6kb"
+  );
 }
 
 // CLOSE
 ._3aw8rnUVmbcILzeqlj7uuP ._1XMsukW7tjbY8BC341fPNa {
-  @include app.preset-symmetric(var(--zehn-size-button-app));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md)
+  );
 }
 
 // DELETE CONFIRMATION
 ._30e-kSx-yfm4pjA0_ysT3n ._365PZ8BVgd7sz6-xR9E9yb ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy:not(.zeGUOeW3Cat4UJGCGwXPZ):not(._2T45kYJmyvQWyxytQeohuY) {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: "._36CGU2t5Vavx0_9dwem6kb");
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-button-md),
+    $disabled: "._36CGU2t5Vavx0_9dwem6kb",
+    $style: "dialog"
+  );
 }
 
 // TIMELINE - SCRUB
 ._2__OPNuJ5jPGfN7LuKW-Qw ._15dYncysqGpt47Cy4LxDu6 {
-  @include app.preset-symmetric(var(--zehn-size-media-scrub));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-media-scrub),
+    $width: var(--zehn-size-media-scrub)
+  );
 }
 
 // ???
 ._365PZ8BVgd7sz6-xR9E9yb ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._1vrXP23Jvmwoj70Yk81cnc,
 ._365PZ8BVgd7sz6-xR9E9yb ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy.rYp_PTAXV9D7Jc5c756Re,
 ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._2kVw_wgJd5TfnNePlpwmN {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: "._36CGU2t5Vavx0_9dwem6kb");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: "._36CGU2t5Vavx0_9dwem6kb",
+    $style: "dialog"
+  );
 }
 
 // NO RECORDING AVAILABLE
 ._2Jhopz5mqnwHwBUX9sMIGY {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".rq1uEI9jHMgnF1LIsVsJg");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".rq1uEI9jHMgnF1LIsVsJg",
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1084,17 +1655,30 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // TABS
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX button._1jEPp-_Fn1YtGfHenAZ7fT {
-  @include app.preset-wide(var(--zehn-size-servers-controlbar), $disabled: ".Disabled", $selected: ".L3t04yaV4NIy6qhVIquGp", $style: "tab");
+  @include template.preset-wide(
+    $height: var(--zehn-size-servers-controlbar),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $selected: ".L3t04yaV4NIy6qhVIquGp",
+    $style: "tab"
+  );
 }
 
 // CONTROLS
 ._2rxrVvbku0AC8Qbequ4-z9 button.DialogButton {
-  @include app.preset-symmetric(var(--zehn-size-servers-controlbar), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-servers-controlbar),
+    $width: var(--zehn-size-servers-controlbar),
+    $disabled: ".Disabled"
+  );
 }
 
 // CONTROLS - TEXT
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._341mdPDkZV7JkbIxGBREsd button.DialogButton {
-  @include app.preset-wide(var(--zehn-size-servers-controlbar));
+  @include template.preset-wide(
+    $height: var(--zehn-size-servers-controlbar),
+    $width: fit-content
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1113,25 +1697,41 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 // TITLEBAR - COLLAPSE/EXPAND PAGELIST
 ._3LLH_F43MTu6UtG4Z3kudv,
 ._1cWmu5TUWFAVHlv1EVaF8e {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "nav"
+  );
+
   top: 0px !important;
   left: 0px !important;
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
 }
 
 // FORMATTING BUTTONS
 .gdKTXjvFuMeVN2qa6o8EL button.DialogButton {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-notes-format),
+    $disabled: ".Disabled"
+  );
+
   flex: 1 !important;
-  @include app.preset-dynamic(var(--zehn-size-notes-format), $disabled: ".Disabled");
 }
 
 // NEW NOTE
 ._3Sf_ShCtdfWp5P04k2cIgp .PageListColumn .DialogButton {
-  @include app.preset-asymmetric(var(--zehn-size-titlebar), var(--zehn-size-titlebar-control), $style: "nav");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "nav"
+  );
 }
 
 // CLOSE WINDOW BUTTON
 ._1AL7l2CN6z-vuLfp1iCLa ._1fu6xumTI1nCY5wc6FG_N2 .vKXl-xWkUZL5iNvaT5mzW {
-  @include app.preset-asymmetric(var(--zehn-size-button-app-large), 100%);
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: 100%
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1149,12 +1749,21 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // TOP BUTTONS
 .jSQQl34mj8a4NOKubD6AT ._1ml4SNc3LIyBDHIf8ekVSw .HijmccPB1BKyhOwhX1EVl {
-  @include app.preset-wide(var(--zehn-size-button-app-large), $selected: "._3-_jME_xsuvgT3Dvq4bw_q", $icon: ".zehnListIcon", $style: "tab");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-lg),
+    $width: fit-content,
+    $selected: "._3-_jME_xsuvgT3Dvq4bw_q",
+    $icon: ".zehnIcon",
+    $style: "tab"
+  );
 }
 
 // TIMER CONTROLS
 ._2j-W28YC1xAizcE7x9KkDT button.DialogButton {
-  @include app.preset-dynamic(var(--zehn-size-clock-controlbar), $disabled: ".Disabled");
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-clock-controlbar),
+    $disabled: ".Disabled"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1172,7 +1781,11 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // PLAYERS
 ._27m9Qbg4ShilOgwvYZWV8l ._1vG-vFfwpDeNStVbyo1Qy6 ._2fYjCJSwdJxdjbi7ysISdL ._2NLwfYHr9KUJZ7LD9nkyva {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1190,7 +1803,20 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // ACHIEVEMENT GROUPS
 .steam-hunters-achievements-page button {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
+}
+
+// ACHIEVEMENT HUNTERS - PREFERENCES
+.steam-hunters-achievements-page .achievements-header .header-top-row .header-actions .preferences-btn {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1208,7 +1834,11 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // CANCEL
 ._3ZHIBZbKR6DCeKpSDqwlMg {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1226,8 +1856,12 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // ACCOUNT - PRIMARY BUTTONS
 .onPxgvGKxGbKdE7dDWrMx button.DialogButton.TEWmsM70ZLEOxLAjDMpcv {
-  @include dialog.preset-dynamic(100%, $other: "._3Wb9yDmYPUJksCr7HmaT9H");
-  display: flex !important;
+  @include template.preset-dynamic(
+    $height: 100%,
+    $other: "._3Wb9yDmYPUJksCr7HmaT9H",
+    $style: "dialog"
+  );
+
   flex-direction: column !important;
   flex: 1 !important;
   justify-content: flex-start !important;
@@ -1235,39 +1869,69 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // NOTIFICATIONS - EXPAND CHEVRON
 .BRmrC-jnwpXqye4oYB21C button.DialogButton.Small {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
 }
 
 // IN GAME
 .DialogControlsSection ._2o2fXzn99OddeqZMjbDuxQ ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy,
 ._2sssIwe0duyIrFvat2oXzH ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: "._36CGU2t5Vavx0_9dwem6kb");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: "._36CGU2t5Vavx0_9dwem6kb",
+    $style: "dialog"
+  );
 }
 
 // STORAGE
 ._12aBP1DmpEKuMxfFuCMbiN {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // STORAGE - MORE
 ._1WKUOT3FdB9-48MMP0Tz9l {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
 }
 
 // CONTROLLER
 ._30w46ktz76K_Rnqk02ZfT0._1zkgQm67ell-zVB965M-D5 {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // RECORDING - DELETE
 ._1IsPTEXf7ua_4XbMa3sXyW {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $icon: "svg.Yc3_Ah2ZI5nQUvQh_3nXP");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $icon: "svg.Yc3_Ah2ZI5nQUvQh_3nXP",
+    $style: "dialog"
+  );
 }
 
 // RECORDING - QUALITY
 ._3epr8QYWw_FqFgMx38YEEm.DialogButton:has(span._1UpteyCApeHSfG-Tw-3H3m) {
-  @include dialog.preset-wide(fit-content);
-  display: flex !important;
+  @include template.preset-wide(
+    $height: fit-content,
+    $width: fit-content,
+    $style: "dialog"
+  );
+
   flex-direction: row !important;
 }
 
@@ -1286,7 +1950,11 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // PRIVACY
 ._3S8RX620BmLdH407KK505 .Htkkt1r5GiHi-0US69HQ_.DialogButton {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1304,7 +1972,11 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // VOICE
 ._DialogLayout.DialogButton._18hAy_dZBqoqEz65RkI5OK {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1322,20 +1994,33 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // CHANNELS
 button.DialogButton.DialogButtonTall {
-  @include dialog.preset-dynamic(var(--zehn-size-button-dialog-large), $disabled: ".Disabled");
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-button-lg),
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+
   flex: 1 !important;
 }
 
 // PERMISSIONS - ADD
 button.DialogButton.createNewRoleButton {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
-  display: flex !important;
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // PERMISSIONS - ROLE EDIT
 button.DialogButton.roleButton {
-  @include app.preset-asymmetric(var(--zehn-size-table-entry-large), 100%, $disabled: ".Disabled");
-  padding: var(--zehn-size-button-app-padding-wide) !important;
+  @include template.preset-wide(
+    $height: var(--zehn-size-table-entry-large),
+    $width: 100%,
+    $disabled: ".Disabled"
+  );
+
   justify-content: flex-start !important;
 }
 
@@ -1354,28 +2039,65 @@ button.DialogButton.roleButton {
 
 // COMMUNITY CONFIGS
 ._1xfC8oO6JVNnioU1NPTN9s {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog), 100%, $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: 100%,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+}
+
+// COMMUNITY CONFIGS - OPTIONS
+button._77qZLron1HY93yUW4_C4m.DialogButton {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // CURRENT CONFIGURATION
 ._3lO3wa99qU2ExNsm6la1zR.DialogButton._DialogLayout.cXzBZxhPBl7fZs9LODEnc {
-  @include dialog.preset-asymmetric(var(--zehn-size-button-dialog-large), 100%, $disabled: ".Disabled", $icon: "svg._2ZItjVml3BnUHCOjGK_gkF", $other: "._2fl-TfpJcuSi88OkNwGOCb");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: 100%,
+    $disabled: ".Disabled",
+    $icon: "svg._2ZItjVml3BnUHCOjGK_gkF",
+    $other: "._2fl-TfpJcuSi88OkNwGOCb",
+    $style: "dialog"
+  );
 }
 
 // CURRENT CONFIGURATION - INFO
 ._2sULyQvjazul5EYSVGwl1T button.DialogButton.cXzBZxhPBl7fZs9LODEnc,
 .CRoS_SRbuEPM5uUV3Vrz1 button.DialogButton.cXzBZxhPBl7fZs9LODEnc.uRlY9Z2GZ7c7swKaeLLx- {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // MODAL - FAKE BUTTON
 .tGJeFkznK3-BCMgr4GSHi {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // FOOTER ACTION BUTTONS
 .MbyhbxIetM7FOAmCQSW83 {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // BINDING KEYS
@@ -1383,34 +2105,77 @@ button.DialogButton.roleButton {
 ._2MjBd1kKOEyVfqBN5OQOb1,
 ._2swvcAycL4d0UoHFDoe6-d,
 ._3i-XV362MvNEX3j_oWQDmQ,
-._3s28A0XlOXUOAWRIuBKHuH,
-.NoRFSLSfwRijJQt7R51OT,
-._19SMSHLlXqSLnXM3NjDNBS,
-._3yP_pf4vx1Q4W0mt2DR32P,
-._3U3h5KQ5DocAUo4lO8cL5l.CX4Dp8XyHswkGEEnWeUpq,
-._2MjBd1kKOEyVfqBN5OQOb1.CX4Dp8XyHswkGEEnWeUpq,
-._2swvcAycL4d0UoHFDoe6-d.CX4Dp8XyHswkGEEnWeUpq,
-._3i-XV362MvNEX3j_oWQDmQ.CX4Dp8XyHswkGEEnWeUpq,
-._3s28A0XlOXUOAWRIuBKHuH.CX4Dp8XyHswkGEEnWeUpq,
-.NoRFSLSfwRijJQt7R51OT.CX4Dp8XyHswkGEEnWeUpq,
-._19SMSHLlXqSLnXM3NjDNBS.CX4Dp8XyHswkGEEnWeUpq,
-._3yP_pf4vx1Q4W0mt2DR32P.CX4Dp8XyHswkGEEnWeUpq {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: "._1QZJBdB3tUQkzngq0rXWsK");
+._3s28A0XlOXUOAWRIuBKHuH {
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: "._1QZJBdB3tUQkzngq0rXWsK",
+    $selected: ".CX4Dp8XyHswkGEEnWeUpq",
+    $style: "dialog"
+  );
+}
+
+// BINDING KEYS - MOUSE
+._19SMSHLlXqSLnXM3NjDNBS {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-button-md),
+    $disabled: "._1QZJBdB3tUQkzngq0rXWsK",
+    $selected: ".CX4Dp8XyHswkGEEnWeUpq",
+    $style: "dialog"
+  );
+}
+
+// BINDING KEYS - SYSTEM
+._3yP_pf4vx1Q4W0mt2DR32P {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: 100%,
+    $disabled: "._1QZJBdB3tUQkzngq0rXWsK",
+    $selected: ".CX4Dp8XyHswkGEEnWeUpq",
+    $style: "dialog"
+  );
+}
+
+// BINDING KEYS - KEYBOARD
+.NoRFSLSfwRijJQt7R51OT {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: null, $disabled: "._1QZJBdB3tUQkzngq0rXWsK",
+    $selected: ".CX4Dp8XyHswkGEEnWeUpq",
+    $style: "dialog"
+  );
+
+  gap: 0px !important;
 }
 
 // CAMERA
 ._1Ze1RZ7I8e5cSlaWAl48bh {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // INFO
 button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // FURTHER SETTINGS
 button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog), $disabled: ".Disabled");
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1429,22 +2194,46 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 // LINKS
 .ext-links-manager .ext-links-remove,
 .ext-links-manager .ext-links-add {
-  @include dialog.preset-wide(var(--zehn-size-button-dialog));
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $style: "dialog"
+  );
 }
 
 // STORAGE
 .storage-manager .storage-manager-row button {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
 }
 
 // STORAGE - RELOAD
 .storage-manager .md-button:last-of-type {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog-large));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: var(--zehn-size-button-lg),
+    $style: "dialog"
+  );
 }
 
 // CONTEXT MENU
 .extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button {
-    @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
+}
+
+/* EXTENSION MANAGER */
+.root-buttons button.DialogButton {
+    @include template.preset-dynamic(
+    $height: var(--zehn-size-button-lg),
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1458,10 +2247,48 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 
 
 
-// POPUP - INSTALL GAME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// POPUP  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// INSTALL GAME
 .vaNI84b_TV6hw20mhGl_d ._2pnPQKKjSPKgzPwlaXMqu_ {
-  @include dialog.preset-symmetric(var(--zehn-size-button-dialog));
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SHARE EVENT - STEAM
+._22m-GVWK4oToZYpcPXpkNk._1G3P8wlZ4seS-hs8-P9cwE {
+  @include template.preset-wide(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $icon: "img._3PXcvKt0U1PJ2DAM8I5lLx",
+    $style: "dialog"
+  );
+}
+
+// SHARE EVENT - SOCIAL
+._22m-GVWK4oToZYpcPXpkNk:not(._1G3P8wlZ4seS-hs8-P9cwE) {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $icon: "img._1ABCOz8DSrl-YJdh1xD-m0",
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1477,8 +2304,13 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 
 // SOUNDTRACK MENU ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.fMMMDD_7bJ5hugXub44ER ._DialogLayout.DialogButton.EmptyButton,
 ._20v4MHXd0kP4rRu6ZTAGQU ._DialogLayout.DialogButton.EmptyButton {
-  @include dialog.preset-asymmetric(fit-content, 100%);
+  @include template.preset-fixed(
+    $height: fit-content,
+    $width: 100%,
+    $style: "dialog"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1505,9 +2337,12 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
   pointer-events: all;
 }
 
+.zehnTitleIconContainer {}
+
 .zehnIconContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }

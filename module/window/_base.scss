@@ -27,7 +27,7 @@ html:has(.OverlayTimeline) {
 
 // OVERLAY MODALS
 .ModalOverlayContent .ModalPosition_Content {
-  background: var(--zehn-color-base) !important;
+  background: var(--zehn-color-dialog) !important;
 }
 
 // BROWSER CONTENT
@@ -55,23 +55,7 @@ html:has(._3t4AGpHmFth4qnMdNTgSXR) {
 
 // LIBRARY
 .dwmx.MillenniumWindow_MainSteamWindow {
-  // background: var(--zehn-transparency-effects-acrylic-color-base) !important;
-}
-
-.dwmx.MillenniumWindow_MainSteamWindow:has(.MillenniumSettings) {
   background: var(--zehn-transparency-effects-acrylic-color-base) !important;
-}
-
-.dwmx.MillenniumWindow_MainSteamWindow ._1ENHEsrSLcTRtPQFl1F-wL {
-  // background: var(--zehn-transparency-effects-acrylic-color-base) !important;
-}
-
-.dwmx.MillenniumWindow_MainSteamWindow ._2Dd4T78PcCTUVgOtDGFY5j {
-  // background: var(--zehn-transparency-effects-acrylic-color-base) !important;
-}
-
-.dwmx.MillenniumWindow_MainSteamWindow ._2gSXCB6PbOlMxslr8hm6dm {
-  // background: var(--zehn-transparency-effects-acrylic-color-base) !important;
 }
 
 // SETTINGS
@@ -186,12 +170,82 @@ body.zXrpABNQHpWKgSzqnGlL {
 
 
 
+// ACRYLIC BACKGROUND ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LEGACY
+.ModalDialogPopup.LegacyPopup body.friendsui-container,
+// POPUP
+// body.ModalDialogBody:not(:has(.OverlayTimeline)),
+// SETTINGS AND NOTES
+body.ModalDialogBody:has(.PageListColumn),
+// SERVERS
+body.ModalDialogBody:has(._2rxrVvbku0AC8Qbequ4-z9),
+// OVERLAY POPUP
+// body._1UJDmU3N-pkv7oTJ_Zf9nK:not(:has(.OverlayTimeline)),
+body._1UJDmU3N-pkv7oTJ_Zf9nK:has(.TabbedPopupBrowser),
+body._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayBrowser_Browser),
+body._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayBrowser_Guides),
+body._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayBrowser_Discussions),
+body._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayBrowser_DLC),
+body._1UJDmU3N-pkv7oTJ_Zf9nK:has(.OverlayTimer),
+// LIBRARY AND MORE (NOT OVERLAY)
+body.QsvsRVwbsApgKt1MhM0fz:not(:has(._3b_pllMxcr_an1aQ5goWvB)),
+// FRIENDS / CHAT
+.friendsui-container body:not(.HoverPopupBody, .HoverfriendHover, .miniProfileHover),
+// CONTROLLER SETTINGS
+body.l25AfossKXBOZGYoty0tM,
+// NOTIFICATION
+body.zXrpABNQHpWKgSzqnGlL {
+  &::before,
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0px;
+    pointer-events: none;
+  }
+
+  &::before {
+    background: var(--zehn-color-section-acrylic);
+    transition: background-color 0.2s var(--zehn-timing-ease);
+    backdrop-filter: var(--zehn-transparency-effects-acrylic-filter);
+    background-blend-mode: exclusion;
+  }
+
+  &.WindowFocus::before {
+    background-color: var(--zehn-color-section-acrylic-focus);
+  }
+
+  &::after {
+    opacity: 0;
+    background-size: auto;
+    background-image: var(--zehn-transparency-effects-acrylic-texture);
+    transition: opacity 0.2s var(--zehn-timing-ease);
+  }
+
+  &.WindowFocus::after {
+    opacity: var(--zehn-transparency-effects-acrylic);
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // WINDOW GRIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .window_resize_grip {
   background-image: none !important;
   width: 0px !important;
   height: 0px !important;
+  opacity: 0 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

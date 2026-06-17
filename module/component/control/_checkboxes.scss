@@ -1,4 +1,4 @@
-@use 'checkbox/dialog' as dialog;
+@use 'checkbox/template' as template;
 
 // GENERIC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -23,11 +23,20 @@
 }
 
 input[type=checkbox] {
-  @include dialog.preset("", ":checked", "::after", ":checked::after");
+  @include template.preset(
+    $off: "",
+    $on: ":checked",
+    $check: ":checked::after"
+  );
 }
 
 .DialogCheckbox {
-  @include dialog.preset("", ".Active", " svg.SVGIcon_DialogCheck", ".Active svg.SVGIcon_DialogCheck", ".Disabled");
+  @include template.preset(
+    $off: "",
+    $on: ".Active",
+    $check: ">svg.SVGIcon_DialogCheck",
+    $disabled: ".Disabled"
+  );
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,14 +53,49 @@ input[type=checkbox] {
 // LOGIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .LBS7IDpob52Sb4ZoKobh0 ._28MB9LhS2kVTalIp0NHDv4 {
-  width: var(--zehn-size-checkbox-dialog-toggle) !important;
-  height: var(--zehn-size-checkbox-dialog-toggle) !important;
+  width: fit-content !important;
+  height: fit-content !important;
   position: absolute !important;
   inset: 0px !important;
 }
 
 .LBS7IDpob52Sb4ZoKobh0 {
-  @include dialog.preset("", ":has(._28MB9LhS2kVTalIp0NHDv4)", ":empty::after", " ._28MB9LhS2kVTalIp0NHDv4 svg.SVGIcon_Check");
+  @include template.preset(
+    $off: "",
+    $on: ":has(._28MB9LhS2kVTalIp0NHDv4)",
+    $check: ">._28MB9LhS2kVTalIp0NHDv4 svg.SVGIcon_Check"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MEDIA ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._2-7fqz03LhYHKEBI-HwIPq ._3yu2_I6JERouGkz0YLwnuX {
+  @include template.preset(
+    $off: "",
+    $on:":has(._1u3MRQ0ABDU4GSI-cGGiQ5)",
+    $check: ">svg._1u3MRQ0ABDU4GSI-cGGiQ5",
+    $style: "media"
+  );
+
+  position: absolute !important;
+  z-index: 999 !important;
+  inset: unset !important;
+  top: 8px !important;
+  right: 8px !important;
+  animation-duration: 0.2s !important;
+  animation-name: scale !important;
+  animation-timing-function: var(--zehn-timing-ease) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
