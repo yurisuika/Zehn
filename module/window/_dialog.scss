@@ -66,7 +66,7 @@
 }
 
 // MODAL OVERLAYS W/O ACTUAL TITLEBARS
-.ModalDialogPopup:has(.TitleBar) .DialogContent,
+.ModalDialogPopup .TitleBar~.ModalPosition .DialogContent,
 .ModalOverlayContent:has(.ModalPosition_Dismiss) .DialogContent,
 .ModalOverlayContent:has(.DialogHeader) .DialogContent {
   padding-top: var(--zehn-size-titlebar) !important;
@@ -179,7 +179,7 @@
 
 // FORM AFTER INNER APPLY PADDING HERE
 .DialogContent_InnerWidth>form {
-  gap: var(--zehn-size-dialog-padding) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
   display: flex !important;
   flex-shrink: 0 !important;
   flex-direction: column !important;
@@ -193,7 +193,7 @@
 }
 
 .DialogContent_InnerWidth>form>.Panel {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -728,7 +728,7 @@ label>.DialogLabel {
   color: var(--zehn-color-text1) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
-  margin: auto 0 0 0 !important;
+  margin: auto 0px 0px 0px !important;
   padding: 0px !important;
 }
 
