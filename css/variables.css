@@ -185,6 +185,8 @@
   --zehn-color-text-description: var(--zehn-color-text3);
   --zehn-color-text-control: var(--zehn-color-text1);
   --zehn-color-text-control-disabled: var(--zehn-color-text4);
+  --zehn-color-text-error: var(--zehn-color-accent);
+  --zehn-color-text-detail: var(--zehn-color-text1);
 
   --zehn-color-icon1: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-fg1-light)), rgb(var(--zehn-rgb-fg1-dark))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-icon2: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-fg2-light)), rgb(var(--zehn-rgb-fg2-dark))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
@@ -1038,7 +1040,7 @@
   --zehn-color-slider-handle-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-slider-handle-active: color-mix(in var(--zehn-color-space), light-dark(rgb(204, 204, 204), rgb(118, 118, 118)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-slider-track: var(--zehn-color-accent);
-  --zehn-color-slider-default: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-tick: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
 
   --zehn-color-picker-border: transparent;
   --zehn-color-picker-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
@@ -1080,10 +1082,13 @@
   --zehn-color-chat-mention-background-active: var(--zehn-color-accent-10);
 
   --zehn-color-placeholder: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.1), rgba(var(--zehn-rgb-white), 0.1)), rgba(var(--zehn-rgb-foreground), 0.1) var(--zehn-foreground-color-mix));
+  --zehn-color-placeholder-empty: var(--zehn-color-accent-50);
 
   --zehn-color-selection: transparent;
   --zehn-color-selection-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.65), rgba(var(--zehn-rgb-white), 0.65)), rgba(var(--zehn-rgb-foreground), 0.65) var(--zehn-foreground-color-mix));
   --zehn-color-selection-active: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+
+  --zehn-color-gallery-selection: var(--zehn-color-accent);
 
   --zehn-color-separator: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
   --zehn-color-separator-context: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
@@ -2418,6 +2423,7 @@
   --zehn-size-panel-inset-radius: var(--zehn-size-radius-xs);
 
   /* BUTTONS */
+  --zehn-size-button-sm: 24px;
   --zehn-size-button-md: 32px;
   --zehn-size-button-lg: 48px;
 
@@ -2447,11 +2453,11 @@
 
   --zehn-size-button-close-border: 0px;
   --zehn-size-button-close-radius: var(--zehn-size-radius-none);
-  --zehn-size-button-close-gap: 8px;
+  --zehn-size-button-close-gap: 0px;
 
   --zehn-size-button-return-border: 0px;
   --zehn-size-button-return-radius: var(--zehn-size-radius-none);
-  --zehn-size-button-return-gap: 8px;
+  --zehn-size-button-return-gap: 0px;
 
   /* CHECKBOX BUTTONS */
   --zehn-size-checkbox: 20px;
@@ -2560,6 +2566,9 @@
   --zehn-size-slider-handle-height: 24px;
   --zehn-size-slider-handle-width: 8px;
   --zehn-size-slider-handle-radius: var(--zehn-size-radius-round);
+  --zehn-size-slider-marker: 24px;
+  --zehn-size-slider-tick-height: 4px;
+  --zehn-size-slider-tick-width: 2px;
 
   /* PROGRESSBARS */
   --zehn-size-progressbar-width: 400px;
@@ -2572,6 +2581,7 @@
   --zehn-size-loading: 8px;
   --zehn-size-loading-width: 48px;
   --zehn-size-loading-radius: var(--zehn-size-radius-circular);
+
 
   /* TIMELINE */
   --zehn-size-timeline: 2px;
@@ -2588,17 +2598,22 @@
   --zehn-size-text-label: 14px;
   --zehn-size-text-description: 14px;
   --zehn-size-text-control: 14px;
+  --zehn-size-text-error: 14px;
 
   /* TAGS */
   --zehn-size-tag: 24px;
   --zehn-size-tag-small: 16px;
+  --zehn-size-tag-large: 32px;
   --zehn-size-tag-radius: var(--zehn-size-radius-sm);
   --zehn-size-tag-radius-small: var(--zehn-size-radius-xs);
+  --zehn-size-tag-radius-large: var(--zehn-size-radius-sm);
   --zehn-size-tag-padding: 0px 4px;
   --zehn-size-tag-padding-small: 0px 2px;
+  --zehn-size-tag-padding-large: 0px 8px;
   --zehn-size-tag-gap: 4px;
   --zehn-size-tag-text: 12px;
   --zehn-size-tag-text-small: 8px;
+  --zehn-size-tag-text-large: 14px;
   
   /* KEYBOARD */
   --zehn-size-key: 64px;
@@ -2667,6 +2682,7 @@
   --zehn-size-titlebar-text-padding-x: var(--zehn-size-padding-sm);
   --zehn-size-titlebar-text-padding-y: 0px;
   --zehn-size-titlebar-text-padding: var(--zehn-size-titlebar-text-padding-y) var(--zehn-size-titlebar-text-padding-x);
+  --zehn-size-titlebar-text-gap: 4px;
 
   --zehn-size-navbar: var(--zehn-navbar-size);
   --zehn-size-navbar-control: var(--zehn-size-titlebar-control);
@@ -2740,6 +2756,7 @@
   --zehn-size-dialog-padding: 16px;
   --zehn-size-dialog-inset-padding: 16px;
   --zehn-size-dialog-gap: 16px;
+  --zehn-size-dialog-paragraph-gap: 8px;
 
   /* CODE */
   --zehn-size-code-padding: 16px;
@@ -2751,7 +2768,8 @@
   --zehn-size-settings-content: 450px;
   --zehn-size-settings-header: 48px;
   --zehn-size-settings-subheader: 32px;
-  --zehn-size-settings-controls-group-gap: 8px;
+  --zehn-size-settings-group-gap: 8px;
+  --zehn-size-settings-control-gap: 8px;
   --zehn-size-settings-checkgrid: 48px;
 
   /* FRIENDS */
@@ -2806,6 +2824,17 @@
   /* MEDIA */
   --zehn-size-media-controlbar: 48px;
   --zehn-size-media-scrub: 32px;
+  --zehn-size-media-flow: 96px;
+
+  /* GALLERY */
+  --zehn-size-gallery-selection: 4px;
+  --zehn-size-gallery-gap: 8px;
+  --zehn-size-gallery-padding: var(--zehn-size-padding-md) var(--zehn-size-padding-xxxl);
+
+  /* DETAILS */
+  --zehn-size-detail: 32px;
+  --zehn-size-detail-text: 14px;
+  --zehn-size-detail-gap: 8px;
 
   /* SERVERS */
   --zehn-size-servers-controlbar: 48px;

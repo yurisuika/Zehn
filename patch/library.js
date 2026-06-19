@@ -478,7 +478,7 @@ Zehn.revealInner('.UkR3sY319PuaUNuUWks2K');
 /* REVEAL MEDIA LIBRARY --------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
-  '._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni', // BUTTONS
+  '._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._32Lfwcdolc3ByZWItfR3ni', // BUTTONS
   '._36KTbApKz0VLY9Q6lGt4aH' // SEARCH
 ]);
 
