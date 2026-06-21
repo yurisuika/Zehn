@@ -23774,6 +23774,12 @@ input[type=checkbox]:checked:is(:disabled, :disabled:focus, :disabled:hover:focu
   --check-color: var(--zehn-color-checkbox-dialog-check-disabled);
 }
 
+input[type=checkbox]::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+}
+
 .DialogCheckbox {
   appearance: unset !important;
   box-sizing: border-box !important;
@@ -24765,7 +24771,7 @@ select :disabled:is(:hover, :active, :focus),
   margin: 0px 0px 0px var(--zehn-size-spacing-md) !important;
   inset: 0px !important;
   width: var(--zehn-size-icon-sm) !important;
-  height: 100% !important;
+  height: var(--zehn-size-icon-sm) !important;
   padding: 0px !important;
 }
 
@@ -24776,7 +24782,7 @@ select :disabled:is(:hover, :active, :focus),
 .DialogContent.GenericConfirmDialog .zeGUOeW3Cat4UJGCGwXPZ svg {
   fill: transparent !important;
   padding: 0px !important;
-  height: 100% !important;
+  height: var(--zehn-size-icon-sm) !important;
   width: var(--zehn-size-icon-sm) !important;
   background-color: var(--zehn-color-icon3) !important;
   mask-repeat: no-repeat !important;
@@ -24801,6 +24807,7 @@ select :disabled:is(:hover, :active, :focus),
   bottom: 0px;
   z-index: 10;
   pointer-events: none;
+  margin: auto 0px;
 }
 
 select::picker(select) {
@@ -33183,10 +33190,18 @@ button.DialogButton.DialogInput_CopyAction {
   padding: 0px !important;
 }
 
+._3gY0aBuNR8_NPTpXIYfkby {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  margin: 0px !important;
+}
+
 ._1IigUZ3GHaZS2Y-3V3T2rT {
-  color: var(--zehn-color-text3) !important;
+  color: var(--zehn-color-text-description) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
+  font-size: var(--zehn-size-text-description) !important;
   padding: 0px !important;
   line-height: normal !important;
 }
@@ -33208,24 +33223,6 @@ button.DialogButton.DialogInput_CopyAction {
   gap: var(--zehn-size-dialog-gap) !important;
 }
 
-.MillenniumDesktopSidebar_EditorContent > div,
-.MillenniumDesktopSidebar_EditorContent > div > div:has(> .eKmEXJCm_lgme24Fp_HWt) {
-  display: flex !important;
-  flex-direction: column !important;
-  padding: 0px !important;
-  margin: 0px !important;
-  gap: var(--zehn-size-dialog-gap) !important;
-}
-
-._3gY0aBuNR8_NPTpXIYfkby,
-.MillenniumDesktopSidebar_Content ._3gY0aBuNR8_NPTpXIYfkby {
-  display: flex !important;
-  flex-direction: column !important;
-  padding: var(--zehn-size-dialog-padding) !important;
-  margin: 0px !important;
-  gap: var(--zehn-size-dialog-gap) !important;
-}
-
 .eKmEXJCm_lgme24Fp_HWt.xIITXDcM70faUNqssgUyx {
   left: calc(var(--zehn-size-dialog-gap) * var(--indent-level)) !important;
 }
@@ -33236,6 +33233,43 @@ button.DialogButton.DialogInput_CopyAction {
   margin: var(--zehn-size-dialog-gap) 0px 0px 0px !important;
   height: var(--zehn-size-separator) !important;
   background: var(--zehn-color-separator) !important;
+}
+
+.MillenniumDesktopSidebar[data-focused-item-type=PLUGIN] .MillenniumDesktopSidebar_EditorContent > div {
+  padding: var(--zehn-size-dialog-padding) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.MillenniumDesktopSidebar_EditorContent > div > div:has(> .eKmEXJCm_lgme24Fp_HWt) {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  border: none !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+}
+
+.MillenniumDesktopSidebar_EditorContent > div:not(:has(div)) {
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  line-height: var(--zehn-size-settings-subheader) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.MillenniumDesktopSidebar_EditorContent > div:not(:has(div)) ~ div:not(:has(div)) {
+  color: var(--zehn-color-text-description) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-description) !important;
+  line-height: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  border: none !important;
 }
 
 .DialogBody._2SvsKGOQeIoV8laKj5Ql5s {
@@ -59338,7 +59372,13 @@ html:hover .MillenniumSettings .OX7USkJ5dDP_icD00Gal6::before {
 }
 
 ._1aw7cA3mAZfWt8idAlVJWi > div {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+}
+
+.MillenniumSettings .aFxOaYcllWYkCfVYQJFs0 ._2tALpM7z8naXJ35Pp5fNAG {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-dialog-paragraph-gap) !important;
 }
 
 .Moi6v1N2diR_-8AdV3vok * {
@@ -59393,13 +59433,10 @@ button[data-icon-name=KaratUp] svg {
 
 /* PATCH NOTES */
 .MillenniumUpdates_Description {
-  padding: var(--zehn-size-padding-md) !important;
-  background: var(--zehn-color-panel) !important;
-  border-radius: var(--zehn-size-panel-radius) !important;
+  padding: var(--zehn-size-dialog-inset-padding) !important;
+  border-radius: var(--zehn-size-dialog-inset-radius) !important;
+  background: var(--zehn-color-dialog-inset) !important;
   transition: none !important;
-}
-.MillenniumUpdates_Description:hover {
-  background-color: var(--zehn-color-panel-hover) !important;
 }
 
 .MillenniumUpdates_Field[data-expanded=false] .MillenniumUpdates_Description {
@@ -59587,7 +59624,7 @@ input[type=color]::-webkit-color-swatch {
 
 .MillenniumSettings .aFxOaYcllWYkCfVYQJFs0 > div {
   margin: 0px !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
 }
 
 .MillenniumSettings .aFxOaYcllWYkCfVYQJFs0 .DialogHeader {
@@ -59596,7 +59633,7 @@ input[type=color]::-webkit-color-swatch {
 }
 
 .MillenniumSettings .aFxOaYcllWYkCfVYQJFs0 div {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
 }
 
 .MillenniumSettings .MillenniumLogs_ControlSection .MillenniumLogs_HeaderTextTypeContainer {
@@ -59612,7 +59649,7 @@ input[type=color]::-webkit-color-swatch {
 }
 
 .MillenniumSettings .aFxOaYcllWYkCfVYQJFs0 > div:last-of-type > div {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
   margin: 0px !important;
 }
 
@@ -59871,8 +59908,6 @@ span[title="Unfold line"]::after {
   padding: 0 2px !important;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------ */
-/* SIDEBAR ---------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* ACTIVATE GAME ---------------------------------------------------------------------------------------------------- */
 /* HEADER */
@@ -61330,10 +61365,6 @@ span[title="Unfold line"]::after {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* REMOTE PLAY ------------------------------------------------------------------------------------------------------ */
-._1mfQu39T7gxcr0KSHso6_A .DialogBody.aFxOaYcllWYkCfVYQJFs0 {
-  padding: 16px !important;
-}
-
 ._2SwH92Kuhm2Kw8_VHMFHcy {
   margin: 0px !important;
   padding: 0px !important;
@@ -61747,7 +61778,7 @@ img._3XZsWYaYpPd4DZvwdZqRLw {
 
 ._2TAQYpbxatDYN3Ex76KX5u .DialogBody .DialogBodyText ._7jaC6UFFrvcKq2UlJr1Pb .Cw--cBWy7v1Ey1JF0VkBN.DesktopUI,
 .DesktopUI ._2TAQYpbxatDYN3Ex76KX5u .DialogBody .DialogBodyText ._7jaC6UFFrvcKq2UlJr1Pb .Cw--cBWy7v1Ey1JF0VkBN {
-  border-radius: var(--zehn-size-radius-none) !important;
+  border-radius: var(--zehn-size-dialog-inset-radius) !important;
   background: var(--zehn-color-dialog-inset) !important;
 }
 
@@ -64069,6 +64100,7 @@ button._3XdPuZMoLA5gthq09dqcSe._3XdPuZMoLA5gthq09dqcSe ._7uqoPx5Q7bdrbtNEh3iZn .
 .eKmEXJCm_lgme24Fp_HWt ._2o2fXzn99OddeqZMjbDuxQ {
   gap: var(--zehn-size-spacing-xs) !important;
   flex-direction: column !important;
+  min-width: var(--zehn-size-dropdown-dialog-width) !important;
 }
 
 /* VOCIE MUTE SETTINGS */
