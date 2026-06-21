@@ -1341,11 +1341,12 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 // MILLENNIUM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // SETTINGS FLYOUT HEADER
-._34nl5vUoFCDYYnmHNL7axB button.DialogButton.MillenniumIconButton.Secondary {
+.MillenniumDesktopSidebar_Title button.DialogButton.MillenniumIconButton {
   @include template.preset-fixed(
-    $height: var(--zehn-size-button-md),
-    $width: var(--zehn-size-button-md),
-    $disabled: ".Disabled"
+    $height: var(--title-height),
+    $width: var(--title-height),
+    $disabled: ".Disabled",
+    $style: "dialog"
   );
 }
 
@@ -2272,18 +2273,28 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 }
 
 // CONTEXT MENU
-.extendium.Extensions ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button {
+.extendium.useBrowserViewContextMenu ._1aw7cA3mAZfWt8idAlVJWi ._2o2fXzn99OddeqZMjbDuxQ button {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: var(--zehn-size-button-md),
-    $style: "dialog"
+    $shape: "circular"
   );
 }
 
 /* EXTENSION MANAGER */
-.root-buttons button.DialogButton {
+.root-buttons>button.DialogButton {
     @include template.preset-dynamic(
     $height: var(--zehn-size-button-lg),
+    $style: "dialog"
+  );
+
+  flex: 1 !important;
+}
+
+.root-buttons>div>button.DialogButton {
+    @include template.preset-fixed(
+    $height: var(--zehn-size-button-lg),
+    $width: var(--zehn-size-button-lg),
     $style: "dialog"
   );
 }
