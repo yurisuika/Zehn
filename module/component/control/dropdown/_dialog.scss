@@ -234,7 +234,7 @@ select,
 }
 
 .DialogContent.GenericConfirmDialog ._2X6Uf9dpYzWmrq3hGfefrI.d8HHRXZEfFuJ2DRCJXitQ svg,
-._2o2fXzn99OddeqZMjbDuxQ:has(select)::after,
+div:has(>select)::after,
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu,
 .v8oJcDOQF6xmlVTw4VhOr.DialogButton._DialogLayout.cXzBZxhPBl7fZs9LODEnc ._3OHR1e3u08hK7hMx4fFy_L .DialogDropDown_CurrentDisplay~svg,
 .DialogContent.GenericConfirmDialog .zeGUOeW3Cat4UJGCGwXPZ svg {
@@ -252,7 +252,11 @@ select,
 }
 
 // FAKE A CHEVRON IN WRAPPED SELECT
-._2o2fXzn99OddeqZMjbDuxQ:has(select)::after {
+div:has(>select) {
+  position: relative !important;
+}
+
+div:has(>select)::after {
   content: "";
   display: block;
   position: absolute;
