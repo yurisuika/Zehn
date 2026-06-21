@@ -57,7 +57,7 @@ async function setRandomWaifu(list) {
     console.warn(candidate + ' is not a valid waifu, attempting to find another...');
   }
 
-  console.warn('No valid waifus found!');
+  console.warn('No valid waifu found!');
 };
 
 function imageLoads(src, timeout = 5000) {

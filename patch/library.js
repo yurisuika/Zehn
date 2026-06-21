@@ -59,6 +59,14 @@ Zehn.revealSelf('._3B8wRA4H7e_oSksYNqpSPv');
 Zehn.revealSelf('._25gii5r23MmAqXvLZj24tK');
 Zehn.revealSelf('._3k90ug209sE23xAMqcM74s');
 
+/* REVEAL EXTENDIUM MENU -------------------------------------------------------------------------------------------- */
+
+Zehn.addRevealClass('.extendium-toolbar-manager-context-menu', [
+  '.eKmEXJCm_lgme24Fp_HWt' // CONTEXT ENTRY
+]);
+
+Zehn.revealSelf('.extendium-toolbar-manager-context-menu .eKmEXJCm_lgme24Fp_HWt.zehnReveal');
+
 /* RECALCULATE GRID SPACERS ----------------------------------------------------------------------------------------- */
 
 function recalculateGrid() {
