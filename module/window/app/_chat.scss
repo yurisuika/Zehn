@@ -1307,6 +1307,19 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   display: none !important;
 }
 
+// BUTTONS ORDER
+.zehnToggleSettingsButtons {
+  order: 70;
+}
+
+.zehnToggleChannelList {
+  order: 80;
+}
+
+.MemberListOption.ToggleMemberListView {
+  order: 90 !important;
+}
+
 // BUTTON ICONS
 .chatRoomButton.ManageNotifications svg {
   -webkit-mask-image: var(--zehn-icon-notification) !important;
@@ -1320,10 +1333,30 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   -webkit-mask-image: var(--zehn-icon-settings) !important;
 }
 
+// TOGGLE BUTTONS AND CHANNEL LIST
+.zehnToggleChannelList .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-channels);
+}
+
+.zehnToggleSettingsButtons .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-more);
+}
+
+.zehnToggled.zehnToggleChannelList::after,
+.zehnToggled.zehnToggleSettingsButtons::after {
+  content: "";
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+  display: block;
+  position: absolute;
+}
+
 // TOGGLE MEMBER LIST (MOVED FROM LIST COLUMN)
 .MemberListOption.ToggleMemberListView {
   position: relative !important;
-  order: 80 !important;
 }
 
 .MemberListOption .SVGIcon_DoubleArrow {
@@ -2965,13 +2998,19 @@ span.mention.me {
   font-family: var(--zehn-font-family-mono) !important;
   color: var(--zehn-color-code-text) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  font-size: inherit !important;
+  font-size: var(--chat-scale-sub) !important;
   margin: 0px !important;
   padding: var(--zehn-size-code-padding) !important;
   background: var(--zehn-color-code-background) !important;
   border-radius: var(--zehn-size-code-radius) !important;
   border: none !important;
   max-width: fit-content !important;
+  caret-color: var(--zehn-color-code-cursor) !important;
+
+  span::selection {
+    color: var(--zehn-color-code-selection) !important;
+    background-color: var(--zehn-color-code-selection-background) !important;
+  }
 }
 
 ._3_ZYN6D580G5urr8K_TtLP .pln {

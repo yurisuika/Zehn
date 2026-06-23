@@ -179,6 +179,11 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   transition: none !important;
 }
 
+// TOGGLE DISPLAY
+#zehnToggleFriendsHeader .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-navigation);
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -460,7 +465,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .dropTargetBox {
   border-radius: var(--zehn-size-radius-none) !important;
   border: none !important;
-  background: var(--zehn-color-accent-10) !important; 
+  background: var(--zehn-color-drop-target) !important; 
   transform: none !important;
   margin: 0px !important;
   inset: 0px !important;
@@ -802,6 +807,17 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   position: absolute;
 }
 
+#zehnToggleUser.zehnToggled::after {
+  content: "";
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+  display: block;
+  position: absolute;
+}
+
 // ICONS
 .friendsTabButtonsContainer .TabSearchButton .SVGIcon_MagnifyingGlass {
   -webkit-mask-image: var(--zehn-icon-contact-search) !important;
@@ -813,6 +829,14 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 .addFriendButton .SVGIcon_AddFriend {
   -webkit-mask-image: var(--zehn-icon-contact-add) !important;
+}
+
+#zehnToggleExpandedNavbar .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-more);
+}
+
+#zehnToggleUser .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-profile);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
