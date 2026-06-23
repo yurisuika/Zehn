@@ -891,6 +891,25 @@ button.TextButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disable
   color: var(--zehn-color-title-disabled) !important;
 }
 
+.zehnButton {
+  position: relative;
+  cursor: pointer;
+  appearance: unset;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  -webkit-app-region: no-drag;
+  pointer-events: all;
+}
+
+.zehnIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 button {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -23657,103 +23676,6 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton:is(.Disabled, .Disabled:focus, .Disa
   --icon-color: var(--zehn-color-button-dialog-icon-disabled);
 }
 
-.zehnButton {
-  position: relative;
-  cursor: pointer;
-  appearance: unset;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  -webkit-app-region: no-drag;
-  pointer-events: all;
-}
-
-.zehnIconContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-#zehnToggleWhatsNew .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-chevron-down);
-}
-
-#zehnToggleWhatsNew.zehnToggled .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-chevron-up);
-}
-
-.zehnToggleDetails.zehnToggled::after,
-.zehnToggleCommunity.zehnToggled::after,
-.zehnToggleActivity.zehnToggled::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: var(--zehn-size-focusbar-spacing);
-  left: var(--zehn-size-focusbar-spacing);
-  right: var(--zehn-size-focusbar-spacing);
-  height: var(--zehn-size-focusbar);
-  background-color: var(--zehn-color-focusbar);
-}
-
-.zehnToggleDetails .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-graph);
-}
-
-.zehnToggleCommunity .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-picture);
-}
-
-.zehnToggleActivity .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-event);
-}
-
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity,
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity,
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails {
-  background-color: var(--zehn-color-button-app-background-disabled) !important;
-  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
-  pointer-events: none !important;
-}
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity.zehnReveal::before,
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity.zehnReveal::before,
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails.zehnReveal::before {
-  opacity: 0;
-}
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity::after,
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity::after,
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails::after {
-  background-color: var(--zehn-color-focusbar-disabled);
-}
-
-.zehnToggleGameLinks .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-globe-stand);
-}
-
-.zehnToggled.zehnToggleGameLinks::after {
-  content: "";
-  bottom: var(--zehn-size-focusbar-spacing);
-  left: var(--zehn-size-focusbar-spacing);
-  right: var(--zehn-size-focusbar-spacing);
-  height: var(--zehn-size-focusbar);
-  background-color: var(--zehn-color-focusbar);
-  display: block;
-  position: absolute;
-}
-
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks {
-  background-color: var(--zehn-color-button-app-background-disabled) !important;
-  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
-  pointer-events: none !important;
-}
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks.zehnReveal::before {
-  opacity: 0;
-}
-._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks::after {
-  background-color: var(--zehn-color-focusbar-disabled);
-}
-
 .DialogCheckbox_Container,
 .DialogCheckbox_Container.Disabled {
   padding: 0px !important;
@@ -34425,7 +34347,7 @@ img._3XZsWYaYpPd4DZvwdZqRLw {
   display: none !important;
 }
 
-._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3,
+._3pSPluBgf0NeR1kkCLWMhR,
 ._3pSPluBgf0NeR1kkCLWMhR._30KGSfPjPskFlnrSxBfkiK {
   color: inherit !important;
   border: unset !important;
@@ -50643,6 +50565,14 @@ html.touch ._3notzMjxQtogi11XHZMYXI .VI5mZtnq0CL7fw_2mxhfm,
   -webkit-mask-image: var(--zehn-icon-more) !important;
 }
 
+#zehnToggleWhatsNew .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-chevron-down);
+}
+
+#zehnToggleWhatsNew.zehnToggled .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-chevron-up);
+}
+
 /* WHAT'S NEW ARROWS */
 .bsNegRKT1Hbv4tqHrOk9- {
   margin: 0px !important;
@@ -53415,6 +53345,76 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb._1qG6xUlNu-qvdhpSxwed5 {
 /* RIGHT CONTROLS */
 ._1EAxK56o5a9Nieu5HYkJ4k {
   margin: 0px 0px 0px auto !important;
+}
+
+.zehnToggleDetails.zehnToggled::after,
+.zehnToggleCommunity.zehnToggled::after,
+.zehnToggleActivity.zehnToggled::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+}
+
+.zehnToggleDetails .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-graph);
+}
+
+.zehnToggleCommunity .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-picture);
+}
+
+.zehnToggleActivity .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-event);
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails {
+  background-color: var(--zehn-color-button-app-background-disabled) !important;
+  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
+  pointer-events: none !important;
+}
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity.zehnReveal::before,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity.zehnReveal::before,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails.zehnReveal::before {
+  opacity: 0;
+}
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity::after,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity::after,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails::after {
+  background-color: var(--zehn-color-focusbar-disabled);
+}
+
+.zehnToggleGameLinks .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-globe-stand);
+}
+
+.zehnToggled.zehnToggleGameLinks::after {
+  content: "";
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+  display: block;
+  position: absolute;
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks {
+  background-color: var(--zehn-color-button-app-background-disabled) !important;
+  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
+  pointer-events: none !important;
+}
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks.zehnReveal::before {
+  opacity: 0;
+}
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks::after {
+  background-color: var(--zehn-color-focusbar-disabled);
 }
 
 .lO1IF132jJ1gc9yz2HYvV ._3qDWQGB0rtwM3qpXTb11Q-._1oYt_BfxCHnA-_6sfUHiNn svg {
