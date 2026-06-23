@@ -1309,6 +1309,15 @@
   -webkit-mask-image: var(--zehn-icon-more) !important;
 }
 
+// TOGGLE WHAT'S NEW
+#zehnToggleWhatsNew .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-chevron-down);
+}
+
+#zehnToggleWhatsNew.zehnToggled .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-chevron-up);
+}
+
 /* WHAT'S NEW ARROWS */
 .bsNegRKT1Hbv4tqHrOk9- {
   margin: 0px !important;
@@ -4103,6 +4112,79 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb._1qG6xUlNu-qvdhpSxwed5 {
   margin: 0px 0px 0px auto !important;
 }
 
+// PAGE TOGGLES
+.zehnToggleDetails.zehnToggled::after,
+.zehnToggleCommunity.zehnToggled::after,
+.zehnToggleActivity.zehnToggled::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+}
+
+.zehnToggleDetails .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-graph);
+}
+
+.zehnToggleCommunity .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-picture);
+}
+
+.zehnToggleActivity .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-event);
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithActivity) .zehnToggleActivity,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithCommunity) .zehnToggleCommunity,
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithDetails) .zehnToggleDetails {
+  background-color: var(--zehn-color-button-app-background-disabled) !important;
+  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
+  pointer-events: none !important;
+
+  &.zehnReveal::before {
+    opacity: 0;
+  }
+
+  &::after {
+    background-color: var(--zehn-color-focusbar-disabled);
+  }
+}
+
+// GAME LINKS TOGGLE
+.zehnToggleGameLinks .zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-globe-stand);
+}
+
+.zehnToggled.zehnToggleGameLinks::after {
+  content: "";
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+  display: block;
+  position: absolute;
+}
+
+._2Dd4T78PcCTUVgOtDGFY5j:not(.zehnWithGameLinks) .zehnToggleGameLinks {
+  background-color: var(--zehn-color-button-app-background-disabled) !important;
+  --icon-color: var(--zehn-color-button-app-icon-disabled) !important;
+  pointer-events: none !important;
+
+  &.zehnReveal::before {
+    opacity: 0;
+  }
+
+  &::after {
+    background-color: var(--zehn-color-focusbar-disabled);
+  }
+}
+
+// ICONS
 .lO1IF132jJ1gc9yz2HYvV ._3qDWQGB0rtwM3qpXTb11Q-._1oYt_BfxCHnA-_6sfUHiNn svg {
   -webkit-mask-image: var(--zehn-icon-controller-settings) !important;
 }
