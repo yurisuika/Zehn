@@ -330,10 +330,6 @@ Zehn.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', [
   '._1PgAonvorr0o_NMxNKiDFU ._3mzKdQXht__YHo6PX1LmB6' // FILTER CONTROLS
 ]);
 
-/* MOVE SHOW ALL COLLECTIONS FROM HIDDEN BUTTON --------------------------------------------------------------------- */
-
-Zehn.createTitleContainer('.QsvsRVwbsApgKt1MhM0fz', '._2Q95p8Q2cZFieeOi06-FS9', ['#zehnShowAll']);
-
 /* MOVE BROWSER TABS INTO TITLEBAR ---------------------------------------------------------------------------------- */
 
 Zehn.movePrepend('._1UJDmU3N-pkv7oTJ_Zf9nK', '.TabbedPopupBrowser .TitleBar.title-area', [
@@ -437,11 +433,11 @@ Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
 
 /* REVEAL SIDEBAR SHOW ALL ------------------------------------------------------------------------------------------ */
 
-Zehn.addRevealClass('._2Q95p8Q2cZFieeOi06-FS9 ', [
-  '#zehnShowAll' // BUTTON
+Zehn.addRevealClass('._3x1HklzyDs4TEjACrRO2tB', [
+  '._2Q95p8Q2cZFieeOi06-FS9' // BUTTON
 ]);
 
-Zehn.revealSelf('#zehnShowAll');
+Zehn.revealSelf('._2Q95p8Q2cZFieeOi06-FS9');
 
 /* REVEAL SIDEBAR GAME LIST ----------------------------------------------------------------------------------------- */
 
