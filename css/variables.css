@@ -103,11 +103,17 @@
   --zehn-rgb-gray: 127, 127, 127;
   --zehn-rgb-black: 0, 0, 0;
 
-  --zehn-color-white: color-mix(in var(--zehn-color-space), rgb(var(--zehn-rgb-white)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
-  --zehn-color-black: color-mix(in var(--zehn-color-space), rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-white: rgb(var(--zehn-rgb-white));
+  --zehn-color-black: rgb(var(--zehn-rgb-black));
+  --zehn-color-white-bg: color-mix(in var(--zehn-color-space), rgb(var(--zehn-rgb-white)), rgb(var(--zehn-rgb-background)) var(--zehn-foreground-color-mix));
+  --zehn-color-black-bg: color-mix(in var(--zehn-color-space), rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-background)) var(--zehn-foreground-color-mix));
+  --zehn-color-white-fg: color-mix(in var(--zehn-color-space), rgb(var(--zehn-rgb-white)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-black-fg: color-mix(in var(--zehn-color-space), rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
 
-  --zehn-color-positive: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-white)), rgb(var(--zehn-rgb-black))), rgb(var(--zehn-rgb-background)) var(--zehn-background-color-mix));
-  --zehn-color-negative: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-background)) var(--zehn-background-color-mix));
+  --zehn-color-positive-bg: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-white)), rgb(var(--zehn-rgb-black))), rgb(var(--zehn-rgb-background)) var(--zehn-background-color-mix));
+  --zehn-color-negative-bg: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-background)) var(--zehn-background-color-mix));
+  --zehn-color-positive-fg: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-white)), rgb(var(--zehn-rgb-black))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-negative-fg: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
 
   --zehn-color-border: color-mix(in var(--zehn-color-space), rgba(85, 85, 85, 0.5), rgba(var(--zehn-rgb-background), 0.5) var(--zehn-background-color-mix));
   --zehn-color-border-focus: var(--zehn-show-accent-color-on-window-borders);
@@ -254,7 +260,7 @@
   --zehn-color-button-dialog-background-active-focus: var(--zehn-color-button-dialog-background-active);
   --zehn-color-button-dialog-background-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
   --zehn-color-button-dialog-background-selected: var(--zehn-color-accent);
-  --zehn-color-button-dialog-background-selected-focus: var(--zehn-color-button-dialog-selected-background);
+  --zehn-color-button-dialog-background-selected-focus: var(--zehn-color-button-dialog-background-selected);
   --zehn-color-button-dialog-background-selected-hover: var(--zehn-color-accent);
   --zehn-color-button-dialog-background-selected-hover-focus: var(--zehn-color-button-dialog-background-selected-hover);
   --zehn-color-button-dialog-background-selected-active: var(--zehn-color-accent);
@@ -325,7 +331,7 @@
   --zehn-color-button-app-background-active-focus: var(--zehn-color-button-app-background-active);
   --zehn-color-button-app-background-disabled: transparent;
   --zehn-color-button-app-background-selected: var(--zehn-color-accent);
-  --zehn-color-button-app-background-selected-focus: var(--zehn-color-button-app-selected-background);
+  --zehn-color-button-app-background-selected-focus: var(--zehn-color-button-app-background-selected);
   --zehn-color-button-app-background-selected-hover: var(--zehn-color-accent);
   --zehn-color-button-app-background-selected-hover-focus: var(--zehn-color-button-app-background-selected-hover);
   --zehn-color-button-app-background-selected-active: var(--zehn-color-accent);
@@ -588,9 +594,9 @@
   --zehn-color-button-close-text-other-selected-disabled: var(--zehn-color-button-close-text-other-disabled);
   --zehn-color-button-close-icon: var(--zehn-color-icon1);
   --zehn-color-button-close-icon-focus: var(--zehn-color-button-close-icon);
-  --zehn-color-button-close-icon-hover: var(--zehn-color-white);
+  --zehn-color-button-close-icon-hover: var(--zehn-color-white-fg);
   --zehn-color-button-close-icon-hover-focus: var(--zehn-color-button-close-icon-hover);
-  --zehn-color-button-close-icon-active: var(--zehn-color-black);
+  --zehn-color-button-close-icon-active: var(--zehn-color-black-fg);
   --zehn-color-button-close-icon-active-focus: var(--zehn-color-button-close-icon-active);
   --zehn-color-button-close-icon-disabled: var(--zehn-color-icon4);
   --zehn-color-button-close-icon-selected: var(--zehn-color-button-close-icon);
@@ -629,11 +635,11 @@
   --zehn-color-button-return-border-selected-active: var(--zehn-color-button-return-border-active);
   --zehn-color-button-return-border-selected-active-focus: var(--zehn-color-button-return-border-selected-active);
   --zehn-color-button-return-border-selected-disabled: var(--zehn-color-button-return-border-disabled);
-  --zehn-color-button-return-text: var(--zehn-color-white);
+  --zehn-color-button-return-text: var(--zehn-color-white-fg);
   --zehn-color-button-return-text-focus: var(--zehn-color-button-return-text);
-  --zehn-color-button-return-text-hover: var(--zehn-color-white);
+  --zehn-color-button-return-text-hover: var(--zehn-color-white-fg);
   --zehn-color-button-return-text-hover-focus: var(--zehn-color-button-return-text-hover);
-  --zehn-color-button-return-text-active: var(--zehn-color-white);
+  --zehn-color-button-return-text-active: var(--zehn-color-white-fg);
   --zehn-color-button-return-text-active-focus: var(--zehn-color-button-return-text-active);
   --zehn-color-button-return-text-disabled: var(--zehn-color-text4);
   --zehn-color-button-return-text-selected: var(--zehn-color-button-return-text);
@@ -657,11 +663,11 @@
   --zehn-color-button-return-text-other-selected-active: var(--zehn-color-button-return-text-other-active);
   --zehn-color-button-return-text-other-selected-active-focus: var(--zehn-color-button-return-text-other-selected-active);
   --zehn-color-button-return-text-other-selected-disabled: var(--zehn-color-button-return-text-other-disabled);
-  --zehn-color-button-return-icon: var(--zehn-color-white);
+  --zehn-color-button-return-icon: var(--zehn-color-white-fg);
   --zehn-color-button-return-icon-focus: var(--zehn-color-button-return-icon);
-  --zehn-color-button-return-icon-hover: var(--zehn-color-white);
+  --zehn-color-button-return-icon-hover: var(--zehn-color-white-fg);
   --zehn-color-button-return-icon-hover-focus: var(--zehn-color-button-return-icon-hover);
-  --zehn-color-button-return-icon-active: var(--zehn-color-white);
+  --zehn-color-button-return-icon-active: var(--zehn-color-white-fg);
   --zehn-color-button-return-icon-active-focus: var(--zehn-color-button-return-icon-active);
   --zehn-color-button-return-icon-disabled: var(--zehn-color-icon4);
   --zehn-color-button-return-icon-selected: var(--zehn-color-button-return-icon);
@@ -671,6 +677,77 @@
   --zehn-color-button-return-icon-selected-active: var(--zehn-color-button-return-icon-active);
   --zehn-color-button-return-icon-selected-active-focus: var(--zehn-color-button-return-icon-selected-active);
   --zehn-color-button-return-icon-selected-disabled: var(--zehn-color-button-return-icon-disabled);
+
+  --zehn-color-button-music-background: transparent;
+  --zehn-color-button-music-background-focus: var(--zehn-color-button-music-background);
+  --zehn-color-button-music-background-hover: transparent;
+  --zehn-color-button-music-background-hover-focus: var(--zehn-color-button-music-background-hover);
+  --zehn-color-button-music-background-active: transparent;
+  --zehn-color-button-music-background-active-focus: var(--zehn-color-button-music-background-active);
+  --zehn-color-button-music-background-disabled: transparent;
+  --zehn-color-button-music-background-selected: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-white), 0.5), rgba(var(--zehn-rgb-black), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
+  --zehn-color-button-music-background-selected-focus: var(--zehn-color-button-music-background-selected);
+  --zehn-color-button-music-background-selected-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-white), 0.5), rgba(var(--zehn-rgb-black), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
+  --zehn-color-button-music-background-selected-hover-focus: var(--zehn-color-button-music-background-selected-hover);
+  --zehn-color-button-music-background-selected-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-white), 0.5), rgba(var(--zehn-rgb-black), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
+  --zehn-color-button-music-background-selected-active-focus: var(--zehn-color-button-music-background-selected-active);
+  --zehn-color-button-music-background-selected-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-white), 0.5), rgba(var(--zehn-rgb-black), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
+  --zehn-color-button-music-border: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
+  --zehn-color-button-music-border-focus: var(--zehn-color-button-music-border);
+  --zehn-color-button-music-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
+  --zehn-color-button-music-border-hover-focus: var(--zehn-color-button-music-border-hover);
+  --zehn-color-button-music-border-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
+  --zehn-color-button-music-border-active-focus: var(--zehn-color-button-music-border);
+  --zehn-color-button-music-border-disabled: transparent;
+  --zehn-color-button-music-border-selected: var(--zehn-color-button-music-border);
+  --zehn-color-button-music-border-selected-focus: var(--zehn-color-button-music-border-selected);
+  --zehn-color-button-music-border-selected-hover: var(--zehn-color-button-music-border-hover);
+  --zehn-color-button-music-border-selected-hover-focus: var(--zehn-color-button-music-border-selected-hover);
+  --zehn-color-button-music-border-selected-active: var(--zehn-color-button-music-border-active);
+  --zehn-color-button-music-border-selected-active-focus: var(--zehn-color-button-music-border-selected-active);
+  --zehn-color-button-music-border-selected-disabled: var(--zehn-color-button-music-border-disabled);
+  --zehn-color-button-music-text: var(--zehn-color-text1);
+  --zehn-color-button-music-text-focus: var(--zehn-color-button-music-text);
+  --zehn-color-button-music-text-hover: var(--zehn-color-text1);
+  --zehn-color-button-music-text-hover-focus: var(--zehn-color-button-music-text-hover);
+  --zehn-color-button-music-text-active: var(--zehn-color-text2);
+  --zehn-color-button-music-text-active-focus: var(--zehn-color-button-music-text-active);
+  --zehn-color-button-music-text-disabled: var(--zehn-color-text4);
+  --zehn-color-button-music-text-selected: var(--zehn-color-button-music-text);
+  --zehn-color-button-music-text-selected-focus: var(--zehn-color-button-music-text-selected);
+  --zehn-color-button-music-text-selected-hover: var(--zehn-color-button-music-text-hover);
+  --zehn-color-button-music-text-selected-hover-focus: var(--zehn-color-button-music-text-selected-hover);
+  --zehn-color-button-music-text-selected-active: var(--zehn-color-button-music-text-active);
+  --zehn-color-button-music-text-selected-active-focus: var(--zehn-color-button-music-text-selected-active);
+  --zehn-color-button-music-text-selected-disabled: var(--zehn-color-button-music-text-disabled);
+  --zehn-color-button-music-text-other: var(--zehn-color-text3);
+  --zehn-color-button-music-text-other-focus: var(--zehn-color-button-music-text);
+  --zehn-color-button-music-text-other-hover: var(--zehn-color-text3);
+  --zehn-color-button-music-text-other-hover-focus: var(--zehn-color-button-music-text-hover);
+  --zehn-color-button-music-text-other-active: var(--zehn-color-text3);
+  --zehn-color-button-music-text-other-active-focus: var(--zehn-color-button-music-text-active);
+  --zehn-color-button-music-text-other-disabled: var(--zehn-color-text4);
+  --zehn-color-button-music-text-other-selected: var(--zehn-color-button-music-text-other);
+  --zehn-color-button-music-text-other-selected-focus: var(--zehn-color-button-music-text-other-selected);
+  --zehn-color-button-music-text-other-selected-hover: var(--zehn-color-button-music-text-other-hover);
+  --zehn-color-button-music-text-other-selected-hover-focus: var(--zehn-color-button-music-text-other-selected-hover);
+  --zehn-color-button-music-text-other-selected-active: var(--zehn-color-button-music-text-other-active);
+  --zehn-color-button-music-text-other-selected-active-focus: var(--zehn-color-button-music-text-other-selected-active);
+  --zehn-color-button-music-text-other-selected-disabled: var(--zehn-color-button-music-text-other-disabled);
+  --zehn-color-button-music-icon: var(--zehn-color-icon1);
+  --zehn-color-button-music-icon-focus: var(--zehn-color-button-music-icon);
+  --zehn-color-button-music-icon-hover: var(--zehn-color-icon1);
+  --zehn-color-button-music-icon-hover-focus: var(--zehn-color-button-music-icon-hover);
+  --zehn-color-button-music-icon-active: var(--zehn-color-icon2);
+  --zehn-color-button-music-icon-active-focus: var(--zehn-color-button-music-icon-active);
+  --zehn-color-button-music-icon-disabled: var(--zehn-color-icon4);
+  --zehn-color-button-music-icon-selected: var(--zehn-color-button-music-icon);
+  --zehn-color-button-music-icon-selected-focus: var(--zehn-color-button-music-icon-selected);
+  --zehn-color-button-music-icon-selected-hover: var(--zehn-color-button-music-icon-hover);
+  --zehn-color-button-music-icon-selected-hover-focus: var(--zehn-color-button-music-icon-selected-hover);
+  --zehn-color-button-music-icon-selected-active: var(--zehn-color-button-music-icon-active);
+  --zehn-color-button-music-icon-selected-active-focus: var(--zehn-color-button-music-icon-selected-active);
+  --zehn-color-button-music-icon-selected-disabled: var(--zehn-color-button-music-icon-disabled);
 
   --zehn-color-dropdown-dialog-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-white), 0.4), rgba(var(--zehn-rgb-black), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
   --zehn-color-dropdown-dialog-background-focus: var(--zehn-color-dropdown-dialog-background);
@@ -947,9 +1024,9 @@
   --zehn-color-checkbox-media-border-on-disabled: transparent;
   --zehn-color-checkbox-media-outline-off: color-mix(in var(--zehn-color-space), rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
   --zehn-color-checkbox-media-outline-off-focus: var(--zehn-color-checkbox-media-outline-off);
-  --zehn-color-checkbox-media-outline-off-hover: color-mix(in var(--zehn-color-space), var(--zehn-color-black), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-checkbox-media-outline-off-hover: color-mix(in var(--zehn-color-space), var(--zehn-color-black-fg), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-checkbox-media-outline-off-hover-focus: var(--zehn-color-checkbox-media-outline-off-hover);
-  --zehn-color-checkbox-media-outline-off-active: color-mix(in var(--zehn-color-space), var(--zehn-color-black), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-checkbox-media-outline-off-active: color-mix(in var(--zehn-color-space), var(--zehn-color-black-fg), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-checkbox-media-outline-off-active-focus: var(--zehn-color-checkbox-media-outline-off-active);
   --zehn-color-checkbox-media-outline-off-disabled: color-mix(in var(--zehn-color-space), rgb(204, 204, 204), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-checkbox-media-outline-on: var(--zehn-color-accent);
@@ -1035,14 +1112,58 @@
   --zehn-color-switch-toggle-on-active: color-mix(in var(--zehn-color-space), rgb(var(--zehn-rgb-white)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-switch-toggle-on-disabled: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
 
-  --zehn-color-slider-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
-  --zehn-color-slider-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.6), rgba(var(--zehn-rgb-white), 0.6)), rgba(var(--zehn-rgb-foreground), 0.6) var(--zehn-foreground-color-mix));
-  --zehn-color-slider-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
-  --zehn-color-slider-handle: var(--zehn-color-accent);
-  --zehn-color-slider-handle-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
-  --zehn-color-slider-handle-active: color-mix(in var(--zehn-color-space), light-dark(rgb(204, 204, 204), rgb(118, 118, 118)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
-  --zehn-color-slider-track: var(--zehn-color-accent);
-  --zehn-color-slider-tick: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-generic-track-empty: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-generic-track-empty-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.6), rgba(var(--zehn-rgb-white), 0.6)), rgba(var(--zehn-rgb-foreground), 0.6) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-generic-track-empty-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-generic-track-filled: var(--zehn-color-accent);
+  --zehn-color-slider-generic-track-filled-hover: var(--zehn-color-accent);
+  --zehn-color-slider-generic-track-filled-active: var(--zehn-color-accent);
+  --zehn-color-slider-generic-handle-background: var(--zehn-color-accent);
+  --zehn-color-slider-generic-handle-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-generic-handle-background-active: color-mix(in var(--zehn-color-space), light-dark(rgb(204, 204, 204), rgb(118, 118, 118)), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-generic-handle-border: transparent;
+  --zehn-color-slider-generic-handle-border-hover: transparent;
+  --zehn-color-slider-generic-handle-border-active: transparent;
+
+  --zehn-color-slider-generic-tick: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+
+  --zehn-color-slider-music-track-empty: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.25), rgba(var(--zehn-rgb-white), 0.25)), rgba(var(--zehn-rgb-foreground), 0.25) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-music-track-empty-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.25), rgba(var(--zehn-rgb-white), 0.25)), rgba(var(--zehn-rgb-foreground), 0.25) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-music-track-empty-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.25), rgba(var(--zehn-rgb-white), 0.25)), rgba(var(--zehn-rgb-foreground), 0.25) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-music-track-filled: var(--zehn-color-negative-fg);
+  --zehn-color-slider-music-track-filled-hover: var(--zehn-color-negative-fg);
+  --zehn-color-slider-music-track-filled-active: var(--zehn-color-negative-fg);
+  --zehn-color-slider-music-handle-background: transparent;
+  --zehn-color-slider-music-handle-background-hover: transparent;
+  --zehn-color-slider-music-handle-background-active: var(--zehn-color-negative-fg);
+  --zehn-color-slider-music-handle-border: var(--zehn-color-negative-fg);
+  --zehn-color-slider-music-handle-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.6), rgba(var(--zehn-rgb-white), 0.6)), rgba(var(--zehn-rgb-foreground), 0.6) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-music-handle-border-active: var(--zehn-color-negative-fg);
+
+  --zehn-color-slider-video-track-empty: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-video-track-empty-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-video-track-empty-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-video-track-filled: var(--zehn-color-accent);
+  --zehn-color-slider-video-track-filled-hover: var(--zehn-color-accent);
+  --zehn-color-slider-video-track-filled-active: var(--zehn-color-accent);
+  --zehn-color-slider-video-handle-background: transparent;
+  --zehn-color-slider-video-handle-background-hover: transparent;
+  --zehn-color-slider-video-handle-background-active: transparent;
+  --zehn-color-slider-video-handle-border: var(--zehn-color-accent);
+  --zehn-color-slider-video-handle-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+  --zehn-color-slider-video-handle-border-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.5), rgba(var(--zehn-rgb-white), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
+
+  --zehn-color-slider-video-buffer: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
+
+  --zehn-color-slider-video-tick: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
+
+  --zehn-color-slider-video-selection: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-fg1-light)), rgb(var(--zehn-rgb-fg1-dark))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
+
+  --zehn-color-slider-video-marker: var(--zehn-color-negative-fg);
+
+  --zehn-color-slider-video-control: var(--zehn-color-icon1);
+  --zehn-color-slider-video-control-hover: var(--zehn-color-icon1);
+  --zehn-color-slider-video-control-active: var(--zehn-color-icon1);
 
   --zehn-color-picker-border: transparent;
   --zehn-color-picker-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
@@ -1061,20 +1182,12 @@
   --zehn-color-table-header-content-hover: var(--zehn-color-text3);
   --zehn-color-table-header-content-active: var(--zehn-color-text4);
 
-  --zehn-color-music-list-odd: transparent;
-  --zehn-color-music-list-odd-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
-  --zehn-color-music-list-odd-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.35), rgba(var(--zehn-rgb-white), 0.35)), rgba(var(--zehn-rgb-foreground), 0.35) var(--zehn-foreground-color-mix));
-  --zehn-color-music-list-even: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.1), rgba(var(--zehn-rgb-white), 0.1)), rgba(var(--zehn-rgb-foreground), 0.1) var(--zehn-foreground-color-mix));
-  --zehn-color-music-list-even-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
-  --zehn-color-music-list-even-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.35), rgba(var(--zehn-rgb-white), 0.35)), rgba(var(--zehn-rgb-foreground), 0.35) var(--zehn-foreground-color-mix));
-  --zehn-color-music-button-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
-  --zehn-color-music-button-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
-  --zehn-color-music-button-background-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
-  --zehn-color-music-button-background-focus: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-white), 0.5), rgba(var(--zehn-rgb-black), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
-  --zehn-color-music-button-border: transparent;
-  --zehn-color-music-button-border-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.5), rgba(var(--zehn-rgb-white), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
-  --zehn-color-music-button-border-active: transparent;
-  --zehn-color-music-button-border-focus: transparent;
+  --zehn-color-playlist-odd: transparent;
+  --zehn-color-playlist-odd-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
+  --zehn-color-playlist-odd-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.35), rgba(var(--zehn-rgb-white), 0.35)), rgba(var(--zehn-rgb-foreground), 0.35) var(--zehn-foreground-color-mix));
+  --zehn-color-playlist-even: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.1), rgba(var(--zehn-rgb-white), 0.1)), rgba(var(--zehn-rgb-foreground), 0.1) var(--zehn-foreground-color-mix));
+  --zehn-color-playlist-even-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
+  --zehn-color-playlist-even-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.35), rgba(var(--zehn-rgb-white), 0.35)), rgba(var(--zehn-rgb-foreground), 0.35) var(--zehn-foreground-color-mix));
 
   --zehn-color-chat-background: transparent;
   --zehn-color-chat-background-hover: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.025), rgba(var(--zehn-rgb-white), 0.025)), rgba(var(--zehn-rgb-foreground), 0.025) var(--zehn-foreground-color-mix));
@@ -1102,7 +1215,7 @@
 
   --zehn-color-drop-target: var(--zehn-color-accent-10); 
 
-  --zehn-color-spinner: var(--zehn-color-negative);
+  --zehn-color-spinner: var(--zehn-color-negative-fg);
 
   --zehn-color-video: black;
 
@@ -1150,24 +1263,10 @@
   --zehn-color-progress-filled: var(--zehn-color-accent);
 
   --zehn-color-loading-background: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
-  --zehn-color-loading-foreground: var(--zehn-color-negative);
-
-  --zehn-color-timeline-empty: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
-  --zehn-color-timeline-filled: var(--zehn-color-accent);
-  --zehn-color-timeline-buffer: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
-  --zehn-color-timeline-handle: var(--zehn-color-accent);
-  --zehn-color-timeline-handle-hover: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-black)), rgb(var(--zehn-rgb-white))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
-  --zehn-color-timeline-handle-active: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.5), rgba(var(--zehn-rgb-white), 0.5)), rgba(var(--zehn-rgb-foreground), 0.5) var(--zehn-foreground-color-mix));
-  --zehn-color-timeline-selection: color-mix(in var(--zehn-color-space), light-dark(rgb(var(--zehn-rgb-fg1-light)), rgb(var(--zehn-rgb-fg1-dark))), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
-  --zehn-color-timeline-control: var(--zehn-color-icon1);
-  --zehn-color-timeline-control-hover: var(--zehn-color-icon1);
-  --zehn-color-timeline-control-active: var(--zehn-color-icon1);
-  --zehn-color-timeline-tick-major: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.4), rgba(var(--zehn-rgb-white), 0.4)), rgba(var(--zehn-rgb-foreground), 0.4) var(--zehn-foreground-color-mix));
-  --zehn-color-timeline-tick-minor: color-mix(in var(--zehn-color-space), light-dark(rgba(var(--zehn-rgb-black), 0.2), rgba(var(--zehn-rgb-white), 0.2)), rgba(var(--zehn-rgb-foreground), 0.2) var(--zehn-foreground-color-mix));
-  --zehn-color-timeline-marker: var(--zehn-color-negative);
+  --zehn-color-loading-foreground: var(--zehn-color-negative-fg);
 
   --zehn-color-scrollbar-unfocused: transparent;
-  --zehn-color-scrollbar-focused: color-mix(in var(--zehn-color-space), light-dark(rgba(230, 230, 230, 0.9), rgba(30, 30, 30, 0.9)), rgba(var(--zehn-rgb-foreground), 0.9) var(--zehn-foreground-color-mix));
+  --zehn-color-scrollbar-focused: color-mix(in var(--zehn-color-space), light-dark(rgba(230, 230, 230, 0.9), rgba(30, 30, 30, 0.9)), rgba(var(--zehn-rgb-background), 0.9) var(--zehn-background-color-mix));
   --zehn-color-scrollbar-thumb-unfocused: color-mix(in var(--zehn-color-space), rgb(133, 133, 133), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-scrollbar-thumb-unfocused-hover: color-mix(in var(--zehn-color-space), rgb(133, 133, 133), rgba(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
   --zehn-color-scrollbar-thumb-unfocused-active: color-mix(in var(--zehn-color-space), rgb(133, 133, 133), rgb(var(--zehn-rgb-foreground)) var(--zehn-foreground-color-mix));
@@ -1213,8 +1312,8 @@
 
 @media (prefers-contrast: more) {
   :root {
-    --zehn-color-border: var(---zehn-color-negative);
-    --zehn-color-border-focus: var(--zehn-color-negative);
+    --zehn-color-border: var(---zehn-color-negative-bg);
+    --zehn-color-border-focus: var(--zehn-color-negative-bg);
 
     --zehn-rgb-fg1-light: 255, 255, 255;
     --zehn-rgb-fg2-light: 0, 255, 0;
@@ -1243,7 +1342,7 @@
     --zehn-rgb-context-border-light: 255, 255, 255;
     --zehn-rgb-context-border-dark: 255, 255, 255;
 
-    --zehn-color-context-dropdown-border: var(---zehn-color-negative);
+    --zehn-color-context-dropdown-border: var(---zehn-color-negative-bg);
 
     --zehn-color-button-app-background-hover: var(--zehn-color-accent);
     --zehn-color-button-app-background-active: var(--zehn-color-accent);
@@ -1253,8 +1352,8 @@
     --zehn-color-list-background-hover: var(--zehn-color-accent);
     --zehn-color-list-background-active: var(--zehn-color-accent);
 
-    --zehn-color-separator: var(---zehn-color-negative);
-    --zehn-color-separator-context: var(---zehn-color-negative);
+    --zehn-color-separator: var(---zehn-color-negative-fg);
+    --zehn-color-separator-context: var(---zehn-color-negative-fg);
 
     --zehn-color-reveal: transparent;
     --zehn-color-reveal-border: transparent;
@@ -2498,6 +2597,11 @@
   --zehn-size-button-return-radius: var(--zehn-size-radius-none);
   --zehn-size-button-return-gap: 0px;
 
+  --zehn-size-button-music-border: 0px;
+  --zehn-size-button-music-border-large: 2px;
+  --zehn-size-button-music-radius: var(--zehn-size-radius-circular);
+  --zehn-size-button-music-gap: 0px;
+
   /* CHECKBOX BUTTONS */
   --zehn-size-checkbox: 20px;
   --zehn-size-checkbox-radius: var(--zehn-size-radius-none);
@@ -2598,17 +2702,45 @@
   --zehn-size-sorting-line: 100%;
 
   /* SLIDERS */
-  --zehn-size-slider-width: 400px;
-  --zehn-size-slider-width-sidebar: 300px;
-  --zehn-size-slider-width-volume: 200px;
-  --zehn-size-slider-track: 2px;
-  --zehn-size-slider-track-radius: var(--zehn-size-radius-none);
-  --zehn-size-slider-handle-height: 24px;
-  --zehn-size-slider-handle-width: 8px;
-  --zehn-size-slider-handle-radius: var(--zehn-size-radius-round);
-  --zehn-size-slider-marker: 24px;
-  --zehn-size-slider-tick-height: 4px;
-  --zehn-size-slider-tick-width: 2px;
+  --zehn-size-slider-generic-width: 400px;
+  --zehn-size-slider-generic-width-sidebar: 300px;
+  --zehn-size-slider-generic-width-volume: 200px;
+
+  --zehn-size-slider-generic-track: 2px;
+  --zehn-size-slider-generic-track-radius: var(--zehn-size-radius-none);
+  --zehn-size-slider-generic-handle-height: 24px;
+  --zehn-size-slider-generic-handle-width: 8px;
+  --zehn-size-slider-generic-handle-border: 0px;
+  --zehn-size-slider-generic-handle-radius: var(--zehn-size-radius-round);
+
+  --zehn-size-slider-generic-tick-height: 4px;
+  --zehn-size-slider-generic-tick-width: 2px;
+
+  --zehn-size-slider-generic-marker: 24px;
+
+  /* VIDEO */
+  --zehn-size-slider-video-track: 2px;
+  --zehn-size-slider-video-track-radius: var(--zehn-size-radius-none);
+  --zehn-size-slider-video-handle-height: 16px;
+  --zehn-size-slider-video-handle-width: 16px;
+  --zehn-size-slider-video-handle-border: 2px;
+  --zehn-size-slider-video-handle-radius: var(--zehn-size-radius-circular);
+
+  --zehn-size-slider-video-tick-height: 4px;
+  --zehn-size-slider-video-tick-width: 2px;
+
+  --zehn-size-slider-video-range: 2px;
+  --zehn-size-slider-video-range-grip: 12px;
+
+  --zehn-size-slider-video-control: 32px;
+
+  /* MUSIC */
+  --zehn-size-slider-music-track: 2px;
+  --zehn-size-slider-music-track-radius: var(--zehn-size-radius-none);
+  --zehn-size-slider-music-handle-height: 16px;
+  --zehn-size-slider-music-handle-width: 16px;
+  --zehn-size-slider-music-handle-border: 3px;
+  --zehn-size-slider-music-handle-radius: var(--zehn-size-radius-circular);
 
   /* PROGRESSBARS */
   --zehn-size-progressbar-width: 400px;
@@ -2625,17 +2757,6 @@
   --zehn-size-loading-md: 48px;
   --zehn-size-loading-lg: 64px;
   --zehn-size-loading-radius: var(--zehn-size-radius-circular);
-
-  /* TIMELINE */
-  --zehn-size-timeline: 2px;
-  --zehn-size-timeline-radius: var(--zehn-size-radius-none);
-  --zehn-size-timeline-handle: 16px;
-  --zehn-size-timeline-handle-border: 2px;
-  --zehn-size-timeline-control: 32px;
-  --zehn-size-timeline-tick-height: 4px;
-  --zehn-size-timeline-tick-width: 2px;
-  --zehn-size-timeline-range: 2px;
-  --zehn-size-timeline-range-grip: 12px;
 
   /* TEXT*/
   --zehn-size-text-page-title: 12px;
@@ -2773,6 +2894,9 @@
   --zehn-size-game-link-entry: 48px;
   --zehn-size-game-link-entry-padding: 16px 16px;
   --zehn-size-game-link-entry-line: 16px;
+
+  /* SOUNDTRACK */
+  --zehn-size-soundtrack-list: 48px;
 
   /* MODAL */
   --zehn-size-modal-radius: var(--zehn-size-radius-none);

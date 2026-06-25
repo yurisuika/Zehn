@@ -479,6 +479,14 @@ Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
 
 Zehn.revealInner('.UkR3sY319PuaUNuUWks2K');
 
+/* REVEAL SOUNDTRACK ------------------------------------------------------------------------------------------------ */
+
+Zehn.addRevealClass('._3DLyrg7YP5cNP9HKda62qd ._2U3M1lpKcsYHqfjiz77PQs', [
+  '._1iFnR7cGRa1kepep433pGx' // BUTTONS
+]);
+
+Zehn.revealInner('._3DLyrg7YP5cNP9HKda62qd ._2U3M1lpKcsYHqfjiz77PQs');
+
 /* REVEAL MEDIA LIBRARY --------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
