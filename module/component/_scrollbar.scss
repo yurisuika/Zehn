@@ -338,6 +338,12 @@ div[role=rowgroup] {
   overflow-y: auto;
 }
 
+// SOUNDTRACK
+._1c7FWVusLDkD_Lv6ZB0uTY ._22Q27ULX8FrTAxrt3fLxn1 ._1s3EpCtCwCVJ-7hbeqJeWw ._1Rrhq0ynyX66fxOi1wUNXv {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -362,47 +368,77 @@ div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:ve
 div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
-div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1Rrhq0ynyX66fxOi1wUNXv::-webkit-scrollbar-button:single-button:increment:vertical:window-inactive,
+div._1Rrhq0ynyX66fxOi1wUNXv::-webkit-scrollbar-button:single-button:increment:vertical:not(:window-inactive),
+div._1Rrhq0ynyX66fxOi1wUNXv:hover::-webkit-scrollbar-button:single-button:increment:vertical:not(:window-inactive) {
   display: block !important;
-  height: calc(var(--button-size) + var(--header-height)) !important;
-  max-height: calc(var(--button-size) + var(--header-height)) !important;
-  border-top: calc(var(--header-height)) solid var(--zehn-color-base) !important;
+  height: calc(var(--button-size) + var(--scroll-offset)) !important;
+  max-height: calc(var(--button-size) + var(--scroll-offset)) !important;
   background-clip: padding-box !important;
+}
+
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.FriendsListContent:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
+div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
+div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
+  border-top: calc(var(--scroll-offset)) solid var(--zehn-color-base) !important;
+}
+
+div._1Rrhq0ynyX66fxOi1wUNXv::-webkit-scrollbar-button:single-button:increment:vertical:window-inactive,
+div._1Rrhq0ynyX66fxOi1wUNXv::-webkit-scrollbar-button:single-button:increment:vertical:not(:window-inactive),
+div._1Rrhq0ynyX66fxOi1wUNXv:hover::-webkit-scrollbar-button:single-button:increment:vertical:not(:window-inactive) {
+  border-bottom: calc(var(--scroll-offset)) solid var(--zehn-color-base) !important;
 }
 
 // FRIENDS LIST
 div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div.FriendsListContent::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div.FriendsListContent:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-titlebar) + var(--friends-remoteplay-spacing) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing) + var(--friends-voice-spacing);
+  --scroll-offset: var(--zehn-size-titlebar) + var(--friends-remoteplay-spacing) + var(--friends-favorites-spacing) + var(--friends-buttons-spacing) + var(--friends-search-spacing) + var(--friends-user-spacing) + var(--friends-voice-spacing);
 }
 
 // CHAT
 div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-titlebar);
+  --scroll-offset: var(--zehn-size-titlebar);
 }
 
 // GROUP CHAT
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 .MultiUserChat[data-activechat="true"]:has(.chatRoomHeader) div.chatHistoryScroll:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
+  --scroll-offset: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
 }
 
 // LIBRARY
 div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div._3lDczhulqraStjCitLYJ1K::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div._3lDczhulqraStjCitLYJ1K:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-navbar) + var(--library-playbar-spacing);
+  --scroll-offset: var(--zehn-size-navbar) + var(--library-playbar-spacing);
 }
 
 // DOWNLOADS
 div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:window-inactive,
 div._1ugNiylO2vKXhirsGocAxa::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive),
 div._1ugNiylO2vKXhirsGocAxa:hover::-webkit-scrollbar-button:single-button:decrement:vertical:not(:window-inactive) {
-  --header-height: var(--zehn-size-navbar) + var(--library-downloads-spacing);
+  --scroll-offset: var(--zehn-size-navbar) + var(--library-downloads-spacing);
+}
+
+// SOUNDTRACK
+div._1Rrhq0ynyX66fxOi1wUNXv::-webkit-scrollbar-button:single-button:increment:vertical:window-inactive,
+div._1Rrhq0ynyX66fxOi1wUNXv::-webkit-scrollbar-button:single-button:increment:vertical:not(:window-inactive),
+div._1Rrhq0ynyX66fxOi1wUNXv:hover::-webkit-scrollbar-button:single-button:increment:vertical:not(:window-inactive) {
+  --scroll-offset: var(--controls-height);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

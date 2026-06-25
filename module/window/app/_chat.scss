@@ -1624,18 +1624,34 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // TIMELINE SLIDER
 .VideoTimelineSlider {
   border: none !important;
-  height: var(--zehn-size-timeline) !important;
-  margin: calc((var(--zehn-size-timeline-handle) - var(--zehn-size-timeline)) / 2) 0 !important;
-  border-radius: var(--zehn-size-timeline-radius) !important;
-  background: var(--zehn-color-timeline-empty) !important;
+  height: var(--zehn-size-slider-video-track) !important;
+  margin: calc((var(--zehn-size-slider-video-handle-height) - var(--zehn-size-slider-video-track)) / 2) 0px !important;
+  border-radius: var(--zehn-size-slider-video-track-radius) !important;
+  background: var(--zehn-color-slider-video-track-empty) !important;
+
+  &:hover {
+    background: var(--zehn-color-slider-video-track-empty-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-slider-video-track-empty-active) !important;
+  }
 }
 
 .videoTimelineMain .STV_timelineGhostValue,
 .videoTimelineMain .STV_timelineValue,
 .videoTimelineMain .STV_timelineNoVideo {
-  background: var(--zehn-color-timeline-filled) !important;
-  border-radius: var(--zehn-size-timeline-radius) !important;
+  background: var(--zehn-color-slider-video-track-filled) !important;
+  border-radius: var(--zehn-size-slider-video-track-radius) !important;
   transition: none !important;
+
+  &:hover {
+    background: var(--zehn-color-slider-video-track-filled-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-slider-video-track-filled-active) !important;
+  }
 }
 
 .videoTimelineMain .grabberDown .STV_timelineGhostValue {
@@ -1644,9 +1660,9 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 .videoTimelineMain .STV_timelineValue {
   -webkit-mask: none !important;
-  -webkit-mask-size: var(--zehn-size-timeline) var(--zehn-size-timeline) !important;
+  -webkit-mask-size: var(--zehn-size-slider-video-track) var(--zehn-size-slider-video-track) !important;
   mask: none !important;
-  mask-size: var(--zehn-size-timeline) var(--zehn-size-timeline) !important;
+  mask-size: var(--zehn-size-slider-video-track) var(--zehn-size-slider-video-track) !important;
 }
 
 .videoTimelineMain .STV_timelineNoVideo {
@@ -1657,11 +1673,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 // TIMELINE HANDLE
 .STV_timelineGrabber_Wrapper {
   position: absolute !important;
-  margin: 0px 0px 0px calc(var(--zehn-size-timeline-handle) / -2) !important;
+  margin: 0px 0px 0px calc(var(--zehn-size-slider-video-handle-width) / -2) !important;
   width: fit-content !important;
   height: fit-content !important;
   bottom: unset !important;
-  top: calc((var(--zehn-size-timeline-handle) - var(--zehn-size-timeline)) / -2) !important;
+  top: calc((var(--zehn-size-slider-video-handle-height) - var(--zehn-size-slider-video-track)) / -2) !important;
   display: flex !important;
   align-items: center !important;
 }
@@ -1674,18 +1690,30 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   -webkit-app-region: no-drag !important;
   transition: none !important;
   pointer-events: none !important;
-  background: transparent !important;
-  border: var(--zehn-size-timeline-handle-border) solid var(--zehn-color-timeline-handle) !important;
+  background: var(--handle-background) !important;
+  border: var(--zehn-size-slider-video-handle-border) solid var(--handle-border) !important;
   border-radius: var(--zehn-size-radius-circular) !important;
-  width: var(--zehn-size-timeline-handle) !important;
-  height: var(--zehn-size-timeline-handle) !important;
+  width: var(--zehn-size-slider-video-handle-width) !important;
+  height: var(--zehn-size-slider-video-handle-height) !important;
   box-sizing: border-box !important;
   backdrop-filter: var(--zehn-filter-heavy-blur) !important;
+  --handle-background: var(--zehn-color-slider-video-handle-background);
+  --handle-border: var(--zehn-color-slider-video-handle-border);
+
+  &:hover {
+    --handle-background: var(--zehn-color-slider-video-handle-background-hover);
+    --handle-border: var(--zehn-color-slider-video-handle-border-hover);
+  }
+
+  &:active {
+    --handle-background: var(--zehn-color-slider-video-handle-background-active);
+    --handle-border: var(--zehn-color-slider-video-handle-border-active);
+  }
 }
 
 .STV_timelineGrabberArrow {
-  width: var(--zehn-size-timeline-handle) !important;
-  height: var(--zehn-size-timeline-handle) !important;
+  width: var(--zehn-size-slider-video-handle-width) !important;
+  height: var(--zehn-size-slider-video-handle-height) !important;
   margin: 0px !important;
   pointer-events: all !important;
   opacity: 0 !important;
@@ -1732,8 +1760,8 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .videoControlButton,
 .STV_BroadcastSettings .videoControlButton {
   border-radius: var(--zehn-size-radius-circular) !important;
-  height: var(--zehn-size-timeline-control) !important;
-  width: var(--zehn-size-timeline-control) !important;
+  height: var(--zehn-size-slider-video-control) !important;
+  width: var(--zehn-size-slider-video-control) !important;
   margin: 0px !important;
   transition: none !important;
   background: transparent !important;
@@ -1745,7 +1773,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
     mask-repeat: no-repeat !important;
     mask-position: center !important;
     mask-size: var(--zehn-size-icon-md) !important;
-    --icon-color: var(--zehn-color-timeline-control);
+    --icon-color: var(--zehn-color-slider-video-control);
 
     * { display: none !important; }
   }
@@ -1754,7 +1782,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
     background: transparent !important;
 
     svg {
-      --icon-color: var(--zehn-color-timeline-control-hover);
+      --icon-color: var(--zehn-color-slider-video-control-hover);
     }
   }
 
@@ -1762,7 +1790,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
     background: transparent !important;
 
     svg {
-      --icon-color: var(--zehn-color-timeline-control-active);
+      --icon-color: var(--zehn-color-slider-video-control-active);
     }
   }
 }
@@ -1862,14 +1890,14 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .videoControlsButtons.GoLive {
   text-align: left !important;
   justify-content: flex-start !important;
-  width: var(--zehn-size-timeline-control) !important;
+  width: var(--zehn-size-slider-video-control) !important;
   flex: 0 !important;
 }
 
 .videoControlButton.videoControlGoLive {
   gap: var(--zehn-size-spacing-xxs) !important;
   display: flex !important;
-  width: var(--zehn-size-timeline-control) !important;
+  width: var(--zehn-size-slider-video-control) !important;
 
   svg.SVGIcon_MediaControls {
     width: 100% !important;
@@ -1899,7 +1927,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   text-align: center !important;
   border-radius: var(--zehn-size-radius-none) !important;
   transition: none !important;
-  margin: auto calc(-1 * (var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs))) auto 0px !important;
+  margin: auto calc(-1 * (var(--zehn-size-slider-video-control) + var(--zehn-size-spacing-xs))) auto 0px !important;
   text-transform: uppercase !important;
   transition: color 0.2s var(--zehn-timing-ease), background-color 0.2s var(--zehn-timing-ease) !important;
 }
@@ -1958,7 +1986,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // VOLUME
 .BroadcastVolumeControl {
-  width: var(--zehn-size-timeline-control) !important;
+  width: var(--zehn-size-slider-video-control) !important;
   overflow: hidden !important;
   cursor: pointer !important;
   transition: none !important;
@@ -1966,11 +1994,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .BroadcastVolumeControl.ShowVolumeSlider {
-  width: calc(var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs) + var(--volume-width)) !important;
+  width: calc(var(--zehn-size-slider-video-control) + var(--zehn-size-spacing-xs) + var(--volume-width)) !important;
 }
 
 .BroadcastVolumeControl_FixedLayout {
-  width: calc(var(--zehn-size-timeline-control) + var(--zehn-size-spacing-xs) + var(--volume-width)) !important;
+  width: calc(var(--zehn-size-slider-video-control) + var(--zehn-size-spacing-xs) + var(--volume-width)) !important;
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
@@ -2028,18 +2056,18 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .BroadcastFullscreenToggle {
   width: 100% !important;
   height: 100% !important;
-  background-color: var(--zehn-color-timeline-control) !important;
+  background-color: var(--zehn-color-slider-video-control) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-md) !important;
   margin: 0px !important;
 
   &:hover {
-    background-color: var(--zehn-color-timeline-control-hover) !important;
+    background-color: var(--zehn-color-slider-video-control-hover) !important;
   }
 
   &:active {
-    background-color: var(--zehn-color-timeline-control-hover) !important;
+    background-color: var(--zehn-color-slider-video-control-hover) !important;
   }
 }
 
