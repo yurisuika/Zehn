@@ -106,7 +106,7 @@
 // CONTAINER
 ._1c7FWVusLDkD_Lv6ZB0uTY ._22Q27ULX8FrTAxrt3fLxn1 ._23WS1avBGZoqC160AY_xbC {
   margin: 0px !important;
-  padding: var(--zehn-size-padding-md) !important;
+  padding: var(--header-padding) !important;
   gap: var(--zehn-size-spacing-md) !important;
   width: 100% !important;
   max-width: 100% !important;
@@ -153,15 +153,16 @@
       // ALBUM NAME
       .oW5xvEBArmBDwEZHO3Xip {
         color: var(--zehn-color-text1) !important;
-        font-weight: var(--zehn-weight-normal) !important;
-        font-size: var(--zehn-size-20) !important;
+        font-weight: var(--zehn-weight-thinnest) !important;
+        font-size: var(--zehn-size-18) !important;
         letter-spacing: normal !important;
+        line-height: normal !important;
       }
 
       // ARTIST (IF ANY)
       ._2bTdSZveC7h_neiBX4DAsa {
-        color: var(--zehn-color-text3) !important;
-        font-weight: var(--zehn-weight-normal) !important;
+        color: var(--zehn-color-text1) !important;
+        font-weight: var(--zehn-weight-thickest) !important;
         font-size: var(--zehn-size-14) !important;
         margin: 0px !important;
       }
@@ -179,6 +180,10 @@
           font-weight: var(--zehn-weight-normal) !important;
           font-size: var(--zehn-size-12) !important;
           line-height: var(--zehn-size-24) !important;
+
+          &:not(:has(._3C_pTK3Ed-6j5P02srRHtc)) {
+            display: none !important;
+          }
 
           // SOUNDTRACK FOR
           ._2pcGGedg89N3zrMcv-eZWQ {
@@ -279,10 +284,11 @@
 
   // LIST WRAPPER
   ._1Rrhq0ynyX66fxOi1wUNXv {
-    padding: 0px 0px var(--controls-height) 0px !important;
+    padding: var(--zehn-size-padding-md) var(--zehn-size-padding-md) calc(var(--zehn-size-padding-md) + var(--controls-height)) var(--zehn-size-padding-md) !important;
     border-radius: var(--zehn-size-radius-none) !important;
     min-height: 100% !important;
     box-sizing: border-box !important;
+    background: var(--zehn-color-base) !important;
 
     // DISK NUMBER
     ._17Yl1Gv8pnM24mkeAW_ZF4 {
@@ -290,7 +296,7 @@
       padding: 0px var(--zehn-size-soundtrack-list) !important;
       color: var(--zehn-color-text3) !important;
       font-weight: var(--zehn-weight-normal) !important;
-      font-size: var(--zehn-size-14) !important;
+      font-size: var(--zehn-size-12) !important;
       line-height: var(--zehn-size-soundtrack-list) !important;
     }
 
@@ -300,10 +306,15 @@
       border-radius: var(--zehn-size-radius-none) !important;
       color: var(--zehn-color-text1) !important;
       line-height: var(--zehn-size-soundtrack-list) !important;
+      background: transparent !important;
+      transition: transform 0.05s var(--zehn-timing-ease) !important;
+
+      &:active {
+        transform: scale(0.98) !important;
+      }
 
       // PLAYING
       &.jMohEdKMbTUO-MRL-I83g {
-
         .NZZPOD0T7YytUKqBD86-5 {
           color: var(--zehn-color-accent) !important;
         }
@@ -321,7 +332,7 @@
       .NZZPOD0T7YytUKqBD86-5 {
         box-sizing: border-box !important;
         width: var(--zehn-size-soundtrack-list) !important;
-        color: var(--zehn-color-text3) !important;
+        color: var(--zehn-color-text1) !important;
         font-weight: var(--zehn-weight-normal) !important;
         font-size: var(--zehn-size-14) !important;
         padding: 0px var(--zehn-size-padding-md) 0px 0px !important;
@@ -341,14 +352,14 @@
       // TRACK DURATION
       ._157ufChU0AaFX9p5agZHqq {
         padding: 0px var(--zehn-size-padding-md) !important;
-        color: var(--zehn-color-text3) !important;
+        color: var(--zehn-color-text1) !important;
         font-weight: var(--zehn-weight-normal) !important;
-        font-size: var(--zehn-size-14) !important;
+        font-size: var(--zehn-size-12) !important;
         background: transparent !important;
       }
     }
 
-    .Panel:nth-child(odd) ._2c5PPSgndVK0fC-zcQwubR {
+    .Panel:nth-child(odd) {
       background-color: var(--zehn-color-playlist-odd) !important;
 
       &:hover {
@@ -360,7 +371,7 @@
       }
     }
 
-    .Panel:nth-child(even) ._2c5PPSgndVK0fC-zcQwubR {
+    .Panel:nth-child(even) {
       background-color: var(--zehn-color-playlist-even) !important;
 
       &:hover {
