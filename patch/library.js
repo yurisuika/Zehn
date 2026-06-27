@@ -424,8 +424,8 @@ Zehn.createAdjacentElement('._1UgM1Pm8SbTWX7_2f-crGt', '.MCa4RMSvWJwwWjcZP2wTT',
 
 Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
   '.uE7Pj4tb2n3_Bx4vjEX0a', // SCROLL UP
-  '._3AhYljPF4e4E8LaBt-FoY0', // LIBRARY
-  '._2CEKFex6JMsAse2lqMMjUp', // COLLECTIONS
+  '._3AhYljPF4e4E8LaBt-FoY0 ._3pSPluBgf0NeR1kkCLWMhR', // LIBRARY
+  '._2CEKFex6JMsAse2lqMMjUp ._3pSPluBgf0NeR1kkCLWMhR', // COLLECTIONS
   '._3mzKdQXht__YHo6PX1LmB6' // FILTERS (LINUX, SORT BY, READY TO PLAY)
 ]);
 
