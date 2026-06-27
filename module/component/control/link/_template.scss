@@ -22,43 +22,35 @@
 
 // LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin look($style) {
+@mixin colorset($style, $mode: null) {
+  $mode: if(sass($mode != null): "-" + $mode; else: "");
+
   color: var(--zehn-color-#{$style}) !important;
 }
 
-@mixin look-focus($style) {
-  color: var(--zehn-color-#{$style}-focus) !important;
-}
-
-@mixin look-hover($style) {
-  color: var(--zehn-color-#{$style}-hover) !important;
-}
-
-@mixin look-hover-focus($style) {
-  color: var(--zehn-color-#{$style}-hover-focus) !important;
-}
-
-@mixin look-active($style) {
-  color: var(--zehn-color-#{$style}-active) !important;
-}
-
-@mixin look-active-focus($style) {
-  color: var(--zehn-color-#{$style}-active-focus) !important;
-}
-
-@mixin look-disabled($style) {
-  pointer-events: none !important;
-  color: var(--zehn-color-#{$style}-disabled) !important;
-}
-
-@mixin looks($disabled, $style) {
-  @include look($style);
-  &:is(:focus) { @include look-focus($style); }
-  &:is(:hover) { @include look-hover($style); }
-  &:is(:hover:focus) { @include look-hover-focus($style); }
-  &:is(:active) { @include look-active($style); }
-  &:is(:active:focus) { @include look-active-focus($style); }
-  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) { @include look-disabled($style); }
+@mixin look($disabled, $style) {
+  & {
+    @include colorset($style);
+  }
+  &:is(:focus) {
+    @include colorset($style, $mode: "focus");
+  }
+  &:is(:hover) {
+    @include colorset($style,$mode: "hover");
+  }
+  &:is(:hover:focus) {
+    @include colorset($style, $mode: "hover-focus");
+  }
+  &:is(:active) {
+    @include colorset($style, $mode: "active");
+  }
+  &:is(:active:focus) {
+    @include colorset($style, $mode: "active-focus");
+  }
+  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include colorset($style, $mode: "disabled");
+    pointer-events: none !important;
+  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,7 +68,7 @@
 
 @mixin preset($disabled: ":disabled", $style: "link") {
   @include base();
-  @include looks($disabled, $style);
+  @include look($disabled, $style);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

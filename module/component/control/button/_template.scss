@@ -146,19 +146,11 @@
 
 // SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin shape-default($style) {
-  border-radius: var(--zehn-size-button-#{$style}-radius) !important;
-}
-
-@mixin shape-circular {
-  border-radius: var(--zehn-size-radius-circular) !important;
-}
-
-@mixin shapes($shape, $style) {
-  @if $shape == "circular" {
-    @include shape-circular;
+@mixin shape($shape, $style) {
+  @if $shape == null {
+    border-radius: var(--zehn-size-button-#{$style}-radius) !important;
   } @else {
-    @include shape-default($style);
+    border-radius: #{$shape} !important;
   }
 }
 
@@ -175,7 +167,7 @@
 
 // LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin look($style, $other, $selected: null, $mode: null) {
+@mixin colorset($style, $other, $selected: null, $mode: null) {
   $mode: if(sass($mode != null): "-" + $mode; else: "");
   $selected: if(sass($selected != null): "-selected"; else: "");
 
@@ -190,50 +182,52 @@
   }
 }
 
-@mixin looks($selected, $disabled, $other, $style) {
+@mixin look($selected, $disabled, $other, $style) {
   & {
-    @include look($style, $other);
+    @include colorset($style, $other);
   }
   &:is(:focus, :enabled:focus) {
-    @include look($style, $other, $mode: "focus");
+    @include colorset($style, $other, $mode: "focus");
   }
   &:is(:hover, :enabled:hover) {
-    @include look($style, $other, $mode: "hover");
+    @include colorset($style, $other, $mode: "hover");
   }
   &:is(:hover:focus, :enabled:hover:focus) {
-    @include look($style, $other, $mode: "hover-focus");
+    @include colorset($style, $other, $mode: "hover-focus");
   }
   &:is(:active, :enabled:active) {
-    @include look($style, $other, $mode: "active");
+    @include colorset($style, $other, $mode: "active");
   }
   &:is(:active:focus, :enabled:active:focus) {
-    @include look($style, $other, $mode: "active-focus");
+    @include colorset($style, $other, $mode: "active-focus");
   }
   &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
-    @include look($style, $other, $mode: "disabled");
+    @include colorset($style, $other, $mode: "disabled");
+    pointer-events: none !important;
   }
 
   @if $selected != null {
     &#{$selected} {
-      @include look($style, $other, $selected);
+      @include colorset($style, $other, $selected);
     }
     &#{$selected}:is(:focus, :enabled:focus) {
-      @include look($style, $other, $selected, $mode: "focus");
+      @include colorset($style, $other, $selected, $mode: "focus");
     }
     &#{$selected}:is(:hover, :enabled:hover) {
-      @include look($style, $other, $selected, $mode: "hover");
+      @include colorset($style, $other, $selected, $mode: "hover");
     }
     &#{$selected}:is(:hover:focus, :enabled:hover:focus) {
-      @include look($style, $other, $selected, $mode: "hover-focus");
+      @include colorset($style, $other, $selected, $mode: "hover-focus");
     }
     &#{$selected}:is(:active, :enabled:active) {
-      @include look($style, $other, $selected, $mode: "active");
+      @include colorset($style, $other, $selected, $mode: "active");
     }
     &#{$selected}:is(:active:focus, :enabled:active:focus) {
-      @include look($style, $other, $selected, $mode: "active-focus");
+      @include colorset($style, $other, $selected, $mode: "active-focus");
     }
     &#{$selected}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
-      @include look($style, $other, $selected, $mode: "disabled");
+      @include colorset($style, $other, $selected, $mode: "disabled");
+      pointer-events: none !important;
     }
   }
 }
@@ -254,22 +248,22 @@
 @mixin preset-fixed($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
   @include base($style, $icon, $icon-size, $other);
   @include size-fixed($height, $width);
-  @include shapes($shape, $style);
-  @include looks($selected, $disabled, $other, $style);
+  @include shape($shape, $style);
+  @include look($selected, $disabled, $other, $style);
 }
 
 @mixin preset-wide($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
   @include base($style, $icon, $icon-size, $other);
   @include size-wide($height, $width);
-  @include shapes($shape, $style);
-  @include looks($selected, $disabled, $other, $style);
+  @include shape($shape, $style);
+  @include look($selected, $disabled, $other, $style);
 }
 
 @mixin preset-dynamic($height, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
   @include base($style, $icon, $icon-size, $other);
   @include size-dynamic($height);
-  @include shapes($shape, $style);
-  @include looks($selected, $disabled, $other, $style);
+  @include shape($shape, $style);
+  @include look($selected, $disabled, $other, $style);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

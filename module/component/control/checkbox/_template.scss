@@ -74,7 +74,7 @@
 
 // SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin shape-default($check) {
+@mixin shape($check) {
   border-radius: var(--zehn-size-checkbox-radius) !important;
 }
 
@@ -91,7 +91,7 @@
 
 // LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin look($style, $state, $mode: null) {
+@mixin colorset($style, $state, $mode: null) {
   $mode: if(sass($mode != null): "-" + $mode; else: "");
 
   background: var(--zehn-color-checkbox-#{$style}-background-#{$state}#{$mode}) padding-box !important;
@@ -101,53 +101,55 @@
   --check-color: var(--zehn-color-checkbox-#{$style}-check#{$mode});
 }
 
-@mixin looks($off, $on, $disabled, $style) {
+@mixin look($off, $on, $disabled, $style) {
   $state: "off";
 
   &#{$off} {
-    @include look($style, $state);
+    @include colorset($style, $state);
   }
   &#{$off}:is(:focus) {
-    @include look($style, $state, $mode: "focus");
+    @include colorset($style, $state, $mode: "focus");
   }
   &#{$off}:is(:hover) {
-    @include look($style, $state, $mode: "hover");
+    @include colorset($style, $state, $mode: "hover");
   }
   &#{$off}:is(:hover:focus) {
-    @include look($style, $state, $mode: "focus-hover");
+    @include colorset($style, $state, $mode: "focus-hover");
   }
   &#{$off}:is(:active) {
-    @include look($style, $state, $mode: "active");
+    @include colorset($style, $state, $mode: "active");
   }
   &#{$off}:is(:active:focus) {
-    @include look($style, $state, $mode: "active-focus");
+    @include colorset($style, $state, $mode: "active-focus");
   }
   &#{$off}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
-    @include look($style, $state, $mode: "disabled");
+    @include colorset($style, $state, $mode: "disabled");
+    pointer-events: none !important;
   }
 
   $state: "on";
 
   &#{$on} {
-    @include look($style, $state);
+    @include colorset($style, $state);
   }
   &#{$on}:is(:focus) {
-    @include look($style, $state, $mode: "focus");
+    @include colorset($style, $state, $mode: "focus");
   }
   &#{$on}:is(:hover) {
-    @include look($style, $state, $mode: "hover");
+    @include colorset($style, $state, $mode: "hover");
   }
   &#{$on}:is(:hover:focus) {
-    @include look($style, $state, $mode: "focus-hover");
+    @include colorset($style, $state, $mode: "focus-hover");
   }
   &#{$on}:is(:active) {
-    @include look($style, $state, $mode: "active");
+    @include colorset($style, $state, $mode: "active");
   }
   &#{$on}:is(:active:focus) {
-    @include look($style, $state, $mode: "active-focus");
+    @include colorset($style, $state, $mode: "active-focus");
   }
   &#{$on}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
-    @include look($style, $state, $mode: "disabled");
+    @include colorset($style, $state, $mode: "disabled");
+    pointer-events: none !important;
   }
 }
 
@@ -167,8 +169,8 @@
 @mixin preset($off, $on, $check, $disabled: ":disabled", $style: "dialog") {
   @include base($style, $check);
   @include size($check);
-  @include shape-default($check);
-  @include looks($off, $on, $disabled, $style);
+  @include shape($check);
+  @include look($off, $on, $disabled, $style);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
