@@ -25,7 +25,7 @@
 @mixin colorset($style, $mode: null) {
   $mode: if(sass($mode != null): "-" + $mode; else: "");
 
-  color: var(--zehn-color-#{$style}) !important;
+  color: var(--zehn-color-#{$style}#{$mode}) !important;
 }
 
 @mixin look($disabled, $style) {
@@ -36,7 +36,7 @@
     @include colorset($style, $mode: "focus");
   }
   &:is(:hover) {
-    @include colorset($style,$mode: "hover");
+    @include colorset($style, $mode: "hover");
   }
   &:is(:hover:focus) {
     @include colorset($style, $mode: "hover-focus");
