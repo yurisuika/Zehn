@@ -173,9 +173,9 @@ Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', ['#zehnT
 /* TOGGLE LIBRARY WHAT'S NEW SECTION -------------------------------------------------------------------------------- */
 
 Zehn.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleWhatsNew', 'zehnWhatsNewCollapsed');
-Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO > div:nth-child(2)', ['#zehnToggleWhatsNew', '.zehnButton'], (root, target, button) => {
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO .bsNegRKT1Hbv4tqHrOk9-', ['#zehnToggleWhatsNew', '.zehnButton'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnWhatsNewCollapsed');
-});
+}, false);
 
 /* ID GAME PAGE SECTIONS -------------------------------------------------------------------------------------------- */
 
