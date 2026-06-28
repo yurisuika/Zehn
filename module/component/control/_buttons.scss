@@ -47,10 +47,11 @@ button.DialogButton::before {
 button.DialogButton,
 button.DialogButton:where(.Primary, .Secondary, .Small),
 .GenericConfirmDialog .DialogFooter button.DialogButton {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -111,9 +112,10 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // ERROR
 .MillenniumErrorBoundary button {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -536,9 +538,10 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 .inviteButton.inviteButtonJoinChat,
 .ChatMessageInvite .DialogButton,
 .ChatMessageInvite .DialogButton.inviteButtonWatchBroadcast {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -553,9 +556,10 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // EMBED - GROUP INVITE ACCEPT
 .acceptButtonsGroup button.DialogButton.GreenPlay {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -657,10 +661,11 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // ROOT MENUS
 ._2Lu3d-5qLmW4i19ysTt2jT._2UyOBeiSdBayaFdRa39N2O {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-navbar),
     $width: fit-content,
     $disabled: '._2hcblpUHuN5CYOoq6eU2y0',
+    $padding: var(--zehn-size-button-padding-wide),
     $icon: '.GG9wVQz6PLlhGHlJyZh4E',
     $style: "nav"
   );
@@ -670,10 +675,11 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // SUPERNAV
 ._2Lu3d-5qLmW4i19ysTt2jT._7AlhCx3XGzBeIrQaCneUD {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-navbar),
     $width: fit-content,
     $selected: ":is(._3rgV8pPmQvZC-01x9l-q-N, ._1gqEjB5QsKT_NftD1dEsdZ)",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "nav"
   );
 }
@@ -836,9 +842,10 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // UPDATE BAR ALERT
 ._2ohOQgahhMYnIEfAQmv9B8 {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -902,16 +909,24 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // HOME - PREPURCHASE RELEASE
 ._2Ae5emb7JLG4NvS2OmutTx ._1moqKkq1K4nAp1XqDtnRdQ .rglD9tOi-qd15GgYT2iJK .y1gug7JSW8Vst7YSxkKV- .p9KmcbRBNrAiCVV-9x7FJ {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-lg),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // SHOWCASE - HEADER
 #zehnToggleWhatsNew,
-.steam-easygrid .easygrid-button.DialogButton,
+.steam-easygrid .easygrid-button.DialogButton {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
+    $width: var(--zehn-size-library-showcase)
+  );
+}
+
+// SHOWCASE - REORDER DELETE
 ._3cK5jtEHkhfw50DntUGWjp {
   @include template.preset-fixed(
     $height: var(--zehn-size-library-showcase),
@@ -950,9 +965,10 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 // SHOWCASE - COLLECTION EDIT
 ._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._8JUfQypf4Uxt2i_hxBk_t,
 ._3vDj4xewvplaiGsjeunxyx ._1qkt419yLi7E3LkTrMtdm4 {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-library-showcase),
-    $width: fit-content
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
   );
 }
 
@@ -976,13 +992,11 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // SHOWCASE - WHAT'S NEW - PRIORITY NOTICE
 ._17uEBe5Ri8TMsnfELvs8-N ._2sdvic79rOzTYDZw2nrgmL {
-  @include template.preset-wide(
-    $height: var(--zehn-size-button-md),
+  @include template.preset-fixed(
+    $height: var(--zehn-size-library-showcase),
     $width: fit-content,
-    $style: "dialog"
+    $padding: var(--zehn-size-button-padding-wide)
   );
-
-  margin: auto 0px !important;
 }
 
 // SHOWCASE - WHAT'S NEW - EVENT OPTIONS
@@ -992,10 +1006,6 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
     $width: var(--zehn-size-button-md),
     $icon: "div"
   );
-
-  top: 0px !important;
-  right: 0px !important;
-  transition: opacity 0.2s var(--zehn-timing-ease) !important;
 }
 
 // SHOWCASE - REORDER
@@ -1011,15 +1021,17 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 ._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5 {
   @include template.preset-fixed(
     $height: var(--zehn-size-library-showcase),
-    $width: 100%
+    $width: 100%,
+    $disabled: "._1MNhU5EYdeegJRmQ51prWb"
   );
 }
 
 // GAME - PRELOAD
 .p9KmcbRBNrAiCVV-9x7FJ {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1094,9 +1106,10 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 // GAME SPOTLIGHT - DEMO/PLAYTEST/INVITE
 ._3SdsgvPAsO-ewAaupsOhHy,
 ._1qKFBvABqbDgrOvtdhYh17 {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1147,10 +1160,11 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 
 // GAME - ACTIVITY - POST SUBMIT
 ._3x31AgESSlUqX3D4MTHv2m ._37e7DrDNmf1FmsMGA5y0A0 ._2JSyABqFEh-v_dwaTnBydR {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ":not(.bGfjajFo4DI-ULSQxw1KY)",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1176,9 +1190,10 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // GAME - DETAILS - EMPTY PANEL
 ._2RSxEUPGL8Bj016q0Sp3Hx {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 
@@ -1250,37 +1265,41 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 // EVENT OVERLAY - WISHLIST
 ._3notzMjxQtogi11XHZMYXI,
 ._1djkdp7OAd0mF3a90RKf27 {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // EVENT OVERLAY - ACTION
 ._2zssEuiPfY5YdQlnihDfVD {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // EVENT OVERLAY - FOOTER
 .mKmrOjr9bGjKAolgp9NoD ._1ABCOz8DSrl-YJdh1xD-m0._1dDpSuaJBGZzS41s0SPk4c {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // ACHIEVEMENTS OVERLAY - TABS
 ._3eEbSktrstBdLk0dVpnKVI {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-tablist),
     $width: fit-content,
     $selected: "._3Gp1bACHx__POxmy6Gd3kG",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "tab"
   );
 }
@@ -1306,9 +1325,10 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // DOWNLOADS - SECTION HEADER
 ._1GdR5LbENV7LOGROJBxohI._1GdR5LbENV7LOGROJBxohI.DialogButton {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-downloads-section-header),
-    $width: fit-content
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
   );
 }
 
@@ -1342,10 +1362,11 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 // DIALOG - ADD REVIEW
 ._1kCN0pAntrcGCSmcc-vYdk,
 ._35_OgqfHHZfSzTYfv367K6 {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $selected: ".Z3L6KGVxi4ZjGUzbYUjBC",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1375,11 +1396,12 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // BROWSE LOCAL
 ._23WS1avBGZoqC160AY_xbC button.DialogButton._2TWHMJvrhtyyuTse9Rqwps {
-  @include template.preset-wide (
+  @include template.preset-fixed (
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
-    $shape: var(--zehn-size-radius-rounded),
+    $shape: var(--zehn-size-radius-pill),
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "app"
   );
 }
@@ -1442,10 +1464,11 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
 
 // UPDATES
 .MillenniumSettings ._2o2fXzn99OddeqZMjbDuxQ button.DialogButton {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1460,10 +1483,11 @@ button.DialogButton.MillenniumIconButton.Secondary {
 }
 
 button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1473,6 +1497,7 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
   @include template.preset-dynamic(
     $height: 100%,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-tall),
     $style: "dialog"
   );
 
@@ -1514,9 +1539,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // LAUNCH OPTIONS
 .LclHwcOfHFpwObYMD1HLa ._3H2GezG50hog8gSDj-qbx1>div {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1554,9 +1580,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // APPS LIST MODE
 ._3gequ5PczEX5LwJ8tPrEGC ._3ZLaTxSHxeGcoKlIy_-Z0L {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-overlay-bar),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $disabled: ".Disabled"
   );
 }
@@ -1636,9 +1663,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // COMMENTS
 ._39nnaT_CLE0m_WXVIrAwaG .FPxfNOUIyMTxA5iyxVWGX {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1719,18 +1747,20 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 ._1JVlcXVvv0OCD_p5RuW1fy .mZYRu1dN5Q9aQ1r3Cq_NE,
 .UJBbMi55kmyA6ZDu_OVUX .DialogButton,
 ._367uBQpzonX0o4-Y0f-wYl .DialogButton {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-media-controlbar),
-    $width: fit-content
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
   );
 }
 
 ._30e-kSx-yfm4pjA0_ysT3n ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._32Lfwcdolc3ByZWItfR3ni:not(.zeGUOeW3Cat4UJGCGwXPZ):not(._2T45kYJmyvQWyxytQeohuY),
 .DKXVRVBokaW_Xxo6kyKq0 ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._32Lfwcdolc3ByZWItfR3ni:not(.zeGUOeW3Cat4UJGCGwXPZ):not(._2T45kYJmyvQWyxytQeohuY) {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-media-controlbar),
     $width: fit-content,
-    $disabled: "._36CGU2t5Vavx0_9dwem6kb"
+    $disabled: "._36CGU2t5Vavx0_9dwem6kb",
+    $padding: var(--zehn-size-button-padding-wide)
   );
 }
 
@@ -1765,17 +1795,18 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 ._365PZ8BVgd7sz6-xR9E9yb ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._1vrXP23Jvmwoj70Yk81cnc,
 ._365PZ8BVgd7sz6-xR9E9yb ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy.rYp_PTAXV9D7Jc5c756Re,
 ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._2kVw_wgJd5TfnNePlpwmN {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: "._36CGU2t5Vavx0_9dwem6kb",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // NO RECORDING AVAILABLE
 ._2Jhopz5mqnwHwBUX9sMIGY {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".rq1uEI9jHMgnF1LIsVsJg",
@@ -1798,11 +1829,12 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // TABS
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2X_ZpO2X_CIOIEfml3ZTcX button._1jEPp-_Fn1YtGfHenAZ7fT {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-servers-controlbar),
     $width: fit-content,
     $disabled: ".Disabled",
     $selected: ".L3t04yaV4NIy6qhVIquGp",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "tab"
   );
 }
@@ -1818,9 +1850,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // CONTROLS - TEXT
 ._2rxrVvbku0AC8Qbequ4-z9 ._2SvsKGOQeIoV8laKj5Ql5s ._2YSm1vJtLeKb9BbihsLY1F ._341mdPDkZV7JkbIxGBREsd button.DialogButton {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-servers-controlbar),
-    $width: fit-content
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
   );
 }
 
@@ -1892,10 +1925,11 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // TOP BUTTONS
 .jSQQl34mj8a4NOKubD6AT ._1ml4SNc3LIyBDHIf8ekVSw .HijmccPB1BKyhOwhX1EVl {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-lg),
     $width: fit-content,
     $selected: "._3-_jME_xsuvgT3Dvq4bw_q",
+    $padding: var(--zehn-size-button-padding-wide),
     $icon: ".zehnIcon",
     $style: "tab"
   );
@@ -1924,9 +1958,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // PLAYERS
 ._27m9Qbg4ShilOgwvYZWV8l ._1vG-vFfwpDeNStVbyo1Qy6 ._2fYjCJSwdJxdjbi7ysISdL ._2NLwfYHr9KUJZ7LD9nkyva {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1946,9 +1981,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // ACHIEVEMENT GROUPS
 .steam-hunters-achievements-page button {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -1977,9 +2013,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // CANCEL
 ._3ZHIBZbKR6DCeKpSDqwlMg {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -2002,6 +2039,7 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
   @include template.preset-dynamic(
     $height: 100%,
     $other: "._3Wb9yDmYPUJksCr7HmaT9H",
+    $padding: var(--zehn-size-button-padding-tall),
     $style: "dialog"
   );
 
@@ -2022,17 +2060,18 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 // IN GAME
 .DialogControlsSection ._2o2fXzn99OddeqZMjbDuxQ ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy,
 ._2sssIwe0duyIrFvat2oXzH ._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: "._36CGU2t5Vavx0_9dwem6kb",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // STORAGE
 ._12aBP1DmpEKuMxfFuCMbiN {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $style: "dialog"
@@ -2050,9 +2089,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // CONTROLLER
 ._30w46ktz76K_Rnqk02ZfT0._1zkgQm67ell-zVB965M-D5 {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -2069,9 +2109,10 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // RECORDING - QUALITY
 ._3epr8QYWw_FqFgMx38YEEm.DialogButton:has(span._1UpteyCApeHSfG-Tw-3H3m) {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: fit-content,
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 
@@ -2148,19 +2189,21 @@ button.DialogButton.DialogButtonTall {
 
 // PERMISSIONS - ADD
 button.DialogButton.createNewRoleButton {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // PERMISSIONS - ROLE EDIT
 button.DialogButton.roleButton {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-table-entry-large),
     $width: 100%,
+    $padding: var(--zehn-size-button-padding-wide),
     $disabled: ".Disabled"
   );
 
@@ -2225,20 +2268,22 @@ button._77qZLron1HY93yUW4_C4m.DialogButton {
 
 // MODAL - FAKE BUTTON
 .tGJeFkznK3-BCMgr4GSHi {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
 
 // FOOTER ACTION BUTTONS
 .MbyhbxIetM7FOAmCQSW83 {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -2249,11 +2294,12 @@ button._77qZLron1HY93yUW4_C4m.DialogButton {
 ._2swvcAycL4d0UoHFDoe6-d,
 ._3i-XV362MvNEX3j_oWQDmQ,
 ._3s28A0XlOXUOAWRIuBKHuH {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: "._1QZJBdB3tUQkzngq0rXWsK",
     $selected: ".CX4Dp8XyHswkGEEnWeUpq",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -2293,10 +2339,11 @@ button._77qZLron1HY93yUW4_C4m.DialogButton {
 
 // CAMERA
 ._1Ze1RZ7I8e5cSlaWAl48bh {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -2337,9 +2384,10 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 // LINKS
 .ext-links-manager .ext-links-remove,
 .ext-links-manager .ext-links-add {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }
@@ -2426,10 +2474,11 @@ button._2fSou9jd8XxWeNoWYp06XN.DialogButton {
 
 // SHARE EVENT - STEAM
 ._22m-GVWK4oToZYpcPXpkNk._1G3P8wlZ4seS-hs8-P9cwE {
-  @include template.preset-wide(
+  @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $icon: "img._3PXcvKt0U1PJ2DAM8I5lLx",
+    $padding: var(--zehn-size-button-padding-wide),
     $style: "dialog"
   );
 }

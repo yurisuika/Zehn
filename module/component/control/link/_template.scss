@@ -25,7 +25,7 @@
 @mixin colorset($style, $mode: null) {
   $mode: if(sass($mode != null): "-" + $mode; else: "");
 
-  color: var(--zehn-color-#{$style}#{$mode}) !important;
+  color: var(--zehn-color-link-#{$style}#{$mode}) !important;
 }
 
 @mixin look($disabled, $style) {
@@ -66,7 +66,7 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset($disabled: ":disabled", $style: "link") {
+@mixin preset($disabled: ":disabled", $style: "generic") {
   @include base();
   @include look($disabled, $style);
 }

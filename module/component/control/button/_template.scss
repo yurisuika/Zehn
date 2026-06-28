@@ -93,7 +93,7 @@
 
 // SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin size-fixed($height, $width) {
+@mixin size-fixed($height, $width, $padding) {
   height: $height !important;
   min-height: $height !important;
   max-height: $height !important;
@@ -104,24 +104,14 @@
     max-width: $width !important;
   }
 
-  padding: var(--zehn-size-button-padding) !important;
-}
-
-@mixin size-wide($height, $width) {
-  height: $height !important;
-  min-height: $height !important;
-  max-height: $height !important;
-
-  @if $width != null {
-    width: $width !important;
-    min-width: $width !important;
-    max-width: $width !important;
+  @if $padding == null {
+    padding: var(--zehn-size-button-padding) !important;
+  } @else {
+    padding: #{$padding} !important;
   }
-
-  padding: var(--zehn-size-button-padding-wide) !important;
 }
 
-@mixin size-dynamic($height) {
+@mixin size-dynamic($height, $padding) {
   height: $height !important;
   min-height: $height !important;
   max-height: $height !important;
@@ -130,7 +120,11 @@
   min-width: 0px !important;
   max-width: 100% !important;
 
-  padding: var(--zehn-size-button-padding-dynamic) !important;
+  @if $padding == null {
+    padding: var(--zehn-size-button-padding) !important;
+  } @else {
+    padding: #{$padding} !important;
+  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -245,23 +239,16 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset-fixed($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
+@mixin preset-fixed($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
   @include base($style, $icon, $icon-size, $other);
-  @include size-fixed($height, $width);
+  @include size-fixed($height, $width, $padding);
   @include shape($shape, $style);
   @include look($selected, $disabled, $other, $style);
 }
 
-@mixin preset-wide($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
+@mixin preset-dynamic($height, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
   @include base($style, $icon, $icon-size, $other);
-  @include size-wide($height, $width);
-  @include shape($shape, $style);
-  @include look($selected, $disabled, $other, $style);
-}
-
-@mixin preset-dynamic($height, $disabled: ":disabled", $selected: null, $shape: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $style: "app") {
-  @include base($style, $icon, $icon-size, $other);
-  @include size-dynamic($height);
+  @include size-dynamic($height, $padding);
   @include shape($shape, $style);
   @include look($selected, $disabled, $other, $style);
 }
