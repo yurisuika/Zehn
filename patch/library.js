@@ -67,66 +67,6 @@ Zehn.addRevealClass('.extendium-toolbar-manager-context-menu', [
 
 Zehn.revealSelf('.extendium-toolbar-manager-context-menu .eKmEXJCm_lgme24Fp_HWt.zehnReveal');
 
-/* RECALCULATE GRID SPACERS ----------------------------------------------------------------------------------------- */
-
-function recalculateGrid() {
-  Zehn.handleOnMutation('._2Nq6ov7A1hGcHXVOXNt_OE', '.DGRkX_HYUzbFaqRysWQVi', (root, target) => {
-    const startSpacer = target.firstElementChild;
-    const grid = target.querySelector('[role="grid"]');
-    const endSpacer = target.lastElementChild;
-
-    var rowHeight = 0;
-    const library = document.querySelector('_3xRRJfD2xy95i9NhJxLTp0');
-    if (library.classList.contains('LibraryDisplaySizeLarge')) {
-      rowHeight = 222;
-    } else if (library.classList.contains('LibraryDisplaySizeMedium')) {
-      rowHeight = 148;
-    } else if (library.classList.contains('LibraryDisplaySizeSmall')) {
-      rowHeight = 111;
-    }
-
-    var rowCount = grid.getAttribute('aria-rowcount');
-    var gap = parseInt(getComputedStyle(grid).getPropertyValue('row-gap'), 10);
-
-    const observer = new MutationObserver(mutations => {
-      const cell = grid.querySelector('[role="gridcell"]')?.firstElementChild;
-      if (cell) rowHeight = Math.max(rowHeight, Math.round(cell.offsetHeight));
-
-      var firstRow = grid.firstElementChild.getAttribute('aria-rowindex');
-      var lastRow = grid.lastElementChild.getAttribute('aria-rowindex');
-      var trimmedRowCountStart = firstRow - 1;
-      var trimmedRowCountEnd = rowCount - lastRow;
-
-      // target.setAttribute('data-row-height', `${rowHeight}px`);
-      // target.setAttribute('data-row-count', rowCount);
-      // target.setAttribute('data-trimmed-row-count-start', trimmedRowCountStart);
-      // target.setAttribute('data-trimmed-row-count-end', trimmedRowCountEnd);
-
-      // target.style.setProperty('--row-height', `${rowHeight}px`);
-      // target.style.setProperty('--row-count', rowCount);
-      // target.style.setProperty('--trimmed-row-count-start', trimmedRowCountStart);
-      // target.style.setProperty('--trimmed-row-count-end', trimmedRowCountEnd);
-
-      var gridHeight = (rowCount * rowHeight) + (gap * (rowCount - 1));
-      target.style.height = `${gridHeight}px`;
-      target.setAttribute('data-grid-height', `${gridHeight}px`);
-
-      var startSpacerHeight = (rowHeight + gap) * trimmedRowCountStart;
-      startSpacer.style.height = `${startSpacerHeight}px`;
-      target.setAttribute('data-start-height', `${startSpacerHeight}px`);
-
-      var endSpacerHeight = (rowHeight + gap) * trimmedRowCountEnd;
-      endSpacer.style.height = `${endSpacerHeight}px`;
-      target.setAttribute('data-end-height', `${endSpacerHeight}px`);
-    });
-    observer.observe(grid, { childList: true, subtree: true });
-
-    return observer;
-  }, { shouldObserveTarget: true, shouldDisconnect: false,  shouldAddAttributeFilter: false });
-};
-
-// recalculateGrid();
-
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
 Zehn.handleOnMutation('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
