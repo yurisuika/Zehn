@@ -236,26 +236,17 @@
   width: 100% !important;
   height: 100% !important;
   transition: transform 0.2s var(--zehn-timing-ease) !important;
+  transform: scale(1) !important;
+
+  &:hover {
+    transform: scale(1.2) !important;
+  }
   
   * { display: none !important; }
 }
 
 .chatVideoPlayControl:hover svg {
   transform: unset;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .chatVideoPlayControl:hover svg:hover,
-  .chatVideoPlayControl svg:hover {
-    animation: wobble 0.5s var(--zehn-timing-ease) infinite both !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .chatVideoPlayControl:hover svg:hover,
-  .chatVideoPlayControl svg:hover {
-    transform: scale(1.2) !important;
-  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
