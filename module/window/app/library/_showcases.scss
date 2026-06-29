@@ -105,7 +105,7 @@
   margin-top: 0px !important;
   background: var(--zehn-content-mode-library-panel-color) !important;
   padding: var(--zehn-size-library-panel-padding) !important;
-  border-radius: var(--zehn-content-mode-library-panel-radius) !important;
+  border-radius: var(--zehn-size-library-panel-radius) !important;
   transition: var(--zehn-transition-panel) !important;
 
   &:hover {
@@ -128,7 +128,7 @@
   margin: var(--zehn-content-mode-library-spacing) !important;
   margin-top: 0px !important;
   padding: var(--zehn-size-library-panel-padding) !important;
-  border-radius: var(--zehn-content-mode-library-panel-radius) !important;
+  border-radius: var(--zehn-size-library-panel-radius) !important;
   transition: var(--zehn-transition-panel) !important;
   order: 999 !important;
   box-sizing: content-box !important;
@@ -312,6 +312,35 @@
 
 // SECTION CONTAINERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// ALL COLLECTIONS (SPLIT INTO TWO SO THIS IS WONKY)
+.u1xD3KJEgksF_J_5TLZzO>.Panel,
+.u1xD3KJEgksF_J_5TLZzO ._2Th-vimU76KOpmdy45yu52 {
+  background: var(--zehn-content-mode-library-panel-color) !important;
+  color: var(--zehn-color-text1) !important;
+  transition: var(--zehn-transition-panel) !important;
+  padding: var(--zehn-size-library-panel-padding) !important;
+  margin: var(--zehn-content-mode-library-spacing) !important;
+
+  &:hover {
+    background-color: var(--zehn-content-mode-library-panel-color-hover) !important;
+  }
+}
+
+.u1xD3KJEgksF_J_5TLZzO ._2Th-vimU76KOpmdy45yu52 {
+  margin-top: calc(var(--zehn-size-navbar) + var(--zehn-content-mode-library-spacing)) !important;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+  border-top-left-radius: var(--zehn-size-library-panel-radius) !important;
+  border-top-right-radius: var(--zehn-size-library-panel-radius) !important;
+}
+
+.u1xD3KJEgksF_J_5TLZzO>.Panel {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+  border-bottom-left-radius: var(--zehn-size-library-panel-radius) !important;
+  border-bottom-right-radius: var(--zehn-size-library-panel-radius) !important;
+}
+
 // COLLECTION
 ._2q70uOe6xM3-c5XIVfBLe6 {
   min-height: unset !important;
@@ -324,7 +353,7 @@
   margin-top: calc(var(--zehn-size-navbar) + var(--zehn-content-mode-library-spacing)) !important;
   background: var(--zehn-content-mode-library-panel-color) !important;
   padding: var(--zehn-size-library-panel-padding) !important;
-  border-radius: var(--zehn-content-mode-library-panel-radius) !important;
+  border-radius: var(--zehn-size-library-panel-radius) !important;
   transition: var(--zehn-transition-panel) !important;
 
   &:hover {
@@ -342,7 +371,7 @@
   margin-bottom: 0px !important;
   padding: var(--zehn-size-library-panel-padding) !important;
   background: var(--zehn-content-mode-library-panel-color) !important;
-  border-radius: var(--zehn-content-mode-library-panel-radius) !important;
+  border-radius: var(--zehn-size-library-panel-radius) !important;
   transition: var(--zehn-transition-panel) !important;
 
   &:hover {
@@ -355,7 +384,7 @@
   margin: 0px var(--zehn-content-mode-library-spacing) !important;
   background: var(--zehn-content-mode-library-panel-color) !important;
   padding: var(--zehn-size-library-panel-padding) !important;
-  border-radius: var(--zehn-content-mode-library-panel-radius) !important;
+  border-radius: var(--zehn-size-library-panel-radius) !important;
   transition: var(--zehn-transition-panel) !important;
 
   &:hover {
@@ -568,6 +597,28 @@
       }
     }
   }
+
+  // EDIT NAME (NO TOOLTIP WHEN OPENED)
+  &>._12pDikfkuNH_o3MHKU1skz,
+  &>.tool-tip-source {
+    order: 3 !important;
+  }
+
+  ._12pDikfkuNH_o3MHKU1skz._2CPHr3axb0cv3nnDnPui5o svg,
+  ._12pDikfkuNH_o3MHKU1skz._1t_GA8AUflPZnjl2YQVzBF svg {
+    -webkit-mask-image: var(--zehn-icon-edit) !important;
+  }
+
+  ._12pDikfkuNH_o3MHKU1skz._1t_GA8AUflPZnjl2YQVzBF::after {
+    content: "";
+    bottom: var(--zehn-size-focusbar-spacing);
+    left: var(--zehn-size-focusbar-spacing);
+    right: var(--zehn-size-focusbar-spacing);
+    height: var(--zehn-size-focusbar);
+    background-color: var(--zehn-color-focusbar);
+    display: block;
+    position: absolute;
+  }
 }
 
 // DYNAMIC COLLECTION SUBHEADER
@@ -684,6 +735,12 @@
       background: var(--zehn-color-separator) !important;
       height: var(--zehn-size-separator) !important;
     }
+  }
+
+  // GRID FOOTER
+  ._2c0Fgw4ROufef0QaSULEkw {
+    height: 0px !important;
+    display: none !important;
   }
 }
 
