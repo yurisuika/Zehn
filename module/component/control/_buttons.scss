@@ -1085,11 +1085,14 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 // GAME - SPOTLIGHT - POST GAME SUMMARY
 ._14b-hQsLwSwYcELtknxCUX._3qlJ0L41KQFqUTzVQKFERC,
 ._3IIEUTw03Vm3Mk54jlnUaT._3qlJ0L41KQFqUTzVQKFERC,
+.vzLedtsu3TtTlKLEKzIhH .bsNegRKT1Hbv4tqHrOk9- ._14b-hQsLwSwYcELtknxCUX,
+.vzLedtsu3TtTlKLEKzIhH .bsNegRKT1Hbv4tqHrOk9- ._3IIEUTw03Vm3Mk54jlnUaT,
 ._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._14b-hQsLwSwYcELtknxCUX,
 ._1OMmVJHDgNwOt0Wqn0hrf9 .bsNegRKT1Hbv4tqHrOk9- ._3IIEUTw03Vm3Mk54jlnUaT {
   @include template.preset-fixed(
     $height: var(--zehn-size-spotlight-panel-header),
     $width: var(--zehn-size-spotlight-panel-header),
+    $shape: var(--zehn-size-radius-circular),
     $disabled: "._16nHYucq6xgfe67DrVWLCI"
   );
 }
@@ -1098,7 +1101,8 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 ._2dB1oJFsqNThak1cFya2-q._3qlJ0L41KQFqUTzVQKFERC {
   @include template.preset-fixed(
     $height: var(--zehn-size-spotlight-panel-header),
-    $width: var(--zehn-size-spotlight-panel-header)
+    $width: var(--zehn-size-spotlight-panel-header),
+    $shape: var(--zehn-size-radius-circular)
   );
 }
 
@@ -1180,11 +1184,19 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
 }
 
 // GAME - DETAILS - BOTTOM BUTTONS
-button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
+button.DialogButton._3Cdin80d-hVsakHUZboheb.SLpyhiN-Dagi3V8ZKukaK,
+button.DialogButton._3Cdin80d-hVsakHUZboheb._2bJqZ-CdH4oxe-VpUp0yvW,
+button.DialogButton._3Cdin80d-hVsakHUZboheb._3nJyYxGQ3kdwwabPmxNnMe,
+button.DialogButton._3Cdin80d-hVsakHUZboheb.Q7tULXy1gQNG1eU--hN27 {
   @include template.preset-fixed(
-    $height: var(--zehn-size-button-lg),
-    $width: 100%
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
+    $shape: var(--zehn-size-radius-pill)
   );
+
+  margin-top: auto !important;
+  align-self: flex-start !important;
 }
 
 // GAME - DETAILS - EMPTY PANEL
@@ -1213,22 +1225,15 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb:not(._1qG6xUlNu-qvdhpSxwed5) {
     $height: var(--zehn-size-button-md),
     $width: var(--zehn-size-button-md)
   );
-
-  transition: opacity 0.2s var(--zehn-timing-ease) !important;
-  top: 0px !important;
-  right: 0px !important;
 }
 
 // GAME - DETAILS - WORKSHOP - CLEAR
 ._1W34WpqfvufNgueNdZozwC .aZc8RQUeHL3YNHxrG4pXN {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
-    $width: var(--zehn-size-button-md)
+    $width: var(--zehn-size-button-md),
+    $shape: var(--zehn-size-radius-circular)
   );
-
-  transition: opacity 0.2s var(--zehn-timing-ease) !important;
-  top: 0px !important;
-  right: 0px !important;
 }
 
 // GAME - COMMUNITY - MENU
@@ -1738,7 +1743,8 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 .RightButtons ._2Zj3UdtDQ2KmjXjKU3_Oy-.DialogButton {
   @include template.preset-fixed(
     $height: var(--zehn-size-media-controlbar),
-    $width: fit-content
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
   );
 }
 

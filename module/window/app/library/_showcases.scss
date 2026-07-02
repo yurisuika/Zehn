@@ -470,6 +470,11 @@
   // PREVIOUS / NEXT
   .bsNegRKT1Hbv4tqHrOk9- {
     margin: 0px !important;
+    gap: var(--zehn-size-spacing-xs) !important;
+
+    ._2dB1oJFsqNThak1cFya2-q._3qlJ0L41KQFqUTzVQKFERC svg {
+      -webkit-mask-image: var(--zehn-icon-clear) !important;
+    }
 
     ._14b-hQsLwSwYcELtknxCUX svg {
       -webkit-mask-image: var(--zehn-icon-direction-backwards) !important;
@@ -889,10 +894,10 @@
   ._2rlKqvybYupc-uk64cdQ8D {
     padding: 0px !important;
     color: var(--zehn-color-text3) !important;
-    font-size: var(--zehn-size-12) !important;
+    font-size: var(--zehn-size-carousel-date-text) !important;
     font-weight: var(--zehn-weight-normal) !important;
-    line-height: var(--zehn-size-16) !important;
-    margin-bottom: var(--zehn-size-spacing-xs) !important;
+    line-height: var(--zehn-size-carousel-date) !important;
+    margin-bottom: var(--zehn-size-carousel-item-gap) !important;
   }
 
   // IMAGE ETC
@@ -1004,10 +1009,10 @@
   // TITLE
   .aqYQCF7Ny9x3EKcjCOTRY {
     color: var(--zehn-color-text1) !important;
-    font-size: var(--zehn-size-12) !important;
+    font-size: var(--zehn-size-carousel-title-text) !important;
     font-weight: var(--zehn-weight-normal) !important;
     padding: 0px !important;
-    margin-top: var(--zehn-size-spacing-xs) !important;
+    margin-top: var(--zehn-size-carousel-item-gap) !important;
 
     ._1Gu1U2_kcg3AWLrXQgX5S6 {
 
@@ -1016,19 +1021,20 @@
         font-size: inherit !important;
         font-weight: inherit !important;
         max-height: fit-content !important;
-        line-height: var(--zehn-size-16) !important;
+        line-height: var(--zehn-size-carousel-title) !important;
       }
     }
   }
 
   // GAME NAME
   ._3_xMyCJAh_Dv99KgZ54P3j {
-    font-size: var(--zehn-size-12) !important;
+    font-size: var(--zehn-size-carousel-description-text) !important;
     font-weight: var(--zehn-weight-normal) !important;
     background-color: transparent !important;
     border-radius: var(--zehn-size-radius-none) !important;
     padding: 0px !important;
     margin: 0px !important;
+    margin-top: var(--zehn-size-carousel-item-gap) !important;
     position: relative !important;
 
     // ICON
@@ -1046,6 +1052,7 @@
       color: inherit !important;
       font-size: inherit !important;
       font-weight: inherit !important;
+      line-height: var(--zehn-size-carousel-description) !important;
     }
   }
 }
@@ -1078,11 +1085,11 @@
   letter-spacing: normal !important;
   padding: 0px !important;
   color: var(--zehn-color-text3) !important;
-  font-size: var(--zehn-size-12) !important;
+  font-size: var(--zehn-size-carousel-date-text) !important;
   font-weight: var(--zehn-weight-normal) !important;
   letter-spacing: normal !important;
-  line-height: var(--zehn-size-16) !important;
-  margin-bottom: var(--zehn-size-spacing-xs) !important;
+  line-height: var(--zehn-size-carousel-date) !important;
+  margin-bottom: var(--zehn-size-carousel-item-gap) !important;
 }
 
 // CARD
@@ -1144,17 +1151,17 @@
   // TIME TEXT
   ._1ANYFgwMyPpwJjIndAdGSr {
     color: var(--zehn-color-text3) !important;
-    font-size: var(--zehn-size-12) !important;
+    font-size: var(--zehn-size-carousel-date-text) !important;
     font-weight: var(--zehn-weight-normal) !important;
     letter-spacing: normal !important;
-    line-height: var(--zehn-size-16) !important;
-    margin-bottom: var(--zehn-size-spacing-xs) !important;
+    line-height: var(--zehn-size-carousel-date) !important;
+    margin-bottom: var(--zehn-size-carousel-item-gap) !important;
   }
 
   // NO TIME SPACER
   ._33gR3fahL5J0_5r8o8YyOi {
     height: var(--zehn-size-16) !important;
-    margin-bottom: var(--zehn-size-spacing-xs) !important;
+    margin-bottom: var(--zehn-size-carousel-item-gap) !important;
   }
 }
 
@@ -1520,8 +1527,8 @@
     --image-scale: 1.05;
     --compat-offset: 0;
 
-    // ADD DETAIL SIZE WHEN DECK COMPAT ICONS ARE PRESENT AND CONTAINER IS HOVERED (OTHERWISE THEY ARE HIDDEN)
-    ._2BOmkMg4r689AAjdLObYs2:has(._1dzQL1mVR8GTmmSi_kpDgr) {
+    // ADD DETAIL SIZE WHEN DECK COMPAT ICONS / FRIENDS COUNT ARE PRESENT AND CONTAINER IS HOVERED
+    ._2BOmkMg4r689AAjdLObYs2:has(._1dzQL1mVR8GTmmSi_kpDgr, ._1To_QGbZaU8E2oNA55J2Ye) {
       --icon-detail: 1;
     }
   }
@@ -1546,7 +1553,7 @@
       z-index: 0;
       position: absolute;
       inset: 0px;
-      background-color: var(--zehn-color-acrylic);
+      background-color: var(--zehn-color-detail);
       backdrop-filter: var(--zehn-transparency-effects-acrylic-filter);
       background-blend-mode: exclusion;
       background-size: auto;
@@ -1569,6 +1576,7 @@
           position: absolute !important;
           inset: 0px !important;
           align-items: center !important;
+          justify-content: space-evenly !important;
         }
       }
     }
@@ -1817,7 +1825,7 @@ span._13fGPw2BaM5wWIahr2xNKt._35G8cQ1kQIoGyUIch8Afz1 {
   padding: 0px !important;
   height: var(--zehn-size-detail) !important;
   gap: var(--zehn-size-spacing-xs) !important;
-  width: 100% !important;
+  width: fit-content !important;
   transform: translateY(var(--compat-calc)) !important;
   place-content: center !important;
   border-radius: var(--zehn-size-radius-none) !important;
@@ -1837,7 +1845,7 @@ span._13fGPw2BaM5wWIahr2xNKt._35G8cQ1kQIoGyUIch8Afz1 {
   }
 }
 
-// FRIENDS BAR - IS IT STILL USED IN LIBRARY OR JUST ON TOOLTIP???
+// FRIENDS BAR - ONLY IN COLlECTION?
 ._3dncOt2dhpnFYQn-WYQ3Mb {
   gap: var(--zehn-size-spacing-xxs) !important;
 
@@ -1855,21 +1863,25 @@ span._13fGPw2BaM5wWIahr2xNKt._35G8cQ1kQIoGyUIch8Afz1 {
 
   // SUMMARY VIEW
   &._1To_QGbZaU8E2oNA55J2Ye {
-    margin-right: var(--zehn-size-spacing-xs) !important;
-    margin-bottom: var(--zehn-size-spacing-xs) !important;
-  }
+    --compat-calc: calc(var(--zehn-size-detail) * (var(--compat-offset) + var(--compat-addition)));
+    margin: auto 0px 0px 0px !important;
+    transform: translateY(var(--compat-calc)) !important;
+    width: fit-content !important;
+    transition: opacity 0.2s var(--zehn-timing-ease), transform 0.2s var(--zehn-timing-ease) !important;
+    justify-content: center !important;
 
-  // SUMMARY LEADER
-  ._2SZ70N1VfFNqP4yDeNTajH {
-    background-color: var(--zehn-color-accent-50) !important;
-  }
+    // SUMMARY LEADER INDICATOR
+    ._2SZ70N1VfFNqP4yDeNTajH {}
 
-  // SUMMARY COUNT
-  ._1CA44fHFH68DkHIPoniGpz {
-    color: var(--zehn-color-text1) !important;
-    font-size: var(--zehn-size-12) !important;
-    font-weight: var(--zehn-weight-normal) !important;
-    padding: 0px 0px 0px var(--zehn-size-spacing-xxs) !important;
+    // SUMMARY COUNT
+    ._1CA44fHFH68DkHIPoniGpz {
+      color: var(--zehn-color-text1) !important;
+      font-size: var(--zehn-size-12) !important;
+      font-weight: var(--zehn-weight-normal) !important;
+      padding: 0px !important;
+      height: var(--zehn-size-detail) !important;
+      line-height: var(--zehn-size-detail) !important;
+    }
   }
 }
 
