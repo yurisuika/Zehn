@@ -44,8 +44,18 @@ button.DialogButton::before {
 }
 
 // GENERIC
-button.DialogButton,
-button.DialogButton:where(.Primary, .Secondary, .Small),
+.DialogButton,
+.DialogButton:where(.Primary, .Secondary, .Small) {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
+    $style: "dialog"
+  );
+}
+
+// DIALOG FOOTER
 .GenericConfirmDialog .DialogFooter button.DialogButton {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
@@ -1106,22 +1116,43 @@ button.DialogButton:where(.Primary, .Secondary, .Small),
   );
 }
 
-// GAME SPOTLIGHT - DEMO/PLAYTEST/INVITE
-._3SdsgvPAsO-ewAaupsOhHy,
+// GAME - SPOTLIGHT - DEMO/PLAYTEST/INVITE
+._3SdsgvPAsO-ewAaupsOhHy.DialogButton,
 ._1qKFBvABqbDgrOvtdhYh17 {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $padding: var(--zehn-size-button-padding-wide),
-    $style: "dialog"
+    $shape: var(--zehn-size-radius-pill)
+  );
+}
+
+// GAME - SPOTLIGHT - NEW CONTENT RELEASED
+._1yEoLSbdr6RwEzqpyKLR4m a._3m6qdpFN3Mop0iw9ZE3RRa {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
+    $shape: var(--zehn-size-radius-pill)
+  );
+}
+
+// GAME - SPOTLIGHT - UPDATE REVIEW
+._2SAb6geDpe6toA1GaP0GjH ._1kCN0pAntrcGCSmcc-vYdk {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide),
+    $shape: var(--zehn-size-radius-pill)
   );
 }
 
 // GAME - NEW DLC
 .ut0YcLYGAoSTz2Dnjw9U1 .R2VdUtWzknAHBOsdRzG_d {
   @include template.preset-fixed(
-    $height: var(--zehn-size-button-lg),
-    $width: 100%
+    $height: var(--zehn-size-spotlight-panel-header),
+    $width: var(--zehn-size-spotlight-panel-header),
+    $shape: var(--zehn-size-radius-circular)
   );
 }
 
