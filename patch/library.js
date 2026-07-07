@@ -342,7 +342,7 @@ Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj',
 
 /* ADD PLAY ICON INTO CONTAINER ------------------------------------------------------------------------------------- */
 
-Zehn.createIconContainer('._3lh8aaHNMcFvupuNhQDfFt', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnIconContainer']); // COMMUNITY ICON
+Zehn.createIconContainer('._3QS6OBHpvI5bXsSQA2zQuW', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnIconContainer']);
 
 /* WRAP FRIEND PICKER CLOSE SVG ------------------------------------------------------------------------------------- */
 
