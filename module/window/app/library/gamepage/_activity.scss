@@ -122,18 +122,33 @@
 
 // MAKE A POST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-._3x31AgESSlUqX3D4MTHv2m.YFAtL5H6txGXk5T_IhpUF._2bqRppbRWGNAZV5lfubW7- {
+// FEED
+._3x31AgESSlUqX3D4MTHv2m {
   margin: 0px !important;
   display: flex !important;
   flex-direction: column !important;
-  background: var(--zehn-content-mode-activity-panel-color) !important;
-  transition: var(--zehn-transition-panel) !important;
-  border-radius: var(--zehn-size-activity-panel-radius) !important;
-  padding: var(--zehn-size-activity-panel-padding) !important;
   gap: 0px !important;
 
-  &:hover {
-    background-color: var(--zehn-content-mode-activity-panel-color-hover) !important;
+
+  // ADD TO FEED
+  &.YFAtL5H6txGXk5T_IhpUF._2bqRppbRWGNAZV5lfubW7- {
+    background: var(--zehn-content-mode-activity-panel-color) !important;
+    transition: var(--zehn-transition-panel) !important;
+    border-radius: var(--zehn-size-activity-panel-radius) !important;
+    padding: var(--zehn-size-activity-panel-padding) !important;
+    --button-spacing: var(--zehn-size-spacing-xs);
+
+    &:hover {
+      background-color: var(--zehn-content-mode-activity-panel-color-hover) !important;
+    }
+  }
+
+  // COMMENT REPLY
+  &._2Yybx8PCzkzdKoaf-yf0TH {
+    background: transparent !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    --button-spacing: var(--zehn-size-dialog-button-gap);
   }
 
   // SUBMIT BUTTONS
@@ -142,7 +157,7 @@
     padding: 0px !important;
     transition: max-height 0.2s var(--zehn-timing-ease), margin 0.2s var(--zehn-timing-ease) !important;
     min-height: 0px !important;
-    gap: var(--zehn-size-spacing-xs) !important;
+    gap: var(--button-spacing) !important;
 
     // VISIBLE
     &._1_KMhJX-BZ-bohjsJ7i3w3 {
@@ -171,6 +186,14 @@
       }
     }
   }
+}
+
+// VISIBILITY LABEL - NOT ACTUALLY SURE WHERE THIS IS USED
+._2iCoIHI0MBWO23qx2MstOi {
+  letter-spacing: normal !important;
+  color: var(--zehn-color-text-label) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  font-weight: var(--zehn-weight-normal) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -596,21 +619,27 @@
 
       // TOP
       ._2ByGWwAeLjYzi1tvvrLIJq {
+        position: relative !important;
         padding: 0px !important;
         gap: var(--zehn-size-spacing-md) !important;
+        --review-subheader: var(--zehn-size-16);
 
         // THUMB ICON
         .gWDyh18yme_n7VmrYhmid {
+          position: absolute !important;
+          top: 0px !important;
+          left: 0px !important;
           margin: 0px !important;
           border-radius: var(--zehn-size-radius-none) !important;
-          width: var(--zehn-size-icon-xl) !important;
-          height: var(--zehn-size-icon-xl) !important;
+          width: var(--review-subheader) !important;
+          height: var(--review-subheader) !important;
           transform: none !important;
           background: var(--zehn-color-icon1) !important;
           mask-repeat: no-repeat !important;
           mask-position: center !important;
-          mask-size: var(--zehn-size-icon-xl) !important;
+          mask-size: var(--zehn-size-icon-md) !important;
 
+          * { display: none !important; }
 
           &._2oPMu032IJnXb5-21W07V- {
             -webkit-mask-image: var(--zehn-icon-thumb-up) !important;
@@ -619,13 +648,17 @@
           &._1VDAefc3Yx0ocLmAxWa985 {
             -webkit-mask-image: var(--zehn-icon-thumb-down) !important;
           }
+
+          // UP COLOR
+          &._3AXaY4djCODzJ6On5MRKno {}
+
+          // DOWN COLOR
+          &._1vUp7sGvRrUPsckOw9xPOT {}
         }
 
         // TEXT
         ._2txLP3SViQYE1uWpaFAiHD {
-          line-height: var(--zehn-size-16) !important;
-          margin-top: auto !important;
-          margin-bottom: auto !important;
+          margin: 0px !important;
 
           // RATING
           ._1zQfKpvh8tPQjRgzaTklOy {
@@ -633,6 +666,8 @@
             font-size: var(--zehn-size-14) !important;
             font-weight: var(--zehn-weight-normal) !important;
             padding: 0px !important;
+            line-height: var(--review-subheader) !important;
+            margin-left: calc(var(--review-subheader) + var(--zehn-size-spacing-xs)) !important;
           }
 
           // STATS
@@ -641,6 +676,57 @@
             font-size: var(--zehn-size-12) !important;
             font-weight: var(--zehn-weight-normal) !important;
             padding: 0px !important;
+            line-height: var(--zehn-size-16) !important;
+          }
+        }
+
+        // LIKE/COMMENT COUNT
+        ._1-KuQ_AiVO7Bp1ExINBgws {
+          margin: 0px 0px 0px auto !important;
+          flex-flow: column !important;
+          gap: 0px !important;
+
+          // STAT
+          ._3uiPsZR0JfwFCXKA_BS3FS {
+
+            // ICON
+            ._1yGY_DN6vXqGsrB619meyS,
+            ._2Xa07n4piP3UcfAlcX2Sym {
+              width: var(--zehn-size-icon-md) !important;
+              height: var(--zehn-size-icon-md) !important;
+              background: var(--zehn-color-icon1) !important;
+              mask-repeat: no-repeat !important;
+              mask-position: center !important;
+              mask-size: var(--zehn-size-icon-md) !important;
+              margin-right: var(--zehn-size-spacing-xs) !important;
+            }
+
+            ._1yGY_DN6vXqGsrB619meyS {
+              -webkit-mask-image: var(--zehn-icon-thumb-up) !important;
+            }
+
+            ._2Xa07n4piP3UcfAlcX2Sym {
+              -webkit-mask-image: var(--zehn-icon-discussion) !important;
+            }
+
+            // TEXT TYPE
+            ._3t5NroT-JH_vw3mOui7IAP {
+              color: var(--zehn-color-text3) !important;
+              font-size: var(--zehn-size-14) !important;
+              font-weight: var(--zehn-weight-normal) !important;
+              margin-right: var(--zehn-size-text-gap) !important;
+              display: none !important;
+              line-height: var(--zehn-size-16) !important;
+            }
+
+            // TEXT COUNT
+            ._1VRbHxLijhTmcTQek51pUt {
+              color: var(--zehn-color-text1) !important;
+              font-size: var(--zehn-size-14) !important;
+              font-weight: var(--zehn-weight-normal) !important;
+              margin: 0px !important;
+              line-height: var(--zehn-size-16) !important;
+            }
           }
         }
       }
@@ -648,7 +734,7 @@
       // REIVEW TEXT
       ._3ZTURoVnx3Ld8Hu5Ozd70v {
         color: var(--zehn-color-text1) !important;
-        font-size: var(--zehn-size-14) !important;
+        font-size: var(--zehn-size-12) !important;
         font-weight: var(--zehn-weight-normal) !important;
 
         ._3Jcr-Z5xp4fy3VmiMJYIIl {
@@ -702,6 +788,73 @@
     &:hover {
       background-color: var(--zehn-content-mode-activity-panel-color-hover);
     }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// OFFLINE MODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._5uvIN6jXDXzzck59F-nhv._2dnxv1f3olKbOSmfSFezvJ {
+  gap: var(--zehn-size-activity-panel-content-gap) !important;
+  min-height: fit-content !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: var(--zehn-content-mode-activity-spacing) !important;
+  border: none !important;
+  background: var(--zehn-content-mode-activity-panel-color) !important;
+  padding: var(--zehn-size-activity-panel-padding) !important;
+  position: relative !important;
+  transition: var(--zehn-transition-panel) !important;
+  border-radius: var(--zehn-size-activity-panel-radius) !important;
+
+  &:hover {
+    background-color: var(--zehn-content-mode-activity-panel-color-hover) !important;
+  }
+
+  // GO ONLINE
+  ._1e_-NmxfEO0FOjLgw5HhsW {}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// NON-STEAM GAME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._5uvIN6jXDXzzck59F-nhv._1TGl52GwsFQg3CXUYvThP- {
+  gap: var(--zehn-size-activity-panel-content-gap) !important;
+  min-height: fit-content !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: var(--zehn-content-mode-activity-spacing) !important;
+  border: none !important;
+  background: var(--zehn-content-mode-activity-panel-color) !important;
+  padding: var(--zehn-size-activity-panel-padding) !important;
+  position: relative !important;
+  transition: var(--zehn-transition-panel) !important;
+  border-radius: var(--zehn-size-activity-panel-radius) !important;
+
+  &:hover {
+    background-color: var(--zehn-content-mode-activity-panel-color-hover) !important;
   }
 }
 
