@@ -392,13 +392,6 @@
   overflow: visible !important;
 }
 
-// CHAT NOTIFICATIONS
-.DialogInnerBody._2ttS9Skxg9t799nKK9NeqC {
-  min-height: 0px !important;
-  max-height: min-content !important;
-  -webkit-mask: none !important;
-}
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -585,7 +578,7 @@ div:not(:first-child)>.DialogSubHeader {
 }
 
 label>.DialogLabel {
-  line-height: 32px !important;
+  line-height: var(--zehn-size-settings-label) !important;
 }
 
 // TREAT SOME WHAT'S NEW LABELS AS SUBHEADERS
@@ -595,12 +588,55 @@ label>.DialogLabel {
   font-size: var(--zehn-size-text-section-header) !important;
   text-transform: none !important;
   margin-right: 0px !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-settings-section-header) !important;
 }
 
 // REQUIREMENT LABEL LIKE USED IN SET LINK CODE
 .DialogRequirementLabel {
   padding: 0px !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SEPARATOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LINE
+.DialogHBar {
+  background: var(--zehn-color-separator) !important;
+  min-height: var(--zehn-size-separator) !important;
+  max-height: var(--zehn-size-separator) !important;
+  margin: 0px !important;
+  display: none !important;
+}
+
+// OR
+.OrSeparator {
+  margin: 0px !important;
+  height: fit-content !important;
+  display: none !important;
+
+  .HBar {
+    height: var(--zehn-size-separator) !important;
+    background-color: var(--zehn-color-separator) !important;
+  }
+
+  .OrSeparatorLabel {
+    background-color: transparent !important;
+    line-height: var(--zehn-size-16) !important;
+    font-size: var(--zehn-size-text-label) !important;
+    color: var(--zehn-color-text-label) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    margin: 0px var(--zehn-size-spacing-md) !important;
+  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -801,6 +837,134 @@ label>.DialogLabel {
 
 .GenericConfirmDialog span:not([class]) {
   opacity: 1 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FRIEND PICKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.FriendPicker {
+  gap: var(--zehn-size-dialog-paragraph-gap) !important;
+  margin: 0px !important;
+
+  // LIST BUILDER
+  .DialogListBuilderInput_List {
+    max-height: unset !important;
+    min-width: 100% !important;
+
+    // SEARCH
+    .DialogListBuilderInput_Input {
+      min-width: 100% !important;
+      max-width: unset !important;
+    }
+
+    .DialogListBuilderInput_ListItem {
+
+      // TAG
+      .FriendPicker_ChosenFriend {
+        position: relative !important;
+        margin: 0px !important;
+        align-items: center !important;
+        gap: var(--zehn-size-tag-gap) !important;
+        font-weight: var(--zehn-weight-normal) !important;
+        line-height: normal !important;
+        align-content: center !important;
+        border-radius: var(--zehn-size-tag-radius) !important;
+        color: var(--zehn-color-tag-text) !important;
+        background: var(--zehn-color-tag) !important;
+        padding: var(--zehn-size-tag-padding);
+        font-size: var(--zehn-size-tag-text) !important;
+        height: var(--zehn-size-tag) !important;
+        --remove-scale: 0;
+
+        &:hover {
+          --remove-scale: 1;
+          background-color: var(--zehn-color-tag-hover) !important;
+        }
+
+        &:active {
+          background-color: var(--zehn-color-tag-active) !important;
+        }
+
+        // TEXT
+        span {
+          color: inherit !important;
+        }
+
+        // REMOVE TAG
+        .zehnBlurWrapper {
+          position: absolute !important;
+          height: 100% !important;
+          width: 100% !important;
+          margin: 0px !important;
+          inset: 0px !important;
+          box-sizing: border-box !important;
+          align-content: center !important;
+          backdrop-filter: var(--zehn-filter-light-blur) !important;
+          border-radius: var(--zehn-size-tag-radius) !important;
+          transform-origin: center !important;
+          transform: scale(var(--remove-scale)) !important;
+
+          .SVGIcon_X_Line {
+            width: var(--zehn-size-icon-md) !important;
+            height: var(--zehn-size-icon-md) !important;
+            opacity: 1 !important;
+            background-color: var(--zehn-color-icon1) !important;
+            mask-repeat: no-repeat !important;
+            mask-position: center !important;
+            mask-size: var(--zehn-size-icon-md) !important;
+            -webkit-mask-image: var(--zehn-icon-tag-close) !important;
+            margin: auto !important;
+            display: block !important;
+
+            * { display: none !important; }
+          }
+        }
+      }
+    }
+  }
+
+  .FriendPickerFriendList {
+    min-height: 100% !important;
+
+    .insetShadow {
+      background: transparent !important;
+      display: none !important;
+    }
+
+    .FriendPickerScrollPanel {
+      overflow-y: auto !important;
+      max-height: unset !important;
+      margin: 0px !important;
+      padding: 0px !important;
+
+      .FriendPicker_SuggestedFriend {
+        padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md) !important;
+        background: var(--zehn-color-list-background) !important;
+
+        &:hover {
+          background: var(--zehn-color-list-background-hover) !important;
+        }
+
+        &:active {
+          background: var(--zehn-color-list-background-active) !important;
+        }
+
+        &.Focus {
+          background: var(--zehn-color-list-background-focus) !important;
+        }
+      }
+    }
+  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

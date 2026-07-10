@@ -1016,7 +1016,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   min-width: fit-content !important;
   height: fit-content !important;
   justify-content: center !important;
-  gap: var(--zehn-size-dialog-button-gap) !important;
+  gap: var(--zehn-size-spacing-xs) !important;
 }
 
 // MENU BUTTON
@@ -1033,15 +1033,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
-.VoiceIconCtn,
-.VoiceIconCtn:hover:is(:hover, :active) {
+.VoiceIconCtn {
   color: transparent !important;
-  width: 100% !important;
-  height: 100% !important;
-
-  svg {
-    color: inherit !important;
-  }
+  width: fit-content !important;
+  height: fit-content !important;
+  margin: auto !important;
 }
 
 // BUTTON ICONS
@@ -3222,7 +3218,7 @@ span.mention.me {
 .msg .broadcastInviteSelf,
 .msg .broadcastViewRequestDismissed {
   color: var(--zehn-color-text3) !important;
-  display: flex !important;
+  display: block !important;
   filter: none !important;
 
   img {
@@ -4142,6 +4138,34 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 }
 
 // VOICE BUTTON INNER
+.ChatMessageEntryVoice {
+  background: transparent !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  color: var(--zehn-color-text1) !important;
+  transition: none !important;
+
+  &.Inactive {
+    min-width: fit-content !important;
+    max-width: fit-content !important;
+    width: fit-content !important;
+  }
+
+  &.Active {
+    min-width: fit-content !important;
+    max-width: fit-content !important;
+    width: fit-content !important;
+  }
+
+  .activeVoiceControls {
+    border: none !important;
+
+    .activeVoiceButtons {
+      gap: 0px !important;
+    }
+  }
+}
+
 .ChatMessageEntryVoice .buttonsContainer {
   width: 100% !important;
   height: 100% !important;
