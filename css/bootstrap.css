@@ -695,6 +695,21 @@ div:hover::-webkit-scrollbar-thumb:horizontal:not(:window-inactive) {
   border-left: var(--zehn-scrollbar-style-focused-end-spacing) solid transparent !important;
 }
 
+._30XroGinE5bsVSmgAzXIFf {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black var(--scroll-fade-size), black calc(100% - var(--scroll-fade-size)), transparent 100%) !important;
+  scroll-padding: var(--scroll-fade-size) 0px !important;
+  --scroll-fade-size: var(--zehn-size-16);
+}
+._30XroGinE5bsVSmgAzXIFf._3bWn53nUaW4OMLd2eCcwNd {
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black calc(100% - var(--scroll-fade-size)), transparent 100%) !important;
+}
+._30XroGinE5bsVSmgAzXIFf._2wvQSE2pMlySxljNxOl-AL {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black var(--scroll-fade-size), black 100%) !important;
+}
+._30XroGinE5bsVSmgAzXIFf._3bWn53nUaW4OMLd2eCcwNd._2wvQSE2pMlySxljNxOl-AL {
+  --webkit-mask-image: transparent !important;
+}
+
 ._2TAQYpbxatDYN3Ex76KX5u .DialogBody .DialogBodyText ._7jaC6UFFrvcKq2UlJr1Pb .Cw--cBWy7v1Ey1JF0VkBN,
 .ModalDialogPopup .DialogContentTransition .DialogBody,
 .ReactVirtualized__Grid.ReactVirtualized__List,
@@ -4258,7 +4273,8 @@ button.DialogButton::before {
   pointer-events: none !important;
 }
 
-.VoiceControlPanelButton {
+.friendlist .VoiceControlPanelButton,
+.chatRoomGroupNavColumn .VoiceControlPanelButton {
   appearance: unset !important;
   box-sizing: border-box !important;
   display: flex !important;
@@ -4288,7 +4304,8 @@ button.DialogButton::before {
   outline-style: solid !important;
   outline-offset: calc(-1 * var(--zehn-size-button-app-border)) !important;
 }
-.VoiceControlPanelButton svg {
+.friendlist .VoiceControlPanelButton svg,
+.chatRoomGroupNavColumn .VoiceControlPanelButton svg {
   display: block !important;
   transition: none !important;
   transform: none !important;
@@ -4307,10 +4324,12 @@ button.DialogButton::before {
   mask-position: center !important;
   background: var(--icon-color) !important;
 }
-.VoiceControlPanelButton svg * {
+.friendlist .VoiceControlPanelButton svg *,
+.chatRoomGroupNavColumn .VoiceControlPanelButton svg * {
   display: none !important;
 }
-.VoiceControlPanelButton {
+.friendlist .VoiceControlPanelButton,
+.chatRoomGroupNavColumn .VoiceControlPanelButton {
   height: var(--zehn-size-button-md) !important;
   min-height: var(--zehn-size-button-md) !important;
   max-height: var(--zehn-size-button-md) !important;
@@ -4320,43 +4339,50 @@ button.DialogButton::before {
   padding: var(--zehn-size-button-padding) !important;
   border-radius: var(--zehn-size-radius-circular) !important;
 }
-.VoiceControlPanelButton {
+.friendlist .VoiceControlPanelButton,
+.chatRoomGroupNavColumn .VoiceControlPanelButton {
   background: var(--zehn-color-button-app-background) !important;
   color: var(--zehn-color-button-app-text) !important;
   outline-color: var(--zehn-color-button-app-border) !important;
   --icon-color: var(--zehn-color-button-app-icon);
 }
-.VoiceControlPanelButton:is(:focus, :enabled:focus) {
+.friendlist .VoiceControlPanelButton:is(:focus, :enabled:focus),
+.chatRoomGroupNavColumn .VoiceControlPanelButton:is(:focus, :enabled:focus) {
   background: var(--zehn-color-button-app-background-focus) !important;
   color: var(--zehn-color-button-app-text-focus) !important;
   outline-color: var(--zehn-color-button-app-border-focus) !important;
   --icon-color: var(--zehn-color-button-app-icon-focus);
 }
-.VoiceControlPanelButton:is(:hover, :enabled:hover) {
+.friendlist .VoiceControlPanelButton:is(:hover, :enabled:hover),
+.chatRoomGroupNavColumn .VoiceControlPanelButton:is(:hover, :enabled:hover) {
   background: var(--zehn-color-button-app-background-hover) !important;
   color: var(--zehn-color-button-app-text-hover) !important;
   outline-color: var(--zehn-color-button-app-border-hover) !important;
   --icon-color: var(--zehn-color-button-app-icon-hover);
 }
-.VoiceControlPanelButton:is(:hover:focus, :enabled:hover:focus) {
+.friendlist .VoiceControlPanelButton:is(:hover:focus, :enabled:hover:focus),
+.chatRoomGroupNavColumn .VoiceControlPanelButton:is(:hover:focus, :enabled:hover:focus) {
   background: var(--zehn-color-button-app-background-hover-focus) !important;
   color: var(--zehn-color-button-app-text-hover-focus) !important;
   outline-color: var(--zehn-color-button-app-border-hover-focus) !important;
   --icon-color: var(--zehn-color-button-app-icon-hover-focus);
 }
-.VoiceControlPanelButton:is(:active, :enabled:active) {
+.friendlist .VoiceControlPanelButton:is(:active, :enabled:active),
+.chatRoomGroupNavColumn .VoiceControlPanelButton:is(:active, :enabled:active) {
   background: var(--zehn-color-button-app-background-active) !important;
   color: var(--zehn-color-button-app-text-active) !important;
   outline-color: var(--zehn-color-button-app-border-active) !important;
   --icon-color: var(--zehn-color-button-app-icon-active);
 }
-.VoiceControlPanelButton:is(:active:focus, :enabled:active:focus) {
+.friendlist .VoiceControlPanelButton:is(:active:focus, :enabled:active:focus),
+.chatRoomGroupNavColumn .VoiceControlPanelButton:is(:active:focus, :enabled:active:focus) {
   background: var(--zehn-color-button-app-background-active-focus) !important;
   color: var(--zehn-color-button-app-text-active-focus) !important;
   outline-color: var(--zehn-color-button-app-border-active-focus) !important;
   --icon-color: var(--zehn-color-button-app-icon-active-focus);
 }
-.VoiceControlPanelButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
+.friendlist .VoiceControlPanelButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus),
+.chatRoomGroupNavColumn .VoiceControlPanelButton:is(:disabled, :disabled:focus, :disabled:hover:focus, :disabled:active, :disabled:active:focus) {
   background: var(--zehn-color-button-app-background-disabled) !important;
   color: var(--zehn-color-button-app-text-disabled) !important;
   outline-color: var(--zehn-color-button-app-border-disabled) !important;
@@ -5767,8 +5793,7 @@ button.DialogButton::before {
   pointer-events: none !important;
 }
 
-.ChatMessageEntryVoice.Inactive,
-.ChatMessageEntryVoice.Active {
+.ChatMessageEntryVoice .VoiceToggle {
   appearance: unset !important;
   box-sizing: border-box !important;
   display: flex !important;
@@ -5798,8 +5823,7 @@ button.DialogButton::before {
   outline-style: solid !important;
   outline-offset: calc(-1 * var(--zehn-size-button-app-border)) !important;
 }
-.ChatMessageEntryVoice.Inactive svg,
-.ChatMessageEntryVoice.Active svg {
+.ChatMessageEntryVoice .VoiceToggle svg {
   display: block !important;
   transition: none !important;
   transform: none !important;
@@ -5818,12 +5842,10 @@ button.DialogButton::before {
   mask-position: center !important;
   background: var(--icon-color) !important;
 }
-.ChatMessageEntryVoice.Inactive svg *,
-.ChatMessageEntryVoice.Active svg * {
+.ChatMessageEntryVoice .VoiceToggle svg * {
   display: none !important;
 }
-.ChatMessageEntryVoice.Inactive,
-.ChatMessageEntryVoice.Active {
+.ChatMessageEntryVoice .VoiceToggle {
   height: var(--zehn-size-chat-entry) !important;
   min-height: var(--zehn-size-chat-entry) !important;
   max-height: var(--zehn-size-chat-entry) !important;
@@ -5833,50 +5855,149 @@ button.DialogButton::before {
   padding: var(--zehn-size-button-padding) !important;
   border-radius: var(--zehn-size-button-app-radius) !important;
 }
-.ChatMessageEntryVoice.Inactive,
-.ChatMessageEntryVoice.Active {
+.ChatMessageEntryVoice .VoiceToggle {
   background: var(--zehn-color-button-app-background) !important;
   color: var(--zehn-color-button-app-text) !important;
   outline-color: var(--zehn-color-button-app-border) !important;
   --icon-color: var(--zehn-color-button-app-icon);
 }
-.ChatMessageEntryVoice.Inactive:is(:focus, :enabled:focus),
-.ChatMessageEntryVoice.Active:is(:focus, :enabled:focus) {
+.ChatMessageEntryVoice .VoiceToggle:is(:focus, :enabled:focus) {
   background: var(--zehn-color-button-app-background-focus) !important;
   color: var(--zehn-color-button-app-text-focus) !important;
   outline-color: var(--zehn-color-button-app-border-focus) !important;
   --icon-color: var(--zehn-color-button-app-icon-focus);
 }
-.ChatMessageEntryVoice.Inactive:is(:hover, :enabled:hover),
-.ChatMessageEntryVoice.Active:is(:hover, :enabled:hover) {
+.ChatMessageEntryVoice .VoiceToggle:is(:hover, :enabled:hover) {
   background: var(--zehn-color-button-app-background-hover) !important;
   color: var(--zehn-color-button-app-text-hover) !important;
   outline-color: var(--zehn-color-button-app-border-hover) !important;
   --icon-color: var(--zehn-color-button-app-icon-hover);
 }
-.ChatMessageEntryVoice.Inactive:is(:hover:focus, :enabled:hover:focus),
-.ChatMessageEntryVoice.Active:is(:hover:focus, :enabled:hover:focus) {
+.ChatMessageEntryVoice .VoiceToggle:is(:hover:focus, :enabled:hover:focus) {
   background: var(--zehn-color-button-app-background-hover-focus) !important;
   color: var(--zehn-color-button-app-text-hover-focus) !important;
   outline-color: var(--zehn-color-button-app-border-hover-focus) !important;
   --icon-color: var(--zehn-color-button-app-icon-hover-focus);
 }
-.ChatMessageEntryVoice.Inactive:is(:active, :enabled:active),
-.ChatMessageEntryVoice.Active:is(:active, :enabled:active) {
+.ChatMessageEntryVoice .VoiceToggle:is(:active, :enabled:active) {
   background: var(--zehn-color-button-app-background-active) !important;
   color: var(--zehn-color-button-app-text-active) !important;
   outline-color: var(--zehn-color-button-app-border-active) !important;
   --icon-color: var(--zehn-color-button-app-icon-active);
 }
-.ChatMessageEntryVoice.Inactive:is(:active:focus, :enabled:active:focus),
-.ChatMessageEntryVoice.Active:is(:active:focus, :enabled:active:focus) {
+.ChatMessageEntryVoice .VoiceToggle:is(:active:focus, :enabled:active:focus) {
   background: var(--zehn-color-button-app-background-active-focus) !important;
   color: var(--zehn-color-button-app-text-active-focus) !important;
   outline-color: var(--zehn-color-button-app-border-active-focus) !important;
   --icon-color: var(--zehn-color-button-app-icon-active-focus);
 }
-.ChatMessageEntryVoice.Inactive:is(.Disabled, .Disabled:focus, .Disabled:hover:focus, .Disabled:active, .Disabled:active:focus),
-.ChatMessageEntryVoice.Active:is(.Disabled, .Disabled:focus, .Disabled:hover:focus, .Disabled:active, .Disabled:active:focus) {
+.ChatMessageEntryVoice .VoiceToggle:is(.Disabled, .Disabled:focus, .Disabled:hover:focus, .Disabled:active, .Disabled:active:focus) {
+  background: var(--zehn-color-button-app-background-disabled) !important;
+  color: var(--zehn-color-button-app-text-disabled) !important;
+  outline-color: var(--zehn-color-button-app-border-disabled) !important;
+  --icon-color: var(--zehn-color-button-app-icon-disabled);
+  pointer-events: none !important;
+}
+
+.ChatMessageEntryVoice .VoiceControlPanelButton {
+  appearance: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  letter-spacing: normal !important;
+  transition: none !important;
+  transform: none !important;
+  scale: 1 !important;
+  opacity: 1 !important;
+  filter: none !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  place-content: center !important;
+  align-content: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0px !important;
+  gap: var(--zehn-size-button-app-gap) !important;
+  background-position: center !important;
+  background-size: auto !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-button-text) !important;
+  line-height: var(--zehn-size-button-line) !important;
+  border: none !important;
+  outline-width: var(--zehn-size-button-app-border) !important;
+  outline-style: solid !important;
+  outline-offset: calc(-1 * var(--zehn-size-button-app-border)) !important;
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton svg {
+  display: block !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  justify-self: center !important;
+  height: var(--zehn-size-icon-md) !important;
+  min-height: var(--zehn-size-icon-md) !important;
+  width: var(--zehn-size-icon-md) !important;
+  min-width: var(--zehn-size-icon-md) !important;
+  inset: unset !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  background: var(--icon-color) !important;
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton svg * {
+  display: none !important;
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton {
+  height: var(--zehn-size-chat-entry) !important;
+  min-height: var(--zehn-size-chat-entry) !important;
+  max-height: var(--zehn-size-chat-entry) !important;
+  width: var(--zehn-size-chat-entry) !important;
+  min-width: var(--zehn-size-chat-entry) !important;
+  max-width: var(--zehn-size-chat-entry) !important;
+  padding: var(--zehn-size-button-padding) !important;
+  border-radius: var(--zehn-size-button-app-radius) !important;
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton {
+  background: var(--zehn-color-button-app-background) !important;
+  color: var(--zehn-color-button-app-text) !important;
+  outline-color: var(--zehn-color-button-app-border) !important;
+  --icon-color: var(--zehn-color-button-app-icon);
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton:is(:focus, :enabled:focus) {
+  background: var(--zehn-color-button-app-background-focus) !important;
+  color: var(--zehn-color-button-app-text-focus) !important;
+  outline-color: var(--zehn-color-button-app-border-focus) !important;
+  --icon-color: var(--zehn-color-button-app-icon-focus);
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton:is(:hover, :enabled:hover) {
+  background: var(--zehn-color-button-app-background-hover) !important;
+  color: var(--zehn-color-button-app-text-hover) !important;
+  outline-color: var(--zehn-color-button-app-border-hover) !important;
+  --icon-color: var(--zehn-color-button-app-icon-hover);
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton:is(:hover:focus, :enabled:hover:focus) {
+  background: var(--zehn-color-button-app-background-hover-focus) !important;
+  color: var(--zehn-color-button-app-text-hover-focus) !important;
+  outline-color: var(--zehn-color-button-app-border-hover-focus) !important;
+  --icon-color: var(--zehn-color-button-app-icon-hover-focus);
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton:is(:active, :enabled:active) {
+  background: var(--zehn-color-button-app-background-active) !important;
+  color: var(--zehn-color-button-app-text-active) !important;
+  outline-color: var(--zehn-color-button-app-border-active) !important;
+  --icon-color: var(--zehn-color-button-app-icon-active);
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton:is(:active:focus, :enabled:active:focus) {
+  background: var(--zehn-color-button-app-background-active-focus) !important;
+  color: var(--zehn-color-button-app-text-active-focus) !important;
+  outline-color: var(--zehn-color-button-app-border-active-focus) !important;
+  --icon-color: var(--zehn-color-button-app-icon-active-focus);
+}
+.ChatMessageEntryVoice .VoiceControlPanelButton:is(.Disabled, .Disabled:focus, .Disabled:hover:focus, .Disabled:active, .Disabled:active:focus) {
   background: var(--zehn-color-button-app-background-disabled) !important;
   color: var(--zehn-color-button-app-text-disabled) !important;
   outline-color: var(--zehn-color-button-app-border-disabled) !important;
@@ -27182,9 +27303,6 @@ input[type=radio i]:checked:disabled::after,
 }
 
 .DialogInputLabelGroup {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: baseline !important;
   margin: 0px !important;
 }
 
@@ -27839,8 +27957,11 @@ option:checked {
 }
 
 .DialogInput_Wrapper._DialogLayout {
+  border-radius: var(--zehn-size-radius-none) !important;
+  background-color: transparent !important;
+  padding: 0px !important;
   width: auto !important;
-  gap: var(--zehn-size-spacing-xs) !important;
+  gap: var(--zehn-size-settings-control-gap) !important;
 }
 
 textarea {
@@ -28106,8 +28227,7 @@ textarea._1H8F9Z-889HGdHeC5msAZ0 {
   gap: var(--zehn-size-spacing-xs) !important;
   align-items: baseline !important;
 }
-
-.DialogListBuilderInput_ListItem {
+.DialogListBuilderInput_List .DialogListBuilderInput_ListItem {
   margin: auto 0px !important;
   order: 1 !important;
 }
@@ -28701,7 +28821,8 @@ input[type=password],
 
 .DialogToggleField._DialogInputContainer {
   padding: 0px !important;
-  gap: var(--zehn-size-spacing-xs) !important;
+  gap: var(--zehn-size-settings-control-gap) !important;
+  flex-direction: column !important;
 }
 
 .DialogToggleField_NewUIContainer {
@@ -30466,13 +30587,14 @@ img.AB86vEzEKPL0y5fK_m4pT {
   display: none !important;
 }
 
-* .ChatRoomGroupAvatar_initials {
+.ChatRoomGroupAvatar_initials {
+  font-size: calc(var(--avatar-size) / 2) !important;
+  line-height: var(--avatar-size) !important;
   color: var(--zehn-color-text1) !important;
   background: transparent !important;
   font-weight: var(--zehn-weight-normal) !important;
   background-image: none !important;
   -webkit-text-fill-color: var(--zehn-color-text1) !important;
-  font-size: inherit !important;
   width: 100% !important;
   height: 100% !important;
   padding: 0px !important;
@@ -34029,6 +34151,10 @@ div:has(> ._1J21tLst5SEhBPkVRT53UV) {
   pointer-events: none !important;
 }
 
+._3FIjYetykQsFYR08l1v7Ls {
+  display: none !important;
+}
+
 ._1wPplsegQqCoe06wXPhzKT {
   display: none !important;
 }
@@ -35145,12 +35271,6 @@ body:not(.WindowFocus) ._1cWmu5TUWFAVHlv1EVaF8e {
   overflow: visible !important;
 }
 
-.DialogInnerBody._2ttS9Skxg9t799nKK9NeqC {
-  min-height: 0px !important;
-  max-height: min-content !important;
-  -webkit-mask: none !important;
-}
-
 ._DialogColLayout {
   gap: var(--zehn-size-dialog-button-gap) !important;
   justify-content: center !important;
@@ -35281,7 +35401,7 @@ div:not(:first-child) > .DialogSubHeader {
 }
 
 label > .DialogLabel {
-  line-height: 32px !important;
+  line-height: var(--zehn-size-settings-label) !important;
 }
 
 ._1n-sV5GdQis4Wh9XN3GJ7L > .DialogLabel._DialogLayout:not(.fyxt0H7Cwfirf9908slPp) {
@@ -35290,11 +35410,37 @@ label > .DialogLabel {
   font-size: var(--zehn-size-text-section-header) !important;
   text-transform: none !important;
   margin-right: 0px !important;
-  line-height: 32px !important;
+  line-height: var(--zehn-size-settings-section-header) !important;
 }
 
 .DialogRequirementLabel {
   padding: 0px !important;
+}
+
+.DialogHBar {
+  background: var(--zehn-color-separator) !important;
+  min-height: var(--zehn-size-separator) !important;
+  max-height: var(--zehn-size-separator) !important;
+  margin: 0px !important;
+  display: none !important;
+}
+
+.OrSeparator {
+  margin: 0px !important;
+  height: fit-content !important;
+  display: none !important;
+}
+.OrSeparator .HBar {
+  height: var(--zehn-size-separator) !important;
+  background-color: var(--zehn-color-separator) !important;
+}
+.OrSeparator .OrSeparatorLabel {
+  background-color: transparent !important;
+  line-height: var(--zehn-size-16) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  color: var(--zehn-color-text-label) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0px var(--zehn-size-spacing-md) !important;
 }
 
 .DialogContent .DialogControlsSection {
@@ -35436,6 +35582,99 @@ label > .DialogLabel {
 
 .GenericConfirmDialog span:not([class]) {
   opacity: 1 !important;
+}
+
+.FriendPicker {
+  gap: var(--zehn-size-dialog-paragraph-gap) !important;
+  margin: 0px !important;
+}
+.FriendPicker .DialogListBuilderInput_List {
+  max-height: unset !important;
+  min-width: 100% !important;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_Input {
+  min-width: 100% !important;
+  max-width: unset !important;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_ListItem .FriendPicker_ChosenFriend {
+  position: relative !important;
+  margin: 0px !important;
+  align-items: center !important;
+  gap: var(--zehn-size-tag-gap) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: normal !important;
+  align-content: center !important;
+  border-radius: var(--zehn-size-tag-radius) !important;
+  color: var(--zehn-color-tag-text) !important;
+  background: var(--zehn-color-tag) !important;
+  padding: var(--zehn-size-tag-padding);
+  font-size: var(--zehn-size-tag-text) !important;
+  height: var(--zehn-size-tag) !important;
+  --remove-scale: 0;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_ListItem .FriendPicker_ChosenFriend:hover {
+  --remove-scale: 1;
+  background-color: var(--zehn-color-tag-hover) !important;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_ListItem .FriendPicker_ChosenFriend:active {
+  background-color: var(--zehn-color-tag-active) !important;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_ListItem .FriendPicker_ChosenFriend span {
+  color: inherit !important;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_ListItem .FriendPicker_ChosenFriend .zehnBlurWrapper {
+  position: absolute !important;
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0px !important;
+  inset: 0px !important;
+  box-sizing: border-box !important;
+  align-content: center !important;
+  backdrop-filter: var(--zehn-filter-light-blur) !important;
+  border-radius: var(--zehn-size-tag-radius) !important;
+  transform-origin: center !important;
+  transform: scale(var(--remove-scale)) !important;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_ListItem .FriendPicker_ChosenFriend .zehnBlurWrapper .SVGIcon_X_Line {
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  opacity: 1 !important;
+  background-color: var(--zehn-color-icon1) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-md) !important;
+  -webkit-mask-image: var(--zehn-icon-tag-close) !important;
+  margin: auto !important;
+  display: block !important;
+}
+.FriendPicker .DialogListBuilderInput_List .DialogListBuilderInput_ListItem .FriendPicker_ChosenFriend .zehnBlurWrapper .SVGIcon_X_Line * {
+  display: none !important;
+}
+.FriendPicker .FriendPickerFriendList {
+  min-height: 100% !important;
+}
+.FriendPicker .FriendPickerFriendList .insetShadow {
+  background: transparent !important;
+  display: none !important;
+}
+.FriendPicker .FriendPickerFriendList .FriendPickerScrollPanel {
+  overflow-y: auto !important;
+  max-height: unset !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.FriendPicker .FriendPickerFriendList .FriendPickerScrollPanel .FriendPicker_SuggestedFriend {
+  padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md) !important;
+  background: var(--zehn-color-list-background) !important;
+}
+.FriendPicker .FriendPickerFriendList .FriendPickerScrollPanel .FriendPicker_SuggestedFriend:hover {
+  background: var(--zehn-color-list-background-hover) !important;
+}
+.FriendPicker .FriendPickerFriendList .FriendPickerScrollPanel .FriendPicker_SuggestedFriend:active {
+  background: var(--zehn-color-list-background-active) !important;
+}
+.FriendPicker .FriendPickerFriendList .FriendPickerScrollPanel .FriendPicker_SuggestedFriend.Focus {
+  background: var(--zehn-color-list-background-focus) !important;
 }
 
 .FFIKUQ7BGKw6vO1voazlr.yXl6Aog783PLUFn-IiX7E .Tz7ae7SsFpdVaMYJhMCpc {
@@ -36679,6 +36918,158 @@ button.DialogButton.DialogInput_CopyAction {
   margin: 0px !important;
   color: var(--zehn-color-text-description) !important;
   font-size: var(--zehn-size-text-description-small) !important;
+}
+
+.ChatRoomNotificationSettingsDialog form > .DialogLabel._DialogLayout {
+  display: none;
+  color: var(--zehn-color-text-body) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-body) !important;
+}
+.ChatRoomNotificationSettingsDialog form > .DialogLabel._DialogLayout .whiteText {
+  color: var(--zehn-color-inherit) !important;
+}
+.ChatRoomNotificationSettingsDialog .NotificationSettingsSavingIndicator {
+  display: none !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog .notificationGeneralHeader {
+  margin: 0px !important;
+  height: fit-content !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog .notificationGeneralHeader .DialogLabel {
+  line-height: var(--zehn-size-settings-label) !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog > div:last-of-type {
+  margin: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog > div:last-of-type .notificationRow {
+  margin: 0px !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog > div:last-of-type .indicatorOptionContainer {
+  background: transparent !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog > div:last-of-type .indicatorOptionContainer .indicatorOption {
+  background: transparent !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog > div:last-of-type .indicatorOptionContainer .indicatorOption .DialogToggle_Label {
+  padding: 0px !important;
+}
+.ChatRoomNotificationSettingsDialog .ChatRoomNotificationSettingsDialog > div:last-of-type .indicatorOptionContainer .ChatUnreadMessageIndicator {
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+}
+.ChatRoomNotificationSettingsDialog .notificationsChannelHeader {
+  margin: 0px !important;
+  margin-bottom: calc(-1 * var(--zehn-size-dialog-gap)) !important;
+  height: var(--zehn-size-table-header) !important;
+  line-height: var(--zehn-size-table-header) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
+}
+.ChatRoomNotificationSettingsDialog .notificationsChannelHeader .NotificationChannelNameLabel {
+  margin: 0px !important;
+  max-width: 160px !important;
+  min-width: 0px !important;
+  line-height: var(--zehn-size-table-header) !important;
+}
+.ChatRoomNotificationSettingsDialog .notificationsChannelHeader .OverrideChannelLabel {
+  margin: 0px !important;
+  max-width: 100% !important;
+  min-width: 0px !important;
+  line-height: var(--zehn-size-table-header) !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC {
+  min-height: 0px !important;
+  max-height: min-content !important;
+  -webkit-mask: none !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC .notificationsChannelListContainer {
+  padding: 0px !important;
+  gap: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: min-content !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC .notificationsChannelListContainer .notificationsChannel {
+  height: var(--zehn-size-table-entry-large) !important;
+  margin: 0px !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC .notificationsChannelListContainer .notificationsChannel:nth-of-type(odd) {
+  background: var(--zehn-color-table-odd) !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC .notificationsChannelListContainer .notificationsChannel:nth-of-type(even) {
+  background: var(--zehn-color-table-even) !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC .notificationsChannelListContainer .notificationsChannel .NotificationChannelName {
+  padding: 0px !important;
+  max-width: 160px !important;
+  line-height: var(--zehn-size-settings-label) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  background-color: transparent !important;
+  font-size: var(--zehn-size-text-label) !important;
+  color: var(--zehn-color-text-label) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC .notificationsChannelListContainer .notificationsChannel .DialogInputLabelGroup._DialogLayout {
+  max-width: 100% !important;
+}
+.ChatRoomNotificationSettingsDialog ._2ttS9Skxg9t799nKK9NeqC .notificationsChannelListContainer .notificationsChannel .ChannelSpecificNotificationSettings_Inherit {
+  opacity: 1 !important;
+  font-style: normal !important;
+}
+.ChatRoomNotificationSettingsDialog .DialogFooter .textLink {
+  display: inline-block !important;
+  margin-bottom: var(--zehn-size-dialog-paragraph-gap) !important;
+}
+
+.ChatRoomGroupInviteDialog .DialogHeader .ChatRoomGroupAvatar.Small {
+  display: none !important;
+}
+.ChatRoomGroupInviteDialog .DialogBody {
+  overflow-y: hidden !important;
+}
+.ChatRoomGroupInviteDialog .DialogBody .FriendPicker {
+  height: 100% !important;
+}
+
+.inviteLinkContainer {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-dialog-paragraph-gap) !important;
+}
+.inviteLinkContainer .expireLinkInContainer {
+  margin: 0px !important;
+  justify-content: flex-start !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0px !important;
+  align-self: baseline !important;
+}
+.inviteLinkContainer .expireLinkInContainer .DialogLabel._DialogLayout {
+  color: var(--zehn-color-text-label) !important;
+  font-size: var(--zehn-size-text-label) !important;
+  line-height: var(--zehn-size-settings-label) !important;
+  align-self: baseline !important;
+}
+.inviteLinkContainer .expireLinkInContainer .inviteLinkContainer .DialogInputLabelGroup.inviteLinkDropDown {
+  margin: 0px !important;
+}
+
+.CreateChat_NonBetaFriendsWarning {
+  display: none !important;
+}
+.CreateChat_NonBetaFriendsWarning .FriendPicker_InvitedFriend_NotInBetaWarning {
+  margin: 0px !important;
+  background: var(--zehn-color-indicator) !important;
+  color: var(--zehn-color-text1) !important;
+  width: var(--zehn-size-indicator) !important;
+  height: var(--zehn-size-indicator) !important;
+  line-height: var(--zehn-size-indicator) !important;
+  border-radius: var(--zehn-size-indicator-radius) !important;
 }
 
 .ModalDialogPopup .ModalDialogBody:not(._3hIt9g_59KauEV2uSNK6Ct) > #popup_target:not(.MillenniumQuickCss_Popup) > .PopupFullWindow > .ModalPosition > .ModalPosition_Content > .DialogContent:not(.CFTLX2wIKOK3hNV-fS7_V):not(.u-Qbw_um9KIbq019Iid1E):not(.FFIKUQ7BGKw6vO1voazlr) > .DialogContent_InnerWidth:not(:has(._3wJ6FshAgQfrT0vwrrdrrm)) > .DialogHeader:not(.tNxx1aWqxj_f-V3j864Rg):not(.u-Qbw_um9KIbq019Iid1E) {
@@ -52602,7 +52993,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   min-width: fit-content !important;
   height: fit-content !important;
   justify-content: center !important;
-  gap: var(--zehn-size-dialog-button-gap) !important;
+  gap: var(--zehn-size-spacing-xs) !important;
 }
 
 .chatRoomVoiceChannel .chatRoomVoiceChannelNameContainer .VoiceControlPanelButton {
@@ -52618,15 +53009,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   transition: opacity 0.2s var(--zehn-timing-ease) 0.5s !important;
 }
 
-.VoiceIconCtn,
-.VoiceIconCtn:hover:is(:hover, :active) {
+.VoiceIconCtn {
   color: transparent !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-.VoiceIconCtn svg,
-.VoiceIconCtn:hover:is(:hover, :active) svg {
-  color: inherit !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  margin: auto !important;
 }
 
 .VoiceControlPanelButton.ToggleMicrophoneButton.Focusable svg {
@@ -54573,7 +54960,7 @@ span.mention.me {
 .msg .broadcastInviteSelf,
 .msg .broadcastViewRequestDismissed {
   color: var(--zehn-color-text3) !important;
-  display: flex !important;
+  display: block !important;
   filter: none !important;
 }
 .msg .gameInviteDismissed img,
@@ -55302,6 +55689,30 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 .RVIs84dAE6wHcjH9tkinc._3zOBeq5W4cNK3lRz_7aroW svg,
 .friendsui-container ._3zOBeq5W4cNK3lRz_7aroW svg {
   -webkit-mask-image: var(--zehn-icon-embed) !important;
+}
+
+.ChatMessageEntryVoice {
+  background: transparent !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  color: var(--zehn-color-text1) !important;
+  transition: none !important;
+}
+.ChatMessageEntryVoice.Inactive {
+  min-width: fit-content !important;
+  max-width: fit-content !important;
+  width: fit-content !important;
+}
+.ChatMessageEntryVoice.Active {
+  min-width: fit-content !important;
+  max-width: fit-content !important;
+  width: fit-content !important;
+}
+.ChatMessageEntryVoice .activeVoiceControls {
+  border: none !important;
+}
+.ChatMessageEntryVoice .activeVoiceControls .activeVoiceButtons {
+  gap: 0px !important;
 }
 
 .ChatMessageEntryVoice .buttonsContainer {
@@ -62031,180 +62442,8 @@ span[title="Unfold line"]::after {
   font-size: var(--zehn-size-text-control) !important;
 }
 
-/* DROPDOWN*/
-.ChatRoomNotificationSettingsDialog ._DialogInputContainer:not(._30wJO3MC4x-I1OWpy1TAeE):not(.DialogToggleField):not(.DialogSlider_Container) {
-  min-width: var(--zehn-size-dropdown-dialog-width) !important;
-}
-
-.notificationsChannelListContainer ._DialogInputContainer:not(._30wJO3MC4x-I1OWpy1TAeE):not(.DialogToggleField):not(.DialogSlider_Container) {
-  min-width: 100% !important;
-}
-
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* CHAT ROOMS ------------------------------------------------------------------------------------------------------- */
-.whiteText {
-  color: var(--zehn-color-text1) !important;
-}
-
-.ChatRoomNotificationSettingsDialog .DialogHeader .DialogLabel._DialogLayout {
-  font-size: var(--zehn-size-12) !important;
-  line-height: 32px !important;
-}
-
-.ChatRoomNotificationSettingsDialog .DialogHeader .DialogLabel._DialogLayout::before {
-  content: " - " !important;
-}
-
-.ChatRoomNotificationSettingsDialog .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout {
-  display: none !important;
-}
-
-/* GROUP CHAT NOTIFICATIONS */
-.DialogHBar {
-  background: transparent !important;
-  min-height: 0px !important;
-  max-height: 0px !important;
-  margin-bottom: 0px !important;
-  display: none !important;
-}
-
-.ChatRoomNotificationSettingsDialog .DialogFooter .textLink {
-  display: inline-block !important;
-  margin-bottom: var(--zehn-size-spacing-xs) !important;
-}
-
-/* SAVING INDICATOR */
-.NotificationSettingsSavingIndicator {
-  display: none !important;
-}
-
-/* GENERAL */
-.ChatRoomNotificationSettingsDialog .notificationGeneralHeader {
-  margin-bottom: 0px !important;
-  height: unset !important;
-}
-
-.ChatRoomNotificationSettingsDialog .notificationGeneralHeader div {
-  line-height: 32px !important;
-}
-
-.ChatRoomNotificationSettingsDialog > div {
-  margin-bottom: 0px !important;
-}
-
-.ChatRoomNotificationSettingsDialog .notificationRow {
-  margin-bottom: 0px !important;
-}
-
-.ChatRoomNotificationSettingsDialog > div:last-of-type {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: var(--zehn-size-spacing-md) !important;
-}
-
-.ChatRoomNotificationSettingsDialog .indicatorOptionContainer {
-  background: transparent !important;
-}
-
-.indicatorOption {
-  background: transparent !important;
-  flex-direction: column !important;
-}
-
-.ChatRoomNotificationSettingsDialog .indicatorOptionContainer .DialogToggle_Label {
-  padding-left: 0px !important;
-}
-
-.ChatRoomNotificationSettingsDialog .ChatUnreadMessageIndicator {
-  top: 0px !important;
-  left: 0px !important;
-  bottom: unset !important;
-}
-
-.indicatorOptionContainer .ChatUnreadMessageIndicator {
-  background: transparent !important;
-  left: unset !important;
-  width: 32px !important;
-  height: 32px !important;
-  display: none !important;
-}
-
-.indicatorOptionContainer .ChatUnreadMessageIndicator .chatUnreadCircle {
-  background: var(--zehn-color-accent) !important;
-  padding: 0px !important;
-  box-shadow: 0 0 0 0 transparent !important;
-  right: unset !important;
-  bottom: unset !important;
-  top: 14px !important;
-  left: 14px !important;
-  margin-top: 0px !important;
-  margin-right: 0px !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  color: var(--zehn-color-text1) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  width: 6px !important;
-  height: 6px !important;
-  border-radius: var(--zehn-size-radius-circular) !important;
-}
-
-/* LABEL */
-.ChatRoomNotificationSettingsDialog .notificationsChannelHeader.DialogTwoColLayout .NotificationChannelNameLabel {
-  margin: 0px !important;
-  max-width: 160px !important;
-  min-width: 0px !important;
-}
-
-.ChatRoomNotificationSettingsDialog .notificationsChannelHeader.DialogTwoColLayout .OverrideChannelLabel {
-  margin: 0px !important;
-  max-width: 100% !important;
-  min-width: 0px !important;
-}
-
-/* CHANNEL LIST */
-.ChatRoomNotificationSettingsDialog .NotificationChannelName {
-  padding: 0px !important;
-  max-width: 160px !important;
-  line-height: 32px !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  background-color: transparent !important;
-  font-size: var(--zehn-size-14) !important;
-  color: var(--zehn-color-text1) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-}
-
-.ChatRoomNotificationSettingsDialog .notificationsChannelListContainer {
-  padding: 0px !important;
-  gap: var(--zehn-size-spacing-md) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  height: min-content !important;
-}
-
-.ChatRoomNotificationSettingsDialog .notificationsChannel {
-  height: 32px !important;
-  margin-bottom: 0px !important;
-}
-
-/* OVERRIDE TWO COLUMN LAYOUT WIDTH */
-.ChatRoomNotificationSettingsDialog .notificationsChannel .DialogInputLabelGroup {
-  max-width: unset !important;
-}
-
-/* DROPDOWN */
-.DialogDropDown._DialogInputContainer .ChannelSpecificNotificationSettings_Inherit {
-  opacity: 1 !important;
-}
-
-.notificationsChannel .DialogDropDown_Arrow {
-  height: 28px !important;
-  margin-left: auto !important;
-}
-
-.DialogBody:has(.FriendPicker) {
-  overflow: hidden !important;
-}
-
 .FriendPicker {
   gap: var(--zehn-size-spacing-md) !important;
   margin-bottom: 0px !important;
@@ -62231,49 +62470,6 @@ span[title="Unfold line"]::after {
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /* INVITE TO GROUP CHAT ------------------------------------------------------------------------------------------------ */
-.ChatRoomGroupInviteDialog .DialogBody {
-  overflow-y: hidden !important;
-}
-
-.FriendPicker .FriendPickerFriendList {
-  min-height: 100% !important;
-}
-
-/* MOVE SCROLLBAR TO EDGE OF WINDOW */
-.FriendPickerScrollPanel {
-  overflow-y: auto !important;
-  margin: 0px -16px !important;
-  padding: 0px 16px !important;
-  max-height: unset !important;
-  /* MANUAL OVERRIDE BECAUSE I DON'T KNOW WHY IT IS GOING PAST THE FOOTER */
-}
-
-.FriendPicker_SuggestedFriend {
-  scroll-margin: 48px !important;
-}
-
-/* LINK */
-.inviteLinkContainer {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: var(--zehn-size-spacing-md) !important;
-}
-
-.inviteLinkContainer .DialogInputLabelGroup {
-  margin-top: 0px !important;
-}
-
-.OrSeparator .HBar {
-  height: var(--zehn-size-separator) !important;
-  background-color: var(--zehn-color-separator) !important;
-}
-
-.OrSeparator {
-  margin: 0px !important;
-  height: 16px !important;
-  display: none !important;
-}
-
 .DialogSpanningTable th,
 .DialogSpanningTable tr {
   font-size: var(--zehn-size-14) !important;
@@ -62281,14 +62477,6 @@ span[title="Unfold line"]::after {
   font-weight: var(--zehn-weight-normal) !important;
   line-height: 32px !important;
   height: 32px !important;
-}
-
-.OrSeparator .OrSeparatorLabel {
-  background-color: transparent !important;
-  font-size: var(--zehn-size-14) !important;
-  color: var(--zehn-color-accent) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  display: none !important;
 }
 
 .InviteLinksTable td {
@@ -62326,189 +62514,8 @@ span[title="Unfold line"]::after {
   border: unset !important;
 }
 
-.inviteLinkContainer .DialogInput_Wrapper._DialogLayout {
-  border-radius: var(--zehn-size-radius-none) !important;
-  background-color: transparent !important;
-  padding: 0px !important;
-  gap: var(--zehn-size-dialog-button-gap) !important;
-}
-
-.inviteLinkContainer .DialogInputLabelGroup .DialogInput {
-  margin: 0px !important;
-  min-width: 300px !important;
-}
-
-.DialogHeader .ChatRoomGroupAvatar.Small {
-  display: none !important;
-}
-
-.expireLinkInContainer {
-  margin-top: 0px !important;
-  margin-left: unset !important;
-  justify-content: flex-start !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0 16px !important;
-  align-self: baseline !important;
-}
-
-.expireLinkInContainer .DialogLabel._DialogLayout {
-  font-size: var(--zehn-size-14) !important;
-  line-height: 32px !important;
-  align-self: baseline !important;
-}
-
-.inviteLinkContainer .DialogInputLabelGroup.inviteLinkDropDown {
-  margin: 0px 0px 0px auto !important;
-  min-width: 300px !important;
-}
-
-.inviteLinkContainer .DialogDropDown._DialogInputContainer {
-  margin: 0px !important;
-}
-
 .DialogSpanningTable {
   border-spacing: 0 0 !important;
-}
-
-/* INPUT */
-.FriendPicker .DialogListBuilderInput > label {
-  min-width: 100% !important;
-}
-
-.ChatRoomGroupInviteDialog .FriendPicker {
-  height: 100% !important;
-}
-
-/* BETA WARNING */
-.CreateChat_NonBetaFriendsWarning {
-  display: none !important;
-}
-
-.FriendPicker_InvitedFriend_NotInBetaWarning {
-  background: var(--zehn-color-accent) !important;
-  color: var(--zehn-color-text1) !important;
-  width: 16px !important;
-  line-height: 16px !important;
-  border-radius: var(--zehn-size-radius-circular) !important;
-}
-
-.CreateChat_NonBetaFriendsWarning .FriendPicker_InvitedFriend_NotInBetaWarning {
-  margin-right: 0px !important;
-}
-
-/* FRIEND PICKER */
-._30XroGinE5bsVSmgAzXIFf {
-  -webkit-mask: none !important;
-}
-
-.FriendPicker_ChosenFriend span {
-  color: var(--zehn-color-text1) !important;
-}
-
-.FriendPicker_ChosenFriend:hover span {
-  color: var(--zehn-color-text1) !important;
-}
-
-.FriendPicker_ChosenFriend {
-  position: relative !important;
-  margin: 0px !important;
-  align-items: center !important;
-  gap: var(--zehn-size-tag-gap) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  line-height: normal !important;
-  align-content: center !important;
-  border-radius: var(--zehn-size-tag-radius) !important;
-  color: var(--zehn-color-tag-text) !important;
-  background: var(--zehn-color-tag) !important;
-  padding: var(--zehn-size-tag-padding);
-  font-size: var(--zehn-size-tag-text) !important;
-  height: var(--zehn-size-tag) !important;
-}
-
-.FriendPicker_ChosenFriend:hover {
-  background-color: var(--zehn-color-tag-hover) !important;
-}
-
-.FriendPicker_ChosenFriend:active {
-  background-color: var(--zehn-color-tag-active) !important;
-}
-
-/* REMOVE BUTTON */
-.zehnBlurWrapper {
-  position: absolute !important;
-  height: 100% !important;
-  width: 100% !important;
-  margin: 0px !important;
-  inset: 0px !important;
-  box-sizing: border-box !important;
-  align-content: center !important;
-  backdrop-filter: var(--zehn-filter-light-blur) !important;
-  border-radius: var(--zehn-size-tag-radius) !important;
-  transform-origin: center !important;
-}
-
-.FriendPicker_ChosenFriend:not(:hover) .zehnBlurWrapper {
-  transform: scale(0) !important;
-}
-
-.FriendPicker_ChosenFriend .SVGIcon_X_Line {
-  width: var(--zehn-size-icon-md) !important;
-  height: var(--zehn-size-icon-md) !important;
-  opacity: 1 !important;
-  background-color: var(--zehn-color-icon1) !important;
-  mask-repeat: no-repeat !important;
-  mask-position: center !important;
-  mask-size: var(--zehn-size-icon-md) !important;
-  -webkit-mask-image: var(--zehn-icon-tag-close) !important;
-  margin: auto !important;
-  display: block !important;
-}
-.FriendPicker_ChosenFriend .SVGIcon_X_Line * {
-  display: none !important;
-}
-
-/* LIST */
-.insetShadow {
-  background: transparent !important;
-  display: none !important;
-}
-
-.FriendPicker_SuggestedFriend {
-  padding: 8px 16px !important;
-  background: var(--zehn-color-list-background) !important;
-}
-
-.FriendPicker_SuggestedFriend:hover {
-  background: var(--zehn-color-list-background-hover) !important;
-}
-
-.FriendPicker_SuggestedFriend:active {
-  background: var(--zehn-color-list-background-active) !important;
-}
-
-.FriendPicker_Focus .FriendPicker_SuggestedFriend.Focus {
-  background: var(--zehn-color-list-background-active) !important;
-}
-
-/* FRIEND PICKER SCROLL PANEL */
-.ChatRoomGroupInviteDialog .DialogListBuilderInput > label {
-  min-width: 100% !important;
-}
-
-.ChatRoomGroupInviteDialog .DialogLabel._DialogLayout {
-  align-self: flex-start !important;
-}
-
-.FriendPicker .DialogListBuilderInput_List {
-  max-height: 128px !important;
-  min-width: 100% !important;
-}
-
-.FriendPicker .DialogListBuilderInput .DialogListBuilderInput_Input {
-  /* MAKE INVITE FRIEND PICKER INPUT SPAN THE ENTIRE DIALOG */
-  min-width: 100% !important;
-  max-width: unset !important;
 }
 
 /* DROP INVITE */
@@ -66420,11 +66427,6 @@ div[role=radiogroup] {
   margin-bottom: 0px !important;
 }
 
-/* TOGGLE SWITCH */
-._1n-sV5GdQis4Wh9XN3GJ7L .DialogToggleField._DialogInputContainer {
-  flex-direction: column !important;
-}
-
 ._1n-sV5GdQis4Wh9XN3GJ7L .DialogToggle_Label {
   align-self: flex-start !important;
 }
@@ -66630,10 +66632,6 @@ div[role=radiogroup] {
 /* SCALING */
 .FriendSettingsContainer .SettingsGroup > * {
   margin-bottom: 0px !important;
-}
-
-.FriendSettingsContainer .SettingsGroup .DialogToggleField._DialogInputContainer {
-  flex-direction: column !important;
 }
 
 .FriendsSettingsChatFontSizeSection_ButtonRow {
