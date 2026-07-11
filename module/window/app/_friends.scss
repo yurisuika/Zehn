@@ -180,8 +180,14 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 }
 
 // TOGGLE DISPLAY
-#zehnToggleFriendsHeader .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-navigation);
+#zehnToggleFriendsHeader {
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  .zehnIcon {
+    -webkit-mask-image: var(--zehn-icon-navigation);
+  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -999,8 +1005,12 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   position: absolute;
 }
 
-.friendInviteButton .SVGIcon_Check {
-  -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+.friendInviteButton {
+  position: relative !important;
+
+  .SVGIcon_Check {
+    -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+  }
 }
 
 .declineFriendInvite .SVGIcon_X_Line {
@@ -1066,6 +1076,8 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 // RETURN
 .confirmInviteRequestContainer .cancelAddFriends {
   display: none !important;
+  position: relative !important;
+  inset: unset !important;
 }
 
 .confirmInviteRequestContainer .cancelAddFriends svg {

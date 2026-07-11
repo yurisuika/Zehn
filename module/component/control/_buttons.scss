@@ -239,10 +239,6 @@ button.DialogButton::before {
     $width: var(--zehn-size-titlebar-control),
     $style: "nav"
   );
-
-  position: relative;
-  left: 0px;
-  top: 0px;
 }
 
 // HEADER - REMOTE PLAY TOGETHER
@@ -274,7 +270,6 @@ button.DialogButton::before {
 
 // HEADER - INVITE CONFIRMATION
 .friendInviteButton {
-  position: relative !important;
   @include template.preset-fixed(
     $height: var(--zehn-size-friends-entry),
     $width: var(--zehn-size-friends-entry)
@@ -282,7 +277,6 @@ button.DialogButton::before {
 }
 
 .compactView .friendInviteButton {
-  position: relative !important;
   @include template.preset-fixed(
     $height: var(--zehn-size-friends-entry-compact),
     $width: var(--zehn-size-friends-entry-compact)
@@ -302,9 +296,6 @@ button.DialogButton::before {
     $height: var(--zehn-size-button-md),
     $width: var(--zehn-size-button-md)
   );
-
-  position: relative !important;
-  inset: unset !important;
 }
 
 // LIST - USER
@@ -656,7 +647,6 @@ button.DialogButton::before {
   );
 
   align-self: baseline;
-  order: 0;
   z-index: 10;
 }
 
@@ -667,14 +657,9 @@ button.DialogButton::before {
     $height: var(--zehn-size-navbar),
     $width: var(--zehn-size-navbar-control),
     $disabled: ":has(._2cO0HdvLEGAdhosLekWsmo)",
+    $icon: "svg._25lBLzuVeYAUG279up4xP8",
     $style: "nav"
   );
-
-  position: relative;
-
-  svg._25lBLzuVeYAUG279up4xP8 {
-    width: 100% !important;
-  }
 }
 
 // ROOT MENUS
@@ -912,9 +897,6 @@ button.DialogButton::before {
     $icon-size: var(--zehn-size-icon-sm),
     $shape: var(--zehn-size-radius-circular)
   );
-
-  position: relative !important;
-  inset: unset !important;
 }
 
 // SIDEBAR - HIDDEN GAMES SHOW ALL
@@ -1095,9 +1077,14 @@ button.DialogButton::before {
     $height: var(--zehn-size-button-md),
     $width: var(--zehn-size-button-md)
   );
+}
 
-  left: 0px !important;
-  bottom: 0px !important;
+// GAME - LINKS
+._1b6LYWVijW-9E4YV0keDWZ {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-game-link-entry),
+    $padding: var(--zehn-size-button-padding-wide)
+  );
 }
 
 // GAME - SPOTLIGHT - POST GAME SUMMARY
