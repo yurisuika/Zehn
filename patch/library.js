@@ -346,7 +346,7 @@ Zehn.createIconContainer('.QsvsRVwbsApgKt1MhM0fz', '.jjN9CtYfeIJoHpKOCmKOx', ['.
 
 /* WRAP FRIEND PICKER CLOSE SVG ------------------------------------------------------------------------------------- */
 
-Zehn.createContainer('.ChatRoomGroupInviteDialog', '.FriendPicker_ChosenFriend .SVGIcon_X_Line', ['.zehnBlurWrapper']);
+Zehn.createContainer('.FriendPicker', '.FriendPicker_ChosenFriend .SVGIcon_X_Line', ['.zehnBlurWrapper']);
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
