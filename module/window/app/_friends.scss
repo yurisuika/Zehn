@@ -1,15 +1,10 @@
 // CONTAINER SCROLL BEHIND CALC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .friendsListContainer {
-  --remoteplay-size: 0px;
   --quick-size: 0px;
   --controlbar-size: var(--zehn-size-friends-controlbar);
   --search-size: 0px;
   --current-user-size: 0px;
-}
-
-.friendsListContainer:has(._14S4rlGAAqfqW6lMKYB2GM) {
-  --remoteplay-size: var(--zehn-size-friends-remoteplay);
 }
 
 .friendsListContainer:has(.quickAccessFriends) {
@@ -57,7 +52,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // CALCULATE LIST OFFSET
 .friendlistListContainer {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--remoteplay-size) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size)) !important;
+  margin-top: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size)) !important;
 }
 
 // BASE COLOR BEHIND HEADER ACRYLIC
@@ -67,7 +62,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   position: absolute;
   inset: 0px;
   background: var(--zehn-color-base);
-  height: calc(var(--zehn-size-titlebar) + var(--remoteplay-size) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size));
+  height: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size));
 }
 
 // CALCULATE BACKGROUND BEHIND LIST
@@ -77,7 +72,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   position: absolute;
   inset: 0px;
   background: var(--zehn-color-app);
-  margin-top: calc(var(--zehn-size-titlebar) + var(--remoteplay-size) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size));
+  margin-top: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size));
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -370,29 +365,60 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
   padding: 0px !important;
-  line-height: var(--zehn-size-panel-md) !important;
+  line-height: inherit !important;
   background-color: transparent !important;
-}
+  position: absolute !important;
+  top: 0px !important;
+  left: var(--zehn-size-titlebar-control) !important;
+  z-index: 10 !important;
+  -webkit-app-region: no-drag !important;
 
-// BUTTONS
-._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- ._3UDCWUbI0_05r9ATmvC2HD {
-  -webkit-mask-image: var(--zehn-icon-controller-split) !important;
+  // TEXT
+  ._2sIHGS_555xUrHvjOwV0Y2 {
+    font-size: inherit !important;
+    text-transform: none !important;
+    display: none !important;
+  }
+
+  // ICON
+  ._3voPlg-2HzAUhuCyVhXm_D {
+    margin: 0px !important;
+    width: fit-content !important;
+    height: fit-content !important;
+
+    ._3UDCWUbI0_05r9ATmvC2HD {
+      -webkit-mask-image: var(--zehn-icon-controller-split) !important;
+    }
+  }
 }
 
 // LINK EXPLAINER
 ._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 {
-  border: none !important;
-  background: transparent !important;
+  height: fit-content !important;
+  position: fixed !important;
+  inset: var(--zehn-size-spacing-md) !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  background: var(--zehn-color-modal-background) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-modal-radius) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
+  transition: background-color 0.2s var(--zehn-timing-ease) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-modal-background-hover) !important;
+  }
 }
 
 ._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 ._3sgj23BemKViTVqwcKSU9G {
-  color: var(--zehn-color-text1) !important;
-  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text-body) !important;
+  font-size: var(--zehn-size-text-body) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  padding: var(--zehn-size-friends-group-padding) !important;
-  line-height: var(--zehn-size-16) !important;
+  padding: 0px !important;
+  line-height: normal !important;
   text-align: center !important;
-  margin: 0px auto !important;
+  margin: 0px 0px var(--zehn-size-dialog-gap) 0px !important;
 }
 
 ._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 ._3sgj23BemKViTVqwcKSU9G ._17Ln3DR0RIQFZl06IF3d1K {
@@ -407,27 +433,8 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // GOT IT
 ._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 ._1m0afeRW-Gr5ZDK4viq3SY {
-  margin: 0px !important;
-  color: var(--zehn-color-text1) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  background: var(--zehn-color-accent) !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-  padding: var(--zehn-size-friends-group-padding) !important;
-  position: absolute !important;
-  inset: 0px !important;
-  margin: auto !important;
-  text-align: center !important;
-  height: 100% !important;
-  opacity: 0 !important;
-  transition: opacity 0.2s var(--zehn-timing-ease) !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6:hover ._1m0afeRW-Gr5ZDK4viq3SY {
-  opacity: 1 !important;
+  align-self: center !important;
+  text-transform: uppercase !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1038,7 +1045,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // BLOCK CHECKBOX
 .friendInviteBlockContainer .displayColumn {
-  margin: 0px 0px 0px var(--zehn-size-settings-control-gap) !important;
+  margin: 0px 0px 0px var(--zehn-size-setting-control-gap) !important;
 }
 
 .friendInviteBlockContainer .blockCommunicationLabel,
@@ -1833,7 +1840,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 ._18bmBH7zyngCgHtgY3IEL_ {
   background-color: transparent !important;
   overflow: hidden !important;
-  margin-top: calc(var(--zehn-size-titlebar) + var(--remoteplay-size) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size)) !important;
+  margin-top: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size)) !important;
 }
 
 ._3t-tVOpu2n074cjZsygYfm {

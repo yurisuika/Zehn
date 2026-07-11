@@ -90,35 +90,94 @@ body._2LxgdMcpWJRjkxZKbmeEEb {
 
 
 
+// LIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ol {
+  margin: 0px !important;
+
+  li {}
+}
+
+ul {
+  margin: 0px !important;
+
+  li {}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // TABLE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 table,
+tbody,
+thead,
+tr,
 th,
-td,
+td {
+  border-spacing: 0px !important;
+  border-collapse: collapse !important;
+}
+
+table,
 tbody,
 thead,
 tr {
-  border-spacing: 0 !important;
-  border-collapse: collapse !important;
   padding: 0px !important;
 }
 
-tr {
-  gap: var(--zehn-size-spacing-xs) !important;
+thead {
+  line-height: var(--zehn-size-table-header);
+
+  tr {
+    --color: var(--zehn-color-table-header-content);
+    padding: 0px var(--zehn-size-spacing-xs) !important;
+
+    &:hover {
+      --color: var(--zehn-color-table-header-content-hover);
+    }
+
+    &:active {
+      --color: var(--zehn-color-table-header-content-active);
+    }
+
+    th {
+      color: var(--color) !important;
+      font-weight: var(--zehn-weight-normal) !important;
+      font-size: var(--zehn-size-table-text) !important;
+      padding: 0px var(--zehn-size-spacing-xs) !important;
+    }
+  }
 }
 
-.DialogSpanningTable.BannedUsersTable tr.hoverRow,
-.DialogSpanningTable.InvitedUsersTable tr.hoverRow,
-.DialogSpanningTable.InviteLinksTable tbody tr {
-  background: var(--zehn-color-table-odd) !important;
-  height: var(--zehn-size-table-entry-large) !important;
-  min-height: var(--zehn-size-table-entry-large) !important;
-}
+tbody {
 
-.DialogSpanningTable.BannedUsersTable tr.hoverRow:nth-child(2n),
-.DialogSpanningTable.InvitedUsersTable tr.hoverRow:nth-child(2n),
-.DialogSpanningTable.InviteLinksTable tbody tr:nth-child(2n) {
-  background: var(--zehn-color-table-even) !important;
+  tr {
+    line-height: var(--zehn-size-table-entry) !important;
+
+    &:nth-child(odd) {
+      background: var(--zehn-color-table-odd) !important;
+    }
+
+    &:nth-child(even) {
+      background: var(--zehn-color-table-even) !important;
+    }
+
+    td {
+      color: var(--zehn-color-table-body-content) !important;
+      font-weight: var(--zehn-weight-normal) !important;
+      font-size: var(--zehn-size-table-text) !important;
+      padding: 0px var(--zehn-size-spacing-xs) !important;
+    }
+  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
