@@ -73,10 +73,6 @@ Zehn.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer
   '.friendGroup.offlineFriends .groupHeaderContainer .SortByRecent' // SORT BY BUTTON
 ]);
 
-/* SET VARIABLE FOR HEADER HEIGHT ----------------------------------------------------------------------------------- */
-
-Zehn.storeTargetHeightAsVariable('.friendsui-container', '._14S4rlGAAqfqW6lMKYB2GM', '--zehn-size-friends-remoteplay');
-
 /* WRAP ADD FRIENDS BUTTON ------------------------------------------------------------------------------------------ */
 
 Zehn.createContainer('.MultiUserChat', '.inviteAnotherFriendButton', ['.zehnAddFriendWrapper']);

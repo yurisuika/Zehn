@@ -23,6 +23,8 @@ export const Zehn = {
   movePrependAndObserve,
   moveBefore,
   moveBeforeAndObserve,
+  moveAfter,
+  moveAfterAndObserve,
   removeDuplicatedElement,
   addRevealClass,
   revealInner,
@@ -428,6 +430,26 @@ function moveBeforeAndObserve(rootSelector, targetSelector, movingSelectors) {
     movingSelectors.forEach((movingSelector) => {
       this.findTargets(root, movingSelector, (moving) => {
         target.before(moving || '');
+      })
+    });
+  });
+};
+
+function moveAfter(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      root.querySelectorAll(movingSelector).forEach((moving) => {
+        target.after(moving || '');
+      })
+    });
+  });
+};
+
+function moveAfterAndObserve(rootSelector, targetSelector, movingSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    movingSelectors.forEach((movingSelector) => {
+      this.findTargets(root, movingSelector, (moving) => {
+        target.after(moving || '');
       })
     });
   });
