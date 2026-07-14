@@ -263,6 +263,7 @@ img.AB86vEzEKPL0y5fK_m4pT {
   padding: 0px !important;
   margin: 0px !important;
   border-radius: var(--zehn-size-persona-radius) !important;
+  --persona-opacity: 1;
 }
 
 // BACKGROUND
@@ -301,63 +302,132 @@ img.AB86vEzEKPL0y5fK_m4pT {
   font-size: calc(var(--avatar-size) / 2) !important;
 }
 
-.PP7LM0Ow1K5qkR8WElLpt ._2XZq-_f6npaQdAgeRzKIkz .nibodjvvrm86uCfnnAn4g.avatarHolder.X-Small,
-.PP7LM0Ow1K5qkR8WElLpt ._2XZq-_f6npaQdAgeRzKIkz .ChatRoomGroupAvatar.Smaller,
-.PP7LM0Ow1K5qkR8WElLpt .ChatTabContextMenuItem ._2XZq-_f6npaQdAgeRzKIkz .ChatRoomGroupAvatar.Smaller,
-.ChatRoomGroupAvatar.Micro {
-  --avatar-size: var(--zehn-size-avatar-xs);
-}
-
+// STANDARD SIZES
+.ChatRoomMultiFriendAvatar.Micro,
 .ChatRoomMultiFriendAvatar.Smaller,
+.ChatRoomMultiFriendAvatar.Small,
+.ChatRoomMultiFriendAvatar,
+.ChatRoomMultiFriendAvatar.Large,
+.ChatRoomGroupAvatar.Micro,
 .ChatRoomGroupAvatar.Smaller,
+.ChatRoomGroupAvatar.Smallish,
+.ChatRoomGroupAvatar.Small,
+.ChatRoomGroupAvatar,
+.ChatRoomGroupAvatar.Large,
 .nibodjvvrm86uCfnnAn4g.avatarHolder.X-Small,
-.nibodjvvrm86uCfnnAn4g.avatarHolder.Small {
-  --avatar-size: var(--zehn-size-avatar-sm);
-}
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Smaller,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Small,
+.nibodjvvrm86uCfnnAn4g.avatarHolder,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Medium,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.MediumLarge,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Large,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.X-Large {}
 
 .ChatRoomMultiFriendAvatar,
-.ChatRoomMultiFriendAvatar.Small,
 .ChatRoomGroupAvatar,
-.ChatRoomGroupAvatar.Small,
-.nibodjvvrm86uCfnnAn4g.avatarHolder,
-.nibodjvvrm86uCfnnAn4g.avatarHolder.Medium {
+.nibodjvvrm86uCfnnAn4g.avatarHolder {
   --avatar-size: var(--zehn-size-persona-avatar);
 }
 
-.ChatMessageInvite .ChatRoomMultiFriendAvatar:is(.X-Small, .Smaller, .Small, .Medium, .Large, .X-Large),
-.ChatMessageInvite .ChatRoomGroupAvatar:is(.X-Small, .Smaller, .Small, .Medium, .Large, .X-Large),
-.ChatMessageInvite .nibodjvvrm86uCfnnAn4g.avatarHolder:is(.X-Small, .Smaller, .Small, .Medium, .Large, .X-Large) {
+.ChatRoomMultiFriendAvatar.Micro,
+.ChatRoomMultiFriendAvatar.Smaller,
+.ChatRoomMultiFriendAvatar.Small,
+.ChatRoomGroupAvatar.Micro,
+.ChatRoomGroupAvatar.Smaller,
+.ChatRoomGroupAvatar.Smallish,
+.ChatRoomGroupAvatar.Small,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.X-Small,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Smaller,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Small {
+ --avatar-size: var(--zehn-size-avatar-sm);
+}
+
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Medium,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.MediumLarge {
+ --avatar-size: var(--zehn-size-avatar-md);
+}
+
+.ChatRoomMultiFriendAvatar.Large,
+.ChatRoomGroupAvatar.Large,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.Large,
+.nibodjvvrm86uCfnnAn4g.avatarHolder.X-Large {
+ --avatar-size: var(--zehn-size-avatar-lg);
+}
+
+// CHAT INVITE
+.ChatMessageInvite .ChatRoomMultiFriendAvatar,
+.ChatMessageInvite .ChatRoomGroupAvatar,
+.ChatMessageInvite .nibodjvvrm86uCfnnAn4g.avatarHolder {
   --avatar-size: var(--zehn-size-avatar-lg);
 }
 
-.nibodjvvrm86uCfnnAn4g.avatarHolder.Large {
-  --avatar-size: var(--zehn-size-avatar-md);
-}
-
-.nibodjvvrm86uCfnnAn4g.avatarHolder.X-Large {
-  --avatar-size: var(--zehn-size-avatar-xl);
-}
-
-.MemberListColumn .nibodjvvrm86uCfnnAn4g.avatarHolder,
-.CompactFriendsList .friend .nibodjvvrm86uCfnnAn4g.avatarHolder,
-.compactView .currentUserAvatar .nibodjvvrm86uCfnnAn4g.avatarHolder {
+// COMPACT LIST GENERIC
+.CompactFriendsList .ChatRoomMultiFriendAvatar,
+.CompactFriendsList .ChatRoomGroupAvatar,
+.CompactFriendsList .nibodjvvrm86uCfnnAn4g.avatarHolder {
   --avatar-size: var(--zehn-size-avatar-sm);
 }
 
-.CompactFriendsList:not(.chatRoomMembers):not(.ChatTabsContextMenu) .friend .nibodjvvrm86uCfnnAn4g.avatarHolder,
-.compactView .currentUserAvatar .nibodjvvrm86uCfnnAn4g.avatarHolder,
-.compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar,
-.compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar {
-  --avatar-size: var(--zehn-size-persona-compact-avatar);
-  border-radius: var(--zehn-size-persona-compact-radius) !important;
+// MEMBER LIST
+.MemberListColumn .ChatRoomMultiFriendAvatar,
+.MemberListColumn .ChatRoomGroupAvatar,
+.MemberListColumn .nibodjvvrm86uCfnnAn4g.avatarHolder {
+  --avatar-size: var(--zehn-size-avatar-sm);
 }
 
-.ChatRoomSpeaker .speaker .speakerAvatar,
-.ChatMsgSlashEmote .speaker .speakerAvatar,
-.ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame,
-.ChatMsgSlashEmote .speaker .speakerAvatar.hasAvatarFrame {
+// CONTEXT MENU
+.PP7LM0Ow1K5qkR8WElLpt .ChatRoomMultiFriendAvatar,
+.PP7LM0Ow1K5qkR8WElLpt .ChatRoomGroupAvatar,
+.PP7LM0Ow1K5qkR8WElLpt .nibodjvvrm86uCfnnAn4g.avatarHolder {
+  --avatar-size: var(--zehn-size-avatar-xs);
+}
+
+// CHAT TAB MENU
+.CompactFriendsList.ChatTabContextMenu .ChatRoomMultiFriendAvatar,
+.CompactFriendsList.ChatTabContextMenu .ChatRoomGroupAvatar,
+.CompactFriendsList.ChatTabContextMenu .nibodjvvrm86uCfnnAn4g.avatarHolder {
+  --avatar-size: var(--zehn-size-avatar-sm);
+}
+
+// FRIENDS LIST
+.friendlist .FriendsListContent .ChatRoomMultiFriendAvatar,
+.friendlist .FriendsListContent .ChatRoomGroupAvatar,
+.friendlist .FriendsListContent .nibodjvvrm86uCfnnAn4g.avatarHolder {
   --avatar-size: var(--zehn-size-persona-avatar);
-  border-radius: var(--zehn-size-persona-radius) !important;
+}
+
+.friendlist.compactView .FriendsListContent .ChatRoomMultiFriendAvatar,
+.friendlist.compactView .FriendsListContent .ChatRoomGroupAvatar,
+.friendlist.compactView .FriendsListContent .nibodjvvrm86uCfnnAn4g.avatarHolder {
+  --avatar-size: var(--zehn-size-persona-compact-avatar);
+  border-radius: var(--zehn-size-persona-compact-radius) !important;
+  --persona-opacity: 0;
+}
+
+// CURRENT USER
+.friendlist .currentUserContainer .nibodjvvrm86uCfnnAn4g.avatarHolder {
+  --avatar-size: var(--zehn-size-persona-avatar);
+}
+
+.friendlist.compactView .currentUserContainer .nibodjvvrm86uCfnnAn4g.avatarHolder {
+  --avatar-size: var(--zehn-size-persona-compact-avatar);
+  border-radius: var(--zehn-size-persona-compact-radius) !important;
+  --persona-opacity: 0;
+}
+
+// VOICE CHANNELS
+.chatRoomVoiceChannel .VoiceChannelParticipants .nibodjvvrm86uCfnnAn4g.avatarHolder {
+  --avatar-size: var(--zehn-size-persona-compact-avatar);
+  border-radius: var(--zehn-size-persona-compact-radius) !important;
+  --persona-opacity: 0;
+}
+
+// CHAT
+.chatWindow .ChatRoomSpeaker .speaker .speakerAvatar,
+.chatWindow .ChatMsgSlashEmote .speaker .speakerAvatar,
+.chatWindow .ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame,
+.chatWindow .ChatMsgSlashEmote .speaker .speakerAvatar.hasAvatarFrame {
+  --avatar-size: var(--zehn-size-persona-avatar);
 }
 
 .chatWindow.compactView .ChatRoomSpeaker .speaker .speakerAvatar,
@@ -365,6 +435,8 @@ img.AB86vEzEKPL0y5fK_m4pT {
 .chatWindow.compactView .ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame,
 .chatWindow.compactView .ChatMsgSlashEmote .speaker .speakerAvatar.hasAvatarFrame {
   --avatar-size: var(--zehn-size-persona-compact-avatar);
+  border-radius: var(--zehn-size-persona-compact-radius) !important;
+  --persona-opacity: 0;
 }
 
 // MASK
@@ -407,16 +479,12 @@ img.AB86vEzEKPL0y5fK_m4pT {
   -webkit-mask-image: var(--zehn-mask-avatar-bigpicture) !important;
 }
 
-// COMPACT - HIDE AVATAR
-.CompactFriendsList:not(.chatRoomMembers):not(.ChatTabsContextMenu) ._3h-QRJGxnVOIExtHD1R0f2.avatar,
-.compactView .currentUserAvatar ._3h-QRJGxnVOIExtHD1R0f2.avatar {
-  display: none !important;
-}
-
-.compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials,
-.compactView .ChatRoomListGroupItem .ChatRoomGroupAvatar img,
-.compactView .ChatRoomListGroupItem .ChatRoomMultiFriendAvatar img {
-  display: none !important;
+// HOLDER CONTENT
+.nibodjvvrm86uCfnnAn4g.avatarHolder ._3h-QRJGxnVOIExtHD1R0f2.avatar,
+.ChatRoomGroupAvatar .ChatRoomGroupAvatar_initials,
+.ChatRoomGroupAvatar img,
+.ChatRoomMultiFriendAvatar img {
+  opacity: var(--persona-opacity) !important;
 }
 
 // GROUP CHAT INITIALS
