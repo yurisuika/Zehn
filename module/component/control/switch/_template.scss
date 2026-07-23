@@ -1,293 +1,226 @@
-// CONTAINER
-._DialogInputContainer {
-  margin: 0px !important;
-  line-height: var(--zehn-size-setting-entry) !important;
-  color: var(--zehn-color-text1) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-}
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.DialogToggleField._DialogInputContainer {
-  padding: 0px !important;
-  gap: var(--zehn-size-setting-control-gap) !important;
-  flex-direction: column !important;
-}
-
-.DialogToggleField_NewUIContainer {
-  height: var(--zehn-size-setting-entry) !important;
-}
-
-// SWITCH INNER CONTAINER
-.DialogToggleField_Control,
-._3Sl0QHQ69uK7ZMQo5vBfrA {
-  background: transparent !important;
-  height: auto !important;
-  position: relative !important;
-  margin: 0px !important;
-  width: 100% !important;
-  color: var(--zehn-color-text1) !important;
-  font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-}
-
-// SWITCH - DIALOG, FRIENDS VOICE SETTINGS / WHAT'S NEW SETTINGS, GAMEPAD
-.DialogToggleField_OptionPanel,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw,
-._9Ql-oVe_j8E-vsDdyVdWo {
-  width: var(--zehn-size-switch-width) !important;
-  height: var(--zehn-size-switch-height) !important;
-  left: 0px !important;
-  top: 0px !important;
+@mixin base($off, $on, $rail, $toggle) {
   box-sizing: border-box !important;
-  border-radius: var(--zehn-size-switch-radius) !important;
-  margin: 0px !important;
-  border: var(--zehn-size-switch-border) solid !important;
-}
-
-// BACKGROUND
-.DialogToggleField_OptionPanel,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw,
-._9Ql-oVe_j8E-vsDdyVdWo {
-  border-color: var(--zehn-color-switch-border-off) !important;
-  background: var(--zehn-color-switch-background-off) !important;
-}
-
-.DialogToggleField_OptionPanel:hover,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw:hover,
-._9Ql-oVe_j8E-vsDdyVdWo:hover {
-  border-color: var(--zehn-color-switch-border-off-hover) !important;
-  background: var(--zehn-color-switch-background-off-hover) !important;
-}
-
-.DialogToggleField_OptionPanel:active,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw:active,
-._9Ql-oVe_j8E-vsDdyVdWo:active {
-  border-color: var(--zehn-color-switch-border-off-active) !important;
-  background: var(--zehn-color-switch-background-off-active) !important;
-}
-
-.DialogToggleField_OptionPanel:disabled,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv ._2Fw7gGOSCr7y9elv8iszxw,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv ._2Fw7gGOSCr7y9elv8iszxw:is(:hover, :active),
-._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_,
-._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_:is(:hover, :active) {
-  border-color: var(--zehn-color-switch-border-off-disabled) !important;
-  background: var(--zehn-color-switch-background-off-disabled) !important;
-  filter: none !important;
-}
-
-// BACKGROUND ON
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)),
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw._317lekDG36odwSaDLtFQgd,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS {
-  border-color: var(--zehn-color-switch-border-on) !important;
-  background: var(--zehn-color-switch-background-on) !important;
-}
-
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):hover,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw._317lekDG36odwSaDLtFQgd:hover,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:hover {
-  border-color: var(--zehn-color-switch-border-on-hover) !important;
-  background: var(--zehn-color-switch-background-on-hover) !important;
-}
-
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):active,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw._317lekDG36odwSaDLtFQgd:active,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:active {
-  border-color: var(--zehn-color-switch-border-on-active) !important;
-  background: var(--zehn-color-switch-background-on-active) !important;
-}
-
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.Off:not(.Active)):disabled,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv ._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw._317lekDG36odwSaDLtFQgd,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv ._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw._317lekDG36odwSaDLtFQgd:is(:hover, :active),
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS.aIeh3X5T2M074RLW1qn6_,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS.aIeh3X5T2M074RLW1qn6_:is(:hover, :active) {
-  border-color: var(--zehn-color-switch-border-on-disabled) !important;
-  background: var(--zehn-color-switch-background-on-disabled) !important;
-  filter: none !important;
-}
-
-// TOGGLE
-.DialogToggleField_Option,
-._3IWp5BnnsY_aMKCxhCjShP,
-._1PQppcgkuXQAiFPar9AGi- {
-  width: var(--zehn-size-switch-toggle) !important;
-  height: var(--zehn-size-switch-toggle) !important;
-  border-radius: var(--zehn-size-radius-circular) !important;
-  color: transparent !important;
-}
-
-.DialogToggleField_Option,
-._1PQppcgkuXQAiFPar9AGi- {
-  margin: calc((var(--zehn-size-switch-height) - (var(--zehn-size-switch-toggle) + (2 * var(--zehn-size-switch-border)))) / 2) !important;
-}
-
-._3IWp5BnnsY_aMKCxhCjShP {
-  // THIS IS NOT A CHILD OF THE BACKGROUND THUS IT NEEDS A BIGGER MARGIN
-  margin: calc((var(--zehn-size-switch-height) - var(--zehn-size-switch-toggle)) / 2) !important;
-}
-
-// TOGGLE OFF
-.DialogToggleField_Control .DialogToggleField_Option.Off.Active,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._3IWp5BnnsY_aMKCxhCjShP,
-._9Ql-oVe_j8E-vsDdyVdWo ._1PQppcgkuXQAiFPar9AGi- {
-  transform: translateX(0px) !important;
-  transition: transform 0.25s !important;
-}
-
-.DialogToggleField_Control .DialogToggleField_Option.Off.Active,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._3IWp5BnnsY_aMKCxhCjShP._3blKBzfHJaBz7ksPINK9aq,
-._9Ql-oVe_j8E-vsDdyVdWo ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-off) !important;
-}
-
-.DialogToggleField_Control:hover .DialogToggleField_Option.Off.Active,
-._3Sl0QHQ69uK7ZMQo5vBfrA:hover ._3IWp5BnnsY_aMKCxhCjShP._3blKBzfHJaBz7ksPINK9aq,
-._9Ql-oVe_j8E-vsDdyVdWo:hover ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-off-hover) !important;
-}
-
-.DialogToggleField_Control:active .DialogToggleField_Option.Off.Active,
-._3Sl0QHQ69uK7ZMQo5vBfrA:active ._3IWp5BnnsY_aMKCxhCjShP._3blKBzfHJaBz7ksPINK9aq,
-._9Ql-oVe_j8E-vsDdyVdWo:active ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-off-active) !important;
-}
-
-.DialogToggleField_Control:disabled .DialogToggleField_Option.Off.Active,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv ._3IWp5BnnsY_aMKCxhCjShP._3blKBzfHJaBz7ksPINK9aq,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv:is(:hover, :active) ._3IWp5BnnsY_aMKCxhCjShP._3blKBzfHJaBz7ksPINK9aq,
-._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_ ._1PQppcgkuXQAiFPar9AGi-,
-._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_:is(:hover, :active) ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-off-disabled) !important;
-}
-
-// TOGGLE ON
-.DialogToggleField_Control .DialogToggleField_Option.Off:not(.Active),
-._3Sl0QHQ69uK7ZMQo5vBfrA ._3IWp5BnnsY_aMKCxhCjShP._317lekDG36odwSaDLtFQgd,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._1PQppcgkuXQAiFPar9AGi- {
-  transform: translateX(24px) !important;
-  transition: transform 0.25s !important;
-  color: transparent !important;
-}
-
-.DialogToggleField_Control .DialogToggleField_Option.Off,
-._3Sl0QHQ69uK7ZMQo5vBfrA ._3IWp5BnnsY_aMKCxhCjShP._317lekDG36odwSaDLtFQgd,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-on) !important;
-}
-
-.DialogToggleField_Control:hover .DialogToggleField_Option.Off,
-._3Sl0QHQ69uK7ZMQo5vBfrA:hover ._3IWp5BnnsY_aMKCxhCjShP._317lekDG36odwSaDLtFQgd,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:hover ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-on-hover) !important;
-}
-
-.DialogToggleField_Control:active .DialogToggleField_Option.Off,
-._3Sl0QHQ69uK7ZMQo5vBfrA:active ._3IWp5BnnsY_aMKCxhCjShP._317lekDG36odwSaDLtFQgd,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS:active ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-on-active) !important;
-}
-
-.DialogToggleField_Control:disabled .DialogToggleField_Option.Off,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv ._3IWp5BnnsY_aMKCxhCjShP._317lekDG36odwSaDLtFQgd,
-._3Sl0QHQ69uK7ZMQo5vBfrA.M8qsAk8m30GwcGz7HCVnv:is(:hover, :active) ._3IWp5BnnsY_aMKCxhCjShP._317lekDG36odwSaDLtFQgd,
-._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_.yLrDAetGoWx0GYqA6ShfS ._1PQppcgkuXQAiFPar9AGi-,
-._9Ql-oVe_j8E-vsDdyVdWo.aIeh3X5T2M074RLW1qn6_.yLrDAetGoWx0GYqA6ShfS:is(:hover, :active) ._1PQppcgkuXQAiFPar9AGi- {
-  background: var(--zehn-color-switch-toggle-on-disabled) !important;
-}
-
-// DON'T DISPLAY THE ON STATE CAUSE WE DON'T USE IT
-.DialogToggleField_Option.On {
-  display: none !important;
-}
-
-// ON/OFF LABEL
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after,
-._3Sl0QHQ69uK7ZMQo5vBfrA::after,
-._9Ql-oVe_j8E-vsDdyVdWo::after {
-  margin-left: calc(var(--zehn-size-switch-width) + var(--zehn-size-spacing-sm)) !important;
-  color: var(--zehn-color-text1) !important;
-  line-height: var(--zehn-size-switch-height) !important;
   position: relative !important;
-  height: var(--zehn-size-switch-height) !important;
-  display: block !important;
+
+  filter: none !important;
+  transition: none !important;
+
+  inset: unset !important;
+
+  margin: 0px !important;
+
+  border: none !important;
+
+  &#{$off} {
+    --toggle-pos: 0px;
+    --label: var(--zehn-translation-off);
+  }
+
+  &#{$on} {
+    --toggle-pos: 24px;
+    --label: var(--zehn-translation-on);
+  }
+
+  #{$rail} {
+    box-sizing: border-box !important;
+    position: absolute !important;
+
+    filter: none !important;
+
+    transition: none !important;
+
+    margin: 0px !important;
+
+    background: var(--rail-background) !important;
+
+    border-width: var(--zehn-size-switch-border) !important;
+    border-style: solid !important;
+    border-color: var(--rail-border) !important;
+
+    color: transparent !important;
+  }
+
+  #{$toggle} {
+    box-sizing: border-box !important;
+    position: absolute !important;
+
+    filter: none !important;
+
+    transform: translateX(var(--toggle-pos)) !important;
+    transition: transform 0.25s var(--zehn-timing-linear) !important;
+
+    margin: var(--zehn-size-switch-toggle-margin) !important;
+
+    background: var(--toggle-color) !important;
+
+    color: transparent !important;
+  }
+
+  // CREATE THE CONTROL STATUS
+  &::after {
+    margin-left: calc(var(--zehn-size-switch-width) + var(--zehn-size-setting-control-gap));
+    color: var(--zehn-color-text-control);
+    font-size: var(--zehn-size-text-control);
+    line-height: var(--zehn-size-switch-height);
+    position: relative;
+    height: var(--zehn-size-switch-height);
+    display: block;
+    width: fit-content;
+    transform: none;
+    content: var(--label);
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin colorset($state, $mode: null) {
+  $mode: if(sass($mode != null): "-" + $mode; else: "");
+
+  --rail-background: var(--zehn-color-switch-background-#{$state}#{$mode});
+  --rail-border: var(--zehn-color-switch-border-#{$state}#{$mode});
+
+  --toggle-color: var(--zehn-color-switch-toggle-#{$state}#{$mode});
+}
+
+@mixin look($off, $on, $disabled) {
+  $state: "off";
+
+  &#{$off} {
+    @include colorset($state);
+  }
+  &#{$off}:is(:focus) {
+    @include colorset($state, $mode: "focus");
+  }
+  &#{$off}:is(:hover) {
+    @include colorset($state, $mode: "hover");
+  }
+  &#{$off}:is(:hover:focus) {
+    @include colorset($state, $mode: "hover-focus");
+  }
+  &#{$off}:is(:active) {
+    @include colorset($state, $mode: "active");
+  }
+  &#{$off}:is(:active:focus) {
+    @include colorset($state, $mode: "active-focus");
+  }
+  &#{$off}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include colorset($state, $mode: "disabled");
+    pointer-events: none !important;
+  }
+
+  $state: "on";
+
+  &#{$on} {
+    @include colorset($state);
+  }
+  &#{$on}:is(:focus) {
+    @include colorset($state, $mode: "focus");
+  }
+  &#{$on}:is(:hover) {
+    @include colorset($state, $mode: "hover");
+  }
+  &#{$on}:is(:hover:focus) {
+    @include colorset($state, $mode: "hover-focus");
+  }
+  &#{$on}:is(:active) {
+    @include colorset($state, $mode: "active");
+  }
+  &#{$on}:is(:active:focus) {
+    @include colorset($state, $mode: "active-focus");
+  }
+  &#{$on}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include colorset($state, $mode: "disabled");
+    pointer-events: none !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size($rail, $toggle) {
   width: fit-content !important;
-  transform: none !important;
+
+  height: fit-content !important;
+
+  #{$rail} {
+    width: var(--zehn-size-switch-width) !important;
+
+    height: var(--zehn-size-switch-height) !important;
+  }
+
+  #{$toggle} {
+    width: var(--zehn-size-switch-toggle) !important;
+
+    height: var(--zehn-size-switch-toggle) !important;
+  }
 }
 
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after {
-  position: absolute !important;
-  left: 0px !important;
-}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On)::after,
-._3Sl0QHQ69uK7ZMQo5vBfrA:has(._2Fw7gGOSCr7y9elv8iszxw:not(._317lekDG36odwSaDLtFQgd))::after,
-._9Ql-oVe_j8E-vsDdyVdWo::after {
-  content: var(--zehn-translation-off) !important;
-}
 
-.DialogToggleField_OptionPanel:has(.DialogToggleField_Option.On.Active)::after,
-._3Sl0QHQ69uK7ZMQo5vBfrA:has(._2Fw7gGOSCr7y9elv8iszxw._317lekDG36odwSaDLtFQgd)::after,
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS::after {
-  content: var(--zehn-translation-on) !important;
-}
 
-// DON'T ADD TO SCREENSHOT SHARE DIALOG CAUSE IT IS AT THE END OF THE DIALOG
-.lcOTPSjzoMa0rZHjVcyOW ._9Ql-oVe_j8E-vsDdyVdWo::after {
-  display: none !important;
-}
 
-// LABEL ROWS
-._2VcTlXFC64Jtg9gvtT6cmY {
-  flex-direction: column !important;
-  align-items: baseline !important;
-  gap: 0px !important;
-}
 
-// FRIENDS SETTINGS VOICE
-._3Sl0QHQ69uK7ZMQo5vBfrA ._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw {
-  background: transparent !important;
-}
 
-._1MBq0fYrftycnyZF4FC9Jo {
-  padding: 0px !important;
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape($rail, $toggle) {
   border-radius: var(--zehn-size-radius-none) !important;
-  background-color: transparent !important;
+
+  #{$rail} {
+    border-radius: var(--zehn-size-switch-radius) !important;
+  }
+
+  #{$toggle} {
+    border-radius: var(--zehn-size-switch-toggle-radius) !important;
+  }
 }
 
-._1MBq0fYrftycnyZF4FC9Jo ._1Dhs8IG9_tJWb3XP9ccN9M {
-  font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
-  color: var(--zehn-color-text1) !important;
-  line-height: 32px !important;
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset($off, $on, $rail, $toggle, $disabled: ":disabled") {
+  @include base($off, $on, $rail, $toggle);
+  @include size($rail, $toggle);
+  @include shape($rail, $toggle);
+  @include look($off, $on, $disabled);
 }
 
-// GAMEPAD TOGGLE RAIL - WE DON'T WANT ANY OF THIS
-._2bl0iQ9xigbq4Zd1NI6NZl {
-  background: transparent !important;
-  border-radius: var(--zehn-size-radius-none) !important;
-}
-
-._2bl0iQ9xigbq4Zd1NI6NZl::before {
-  content: "" !important;
-  background: transparent !important;
-  transform: none !important;
-}
-
-._2bl0iQ9xigbq4Zd1NI6NZl::after {
-  background: transparent !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._2bl0iQ9xigbq4Zd1NI6NZl::before {
-  transform: none !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._2bl0iQ9xigbq4Zd1NI6NZl {
-  background: transparent !important;
-}
-
-._9Ql-oVe_j8E-vsDdyVdWo:active ._2bl0iQ9xigbq4Zd1NI6NZl {
-  background: transparent !important;
-}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -9,7 +9,7 @@
 // SIDEBAR
 .MillenniumDesktopSidebar {
   z-index: 1338 !important;
-  --sidebar-width: 364px !important;
+  --sidebar-width: 332px !important;
   background: var(--zehn-color-section) !important;
   width: var(--sidebar-width) !important;
   transition: transform 0.5s var(--zehn-timing-ease-out-quad) !important;
@@ -101,7 +101,11 @@
 .MillenniumDesktopSidebar_EditorContent {
   padding: 0px !important;
   background: var(--zehn-color-section) !important;
-  gap: var(--zehn-size-dialog-gap) !important;
+  gap: 0px !important;
+
+  .SettingsDialogSubHeader:not(:first-child) {
+    margin-top: var(--zehn-size-setting-section-gap) !important;
+  }
 }
 
 // INDENT LEVEL (PLUGINS?)
@@ -131,11 +135,12 @@
 
 // HLTB GOOFYNESS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.MillenniumDesktopSidebar[data-focused-item-type="PLUGIN"] .MillenniumDesktopSidebar_EditorContent>div {
+.MillenniumDesktopSidebar[data-focused-item-type="PLUGIN"] .MillenniumDesktopSidebar_EditorContent {
   padding: var(--zehn-size-dialog-padding) !important;
-  gap: var(--zehn-size-dialog-gap) !important;
-  display: flex !important;
-  flex-direction: column !important;
+
+  >div {
+    padding: 0px !important;
+  }
 }
 
 .MillenniumDesktopSidebar_EditorContent>div>div:has(>.eKmEXJCm_lgme24Fp_HWt) {
@@ -149,23 +154,31 @@
   font-size: var(--zehn-size-text-label) !important;
 }
 
+
 .MillenniumDesktopSidebar_EditorContent>div:not(:has(div)) {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  border: none !important;
+}
+
+.MillenniumDesktopSidebar_EditorContent>div:not(:has(div))[style^="font-size: 16px"] {
   color: var(--zehn-color-text-section-header) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-section-header) !important;
   line-height: var(--zehn-size-setting-section-header) !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
+  margin-top: var(--zehn-size-setting-section-gap) !important;
+
+  &:first-child {
+    margin-top: 0px !important;
+  }
 }
 
-.MillenniumDesktopSidebar_EditorContent>div:not(:has(div))~div:not(:has(div)) {
+.MillenniumDesktopSidebar_EditorContent>div:not(:has(div))[style^="font-size: 11px"] {
   color: var(--zehn-color-text-description) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-description) !important;
   line-height: normal !important;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  border: none !important;
+  margin-top: var(--zehn-size-setting-label-gap) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

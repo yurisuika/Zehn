@@ -1,0 +1,103 @@
+// MILLENNIUM PICKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+input.MillenniumColorPicker {
+  position: relative !important;
+  margin: 0px !important;
+  border: unset !important;
+  min-width: var(--zehn-size-picker) !important;
+  min-height: var(--zehn-size-picker) !important;
+  width: var(--zehn-size-picker) !important;
+  height: var(--zehn-size-picker) !important;
+  background: transparent !important;
+  padding: 0px !important;
+  outline: var(--zehn-size-picker-border) solid var(--picker-border) !important;
+  outline-offset: calc(-1 * var(--zehn-size-picker-border)) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  --picker-border: var(--zehn-color-picker-border-off);
+
+  &:hover {
+    --picker-border: var(--zehn-color-picker-border-hover-off);
+  }
+
+  &:active {
+    --picker-border: var(--zehn-color-picker-border-active-off);
+  }
+}
+
+button+input.MillenniumColorPicker {
+  --picker-border: var(--zehn-color-picker-border-on);
+
+  &:hover {
+    --picker-border: var(--zehn-color-picker-border-hover-on);
+  }
+
+  &:active {
+    --picker-border: var(--zehn-color-picker-border-active-on);
+  }
+
+  // BACK
+  &::before {
+    content: "" !important;
+    top: var(--zehn-size-picker-border) !important;
+    right: var(--zehn-size-picker-border) !important;
+    width: var(--zehn-size-picker-checkbox) !important;
+    height: var(--zehn-size-picker-checkbox) !important;
+    position: absolute !important;
+    background-color: var(--zehn-color-picker-checkbox) !important;
+  }
+
+  // CHECK
+  &::after {
+    content: "" !important;
+    top: var(--zehn-size-picker-border) !important;
+    right: var(--zehn-size-picker-border) !important;
+    width: var(--zehn-size-picker-checkbox) !important;
+    height: var(--zehn-size-picker-checkbox) !important;
+    position: absolute !important;
+    background-color: var(--zehn-color-picker-checkmark) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-picker-checkmark) !important;
+    -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+  }
+}
+
+// RESET BUTTON
+._2o2fXzn99OddeqZMjbDuxQ:has(.MillenniumColorPicker) button.DialogButton {
+  opacity: 0 !important;
+  z-index: 999 !important;
+  top: var(--zehn-size-picker-border) !important;
+  left: calc(var(--zehn-size-picker-checkbox) + var(--zehn-size-picker-border)) !important;
+  order: 2 !important;
+  position: absolute !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GENERIC (MAY BE USED BY PLUGINS?) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+input[type="color"] {
+  -webkit-appearance: none !important;
+  border: none !important;
+  width: var(--zehn-size-picker) !important;
+  height: var(--zehn-size-picker) !important;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0px !important;
+  }
+
+  &::-webkit-color-swatch {
+    border: none !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

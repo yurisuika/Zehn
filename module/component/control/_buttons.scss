@@ -13,14 +13,6 @@
   pointer-events: all;
 }
 
-.zehnIconContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 button {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -1115,7 +1107,7 @@ button.DialogButton::before {
     $width: fit-content,
     $selected: ".Z3L6KGVxi4ZjGUzbYUjBC",
     $padding: var(--zehn-size-button-padding-wide),
-    $style: "dialog"
+    $shape: var(--zehn-size-radius-pill)
   );
 }
 
@@ -1192,8 +1184,8 @@ button.DialogButton::before {
   cursor: default !important;
 }
 
-.zehnNews .zehnTitle,
-.zehnLoad .zehnTitle {
+.zehnNews .zehnText,
+.zehnLoad .zehnText {
   @include template.preset-fixed(
     $height: var(--zehn-size-panel-header-large),
     $width: calc(100% - (2 * var(--zehn-size-activity-panel-padding)))
@@ -1558,7 +1550,7 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb.Q7tULXy1gQNG1eU--hN27 {
 // MILLENNIUM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // SETTINGS FLYOUT HEADER
-.MillenniumDesktopSidebar_Title button.DialogButton.MillenniumIconButton {
+.MillenniumDesktopSidebar_Title button.DialogButton.MillenniumButton.MillenniumIconButton {
   @include template.preset-fixed(
     $height: var(--title-height),
     $width: var(--title-height),
@@ -1568,7 +1560,7 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb.Q7tULXy1gQNG1eU--hN27 {
 }
 
 // UPDATES
-.MillenniumSettings ._2o2fXzn99OddeqZMjbDuxQ button.DialogButton {
+.MillenniumSettings button.DialogButton.MillenniumButton {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
@@ -1578,7 +1570,7 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb.Q7tULXy1gQNG1eU--hN27 {
   );
 }
 
-button.DialogButton.MillenniumIconButton.Secondary {
+button.DialogButton.MillenniumButton.MillenniumIconButton {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: var(--zehn-size-button-md),
@@ -1587,7 +1579,7 @@ button.DialogButton.MillenniumIconButton.Secondary {
   );
 }
 
-button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
+button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWithText {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
@@ -1598,35 +1590,33 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 }
 
 // PRIMARY BUTTONS
-.DialogBody.aFxOaYcllWYkCfVYQJFs0>.DialogControlsSection.MillenniumButtonsSection ._3epr8QYWw_FqFgMx38YEEm.DialogButton {
+.DialogControlsSection.MillenniumButtonsSection button.DialogButton.MillenniumButton {
   @include template.preset-dynamic(
     $height: 100%,
     $disabled: ".Disabled",
     $padding: var(--zehn-size-button-padding-tall),
     $style: "dialog"
   );
+}
 
-  flex-direction: column !important;
-  flex: 1 !important;
+// LOG BUTTONS
+.MillenniumButtonsSection.MillenniumLogsSection button.DialogButton.MillenniumButton.MillenniumLogs_LogItemButton {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $padding: var(--zehn-size-button-padding-wide),
+    $style: "dialog"
+  );
 }
 
 // COLOR PICKER
 ._2o2fXzn99OddeqZMjbDuxQ:has(.MillenniumColorPicker) button.DialogButton {
-  --picker-reset: 20px;
-  --picker-border: 2px;
-
   @include template.preset-fixed(
-    $height: var(--picker-reset),
-    $width: var(--picker-reset),
+    $height: var(--zehn-size-picker-checkbox),
+    $width: var(--zehn-size-picker-checkbox),
     $disabled: ".Disabled"
   );
-
-  opacity: 0 !important;
-  z-index: 999 !important;
-  top: var(--picker-border) !important;
-  left: calc(var(--picker-reset) + var(--picker-border)) !important;
-  order: 2 !important;
-  position: absolute !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2193,12 +2183,13 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
   );
 }
 
-// CONTROLLER
-._30w46ktz76K_Rnqk02ZfT0._1zkgQm67ell-zVB965M-D5 {
+// CONTROLLER FIELD INPUT
+._2u8kEcBXVlybjCaSv6ZMDk {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $padding: var(--zehn-size-button-padding-wide),
+    $icon: "img",
     $style: "dialog"
   );
 }
@@ -2225,6 +2216,15 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
   flex-direction: row !important;
 }
 
+// RECORDING - INTRO CLOSE
+._1TV2TLk7RNa3PqD1_WKqfs ._3LcuuuaTcyQg5AsF4kwCl8 {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "close"
+  );
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -2240,6 +2240,15 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
 
 // PRIVACY
 ._3S8RX620BmLdH407KK505 .Htkkt1r5GiHi-0US69HQ_.DialogButton {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $style: "dialog"
+  );
+}
+
+// WORKSHOP
+._1GhdqLCL6OpQDLqjurF409.DialogButton {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: var(--zehn-size-button-md),
@@ -2265,6 +2274,57 @@ button.DialogButton.MillenniumIconButton.MillenniumIconButtonWithText {
   @include template.preset-fixed(
     $height: var(--zehn-size-button-md),
     $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+}
+
+// CHAT
+.FriendsSettingsChatFontSizeSection_ButtonRow {
+  .defaultFontSetting,
+  .smallFontSetting,
+  .defaultFontSetting,
+  .largeFontSetting {
+    @include template.preset-fixed(
+      $height: var(--zehn-size-button-md),
+      $width: fit-content,
+      $disabled: ".Disabled",
+      $selected: ".Primary",
+      $padding: var(--zehn-size-button-padding-wide),
+      $style: "dialog"
+    );
+  }
+}
+
+// NOTIFICATIONS
+.FriendsSettingsFlashSection .FriendsSettingsFlashSection_ButtonRow .DialogButton {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $selected: ".Primary",
+    $padding: var(--zehn-size-button-padding-wide),
+    $style: "dialog"
+  );
+}
+
+// VOICE
+.jTR51Ds1KV4MXKsqBWBPD ._2n5OvbFTLB1OaZA1Yd6iXs {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $selected: "._2OctdPiBMIFnOUcORg8jcG",
+    $padding: var(--zehn-size-button-padding-wide),
+    $style: "dialog"
+  );
+}
+
+.jTR51Ds1KV4MXKsqBWBPD ._18hAy_dZBqoqEz65RkI5OK {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-button-md),
+    $width: var(--zehn-size-button-md),
+    $disabled: ".Disabled",
     $style: "dialog"
   );
 }
@@ -2312,8 +2372,6 @@ button.DialogButton.roleButton {
     $padding: var(--zehn-size-button-padding-wide),
     $disabled: ".Disabled"
   );
-
-  justify-content: flex-start !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

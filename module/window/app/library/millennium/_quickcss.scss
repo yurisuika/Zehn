@@ -1,0 +1,311 @@
+// QUICK CSS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.MillenniumQuickCss_Popup {
+  overflow: hidden !important;
+  position: relative !important;
+
+  .PopupFullWindow {
+    right: 0px !important;
+    top: 0px !important;
+    height: 100% !important;
+
+    .DialogContent_InnerWidth {
+      overflow-y: auto !important;
+
+      .MillenniumQuickCss_CodeEditor {
+        padding: 0px !important;
+      }
+    }
+  }
+}
+
+.MillenniumQuickCss_CodeEditor {
+  position: relative !important;
+  height: -webkit-fill-available !important;
+
+  * {
+    font-family: Menlo, Consolas, DejaVu Sans Mono, monospace !important;
+  }
+
+  .cm-editor {
+    background-color: transparent !important;
+    color: var(--zehn-color-code-text) !important;
+
+    &.cm-focused {
+      outline: none !important;
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GUTTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.cm-gutters {
+  font-size: var(--zehn-size-code-text-gutter) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  color: var(--zehn-color-text3) !important;
+  background-color: transparent !important;
+
+  .cm-gutter.cm-lineNumbers {
+
+    .cm-gutterElement {
+      padding: 0px !important;
+      min-width: var(--zehn-size-code-gutter) !important;
+      text-align: right !important;
+      // margin: 0px !important;
+
+      &.cm-activeLineGutter {
+        color: var(--zehn-color-text1) !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  .cm-gutter.cm-foldGutter {
+
+    .cm-gutterElement {
+      padding: 0px !important;
+      min-width: var(--zehn-size-code-gutter) !important;
+      // margin: 0px !important;
+
+      &.cm-activeLineGutter {
+        color: var(--zehn-color-text1) !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+// FOLD LINE
+
+span[title="Fold line"],
+span[title="Unfold line"] {
+  padding: 0px !important;
+  display: block !important;
+  color: transparent !important;
+  position: relative !important;
+  width: var(--zehn-size-code-gutter) !important;
+  height: 100% !important;
+
+  &::after {
+    position: absolute !important;
+    left: 0px !important;
+    width: var(--zehn-size-code-gutter) !important;
+    height: 100% !important;
+    background-color: var(--zehn-color-icon3) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-icon-xs) !important;
+    content: "" !important;
+  }
+}
+
+span[title="Fold line"]::after {
+  -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+}
+
+span[title="Unfold line"]::after {
+  -webkit-mask-image: var(--zehn-icon-chevron-right-thick) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LINE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.cm-content {
+  padding: 0px !important;
+
+  &::selection {
+    background-color: transparent !important;
+  }
+}
+
+.cm-line {
+  padding: 0px !important;
+  background: transparent !important;
+
+  font-size: var(--zehn-size-code-text) !important;
+
+  caret-color: var(--zehn-color-code-cursor) !important;
+  caret-shape: underscore !important;
+
+  &.cm-activeLine {
+    background-color: transparent !important;
+  }
+
+  &::selection {
+    background-color: transparent !important;
+  }
+
+  span::selection {
+    color: var(--zehn-color-code-selection) !important;
+    background-color: var(--zehn-color-code-selection-background) !important;
+  }
+}
+
+.cm-selectionMatch {
+  background-color: var(--zehn-color-code-selection-background) !important;
+}
+
+.cm-foldPlaceholder {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--zehn-color-text-disabled) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  margin: 0px var(--zehn-size-text-gap) !important;
+  padding: 0px var(--zehn-size-text-gap) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CURSOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.cm-layer.cm-cursorLayer {
+
+  .cm-cursor,
+  .cm-dropCursor {
+    border-left: var(--zehn-size-code-cursor) solid var(--zehn-color-code-cursor) !important;
+    margin: 0px !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SELECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.cm-layer.cm-selectionLayer {
+
+  .cm-selectionBackground {
+    background-color: var(--zehn-color-code-selection-background) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// COLORS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// COMMENT
+.ͼ1l {
+  color: var(--zehn-color-code-text-comment) !important;
+}
+
+// VALUE
+.ͼ17 {
+  color: var(--zehn-color-code-text-literal) !important;
+}
+
+// PROP
+.ͼ19 {
+  color: var(--zehn-color-code-keyword) !important;
+}
+
+// CLASS
+.ͼ1b {
+  color: var(--zehn-color-code-text-class) !important;
+}
+
+// PRIMITIVE
+.ͼ1d {
+  color: var(--zehn-color-code-text-primative) !important;
+}
+
+// SYNTAX
+.ͼ1e {
+  color: var(--zehn-color-code-text-syntax) !important;
+}
+
+// DATA
+.ͼ1g {
+  color: var(--zehn-color-code-text-string) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// AUTOCOMPLETE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.cm-tooltip.cm-tooltip-autocomplete {
+  background-color: var(--zehn-color-code-background) !important;
+  color: var(--zehn-color-code-text) !important;
+
+  >ul>li {
+    padding: 0px !important;
+    line-height: var(--zehn-size-24) !important;
+
+    &[aria-selected] {
+      background: var(--zehn-color-code-selection-background) !important;
+      color: var(--zehn-color-code-selection) !important;
+    }
+  }
+}
+
+.ͼ1 .cm-completionIcon {
+  font-size: var(--zehn-size-12) !important;
+  width: var(--zehn-size-code-gutter) !important;
+  padding-right: 0px !important;
+  opacity: 1 !important;
+  box-sizing: content-box !important;
+}
+
+.cm-completionLabel {
+
+  .cm-completionMatchedText {
+    text-decoration: underline !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

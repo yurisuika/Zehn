@@ -74,7 +74,7 @@
 
 // SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin shape($check) {
+@mixin shape() {
   border-radius: var(--zehn-size-checkbox-radius) !important;
 }
 
@@ -114,7 +114,7 @@
     @include colorset($style, $state, $mode: "hover");
   }
   &#{$off}:is(:hover:focus) {
-    @include colorset($style, $state, $mode: "focus-hover");
+    @include colorset($style, $state, $mode: "hover-focus");
   }
   &#{$off}:is(:active) {
     @include colorset($style, $state, $mode: "active");
@@ -139,7 +139,7 @@
     @include colorset($style, $state, $mode: "hover");
   }
   &#{$on}:is(:hover:focus) {
-    @include colorset($style, $state, $mode: "focus-hover");
+    @include colorset($style, $state, $mode: "hover-focus");
   }
   &#{$on}:is(:active) {
     @include colorset($style, $state, $mode: "active");
@@ -169,7 +169,7 @@
 @mixin preset($off, $on, $check, $disabled: ":disabled", $style: "dialog") {
   @include base($style, $check);
   @include size($check);
-  @include shape($check);
+  @include shape();
   @include look($off, $on, $disabled, $style);
 }
 

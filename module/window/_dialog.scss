@@ -44,12 +44,12 @@
 
 // MILLENNIUM SETTINGS
 .MillenniumSettings.ModalDialogPopup .DialogContent {
-  background: var(--zehn-color-app) !important;
+  background: transparent !important;
 }
 
 @media (prefers-contrast: more) {
   .MillenniumSettings.ModalDialogPopup .DialogContent {
-    background: var(--zehn-color-app) !important;
+    background: transparent !important;
   }
 }
 
@@ -66,6 +66,7 @@
 }
 
 // MODAL OVERLAYS W/O ACTUAL TITLEBARS
+.MillenniumSettings.ModalDialogPopup .DialogContent,
 .ModalDialogPopup .TitleBar~._1FyBL6obxHQ2Z2CsaV2Gbz .DialogContent,
 .ModalDialogPopup ._2O7tjQ9VWj5nhZ0y-pdpX2~.ModalPosition .DialogContent,
 .ModalDialogPopup .TitleBar~.ModalPosition .DialogContent,
@@ -240,21 +241,21 @@
 
 ._2ywySGDASDCC43aPuicxHt.DialogContent_InnerWidth>.Panel:has(>.eKmEXJCm_lgme24Fp_HWt)>.DialogBody {
   padding: var(--zehn-size-dialog-padding) !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
 // EDIT PAGE
 .CFTLX2wIKOK3hNV-fS7_V ._2ywySGDASDCC43aPuicxHt.DialogContent_InnerWidth>div>.Panel {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
 // EXPORT LAYOUT
 ._2ywySGDASDCC43aPuicxHt.DialogContent_InnerWidth.Panel>form {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
 }
 
 ._2ywySGDASDCC43aPuicxHt.DialogContent_InnerWidth.Panel>form>.DialogHeader {
@@ -291,16 +292,7 @@
 // FULL SIZE HEADER
 ._16sYNwqxz6giarbVaRUl7R.DialogContent .DialogHeader,
 ._16sYNwqxz6giarbVaRUl7R.DialogContent._3mgb-3_dHk3POEOVOh0Dvp .DialogHeader,
-.DialogContent.CFTLX2wIKOK3hNV-fS7_V .DialogHeader {
-  position: relative !important;
-  color: var(--zehn-color-text-page-header) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-text-page-header) !important;
-  line-height: var(--zehn-size-setting-header) !important;
-  padding: var(--zehn-size-dialog-padding) !important;
-  padding-bottom: 0px !important;
-}
-
+.DialogContent.CFTLX2wIKOK3hNV-fS7_V .DialogHeader,
 // GROUP CHAT
 .e600t61ObcLA11pIZAVb9 {
   position: relative !important;
@@ -308,6 +300,7 @@
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-page-header) !important;
   line-height: var(--zehn-size-setting-header) !important;
+  margin: 0px !important;
   padding: var(--zehn-size-dialog-padding) !important;
   padding-bottom: 0px !important;
   text-transform: none !important;
@@ -316,7 +309,7 @@
 
 // USE GAP WHEN THERE IS A BUTTON
 .DialogHeader:has(button) {
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-setting-field-gap) !important;
 }
 
 // HEADER NOT ON SETTINGS PAGE - MAKE IT GO IN THE TITLEBAR
@@ -365,7 +358,7 @@
   color: var(--zehn-color-text-body) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-body) !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
 }
 
 // CANCEL DOUBLE DIALOG PADDING
@@ -487,12 +480,6 @@
   line-height: var(--zehn-size-setting-section-header) !important;
 }
 
-// ADD MORE PADDING WHEN IT IS DOWN THE LINE
-.DialogControlsSection:not(:first-child)>.SettingsDialogSubHeader,
-div:not(:first-child)>.DialogSubHeader {
-  margin-top: var(--zehn-size-spacing-md) !important;
-}
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -519,11 +506,12 @@ div:not(:first-child)>.DialogSubHeader {
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-control) !important;
   line-height: normal !important;
-  align-self: left !important;
+  align-self: flex-start !important;
+  padding: 0px !important;
 }
 
 .Disabled .DialogToggle_Label {
-  color: var(--zehn-color-text-control-disabled) !important;
+  color: var(--zehn-color-text-disabled) !important;
 }
 
 .DialogToggle_Description {
@@ -532,7 +520,7 @@ div:not(:first-child)>.DialogSubHeader {
   font-size: var(--zehn-size-text-description) !important;
   padding: 0px !important;
   line-height: normal !important;
-  align-self: left !important;
+  align-self: flex-start !important;
 }
 
 .DialogRequirementLabel {
@@ -568,33 +556,38 @@ div:not(:first-child)>.DialogSubHeader {
 
 // LABELS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.DialogLabel,
-.DialogLabelStrong {
-  color: var(--zehn-color-text-control) !important;
+.DialogLabel {
+  color: var(--zehn-color-text-label) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-text-label) !important;
+  line-height: var(--zehn-size-setting-label) !important;
   text-transform: none !important;
   margin: 0px !important;
 }
 
-label>.DialogLabel {
-  line-height: var(--zehn-size-setting-label) !important;
-}
-
-// TREAT SOME WHAT'S NEW LABELS AS SUBHEADERS
-._1n-sV5GdQis4Wh9XN3GJ7L>.DialogLabel._DialogLayout:not(.fyxt0H7Cwfirf9908slPp) {
-  color: var(--zehn-color-text-section-header) !important;
+.DialogLabel.DialogLabelStrong {
+  color: var(--zehn-color-text-description) !important;
+  font-size: var(--zehn-size-text-description) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-text-section-header) !important;
+  line-height: normal !important;
   text-transform: none !important;
-  margin-right: 0px !important;
-  line-height: var(--zehn-size-setting-section-header) !important;
+  margin: 0px !important;
 }
 
 // REQUIREMENT LABEL LIKE USED IN SET LINK CODE
 .DialogRequirementLabel {
   padding: 0px !important;
 }
+
+.DialogLabelExplainer,
+.DialogLabel.DialogLabelExplainer {
+  color: var(--zehn-color-text-description) !important;
+  font-size: var(--zehn-size-text-description) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: normal !important;
+  margin: 0px !important;
+}
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -652,29 +645,24 @@ label>.DialogLabel {
 
 // CONTROL SECTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.DialogContent .DialogControlsSection {
+.DialogControlsSection {
   display: flex !important;
   flex-direction: column !important;
-  gap: var(--zehn-size-spacing-md) !important;
+  gap: 0px !important;
 }
 
 .DialogControlsSection:empty {
   display: none !important;
 }
 
-.DialogContent .DialogControlsSection:not(:first-child),
-.DialogContent .DialogControlsSectionHeader:not(:first-child),
-.DialogContent .DialogHeader:not(:first-child),
-.DialogContent .DialogSubHeader:not(:first-child) {
-  margin-top: 0px !important;
+.DialogControlsSection,
+.DialogContent .DialogHeader,
+.DialogSubHeader{
+  margin: 0px !important;
 }
 
-.DialogControlsSection:not(:last-child) {
-  margin-bottom: 0px !important;
-}
-
-.DialogControlsSectionHeader:not(:last-child) {
-  margin-bottom: 0px !important;
+.DialogControlsSection:not(:first-child) {
+  margin-top: var(--zehn-size-setting-section-gap) !important;
 }
 
 // CONTROLS SUBSECTIONS 
@@ -682,34 +670,47 @@ label>.DialogLabel {
   max-width: 100% !important;
 }
 
-.DialogContent .DialogControlsSection>.Panel:not(._1ml4SNc3LIyBDHIf8ekVSw) {
-  gap: var(--zehn-size-spacing-xs) var(--zehn-size-spacing-md) !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
 // CONTROLS FOUND IN GAME
 .DialogContent .DialogControlsSection>div:empty {
   display: none !important;
 }
 
-.DialogContent .DialogControlsSection>div {
-  gap: var(--zehn-size-spacing-xs) !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-
 // LIMIT CONTROL SECTION WIDTH FOR SETTINGS AND CHAT SETTINGS
-.ModalDialogPopup:has(.PageListColumn) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>* {
-  max-width: var(--zehn-size-setting-content) !important;
-  min-width: unset !important;
-  flex-wrap: wrap !important;
-}
-
+.ModalDialogPopup:has(.PageListColumn) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>*,
 .ModalDialogPopup:has(.xSTLmzylFJdIfak7ZdhuA) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>* {
   max-width: var(--zehn-size-setting-content) !important;
   min-width: unset !important;
-  flex-wrap: wrap !important;
+  // flex-wrap: wrap !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// INPUT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.DialogTextInputBase,
+._DialogInputContainer {
+  // INPUT BASE IS USED FOR BOTH THE INPUT AND A WRAPPER SOMETIMES :/
+  background: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  transition: none !important;
+}
+
+._DialogInputContainer {
+  padding: 0px !important;
+  margin: 0px !important;
+  line-height: 100% !important;
+  color: var(--zehn-color-text-control) !important;
+  font-size: var(--zehn-size-text-control) !important;
+  font-weight: var(--zehn-weight-normal) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -856,10 +857,16 @@ label>.DialogLabel {
   gap: var(--zehn-size-dialog-paragraph-gap) !important;
   margin: 0px !important;
 
+  // lABEL
+  .DialogLabel {
+    margin-bottom: var(--zehn-size-setting-label-gap) !important;
+  }
+
   // LIST BUILDER
   .DialogListBuilderInput_List {
     max-height: unset !important;
     min-width: 100% !important;
+    gap: var(--zehn-size-tags-gap) !important;
 
     // SEARCH
     .DialogListBuilderInput_Input {

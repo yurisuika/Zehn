@@ -1,1 +1,115 @@
-@forward 'switch/template';
+@use 'switch/template' as template;
+
+// OLDER CHAT DIALOGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.DialogToggleField._DialogInputContainer {
+  gap: var(--zehn-size-setting-control-gap) !important;
+  flex-direction: column !important;
+}
+
+// WRAPPER
+.DialogToggleField_Control {
+  background: transparent !important;
+  height: auto !important;
+  position: relative !important;
+  margin: 0px !important;
+  width: 100% !important;
+  color: var(--zehn-color-text-control) !important;
+  font-size: var(--zehn-size-text-control) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  transition: none !important;
+}
+
+.DialogToggleField_OptionPanel {
+  @include template.preset(
+    $off: ":has(.DialogToggleField_Option.Off.Active)",
+    $on: ":has(.DialogToggleField_Option.Off:not(.Active))",
+    $rail: ".DialogToggleField_Option.Off",
+    $toggle: ".DialogToggleField_Option.On",
+    $disabled: ":disabled"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// WHAT'S NEW / FRIENDS SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// WRAPPER
+.DialogToggleField_NewUIContainer {
+  background: transparent !important;
+  height: auto !important;
+  position: relative !important;
+  margin: 0px !important;
+  width: 100% !important;
+  color: var(--zehn-color-text-control) !important;
+  font-size: var(--zehn-size-text-control) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  transition: none !important;
+}
+
+._3Sl0QHQ69uK7ZMQo5vBfrA {
+  @include template.preset(
+    $off: ":has(._3blKBzfHJaBz7ksPINK9aq)",
+    $on: ":has(._317lekDG36odwSaDLtFQgd)",
+    $rail: "._2Fw7gGOSCr7y9elv8iszxw._2OUxguuTe-NeOXZXxSNQsw",
+    $toggle: "._3IWp5BnnsY_aMKCxhCjShP",
+    $disabled: ".M8qsAk8m30GwcGz7HCVnv"
+  );
+}
+
+// DUAL RAILS WE DON'T USE THE OTHER
+._2Fw7gGOSCr7y9elv8iszxw:not(._2OUxguuTe-NeOXZXxSNQsw) {
+  transition: none !important;
+  height: 100% !important;
+  width: 100% !important;
+  inset: 0px !important;
+  background: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GAMEPAD (SETTINGS ETC) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._9Ql-oVe_j8E-vsDdyVdWo {
+  @include template.preset(
+    $off: "",
+    $on: ".yLrDAetGoWx0GYqA6ShfS",
+    $rail: "._2bl0iQ9xigbq4Zd1NI6NZl",
+    $toggle: "._1PQppcgkuXQAiFPar9AGi-",
+    $disabled: ".aIeh3X5T2M074RLW1qn6_"
+  );
+}
+
+// DON'T SHOW THE VANILLA PSEUDO
+._2bl0iQ9xigbq4Zd1NI6NZl::before {
+  display: none !important;
+}
+
+// DON'T ADD LABEL TO SCREENSHOT SHARE DIALOG CAUSE IT IS AT THE END OF THE DIALOG
+.lcOTPSjzoMa0rZHjVcyOW ._9Ql-oVe_j8E-vsDdyVdWo::after {
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
