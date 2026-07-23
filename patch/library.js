@@ -302,20 +302,20 @@ Zehn.movePrependAndObserve('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', 
 
 /* MOVE SUPERNAV AND ROOT MENU LIST ITEMS INTO CONTAINERS ----------------------------------------------------------- */
 
-Zehn.createIconTitleContainer('.Store_Supernav', '.contextMenuItem');
-Zehn.createIconTitleContainer('.Library_Supernav', '.contextMenuItem');
-Zehn.createIconTitleContainer('.Community_Supernav', '.contextMenuItem');
-Zehn.createIconTitleContainer('.Profile_Supernav', '.contextMenuItem');
+Zehn.createIconTextContainer('.Store_Supernav', '.contextMenuItem', ['.zehnSupernav']);
+Zehn.createIconTextContainer('.Library_Supernav', '.contextMenuItem', ['.zehnSupernav']);
+Zehn.createIconTextContainer('.Community_Supernav', '.contextMenuItem', ['.zehnSupernav']);
+Zehn.createIconTextContainer('.Profile_Supernav', '.contextMenuItem', ['.zehnSupernav']);
 
-Zehn.createIconTitleContainer('.Steam_Root_Menu', '.contextMenuItem');
-Zehn.createIconTitleContainer('.View_Root_Menu', '.contextMenuItem');
-Zehn.createIconTitleContainer('.Friends_Root_Menu', '.contextMenuItem');
-Zehn.createIconTitleContainer('.Games_Root_Menu', '.contextMenuItem');
-Zehn.createIconTitleContainer('.Help_Root_Menu', '.contextMenuItem');
+Zehn.createIconTextContainer('.Steam_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
+Zehn.createIconTextContainer('.View_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
+Zehn.createIconTextContainer('.Friends_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
+Zehn.createIconTextContainer('.Games_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
+Zehn.createIconTextContainer('.Help_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
 
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
-Zehn.createIconTitleContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl');
+Zehn.createIconTextContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl', ['.zehnClock']);
 
 /* DISABLE BUTTON IF THERE IS NO LINKS PANEL ------------------------------------------------------------------------ */
 
@@ -337,12 +337,12 @@ Zehn.createButton('._2Dd4T78PcCTUVgOtDGFY5j', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78W
 
 /* WRAP LOAD MORE --------------------------------------------------------------------------------------------------- */
 
-Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._1EC1xjjUGqI7fqX6PVzJA3', ['.zehnNews']);
-Zehn.createTitleContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj', ['.zehnLoad']);
+Zehn.createTextContainer('._5uvIN6jXDXzzck59F-nhv', '._1EC1xjjUGqI7fqX6PVzJA3', ['.zehnNews']);
+Zehn.createTextContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj', ['.zehnLoad']);
 
 /* ADD PLAY ICON INTO CONTAINER ------------------------------------------------------------------------------------- */
 
-Zehn.createIconContainer('.QsvsRVwbsApgKt1MhM0fz', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnIconContainer']);
+Zehn.createIconContainer('.QsvsRVwbsApgKt1MhM0fz', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnPlayWrapper']);
 
 /* WRAP FRIEND PICKER CLOSE SVG ------------------------------------------------------------------------------------- */
 
@@ -350,7 +350,11 @@ Zehn.createContainer('.FriendPicker', '.FriendPicker_ChosenFriend .SVGIcon_X_Lin
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
-Zehn.createIconTitleContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV');
+Zehn.createIconTextContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', ['.zehnPagelist']);
+
+/* WRAP LEAVE GROUP CHAT TEXT --------------------------------------------------------------------------------------- */
+
+Zehn.createTextWrapper('.LegacyPopup', '._1NqKTWvxtFgflRlqLTtv7e', ['.zehnLeave']);
 
 /* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
 

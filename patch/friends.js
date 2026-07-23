@@ -102,8 +102,8 @@ Zehn.moveAppend('.MultiUserChat', '.chatRoomOptions', [
 Zehn.movePrepend('.MultiUserChat', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
 ]);
-Zehn.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnIconContainer']);
-Zehn.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnIconContainer']);
+Zehn.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
+Zehn.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
 
 /* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
 

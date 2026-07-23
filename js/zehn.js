@@ -9,9 +9,10 @@ export const Zehn = {
   nameElement,
   createSpinner,
   createButton,
-  createIconTitleContainer,
+  createIconTextContainer,
   createIconContainer,
-  createTitleContainer,
+  createTextContainer,
+  createTextWrapper,
   createContainer,
   createAdjacentElement,
   addRootClassOnToggle,
@@ -266,11 +267,13 @@ function createButton(rootSelector, targetSelector, nameSelectors, callback, sho
   });
 };
 
-function createIconTitleContainer(rootSelector, targetSelector, shouldAppend = true) {
+function createIconTextContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     if (target.children.length == 0) {
       const container = document.createElement('div');
-      container.classList.add('zehnContainer');
+      nameSelectors.forEach((nameSelector) => {
+        this.nameElement(container, nameSelector);
+      });
       if (shouldAppend) {
         target.append(container);
       } else {
@@ -278,7 +281,7 @@ function createIconTitleContainer(rootSelector, targetSelector, shouldAppend = t
       }
 
       const title = document.createElement('div');
-      title.classList.add('zehnTitle');
+      title.classList.add('zehnText');
       container.append(title);
       title.textContent = target.childNodes[0].textContent;
       target.childNodes[0].remove();
@@ -293,7 +296,6 @@ function createIconTitleContainer(rootSelector, targetSelector, shouldAppend = t
 function createIconContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     const container = document.createElement('div');
-    container.classList.add('zehnContainer');
     nameSelectors.forEach((nameSelector) => {
       this.nameElement(container, nameSelector);
     });
@@ -309,10 +311,9 @@ function createIconContainer(rootSelector, targetSelector, nameSelectors, should
   });
 };
 
-function createTitleContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
+function createTextContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
       const container = document.createElement('div');
-      container.classList.add('zehnContainer');
       nameSelectors.forEach((nameSelector) => {
         this.nameElement(container, nameSelector);
       });
@@ -323,17 +324,31 @@ function createTitleContainer(rootSelector, targetSelector, nameSelectors, shoul
       }
 
       const title = document.createElement('div');
-      title.classList.add('zehnTitle');
+      title.classList.add('zehnText');
       container.append(title);
       title.textContent = target.childNodes[0].textContent;
       target.childNodes[0].remove();
   });
 };
 
+function createTextWrapper(rootSelector, targetSelector, nameSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const container = document.createElement('div');
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(container, nameSelector);
+    });
+
+    container.textContent = target.textContent;
+    for (const node of [...target.childNodes]) {
+      if (node.nodeType === Node.TEXT_NODE) node.remove();
+    }
+    target.appendChild(container);
+  });
+};
+
 function createContainer(rootSelector, targetSelector, nameSelectors) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     const container = document.createElement('div');
-    container.classList.add('zehnContainer');
     nameSelectors.forEach((nameSelector) => {
       this.nameElement(container, nameSelector);
     });

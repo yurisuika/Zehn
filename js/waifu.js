@@ -18,21 +18,22 @@ async function findWaifu() {
   const tryList = async url => {
     try {
       const res = await fetch(url);
-      if (!res.ok) throw new Error('Fetch failed!');
+      if (!res.ok) throw new Error('Fetching waifu JSON failed!');
       const list = await res.json();
-      if (!Array.isArray(list) || list.length === 0) throw new Error('Empty waifu list!');
+      if (!Array.isArray(list) || list.length === 0) throw new Error('JSON has empty waifu list!');
       return list;
     } catch {
+      console.warn('Cannot find a valid waifu JSON at ' + url + '.');
       return null;
     }
   };
 
   const listA = await tryList(steamListUrl);
-  if (!listA) console.warn('Cannot find a waifu JSON at ' + steamListUrl + ', attempting to use fallback in Zehn directory...');
+  if (!listA) console.warn('Attempting to use fallback waifu JSON in Zehn directory...');
   const listB = listA ? null : await tryList(resolveRelativeToScript(fallbackRelative));
   const list = listA || listB;
   if (!list) {
-    console.warn('No waifu lists available!');
+    console.warn('No valid waifu list available!');
     return;
   }
 
