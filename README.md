@@ -170,6 +170,9 @@ Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy th
 * Window Styler (DWMX)
   * When Transparency Effects is enabled in the settings, certain windows can have Acrylic blur behind them.
 
+> [!NOTE]
+> Until Zehn is finished being rewritten, supported plugins may appear broken. These will be reassessed afterwards.
+
 ----------
 
 ## Getting Zehn
