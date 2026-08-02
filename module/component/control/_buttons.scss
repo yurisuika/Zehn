@@ -253,16 +253,46 @@ button.DialogButton::before {
 }
 
 // HEADER - PRIMARY BUTTONS
-#zehnToggleUser,
-.friendRequestButton,
-.addFriendButton,
 .searchIconButton {
   @include template.preset-dynamic(
-    $height: var(--zehn-size-friends-controlbar)
+    $height: var(--zehn-size-friends-searchbar)
   );
-
+  
   cursor: pointer !important;
-  flex-grow: 1 !important;
+}
+
+.friendRequestButton {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-friends-searchbar)
+  );
+  
+  cursor: pointer !important;
+}
+
+.addFriendButton {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-friends-searchbar)
+  );
+  
+  cursor: pointer !important;
+}
+
+#zehnToggleUser {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-friends-searchbar)
+  );
+  
+  cursor: pointer !important;
+}
+
+// HEADER - TABLIST
+.zehnFriendsTabFriends,
+.zehnFriendsTabChats {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-tablist-sm),
+    $selected: ".zehnToggled",
+    $style: "tab"
+  );
 }
 
 // HEADER - INVITE CONFIRMATION
@@ -361,10 +391,10 @@ button.DialogButton::before {
 // HEADER
 .zehnToggleChannelList,
 .zehnToggleSettingsButtons,
-.chatRoomGroupHeader .broadcastInfoContainer .thumbnail,
 .MemberListOption,
 .MemberListOption.ToggleMemberListView,
-.doGxCBJrGimabHm365bOV {
+.doGxCBJrGimabHm365bOV,
+.chatRoomGroupHeader .broadcastInfoContainer .thumbnail {
   @include template.preset-fixed(
     $height: var(--zehn-size-chat-header),
     $width: var(--zehn-size-chat-header)
@@ -404,7 +434,7 @@ button.DialogButton::before {
   );
 }
 
-// QUICK ChAT CLOSE
+// QUICK CHAT CLOSE
 .VoiceRoomChatTitle .MinimizeTextChat {
   @include template.preset-fixed(
     $height: var(--zehn-size-titlebar),
@@ -1529,11 +1559,8 @@ button.DialogButton._3Cdin80d-hVsakHUZboheb.Q7tULXy1gQNG1eU--hN27 {
     $height: var(--zehn-size-button-lg),
     $width: var(--zehn-size-button-lg),
     $disabled: ".Disabled",
-    $style: "music"
+    $style: "play"
   );
-  
-  outline-width: var(--zehn-size-button-music-border-large) !important;
-  outline-offset: calc(-1 * var(--zehn-size-button-music-border-large)) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1592,7 +1619,7 @@ button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWi
 // PRIMARY BUTTONS
 .DialogControlsSection.MillenniumButtonsSection button.DialogButton.MillenniumButton {
   @include template.preset-dynamic(
-    $height: 100%,
+    $height: unset,
     $disabled: ".Disabled",
     $padding: var(--zehn-size-button-padding-tall),
     $style: "dialog"
@@ -1660,7 +1687,7 @@ button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWi
 .fi6UDkxJq66MLo2z9wabQ ._2uM3ouyTdzAtXR3ffa7oRg ._2LJMRr1_5XUK4wlt7YMyPi .mh8m9p4PBg_Qrev1bfTzc {
   @include template.preset-fixed(
     $height: var(--zehn-size-overlay-bar),
-    $width: var(--zehn-size-overlay-bar)
+    $width: var(--zehn-size-button-lg)
   );
 }
 
@@ -1683,6 +1710,33 @@ button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWi
   );
 }
 
+// RECORDING - VIEW CLIPS
+._3QLt_cnTY9p8pNOj9jxTxR {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-overlay-clip-controls),
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
+  );
+}
+
+// RECORDING - SHOW VIDEO
+._2AtQdZFU-mOGE-_3SuQKkw {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-overlay-clip-controls),
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
+  );
+}
+
+// RECORDING - START RECORDING
+._1J8umaxlHnD4poewN6r8wp {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-overlay-clip-controls),
+    $width: fit-content,
+    $padding: var(--zehn-size-button-padding-wide)
+  );
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -1696,10 +1750,29 @@ button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWi
 
 // RECORDING OVERLAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// RIGHT CONTROL CLIP BUTTON
 .OverlayTimeline ._1Eiyfh3SokmjxVJMkxkejX .DialogButton {
   @include template.preset-fixed(
     $height: var(--zehn-size-media-controlbar),
-    $width: fit-content
+    $width: var(--zehn-size-media-controlbar)
+  );
+}
+
+// HERE'S YOUR TIMELINE CLOSE
+._1lcizT_Nbxsk484XzTtcFf ._1A5Qloms_qv3D5xh052LKf {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "close"
+  );
+}
+
+// TIMELINE HINT CONTAINER CLOSE
+._2vsDU46uDOtqK3-Kv9HFyo ._12O3GqaItkBTeRAofUqlI9 {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-titlebar),
+    $width: var(--zehn-size-titlebar-control),
+    $style: "close"
   );
 }
 
@@ -1725,20 +1798,27 @@ button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWi
   );
 }
 
-// URL BAR
-.UkR3sY319PuaUNuUWks2K ._3KaB94Jl4r0hFkthDPJy09,
-.UkR3sY319PuaUNuUWks2K ._3izqEKa-zuPIrUDSm1bRvf,
+// EXTENDIUM
 .extensions-bar-container .extension-button {
   @include template.preset-fixed(
-    $height: var(--zehn-size-browser-urlbar-button),
-    $width: var(--zehn-size-browser-urlbar-button)
+    $height: var(--zehn-size-browser-urlbar-inner),
+    $width: var(--zehn-size-browser-urlbar-inner)
   );
 }
 
+// RELOAD BUTTON
+.UkR3sY319PuaUNuUWks2K ._3izqEKa-zuPIrUDSm1bRvf._3KaB94Jl4r0hFkthDPJy09 {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-browser-urlbar-inner),
+    $width: var(--zehn-size-browser-urlbar-inner)
+  );
+}
+
+// CONTROLS
 ._26Gmfe09NRsnF7eprTZYdY ._1oXr_GpvIgjHasLyU3tBn {
   @include template.preset-fixed(
-    $height: var(--zehn-size-browser-urlbar-button),
-    $width: var(--zehn-size-browser-urlbar-button),
+    $height: var(--zehn-size-browser-urlbar-inner),
+    $width: var(--zehn-size-browser-urlbar-inner),
     $disabled: "._1f6yYACTilZQ2dmqGd5zXk"
   );
 }
@@ -1906,7 +1986,8 @@ button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWi
     $height: var(--zehn-size-button-md),
     $width: fit-content,
     $disabled: ".rq1uEI9jHMgnF1LIsVsJg",
-    $style: "dialog"
+    $padding: var(--zehn-size-button-padding-wide),
+    $shape: var(--zehn-size-radius-pill)
   );
 }
 
@@ -2161,7 +2242,7 @@ button.DialogButton.MillenniumButton.MillenniumIconButton.MillenniumIconButtonWi
 // ACCOUNT - PRIMARY BUTTONS
 .onPxgvGKxGbKdE7dDWrMx button.DialogButton.TEWmsM70ZLEOxLAjDMpcv {
   @include template.preset-dynamic(
-    $height: 100%,
+    $height: unset,
     $other: "._3Wb9yDmYPUJksCr7HmaT9H",
     $padding: var(--zehn-size-button-padding-tall),
     $style: "dialog"
@@ -2519,9 +2600,9 @@ button._77qZLron1HY93yUW4_C4m.DialogButton {
 
 // BINDING KEYS - KEYBOARD
 .NoRFSLSfwRijJQt7R51OT {
-  @include template.preset-fixed(
+  @include template.preset-inline(
     $height: var(--zehn-size-button-lg),
-    $width: null, $disabled: "._1QZJBdB3tUQkzngq0rXWsK",
+    $disabled: "._1QZJBdB3tUQkzngq0rXWsK",
     $selected: ".CX4Dp8XyHswkGEEnWeUpq",
     $style: "dialog"
   );

@@ -15,12 +15,14 @@
 
   &#{$off} {
     --toggle-pos: 0px;
-    --label: var(--zehn-translation-off);
+    --label-on: none;
+    --label-off: block;
   }
 
   &#{$on} {
     --toggle-pos: 24px;
-    --label: var(--zehn-translation-on);
+    --label-on: block;
+    --label-off: none;
   }
 
   #{$rail} {
@@ -32,6 +34,7 @@
     transition: none !important;
 
     margin: 0px !important;
+    inset: 0px !important;
 
     background: var(--rail-background) !important;
 
@@ -52,24 +55,87 @@
     transition: transform 0.25s var(--zehn-timing-linear) !important;
 
     margin: var(--zehn-size-switch-toggle-margin) !important;
+    inset: 0px !important;
 
     background: var(--toggle-color) !important;
 
     color: transparent !important;
   }
 
-  // CREATE THE CONTROL STATUS
-  &::after {
+  // CONTROL STATUS (INJECTED)
+  .zehnLabelOn,
+  .zehnLabelOff {
     margin-left: calc(var(--zehn-size-switch-width) + var(--zehn-size-setting-control-gap));
     color: var(--zehn-color-text-control);
     font-size: var(--zehn-size-text-control);
     line-height: var(--zehn-size-switch-height);
     position: relative;
     height: var(--zehn-size-switch-height);
-    display: block;
     width: fit-content;
-    transform: none;
-    content: var(--label);
+  }
+
+  .zehnLabelOn {
+    display: var(--label-on);
+  }
+
+  .zehnLabelOff {
+    display: var(--label-off);
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size($rail, $toggle) {
+  width: fit-content !important;
+
+  height: var(--zehn-size-switch-height) !important;
+
+  #{$rail} {
+    width: var(--zehn-size-switch-width) !important;
+
+    height: var(--zehn-size-switch-height) !important;
+  }
+
+  #{$toggle} {
+    width: var(--zehn-size-switch-toggle) !important;
+
+    height: var(--zehn-size-switch-toggle) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape($rail, $toggle) {
+  border-radius: var(--zehn-size-radius-none) !important;
+
+  #{$rail} {
+    border-radius: var(--zehn-size-switch-radius) !important;
+  }
+
+  #{$toggle} {
+    border-radius: var(--zehn-size-switch-toggle-radius) !important;
   }
 }
 
@@ -116,7 +182,7 @@
   &#{$off}:is(:active:focus) {
     @include colorset($state, $mode: "active-focus");
   }
-  &#{$off}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+  &#{$off}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
     @include colorset($state, $mode: "disabled");
     pointer-events: none !important;
   }
@@ -141,65 +207,9 @@
   &#{$on}:is(:active:focus) {
     @include colorset($state, $mode: "active-focus");
   }
-  &#{$on}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+  &#{$on}:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
     @include colorset($state, $mode: "disabled");
     pointer-events: none !important;
-  }
-}
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
-
-
-
-
-
-
-// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-@mixin size($rail, $toggle) {
-  width: fit-content !important;
-
-  height: fit-content !important;
-
-  #{$rail} {
-    width: var(--zehn-size-switch-width) !important;
-
-    height: var(--zehn-size-switch-height) !important;
-  }
-
-  #{$toggle} {
-    width: var(--zehn-size-switch-toggle) !important;
-
-    height: var(--zehn-size-switch-toggle) !important;
-  }
-}
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
-
-
-
-
-
-
-// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-@mixin shape($rail, $toggle) {
-  border-radius: var(--zehn-size-radius-none) !important;
-
-  #{$rail} {
-    border-radius: var(--zehn-size-switch-radius) !important;
-  }
-
-  #{$toggle} {
-    border-radius: var(--zehn-size-switch-toggle-radius) !important;
   }
 }
 

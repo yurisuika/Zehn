@@ -1,1 +1,125 @@
-@forward 'radiobutton/template';
+@use 'radiobutton/template' as template;
+
+// GENERIC (USED IN APP PROPERTIES, LAUNCH OPTIONS) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+input[type="radio" i] {
+  @include template.preset(
+    $off: "",
+    $on: ":checked",
+    $outer: "::before",
+    $inner: "::after"
+  );
+
+  &::before,
+  &::after {
+    content: "";
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.DialogRoundCheckboxField_Container {
+  line-height: 100% !important;
+  margin: 0px !important;
+
+  &.WithLabel {}
+
+  .DialogRoundCheckboxField {
+    margin: 0px !important;
+    width: fit-content !important;
+    height: fit-content !important;
+    gap: var(--zehn-size-setting-control-gap) !important;
+  }
+}
+
+.DialogRoundCheckboxField_Control {
+  @include template.preset(
+    $off: "",
+    $on: ".Active",
+    $outer: ">.DialogRoundCheckboxField_OuterCircle",
+    $inner: ">.DialogRoundCheckboxField_InnerCircle"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GAME RECORDING SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._7EGqd8bdiXJBd2fj5Hh8r ._2sQtvR60AbFF5UzDwY9hit {
+  @include template.preset(
+    $off: "",
+    $on: "._1gKI37LOWj1Df3QSnxvKyF",
+    $outer: "::before",
+    $inner: "::after"
+  );
+
+  &::before,
+  &::after {
+    content: "";
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// NOT ACTUALLY RADIO BUTTONS CIRCLES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// RADIO BUTTON GROUP
+._1ml4SNc3LIyBDHIf8ekVSw.Shared_Radio_Group {
+  background-color: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  color: var(--zehn-color-text-control) !important;
+  font-size: var(--zehn-size-text-control) !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-setting-group-gap) !important;
+  justify-content: flex-start !important;
+  align-items: baseline !important;
+}
+
+// NOTIFICATION SETTINGS, VOICE SETTINGS (NOT CLOCK)
+._1ml4SNc3LIyBDHIf8ekVSw.Shared_Radio_Group:not(._2D1tcGPLKu8RiLRMcVDaQB) .HijmccPB1BKyhOwhX1EVl.RadioButton {
+  @include template.preset(
+    $off: "",
+    $on: "._3-_jME_xsuvgT3Dvq4bw_q",
+    $outer: "::before",
+    $inner: "::after"
+  );
+
+  &::before,
+  &::after {
+    content: "";
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -270,7 +270,7 @@ span._1UpteyCApeHSfG-Tw-3H3m,
 }
 
 .DialogContent.GenericConfirmDialog ._2X6Uf9dpYzWmrq3hGfefrI.d8HHRXZEfFuJ2DRCJXitQ svg,
-div:has(>select)::after,
+select::after,
 .DialogDropDown_Arrow .SVGIcon_DownArrowContextMenu,
 .v8oJcDOQF6xmlVTw4VhOr.DialogButton._DialogLayout.cXzBZxhPBl7fZs9LODEnc ._3OHR1e3u08hK7hMx4fFy_L .DialogDropDown_CurrentDisplay~svg,
 .DialogContent.GenericConfirmDialog .zeGUOeW3Cat4UJGCGwXPZ svg {
@@ -286,12 +286,13 @@ div:has(>select)::after,
   * { display: none !important; }
 }
 
+// CONFLICTING WITH MILLENNIUM ERROR, SO TRYING ON THE SELECT INSTEAD OF THE OUTER DIV THAT ALSO CONTAINS A BUTTON
 // FAKE A CHEVRON IN WRAPPED SELECT
-div:has(>select) {
+select {
   position: relative !important;
 }
 
-div:has(>select)::after {
+select::after {
   content: "";
   display: block;
   position: absolute;

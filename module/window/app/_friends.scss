@@ -1,68 +1,27 @@
-// CONTAINER SCROLL BEHIND CALC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .friendsListContainer {
-  --quick-size: 0px;
-  --controlbar-size: var(--zehn-size-friends-controlbar);
-  --search-size: 0px;
-  --current-user-size: 0px;
+  background: transparent !important;
+  --friends-header-height: var(--zehn-size-titlebar);
+
+  // SINGLE WINDOW COLLAPSED
+  &.collapsed {
+    transition: none !important;
+  }
 }
 
-.friendsListContainer:has(.quickAccessFriends) {
-  --quick-size: var(--zehn-size-friends-quickaccess);
+// INNER CONTAINER
+.friendlist>* {
+  transition: none !important;
 }
 
-.friendsListContainer:has(.quickAccessFriends.compactQuickAccess) {
-  --quick-size: var(--zehn-size-friends-quickaccess-compact);
-}
-
-.friendsListContainer:has(.quickAccessFriends.emptyQuickAccess) {
-  --quick-size: var(--zehn-size-friends-quickaccess);
-}
-
-.friendsListContainer:has(.quickAccessFriends.emptyQuickAccess.hintDismissed) {
-  --quick-size: 0px;
-}
-
-body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAccess) {
-  --quick-size: var(--zehn-size-friends-quickaccess);
-}
-
-body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAccess.compactQuickAccess) {
-  --quick-size: var(--zehn-size-friends-quickaccess-compact);
-}
-
-.friendsListContainer:not(:has(.friendsTabButtonsContainer)),
-.friendsListContainer.zehnFriendsHeaderClosed {
-  --controlbar-size: 0px;
-}
-
-// CHANGING DELAYED SO WE DON'T USE IT
-// .friendsListContainer.zehnSearchOpened {
-.friendsListContainer:has(.TabSearchActive) {
-  --search-size: var(--zehn-size-friends-search);
-}
-
-.friendsListContainer.zehnCurrentUserOpened {
-  --current-user-size: var(--zehn-size-friends-entry);
-}
-
-.friendsListContainer.zehnCurrentUserOpened:has(>.compactView) {
-  --current-user-size: var(--zehn-size-friends-entry-compact);
-}
-
-// CALCULATE LIST OFFSET
-.friendlistListContainer {
-  margin-top: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size)) !important;
-}
-
-// BASE COLOR BEHIND HEADER ACRYLIC
 .friendlist::before {
   content: "";
   z-index: -1;
   position: absolute;
   inset: 0px;
   background: var(--zehn-color-base);
-  height: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size));
+  height: var(--friends-header-height);
 }
 
 // CALCULATE BACKGROUND BEHIND LIST
@@ -72,30 +31,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   position: absolute;
   inset: 0px;
   background: var(--zehn-color-app);
-  margin-top: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size));
-}
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
-
-
-
-
-
-
-// CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// SINGLE WINDOW COLLAPSED
-.friendsListContainer.collapsed {
-  transition: none !important;
-}
-
-// INNER CONTAINER
-.friendlist>* {
-  transition: none !important;
+  margin-top: var(--friends-header-height);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,7 +47,6 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // HEADER CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// ACRYLIC BACKGROUND
 .friendListHeaderContainer {
   border: none !important;
   min-height: 0px !important;
@@ -124,26 +59,49 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
   backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-blend-mode: exclusion !important;
+  --noise-opacity: 0;
+
+  &::after {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    inset: 0px;
+    opacity: var(--noise-opacity);
+    pointer-events: none;
+    background-size: auto;
+    background-image: var(--zehn-transparency-effects-acrylic-texture);
+    transition: opacity 0.2s var(--zehn-timing-ease);
+  }
 }
 
 .WindowFocus .friendListHeaderContainer {
   background-color: var(--zehn-color-section-acrylic-focus) !important;
+  --noise-opacity: var(--zehn-transparency-effects-acrylic);
 }
 
-.friendListHeaderContainer::after {
-  content: "";
-  z-index: 0;
-  position: absolute;
-  inset: 0px;
-  opacity: 0;
-  pointer-events: none;
-  background-size: auto;
-  background-image: var(--zehn-transparency-effects-acrylic-texture);
-  transition: opacity 0.2s var(--zehn-timing-ease);
+// ORDER
+.friendListHeaderContainer>div:not([class]) {
+  order: 1 !important;
+
+  .currentUserContainer {
+    order: 1 !important;
+  }
+
+  .activeVoiceControls {
+    order: 2 !important;
+  }
 }
 
-.WindowFocus .friendListHeaderContainer::after {
-  opacity: var(--zehn-transparency-effects-acrylic);
+.socialTabSearchContainer {
+  order: 2 !important;
+}
+
+.quickAccessFriends {
+  order: 3 !important;
+}
+
+.zehnFriendsTablist {
+  order: 4 !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,6 +120,11 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 // CONTAINER
 .friendListHeaderContainer .title-area {
   position: relative !important;
+  background: var(--zehn-color-titlebar-desktop) !important;
+}
+
+.WindowFocus .friendListHeaderContainer .title-area {
+  background: var(--zehn-color-titlebar-desktop-focus) !important;
 }
 
 // WINDOW CONTROLS
@@ -199,36 +162,23 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 // CURRENT USER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .currentUserContainer {
-  border-bottom: unset !important;
-  height: 0px !important;
-  min-height: 0px !important;
-  max-height: 0px !important;
-  padding: 0px !important;
+  flex: 1 !important;
+  border: none !important;
   align-items: center !important;
   display: flex !important;
-  margin-top: 0px !important;
-  transition: color 0.2s var(--zehn-timing-ease), background-color 0.2s var(--zehn-timing-ease) !important;
-  transform: scaleY(0) !important;
-  order: 999 !important;
   position: relative !important;
   box-sizing: border-box !important;
-}
-
-.zehnCurrentUserOpened .currentUserContainer {
-  transform: none !important;
+  min-width: 0px !important;
   height: var(--zehn-size-friends-entry) !important;
   min-height: var(--zehn-size-friends-entry) !important;
   max-height: var(--zehn-size-friends-entry) !important;
   padding: var(--zehn-size-friends-entry-padding) !important;
+  background: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  transition: color 0.2s var(--zehn-timing-ease) !important;
 }
 
 .compactView .currentUserContainer {
-  height: 0px !important;
-  min-height: 0px !important;
-  max-height: var(--zehn-size-friends-entry-compact) !important;
-}
-
-.zehnCurrentUserOpened .compactView .currentUserContainer {
   height: var(--zehn-size-friends-entry-compact) !important;
   min-height: var(--zehn-size-friends-entry-compact) !important;
   max-height: var(--zehn-size-friends-entry-compact) !important;
@@ -258,8 +208,8 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 // AVATAR
 .currentUserAvatar {
   border-radius: var(--zehn-size-radius-none) !important;
-  width: var(--zehn-size-avatar-md) !important;
-  height: var(--zehn-size-avatar-md) !important;
+  width: fit-content !important;
+  height: fit-content !important;
   margin: 0px !important;
   z-index: 0 !important;
 
@@ -267,22 +217,6 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
     transform: none !important;
     filter: none !important;
   }
-}
-
-.currentUserAvatar .avatarHolder {
-  transform: none !important;
-  width: var(--zehn-size-avatar-md) !important;
-  height: var(--zehn-size-avatar-md) !important;
-  margin: 0px !important;
-}
-
-// STATUS DOT FOR COMPACT
-.compactView .currentUserAvatar,
-.compactView .currentUserAvatar .avatarHolder {
-  width: var(--zehn-size-persona-compact-avatar) !important;
-  height: var(--zehn-size-persona-compact-avatar) !important;
-  border-radius: var(--zehn-size-persona-compact-radius) !important;
-  margin: auto 0px !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -298,35 +232,43 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // VOICE CONTROLS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// OUTER CONTAINER
-.friendListHeaderContainer div:has(>.activeVoiceControls) {
-  order: 4 !important;
-  position: absolute !important;
-  bottom: 0px !important;
-  right: 0px !important;
-  z-index: 123123 !important;
+// OUTER CONTAINER THAT CURRENT USER IS MOVED INTO
+.friendListHeaderContainer>div:not([class]) {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  gap: 0px !important;
+  z-index: 10;
+}
+
+.zehnFriendsHeaderClosed .friendListHeaderContainer>div:not([class]),
+.friendsListContainer:not(.zehnUserOpened) .friendListHeaderContainer>div:not([class]) {
+  display: none !important;
+  height: 0px !important;
+  min-height: 0px !important;
 }
 
 // CONTAINER
 .friendListHeaderContainer .activeVoiceControls,
 .compactView  .friendListHeaderContainer .activeVoiceControls {
-  height: 0px !important;
-  min-height: 0px !important;
   transform: none !important;
-  transition: none !important;
-  background-color: transparent !important;
   border: unset !important;
   border-image: url() !important;
-}
-
-.zehnCurrentUserOpened .friendListHeaderContainer .activeVoiceControls {
-  height: var(--zehn-size-friends-entry) !important;
-  min-height: var(--zehn-size-friends-entry) !important;
   align-content: center !important;
   margin-right: var(--zehn-size-spacing-xs) !important;
+  background: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  transition: none !important;
+  min-width: fit-content !important;
 }
 
-.zehnCurrentUserOpened .compactView .friendListHeaderContainer .activeVoiceControls {
+.friendListHeaderContainer .activeVoiceControls {
+  height: var(--zehn-size-friends-entry) !important;
+  min-height: var(--zehn-size-friends-entry) !important;
+}
+
+.compactView .friendListHeaderContainer .activeVoiceControls {
   height: var(--zehn-size-friends-entry-compact) !important;
   min-height: var(--zehn-size-friends-entry-compact) !important;
 }
@@ -338,7 +280,6 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 }
 
 // STATUS LABELS
-
 .activeVoiceControls .connectionStatusLabels,
 .chatRoomVoiceChannel .connectionStatusLabels {
   font-size: var(--zehn-size-12) !important;
@@ -453,26 +394,36 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // CONTAINER
 .quickAccessFriends {
+  gap: var(--zehn-size-friends-quickaccess-spacing) !important;
   margin: 0px !important;
-  padding: var(--zehn-size-friends-group-padding) !important;
+  padding: var(--zehn-size-friends-quickaccess-spacing) !important;
   background-color: transparent !important;
   transition: none !important;
-  min-height: var(--quick-size) !important;
-  height: var(--quick-size) !important;
+  min-height: fit-content !important;
+  height: fit-content !important;
   width: 100% !important;
   min-width: 100% !important;
-  flex-wrap: nowrap !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   box-sizing: border-box !important;
   display: flex !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  mask-image: linear-gradient(to right, transparent, black var(--zehn-size-spacing-md), black calc(100% - var(--zehn-size-spacing-md)), transparent) !important;
+  --hint-display: block;
+
+  &.compactQuickAccess {}
+
+  &.hintDismissed {
+    --hint-display: none;
+
+    &.emptyQuickAccess {
+      display: none !important;
+    }
+  }
 }
 
-.quickAccessFriends::-webkit-scrollbar {
+.friendsListContainer.zehnFriendsHeaderClosed .quickAccessFriends {
+  display: none !important;
   height: 0px !important;
-  width: 0px !important;
+  min-height: 0px !important;
+  padding: 0px !important;
 }
 
 // DROP TARGET FOR DRAGGING
@@ -486,10 +437,6 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   min-width: 100% !important;
   box-sizing: border-box !important;
   transition: all 0.2s var(--zehn-timing-ease) !important;
-}
-
-.quickAccessFriends .dropTargetBox {
-  position: fixed !important;
 }
 
 // INITIAL MESSAGE
@@ -506,7 +453,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
-  display: block !important;
+  display: var(--hint-display) !important;
   text-align: center !important;
   line-height: var(--zehn-size-16) !important;
   box-sizing: border-box !important;
@@ -546,9 +493,9 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .compactQuickAccess .favoriteElement {
   display: flex !important;
   flex: 0 !important;
-  width: var(--quick-size) !important;
-  min-width: var(--quick-size) !important;
-  height: var(--quick-size) !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  height: fit-content !important;
   background: transparent !important;
   transition: none !important;
   animation: none !important;
@@ -561,16 +508,15 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .compactQuickAccess .friend.quickAccessFriend,
 .compactQuickAccess .QuickAccessChat.quickAccessFriend,
 .compactQuickAccess .QuickAccessFriend.QuickAccessClan.quickAccessFriend {
-  --quick-padding: calc((var(--quick-size) - var(--quick-avatar)) / 2);
   display: flex  !important;
   flex: 1 !important;
   place-content: center !important;
   height: fit-content !important;
   align-items: center !important;
   margin: 0px !important;
-  padding: var(--quick-padding) !important;
-  width: var(--quick-avatar) !important;
-  height: var(--quick-avatar) !important;
+  padding: 0px !important;
+  width: fit-content !important;
+  height: fit-content !important;
   box-sizing: content-box !important;
   transition: none !important;
   background: transparent !important;
@@ -580,59 +526,22 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   }
 }
 
-.friend.quickAccessFriend,
-.QuickAccessChat.quickAccessFriend,
-.QuickAccessFriend.QuickAccessClan.quickAccessFriend {
-  --quick-avatar: var(--zehn-size-avatar-md);
-}
-
-.compactQuickAccess .friend.quickAccessFriend,
-.compactQuickAccess .QuickAccessChat.quickAccessFriend,
-.compactQuickAccess .QuickAccessFriend.QuickAccessClan.quickAccessFriend {
-  --quick-avatar: var(--zehn-size-avatar-sm);
-}
-
 .quickAccessFriend.friendStatusHover>div {
   display: flex !important;
   place-content: center !important;
 }
 
 // FRIEND / CLAN AVATAR
-.quickAccessFriends .avatarHolder,
-.favoriteElement .avatarHolder,
-.quickAccessFriends .ChatRoomMultiFriendAvatar,
-.favoriteElement .ChatRoomMultiFriendAvatar,
-.quickAccessFriends .ChatRoomGroupAvatar,
+.favoriteElement .nibodjvvrm86uCfnnAn4g.avatarHolder ._3h-QRJGxnVOIExtHD1R0f2.avatar,
+// .favoriteElement .ChatRoomMultiFriendAvatar,
 .favoriteElement .ChatRoomGroupAvatar {
-  transition: outline-width 0.2s var(--zehn-timing-ease) !important;
-  width: var(--quick-avatar) !important;
-  height: var(--quick-avatar) !important;
-  padding: 0px !important;
-  margin: 0px !important;
-  line-height: var(--quick-avatar) !important;
-  font-size: var(--zehn-size-14) !important;
-  --avatar-size: var(--quick-avatar) !important;
+  transition: border-radius 0.2s var(--zehn-timing-ease) !important;
 }
 
-.compactQuickAccess .quickAccessFriends .avatarHolder,
-.compactQuickAccess .favoriteElement .avatarHolder,
-.compactQuickAccess .quickAccessFriend.QuickAccessChat .ChatRoomGroupAvatar,
-.compactQuickAccess .quickAccessFriend.QuickAccessChat .ChatRoomMultiFriendAvatar,
-.compactQuickAccess .friend.quickAccessFriend .nibodjvvrm86uCfnnAn4g {
-  width: var(--quick-avatar) !important;
-  height: var(--quick-avatar) !important;
-}
-
-.friend.quickAccessFriend .avatarHolder .avatarStatus,
-.compactQuickAccess .friend.quickAccessFriend .avatarHolder .avatarStatus {
-  height: inherit !important;
-  width: inherit !important;
-}
-
-.favoriteElement:hover .avatarHolder,
-.favoriteElement:hover .ChatRoomMultiFriendAvatar,
+.favoriteElement:hover .nibodjvvrm86uCfnnAn4g.avatarHolder ._3h-QRJGxnVOIExtHD1R0f2.avatar,
+// .favoriteElement:hover .ChatRoomMultiFriendAvatar,
 .favoriteElement:hover .ChatRoomGroupAvatar {
-  outline: var(--zehn-size-focusbar-tablist) solid var(--zehn-color-focusbar) !important;
+  border-radius: var(--zehn-avatar-shape-opposite) !important;
 }
 
 // GAME ICON
@@ -651,7 +560,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   border-radius: var(--zehn-size-radius-xs) !important;
 }
 
-// FRIEND NAME
+// FRIEND NAME (CLAN DOES NOT USE WRAPPER)
 .playerNameQuickAccessContainer {
   line-height: var(--zehn-size-16) !important;
   width: fit-content !important;
@@ -659,6 +568,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   bottom: 0px !important;
   z-index: 5 !important;
   place-content: center !important;
+  opacity: 1 !important;
 }
 
 .quickAccessFriend .clanName,
@@ -693,7 +603,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 
 
-// CONTROLBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// SEARCHBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // CONTAINER
 .socialTabSearchContainer {
@@ -703,9 +613,9 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 }
 
 .friendsListContainer.zehnFriendsHeaderClosed .socialTabSearchContainer {
+  display: none !important;
   height: 0px !important;
   min-height: 0px !important;
-  transform: scaleY(0) !important;
 }
 
 // INNER CONTAINER
@@ -715,35 +625,32 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // LABEL AND BUTTONS WRAPPER
 .socialListTab {
-  margin-top: 0px !important;
+  margin: 0px !important;
   font-weight: var(--zehn-weight-normal) !important;
   color: var(--zehn-color-text1) !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: var(--zehn-size-friends-controlbar) !important;
+  line-height: var(--zehn-size-friends-searchbar) !important;
   text-transform: uppercase !important;
   transition: none !important;
+  transition-duration: 0s !important;
   align-items: flex-start !important;
-  height: var(--zehn-size-friends-controlbar) !important;
+  box-sizing: border-box !important;
+  align-self: flex-end !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  height: fit-content !important;
   padding: 0px !important;
-}
 
-.socialListTab.TabSearchActive {
-  height: calc(var(--zehn-size-friends-controlbar) + var(--zehn-size-friends-search)) !important;
-  padding: 0px !important;
+  &.TabSearchActive {
+    height: fit-content !important;
+    padding: 0px !important;
+  }
 }
 
 .activeTab {
   color: var(--zehn-color-text1) !important;
   background-color: transparent !important;
-}
-
-@media (prefers-contrast: more) {
-  .activeTab {
-    color: var(--zehn-color-text1) !important;
-    background-color: transparent !important;
-    border-top: none !important;
-    border-bottom: none !important;
-  }
+  border: none !important;
 }
 
 // TAB LABEL
@@ -752,7 +659,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   font-weight: var(--zehn-weight-normal) !important;
   color: var(--zehn-color-text1) !important;
   font-size: var(--zehn-size-14) !important;
-  line-height: var(--zehn-size-friends-controlbar) !important;
+  line-height: var(--zehn-size-friends-searchbar) !important;
   transition: none !important;
   display: none !important;
 }
@@ -764,39 +671,43 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 // BUTTONS WRAPPER
 .friendsTabButtonsContainer {
   padding: 0px !important;
+  gap: var(--zehn-size-button-gap-bar) !important;
   transition: none !important;
   display: flex !important;
 }
 
-// BUTTONS AND BUTTON WRAPPERS
-.friendsTabButtonsContainer>div,
-.friendsTabButtonsContainer>a {
-  flex-grow: 1 !important;
-  display: flex !important;
+// MAKE ADD FRIEND BUTTON LINK WRAPPER GROW WHEN SEARCH IS HIDDEN
+.friendsTabButtonsContainer:not(:has(.socialSearchContainer)) {
+  .searchIconButton,
+  .friendRequestButton,
+  .addFriendButton,
+  >a,
+  #zehnToggleUser {
+    flex: 1 !important;
+  }
+}
+
+// HIDE BUTTONS WHEN SEARCH IS OPEN
+.friendsTabButtonsContainer:has(.socialSearchContainer) {
+  .friendRequestButton,
+  >a,
+  #zehnToggleUser {
+    display: none !important;
+  }
 }
 
 // TAB SEARCH BUTTON WRAPPER
 .TabSearchButton {
   background-color: transparent !important;
   padding: 0px !important;
-  height: var(--zehn-size-friends-controlbar) !important;
-  width: auto !important;
-  min-width: var(--zehn-size-friends-controlbar) !important;
+  height: var(--zehn-size-friends-searchbar) !important;
+  width: 0px !important;
+  min-width: var(--zehn-size-friends-searchbar) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   margin: 0px !important;
+  gap: 0px !important;
   transition: none !important;
-}
-
-@media (prefers-contrast: more) {
-  .TabSearchButton {
-    border: none !important;
-  }
-}
-
-@media (prefers-contrast: more) {
-  .TabSearchButton:hover {
-    border: none !important;
-  }
+  border: none !important;
 }
 
 // SELECTED
@@ -831,6 +742,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   background-color: var(--zehn-color-focusbar);
   display: block;
   position: absolute;
+  border: none !important;
 }
 
 // ICONS
@@ -846,12 +758,12 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   -webkit-mask-image: var(--zehn-icon-contact-add) !important;
 }
 
-#zehnToggleExpandedNavbar .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-more);
+#zehnToggleUser svg.zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-profile);
 }
 
-#zehnToggleUser .zehnIcon {
-  -webkit-mask-image: var(--zehn-icon-profile);
+#zehnToggleExpandedNavbar svg.zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-more);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -869,19 +781,20 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // CONTAINER
 .tabSearchTransitionGroup {
-  height: 0px !important;
-  transform: scaleY(0) !important;
   transition: none !important;
-  position: absolute !important;
-  left: 0px !important;
-  right: 0px !important;
-  bottom: 0px !important;
-  opacity: 0 !important;
+  position: relative !important;
+  opacity: 1 !important;
+  height: var(--zehn-size-friends-searchbar) !important;
+  transform: scaleY(1) !important;
+
+  &:empty {
+    display: none !important;
+  }
 }
 
 .socialListTab.TabSearchActive .tabSearchTransitionGroup {
   opacity: 1 !important;
-  height: var(--zehn-size-friends-search) !important;
+  height: var(--zehn-size-friends-searchbar) !important;
   transform: scaleY(1) !important;
 }
 
@@ -889,7 +802,10 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .socialSearchContainer {
   background-color: transparent !important;
   transition: none !important;
+  transition-duration: 0s !important;
   animation: none !important;
+  margin: 0px !important;
+  padding: var(--zehn-size-padding-xs) !important;
 
   &.tab-search-anim-exit.tab-search-anim-exit-active {
     opacity: 1 !important;
@@ -900,10 +816,17 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .socialInputContainer {
   transition: none !important;
   transform: none !important;
+
+  .inputContainer {
+    margin: 0px !important;
+    border-radius: var(--zehn-size-radius-none) !important;
+    height: fit-content !important;
+    position: relative !important;
+  }
 }
 
 .socialInputContainer.SearchActive {
-  max-height: var(--zehn-size-friends-search) !important;
+  max-height: var(--zehn-size-friends-searchbar) !important;
 }
 
 // NO RESULTS
@@ -911,27 +834,82 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
   color: var(--zehn-color-text3) !important;
-  margin: var(--zehn-size-spacing-xs) 0 !important;
+  margin: var(--zehn-size-spacing-xs) 0px !important;
   padding: var(--zehn-size-friends-group-padding) !important;
+  text-align: center !important;
 }
 
 .friendSearchNoResultsContainer a {
-  color: var(--zehn-color-link-generic) !important;
   font-size: inherit !important;
   font-weight: inherit !important;
   text-decoration: none !important;
-
-  &:hover {
-    color: var(--zehn-color-link-generic-hover) !important;
-  }
-
-  &:active {
-    color: var(--zehn-color-link-generic-active) !important;
-  }
 }
 
 .friendSearchNoResultsContainer .searchSteamSuggestion {
   margin-top: var(--zehn-size-spacing-xs) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LISTS TABLIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.zehnFriendsTablist {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: fit-content;
+  min-height: fit-content;
+  position: relative;
+  padding: 0px var(--zehn-size-padding-xs);
+  transform: none;
+
+  .zehnFriendsTabFriends,
+  .zehnFriendsTabChats {
+    flex: 1;
+    text-transform: uppercase;
+
+    &.zehnToggled::after {
+      content: "";
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      z-index: -1;
+      bottom: var(--zehn-size-focusbar-tablist-spacing-sm);
+      left: var(--zehn-size-focusbar-tablist-spacing-sm);
+      right: var(--zehn-size-focusbar-tablist-spacing-sm);
+      height: var(--zehn-size-focusbar-tablist-sm);
+      background-color: var(--zehn-color-focusbar);
+    }
+  }
+
+  .zehnFriendsTabFriends {
+
+    svg {
+      -webkit-mask-image: var(--zehn-icon-contacts);
+    }
+  }
+
+  .zehnFriendsTabChats {
+
+    svg {
+      -webkit-mask-image: var(--zehn-icon-chat-multi);
+    }
+  }
+}
+
+.friendsListContainer.zehnFriendsHeaderClosed .zehnFriendsTablist {
+  display: none !important;
+  height: 0px !important;
+  min-height: 0px !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -950,7 +928,8 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 // CONTAINER
 .FriendsListContent {
   margin: 0px !important;
-  height: fit-content !important;
+  height: 100% !important;
+  background: transparent !important;
 }
 
 // LIST FADE
@@ -971,6 +950,11 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   height: fit-content !important;
   overflow-y: visible !important;
   overflow: visible !important;
+  margin-top: var(--friends-header-height) !important;
+}
+
+#zehnChatsDisplayed .friendlistListContainer {
+  display: none !important;
 }
 
 // BACK TO FRIENDS LIST - NEVER SHOW THIS
@@ -1162,6 +1146,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   font-size: var(--zehn-size-14) !important;
   padding: var(--zehn-size-friends-group-padding) !important;
   background: var(--zehn-color-list-background) !important;
+  position: relative !important;
 
   &:hover {
     background: var(--zehn-color-list-background-hover) !important;
@@ -1209,17 +1194,17 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   width: var(--zehn-size-icon-md) !important;
   height: var(--zehn-size-icon-md) !important;
   transition: none !important;
-  color: var(--zehn-color-text1) !important;
+  color: var(--collapser-color) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  --icon-color: var(--zehn-color-collapser);
+  --collapser-color: var(--zehn-color-collapser);
 
   &:hover {
-    --icon-color: var(--zehn-color-collapser-hover);
+    --collapser-color: var(--zehn-color-collapser-hover);
   }
 
   &:active {
-    --icon-color: var(--zehn-color-collapser-active);
+    --collapser-color: var(--zehn-color-collapser-active);
   }
 }
 
@@ -1234,7 +1219,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   display: block !important;
   width: 100% !important;
   height: 100% !important;
-  background-color: var(--icon-color) !important;
+  background-color: var(--collapser-color) !important;
   mask-repeat: no-repeat !important;
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-sm) !important;
@@ -1516,7 +1501,13 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 // GROUP CHATS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // GROUP CHAT CONTAINER
-.FriendsListChatSection.ChatRoomListContainerParent {}
+.FriendsListChatSection.ChatRoomListContainerParent {
+  margin-top: var(--friends-header-height) !important;
+}
+
+#zehnFriendsDisplayed .FriendsListChatSection.ChatRoomListContainerParent {
+  display: none !important;
+}
 
 // GROUP CHAT HEADER
 .friendsListSectionTitle.chatSectionTitle {
@@ -1528,14 +1519,15 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   height: var(--zehn-size-friends-group) !important;
   padding: 0px var(--zehn-size-padding-md) !important;
   border: none !important;
-  background-color: var(--zehn-color-list-background) !important;
+  background: var(--zehn-color-list-background) !important;
+  position: relative !important;
 
   &:hover {
-    background-color: var(--zehn-color-list-background-hover) !important;
+    background: var(--zehn-color-list-background-hover) !important;
   }
 
   &:active {
-    background-color: var(--zehn-color-list-background-active) !important;
+    background: var(--zehn-color-list-background-active) !important;
   }
 }
 
@@ -1706,9 +1698,9 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 .ChatRoomListGroupItem:not(.NonGroupHovered) .ChatRoomListGroupItem_header:hover .chatRoomName {
   margin-left: 0px !important;
   position: relative !important;
-  color: var(--zehn-color-text1) !important;
+  color: var(--zehn-color-user-default) !important;
   font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-thick) !important;
+  font-weight: var(--zehn-weight-persona) !important;
   line-height: var(--status-line) !important;
 }
 
@@ -1722,7 +1714,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 }
 
 .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
-  color: var(--zehn-color-text3) !important;
+  color: var(--zehn-color-user-activity) !important;
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   line-height: var(--status-line) !important;
@@ -1768,6 +1760,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 
 // OPEN GROUP BUTTON
 .ChatRoomListGroupItem .openGroupButton {
+  position: relative !important;
   border-radius: var(--zehn-size-radius-none) !important;
   width: var(--zehn-size-icon-md) !important;
   height: var(--zehn-size-icon-md) !important;
@@ -1850,13 +1843,13 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
 ._18bmBH7zyngCgHtgY3IEL_ {
   background-color: transparent !important;
   overflow: hidden !important;
-  margin-top: calc(var(--zehn-size-titlebar) + var(--quick-size) + var(--controlbar-size) + var(--search-size) + var(--current-user-size)) !important;
+  margin-top: var(--friends-header-height) !important;
 }
 
 ._3t-tVOpu2n074cjZsygYfm {
   max-width: 300px !important;
   padding: var(--zehn-size-padding-md) !important;
-  background: var(--zehn-color-app) !important;
+  background: transparent !important;
   gap: var(--zehn-size-spacing-md) !important;
   box-sizing: border-box !important;
   justify-content: flex-end !important;
@@ -1880,6 +1873,7 @@ body.in_global_drag .friendsListContainer:has(.quickAccessFriends.emptyQuickAcce
   margin: 0px !important;
   text-align: center !important;
 }
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

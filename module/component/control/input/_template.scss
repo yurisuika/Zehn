@@ -1,0 +1,160 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base($style) {
+  box-sizing: border-box !important;
+
+  transition: none !important;
+
+  margin: 0px !important;
+  padding: var(--zehn-size-input-#{$style}-padding) !important;
+
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-input-#{$style}-text) !important;
+  line-height: var(--zehn-size-input-#{$style}-line) !important;
+
+  border-width: var(--zehn-size-input-#{$style}-border) !important;
+  border-style: solid !important;
+
+  outline: none !important;
+
+  &::placeholder {
+    font-weight: var(--zehn-weight-normal) !important;
+    font-size: var(--zehn-size-input-#{$style}-text) !important;
+    font-style: italic !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size-fixed($height, $width) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: $width !important;
+  min-width: $width !important;
+  max-width: $width !important;
+}
+
+@mixin size-dynamic($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: auto !important;
+  min-width: 0px !important;
+  max-width: 100% !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape($shape, $style) {
+  @if $shape == null {
+    border-radius: var(--zehn-size-input-#{$style}-radius) !important;
+  } @else {
+    border-radius: #{$shape} !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin colorset($style, $mode: null) {
+  $mode: if(sass($mode != null): "-" + $mode; else: "");
+
+  background: var(--zehn-color-input-#{$style}-background#{$mode}) padding-box !important;
+  color: var(--zehn-color-input-#{$style}-text#{$mode}) !important;
+  border-color: var(--zehn-color-input-#{$style}-border#{$mode}) !important;
+}
+
+@mixin look($disabled, $style) {
+  & {
+    @include colorset($style);
+  }
+  &:is(:focus, :focus-within) {
+    @include colorset($style, $mode: "focus");
+  }
+  &:is(:hover) {
+    @include colorset($style, $mode: "hover");
+  }
+  &:is(:hover:focus, :hover:focus-within) {
+    @include colorset($style, $mode: "hover-focus");
+  }
+  &:is(:active) {
+    @include colorset($style, $mode: "active");
+  }
+  &:is(:active:focus, :active:focus-within) {
+    @include colorset($style, $mode: "active-focus");
+  }
+  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include colorset($style, $mode: "disabled");
+    pointer-events: none !important;
+  }
+
+  &::placeholder {
+    color: var(--zehn-color-input-#{$style}-text-placeholder) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset-fixed($height, $width, $disabled: ":disabled", $shape: null, $style: "app") {
+  @include base($style);
+  @include size-fixed($height, $width);
+  @include shape($shape, $style);
+  @include look($disabled, $style);
+}
+
+@mixin preset-dynamic($height, $disabled: ":disabled", $shape: null, $style: "app") {
+  @include base($style);
+  @include size-dynamic($height);
+  @include shape($shape, $style);
+  @include look($disabled, $style);
+
+  flex: 1 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

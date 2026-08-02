@@ -314,9 +314,9 @@
 
 ._2XZq-_f6npaQdAgeRzKIkz .nOdcT-MoOaXGePXLyPe0H,
 ._2XZq-_f6npaQdAgeRzKIkz ._1HNpQBKKKQ1tG2OZH3CSsh {
-  color: var(--zehn-color-text3) !important;
+  color: var(--zehn-color-user-unfocus) !important;
   font-size: var(--zehn-size-14) !important;
-  font-weight: var(--zehn-weight-thick) !important;
+  font-weight: var(--zehn-weight-persona) !important;
   text-overflow: ellipsis !important;
   -webkit-mask: none !important;
 }
@@ -325,7 +325,7 @@
 ._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ .nOdcT-MoOaXGePXLyPe0H,
 ._2XZq-_f6npaQdAgeRzKIkz:hover ._1HNpQBKKKQ1tG2OZH3CSsh,
 ._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ ._1HNpQBKKKQ1tG2OZH3CSsh {
-  color: var(--zehn-color-text1) !important;
+  color: var(--zehn-color-user-default) !important;
 }
 
 // MIC STATUS
@@ -493,7 +493,7 @@
 
 ._1j7MD3GYqBmikQYiNjV7C1 ._1Na5BJyHK6__5aJfqi2Udm {
   margin: auto 0px !important;
-  gap: var(--zehn-size-dialog-button-gap) !important;
+  gap: var(--zehn-size-button-gap-dialog) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1187,6 +1187,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   height: var(--zehn-size-chat-header) !important;
   padding: 0px !important;
   background-color: transparent !important;
+  box-sizing: border-box !important;
 }
 
 .chatWindow:has(.chatHidden) .chatRoomHeader {
@@ -1201,6 +1202,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   padding: 0px !important;
   height: 100% !important;
   gap: var(--zehn-size-spacing-md) !important;
+  align-items: center !important;
 }
 
 // GROUP AVATAR
@@ -1257,44 +1259,63 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // STATS
 .chatRoomGroupStats {
-  --stat-height: var(--zehn-size-14) !important;
-  line-height: var(--stat-height) !important;
-  gap: 0px !important;
-  flex-direction: column !important;
+  gap: var(--zehn-size-tags-gap) !important;
+  flex-direction: row !important;
   align-self: center !important;
 }
 
 .statMemberStat {
-  line-height: var(--stat-height) !important;
-  font-size: var(--zehn-size-12) !important;
+  text-transform: none !important;
+  overflow: hidden !important;
   margin: 0px !important;
-  color: var(--color) !important;
+  place-content: center !important;
+  text-align: center !important;
+  line-height: var(--zehn-size-tag-small) !important;
+  border-radius: var(--zehn-size-tag-radius) !important;
+  color: var(--zehn-color-tag-text) !important;
+  background: var(--zehn-color-tag) !important;
+  padding: var(--zehn-size-tag-padding-small) !important;
+  font-size: var(--zehn-size-tag-text-small) !important;
+  gap: var(--zehn-size-tag-gap) !important;
+  height: var(--zehn-size-tag-small) !important;
+  width: var(--zehn-size-tag-small) !important;
+  box-sizing: border-box !important;
+  position: relative !important;
 
-  &.statMembersTotal {
-    --color: var(--zehn-color-text3);
+  &:hover {
+    background-color: var(--zehn-color-tag-hover) !important;
+    color: var(--zehn-color-tag-text) !important;
   }
 
-  &.statMembersOnline {
-    --color: var(--zehn-color-text2);
+  &:active {
+    background-color: var(--zehn-color-tag-active) !important;
+    color: var(--zehn-color-tag-text) !important;
   }
 
-  &.statMembersInGame {
-    --color: var(--zehn-color-text1);
-  }
+  &.statMembersTotal {}
+
+  &.statMembersOnline {}
+
+  &.statMembersInGame {}
 }
 
 .statCircle {
+  display: none !important;
   background-color: var(--color) !important;
-  margin-right: var(--zehn-size-spacing-xxs) !important;
+  margin: 0px !important;
+  width: var(--zehn-size-16) !important;
+  height: var(--zehn-size-16) !important;
   border-radius: var(--zehn-size-radius-circular) !important;
-  width: var(--zehn-size-indicator) !important;
-  height: var(--zehn-size-indicator) !important;
+  position: absolute !important;
+  z-index: -1 !important;
 }
 
 // BUTTONS WRAPPER
 .chatRoomOptions {
-  margin-right: 0px !important;
+  margin: 0px !important;
   order: 2 !important;
+  align-items: center !important;
+  gap: var(--zehn-size-button-gap-bar) !important;
 }
 
 // HIDE BUTTONS UNTIL OPENED
@@ -1430,20 +1451,21 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails .nowWatching {
   font-size: var(--zehn-size-10) !important;
   line-height: var(--zehn-size-12) !important;
-  color: var(--zehn-color-text4) !important;
+  color: var(--zehn-color-text3) !important;
   font-weight: var(--zehn-weight-normal) !important;
+  display: none !important;
 }
 
 .chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails .gameTitle {
-  font-size: var(--zehn-size-12) !important;
-  color: var(--zehn-color-text3) !important;
+  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text1) !important;
   font-weight: var(--zehn-weight-normal) !important;
 }
 
 .chatRoomGroupHeader .broadcastInfoContainer .broadcastDetails .broadcastTitle {
-  font-size: var(--zehn-size-10) !important;
-  line-height: var(--zehn-size-12) !important;
-  color: var(--zehn-color-text4) !important;
+  font-size: var(--zehn-size-12) !important;
+  line-height: var(--zehn-size-16) !important;
+  color: var(--zehn-color-text3) !important;
   font-weight: var(--zehn-weight-normal) !important;
 }
 
@@ -1552,7 +1574,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .BroadcastContainerSection {
   overflow: hidden !important;
   background-color: var(--zehn-color-panel) !important;
-  transition: background-color 0.2s var(--zehn-timing-ease) !important;
+  transition: var(--zehn-transition-panel) !important;
   border-radius: var(--zehn-size-panel-radius) !important;
 
   &:hover {
@@ -2204,6 +2226,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   background: var(--zehn-color-panel) !important;
   padding: var(--zehn-size-padding-md) !important;
   border-radius: var(--zehn-size-panel-radius) !important;
+  transition: var(--zehn-transition-panel) !important;
 
   &:hover {
     background-color: var(--zehn-color-panel-hover) !important;
@@ -2796,7 +2819,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .msg.ChatMsgSlashEmote .speaker,
 .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
   margin: 0px !important;
-  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xxxl) !important;
+  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-avatar) + var(--zehn-size-persona-gap)) !important;
   color: inherit !important;
   background: transparent !important;
   line-height: var(--zehn-size-chat-speaker) !important;
@@ -2808,14 +2831,20 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .chatWindow.compactView .ChatRoomSpeaker .speaker,
 .chatWindow.compactView .msg.ChatMsgSlashEmote .speaker,
 .chatWindow.compactView .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
-  padding: 0px var(--zehn-size-padding-xl) !important;
+  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-compact-avatar) + var(--zehn-size-persona-compact-gap)) !important;
 }
 
 // SPEAKER AVATAR
 .ChatRoomSpeaker .speaker .speakerAvatar,
 .ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame {
   position: absolute !important;
-  top: var(--zehn-size-spacing-sm) !important;
+  top: var(--zehn-size-spacing-xxs) !important;
+  left: var(--zehn-size-spacing-md) !important;
+}
+
+.compactView .ChatRoomSpeaker .speaker .speakerAvatar,
+.compactView .ChatRoomSpeaker .speaker .speakerAvatar.hasAvatarFrame {
+  top: var(--zehn-size-spacing-xs) !important;
   left: var(--zehn-size-spacing-md) !important;
 }
 
@@ -2879,7 +2908,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // SPEAKER NICKNAME
 .speakerName .playerNickname {
-  color: var(--zehn-color-nickname) !important;
+  color: var(--zehn-color-user-nickname) !important;
 }
 
 // CHAT SCALING
@@ -2935,7 +2964,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .FriendChatTimeStamp.offline {
   color: var(--zehn-color-text3) !important;
   top: 0px !important;
-  margin: 0px 0px 0px var(--zehn-size-spacing-md) !important;
+  margin: 0px 0px 0px var(--zehn-size-spacing-xs) !important;
   line-height: var(--zehn-size-chat-speaker) !important;
   border: none !important;
 }
@@ -2947,11 +2976,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .msgText {
-  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xxxl) !important;
+  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-avatar) + var(--zehn-size-persona-gap)) !important;
 }
 
 .chatWindow.compactView .msgText {
-  padding: 0px var(--zehn-size-padding-xl) !important;
+  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-compact-avatar) + var(--zehn-size-persona-compact-gap)) !important;
 }
 
 .msgText>span {
@@ -3308,7 +3337,7 @@ span.mention.me {
   border: unset !important;
   background: var(--zehn-color-separator) !important;
   flex-grow: 1 !important;
-  margin: auto 0 auto var(--zehn-size-spacing-md) !important;
+  margin: auto 0px auto var(--zehn-size-spacing-md) !important;
   width: unset !important;
 }
 
@@ -3317,7 +3346,7 @@ span.mention.me {
   border: unset !important;
   background: var(--zehn-color-separator) !important;
   flex-grow: 1 !important;
-  margin: auto var(--zehn-size-spacing-md) auto 0 !important;
+  margin: auto var(--zehn-size-spacing-md) auto 0px !important;
 }
 
 .timeDivision .preHorizDivider {
@@ -3544,7 +3573,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   transition: none !important;
   position: relative !important;
   inset: unset !important;
-  border-radius: var(--zehn-size-persona-radius) !important;
+  border-radius: var(--zehn-avatar-shape) !important;
 }
 
 .mentionSearchMatch {
@@ -4146,6 +4175,11 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 .W0OhkJtz8zMUW8Mhu0BMO {
   margin: 0px !important;
   max-height: var(--zehn-size-chat-entry) !important;
+  height: var(--zehn-size-chat-entry) !important;
+}
+
+.chatWindow .chatEntry.compactView>.compactableHeight.W0OhkJtz8zMUW8Mhu0BMO {
+  height: var(--zehn-size-chat-entry) !important;
 }
 
 // ENTRY BUTTONS CONTAINER
@@ -4272,7 +4306,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
   width: auto !important;
   height: auto !important;
   inset-inline: var(--zehn-size-modal-inset) !important;
-  bottom: calc(var(--zehn-size-modal-inset) + var(--zehn-size-input-bar)) !important;
+  bottom: calc(var(--zehn-size-modal-inset) + var(--zehn-size-chat-entry)) !important;
   top: calc(var(--tabs-and-header) + var(--zehn-size-modal-inset)) !important;
   overflow: hidden !important;
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
@@ -4300,7 +4334,7 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 // ONE OF MANY INNER WRAPPERS
 .ChatRoomMemberScrollList_List {
   border: none !important;
-  margin: 0px 0px var(--zehn-size-input-app-wrapper) 0px !important;
+  margin: 0px !important;
 }
 
 // GROUP NAME AREA
@@ -4455,6 +4489,8 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 
 // USER SEARCH CONTAINER
 .MemberListOptionsContainer {
+  padding: var(--zehn-size-padding-xs) !important;
+  box-sizing: border-box !important;
   height: auto !important;
   order: 2 !important;
   background-color: transparent !important;
@@ -4463,9 +4499,8 @@ body:not(.WindowFocus) .zehnAddFriendWrapper {
 // INNER CONTAINER
 .MemberListColumn .MemberListOptionsContainer .socialInputContainer {
   width: 100% !important;
-  min-height: var(--zehn-size-input-app-wrapper) !important;
-  max-height: var(--zehn-size-input-app-wrapper) !important;
-  height: var(--zehn-size-input-app-wrapper) !important;
+  min-height: fit-content !important;
+  max-height: fit-content !important;
   margin: 0px !important;
   background-color: transparent !important;
 }

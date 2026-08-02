@@ -1,5 +1,599 @@
-@forward 'input/dialog';
-@forward 'input/app';
-@forward 'input/bar';
-@forward 'input/url';
-@forward 'input/pin';
+@use 'input/template' as template;
+
+// APP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// GAME STATUS
+._3x31AgESSlUqX3D4MTHv2m ._1JlC29Ic6L-QvL-39X_d-X {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-md)
+  );
+
+  align-content: center !important;
+  field-sizing: content !important;
+  resize: vertical !important;
+
+  height: unset !important;
+  max-height: unset !important;
+}
+
+// COLLECTIONS TITLE
+._2q70uOe6xM3-c5XIVfBLe6 ._2rqTSCLSSEycEiuCS_OkpX ._2oJt3qYLAqr6xMjnpmBFLN.DialogInput {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-md)
+  );
+}
+
+// LIBRARY SIDEBAR
+._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper>input.DialogInput {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-md),
+    $width: 100%
+  );
+}
+
+// GROUP CHAT SEARCH
+.socialTabSearchContainer input.friendSearchInput {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-md),
+    $width: 100%
+  );
+}
+
+// FRIENDS LIST SEARCH
+.socialTabContainer #friendSearchInputID {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-md),
+    $width: 100%
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// DIALOG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// TEXT INPUT - GENERIC
+input[type="text"],
+input[type="number"] {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// DIALOG
+input.DialogInput.DialogTextInputBase {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// DIALOG LIST BUILDER
+input.DialogInput.DialogListBuilderInput_Input {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// GENERIC CONFIRM DIALOG
+.GenericConfirmDialog .DialogInput_Wrapper>input.DialogInput {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// MILLENNIUM LOGS
+.MillenniumLogs_NavContainer input.DialogInput.DialogTextInputBase {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// MILLENNIUM SIDEBAR
+.MillenniumDesktopSidebar input.DialogInput.DialogTextInputBase {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: var(--zehn-size-input-dialog-width),
+    $style: "dialog"
+  );
+}
+
+// SETTINGS
+.OX7USkJ5dDP_icD00Gal6 input[type="text"],
+.OX7USkJ5dDP_icD00Gal6 input.DialogInput.DialogTextInputBase,
+.OX7USkJ5dDP_icD00Gal6 input.DialogInput.DialogListBuilderInput_Input {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: var(--zehn-size-input-dialog-width),
+    $style: "dialog"
+  );
+}
+
+// SETTIINGS - GAME RECORDING SECONDS
+._34OEMrwxDltTK3YyBucW7L input.DialogInput.DialogTextInputBase._37LHiIMVSPZfhnM2pTvW17 {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: calc(var(--zehn-size-input-dialog-width) / 3),
+    $style: "dialog"
+  );
+}
+
+// APP PROPERTIES
+.ZjHHXZlnZhCahNrBFplWc input[type="text"],
+.ZjHHXZlnZhCahNrBFplWc input.DialogInput.DialogTextInputBase,
+.ZjHHXZlnZhCahNrBFplWc input.DialogInput.DialogListBuilderInput_Input {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: var(--zehn-size-input-dialog-width),
+    $style: "dialog"
+  );
+}
+
+// APP PROPERTIES - WORKSHOP
+.ZjHHXZlnZhCahNrBFplWc ._1jU7DJWKTZJb6QXtw7BD9r input.DialogInput.DialogTextInputBase {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: calc(var(--zehn-size-input-dialog-width) / 2),
+    $style: "dialog"
+  );
+}
+
+// GROUP SETTINGS
+._3mf9BBKxhIVdrt6nIWBt4x input.DialogInput.DialogTextInputBase,
+._3mf9BBKxhIVdrt6nIWBt4x input.DialogInput.DialogListBuilderInput_Input {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: var(--zehn-size-input-dialog-width),
+    $style: "dialog"
+  );
+}
+
+// GROUP SETTINGS INVITES
+._3mf9BBKxhIVdrt6nIWBt4x input.DialogInput.DialogTextInputBase.inviteURLLink {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: 100%,
+    $style: "dialog"
+  );
+}
+
+// LOGIN
+.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// REVIEW GAME
+.sK8bmf5vWULFzqtbyJO59 textarea._392iEmqj65Eac9ealm4Pmi {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// CONTROLER SETTINGS EDITABLE VALUES
+._3zXJCBqLZLo9JuXSJobudq ._3aMlipGagTx2AjSsMP_yZj,
+._3zXJCBqLZLo9JuXSJobudq ._1iWWSmS4pDD1vKNDTkghbh {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-dialog),
+    $width: var(--zehn-size-input-dialog-width),
+    $style: "dialog"
+  );
+}
+
+// REPORT AI CONTENT
+.W7yFQn7zoBv-1CyobSsk1 {
+  @include template.preset-fixed(
+    $height: 250px,
+    $width: var(--zehn-size-input-dialog-width),
+    $style: "dialog"
+  );
+}
+
+// REPORT COMMUNITY CONTENT
+.GenericConfirmDialog .G_kjTgDeleabG0KDC4B3L textarea._1H8F9Z-889HGdHeC5msAZ0 {
+  @include template.preset-dynamic(
+    $height: fit-content,
+    $style: "dialog"
+  );
+}
+
+// SCREENSHOTS SHARE
+.GenericConfirmDialog .lcOTPSjzoMa0rZHjVcyOW textarea._-8fRT1eDDVo6CU2ehlzmG {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// ARTWORK DIALOG/MODAL COMMENT
+._36VpVPlpKPUM0pVoKojRbG ._3x31AgESSlUqX3D4MTHv2m ._1JlC29Ic6L-QvL-39X_d-X,
+._32QRvPPBL733SpNR9x0Gp3 ._3x31AgESSlUqX3D4MTHv2m ._1JlC29Ic6L-QvL-39X_d-X {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// SHARE EVENT
+textarea.hgGF9tJhSgdN6iw-BPD5X {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// SHARE SCREENSHOT (OLD ???)
+.qFjVwKFidyZdbmIhaENhV {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// EXTENDIUM STORAGE MANAGER
+.styled-input[type="text" i] {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// ACHIEVEMENTS PLUGIN
+.steam-hunters-achievements-page .achievements-header .header-top-row .search-container .DialogInput_Wrapper._DialogLayout>input {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// URL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.UkR3sY319PuaUNuUWks2K ._2m_orETo6AghzAnc0sISCt .MZPxEZcxAGtPDf1NYtouS {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-browser-urlbar-inner),
+    $style: "url"
+  );
+}
+
+._26Gmfe09NRsnF7eprTZYdY ._1d2NZ4Jt0wrdapfvDFhpVS ._1W55urU2WazGofFzN0_jHB .DialogInput_Wrapper>input.DialogInput {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-browser-urlbar-inner),
+    $style: "url"
+  );
+}
+
+// FAKE
+._26Gmfe09NRsnF7eprTZYdY ._1d2NZ4Jt0wrdapfvDFhpVS ._1W55urU2WazGofFzN0_jHB:not(:has(input)) {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-browser-urlbar-inner),
+    $style: "url"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SEGMENTED
+._1gzkmmy_XA39rp9MtxJfZJ {
+  background-color: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  border: none !important;
+  padding: 0px !important;
+  gap: var(--zehn-size-spacing-md) !important;
+  max-width: fit-content !important;
+
+  input._3xcXqLVteTNHmk-gh9W65d {
+    @include template.preset-fixed(
+      $height: var(--zehn-size-input-pin),
+      $width: var(--zehn-size-input-pin-width),
+      $style: "pin"
+    );
+    
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      width: 100%;
+      height: var(--zehn-size-focusbar);
+      background: var(--zehn-color-focusbar);
+    }
+  }
+}
+
+// PIN
+input[type="password"] {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-input-pin),
+    $width: var(--zehn-size-input-pin-width),
+    $style: "pin"
+  );
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: var(--zehn-size-focusbar);
+    background: var(--zehn-color-focusbar);
+  }
+}
+
+// TIMER EDIT
+._2fICi3Sa-9RSsaGQXtgYxE ._1BfvGliHSf2eWZCE__10m1 ._2NcTFrUpmzgPkowDPjHy2W {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-clock-time),
+    $width: var(--zehn-size-clock-time),
+    $style: "pin"
+  );
+
+  padding: 0px !important;
+
+  text-align: center !important;
+  line-height: var(--zehn-size-clock-time-text) !important;
+  font-size: var(--zehn-size-clock-time-text) !important;
+  font-weight: var(--zehn-weight-thickest) !important;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: var(--zehn-size-focusbar);
+    background: var(--zehn-color-focusbar);
+  }
+}
+
+// STEAM FAMILY VIEW
+.sLyAbUma18eNqN7YC1iNz {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-pin),
+    $style: "pin"
+  );
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: var(--zehn-size-focusbar);
+    background: var(--zehn-color-focusbar);
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// BAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// TEXT AREAS - MULTILINE
+textarea {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-lg),
+    $style: "bar"
+  );
+
+  align-content: center !important;
+}
+
+// CHAT
+._113iuw_HlE_qSgt9cGWCSv {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-chat-entry),
+    $style: "bar"
+  );
+}
+
+// CONSOLE
+._2SdqX9SccD_TtDat-bNo5- input.DialogInput.DialogTextInputBase {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-lg),
+    $style: "bar"
+  );
+}
+
+// RECORDINGS SEARCH
+._36KTbApKz0VLY9Q6lGt4aH input {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-media-controlbar),
+    $width: 400px,
+    $style: "bar"
+  );
+}
+
+// GROUP CHAT MEMBERS
+.MemberListColumn input.friendSearchInput {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-context-entry-height),
+    $width: 100%,
+    $style: "bar"
+  );
+}
+
+// EMOTE PICKER
+._2EstNjFIIZm_WUSKm5Wt7n .tid_OE5NJWCCVJQP1PfRc input.DialogInput.DialogTextInputBase._2l4z-U60lABvd9XWArGjAf {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-context-entry-height),
+    $style: "bar"
+  );
+}
+
+// CONTEXT DROPDOWN
+._2EstNjFIIZm_WUSKm5Wt7n input.DialogInput.DialogTextInputBase {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-context-entry-height),
+    $style: "bar"
+  );
+}
+
+// MEDIA SHARE USER SEARCH
+._2EstNjFIIZm_WUSKm5Wt7n._2FUmWtFyO-djtMKkN50SdM input {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-context-entry-height),
+    $style: "bar"
+  );
+}
+
+// OTHER CONTEXT/DROPDOWN MENU SEARCH
+._2EstNjFIIZm_WUSKm5Wt7n .DialogInput_Wrapper>input.DialogInput.DialogTextInputBase {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-context-entry-height),
+    $style: "bar"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CLEAR ACTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// FRIEND SEARCH
+.friendSearchClear,
+// KEY BINDING
+._2WkJpi6EQMR6CUXzMDJ9rq,
+// GENERIC
+.DialogInput_ClearAction {
+  opacity: 1 !important;
+  text-align: center !important;
+  margin: auto var(--zehn-size-spacing-sm) !important;
+  width: var(--zehn-size-icon-sm) !important;
+  height: var(--zehn-size-icon-sm) !important;
+  inset: unset;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  color: var(--zehn-color-text-control) !important;
+  background: transparent !important;
+  transition: none !important;
+
+  svg {
+    width: 100% !important;
+    height: 100% !important;
+    margin: auto !important;
+    position: absolute !important;
+    inset: 0px !important;
+    background-color: var(--zehn-color-input-clear) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-icon-sm) !important;
+    -webkit-mask-image: var(--zehn-icon-clear) !important;
+
+    * { display: none !important; }
+  }
+}
+
+.inputContainer:has(.friendSearchInput:placeholder-shown) .friendSearchClear,
+.DialogInput_Wrapper:has(.DialogInput:placeholder-shown) .DialogInput_ClearAction {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SEARCH ICON ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// FRIENDS LIST AND MEMBERS LIST
+.socialInputContainer .inputContainer,
+// SIDEBAR SEARCH
+._20QAC4WMXm8qFE8waUT5oo ._12vo5L1hsNGdao6_ssuirS .DialogInput_Wrapper,
+// EMOTICON PICKER
+.tid_OE5NJWCCVJQP1PfRc .DialogInput_Wrapper {
+  --search-opacity: 0;
+
+  &:has(:placeholder-shown) {
+    --search-opacity: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    margin: auto var(--zehn-size-spacing-sm);
+    width: var(--zehn-size-icon-sm);
+    height: var(--zehn-size-icon-sm);
+    pointer-events: none;
+    background-color: var(--zehn-color-input-search);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: var(--zehn-size-icon-sm);
+    -webkit-mask-image: var(--zehn-icon-search);
+    opacity: var(--search-opacity);
+    pointer-events: none;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

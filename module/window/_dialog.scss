@@ -402,7 +402,7 @@
 
 // COLUMNS
 ._DialogColLayout {
-  gap: var(--zehn-size-dialog-button-gap) !important;
+  gap: var(--zehn-size-button-gap-dialog) !important;
   justify-content: flex-start !important;
   flex-flow: row !important;
   max-width: 100% !important;
@@ -410,11 +410,11 @@
 }
 
 ._DialogColLayout.DialogThreeColLayout {
-  gap: var(--zehn-size-dialog-button-gap) !important;
+  gap: var(--zehn-size-button-gap-dialog) !important;
 }
 
 ._DialogColLayout.DialogTwoColLayout {
-  gap: var(--zehn-size-dialog-button-gap) !important;
+  gap: var(--zehn-size-button-gap-dialog) !important;
 }
 
 ._DialogColLayout>._DialogLayout:not(.DialogButton) {
@@ -715,6 +715,23 @@
   font-weight: var(--zehn-weight-normal) !important;
 }
 
+// WRAPPER
+.DialogInput_Wrapper._DialogLayout {
+  transition: none !important;
+  position: relative !important;
+  width: auto !important;
+  height: fit-content !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  background-color: transparent !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  gap: var(--zehn-size-setting-control-gap) !important;
+  box-sizing: border-box !important;
+}
+
+// PLACEHOLDER
+.DialogInputPlaceholder::placeholder {}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -821,11 +838,6 @@
   box-sizing: border-box !important;
 }
 
-.GenericConfirmDialog .DialogInput_Wrapper>input.DialogInput {
-  min-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
 // FIX FOR SOME PLUGIN MODAL TEXT (GRATITUDE)
 .GenericConfirmDialog div:not([class]) {
   opacity: 1 !important;
@@ -853,6 +865,38 @@
 
 
 
+// LSIT BUILDER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.DialogListBuilderInput_List {
+  display: flex !important;
+  max-height: unset !important;
+  min-width: 100% !important;
+  gap: var(--zehn-size-spacing-xs) !important;
+  align-items: flex-start !important;
+  padding: 0px !important;
+  line-height: inherit !important;
+
+  // SEARCH
+  .DialogListBuilderInput_Input {}
+
+  // ITEMS
+  .DialogListBuilderInput_ListItem {
+    margin: auto 0px !important;
+    order: 1 !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
 // FRIEND PICKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .FriendPicker {
@@ -866,77 +910,66 @@
 
   // LIST BUILDER
   .DialogListBuilderInput_List {
-    max-height: unset !important;
-    min-width: 100% !important;
     gap: var(--zehn-size-tags-gap) !important;
 
-    // SEARCH
-    .DialogListBuilderInput_Input {
-      min-width: 100% !important;
-      max-width: unset !important;
-    }
+    // TAG
+    .FriendPicker_ChosenFriend {
+      position: relative !important;
+      margin: 0px !important;
+      align-items: center !important;
+      gap: var(--zehn-size-tag-gap) !important;
+      font-weight: var(--zehn-weight-normal) !important;
+      line-height: normal !important;
+      align-content: center !important;
+      border-radius: var(--zehn-size-tag-radius) !important;
+      color: var(--zehn-color-tag-text) !important;
+      background: var(--zehn-color-tag) !important;
+      padding: var(--zehn-size-tag-padding);
+      font-size: var(--zehn-size-tag-text) !important;
+      height: var(--zehn-size-tag) !important;
+      --remove-scale: 0;
 
-    .DialogListBuilderInput_ListItem {
+      &:hover {
+        --remove-scale: 1;
+        background-color: var(--zehn-color-tag-hover) !important;
+      }
 
-      // TAG
-      .FriendPicker_ChosenFriend {
-        position: relative !important;
+      &:active {
+        background-color: var(--zehn-color-tag-active) !important;
+      }
+
+      // TEXT
+      span {
+        color: inherit !important;
+      }
+
+      // REMOVE TAG
+      .zehnBlurWrapper {
+        position: absolute !important;
+        height: 100% !important;
+        width: 100% !important;
         margin: 0px !important;
-        align-items: center !important;
-        gap: var(--zehn-size-tag-gap) !important;
-        font-weight: var(--zehn-weight-normal) !important;
-        line-height: normal !important;
+        inset: 0px !important;
+        box-sizing: border-box !important;
         align-content: center !important;
+        backdrop-filter: var(--zehn-filter-light-blur) !important;
         border-radius: var(--zehn-size-tag-radius) !important;
-        color: var(--zehn-color-tag-text) !important;
-        background: var(--zehn-color-tag) !important;
-        padding: var(--zehn-size-tag-padding);
-        font-size: var(--zehn-size-tag-text) !important;
-        height: var(--zehn-size-tag) !important;
-        --remove-scale: 0;
+        transform-origin: center !important;
+        transform: scale(var(--remove-scale)) !important;
 
-        &:hover {
-          --remove-scale: 1;
-          background-color: var(--zehn-color-tag-hover) !important;
-        }
+        .SVGIcon_X_Line {
+          width: var(--zehn-size-icon-md) !important;
+          height: var(--zehn-size-icon-md) !important;
+          opacity: 1 !important;
+          background-color: var(--zehn-color-icon1) !important;
+          mask-repeat: no-repeat !important;
+          mask-position: center !important;
+          mask-size: var(--zehn-size-icon-md) !important;
+          -webkit-mask-image: var(--zehn-icon-tag-close) !important;
+          margin: auto !important;
+          display: block !important;
 
-        &:active {
-          background-color: var(--zehn-color-tag-active) !important;
-        }
-
-        // TEXT
-        span {
-          color: inherit !important;
-        }
-
-        // REMOVE TAG
-        .zehnBlurWrapper {
-          position: absolute !important;
-          height: 100% !important;
-          width: 100% !important;
-          margin: 0px !important;
-          inset: 0px !important;
-          box-sizing: border-box !important;
-          align-content: center !important;
-          backdrop-filter: var(--zehn-filter-light-blur) !important;
-          border-radius: var(--zehn-size-tag-radius) !important;
-          transform-origin: center !important;
-          transform: scale(var(--remove-scale)) !important;
-
-          .SVGIcon_X_Line {
-            width: var(--zehn-size-icon-md) !important;
-            height: var(--zehn-size-icon-md) !important;
-            opacity: 1 !important;
-            background-color: var(--zehn-color-icon1) !important;
-            mask-repeat: no-repeat !important;
-            mask-position: center !important;
-            mask-size: var(--zehn-size-icon-md) !important;
-            -webkit-mask-image: var(--zehn-icon-tag-close) !important;
-            margin: auto !important;
-            display: block !important;
-
-            * { display: none !important; }
-          }
+          * { display: none !important; }
         }
       }
     }

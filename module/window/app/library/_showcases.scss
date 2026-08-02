@@ -645,7 +645,7 @@
   // NAME
   ._2oJt3qYLAqr6xMjnpmBFLN {
     text-transform: none !important;
-    margin: 0px var(--zehn-size-spacing-xs) 0px 0px !important;
+    margin: 0px !important;
     color: var(--zehn-color-text1) !important;
     font-size: var(--zehn-size-14) !important;
     font-weight: var(--zehn-weight-normal) !important;
@@ -657,7 +657,7 @@
     font-size: var(--zehn-size-14) !important;
     font-weight: var(--zehn-weight-normal) !important;
     line-height: var(--header-size) !important;
-    margin-left: 0px !important;
+    margin-left: var(--zehn-size-spacing-xs) !important;
   }
 
   // CENTER RULE
@@ -1502,6 +1502,8 @@
     --banner-offset: 0;
   }
 
+  // FRIENDS PLAYING
+  &:has(._3dncOt2dhpnFYQn-WYQ3Mb._1WWmQqppYq8c44A7nTMKUq),
   // RECENT GAMES DETAIL
   &:has(._3bkuozxKIatrWG3aeisthc),
   // PLAY NEXT DETAIL
@@ -1669,17 +1671,21 @@
 
     // VISIBILITY
     &._3d_bT685lnWotXxgzKW6am {
-      transition: opacity 0.2s var(--zehn-timing-ease) !important;
+      transition: opacity 0.5s var(--zehn-timing-ease), transform 0.5s var(--zehn-timing-ease) !important;
     }
   }
 }
 
 // ICON
 ._1R9r2OBCxAmtuUVrgBEUBw.ga1hyw11cdBVodrCAidPF {
-  border-radius: var(--zehn-size-radius-sm) !important;
+  border-radius: var(--zehn-size-thumbnail-radius) !important;
   margin: 0px !important;
   height: var(--zehn-size-icon-md) !important;
   width: var(--zehn-size-icon-md) !important;
+
+  img._24_AuLm54JVe1Zc0AApCDR {
+    transition: opacity 0.2s var(--zehn-timing-ease) !important;
+  }
 }
 
 // TITLE
@@ -1885,20 +1891,28 @@ span._13fGPw2BaM5wWIahr2xNKt._35G8cQ1kQIoGyUIch8Afz1 {
   }
 }
 
-// FRIENDS BAR - ONLY IN COLlECTION?
+// FRIENDS BAR - ONLY IN COLLECTION?
 ._3dncOt2dhpnFYQn-WYQ3Mb {
-  gap: var(--zehn-size-spacing-xxs) !important;
+  gap: var(--zehn-size-detail-gap) !important;
 
   // FEATURED
   &._10w8f-1Y_YnWFgLF4St9pq {
     display: none !important;
   }
-  
-  // ICONS VIEW
-  ._1WWmQqppYq8c44A7nTMKUq {
-    inset: 0px !important;
+
+  // ICON VIEW (SHOWCASE)
+  &._1WWmQqppYq8c44A7nTMKUq {
+    box-sizing: border-box !important;
+    padding: var(--zehn-size-detail-padding) !important;
+    flex-direction: row !important;
     margin: 0px !important;
-    padding: 0px !important;
+    height: var(--zehn-size-detail) !important;
+    width: 100% !important;
+    inset: unset !important;
+    bottom: 0px !important;
+    transform: none !important;
+    transition: transform 0.2s var(--zehn-timing-ease) !important;
+    justify-content: center !important;
   }
 
   // SUMMARY VIEW
