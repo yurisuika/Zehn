@@ -18,7 +18,8 @@
   padding: var(--zehn-size-padding-xs) !important;
   box-sizing: content-box !important;
   width: fit-content !important;
-  background: var(--zehn-color-panel) !important;
+  background: var(--zehn-color-overlay) !important;
+  border: var(--zehn-size-overlay-border) solid var(--zehn-color-overlay-border) !important;
   border-radius: var(--zehn-size-overlay-radius) !important;
   position: absolute !important;
   inset: unset !important;
@@ -34,6 +35,12 @@
   margin: var(--zehn-size-overlay-margin) !important;
   margin-top: calc(var(--zehn-size-overlay-bar) + (2 * var(--zehn-size-overlay-margin))) !important;
   justify-content: flex-end !important;
+  --video-border: var(--zehn-size-overlay-border);
+
+  // NO BORDER FOR FAKE COMBINED VIDEO PANEL
+  &:has(>._2fP0tlgegInERiBXbtZN_z) {
+    --video-border: 0px;
+  }
 }
 
 // TIMELINE AND CONTROLS COLUMN
@@ -55,7 +62,9 @@
     padding: var(--zehn-size-padding-xs) !important;
     height: fit-content !important;
     width: 100% !important;
-    background: var(--zehn-color-panel) !important;
+    background: var(--zehn-color-overlay) !important;
+    border: var(--zehn-size-overlay-border) solid var(--zehn-color-overlay-border) !important;
+    border-top-width: var(--video-border) !important;
     border-radius: var(--zehn-size-overlay-radius) !important;
     align-self: center !important;
     box-sizing: border-box !important;
@@ -69,8 +78,10 @@
     width: 100% !important;
     height: fit-content !important;
     position: relative !important;
-    background: var(--zehn-color-panel) !important;
+    background: var(--zehn-color-overlay) !important;
+    border: var(--zehn-size-overlay-border) solid var(--zehn-color-overlay-border) !important;
     border-radius: var(--zehn-size-overlay-radius) !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -142,7 +153,9 @@
   padding: var(--zehn-size-padding-xs) !important;
   padding-bottom: 0px !important;
   height: fit-content !important;
-  background: var(--zehn-color-panel) !important;
+  background: var(--zehn-color-overlay) !important;
+  border: var(--zehn-size-overlay-border) solid var(--zehn-color-overlay-border) !important;
+  border-bottom-width: var(--video-border) !important;
   border-radius: var(--zehn-size-overlay-radius) !important;
   transition: transform 0.2s var(--zehn-timing-ease), opacity 0.2s var(--zehn-timing-ease) !important;
   transform-origin: 50% 100% !important;
