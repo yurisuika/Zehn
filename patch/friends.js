@@ -71,7 +71,7 @@ Zehn.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitl
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
 Zehn.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
-Zehn.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton'], (root, target, button) => {
+Zehn.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   Zehn.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
 });
 
@@ -193,8 +193,7 @@ Zehn.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
 Zehn.addRevealClass('.friendsTabButtonsContainer', [
   '.searchIconButton', // SEARCH
   '.friendRequestButton', // REQUESTS
-  '.addFriendButton', // ADD
-  '#zehnToggleUser' // CURRENT USER TOGGLE
+  '.addFriendButton' // ADD
 ]);
 
 Zehn.addRevealClass('.FriendsListContent', [
