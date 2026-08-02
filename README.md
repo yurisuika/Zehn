@@ -13,10 +13,11 @@ Part of the design philosophy behind Zehn is to only show what is always going t
 
 Some ways this is accomplished in Zehn:
 * Most controls are consolidated into the navigation bar of the main Steam window. The root menu is only shown when you open it via the menu button.
-* Instead of a details sidebar always shown and a community content feed that you can only access after scrolling past all of the activity feed on a game page, Zehn offers three simple buttons in the play bar to switch between displaying these. You can focus solely on that of which you choose!
-* The game search is hidden by default; once you set up a bunch of filters, you don't need to constantly see their tags and other filter buttons displayed, so you can hide the search section and still retain its functionality while giving the list center stage.
-* You can toggle showing your own status and the friends search from the buttons bar. And you can even hide that bar as well to just view your contacts. Garner the ability to only view what matters most.
+* Instead of a long, narrow details sidebar that is always shown and a community content feed that you can only access after scrolling past all of the activity feed on a game page, Zehn offers three simple buttons in the play bar to switch between displaying these and the activity feed. You can focus solely on that of which you choose!
+* On the sidebar, the search and filters are hidden by default. When you hide the search section, any filters you have set are still active but don't take up space. This way, you can still retain full functionality while giving the game list center stage.
+* You can toggle showing your own status and the friends search on the friends list. You can even hide the whole header as well to just view your contacts.
 * Steam natively allows the chat channel list to be pinned open or collapsed, but Zehn takes it a step further and allows you to completely hide it. Additionally, the members list is displayed as an overlay that is only shown when you need it.
+
 > [!TIP]
 > Check out these extended previews to see more of Zehn! 
 >
@@ -93,14 +94,14 @@ Zehn features various options to change the look and layout of the skin, includi
 
 There are several options that mirror settings in Windows 10, such as using transparency effects and showing the accent color on window borders. Along with the choice of light or dark mode, you can ensure Zehn matches your Windows 10 setup! You can even let Zehn automatically sync with your system mode!
 
-Zehn is built on the foundation of variables to make broad-sweeping changes a breeze and offer a high degree of consistency. You can use Millennium's Quick CSS feature or modify `~/custom.css` on SFP to override these variables found in `~/css/variables.css`!
+Zehn is built on the foundation of variables to make broad-sweeping changes a breeze and offer a high degree of consistency. You can use Millennium's Quick CSS feature or modify `custom.css` on SFP to override these variables found in `/css/variables.css`!
 
 > [!NOTE]
 > #### Millennium
 > Use Millennium's Library Manager to select Zehn's options inside of Steam.
 >
 > #### SFP
-> Edit the config in `~/options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be.
+> Edit the config in `options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be.
 
 ### Color Blending
 You can blend colors into both the foreground and background of Zehn. Give Steam more than just a native look, give it your look in either light or dark mode!
@@ -112,7 +113,7 @@ You can blend colors into both the foreground and background of Zehn. Give Steam
 > Configure color blending on the `Personalization` tab under the `Theme` subjection. Set the colors under the `Colors` tab.
 >
 > #### SFP
-> Edit the config in `~/options.json` as usual. Set the colors in `~/config/colors.css`.
+> Edit the config in `options.json` as usual. Set the colors in `/config/colors.css`.
 
 ### Acrylic
 Acrylic is a Fluent Design material that blurs the background of a surface with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways when `Transparency Effects` is enabled in the options.
@@ -153,6 +154,8 @@ Zehn features several added buttons for an improved experience:
   * The current user container is toggled via the button at the ends of the friends tab buttons container. It is hidden by default.
 * On the chat window...
   * The channel list, member list, and settings buttons are toggled via three buttons added to the group chat header bar.
+
+Any text added by Zehn is localized to languages supported by Steam via localization keys in `/data/localization.json`.
 
 ### Plugin Support
 Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy the following plugins made to look right at home in a Zehn Steam:

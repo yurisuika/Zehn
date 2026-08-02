@@ -19,6 +19,10 @@ import Zehn from './../js/zehn.js';
 
 Zehn.addUserAgent();
 
+/* CREATE LOCALIZED ON/OFF LABELS FOR SWITCHES ---------------------------------------------------------------------- */
+
+Zehn.createSwitchLabels();
+
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
 Zehn.setGlyphColor();
@@ -279,6 +283,12 @@ Zehn.movePrepend('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Browser .TitleBar.
   '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
 ]);
 
+/* CLOSE MILLENNIUM SETTINGS ---------------------------------------------------------------------------------------- */
+
+Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', ['.title-area-icon', '.closeButton', '.windowControlButton'], (root, target, button) => {
+  target.style.display = `none`;
+});
+
 /* MOVE OVERLAY BUTTONS --------------------------------------------------------------------------------------------- */
 
 Zehn.movePrepend('._3b_pllMxcr_an1aQ5goWvB', '.fi6UDkxJq66MLo2z9wabQ', [
@@ -438,7 +448,7 @@ Zehn.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
   '._36KTbApKz0VLY9Q6lGt4aH' // SEARCH
 ]);
 
-Zehn.revealInner('.YzIcpcz4oFx-nndxro5jE');
+Zehn.revealInner('._21_rrXIoZ7yQbc0u7rhvkP');
 
 /* REVEAL SERVERS --------------------------------------------------------------------------------------------------- */
 
@@ -483,9 +493,7 @@ Zehn.revealInner('._2oua5ZJCOVQf0Vwgk7teo');
 /* REVEAL OVERLAY -------------------------------------------------------------------------------------------------- */
 
 Zehn.addRevealClass('.fi6UDkxJq66MLo2z9wabQ', [
-  '.BoygotvcKo4DC4dSix8G3', // CLOSE
-  '.mh8m9p4PBg_Qrev1bfTzc', // BACK TO GAME
-  '._3ZLaTxSHxeGcoKlIy_-Z0L' // WINDOW BUTTONS
+  '._3ZLaTxSHxeGcoKlIy_-Z0L' // APP BUTTONS
 ]);
 
 Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
@@ -534,7 +542,7 @@ Zehn.revealSelf('.aqvbkhC1ejt4s8QvWA-c5');
 
 import Waifu from './../js/waifu.js';
 
-/* WAiFU DESU ------------------------------------------------------------------------------------------------------- */
+/* WAIFU DESU ------------------------------------------------------------------------------------------------------- */
 
 Waifu.findWaifu();
 

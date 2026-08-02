@@ -19,6 +19,10 @@ import Zehn from './../js/zehn.js';
 
 Zehn.addUserAgent();
 
+/* CREATE LOCALIZED ON/OFF LABELS FOR SWITCHES ---------------------------------------------------------------------- */
+
+Zehn.createSwitchLabels();
+
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
 Zehn.setGlyphColor();

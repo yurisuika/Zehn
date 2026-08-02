@@ -1,5 +1,7 @@
 export const Zehn = {
   addUserAgent,
+  localize,
+  createSwitchLabels,
   setGlyphColor,
   findRootsAndTargets,
   findTargets,
@@ -9,6 +11,8 @@ export const Zehn = {
   nameElement,
   createSpinner,
   createButton,
+  createTextButton,
+  createText,
   createIconTextContainer,
   createIconContainer,
   createTextContainer,
@@ -42,6 +46,49 @@ function addUserAgent() {
   } else if (navigator.userAgent.includes('Macintosh')) {
     document.documentElement.classList.add('Macintosh');
   }
+};
+
+function localize(langCode, langKey) {
+  const scriptEl = document.currentScript || (() => {
+    const scripts = document.getElementsByTagName('script');
+    return scripts[scripts.length - 1];
+  })();
+  const scriptSrc = scriptEl && scriptEl.src ? scriptEl.src : window.location.href;
+  const scriptDir = scriptSrc.replace(/\/[^/]*$/, '/');
+
+  const resolveRelativeToScript = rel => new URL(rel, scriptDir).href;
+
+  async function loadJson(relativePath) {
+    const res = await fetch(relativePath);
+    if (!res.ok) throw new Error(`Failed to load JSON...`);
+    return res.json();
+  }
+
+  function getValue(obj, langCode, langKey) {
+    return obj?.[langCode]?.[langKey];
+  }
+
+  return (async () => {
+    const data = await loadJson(
+      resolveRelativeToScript("./../data/localization.json")
+    );
+
+    return getValue(data, langCode, langKey);
+  })();
+};
+
+function createSwitchLabels() {
+  async function labelPair(switchSelector) {
+    let localOn = await Zehn.localize(document.documentElement.lang, "Dialog_On");
+    let localOff = await Zehn.localize(document.documentElement.lang, "Dialog_Off");
+
+    Zehn.createText('html', switchSelector, ['.zehnLabelOn'], localOn);
+    Zehn.createText('html', switchSelector, ['.zehnLabelOff'], localOff);
+  }
+
+  labelPair('._9Ql-oVe_j8E-vsDdyVdWo'); // GAMEPAD
+  labelPair('._3Sl0QHQ69uK7ZMQo5vBfrA'); // WHAT'S NEW & FRIENDS SETTINGS
+  labelPair('.DialogToggleField_OptionPanel'); // OLD CHAT DIALOGS
 };
 
 function setGlyphColor() {
@@ -205,8 +252,8 @@ function handleOnMutation(rootSelector, targetSelector, callback, options = {}) 
 
 function storeTargetHeightAsVariable(rootSelector, targetSelector, variableName) {
   this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-    document.documentElement.style.setProperty(variableName, `${target.offsetHeight}px`);
-  }, { shouldObserveTarget: true, shouldDisconnect: false, shouldAddAttributeFilter: false });
+    root.style.setProperty(variableName, `${target.offsetHeight}px`);
+  }, { shouldObserveTarget: true, shouldDisconnect: false, shouldAddAttributeFilter: true });
 };
 
 function toggleClassWithPresence(rootSelector, targetSelector, presentSelector, toggleName) {
@@ -264,6 +311,38 @@ function createButton(rootSelector, targetSelector, nameSelectors, callback, sho
     const icon = document.createElement('svg');
     icon.classList.add(`zehnIcon`);
     button.append(icon);
+  });
+};
+
+function createTextButton(rootSelector, targetSelector, nameSelectors, text, callback, shouldAppend = true) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const button = document.createElement('button');
+    button.name = 'button';
+    button.innerHTML = text;
+    button.onclick = () => callback(root, target, button);
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(button, nameSelector);
+    });
+    if (shouldAppend) {
+      target.append(button);
+    } else {
+      target.prepend(button);
+    }
+  });
+};
+
+function createText(rootSelector, targetSelector, nameSelectors, text, shouldAppend = true) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const div = document.createElement('div');
+    div.innerHTML = text;
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(div, nameSelector);
+    });
+    if (shouldAppend) {
+      target.append(div);
+    } else {
+      target.prepend(div);
+    }
   });
 };
 
@@ -489,7 +568,7 @@ function addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
 };
 
 function revealInner(containerSelector) {
-  this.findRootsAndTargets(containerSelector, '.zehnReveal', (container, revealed) => {
+  this.handleOnMutation(containerSelector, '.zehnReveal', (container, revealed) => {
     this.reveal(container, revealed);
   });
 };

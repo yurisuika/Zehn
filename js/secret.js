@@ -42,7 +42,7 @@ function discover() {
     canvas.style.background = 'black';
     canvas.width = innerWidth;
     canvas.height = innerHeight;
-    document.body.appendChild(canvas);
+    document.querySelector('._27qasW5wLU4h4nUgawpo1q').appendChild(canvas);
 
     canvasApp = createApp(canvas);
     canvasApp.start();
