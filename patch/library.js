@@ -33,44 +33,6 @@ Zehn.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
 Zehn.createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v');
 Zehn.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
 
-/* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
-
-Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
-  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
-]);
-
-Zehn.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
-
-/* REVEAL DROPDOWN -------------------------------------------------------------------------------------------------- */
-
-Zehn.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
-  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE, ._1Sa12sphmVOOs0on58tDn7)' // DROPDOWN ENTRY
-]);
-
-Zehn.revealSelf('._2oAiZidGyUxL-hfupFDQ2m.zehnReveal');
-
-/* REVEAL NOTIFICATION MENU ----------------------------------------------------------------------------------------- */
-
-Zehn.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
-  '.QFW0BtI4l77AFmv1xLAkx', // ALL
-  '._3B8wRA4H7e_oSksYNqpSPv', // STANDARD
-  '._25gii5r23MmAqXvLZj24tK', // PINNED WEB
-  '._3k90ug209sE23xAMqcM74s' // PINNED DESKTOP
-]);
-
-Zehn.revealSelf('.QFW0BtI4l77AFmv1xLAkx');
-Zehn.revealSelf('._3B8wRA4H7e_oSksYNqpSPv');
-Zehn.revealSelf('._25gii5r23MmAqXvLZj24tK');
-Zehn.revealSelf('._3k90ug209sE23xAMqcM74s');
-
-/* REVEAL EXTENDIUM MENU -------------------------------------------------------------------------------------------- */
-
-Zehn.addRevealClass('.extendium-toolbar-manager-context-menu', [
-  '.eKmEXJCm_lgme24Fp_HWt' // CONTEXT ENTRY
-]);
-
-Zehn.revealSelf('.extendium-toolbar-manager-context-menu .eKmEXJCm_lgme24Fp_HWt.zehnReveal');
-
 /* ADJUST WIDTH OF GAME FILTERS BASED ON SIDEBAR WIDTH -------------------------------------------------------------- */
 
 Zehn.handleOnMutation('.QsvsRVwbsApgKt1MhM0fz', '.Woh0kBQCmatzC1daBX9i6', (root, target) => {
@@ -374,38 +336,96 @@ Zehn.createAdjacentElement('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m
 
 Zehn.createAdjacentElement('._1UgM1Pm8SbTWX7_2f-crGt', '.MCa4RMSvWJwwWjcZP2wTT', ['.zehnSeparator'], false);
 
+
+
+
+
+
+
+
+
+
+import Reveal from './../js/reveal.js';
+
+/* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
+
+Reveal.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+
+/* REVEAL DROPDOWN -------------------------------------------------------------------------------------------------- */
+
+Reveal.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
+  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE, ._1Sa12sphmVOOs0on58tDn7)' // DROPDOWN ENTRY
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.revealSelf('._2oAiZidGyUxL-hfupFDQ2m.zehnReveal');
+
+/* REVEAL NOTIFICATION MENU ----------------------------------------------------------------------------------------- */
+
+Reveal.addRevealClass('._2EstNjFIIZm_WUSKm5Wt7n', [
+  '.QFW0BtI4l77AFmv1xLAkx', // ALL
+  '._3B8wRA4H7e_oSksYNqpSPv', // STANDARD
+  '._25gii5r23MmAqXvLZj24tK', // PINNED WEB
+  '._3k90ug209sE23xAMqcM74s' // PINNED DESKTOP
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.revealSelf('.QFW0BtI4l77AFmv1xLAkx');
+Reveal.revealSelf('._3B8wRA4H7e_oSksYNqpSPv');
+Reveal.revealSelf('._25gii5r23MmAqXvLZj24tK');
+Reveal.revealSelf('._3k90ug209sE23xAMqcM74s');
+
+/* REVEAL EXTENDIUM MENU -------------------------------------------------------------------------------------------- */
+
+Reveal.addRevealClass('.extendium-toolbar-manager-context-menu', [
+  '.eKmEXJCm_lgme24Fp_HWt' // CONTEXT ENTRY
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.revealSelf('.extendium-toolbar-manager-context-menu .eKmEXJCm_lgme24Fp_HWt.zehnReveal');
+
 /* REVEAL SIDEBAR --------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
+Reveal.addRevealClass('._1ZS_xta5HMXzR8JgxDH6n7', [
   '.uE7Pj4tb2n3_Bx4vjEX0a', // SCROLL UP
   '._3AhYljPF4e4E8LaBt-FoY0 ._3pSPluBgf0NeR1kkCLWMhR', // LIBRARY
   '._2CEKFex6JMsAse2lqMMjUp ._3pSPluBgf0NeR1kkCLWMhR', // COLLECTIONS
   '._3mzKdQXht__YHo6PX1LmB6' // FILTERS (LINUX, SORT BY, READY TO PLAY)
 ]);
 
-Zehn.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
+Reveal.revealInner('._1ZS_xta5HMXzR8JgxDH6n7');
 
 /* REVEAL SIDEBAR SHOW ALL ------------------------------------------------------------------------------------------ */
 
-Zehn.addRevealClass('._3x1HklzyDs4TEjACrRO2tB', [
+Reveal.addRevealClass('._3x1HklzyDs4TEjACrRO2tB', [
   '._2Q95p8Q2cZFieeOi06-FS9' // BUTTON
 ]);
 
-Zehn.revealSelf('._2Q95p8Q2cZFieeOi06-FS9');
+Reveal.revealSelf('._2Q95p8Q2cZFieeOi06-FS9');
 
 /* REVEAL SIDEBAR GAME LIST ----------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.ReactVirtualized__Grid__innerScrollContainer', [
+Reveal.addRevealClass('.ReactVirtualized__Grid__innerScrollContainer', [
   'div[role="gridcell"]' // LIST ENTRY
 ], [
-  'zehnRevealBackgroundOnly'
+  'zehnRevealBackgroundOnly',
+  'zehnRevealRipple'
 ]);
 
-Zehn.revealSelf('.ReactVirtualized__Grid__innerScrollContainer>div[role="gridcell"]');
+Reveal.revealSelf('.ReactVirtualized__Grid__innerScrollContainer>div[role="gridcell"]');
 
 /* REVEAL PLAYBAR --------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
+Reveal.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
   '._3ydigb6zZAjJ0JCDgHwSYA._2AzIX5kl9k6JnxLfR5H4kX', // PLAY
   '._2q-gZ3XJzlvSGHSF-GvSmi._2AzIX5kl9k6JnxLfR5H4kX', // MENU
   '.zehnButton#zehnToggleActivity', // ACTIVITY
@@ -417,119 +437,134 @@ Zehn.addRevealClass('._9EHg918wH6CQCQlD5PWOO', [
   '._21hXW2oDD7zvNsoOaW7Yob' // FAVORITE
 ]);
 
-Zehn.revealInner('._9EHg918wH6CQCQlD5PWOO');
+Reveal.revealInner('._9EHg918wH6CQCQlD5PWOO');
 
 /* REVEAL URL BAR LIBRARY ------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
+Reveal.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
   '._2m_orETo6AghzAnc0sISCt' // LIBRARY FAKE INPUT WRAPPER
 ], [
   'zehnRevealBorderOnly'
 ]);
-Zehn.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
+
+Reveal.addRevealClass('.UkR3sY319PuaUNuUWks2K', [
   '._3KaB94Jl4r0hFkthDPJy09', // BUTTONS
   '.extensions-bar-container .extension-button' // EXTENDIUM
 ]);
 
-Zehn.revealInner('.UkR3sY319PuaUNuUWks2K');
+Reveal.revealInner('.UkR3sY319PuaUNuUWks2K');
 
 /* REVEAL SOUNDTRACK ------------------------------------------------------------------------------------------------ */
 
-Zehn.addRevealClass('._3DLyrg7YP5cNP9HKda62qd ._2U3M1lpKcsYHqfjiz77PQs', [
+Reveal.addRevealClass('._3DLyrg7YP5cNP9HKda62qd ._2U3M1lpKcsYHqfjiz77PQs', [
   '._1iFnR7cGRa1kepep433pGx' // BUTTONS
 ]);
 
-Zehn.revealInner('._3DLyrg7YP5cNP9HKda62qd ._2U3M1lpKcsYHqfjiz77PQs');
+Reveal.revealInner('._3DLyrg7YP5cNP9HKda62qd ._2U3M1lpKcsYHqfjiz77PQs');
 
 /* REVEAL MEDIA LIBRARY --------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
+Reveal.addRevealClass('.YzIcpcz4oFx-nndxro5jE', [
   '._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._32Lfwcdolc3ByZWItfR3ni', // BUTTONS
   '._36KTbApKz0VLY9Q6lGt4aH' // SEARCH
 ]);
 
-Zehn.revealInner('._21_rrXIoZ7yQbc0u7rhvkP');
+Reveal.revealInner('._21_rrXIoZ7yQbc0u7rhvkP');
 
 /* REVEAL SERVERS --------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._341mdPDkZV7JkbIxGBREsd', [
+Reveal.addRevealClass('._341mdPDkZV7JkbIxGBREsd', [
   '.DialogButton' // FOOTER BUTTONS
 ]);
 
-Zehn.revealInner('._341mdPDkZV7JkbIxGBREsd');
+Reveal.revealInner('._341mdPDkZV7JkbIxGBREsd');
 
 /* REVEAL SETTINGS + NOTES ------------------------------------------------------------------------------------------ */
 
-Zehn.addRevealClass('.PageListColumn', [
+Reveal.addRevealClass('.PageListColumn', [
   '._1-vlriAtKYDViAEunue4VO', // LIST ENTRY
   '._2mL2HfT5AkDXRi1YBnRWKa' // CONTROLLER SETTINGS LIST ENTRY
 ], [
-  'zehnRevealBackgroundOnly'
+  'zehnRevealBackgroundOnly',
+  'zehnRevealRipple'
 ]);
 
-Zehn.revealInner('.PageListColumn');
+Reveal.revealInner('.PageListColumn');
 
 /* REVEAL GROUP CHAT SETTINGS --------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.xSTLmzylFJdIfak7ZdhuA', [
+Reveal.addRevealClass('.xSTLmzylFJdIfak7ZdhuA', [
   '._2YV0m3IRCNOoUV9YhJNFnV', // LIST ENTRY
   '._1NqKTWvxtFgflRlqLTtv7e' // LEAVE
 ], [
-  'zehnRevealBackgroundOnly'
+  'zehnRevealBackgroundOnly',
+  'zehnRevealRipple'
 ]);
 
-Zehn.revealInner('.xSTLmzylFJdIfak7ZdhuA');
+Reveal.revealInner('.xSTLmzylFJdIfak7ZdhuA');
 
 /* REVEAL CONTROLLER SETTINGS --------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._2oua5ZJCOVQf0Vwgk7teo', [
+Reveal.addRevealClass('._2oua5ZJCOVQf0Vwgk7teo', [
   '._3glxw5rYlV6DTRgH3dHWPD' // LIST ENTRY
 ], [
-  'zehnRevealBackgroundOnly'
+  'zehnRevealBackgroundOnly',
+  'zehnRevealRipple'
 ]);
 
-Zehn.revealInner('._2oua5ZJCOVQf0Vwgk7teo');
+Reveal.revealInner('._2oua5ZJCOVQf0Vwgk7teo');
 
 /* REVEAL OVERLAY -------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.fi6UDkxJq66MLo2z9wabQ', [
+Reveal.addRevealClass('.fi6UDkxJq66MLo2z9wabQ', [
   '._3ZLaTxSHxeGcoKlIy_-Z0L' // APP BUTTONS
 ]);
 
-Zehn.revealInner('.fi6UDkxJq66MLo2z9wabQ');
+Reveal.revealInner('.fi6UDkxJq66MLo2z9wabQ');
 
 /* REVEAL CLOCK/TIMER ----------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._2j-W28YC1xAizcE7x9KkDT', [
+Reveal.addRevealClass('._2j-W28YC1xAizcE7x9KkDT', [
   '.DialogButton' // BUTTONS
 ]);
 
-Zehn.revealInner('._2j-W28YC1xAizcE7x9KkDT');
+Reveal.revealInner('._2j-W28YC1xAizcE7x9KkDT');
 
 /* REVEAL URL BAR --------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
+Reveal.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
   '._1W55urU2WazGofFzN0_jHB .DialogInput_Wrapper', // INPUT WRAPPER
   '._1W55urU2WazGofFzN0_jHB:not(:has(input))' // NO INPUT
 ], [
   'zehnRevealBorderOnly'
 ]);
-Zehn.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
+
+Reveal.addRevealClass('._26Gmfe09NRsnF7eprTZYdY', [
   '._2UTNf-Ec4o5_3LPJtc2u7M._1oXr_GpvIgjHasLyU3tBn', // BUTTONS
   '.extensions-bar-container .extension-button' // EXTENDIUM
 ]);
 
-Zehn.revealInner('._26Gmfe09NRsnF7eprTZYdY');
+Reveal.revealInner('._26Gmfe09NRsnF7eprTZYdY');
 
 /* REVEAL BROWSER TABS ---------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('._290hvyptb3mP0rOSaapjgZ', [
+Reveal.addRevealClass('._290hvyptb3mP0rOSaapjgZ', [
   '.aqvbkhC1ejt4s8QvWA-c5' // TAB CONTAINER
 ], [
   'zehnRevealBackgroundOnly'
 ]);
 
-Zehn.revealSelf('.aqvbkhC1ejt4s8QvWA-c5');
+Reveal.revealSelf('.aqvbkhC1ejt4s8QvWA-c5');
+
+/* REVEAL CONTROLLER SETTINGS CONTEXT ------------------------------------------------------------------------------- */
+
+Reveal.addRevealClass('.uWT-cMCXkxiyxcSs9UA-0', [
+  '._34o03-8cUc3fQX1u650c0L.contextMenuItem:not(.disabled)' // CONTEXT ENTRY
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.revealSelf('._34o03-8cUc3fQX1u650c0L.contextMenuItem.zehnReveal');
 
 
 
@@ -570,8 +605,8 @@ Secret.discover();
 
 
 
-import Canvas from './../js/canvas.js';
+import Kosmos from '../js/kosmos.js';
 
 /* STARS ON LOGIN --------------------------------------------------------------------------------------------------- */
 
-Canvas.stars();
+Kosmos.stars();

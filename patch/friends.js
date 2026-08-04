@@ -33,26 +33,6 @@ Zehn.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
 Zehn.createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v');
 Zehn.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
 
-/* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
-
-Zehn.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
-  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
-]);
-Zehn.addRevealClass('.friendsui-container ._10UNx2XXsFmsHb86RCyofu', [
-  '._2Qsf4rHzNzK6Z3UYN7tOFx' // VIDEO
-]);
-
-Zehn.revealSelf('._2EstNjFIIZm_WUSKm5Wt7n ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
-Zehn.revealSelf('._10UNx2XXsFmsHb86RCyofu ._2Qsf4rHzNzK6Z3UYN7tOFx.zehnReveal');
-
-/* REVEAL BROADCAST CONTEXT MENU ------------------------------------------------------------------------------------ */
-
-Zehn.addRevealClass('.STV_BroadcastSettingsPanel', [
-  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
-]);
-
-Zehn.revealSelf('.STV_BroadcastSettingsPanel ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
-
 /* STORE HEIGHT OF HEADER ------------------------------------------------------------------------------------------- */
 
 Zehn.storeTargetHeightAsVariable('.friendsListContainer', '.friendListHeaderContainer', '--friends-header-height');
@@ -188,15 +168,55 @@ Zehn.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
 
 Zehn.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
 
+
+
+
+
+
+
+
+
+
+import Reveal from './../js/reveal.js';
+
+/* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
+
+Reveal.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.addRevealClass('.friendsui-container ._10UNx2XXsFmsHb86RCyofu', [
+  '._2Qsf4rHzNzK6Z3UYN7tOFx' // VIDEO
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.revealSelf('._2EstNjFIIZm_WUSKm5Wt7n ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+Reveal.revealSelf('._10UNx2XXsFmsHb86RCyofu ._2Qsf4rHzNzK6Z3UYN7tOFx.zehnReveal');
+
+/* REVEAL BROADCAST CONTEXT MENU ------------------------------------------------------------------------------------ */
+
+Reveal.addRevealClass('.STV_BroadcastSettingsPanel', [
+  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
+], [
+  'zehnRevealRipple'
+]);
+
+Reveal.revealSelf('.STV_BroadcastSettingsPanel ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+
 /* REVEAL FRIENDS --------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.friendsTabButtonsContainer', [
+Reveal.addRevealClass('.friendsTabButtonsContainer', [
   '.searchIconButton', // SEARCH
   '.friendRequestButton', // REQUESTS
   '.addFriendButton' // ADD
 ]);
 
-Zehn.addRevealClass('.FriendsListContent', [
+Reveal.revealInner('.friendlist');
+
+Reveal.addRevealClass('.FriendsListContent', [
   '.friendGroup>.groupName', // GAME GROUP
   '.groupHeaderContainer', // FRIEND GROUP
   '.friendsListSectionTitle.chatSectionTitle', // GROUP CHATS TOGGLE
@@ -206,24 +226,25 @@ Zehn.addRevealClass('.FriendsListContent', [
   '.friendsContainer>.friend', // GROUPED FRIEND
   '.chatRoomVoiceChannel' // VOICE CHANNEL
 ], [
-  'zehnRevealBackgroundOnly'
+  'zehnRevealBackgroundOnly',
+  'zehnRevealRipple'
 ]);
 
-Zehn.revealInner('.friendlist');
+Reveal.revealSelf('.FriendsListContent .zehnReveal');
 
 /* REVEAL CHAT TABS ------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.titleBarContainer.ChatTabs', [
+Reveal.addRevealClass('.titleBarContainer.ChatTabs', [
   '._3f1rJf0BU79ub9YR2KihaT' // CHAT TAB CONTAINER
 ], [
   'zehnRevealBackgroundOnly'
 ]);
 
-Zehn.revealInner('.ChatTabs');
+Reveal.revealInner('.ChatTabs');
 
 /* REVEAL CHAT ------------------------------------------------------------------------------------------------------ */
 
-Zehn.addRevealClass('.chatRoomHeader', [
+Reveal.addRevealClass('.chatRoomHeader', [
   '.broadcastInfoContainer .thumbnail', // STREAM
   '.doGxCBJrGimabHm365bOV', // STREAM YULE
   '.chatRoomButton.ManageNotifications', // NOTIFICATION SETTINGS
@@ -232,15 +253,16 @@ Zehn.addRevealClass('.chatRoomHeader', [
   '.MemberListOption.ToggleMemberListView' // TOGGLE MEMBER LIST
 ]);
 
-Zehn.addRevealClass('.chatRoomGroupNavColumn', [
+Reveal.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomGroupNavCollapseExpand' // CHATLIST PIN BUTTON
 ]);
 
-Zehn.addRevealClass('.chatRoomGroupNavColumn', [
+Reveal.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomTextChannelsGroup>.chatRoomTextChannel', // TEXT
   '.chatRoomVoiceChannelNameContainer' // VOICE
 ], [
-  'zehnRevealBackgroundOnly'
+  'zehnRevealBackgroundOnly',
+  'zehnRevealRipple'
 ]);
 
-Zehn.revealInner('.chatWindow');
+Reveal.revealInner('.chatWindow');

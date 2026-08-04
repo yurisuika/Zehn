@@ -23,10 +23,21 @@ Zehn.addUserAgent();
 
 Zehn.setGlyphColor();
 
+
+
+
+
+
+
+
+
+
+import Reveal from './../js/reveal.js';
+
 /* REVEAL TOAST ----------------------------------------------------------------------------------------------------- */
 
-Zehn.addRevealClass('.zXrpABNQHpWKgSzqnGlL', [
+Reveal.addRevealClass('.zXrpABNQHpWKgSzqnGlL', [
   '._1OOQPJx0nCNP9ME9toCmV7' // TOAST
 ]);
 
-Zehn.revealInner('.zXrpABNQHpWKgSzqnGlL', '._1OOQPJx0nCNP9ME9toCmV7');
+Reveal.revealInner('.zXrpABNQHpWKgSzqnGlL', '._1OOQPJx0nCNP9ME9toCmV7');

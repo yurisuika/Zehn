@@ -1,7 +1,7 @@
-export const Canvas = {
+export const Kosmos = {
   stars
 };
-export default Canvas;
+export default Kosmos;
 
 function stars() {
   let canvasApp = null;
