@@ -1,8 +1,14 @@
 // REVEAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// DEFAULT MASK WAY THE HELL OFF SO WE DON'T SEE IT WHEN IDLE
 .zehnReveal {
+  overflow: hidden;
   position: relative;
   mask-position: -9001px -9001px;
+  mask-size: 0px 0px;
+  --mX: 0px;
+  --mY: 0px;
+  --mSize: 0px;
 }
 
 .zehnReveal:hover::before {
@@ -16,7 +22,6 @@
   inset: 0px;
   border-radius: inherit;
   border: var(--zehn-size-reveal-border) solid var(--zehn-color-reveal-border);
-  -webkit-mask-image: radial-gradient(circle closest-side, white, transparent);
   mask-origin: border-box;
   mask-position: inherit;
   mask-size: inherit;
@@ -24,6 +29,9 @@
   opacity: var(--zehn-transparency-effects-reveal);
   pointer-events: none;
   z-index: -1;
+  mask-image: radial-gradient(circle closest-side, white, transparent);
+  mask-position: var(--mX) var(--mY);
+  mask-size: var(--mSize) var(--mSize);
 }
 
 .zehnReveal.zehnRevealBackgroundOnly::before {
@@ -39,6 +47,41 @@
 .zehnReveal.Disabled::before,
 .zehnReveal._1f6yYACTilZQ2dmqGd5zXk::before {
   opacity: 0;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// RIPPLE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@property --crest {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+.zehnReveal:not(:hover) .zehnRipple {
+  visibility: hidden !important;
+}
+
+.zehnRipple {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--zehn-color-ripple);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  mask-image: radial-gradient(circle closest-side, transparent 0%, white var(--crest, 0%), transparent 100%);
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

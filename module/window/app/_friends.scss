@@ -414,7 +414,7 @@
     --hint-display: none;
 
     &.emptyQuickAccess {
-      display: none !important;
+      display: var(--hint-display) !important;
     }
   }
 }
@@ -443,11 +443,10 @@
 .quickAccessFriendsMessage {
   transition: none !important;
   color: var(--zehn-color-text1) !important;
-  text-transform: uppercase !important;
   border-radius: var(--zehn-size-radius-none) !important;
-  border: var(--zehn-size-focusbar) dashed var(--zehn-color-focusbar) !important;
+  border: var(--zehn-size-drag) dashed var(--zehn-color-drag) !important;
   margin: 0px !important;
-  padding: 0px var(--zehn-size-padding-xs) !important;
+  padding: var(--zehn-size-padding-md) !important;
   font-weight: var(--zehn-weight-normal) !important;
   font-size: var(--zehn-size-14) !important;
   overflow: hidden !important;
@@ -459,6 +458,7 @@
   box-sizing: border-box !important;
   height: 100% !important;
   align-content: center;
+  text-transform: none !important;
 }
 
 // INITIAL MESSAGE DISMISS
@@ -520,6 +520,11 @@
   box-sizing: content-box !important;
   transition: none !important;
   background: transparent !important;
+
+  // DROP GHOST
+  &.dropGhost {
+    opacity: 0.5 !important;
+  }
 
   &:is(:hover, :active) {
     background: transparent !important;
