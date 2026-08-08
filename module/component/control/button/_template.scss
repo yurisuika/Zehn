@@ -1,6 +1,6 @@
 // BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin base($style, $icon, $icon-size, $other, $transition) {
+@mixin base($style, $icon, $icon-size, $text, $other, $transition) {
   appearance: unset !important;
   box-sizing: border-box !important;
   display: flex !important;
@@ -39,11 +39,23 @@
   outline-style: solid !important;
   outline-offset: var(--zehn-size-button-#{$style}-offset) !important;
 
+  @if $text != null {
+    #{$text} {
+
+      font-weight: inherit !important;
+      font-size: inherit !important;
+      line-height: inherit !important;
+
+      color: inherit !important;
+    }
+  }
+
   @if $other != null {
     #{$other} {
       overflow: visible !important;
       white-space: wrap !important;
 
+      font-weight: var(--zehn-weight-normal) !important;
       font-size: var(--zehn-size-button-text-other) !important;
       line-height: var(--zehn-size-button-line-other) !important;
 
@@ -253,22 +265,22 @@
 
 // PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@mixin preset-fixed($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $transition: none, $style: "app") {
-  @include base($style, $icon, $icon-size, $other, $transition);
+@mixin preset-fixed($height, $width, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $text: null, $other: null, $transition: none, $style: "app") {
+  @include base($style, $icon, $icon-size, $text, $other, $transition);
   @include size-fixed($height, $width, $padding);
   @include shape($shape, $style);
   @include look($selected, $disabled, $other, $style);
 }
 
-@mixin preset-inline($height, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $transition: none, $style: "app") {
-  @include base($style, $icon, $icon-size, $other, $transition);
+@mixin preset-inline($height, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $text: null, $other: null, $transition: none, $style: "app") {
+  @include base($style, $icon, $icon-size, $text, $other, $transition);
   @include size-inline($height, $padding);
   @include shape($shape, $style);
   @include look($selected, $disabled, $other, $style);
 }
 
-@mixin preset-dynamic($height, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $other: null, $transition: none, $style: "app") {
-  @include base($style, $icon, $icon-size, $other, $transition);
+@mixin preset-dynamic($height, $disabled: ":disabled", $selected: null, $shape: null, $padding: null, $icon: "svg", $icon-size: var(--zehn-size-icon-md), $text: null, $other: null, $transition: none, $style: "app") {
+  @include base($style, $icon, $icon-size, $text, $other, $transition);
   @include size-dynamic($height, $padding);
   @include shape($shape, $style);
   @include look($selected, $disabled, $other, $style);

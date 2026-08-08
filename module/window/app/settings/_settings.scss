@@ -371,6 +371,7 @@
 
 // FIELD
 .eKmEXJCm_lgme24Fp_HWt {
+  transform-origin: center !important;
   transform: none !important;
   display: flex !important;
   flex-direction: column !important;
@@ -383,20 +384,37 @@
   gap: var(--zehn-size-setting-label-gap) !important;
   border-radius: var(--zehn-size-radius-none) !important;
   --field-row-children-spacing: var(--zehn-size-setting-field-gap);
+  --top-margin: var(--zehn-size-setting-group-gap);
+  --padding: 0px 0px 0px calc(var(--indent-level) * var(--zehn-size-setting-indent));
 
   // BACKGROUND
   &._2CCdODv0vfzOMrEBUzZwfI {
     background: transparent !important;
   }
 
+  // REORDERABLE LIST ITEM
+  &.ZO8-rw4LQYwBdjFKN0_iw {
+    --top-margin: 0px;
+    --padding: var(--zehn-size-list-entry-padding);
+    background: var(--zehn-color-list-background) !important;
+
+    &:hover {
+      background: var(--zehn-color-list-background-hover) !important;
+    }
+
+    &:active {
+      background: var(--zehn-color-list-background-hover) !important;
+    }
+  }
+
   // COMPACT PADDING
   &._3hgIZByMuZIEiFspMRGFBw {
-    padding: 0px !important;
+    padding: var(--padding) !important;
   }
 
   // STANDARD PADDING
   &.xIITXDcM70faUNqssgUyx {
-    padding: 0px !important;
+    padding: var(--padding) !important;
   }
 
   // EXTRA PADDING ON CHILDREN BELOW
@@ -428,16 +446,29 @@
     }
   }
 
+  // BINDING FROM PARENT SET (ITALIC ORIGINALLY)
+  &._3bxTF8J2ciLe8fOKbgZvm6 {
+    color: var(--zehn-color-text-label) !important;
+    font-style: normal !important;
+    background: transparent !important;
+  }
+
+  // SELECTED
+  &._3HlFdzSugz6fcC7sEZOwT9 {}
+
+  // CLICKABLE
+  &._2HuzvKQ2QMUJ-JJOeApaF1 {}
+
   // HIGHLIGHT ON FOCUS
   &._2HFrmMgB38Ike5w4rVxzEX {}
 
   // ADD MARGIN IF NOT AT END
   &:not(:first-child) {
-    margin-top: var(--zehn-size-setting-group-gap) !important;
+    margin-top: var(--top-margin) !important;
   }
 }
 
-// FIELD LEFT COLUMN (chANGED TO TOP ROW)
+// FIELD LEFT COLUMN (CHANGED TO TOP ROW)
 ._2tALpM7z8naXJ35Pp5fNAG {
   align-self: flex-start !important;
   flex: 0 !important;
@@ -471,6 +502,11 @@
     flex-wrap: wrap !important;
     position: relative !important;
   }
+}
+
+// AFTER LABEL ROW (FOUND IN CONTROLLER SETTINGS)
+._2VcTlXFC64Jtg9gvtT6cmY+._1aw7cA3mAZfWt8idAlVJWi {
+  margin-top: var(--zehn-size-setting-label-gap) !important;
 }
 
 // LABEL ROW (CHANGED TO COLUMN AS IN W10)
@@ -549,12 +585,17 @@
       --icon: var(--zehn-icon-volume-3);
     }
 
-    &:has(rect) {
+    &:has(rect[transform="rotate(-46.9546 0.728821 9.47668)"]) {
       --icon: var(--zehn-icon-volume-mute);
     }
 
     &:has([d="M31.5,9.6c-0.3-0.3-0.7-0.6-1.1-1V8.4c0,0,0-0.6-0.6-1.1s-3.9-1.7-5.1-1.7c-0.7,0-0.9,0.2-1.2,0.4c-0.2,0.1-0.3,0.2-0.5,0.2  H12.9c-0.2,0-0.4-0.1-0.5-0.2c-0.2-0.2-0.5-0.4-1.2-0.4c-1.1,0-4.5,1.1-5.1,1.7S5.6,8.4,5.6,8.4v0.1c-0.4,0.3-0.8,0.7-1.1,1  C3.4,10.7,0,20.2,0,25.3s3.4,5.6,3.4,5.6c0.9,0,2.3-1.8,3.7-3.5c1.2-1.5,2.3-3,3.1-3.2c1.7-0.6,14.1-0.6,15.8,0  c0.8,0.3,1.9,1.7,3.1,3.2c1.4,1.7,2.8,3.5,3.7,3.5c0,0,3.4-0.6,3.4-5.6S32.6,10.7,31.5,9.6z M8.4,14.6c-1.2,0-2.2-1-2.2-2.2  s1-2.2,2.2-2.2s2.2,1,2.2,2.2S9.7,14.6,8.4,14.6z M15.8,18.8c0,0.3-0.3,0.6-0.6,0.6h-0.8v0.8c0,0.3-0.3,0.6-0.6,0.6h-1.1  c-0.3,0-0.6-0.3-0.6-0.6v-0.8h-0.8c-0.3,0-0.6-0.3-0.6-0.6v-1.1c0-0.3,0.3-0.6,0.6-0.6h0.8v-0.8c0-0.3,0.3-0.6,0.6-0.6h1.1  c0.3,0,0.6,0.3,0.6,0.6v0.8h0.8c0.3,0,0.6,0.3,0.6,0.6V18.8z M27.6,8.7c0.8,0,1.4,0.6,1.4,1.4s-0.6,1.4-1.4,1.4s-1.4-0.6-1.4-1.4  S26.8,8.7,27.6,8.7z M23.1,20.2c-1.2,0-2.2-1-2.2-2.2s1-2.2,2.2-2.2s2.2,1,2.2,2.2S24.3,20.2,23.1,20.2z M25,14.1  c-0.8,0-1.4-0.6-1.4-1.4c0-0.8,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4C26.4,13.4,25.8,14.1,25,14.1z M27.6,16.6c-0.8,0-1.4-0.6-1.4-1.4  s0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4S28.3,16.6,27.6,16.6z M30.1,14.1c-0.8,0-1.4-0.6-1.4-1.4c0-0.8,0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4  C31.5,13.4,30.9,14.1,30.1,14.1z"]) {
       --icon: var(--zehn-icon-gamepad);
+    }
+
+    // ACTIONSET
+    &:has([d="M12 12V32H32V12H12ZM28 24H24V28H20V24H16V20H20V16H24V20H28V24Z"]) {
+      --icon: var(--zehn-icon-actionset);
     }
 
     // RUMBLE

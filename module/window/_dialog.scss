@@ -3,6 +3,8 @@
 // TRANSITION
 .DialogContentTransition {
   background: transparent !important;
+  width: auto !important;
+  max-width: 100% !important;
 }
 
 @media (prefers-contrast: more) {
@@ -94,16 +96,23 @@
   padding-top: var(--zehn-size-titlebar) !important;
 }
 
+// CONTROLLER SETTINGS
 .QsvsRVwbsApgKt1MhM0fz.l25AfossKXBOZGYoty0tM .DialogContent {
   padding-top: 0px !important;
 
+  // MODAL SETTINGS
+  &._16sYNwqxz6giarbVaRUl7R.GenericConfirmDialog {
+    padding-top: 0px !important;
+  }
+
+  &:not(:has(.DialogContent, ._2oua5ZJCOVQf0Vwgk7teo)) {
+    padding-top: 0px !important;
+  }
+
+  // DOUBLE DIALOG (SUCH AS THE SETTINGS THAT HAS ANOTHER INSIDE IT, AND WE DON'T WANT PADDING ABOVE THE PAGELIST)
   .DialogContent {
     padding-top: var(--zehn-size-titlebar) !important;
   }
-}
-
-.QsvsRVwbsApgKt1MhM0fz.l25AfossKXBOZGYoty0tM .DialogContent:not(:has(.DialogContent, ._2oua5ZJCOVQf0Vwgk7teo)) {
-  padding-top: var(--zehn-size-titlebar) !important;
 }
 
 // NOTES WITH PAGELIST - OVERLAY
@@ -204,8 +213,8 @@
   padding-top: 0px !important;
 }
 
-// FORM AFTER INNER APPLY PADDING HERE
-.DialogContent_InnerWidth>form {
+// FORM AFTER INNER APPLY PADDING HERE (NOT CONTROLLER SETTINGS MODAL)
+.DialogContent_InnerWidth:not(._2ywySGDASDCC43aPuicxHt)>form {
   gap: var(--zehn-size-dialog-gap) !important;
   display: flex !important;
   flex-shrink: 0 !important;
@@ -219,7 +228,35 @@
   padding: 0px !important;
 }
 
-.DialogContent_InnerWidth>form>.Panel {
+// GIVE DIALOG PADDING IF AFTER A HEADER (SUCH AS CONTROLLER SETTINGS MODAL SETTINGS)
+.DialogContent_InnerWidth._2ywySGDASDCC43aPuicxHt>form>.DialogHeader~div,
+.DialogContent_InnerWidth._2ywySGDASDCC43aPuicxHt>form>.DialogHeader~.DialogBody {
+  padding: var(--zehn-size-dialog-padding) !important;
+
+  &:not(:last-child) {
+    padding-bottom: 0px !important;
+  }
+
+  &:not(:first-child, :nth-child(2)) {
+    padding-top: 0px !important;
+  }
+
+  // SUCH AS RENAME MODAL IN CONTROLLER SETTINGS
+  &:empty {
+    padding: 0px !important;
+  }
+}
+
+.DialogContent_InnerWidth._2ywySGDASDCC43aPuicxHt>form>.DialogHeader~.DialogFooter {
+  padding: var(--zehn-size-dialog-padding) !important;
+
+  &:is(:last-child) {
+    padding: var(--zehn-size-dialog-padding) !important;
+  }
+}
+
+// ??? (NOT CONTROLLER SETTINGS)
+.DialogContent_InnerWidth:not(._2ywySGDASDCC43aPuicxHt)>form>.Panel {
   gap: var(--zehn-size-dialog-gap) !important;
   display: flex !important;
   flex-direction: column !important;
@@ -237,6 +274,24 @@
 
 
 // CONTROLLER INNER PADDING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// ENSURE DIVS THAT ARE NOT CHILDREN OF DIALOGCONTENT ARE PADDED (SUCH AS VIRUTAL MENUS)
+._3mgb-3_dHk3POEOVOh0Dvp ._2ywySGDASDCC43aPuicxHt .DialogHeader~div,
+._16sYNwqxz6giarbVaRUl7R ._2ywySGDASDCC43aPuicxHt .DialogHeader~.DialogBody {
+  padding: var(--zehn-size-dialog-padding) !important;
+  gap: 0px !important;
+
+  &:not(:last-child) {
+    padding-bottom: 0px !important;
+  }
+}
+
+// ADD TITLEBAR HEIGHT FOR MODAL SETTINGS AS PAGE TITLE IS MOVED INTO TITLEBAR HERE
+._16sYNwqxz6giarbVaRUl7R.GenericConfirmDialog ._2ywySGDASDCC43aPuicxHt .DialogHeader~.DialogBody {
+  margin-top: var(--zehn-size-titlebar) !important;
+  overflow-y: auto !important;
+}
 
 // // HEADER
 // ._2ywySGDASDCC43aPuicxHt.DialogContent_InnerWidth>.DialogHeader {
@@ -332,6 +387,7 @@
 }
 
 // HEADER NOT ON SETTINGS PAGE - MAKE IT GO IN THE TITLEBAR
+._16sYNwqxz6giarbVaRUl7R.DialogContent.GenericConfirmDialog .DialogHeader,
 .MillenniumErrorBoundary>h1,
 .Players .DialogHeader,
 .OverlayServerBrowser .DialogHeader,
@@ -607,7 +663,6 @@
   margin: 0px !important;
 }
 
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -684,6 +739,11 @@
   margin-top: var(--zehn-size-setting-section-gap) !important;
 }
 
+// NOT AFTER A HEADER (SUCH AS CALLIBRATION OUTPUT SETTINGS)
+.DialogHeader+.DialogControlsSection {
+  margin-top: 0px !important;
+}
+
 // CONTROLS SUBSECTIONS 
 .DialogContent .DialogControlsSection>.Panel {
   max-width: 100% !important;
@@ -694,9 +754,11 @@
   display: none !important;
 }
 
-// LIMIT CONTROL SECTION WIDTH FOR SETTINGS AND CHAT SETTINGS
+// LIMIT CONTROL SECTION WIDTH FOR SETTINGS / CHAT SETTINGS / CONTROLLER SETTINGS
 .ModalDialogPopup:has(.PageListColumn) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>*,
-.ModalDialogPopup:has(.xSTLmzylFJdIfak7ZdhuA) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>* {
+.ModalDialogPopup:has(.xSTLmzylFJdIfak7ZdhuA) .DialogContentTransition .DialogContent_InnerWidth .DialogBody>*,
+._3mgb-3_dHk3POEOVOh0Dvp ._2ywySGDASDCC43aPuicxHt .DialogHeader,
+._3mgb-3_dHk3POEOVOh0Dvp ._2ywySGDASDCC43aPuicxHt .DialogHeader~div {
   max-width: var(--zehn-size-setting-content) !important;
   min-width: unset !important;
   // flex-wrap: wrap !important;
@@ -804,10 +866,10 @@
 // FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .DialogFooter {
-  gap: var(--zehn-size-spacing-md) !important;
-  color: var(--zehn-color-text1) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  color: var(--zehn-color-text-body) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  font-size: var(--zehn-size-14) !important;
+  font-size: var(--zehn-size-text-body) !important;
   margin: auto 0px 0px 0px !important;
   padding: 0px !important;
 }
