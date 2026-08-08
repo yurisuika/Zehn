@@ -214,7 +214,7 @@ Reveal.addRevealClass('.friendsTabButtonsContainer', [
   '.addFriendButton' // ADD
 ]);
 
-Reveal.revealInner('.friendlist');
+Reveal.revealInner('.friendListHeaderContainer');
 
 Reveal.addRevealClass('.FriendsListContent', [
   '.friendGroup>.groupName', // GAME GROUP

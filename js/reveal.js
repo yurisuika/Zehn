@@ -189,10 +189,6 @@ function reveal(container, revealed) {
       const ripple = spawnRipple(t, x, y);
 
       container.__activeRipple = ripple;
-
-      activeRipple = ripple;
-      activeRippleTarget = t;
-
     }, { passive: true });
 
     const speedUp = () => {

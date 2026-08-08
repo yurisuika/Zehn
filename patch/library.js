@@ -336,6 +336,12 @@ Zehn.createAdjacentElement('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m
 
 Zehn.createAdjacentElement('._1UgM1Pm8SbTWX7_2f-crGt', '.MCa4RMSvWJwwWjcZP2wTT', ['.zehnSeparator'], false);
 
+/* WRAP GLYPH IMG FOR ----------------------------------------------------------------------------------------------- */
+
+Zehn.createContainer('.ModalDialogPopup', '[src^="/steaminputglyphs/"]', ['.zehnGlyphWrapper']);
+
+Zehn.createContainer('._1mfQu39T7gxcr0KSHso6_A', '[src^="/steaminputglyphs/"]', ['.zehnGlyphWrapper']);
+
 
 
 
@@ -558,13 +564,13 @@ Reveal.revealSelf('.aqvbkhC1ejt4s8QvWA-c5');
 
 /* REVEAL CONTROLLER SETTINGS CONTEXT ------------------------------------------------------------------------------- */
 
-Reveal.addRevealClass('.uWT-cMCXkxiyxcSs9UA-0', [
+Reveal.addRevealClass('.uWT-cMCXkxiyxcSs9UA-0 .oZw50c4oJ6-r0HP8UWv25', [
   '._34o03-8cUc3fQX1u650c0L.contextMenuItem:not(.disabled)' // CONTEXT ENTRY
 ], [
   'zehnRevealRipple'
 ]);
 
-Reveal.revealSelf('._34o03-8cUc3fQX1u650c0L.contextMenuItem.zehnReveal');
+Reveal.revealSelf('._34o03-8cUc3fQX1u650c0L.contextMenuItem:not(.disabled)');
 
 
 
