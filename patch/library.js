@@ -251,6 +251,36 @@ Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', ['.title-area
   target.style.display = `none`;
 });
 
+Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', (root, millennium_settings) => {
+  const ch = new BroadcastChannel('millennium-settings-sync');
+
+  ch.onmessage = (event) => {
+    const { type, style } = event.data || {};
+    if (type !== 'APPLY_STYLE') return;
+
+    Object.assign(millennium_settings.style, style);
+  };
+});
+
+Zehn.findRootsAndTargets('.Steam_Root_Menu', '._2EstNjFIIZm_WUSKm5Wt7n .contextMenuItem:nth-of-type(7)', (root, millennium_entry) => {
+  const ch = new BroadcastChannel('millennium-settings-sync');
+
+  document.addEventListener('click', (e) => {
+    if (e.target === millennium_entry || millennium_entry.contains(e.target)) {
+        ch.postMessage({
+        type: 'APPLY_STYLE',
+        style: { display: 'flex' }
+      });
+
+      console.log(Date.now());
+    }
+  });
+});
+
+
+document.addEventListener('click', (e) => {
+    if (e.target !== millennium_entry || !millennium_entry.contains(e.target)) return;});
+
 /* MOVE OVERLAY BUTTONS --------------------------------------------------------------------------------------------- */
 
 Zehn.movePrepend('._3b_pllMxcr_an1aQ5goWvB', '.fi6UDkxJq66MLo2z9wabQ', [
