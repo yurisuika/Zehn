@@ -61,13 +61,19 @@ Zehn.toggleClassWithPresence('.QsvsRVwbsApgKt1MhM0fz', '._2Dd4T78PcCTUVgOtDGFY5j
 /* TOGGLE ROOT MENU ------------------------------------------------------------------------------------------------- */
 
 Zehn.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', ['#zehnToggleNavigation', '.zehnButton'], (root, target, button) => {
-  const btnNavigation = document.getElementById('zehnToggleNavigation');
-  if (btnNavigation) {
-    const container = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
-    container.classList.toggle('zehnMenuOpened', !btnNavigation.classList.contains('zehnToggled'));
-    btnNavigation.classList.toggle('zehnToggled');
-  }
+  const rootMenus = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
+  rootMenus.classList.toggle('zehnMenuOpened', !button.classList.contains('zehnToggled'));
+  button.classList.toggle('zehnToggled');
 }, false);
+
+Zehn.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '._1rDh5rXSFZJOqCa4UpnI4z', (root, target) => {
+  target.addEventListener('click', (e) => {
+    const rootMenus = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
+    rootMenus.classList.contains('zehnMenuOpened') && rootMenus.classList.remove('zehnMenuOpened');
+    const btnNavigation = document.getElementById('zehnToggleNavigation');
+    btnNavigation.classList.contains('zehnToggled') && btnNavigation.classList.remove('zehnToggled');
+  });
+});
 
 /* TOGGLE LIBRARY SEARCH SECTION ------------------------------------------------------------------------------------ */
 
@@ -271,15 +277,9 @@ Zehn.findRootsAndTargets('.Steam_Root_Menu', '._2EstNjFIIZm_WUSKm5Wt7n .contextM
         type: 'APPLY_STYLE',
         style: { display: 'flex' }
       });
-
-      console.log(Date.now());
     }
   });
 });
-
-
-document.addEventListener('click', (e) => {
-    if (e.target !== millennium_entry || !millennium_entry.contains(e.target)) return;});
 
 /* MOVE OVERLAY BUTTONS --------------------------------------------------------------------------------------------- */
 
