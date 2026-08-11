@@ -40089,6 +40089,8 @@ input[type=color]::-webkit-color-swatch {
 .ChatMessageInvite.TradeOfferInvite,
 .ChatMessageInvite.GroupAlreadyJoined,
 .ChatMessageInvite.Inviter {
+  container-name: chat-invite;
+  container-type: inline-size;
   flex-wrap: nowrap !important;
   display: flex !important;
   filter: none !important;
@@ -40132,7 +40134,7 @@ input[type=color]::-webkit-color-swatch {
   background: transparent !important;
   width: auto !important;
   align-self: center !important;
-  min-width: 0px !important;
+  min-width: fit-content !important;
   max-width: 160px !important;
   padding: 0px !important;
 }
@@ -40162,6 +40164,7 @@ input[type=color]::-webkit-color-swatch {
   display: flex !important;
   flex-direction: column !important;
   align-self: center !important;
+  min-width: 0px !important;
 }
 
 .gameInviteMsg .centerBlock,
@@ -40179,12 +40182,12 @@ input[type=color]::-webkit-color-swatch {
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   line-height: var(--zehn-size-16) !important;
-  min-width: 160px !important;
+  min-width: 0px !important;
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
   overflow: hidden !important;
   min-width: 0px !important;
-  flex: 2 !important;
+  flex: 1 !important;
 }
 
 .ChatMessageInvite .closeButton .SVGIcon_Button {
@@ -40192,6 +40195,7 @@ input[type=color]::-webkit-color-swatch {
 }
 
 .ChatMessageInvite .inviteURLContainer {
+  display: block !important;
   margin: 0px !important;
   padding: var(--zehn-size-embed-inset-padding) !important;
   background: var(--zehn-color-embed-inset) !important;
@@ -40251,6 +40255,12 @@ input[type=color]::-webkit-color-swatch {
   margin: 0px !important;
 }
 
+@container chat-invite (width < 512px) {
+  .rightInviteContainer.rightInvite_Horizontal .DialogButton,
+  .rightInviteContainer.rightInvite_Horizontal .inviteButtonJoinChat {
+    display: none !important;
+  }
+}
 .Invite_ExpireTime,
 .ChatMessageInvite .invitedTimeLabel {
   color: var(--zehn-color-text4) !important;
@@ -40457,7 +40467,7 @@ input[type=color]::-webkit-color-swatch {
   filter: none !important;
   padding: 0px !important;
   margin: 0px !important;
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   background-color: transparent !important;
   max-height: 160px !important;
   max-width: 160px !important;
@@ -40466,7 +40476,7 @@ input[type=color]::-webkit-color-swatch {
 
 .ChatMessageOpenGraph_Image {
   background-color: var(--zehn-color-placeholder) !important;
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   max-height: 100% !important;
   max-width: 100% !important;
 }
@@ -40607,7 +40617,7 @@ input[type=color]::-webkit-color-swatch {
 .ChatLargeImageContainer {
   padding: 0px !important;
   margin: 0px !important;
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   background-color: transparent !important;
   max-height: 160px !important;
   max-width: 160px !important;
@@ -40615,7 +40625,7 @@ input[type=color]::-webkit-color-swatch {
 }
 
 .ChatLargeImageContainer_Image {
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   max-height: 100% !important;
   max-width: 100% !important;
 }
@@ -40667,7 +40677,7 @@ input[type=color]::-webkit-color-swatch {
 }
 
 .txeUZToUSaBzF1sLktQmY {
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   background: var(--zehn-color-placeholder) !important;
 }
 
@@ -40930,7 +40940,7 @@ input[type=color]::-webkit-color-swatch {
 
 ._2l4HAzmUYke6YMV17uVUZt {
   margin: 0px !important;
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   background-color: var(--zehn-color-placeholder) !important;
   border: none !important;
 }
@@ -40942,7 +40952,7 @@ input[type=color]::-webkit-color-swatch {
 }
 
 ._2l4HAzmUYke6YMV17uVUZt .AJ2FfAjCY6ZGrE7wVemEp > img {
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   background-color: transparent !important;
   margin: 0px !important;
   min-height: var(--video-height) !important;
@@ -41006,13 +41016,13 @@ input[type=color]::-webkit-color-swatch {
 
 .AKIc2VEGWNSVbRtU2jsps {
   margin: 0px !important;
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   background-color: var(--zehn-color-placeholder) !important;
   border: none !important;
 }
 
 ._3kZY3R-VyNo4Ekx1nHre1J {
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
 }
 
 ._1FRLI2bl5lQd1WTvywZUl0 {
@@ -41425,6 +41435,10 @@ input[type=color]::-webkit-color-swatch {
   display: block !important;
   max-width: 100% !important;
   max-height: unset !important;
+}
+
+.BBCodeResizableElement {
+  border-radius: var(--zehn-size-embed-content-radius) !important;
 }
 
 .chatVideoContainer > .Panel {
@@ -64388,7 +64402,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .chatRoomGroupHeader .broadcastInfoContainer .thumbnail .thumbnailImg {
-  border-radius: var(--zehn-size-embed-image-radius) !important;
+  border-radius: var(--zehn-size-embed-content-radius) !important;
   position: absolute !important;
   opacity: 0.5 !important;
   inset: var(--zehn-size-spacing-xxs) !important;
