@@ -13,6 +13,8 @@
 .ChatMessageInvite.TradeOfferInvite,
 .ChatMessageInvite.GroupAlreadyJoined,
 .ChatMessageInvite.Inviter {
+  container-name: chat-invite;
+  container-type: inline-size;
   flex-wrap: nowrap !important;
   display: flex !important;
   filter: none !important;
@@ -46,7 +48,7 @@
   background: transparent !important;
   width: auto !important;
   align-self: center !important;
-  min-width: 0px !important;
+  min-width: fit-content !important;
   max-width: 160px !important;
   padding: 0px !important;
 }
@@ -77,6 +79,7 @@
   display: flex !important;
   flex-direction: column !important;
   align-self: center !important;
+  min-width: 0px !important;
 }
 
 // CENTER BLOCK
@@ -96,12 +99,12 @@
   font-size: var(--zehn-size-12) !important;
   font-weight: var(--zehn-weight-normal) !important;
   line-height: var(--zehn-size-16) !important;
-  min-width: 160px !important;
+  min-width: 0px !important;
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
   overflow: hidden !important;
   min-width: 0px !important;
-  flex: 2 !important;
+  flex: 1 !important;
 }
 
 // CLOSE BUTTON
@@ -124,6 +127,7 @@
 
 // INVITE URL
 .ChatMessageInvite .inviteURLContainer {
+  display: block !important;
   margin: 0px !important;
   padding: var(--zehn-size-embed-inset-padding) !important;
   background: var(--zehn-color-embed-inset) !important;
@@ -182,6 +186,13 @@
   min-width: 0px !important;
   flex: 1 !important;
   margin: 0px !important;
+}
+
+@container chat-invite (width < 512px) {
+  .rightInviteContainer.rightInvite_Horizontal .DialogButton,
+  .rightInviteContainer.rightInvite_Horizontal .inviteButtonJoinChat {
+    display: none !important;
+  }
 }
 
 // EXPIRE TIME

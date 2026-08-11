@@ -2,7 +2,7 @@
 
 // DEFAULT MASK WAY THE HELL OFF SO WE DON'T SEE IT WHEN IDLE
 .zehnReveal {
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   mask-position: -9001px -9001px;
   mask-size: 0px 0px;
@@ -11,6 +11,7 @@
   --mSize: 0px;
 }
 
+// ONLY SHOW REVEAL ON HOVER
 .zehnReveal:hover::before {
   background-color: var(--zehn-color-reveal);
 }
@@ -28,10 +29,14 @@
   mask-repeat: no-repeat;
   opacity: var(--zehn-transparency-effects-reveal);
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
   mask-image: radial-gradient(circle closest-side, white, transparent);
   mask-position: var(--mX) var(--mY);
   mask-size: var(--mSize) var(--mSize);
+}
+
+.zehnReveal.zehnRevealBelow::before {
+  z-index: -1;
 }
 
 .zehnReveal.zehnRevealBackgroundOnly::before {
@@ -68,6 +73,12 @@
   initial-value: 0%;
 }
 
+// PREVENT OVERFLOW OF THE RIPPLE
+.zehnReveal.zehnRevealRipple {
+  overflow: hidden !important;
+}
+
+// DON'T SHOW RIPPLE IF REVEALED ELEMENT IS NOT HOVERED
 .zehnReveal:not(:hover) .zehnRipple {
   visibility: hidden !important;
 }
