@@ -1,8 +1,8 @@
-import Options from './../js/options.js';
+import OPTIONS from './../js/options.js';
 
 /* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
-Options.applyOptions();
+OPTIONS.applyOptions();
 
 
 
@@ -13,102 +13,102 @@ Options.applyOptions();
 
 
 
-import Zehn from './../js/zehn.js';
+import ZEHN from './../js/zehn.js';
 
 /* ADD USER AGENT --------------------------------------------------------------------------------------------------- */
 
-Zehn.addUserAgent();
+ZEHN.addUserAgent();
 
 /* CREATE LOCALIZED ON/OFF LABELS FOR SWITCHES ---------------------------------------------------------------------- */
 
-Zehn.createSwitchLabels();
+ZEHN.createSwitchLabels();
 
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
-Zehn.setGlyphColor();
+ZEHN.setGlyphColor();
 
 /* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
 
-Zehn.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
-Zehn.createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v');
-Zehn.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
+ZEHN.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
+ZEHN.createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v');
+ZEHN.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
 
 /* STORE HEIGHT OF HEADER ------------------------------------------------------------------------------------------- */
 
-Zehn.storeTargetHeightAsVariable('.friendsListContainer', '.friendListHeaderContainer', '--friends-header-height');
+ZEHN.storeTargetHeightAsVariable('.friendsListContainer', '.friendListHeaderContainer', '--friends-header-height');
 
 /* TOGGLE CLASSES BASED ON WHAT HEADER CONTENT IS OPEN -------------------------------------------------------------- */
 
-Zehn.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearchActive', 'zehnSearchOpened');
+ZEHN.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearchActive', 'zehnSearchOpened');
 
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
-Zehn.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
-Zehn.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
-  Zehn.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
+ZEHN.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
+ZEHN.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
+  ZEHN.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
 }, false);
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
-Zehn.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
-Zehn.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
-  Zehn.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
+ZEHN.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
+ZEHN.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+  ZEHN.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
 });
 
 /* MOVE CURRENT USER INTO VOICE CONTROLS WRAPPER -------------------------------------------------------------------- */
 
-Zehn.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
+ZEHN.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
   '.currentUserContainer' // CURRENT USER
 ]);
 
 /* MOVE SORT BY INTO GROUP HEADER ----------------------------------------------------------------------------------- */
 
-Zehn.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
+ZEHN.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
   '.friendGroup.offlineFriends .groupHeaderContainer .SortByRecent' // SORT BY BUTTON
 ]);
 
 /* WRAP ADD FRIENDS BUTTON ------------------------------------------------------------------------------------------ */
 
-Zehn.createContainer('.MultiUserChat', '.inviteAnotherFriendButton', ['.zehnAddFriendWrapper']);
+ZEHN.createContainer('.MultiUserChat', '.inviteAnotherFriendButton', ['.zehnAddFriendWrapper']);
 
 /* CREATE FRIENDS TABLIST ------------------------------------------------------------------------------------------- */
 
-Zehn.createAdjacentElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], false);
+ZEHN.createAdjacentElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], false);
 
-Zehn.findRootsAndTargets('.friendsListContainer', '.friendlist', (root, target) => {
+ZEHN.findRootsAndTargets('.friendsListContainer', '.friendlist', (root, target) => {
   target.id = 'zehnFriendsDisplayed';
 });
 
 function toggleList(root, target, button) {
-  const btnFriends = target.querySelector('.zehnFriendsTabFriends');
-  const btnChats = target.querySelector('.zehnFriendsTabChats');
-  const buttons = [btnFriends, btnChats];
+  const BTN_FRIENDS = target.querySelector('.zehnFriendsTabFriends');
+  const BTN_CHATS = target.querySelector('.zehnFriendsTabChats');
+  const BUTTONS = [BTN_FRIENDS, BTN_CHATS];
 
-  if (btnFriends && btnChats) {
-    const container = root.querySelector('.friendlist');
-    const friends = document.querySelector('.friendlistListContainer');
-    const chats = document.querySelector('.FriendsListChatSection');
-    const lists = [friends, chats];
+  if (BTN_FRIENDS && BTN_CHATS) {
+    const CONTAINER = root.querySelector('.friendlist');
+    const FRIENDS = document.querySelector('.friendlistListContainer');
+    const CHATS = document.querySelector('.FriendsListChatSection');
+    const LISTS = [FRIENDS, CHATS];
 
-    lists.forEach((list) => {
-      if (button == btnFriends) {
-        if (list && (list == friends)) {
+    LISTS.forEach((list) => {
+      if (button == BTN_FRIENDS) {
+        if (list && (list == FRIENDS)) {
           list.classList.add('zehnDisplayed');
-          container.id = 'zehnFriendsDisplayed';
+          CONTAINER.id = 'zehnFriendsDisplayed';
         } else if (list) {
           list.classList.remove('zehnDisplayed');
         }
-      } else if (button == btnChats) {
-        if (list && (list == chats)) {
+      } else if (button == BTN_CHATS) {
+        if (list && (list == CHATS)) {
           list.classList.add('zehnDisplayed');
-          container.id = 'zehnChatsDisplayed';
+          CONTAINER.id = 'zehnChatsDisplayed';
         } else if (list) {
           list.classList.remove('zehnDisplayed');
         }
       }
     });
 
-    buttons.forEach((element) => {
+    BUTTONS.forEach((element) => {
       if (element == button) {
         element.classList.add('zehnToggled');
       } else {
@@ -118,55 +118,55 @@ function toggleList(root, target, button) {
   }
 };
 
-let localFriends = await Zehn.localize(document.documentElement.lang, "Label_Friends");
-Zehn.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabFriends', 'zehnFriendsTablistFriendsOpened');
-Zehn.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabFriends', '.zehnToggled'], localFriends, toggleList);
+let localFriends = await ZEHN.localize(document.documentElement.lang, "Label_Friends");
+ZEHN.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabFriends', 'zehnFriendsTablistFriendsOpened');
+ZEHN.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabFriends', '.zehnToggled'], localFriends, toggleList);
 
-let localChats = await Zehn.localize(document.documentElement.lang, "Label_Chats");
-Zehn.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabChats', 'zehnFriendsTablistChatsOpened');
-Zehn.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localChats, toggleList);
+let localChats = await ZEHN.localize(document.documentElement.lang, "Label_Chats");
+ZEHN.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabChats', 'zehnFriendsTablistChatsOpened');
+ZEHN.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localChats, toggleList);
 
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
-Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
-Zehn.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
-  Zehn.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
+ZEHN.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
+ZEHN.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+  ZEHN.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
 });
 
 /* TOGGLE GROUP CHAT CHANNEL PAGELIST ------------------------------------------------------------------------------- */
 
-Zehn.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
-Zehn.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
-  Zehn.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
+ZEHN.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
+ZEHN.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+  ZEHN.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
 });
 
 /* TOGGLE MEMBER LIST STATUS ---------------------------------------------------------------------------------------- */
 
-Zehn.moveAppend('.MultiUserChat', '.chatRoomOptions', [
+ZEHN.moveAppend('.MultiUserChat', '.chatRoomOptions', [
   '.MemberListOption.ToggleMemberListView'
 ]);
 
 /* MOVE GROUP CHAT BROADCAST BUTTON INTO HEADER --------------------------------------------------------------------- */
 
-Zehn.movePrepend('.MultiUserChat', '.chatRoomOptions', [
+ZEHN.movePrepend('.MultiUserChat', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
 ]);
-Zehn.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
-Zehn.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
+ZEHN.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
+ZEHN.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
 
 /* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
 
-Zehn.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
+ZEHN.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
   '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // CHAT ROOM NAME
 ]);
 
 /* WRAP POPOUT SVG -------------------------------------------------------------------------------------------------- */
 
-Zehn.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
+ZEHN.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
 
 /* WRAP EMOTICON ADD SVG -------------------------------------------------------------------------------------------- */
 
-Zehn.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
+ZEHN.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
 
 
 
@@ -177,46 +177,46 @@ Zehn.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
 
 
 
-import Reveal from './../js/reveal.js';
+import REVEAL from './../js/reveal.js';
 
 /* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
 
-Reveal.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
+REVEAL.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
 ], [
   'zehnRevealRipple'
 ]);
 
-Reveal.addRevealClass('.friendsui-container ._10UNx2XXsFmsHb86RCyofu', [
+REVEAL.addRevealClass('.friendsui-container ._10UNx2XXsFmsHb86RCyofu', [
   '._2Qsf4rHzNzK6Z3UYN7tOFx' // VIDEO
 ], [
   'zehnRevealRipple'
 ]);
 
-Reveal.revealSelf('._2EstNjFIIZm_WUSKm5Wt7n ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
-Reveal.revealSelf('._10UNx2XXsFmsHb86RCyofu ._2Qsf4rHzNzK6Z3UYN7tOFx.zehnReveal');
+REVEAL.revealSelf('._2EstNjFIIZm_WUSKm5Wt7n ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+REVEAL.revealSelf('._10UNx2XXsFmsHb86RCyofu ._2Qsf4rHzNzK6Z3UYN7tOFx.zehnReveal');
 
 /* REVEAL BROADCAST CONTEXT MENU ------------------------------------------------------------------------------------ */
 
-Reveal.addRevealClass('.STV_BroadcastSettingsPanel', [
+REVEAL.addRevealClass('.STV_BroadcastSettingsPanel', [
   '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
 ], [
   'zehnRevealRipple'
 ]);
 
-Reveal.revealSelf('.STV_BroadcastSettingsPanel ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+REVEAL.revealSelf('.STV_BroadcastSettingsPanel ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 
 /* REVEAL FRIENDS --------------------------------------------------------------------------------------------------- */
 
-Reveal.addRevealClass('.friendsTabButtonsContainer', [
+REVEAL.addRevealClass('.friendsTabButtonsContainer', [
   '.searchIconButton', // SEARCH
   '.friendRequestButton', // REQUESTS
   '.addFriendButton' // ADD
 ]);
 
-Reveal.revealInner('.friendListHeaderContainer');
+REVEAL.revealInner('.friendListHeaderContainer');
 
-Reveal.addRevealClass('.FriendsListContent', [
+REVEAL.addRevealClass('.FriendsListContent', [
   '.friendGroup>.groupName', // GAME GROUP
   '.groupHeaderContainer', // FRIEND GROUP
   '.friendsListSectionTitle.chatSectionTitle', // GROUP CHATS TOGGLE
@@ -230,21 +230,21 @@ Reveal.addRevealClass('.FriendsListContent', [
   'zehnRevealRipple'
 ]);
 
-Reveal.revealSelf('.FriendsListContent .zehnReveal');
+REVEAL.revealSelf('.FriendsListContent .zehnReveal');
 
 /* REVEAL CHAT TABS ------------------------------------------------------------------------------------------------- */
 
-Reveal.addRevealClass('.titleBarContainer.ChatTabs', [
+REVEAL.addRevealClass('.titleBarContainer.ChatTabs', [
   '._3f1rJf0BU79ub9YR2KihaT' // CHAT TAB CONTAINER
 ], [
   'zehnRevealBackgroundOnly'
 ]);
 
-Reveal.revealInner('.ChatTabs');
+REVEAL.revealInner('.ChatTabs');
 
 /* REVEAL CHAT ------------------------------------------------------------------------------------------------------ */
 
-Reveal.addRevealClass('.chatRoomHeader', [
+REVEAL.addRevealClass('.chatHeader', [
   '.broadcastInfoContainer .thumbnail', // STREAM
   '.doGxCBJrGimabHm365bOV', // STREAM YULE
   '.chatRoomButton.ManageNotifications', // NOTIFICATION SETTINGS
@@ -253,11 +253,16 @@ Reveal.addRevealClass('.chatRoomHeader', [
   '.MemberListOption.ToggleMemberListView' // TOGGLE MEMBER LIST
 ]);
 
-Reveal.addRevealClass('.chatRoomGroupNavColumn', [
+REVEAL.revealInner('.chatHeader');
+
+
+/* REVEAL CHAT CHANNEL NAV ------------------------------------------------------------------------------------------ */
+
+REVEAL.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomGroupNavCollapseExpand' // CHATLIST PIN BUTTON
 ]);
 
-Reveal.addRevealClass('.chatRoomGroupNavColumn', [
+REVEAL.addRevealClass('.chatRoomGroupNavColumn', [
   '.chatRoomTextChannelsGroup>.chatRoomTextChannel', // TEXT
   '.chatRoomVoiceChannelNameContainer' // VOICE
 ], [
@@ -265,4 +270,34 @@ Reveal.addRevealClass('.chatRoomGroupNavColumn', [
   'zehnRevealRipple'
 ]);
 
-Reveal.revealInner('.chatWindow');
+REVEAL.revealInner('.chatRoomGroupNavColumn');
+
+/* REVEAL CHAT PANELS ----------------------------------------------------------------------------------------------- */
+
+REVEAL.addRevealClass('.chatWindow', [
+  '.chatImageContainer', // IMG EMBED
+  '.BBCodeResizableComponent', // VIDEO/YOUTUBE EMBED
+  '.ChatMessageInvite', // INVITE EMBED
+  '.ChatMessageOpenGraph', // OPENGRAPH EMBED
+  '.SteamPublishedFile', // PUBLISH FILE MEBED
+  '.CommunityBroadcastWatch', // COMMUNITY WATCH EMBED
+  '._2_QSE1Nit6wrabY5ZgDZOz', // STORE EMBED
+  '._1JZstfJ6jCBChXx0ZDwfpR', // FAILED STORE EMBED
+  '.BroadcastSection', // BROADCAST
+  '.BroadcastContainerSection', // ???
+  '.BroadcastDetailsSection' // BROADCAST DETAILS
+], [
+  'zehnRevealBorderOnly'
+]);
+
+REVEAL.revealSelf('.chatImageContainer', 300);
+REVEAL.revealSelf('.BBCodeResizableComponent', 300);
+REVEAL.revealSelf('.ChatMessageInvite', 300);
+REVEAL.revealSelf('.ChatMessageOpenGraph', 300);
+REVEAL.revealSelf('.SteamPublishedFile', 300);
+REVEAL.revealSelf('.CommunityBroadcastWatch', 300);
+REVEAL.revealSelf('._2_QSE1Nit6wrabY5ZgDZOz', 300);
+REVEAL.revealSelf('._1JZstfJ6jCBChXx0ZDwfpR', 300);
+REVEAL.revealSelf('.BroadcastSection', 300);
+REVEAL.revealSelf('.BroadcastContainerSection', 300);
+REVEAL.revealSelf('.BroadcastDetailsSection', 300);

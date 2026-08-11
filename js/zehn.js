@@ -1,4 +1,4 @@
-export const Zehn = {
+export const ZEHN = {
   addUserAgent,
   localize,
   createSwitchLabels,
@@ -17,6 +17,7 @@ export const Zehn = {
   createIconContainer,
   createTextContainer,
   createTextWrapper,
+  createWrapper,
   createContainer,
   createAdjacentElement,
   addRootClassOnToggle,
@@ -32,7 +33,7 @@ export const Zehn = {
   moveAfterAndObserve,
   removeDuplicatedElement
 };
-export default Zehn;
+export default ZEHN;
 
 function addUserAgent() {
   if (navigator.userAgent.includes('Linux')) {
@@ -45,19 +46,19 @@ function addUserAgent() {
 };
 
 function localize(langCode, langKey) {
-  const scriptEl = document.currentScript || (() => {
-    const scripts = document.getElementsByTagName('script');
-    return scripts[scripts.length - 1];
+  const SCRIPT_ELEMENT = document.currentScript || (() => {
+    const SCRIPTS = document.getElementsByTagName('script');
+    return SCRIPTS[SCRIPTS.length - 1];
   })();
-  const scriptSrc = scriptEl && scriptEl.src ? scriptEl.src : window.location.href;
-  const scriptDir = scriptSrc.replace(/\/[^/]*$/, '/');
+  const SCRIPT_SRC = SCRIPT_ELEMENT && SCRIPT_ELEMENT.src ? SCRIPT_ELEMENT.src : window.location.href;
+  const SCRIPT_DIR = SCRIPT_SRC.replace(/\/[^/]*$/, '/');
 
-  const resolveRelativeToScript = rel => new URL(rel, scriptDir).href;
+  const resolveRelativeToScript = rel => new URL(rel, SCRIPT_DIR).href;
 
   async function loadJson(relativePath) {
-    const res = await fetch(relativePath);
-    if (!res.ok) throw new Error(`Failed to load JSON...`);
-    return res.json();
+    const RESPOSNE = await fetch(relativePath);
+    if (!RESPOSNE.ok) throw new Error(`Failed to load JSON...`);
+    return RESPOSNE.json();
   }
 
   function getValue(obj, langCode, langKey) {
@@ -65,21 +66,21 @@ function localize(langCode, langKey) {
   }
 
   return (async () => {
-    const data = await loadJson(
+    const DATA = await loadJson(
       resolveRelativeToScript("./../data/localization.json")
     );
 
-    return getValue(data, langCode, langKey);
+    return getValue(DATA, langCode, langKey);
   })();
 };
 
 function createSwitchLabels() {
   async function labelPair(switchSelector) {
-    let localOn = await Zehn.localize(document.documentElement.lang, "Dialog_On");
-    let localOff = await Zehn.localize(document.documentElement.lang, "Dialog_Off");
+    let localOn = await ZEHN.localize(document.documentElement.lang, "Dialog_On");
+    let localOff = await ZEHN.localize(document.documentElement.lang, "Dialog_Off");
 
-    Zehn.createText('html', switchSelector, ['.zehnLabelOn'], localOn);
-    Zehn.createText('html', switchSelector, ['.zehnLabelOff'], localOff);
+    ZEHN.createText('html', switchSelector, ['.zehnLabelOn'], localOn);
+    ZEHN.createText('html', switchSelector, ['.zehnLabelOff'], localOff);
   }
 
   labelPair('._9Ql-oVe_j8E-vsDdyVdWo'); // GAMEPAD
@@ -88,161 +89,161 @@ function createSwitchLabels() {
 };
 
 function setGlyphColor() {
-  const lightColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-light').trim();
-  const darkColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-dark').trim();
+  const LIGHT_COLOR = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-light').trim();
+  const DARK_COLOR = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-dark').trim();
 
-  const lightActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-light').trim();
-  const darkActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-dark').trim();
+  const LIGHT_ACTIVE_COLOR = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-light').trim();
+  const DARK_ACTIVE_COLOR = getComputedStyle(document.documentElement).getPropertyValue('--zehn-color-scrollbar-glyph-active-dark').trim();
 
-  const downLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-  const leftLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-  const rightLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-  const upLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-light' style='fill:${lightColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const DOWN_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-light' style='fill:${LIGHT_COLOR}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const LEFT_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-light' style='fill:${LIGHT_COLOR}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const RIGHT_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-light' style='fill:${LIGHT_COLOR}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const UP_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-light' style='fill:${LIGHT_COLOR}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-  const downActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-  const leftActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-  const rightActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-  const upActiveLight = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-light' style='fill:${lightActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const DOWN_ACTIVE_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-light' style='fill:${LIGHT_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const LEFT_ACTIVE_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-light' style='fill:${LIGHT_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const RIGHT_ACTIVE_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-light' style='fill:${LIGHT_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const UP_ACTIVE_LIGHT = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-light' style='fill:${LIGHT_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-  const downDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-  const leftDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-  const rightDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-  const upDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-dark' style='fill:${darkColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const DOWN_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-dark' style='fill:${DARK_COLOR}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const LEFT_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-dark' style='fill:${DARK_COLOR}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const RIGHT_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-dark' style='fill:${DARK_COLOR}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const UP_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-dark' style='fill:${DARK_COLOR}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-  const downActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
-  const leftActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
-  const rightActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
-  const upActiveDark = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-dark' style='fill:${darkActiveColor}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
+  const DOWN_ACTIVE_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-down-active-dark' style='fill:${DARK_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 8 12.945 L 0.1953 5.1403 L 1.1406 4.195 L 8 11.0544 L 14.8594 4.195 L 15.8047 5.1403 Z'/></svg>`;
+  const LEFT_ACTIVE_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-left-active-dark' style='fill:${DARK_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 10.8594 15.8044 L 3.0547 7.9997 L 10.8594 0.195 L 11.8047 1.1403 L 4.9453 7.9997 L 11.8047 14.8591 Z'/></svg>`;
+  const RIGHT_ACTIVE_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-right-active-dark' style='fill:${DARK_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 5.1406 15.8044 L 4.1953 14.8591 L 11.0547 7.9997 L 4.1953 1.1403 L 5.1406 0.195 L 12.9453 7.9997 Z'/></svg>`;
+  const UP_ACTIVE_DARK = `<svg xmlns='http://www.w3.org/2000/svg' id='icon-scroll-up-active-dark' style='fill:${DARK_ACTIVE_COLOR}' viewBox='0 0 16 16'><path d='M 14.8594 11.805 L 8 4.9456 L 1.1406 11.805 L 0.1953 10.8597 L 8 3.055 l 7.8047 7.8047 Z'/></svg>`;
 
-  const css = `:root {
-  --zehn-icon-scroll-down-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downLight)}");
-  --zehn-icon-scroll-left-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftLight)}");
-  --zehn-icon-scroll-right-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightLight)}");
-  --zehn-icon-scroll-up-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upLight)}");
+  const CSS = `:root {
+  --zehn-icon-scroll-down-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(DOWN_LIGHT)}");
+  --zehn-icon-scroll-left-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(LEFT_LIGHT)}");
+  --zehn-icon-scroll-right-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(RIGHT_LIGHT)}");
+  --zehn-icon-scroll-up-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(UP_LIGHT)}");
 
-  --zehn-icon-scroll-down-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveLight)}");
-  --zehn-icon-scroll-left-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveLight)}");
-  --zehn-icon-scroll-right-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveLight)}");
-  --zehn-icon-scroll-up-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveLight)}");
+  --zehn-icon-scroll-down-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(DOWN_ACTIVE_LIGHT)}");
+  --zehn-icon-scroll-left-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(LEFT_ACTIVE_LIGHT)}");
+  --zehn-icon-scroll-right-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(RIGHT_ACTIVE_LIGHT)}");
+  --zehn-icon-scroll-up-active-light: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(UP_ACTIVE_LIGHT)}");
       
-  --zehn-icon-scroll-down-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downDark)}");
-  --zehn-icon-scroll-left-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftDark)}");
-  --zehn-icon-scroll-right-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightDark)}");
-  --zehn-icon-scroll-up-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upDark)}");
+  --zehn-icon-scroll-down-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(DOWN_DARK)}");
+  --zehn-icon-scroll-left-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(LEFT_DARK)}");
+  --zehn-icon-scroll-right-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(RIGHT_DARK)}");
+  --zehn-icon-scroll-up-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(UP_DARK)}");
 
-  --zehn-icon-scroll-down-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(downActiveDark)}");
-  --zehn-icon-scroll-left-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(leftActiveDark)}");
-  --zehn-icon-scroll-right-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(rightActiveDark)}");
-  --zehn-icon-scroll-up-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(upActiveDark)}");
+  --zehn-icon-scroll-down-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(DOWN_ACTIVE_DARK)}");
+  --zehn-icon-scroll-left-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(LEFT_ACTIVE_DARK)}");
+  --zehn-icon-scroll-right-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(RIGHT_ACTIVE_DARK)}");
+  --zehn-icon-scroll-up-active-dark: url("data:image/svg+xml;charset=utf-8,${encodeURIComponent(UP_ACTIVE_DARK)}");
 }`;
 
-  const style = document.createElement('style');
-  style.id = 'zehnGlyphs';
-  style.textContent = css;
-  document.head.appendChild(style);
+  const STYLE = document.createElement('style');
+  STYLE.id = 'zehnGlyphs';
+  STYLE.textContent = CSS;
+  document.head.appendChild(STYLE);
 };
 
 function findRootsAndTargets(rootSelector, targetSelector, callback) {
-  const processed = new WeakSet();
-  const rootObservers = new Map();
+  const PROCESSED = new WeakSet();
+  const ROOT_OBSERVERS = new Map();
 
   function handleTarget(root, target) {
-    if (processed.has(target)) return;
-    processed.add(target);
+    if (PROCESSED.has(target)) return;
+    PROCESSED.add(target);
     try { callback(root, target); } catch (e) { console.error(e); }
   }
 
   function scanAndObserveRoot(root) {
-    if (rootObservers.has(root)) return;
+    if (ROOT_OBSERVERS.has(root)) return;
     root.querySelectorAll(targetSelector).forEach(target => handleTarget(root, target));
 
-    const rootObserver = new MutationObserver(mutations => {
-      for (const mutation of mutations) {
-        if (mutation.type === 'childList') {
-          for (const node of mutation.addedNodes) {
-            if (!(node instanceof Element)) continue;
-            if (node.matches && node.matches(targetSelector)) handleTarget(root, node);
-            if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(root, n));
+    const ROOT_OBSERVER = new MutationObserver(mutations => {
+      for (const MUTATION of mutations) {
+        if (MUTATION.type === 'childList') {
+          for (const NODE of MUTATION.addedNodes) {
+            if (!(NODE instanceof Element)) continue;
+            if (NODE.matches && NODE.matches(targetSelector)) handleTarget(root, NODE);
+            if (NODE.querySelectorAll) NODE.querySelectorAll(targetSelector).forEach(n => handleTarget(root, n));
           }
         }
       }
     });
-    rootObserver.observe(root, { childList: true, subtree: true });
-    rootObservers.set(root, rootObserver);
+    ROOT_OBSERVER.observe(root, { childList: true, subtree: true });
+    ROOT_OBSERVERS.set(root, ROOT_OBSERVER);
   }
 
   document.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
 
-  const documentObserver = new MutationObserver(mutations => {
-    for (const mutation of mutations) {
-      if (mutation.type === 'childList') {
-        for (const node of mutation.addedNodes) {
-          if (!(node instanceof Element)) continue;
-          if (node.matches && node.matches(rootSelector)) scanAndObserveRoot(node);
-          if (node.querySelectorAll) node.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
+  const DOCUMENT_OBSERVER = new MutationObserver(mutations => {
+    for (const MUTATION of mutations) {
+      if (MUTATION.type === 'childList') {
+        for (const NODE of MUTATION.addedNodes) {
+          if (!(NODE instanceof Element)) continue;
+          if (NODE.matches && NODE.matches(rootSelector)) scanAndObserveRoot(NODE);
+          if (NODE.querySelectorAll) NODE.querySelectorAll(rootSelector).forEach(scanAndObserveRoot);
         }
       }
     }
   });
-  documentObserver.observe(document.body || document, { childList: true, subtree: true });
+  DOCUMENT_OBSERVER.observe(document.body || document, { childList: true, subtree: true });
 
   return {
     disconnect() {
-      documentObserver.disconnect();
-      for (const rootObserver of rootObservers.values()) rootObserver.disconnect();
-      rootObservers.clear();
+      DOCUMENT_OBSERVER.disconnect();
+      for (const ROOT_OBSERVER of ROOT_OBSERVERS.values()) ROOT_OBSERVER.disconnect();
+      ROOT_OBSERVERS.clear();
     }
   };
 };
 
 function findTargets(root, targetSelector, callback, shouldDisconnect = true) {
-  const processed = new WeakSet();
+  const PROCESSED = new WeakSet();
 
   function handleTarget(target) {
-    if (processed.has(target)) return;
-    processed.add(target);
+    if (PROCESSED.has(target)) return;
+    PROCESSED.add(target);
     try { callback(target); } catch (e) { console.error(e); }
   }
 
   document.querySelectorAll(targetSelector).forEach(t => handleTarget(t));
 
-  const observer = new MutationObserver(mutations => {
-    for (const mutation of mutations) {
-      if (mutation.type === 'childList') {
-        for (const node of mutation.addedNodes) {
-          if (!(node instanceof Element)) continue;
-            if (node.matches && node.matches(targetSelector)) handleTarget(node);
-            if (node.querySelectorAll) node.querySelectorAll(targetSelector).forEach(n => handleTarget(n));
+  const OBSERVER = new MutationObserver(mutations => {
+    for (const MUTATION of mutations) {
+      if (MUTATION.type === 'childList') {
+        for (const NODE of MUTATION.addedNodes) {
+          if (!(NODE instanceof Element)) continue;
+            if (NODE.matches && NODE.matches(targetSelector)) handleTarget(NODE);
+            if (NODE.querySelectorAll) NODE.querySelectorAll(targetSelector).forEach(n => handleTarget(n));
         }
       }
     }
   });
-  observer.observe(root, { childList: true, subtree: true });
+  OBSERVER.observe(root, { childList: true, subtree: true });
 
-  return shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
+  return shouldDisconnect ? OBSERVER : { observer: OBSERVER, disconnect: () => OBSERVER.disconnect() };
 };
 
 function handleOnMutation(rootSelector, targetSelector, callback, options = {}) {
-  const defaults = {
+  const DEFAULTS = {
     shouldObserveTarget: false,
     shouldDisconnect: true,
     shouldAddAttributeFilter: false
   };
-  const config = { ...defaults, ...options };
+  const CONFIG = { ...DEFAULTS, ...options };
 
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     const update = () => callback(root, target);
 
     update();
 
-    const observer = new MutationObserver(update);
-    observer.observe((config.shouldObserveTarget ? target : root), {
+    const OBSERVER = new MutationObserver(update);
+    OBSERVER.observe((CONFIG.shouldObserveTarget ? target : root), {
       childList: true,
       subtree: true,
-      ...(config.shouldAddAttributeFilter ? { attributeFilter: ['class', 'id'] } : {})
+      ...(CONFIG.shouldAddAttributeFilter ? { attributeFilter: ['class', 'id'] } : {})
     });
 
-    return config.shouldDisconnect ? observer : { observer, disconnect: () => observer.disconnect() };
+    return CONFIG.shouldDisconnect ? OBSERVER : { observer: OBSERVER, disconnect: () => OBSERVER.disconnect() };
   });
 };
 
@@ -254,90 +255,90 @@ function storeTargetHeightAsVariable(rootSelector, targetSelector, variableName)
 
 function toggleClassWithPresence(rootSelector, targetSelector, presentSelector, toggleName) {
   this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-    const present = !!root.querySelector(presentSelector);
-    target.classList.toggle(toggleName, present);
+    const PRESENT = !!root.querySelector(presentSelector);
+    target.classList.toggle(toggleName, PRESENT);
   }, { shouldObserveTarget: true, shouldDisconnect: true,  shouldAddAttributeFilter: true });
 };
 
 function nameElement(element, nameSelector) {
-  const name = nameSelector.slice(1);
-  const isId = nameSelector.charAt(0) === '#';
+  const NAME = nameSelector.slice(1);
+  const IS_ID = nameSelector.charAt(0) === '#';
 
-  if (isId) {
-    element.id = name;
+  if (IS_ID) {
+    element.id = NAME;
   } else {
-    element.classList.add(name);
+    element.classList.add(NAME);
   }
 };
 
 function createSpinner(rootSelector, targetSelector) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const spinner = document.createElement('div');
-    spinner.classList.add('zehnSpinner');
+    const SPINNER = document.createElement('div');
+    SPINNER.classList.add('zehnSpinner');
 
-    const holder = document.createElement('div');
-    holder.classList.add('zehnHolder');
-    spinner.appendChild(holder);
+    const HOLDER = document.createElement('div');
+    HOLDER.classList.add('zehnHolder');
+    SPINNER.appendChild(HOLDER);
 
     for (let i = 1; i <= 6; i++) {
-      const dot = document.createElement('div');
-      dot.className = `zehnDot${i}`;
-      holder.appendChild(dot);
+      const DOT = document.createElement('div');
+      DOT.className = `zehnDot${i}`;
+      HOLDER.appendChild(DOT);
     }
 
-    target.prepend(spinner);
-    return spinner;
+    target.prepend(SPINNER);
+    return SPINNER;
   });
 };
 
 function createButton(rootSelector, targetSelector, nameSelectors, callback, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const button = document.createElement('button');
-    button.name = 'button';
-    button.onclick = () => callback(root, target, button);
+    const BUTTON = document.createElement('button');
+    BUTTON.name = 'button';
+    BUTTON.onclick = () => callback(root, target, BUTTON);
     nameSelectors.forEach((nameSelector) => {
-      this.nameElement(button, nameSelector);
+      this.nameElement(BUTTON, nameSelector);
     });
     if (shouldAppend) {
-      target.append(button);
+      target.append(BUTTON);
     } else {
-      target.prepend(button);
+      target.prepend(BUTTON);
     }
 
-    const icon = document.createElement('svg');
-    icon.classList.add(`zehnIcon`);
-    button.append(icon);
+    const ICON = document.createElement('svg');
+    ICON.classList.add(`zehnIcon`);
+    BUTTON.append(ICON);
   });
 };
 
 function createTextButton(rootSelector, targetSelector, nameSelectors, text, callback, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const button = document.createElement('button');
-    button.name = 'button';
-    button.innerHTML = text;
-    button.onclick = () => callback(root, target, button);
+    const BUTTON = document.createElement('button');
+    BUTTON.name = 'button';
+    BUTTON.innerHTML = text;
+    BUTTON.onclick = () => callback(root, target, BUTTON);
     nameSelectors.forEach((nameSelector) => {
-      this.nameElement(button, nameSelector);
+      this.nameElement(BUTTON, nameSelector);
     });
     if (shouldAppend) {
-      target.append(button);
+      target.append(BUTTON);
     } else {
-      target.prepend(button);
+      target.prepend(BUTTON);
     }
   });
 };
 
 function createText(rootSelector, targetSelector, nameSelectors, text, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const div = document.createElement('div');
-    div.innerHTML = text;
+    const DIV = document.createElement('div');
+    DIV.innerHTML = text;
     nameSelectors.forEach((nameSelector) => {
-      this.nameElement(div, nameSelector);
+      this.nameElement(DIV, nameSelector);
     });
     if (shouldAppend) {
-      target.append(div);
+      target.append(DIV);
     } else {
-      target.prepend(div);
+      target.prepend(DIV);
     }
   });
 };
@@ -345,104 +346,118 @@ function createText(rootSelector, targetSelector, nameSelectors, text, shouldApp
 function createIconTextContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     if (target.children.length == 0) {
-      const container = document.createElement('div');
+      const CONTAINER = document.createElement('div');
       nameSelectors.forEach((nameSelector) => {
-        this.nameElement(container, nameSelector);
+        this.nameElement(CONTAINER, nameSelector);
       });
       if (shouldAppend) {
-        target.append(container);
+        target.append(CONTAINER);
       } else {
-        target.prepend(container);
+        target.prepend(CONTAINER);
       }
 
-      const title = document.createElement('div');
-      title.classList.add('zehnText');
-      container.append(title);
-      title.textContent = target.childNodes[0].textContent;
+      const TITLE = document.createElement('div');
+      TITLE.classList.add('zehnText');
+      CONTAINER.append(TITLE);
+      TITLE.textContent = target.childNodes[0].textContent;
       target.childNodes[0].remove();
 
-      const icon = document.createElement('svg');
-      icon.classList.add('zehnIcon');
-      container.prepend(icon);
+      const ICON = document.createElement('svg');
+      ICON.classList.add('zehnIcon');
+      CONTAINER.prepend(ICON);
     }
   });
 };
 
 function createIconContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const container = document.createElement('div');
+    const CONTAINER = document.createElement('div');
     nameSelectors.forEach((nameSelector) => {
-      this.nameElement(container, nameSelector);
+      this.nameElement(CONTAINER, nameSelector);
     });
     if (shouldAppend) {
-      target.append(container);
+      target.append(CONTAINER);
     } else {
-      target.prepend(container);
+      target.prepend(CONTAINER);
     }
 
-    const icon = document.createElement('svg');
-    icon.classList.add('zehnIcon');
-    container.prepend(icon);
+    const ICON = document.createElement('svg');
+    ICON.classList.add('zehnIcon');
+    CONTAINER.prepend(ICON);
   });
 };
 
 function createTextContainer(rootSelector, targetSelector, nameSelectors, shouldAppend = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-      const container = document.createElement('div');
+      const CONTAINER = document.createElement('div');
       nameSelectors.forEach((nameSelector) => {
-        this.nameElement(container, nameSelector);
+        this.nameElement(CONTAINER, nameSelector);
       });
       if (shouldAppend) {
-        target.append(container);
+        target.append(CONTAINER);
       } else {
-        target.prepend(container);
+        target.prepend(CONTAINER);
       }
 
-      const title = document.createElement('div');
-      title.classList.add('zehnText');
-      container.append(title);
-      title.textContent = target.childNodes[0].textContent;
+      const TITLE = document.createElement('div');
+      TITLE.classList.add('zehnText');
+      CONTAINER.append(TITLE);
+      TITLE.textContent = target.childNodes[0].textContent;
       target.childNodes[0].remove();
   });
 };
 
 function createTextWrapper(rootSelector, targetSelector, nameSelectors) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const container = document.createElement('div');
+    const CONTAINER = document.createElement('div');
     nameSelectors.forEach((nameSelector) => {
-      this.nameElement(container, nameSelector);
+      this.nameElement(CONTAINER, nameSelector);
     });
 
-    container.textContent = target.textContent;
-    for (const node of [...target.childNodes]) {
-      if (node.nodeType === Node.TEXT_NODE) node.remove();
+    CONTAINER.textContent = target.textContent;
+    for (const NODE of [...target.childNodes]) {
+      if (NODE.nodeType === Node.TEXT_NODE) NODE.remove();
     }
-    target.appendChild(container);
+    target.appendChild(CONTAINER);
+  });
+};
+
+function createWrapper(rootSelector, targetSelector, nameSelectors) {
+  this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const CONTAINER = document.createElement('div');
+    nameSelectors.forEach((nameSelector) => {
+      this.nameElement(CONTAINER, nameSelector);
+    });
+
+    while (target.firstChild) {
+      CONTAINER.appendChild(target.firstChild);
+    }
+    target.appendChild(CONTAINER);
   });
 };
 
 function createContainer(rootSelector, targetSelector, nameSelectors) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const container = document.createElement('div');
+    const CONTAINER = document.createElement('div');
     nameSelectors.forEach((nameSelector) => {
-      this.nameElement(container, nameSelector);
+      this.nameElement(CONTAINER, nameSelector);
     });
 
-    target.parentNode.insertBefore(container, target);
-    container.appendChild(target);
+    target.parentNode.insertBefore(CONTAINER, target);
+    CONTAINER.appendChild(target);
   });
 };
 
 function createAdjacentElement(rootSelector, targetSelector, nameSelectors, shouldPlaceBefore = true) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const element = document.createElement('div');
+    const ELEMENT = document.createElement('div');
     nameSelectors.forEach((nameSelector) => {
-      this.nameElement(element, nameSelector);
+      this.nameElement(ELEMENT, nameSelector);
     });
     if (shouldPlaceBefore) {
-      target.before(element || '');
+      target.before(ELEMENT || '');
     } else {
-      target.after(element || '');
+      target.after(ELEMENT || '');
     }
   });
 };
@@ -460,8 +475,8 @@ function checkButtonToggle(rootSelector, targetSelector, additionName) {
 
 function checkTargetToggle(rootSelector, targetSelector, additionName, toggleSelector) {
   this.findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
-    const toggle = root.querySelector(toggleSelector);
-    if (target.classList.contains('zehnToggled')) toggle.classList.toggle(additionName, true);
+    const TOGGLE = root.querySelector(toggleSelector);
+    if (target.classList.contains('zehnToggled')) TOGGLE.classList.toggle(additionName, true);
   });
 };
 
@@ -547,9 +562,9 @@ function moveAfterAndObserve(rootSelector, targetSelector, movingSelectors) {
 
 function removeDuplicatedElement(rootSelector, targetSelector, removeableSelector, ordinal) {
   this.handleOnMutation(rootSelector, targetSelector, (root, target) => {
-    const removables = target.querySelectorAll(removeableSelector);
-    if (removables.length > 1) {
-      removables[ordinal].remove();
+    const REMOVABLES = target.querySelectorAll(removeableSelector);
+    if (REMOVABLES.length > 1) {
+      REMOVABLES[ordinal].remove();
     }
   }, { shouldObserveTarget: false, shouldDisconnect: false, shouldAddAttributeFilter: false });
 };

@@ -1,61 +1,61 @@
-export const Waifu = {
+export const WAIFU = {
   findWaifu
 };
-export default Waifu;
+export default WAIFU;
 
 async function findWaifu() {
-  const steamListUrl = 'https://steamloopback.host/waifus/waifus.json';
-  const fallbackRelative = './../waifus.json';
-  const scriptEl = document.currentScript || (() => {
-    const scripts = document.getElementsByTagName('script');
-    return scripts[scripts.length - 1];
+  const STEAM_LIST_URL = 'https://steamloopback.host/waifus/waifus.json';
+  const FALLBACK_URL = './../waifus.json';
+  const SCRIPT_ELEMENT = document.currentScript || (() => {
+    const SCRIPTS = document.getElementsByTagName('script');
+    return SCRIPTS[SCRIPTS.length - 1];
   })();
-  const scriptSrc = scriptEl && scriptEl.src ? scriptEl.src : window.location.href;
-  const scriptDir = scriptSrc.replace(/\/[^/]*$/, '/');
+  const SCRIPT_SRC = SCRIPT_ELEMENT && SCRIPT_ELEMENT.src ? SCRIPT_ELEMENT.src : window.location.href;
+  const SCRIPT_DIR = SCRIPT_SRC.replace(/\/[^/]*$/, '/');
 
-  const resolveRelativeToScript = rel => new URL(rel, scriptDir).href;
+  const resolveRelativeToScript = rel => new URL(rel, SCRIPT_DIR).href;
 
   const tryList = async url => {
     try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error('Fetching waifu JSON failed!');
-      const list = await res.json();
-      if (!Array.isArray(list) || list.length === 0) throw new Error('JSON has empty waifu list!');
-      return list;
+      const RESPONSE = await fetch(url);
+      if (!RESPONSE.ok) throw new Error('Fetching waifu JSON failed!');
+      const LIST = await RESPONSE.json();
+      if (!Array.isArray(LIST) || LIST.length === 0) throw new Error('JSON has empty waifu list!');
+      return LIST;
     } catch {
       console.warn('Cannot find a valid waifu JSON at ' + url + '.');
       return null;
     }
   };
 
-  const listA = await tryList(steamListUrl);
-  if (!listA) console.warn('Attempting to use fallback waifu JSON in Zehn directory...');
-  const listB = listA ? null : await tryList(resolveRelativeToScript(fallbackRelative));
-  const list = listA || listB;
-  if (!list) {
+  const STEAM_LIST = await tryList(STEAM_LIST_URL);
+  if (!STEAM_LIST) console.warn('Attempting to use fallback waifu JSON in Zehn directory...');
+  const FALLBACK_LIST = STEAM_LIST ? null : await tryList(resolveRelativeToScript(FALLBACK_URL));
+  const LIST = STEAM_LIST || FALLBACK_LIST;
+  if (!LIST) {
     console.warn('No valid waifu list available!');
     return;
   }
 
-  setRandomWaifu(list);
+  setRandomWaifu(LIST);
 };
 
 async function setRandomWaifu(list) {
-  const remaining = list.slice();
+  const REMAINING = list.slice();
 
-  while (remaining.length) {
-    const idx = Math.floor(Math.random() * remaining.length);
-    const candidate = remaining.splice(idx, 1)[0];
+  while (REMAINING.length) {
+    const IDX = Math.floor(Math.random() * REMAINING.length);
+    const CANDIDATE = REMAINING.splice(IDX, 1)[0];
 
-    const ok = await imageLoads(candidate);
-    if (ok) {
-      document.documentElement.style.setProperty('--zehn-waifu', `url("${candidate}")`);
+    const OK = await imageLoads(CANDIDATE);
+    if (OK) {
+      document.documentElement.style.setProperty('--zehn-waifu', `url("${CANDIDATE}")`);
 
-      console.info('Using ' + candidate + ' for your waifu!')
+      console.info('Using ' + CANDIDATE + ' for your waifu!')
       return;
     }
 
-    console.warn(candidate + ' is not a valid waifu, attempting to find another...');
+    console.warn(CANDIDATE + ' is not a valid waifu, attempting to find another...');
   }
 
   console.warn('No valid waifu found!');
@@ -63,21 +63,21 @@ async function setRandomWaifu(list) {
 
 function imageLoads(src, timeout = 5000) {
   return new Promise(resolve => {
-    const img = new Image();
+    const IMG = new Image();
     let completed = false;
 
     const done = result => {
       if (completed) return;
       completed = true;
-      clearTimeout(timer);
-      img.onload = img.onerror = null;
+      clearTimeout(TIMER);
+      IMG.onload = IMG.onerror = null;
       resolve(result);
     };
 
-    img.onload = () => done(true);
-    img.onerror = () => done(false);
+    IMG.onload = () => done(true);
+    IMG.onerror = () => done(false);
 
-    const timer = setTimeout(() => done(false), timeout);
-    img.src = src;
+    const TIMER = setTimeout(() => done(false), timeout);
+    IMG.src = src;
   });
 };

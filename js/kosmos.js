@@ -1,7 +1,7 @@
-export const Kosmos = {
+export const KOSMOS = {
   stars
 };
-export default Kosmos;
+export default KOSMOS;
 
 function stars() {
   let canvasApp = null;
@@ -9,24 +9,24 @@ function stars() {
   function startCanvas() {
     if (document.querySelector('#zehnLogin')) return;
     if (canvasApp) return;
-    const canvas = document.createElement('canvas');
-    canvas.id = 'zehnLogin';
-    canvas.style.position = 'absolute';
-    canvas.style.inset = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+    const CANVAS = document.createElement('canvas');
+    CANVAS.id = 'zehnLogin';
+    CANVAS.style.position = 'absolute';
+    CANVAS.style.inset = '0';
+    CANVAS.style.width = '100%';
+    CANVAS.style.height = '100%';
+    CANVAS.width = innerWidth;
+    CANVAS.height = innerHeight;
 
-    const parent = document.querySelector('.VZ6x_grhNkIYJG__jEEyp');
-    if (!parent) return;
-    parent.prepend(canvas);
+    const PARENT = document.querySelector('.VZ6x_grhNkIYJG__jEEyp');
+    if (!PARENT) return;
+    PARENT.prepend(CANVAS);
 
-    canvasApp = createApp(canvas);
+    canvasApp = createApp(CANVAS);
     window.addEventListener('resize', resize);
     function resize() {
-      canvas.width = innerWidth;
-      canvas.height = innerHeight;
+      CANVAS.width = innerWidth;
+      CANVAS.height = innerHeight;
     }
   };
 
@@ -34,22 +34,22 @@ function stars() {
 };
 
 function createApp(canvas) {
-  const ctx = canvas.getContext('2d');
-  let W = canvas.width = innerWidth;
-  let H = canvas.height = innerHeight;
+  const CTX = canvas.getContext('2d');
+  let w = canvas.width = innerWidth;
+  let h = canvas.height = innerHeight;
 
-  const STAR_COUNT = Math.floor((W * H) / 10000);
+  const STAR_COUNT = Math.floor((w * h) / 10000);
   const LAYERS = 3;
   const SHOOT_PROB = 0.001;
 
   addEventListener('resize', () => {
-    W = canvas.width = innerWidth;
-    H = canvas.height = innerHeight;
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
     initStars();
   });
 
-  const mouse = { x: W / 2, y: H / 2 };
-  addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  const MOUSE = { x: w / 2, y: h / 2 };
+  addEventListener('mousemove', (e) => { MOUSE.x = e.clientX; MOUSE.y = e.clientY; });
 
   let stars = [];
   let shootingStars = [];
@@ -60,11 +60,11 @@ function createApp(canvas) {
   function initStars() {
     stars = [];
     for (let layer = 0; layer < LAYERS; layer++) {
-      const layerCount = Math.max(5, Math.floor(STAR_COUNT * (1 - layer * 0.25)));
-      for (let i = 0; i < layerCount; i++) {
+      const LAYER_COUNT = Math.max(5, Math.floor(STAR_COUNT * (1 - layer * 0.25)));
+      for (let i = 0; i < LAYER_COUNT; i++) {
         stars.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
+          x: Math.random() * w,
+          y: Math.random() * h,
           z: layer,
           size: rand(0.3, 1.6) * (1 - layer * 0.2),
           baseAlpha: rand(0.2, 0.9) * (1 - layer * 0.25),
@@ -78,15 +78,15 @@ function createApp(canvas) {
   }
 
   function spawnShootingStar() {
-    const fromEdge = Math.random() < 0.5 ? 'top' : 'left';
-    const x = fromEdge === 'top' ? rand(0, W) : -50;
-    const y = fromEdge === 'top' ? -50 : rand(0, H);
-    const angle = Math.atan2(rand(H * 0.2, H), rand(W * 0.2, W));
-    const speed = rand(6, 14);
+    const FROM_EDGE = Math.random() < 0.5 ? 'top' : 'left';
+    const X = FROM_EDGE === 'top' ? rand(0, w) : -50;
+    const Y = FROM_EDGE === 'top' ? -50 : rand(0, h);
+    const ANGLE = Math.atan2(rand(h * 0.2, h), rand(w * 0.2, w));
+    const SPEED = rand(6, 14);
     shootingStars.push({
-      x, y,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
+      x: X, y: Y,
+      vx: Math.cos(ANGLE) * SPEED,
+      vy: Math.sin(ANGLE) * SPEED,
       length: rand(80, 260),
       life: 0,
       maxLife: rand(40, 90),
@@ -95,87 +95,87 @@ function createApp(canvas) {
   };
 
   function drawStar(s) {
-    const px = s.x + (mouse.x - W / 2) * (s.z * 0.002);
-    const py = s.y + (mouse.y - H / 2) * (s.z * 0.002);
-    const tw = Math.sin(s.twinklePhase) * 0.5 + 0.5;
-    const alpha = Math.max(0, Math.min(1, s.baseAlpha * (0.6 + tw * 0.8)));
-    ctx.globalAlpha = alpha;
-    ctx.fillStyle = '#fff';
-    const r = Math.max(0.2, s.size * (0.6 + tw * 0.8));
-    ctx.beginPath();
-    ctx.arc(px, py, r, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.globalAlpha = 1;
+    const PX = s.x + (MOUSE.x - w / 2) * (s.z * 0.002);
+    const PY = s.y + (MOUSE.y - h / 2) * (s.z * 0.002);
+    const TWINKLE = Math.sin(s.twinklePhase) * 0.5 + 0.5;
+    const ALPHA = Math.max(0, Math.min(1, s.baseAlpha * (0.6 + TWINKLE * 0.8)));
+    CTX.globalAlpha = ALPHA;
+    CTX.fillStyle = '#fff';
+    const RADIUS = Math.max(0.2, s.size * (0.6 + TWINKLE * 0.8));
+    CTX.beginPath();
+    CTX.arc(PX, PY, RADIUS, 0, Math.PI * 2);
+    CTX.fill();
+    CTX.globalAlpha = 1;
   }
 
   function drawShooting(st) {
-    ctx.save();
-    ctx.globalAlpha = st.alpha * Math.max(0, 1 - st.life / st.maxLife);
-    ctx.strokeStyle = 'rgba(255,255,255,0.9)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(st.x, st.y);
-    ctx.lineTo(st.x - st.vx * st.length / (st.vx * st.vx + st.vy * st.vy) ** 0.5, st.y - st.vy * st.length / (st.vx * st.vx + st.vy * st.vy) ** 0.5);
-    ctx.stroke();
+    CTX.save();
+    CTX.globalAlpha = st.alpha * Math.max(0, 1 - st.life / st.maxLife);
+    CTX.strokeStyle = 'rgba(255,255,255,0.9)';
+    CTX.lineWidth = 2;
+    CTX.beginPath();
+    CTX.moveTo(st.x, st.y);
+    CTX.lineTo(st.x - st.vx * st.length / (st.vx * st.vx + st.vy * st.vy) ** 0.5, st.y - st.vy * st.length / (st.vx * st.vx + st.vy * st.vy) ** 0.5);
+    CTX.stroke();
 
-    ctx.fillStyle = 'rgba(255,255,255,1)';
-    ctx.beginPath();
-    ctx.arc(st.x, st.y, 2.5, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
+    CTX.fillStyle = 'rgba(255,255,255,1)';
+    CTX.beginPath();
+    CTX.arc(st.x, st.y, 2.5, 0, Math.PI * 2);
+    CTX.fill();
+    CTX.restore();
   };
 
   let last = 0;
 
   function frame(ts) {
-    const dt = Math.min(40, ts - last); last = ts;
-    ctx.clearRect(0, 0, W, H);
+    const DT = Math.min(40, ts - last); last = ts;
+    CTX.clearRect(0, 0, w, h);
 
-    createSkyGradient(ctx, W, H);
+    createSkyGradient(CTX, w, h);
 
-    for (const s of stars) {
-      s.x += s.vx * (dt / 16);
-      s.y += s.vy * (dt / 16);
+    for (const STAR of stars) {
+      STAR.x += STAR.vx * (DT / 16);
+      STAR.y += STAR.vy * (DT / 16);
 
-      if (s.x < -10) s.x = W + 10;
-      if (s.x > W + 10) s.x = -10;
-      if (s.y < -10) s.y = H + 10;
-      if (s.y > H + 10) s.y = -10;
+      if (STAR.x < -10) STAR.x = w + 10;
+      if (STAR.x > w + 10) STAR.x = -10;
+      if (STAR.y < -10) STAR.y = h + 10;
+      if (STAR.y > h + 10) STAR.y = -10;
 
-      s.twinklePhase += s.twinkleSpeed * (dt / 16);
-      drawStar(s);
+      STAR.twinklePhase += STAR.twinkleSpeed * (DT / 16);
+      drawStar(STAR);
     }
 
     if (Math.random() < SHOOT_PROB) spawnShootingStar();
 
     for (let i = shootingStars.length - 1; i >= 0; i--) {
-      const st = shootingStars[i];
-      st.x += st.vx * (dt / 16);
-      st.y += st.vy * (dt / 16);
-      st.life += (dt / 16);
-      drawShooting(st);
-      if (st.life > st.maxLife || st.x > W + 200 || st.y > H + 200) shootingStars.splice(i, 1);
+      const SHOOTING_STAR = shootingStars[i];
+      SHOOTING_STAR.x += SHOOTING_STAR.vx * (DT / 16);
+      SHOOTING_STAR.y += SHOOTING_STAR.vy * (DT / 16);
+      SHOOTING_STAR.life += (DT / 16);
+      drawShooting(SHOOTING_STAR);
+      if (SHOOTING_STAR.life > SHOOTING_STAR.maxLife || SHOOTING_STAR.x > w + 200 || SHOOTING_STAR.y > h + 200) shootingStars.splice(i, 1);
     }
 
     requestAnimationFrame(frame);
   };
 
   function createSkyGradient(ctx, width, height) {
-    const scheme = getSkyScheme();
+    const SCHEME = getSkyScheme();
 
-    const grad = ctx.createLinearGradient(0, 0, 0, height);
-    scheme.stops.forEach(([pos, color]) => grad.addColorStop(pos, color));
+    const GRADIENT = ctx.createLinearGradient(0, 0, 0, height);
+    SCHEME.stops.forEach(([pos, color]) => GRADIENT.addColorStop(pos, color));
 
-    ctx.fillStyle = grad;
+    ctx.fillStyle = GRADIENT;
     ctx.fillRect(0, 0, width, height);
 
-    const gx = width * 0.5;
-    const gy = height * scheme.glowPos;
-    const gRadius = Math.max(width, height) * 0.6;
-    const glow = ctx.createRadialGradient(gx, gy, 0, gx, gy, gRadius);
-    glow.addColorStop(0, scheme.glow[0]);
-    glow.addColorStop(1, scheme.glow[1]);
-    ctx.fillStyle = glow;
+    const GRADIENT_X = width * 0.5;
+    const GRADIENT_Y = height * SCHEME.glowPos;
+    const GRADIENT_RADIUS = Math.max(width, height) * 0.6;
+    const GLOW = ctx.createRadialGradient(GRADIENT_X, GRADIENT_Y, 0, GRADIENT_X, GRADIENT_Y, GRADIENT_RADIUS);
+    GLOW.addColorStop(0, SCHEME.glow[0]);
+    GLOW.addColorStop(1, SCHEME.glow[1]);
+    ctx.fillStyle = GLOW;
     ctx.fillRect(0, 0, width, height);
   }
 
