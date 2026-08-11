@@ -258,23 +258,23 @@ ZEHN.createButton('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', ['.title-area
   target.style.display = `none`;
 });
 
-ZEHN.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', (root, millennium_settings) => {
+ZEHN.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', (root, millenniumSettings) => {
   const CH = new BroadcastChannel('millennium-settings-sync');
 
   CH.onmessage = (event) => {
-    const { TYPE, STYLE } = event.data || {};
+    const { type: TYPE, style: STYLE } = event.data || {};
     if (TYPE !== 'APPLY_STYLE') return;
 
-    Object.assign(millennium_settings.style, STYLE);
+    Object.assign(millenniumSettings.style, STYLE);
   };
 });
 
-ZEHN.findRootsAndTargets('.Steam_Root_Menu', '._2EstNjFIIZm_WUSKm5Wt7n .contextMenuItem:nth-of-type(7)', (root, millennium_entry) => {
+ZEHN.findRootsAndTargets('.Steam_Root_Menu', '._2EstNjFIIZm_WUSKm5Wt7n .contextMenuItem:nth-of-type(7)', (root, millenniumEntry) => {
   const CH = new BroadcastChannel('millennium-settings-sync');
 
   document.addEventListener('click', (e) => {
-    if (e.target === millennium_entry || millennium_entry.contains(e.target)) {
-        CH.postMessage({
+    if (e.target === millenniumEntry || millenniumEntry.contains(e.target)) {
+      CH.postMessage({
         type: 'APPLY_STYLE',
         style: { display: 'flex' }
       });
