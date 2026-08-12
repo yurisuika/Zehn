@@ -41,9 +41,12 @@
 
     margin: auto !important;
 
-    border-width: var(--zehn-size-radio-border) !important;
-    border-style: solid !important;
-    border-color: var(--outer-border) !important;
+    border: none !important;
+
+    outline-width: var(--zehn-size-radio-outline) !important;
+    outline-style: solid !important;
+    outline-color: var(--outer-outline) !important;
+    outline-offset: calc(-1 * var(--zehn-size-radio-outline)) !important;
 
     background: var(--outer-color) !important;
   }
@@ -56,10 +59,11 @@
 
     filter: none !important;
 
-    inset: 0px !important;
+    inset: calc((var(--zehn-size-radio) - var(--zehn-size-radio-toggle)) / 2) !important;
     right: unset !important;
 
-    margin: calc((var(--zehn-size-radio) - var(--zehn-size-radio-toggle)) / 2) !important;
+    margin: 0px !important;
+    padding: 0px !important;
 
     background: var(--inner-color) !important;
   }
@@ -140,7 +144,7 @@
   $mode: if(sass($mode != null): "-" + $mode; else: "");
 
   --outer-color: var(--zehn-color-radio-background-#{$state}#{$mode});
-  --outer-border: var(--zehn-color-radio-border-#{$state}#{$mode});
+  --outer-outline: var(--zehn-color-radio-outline-#{$state}#{$mode});
 
   --inner-color: var(--zehn-color-radio-toggle-#{$state}#{$mode});
 }
