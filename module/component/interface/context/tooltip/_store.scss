@@ -1,0 +1,284 @@
+// STORE HOVER TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// FIX FOR READY CLASS NOT BEING APPLIED UNTIL MOUSE EXISTS DLC RECT
+._2_lmTz0tA4NOSle5WaO1PZ ._3vg1vYU7iTWqONciv9cuJN:has(iframe.M1EYVG_HMAo8ap80JrIUh) {
+  opacity: 1 !important;
+}
+
+// BORDER ON IFRAME
+iframe.M1EYVG_HMAo8ap80JrIUh {
+  display: var(--zehn-show-tooltips) !important;
+  box-shadow: none !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  width: var(--zehn-size-tooltip-width-store) !important;
+  box-sizing: border-box !important;
+}
+
+// BODY
+.game_hover_iframe {
+  -webkit-font-smoothing: antialiased !important;
+  -webkit-box-shadow: none !important;
+  text-rendering: geometricPrecision !important;
+  box-shadow: none !important;
+  font-family: var(--zehn-font-family) !important;
+  text-shadow: none !important;
+  letter-spacing: normal !important;
+  font-variant-emoji: text !important;
+
+  .game_hover_box {
+    margin: 0px !important;
+    padding: 0px !important;
+    box-shadow: none !important;
+    width: calc(var(--zehn-size-tooltip-width-store) - (2 * var(--zehn-size-tooltip-border))) !important;
+    background: transparent !important;
+    color: var(--zehn-color-tooltip-text) !important;
+    font-size: var(--zehn-size-tooltip-text) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    line-height: var(--zehn-size-tooltip-line) !important;
+
+    p {
+      margin: 0px !important;
+      font-size: inherit !important;
+      color: var(--zehn-color-tooltip-text-other) !important;
+    }
+
+    .content {
+      padding: var(--zehn-size-tooltip-padding) !important;
+
+      [id*="hover_app_"] {
+        gap: var(--zehn-size-tooltip-gap) !important;
+        display: flex !important;
+        flex-direction: column !important;
+
+        // TOP AREA
+        .hover_top_area {
+          color: inherit !important;
+          font-size: inherit !important;
+          margin: 0px !important;
+          display: none !important;
+        }
+
+        // TITLE
+        h4.hover_title {
+          color: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          margin: 0px !important;
+          font-family: inherit !important;
+          letter-spacing: inherit !important;
+          line-height: inherit !important;
+        }
+
+        // RELEASE DATE
+        .hover_release {
+          font-size: inherit !important;
+          color: var(--zehn-color-tooltip-text-other) !important;
+        }
+
+        // DESCRIPTION
+        .hover_desc {
+          color: var(--zehn-color-tooltip-text-other) !important;
+          font-weight: inherit !important;
+          font-size: inherit !important;
+          margin: 0px !important;
+        }
+
+        // SCREENSHOTS
+        .hover_screenshots {
+          margin: 0px !important;
+          width: 100% !important;
+          height: auto !important;
+          aspect-ratio: 16/9 !important;
+          background-color: var(--zehn-color-placeholder) !important;
+          border-radius: var(--zehn-size-tooltip-content-radius) !important;
+
+          .screenshot {
+            transition: opacity 0.2s var(--zehn-timing-ease) !important;
+          }
+        }
+
+        // LOWER CONTENT WRAPPER
+        .hover_body {
+          margin: 0px !important;
+
+          // REVIEW SUMMARY
+          .hover_review_summary {
+            margin: 0px !important;
+            border-radius: var(--zehn-size-radius-none) !important;
+            padding: 0px !important;
+            background-color: transparent !important;
+            color: var(--zehn-color-tooltip-text-other) !important;
+
+            .title {
+              color: var(--zehn-color-tooltip-text) !important;
+            }
+
+            .game_review_summary {
+              color: var(--zehn-color-tooltip-text-other) !important;
+
+              &.mixed {}
+
+              &.positive {}
+
+              &.neutral {}
+
+              &.negative {}
+            }
+          }
+
+          // TAGS TITLE TEXT
+          .tags_title {}
+
+          // TAGS
+          .hover_tag_row {
+            margin: 0px !important;
+            height: fit-content !important;
+            gap: var(--zehn-size-tags-gap) !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+
+            .app_tag {
+              max-width: fit-content !important;
+              background-color: var(--zehn-color-tag) !important;
+              border-radius: var(--zehn-size-tag-radius-md) !important;
+              color: var(--zehn-color-tag-text) !important;
+              font-size: var(--zehn-size-tag-text-md) !important;
+              font-weight: var(--zehn-weight-normal) !important;
+              padding: var(--zehn-size-tag-padding-md) !important;
+              line-height: var(--zehn-size-tag-md) !important;
+              gap: var(--zehn-size-tag-gap) !important;
+              margin: 0px !important;
+
+              &:hover {
+                background-color: var(--zehn-color-tag-hover) !important;
+                color: var(--zehn-color-tag-text) !important;
+              }
+
+              &:active {
+                background-color: var(--zehn-color-tag-active) !important;
+                color: var(--zehn-color-tag-text) !important;
+              }
+            }
+          }
+
+          // DETAILS BLOCK
+          .hover_details_block,
+          .hover_details_block_full {
+            border-radius: var(--zehn-size-radius-none) !important;
+            margin: 0px !important;
+            background: transparent !important;
+            padding: 0px !important;
+            height: fit-content !important;
+            line-height: inherit !important;
+
+            // CATEGORY ICON
+            .hover_category_icon {
+              color: inherit !important;
+              line-height: inherit !important;
+              height: var(--zehn-size-tooltip-icon) !important;
+              width: var(--zehn-size-tooltip-icon) !important;
+              background-color: var(--zehn-color-tooltip-icon) !important;
+              mask-repeat: no-repeat !important;
+              mask-position: center !important;
+              mask-size: var(--zehn-size-icon-md) !important;
+              -webkit-mask-image: var(--icon, var(--zehn-icon-info)) !important;
+
+              &:has([src*="_positive.png"]) {
+                --icon: var(--zehn-icon-thumb-up) !important;
+              }
+
+              &:has([src*="_negative.png"]) {
+                --icon: var(--zehn-icon-thumb-down) !important;
+              }
+
+              img,
+              img.category_icon {
+                display: none;
+                margin: auto !important;
+                height: var(--zehn-size-tooltip-icon) !important;
+                width: var(--zehn-size-tooltip-icon) !important;
+              }
+            }
+          }
+        }
+
+        // PLATFORM
+        span.platform_img {
+          height: var(--zehn-size-tooltip-icon) !important;
+          width: var(--zehn-size-tooltip-icon) !important;
+          display: block !important;
+          background-position: center !important;
+          background-image: none !important;
+          background: var(--zehn-color-tooltip-icon) !important;
+          mask-repeat: no-repeat !important;
+          mask-position: center !important;
+          mask-size: var(--zehn-size-tooltip-icon) !important;
+          -webkit-mask-image: var(--icon, var(--zehn-icon-info)) !important;
+
+          &.win {
+            --icon: var(--zehn-icon-os-win);
+          }
+
+          &.linux {
+            --icon: var(--zehn-icon-os-linux);
+          }
+
+          &.mac {
+            --icon: var(--zehn-icon-os-mac);
+          }
+        }
+
+        // RULE
+        .rule {
+          display: none !important;
+        }
+
+        // X FRIENDS HAVE PLAYED
+        .hover_body_block {}
+
+        // FRIENDS
+        .friend_blocks_row {
+          margin: 0px !important;
+          gap: var(--zehn-size-tooltip-gap) !important;
+          display: flex !important;
+
+          .playerAvatar {
+            margin: 0px !important;
+            background: transparent !important;
+            filter: none !important;
+            width: fit-content !important;
+            height: fit-content !important;
+            padding: 0px !important;
+            border-radius: var(--zehn-avatar-shape) !important;
+
+            &.in-game {
+              background: transparent !important;
+              filter: none !important;
+            }
+
+            &.online {
+              background: transparent !important;
+              filter: none !important;
+            }
+
+            &.offline {
+              background: transparent !important;
+              filter: none !important;
+            }
+
+            img {
+              width: var(--zehn-size-tooltip-avatar) !important;
+              height: var(--zehn-size-tooltip-avatar) !important;
+              padding: 0px !important;
+              border-radius: var(--zehn-size-radius-none) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

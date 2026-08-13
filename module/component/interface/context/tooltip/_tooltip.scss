@@ -5,6 +5,7 @@
   width: 100% !important;
   height: 100% !important;
   z-index: 9999 !important;
+  background: transparent !important;
 }
 
 // HOVER POSITION
@@ -16,6 +17,40 @@
   &._1Ye_0niF2UqB8uQTbm8B6B {
     opacity: 1 !important;
   }
+
+  // EMOTICON HOVER
+  &.W_hPU2JmhTx3oUqDN9ADo {}
+
+  // REACTION HOVER
+  &.RQYkyiM4TDn3t-i5FmXKL {}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// RECORDING BUTTON TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// THANKS FOR THIS (NO WRAPPER OR ANYTHING OF THE SORT)
+._3vg1vYU7iTWqONciv9cuJN:not(:has(*)) {
+  display: var(--zehn-show-tooltips) !important;
+  max-width: var(--zehn-size-tooltip-width) !important;
+  gap: var(--zehn-size-tooltip-gap) !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,6 +127,8 @@
   border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
   gap: var(--zehn-size-tooltip-gap) !important;
   flex-direction: column !important;
+  max-width: var(--zehn-size-tooltip-width) !important;
+  text-wrap: wrap !important;
 
   // TITLE
   ._1LhVfNukndDa_XWzq0vdg1 {
@@ -103,12 +140,67 @@
     color: var(--zehn-color-tooltip-text-other) !important;
     margin: 0px !important;
   }
+
+  // HIGHLIGHT (USED IN ALL COLLECTIONS)
+  .X8C932wI78Biu5tTOooXW {
+    color: inherit !important;
+    font-weight: inherit !important;
+    font-style: italic !important;
+
+    // DYNAMIC COLLECTIONS ICON (TRANSFORM FOR INLINE OFFSET FIX)
+    svg.SVGIcon_DynamicCollection {
+      margin: 0px !important;
+      margin-right: var(--zehn-size-text-gap) !important;
+      transform: translateY(3px) !important;
+      display: none !important;
+      height: var(--zehn-size-tooltip-line) !important;
+      width: var(--zehn-size-tooltip-icon-inline) !important;
+      background-color: var(--zehn-color-tooltip-icon) !important;
+      mask-repeat: no-repeat !important;
+      mask-position: center !important;
+      mask-size: var(--zehn-size-tooltip-icon-inline) !important;
+      -webkit-mask-image: var(--zehn-icon-lightning) !important;
+
+      * { display: none !important; }
+    }
+  }
+
+  // APP COUNT TOOLTIP (SIDEBAR WHEN FILTERED)
+  ._273b4EcrU06WGtlKPWpvDa {
+    text-transform: none !important;
+    font-weight: inherit !important;
+    color: var(--zehn-color-tooltip-text-other) !important;
+
+    :first-child {
+      border: none !important;
+      padding: 0px !important;
+    }
+  }
+
+  // DISK SPACE TOOL TIP TEXT (GAME RECORDING SETTINGS)
+  ._30znwTzizFlIcX-y87xNW4 {
+    margin: 0px !important;
+  }
+}
+
+// OTHER TOOLTIP (STORAGE SETTINGS NON-STEAM GAME)
+._3XGRklQrZMakU2xaYB0cLD._1nfHId6YijfUuNqxiZEG0d {
+
+  // HEADER
+  ._1aM9-xSqNVmFacRhZ6KQLI {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    margin: 0px !important;
+  }
+
+  div:not(:first-child) {
+    color: var(--zehn-color-tooltip-text-other) !important;
+  }
 }
 
 // CUSTOM W/ CONTENT TYPE (DOWNLOADS)
 ._3XGRklQrZMakU2xaYB0cLD._38Kbc0h04V8wdbbGE5yN11 {
-  padding: var(--zehn-size-tooltip-padding) !important;
-  background: var(--zehn-color-tooltip-background) !important;
 
   // TITLE
   .TK9wvF55dyA6RcOclozC8 {
@@ -162,10 +254,13 @@
   font-size: var(--zehn-size-tooltip-text) !important;
   font-weight: var(--zehn-weight-normal) !important;
   padding: var(--zehn-size-tooltip-padding) !important;
+  background: var(--zehn-color-tooltip-background) !important;
   border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
   border-radius: var(--zehn-size-tooltip-radius) !important;
   gap: var(--zehn-size-tooltip-gap) !important;
   display: var(--zehn-show-tooltips) !important;
+  flex-direction: column !important;
+  min-width: var(--zehn-size-tooltip-width-media) !important;
 
   // TITLE ROW
   ._14c4QmmVX6DYQDGfJNWRpp {
@@ -184,7 +279,7 @@
       &._3nxAy0Cwnf7kY-TC3IKFMt {
         width: var(--zehn-size-tooltip-icon) !important;
         height: var(--zehn-size-tooltip-icon) !important;
-        border-radius: var(--zehn-size-tooltip-icon-radius) !important;
+        border-radius: var(--zehn-size-thumbnail-radius) !important;
       }
     }
 
@@ -214,6 +309,755 @@
         font-weight: inherit !important;
       }
     }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FRIEND STATUS TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// FRIEND STATUS HOVER
+._2iiN7AYnLFTRFRiuipiYJz {
+  line-height: var(--zehn-size-tooltip-line) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  display: var(--zehn-show-tooltips) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-tooltip-gap) !important;
+  min-width: var(--zehn-size-tooltip-width-friend) !important;
+
+  // HOVER ROW
+  ._2XyBbhE-O3Bc2CcJ_C-V1F {
+    min-width: 100% !important;
+    align-items: center !important;
+
+    // LABEL HOLDER
+    ._3RQJ0dX8rpaAMAnYEj3qf_ {
+      height: auto !important;
+      margin-left: var(--zehn-size-icon-gap) !important;
+      padding: 0px !important;
+      line-height: inherit !important;
+
+      // COMPACT VIEW
+      &._3bbRZyUiK-bfc5Qov6xukI {}
+      
+      // NO CONTEXT MENU
+      &._1JE5G7_FNm2SRDEEnOWMVv {
+        font-weight: var(--zehn-weight-normal) !important;
+      }
+      
+      // TWO LINE
+      &._1BbOegz8bYL7iPzgYpOgQI {}
+
+      // STATUS AND NAME
+      ._4ZTzGZ5TTgFyfw1DcXLXS {
+        gap: var(--zehn-size-tooltip-gap) !important;
+
+        // NAME
+        .nOdcT-MoOaXGePXLyPe0H {
+          color: var(--zehn-color-tooltip-text) !important;
+          font-size: var(--zehn-size-tooltip-text) !important;
+          font-weight: var(--zehn-weight-normal) !important;
+          line-height: var(--zehn-size-tooltip-line) !important;
+        }
+      }
+
+      // RICH PRESENCE CONTAINER
+      ._3sxE7F1LV2IcSX68YsH9dI {
+        gap: var(--zehn-size-tooltip-gap) !important;
+
+        // LABEL
+        ._2Ri005Wg_uXDTa71kdRbcN {
+          color: var(--zehn-color-tooltip-text-other) !important;
+          font-size: var(--zehn-size-tooltip-text) !important;
+          font-weight: var(--zehn-weight-normal) !important;
+          line-height: var(--zehn-size-tooltip-line) !important;
+
+          // GAME NAME
+          &._1cB0qtF0paHWWyj1XNcnbG {}
+        }
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// APP DETAILS TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// APP DETAILS HOVER
+._38FqIwZQKW6BlRyzN66pi6 {
+  display: var(--zehn-show-tooltips) !important;
+  gap: var(--zehn-size-tooltip-gap) !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
+  flex-direction: column !important;
+
+  // HOVER
+  &._37Lk82ESPo7El4__sqZgOV {
+    width: var(--zehn-size-tooltip-width-app) !important;
+  }
+
+  // BACKGROUND
+  .rYBZBWnNW6m-N9vX0Chce {
+    background: transparent !important;
+
+    // BLUR CONTAINER
+    ._2HshOjKxsMkk2uUtP5Sp8x {
+      filter: none !important;
+      opacity: 0 !important;
+      display: none !important;
+      width: 100% !important;
+      height: 100% !important;
+      inset: 0px !important;
+    }
+  }
+}
+
+// SCREENSHOTS
+._38FqIwZQKW6BlRyzN66pi6._2EMM516bLA2dC0r3OreZnv {
+  width: var(--zehn-size-tooltip-width-app) !important;
+  max-height: fit-content !important;
+
+  // SCREENSHOT
+  ._2pHz57SGRWZSR3oEmPPKK_ {
+    background-color: var(--zehn-color-placeholder) !important;
+    border-radius: var(--zehn-size-tooltip-content-radius) !important;
+  }
+}
+
+// DLC
+._38FqIwZQKW6BlRyzN66pi6._1V52f_cM-aALy2XpzrJBIA {
+  max-width: var(--zehn-size-tooltip-width-app) !important;
+  width: auto !important;
+
+  // TOP SECTION
+  .GT9G66129KLY8X_apTrvE {
+    padding: 0px !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+  }
+
+  // PURCHASED
+  ._22tloOR0Wp0KKLI9Bhcmm5 {
+    background: transparent !important;
+    padding: 0px !important;
+    color: var(--zehn-color-tooltip-text-other) !important;
+  }
+}
+
+// ACHIEVEMENT ACHIEVED / NOT ACHIEVED
+._38FqIwZQKW6BlRyzN66pi6.MGoYUyIslJerluzgnU7z9,
+._38FqIwZQKW6BlRyzN66pi6._3llpbyrXsfwsh1apqHhPfB {
+
+  // TOP SECTION
+  ._1LRR7Ji-cwYvaIOcDllLOx {
+    padding: 0px !important;
+    gap: var(--zehn-size-tooltip-gap) !important;
+    align-items: center !important;
+
+    // ACHIEVEMENT ICON WRAPPER
+    ._1fEbX-PfpZ2FhkhttWcm-V {
+      width: var(--zehn-size-tooltip-icon) !important;
+      height: var(--zehn-size-tooltip-icon) !important;
+      border-radius: var(--zehn-size-thumbnail-radius) !important;
+      margin: 0px !important;
+
+      // TOP SECTION
+      &._2u5KCqUgrG-dNxWg_e-BOs {
+        width: var(--zehn-size-tooltip-icon) !important;
+        height: var(--zehn-size-tooltip-icon) !important;
+        margin: 0px !important;
+      }
+
+      // ICON
+      &.zcasgBSVIteabq-j_3g1m {}
+    }
+
+    // TEXT SECTION
+    ._1s_9cSxUjb4609MSH0EjWH {
+      padding: 0px !important;
+      color: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+
+      // NAME
+      ._39Y01uSRcLiDg5DneTTR0m {
+        margin: 0px !important;
+        font-size: inherit !important;
+        color: inherit !important;
+      }
+
+      // DESC
+      ._2gLHbXukQBdrIKhqEYVvOe {
+        color: var(--zehn-color-tooltip-text-other) !important;
+      }
+
+      // SINGLE ACHIVEMENT PROGRESS
+      ._3dGOJTL8GRXpyosK3ooTdO {
+        margin: 0px !important;
+        padding: 0px !important;
+
+        // LABEL
+        .zpBMRpPhaI6jqMh9-UQAi {
+          color: inherit !important;
+          font-size: inherit !important;
+          margin: 0px !important;
+          margin-bottom: var(--zehn-size-spacing-xxs) !important;
+        }
+
+        // BAR
+        ._1OIatPEED_bSmd_CNyMv7C {
+          height: var(--zehn-size-progressbar-thin) !important;
+          border-radius: var(--zehn-size-progressbar-radius) !important;
+          background-color: var(--zehn-color-progress-empty) !important;
+
+          // FILL
+          ._3Rm36_oeAhvIg6ZYP9l1Jj {
+            background-color: var(--zehn-color-progress-filled) !important;
+          }
+        }
+      }
+    }
+  }
+
+  // UNLOCKED
+  ._2KA0p5xYePYygXUbjjsPzA {
+    padding: 0px !important;
+    background: transparent !important;
+    font-size: inherit !important;
+    color: inherit !important;
+
+    // RARE LABEL
+    ._3aoiMPk40Rve2ktEp-cadA {
+      color: inherit !important;
+    }
+
+    // YOU UNLOCKED
+    ._1eZi9D2dwrPAL_LgwE0KVv {
+      color: var(--zehn-color-tooltip-text-other) !important;
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// APP PORTRAIT TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._2sGn0cBsD44TjnUIh-lx9d {
+  display: var(--zehn-show-tooltips) !important;
+  width: var(--zehn-size-tooltip-width-portrait) !important;
+  gap: var(--zehn-size-tooltip-gap) !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
+
+  // CAPSULE BACKGROUND
+  .Yts2cS2BIbHJoh5UorpDq {
+    display: none !important;
+  }
+
+  // CONTENT
+  ._12UNIdjT-Kv1ib31jk6J37 {
+    box-sizing: border-box !important;
+    gap: var(--zehn-size-tooltip-gap) !important;
+    align-items: flex-start !important;
+    margin: 0px !important;
+
+    // FRIENDS PLAYING
+    &._1HlOXuwI_CB4gGmMZCz8oE {
+      margin: 0px !important;
+    }
+
+    // APP TITLE CONTAINER
+    ._1RfxlV1H3JsSs-aRaXVJQt {
+      order: 0 !important;
+      padding: 0px !important;
+
+      // APP TITLE
+      ._1Kdi2PBxcdQwDpa-48hrf2 {
+        color: inherit !important;
+        font-size: inherit !important;
+        margin: 0px !important;
+        text-shadow: inherit !important;
+      }
+    }
+
+    // FRIENDS CONTAINER
+    ._3_0Qbu8IAsqsv_6W5AxRhe {
+      background-color: transparent !important;
+      padding: 0px !important;
+      order: 2 !important;
+      gap: 0px !important;
+      display: flex !important;
+      flex-direction: column !important;
+
+      // FRIENDS HEADER
+      .dfy8sRBn82Ozvw4RiqewN {
+        margin: 0px !important;
+
+        // FRIENDS CIRCLE
+        ._1dJq5WU2D3uW42_ty9aPwP {
+          width: var(--zehn-size-indicator) !important;
+          height: var(--zehn-size-indicator) !important;
+          background-color: var(--zehn-color-indicator) !important;
+          border-radius: var(--zehn-size-indicator-radius) !important;
+          margin-right: var(--zehn-size-text-gap) !important;
+          display: none !important;
+        }
+
+        // FRIENDS LABEL
+        ._1hOV3SIw5_c3VcGS_sZ_yU {
+          color: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          text-transform: none !important;
+        }
+      }
+
+      // FRIEND BAR
+      ._3dncOt2dhpnFYQn-WYQ3Mb {
+        width: 100% !important;
+        gap: var(--zehn-size-tooltip-gap) !important;
+        height: fit-content !important;
+        padding: 0px !important;
+
+        // PORTRAIT HOVER
+        &._301ftk7pLtiYAWjjxEG0Gu {
+          position: relative !important;
+        }
+      }
+    }
+
+    // SCREENSHOTS CROSSFADE
+    ._2R6-lF5h4f0SPrOL9B9IAw {
+      background: transparent !important;
+      -webkit-mask-image: unset !important;
+      mask-image: none !important;
+      height: auto !important;
+      width: 100% !important;
+      aspect-ratio: 16/9 !important;
+      order: 3 !important;
+
+      // FADE IN
+      .uUYjX6KwQ3VXskrwvSvt6 {
+        transition: opacity 0.2s var(--zehn-timing-ease), transform 0.2s var(--zehn-timing-ease) !important;
+
+        // CROSSFADE IMAGE
+        .dXjKWK39ZV5nwJ3XkBAhN {
+
+          // NO SCREENSHOT FALLBACK
+          &._2I4_RhvxHcAw8MQXjPimFk {
+            padding: 0px !important;
+
+            // SCREENSHOT IMAGE
+            ._2X1QC1U5u__OlHPUFDQnu_ {}
+
+            // FALLBACK WRAPPER
+            ._25nyFwRA-U4dFGgdVhK6y8 {}
+          }
+
+          // MINI SCREENSHOT
+          &._3yeSSC97h_EEbE5VZAuG2d {
+
+          }
+        }
+      }
+    }
+
+    // APP STATUS
+    .My_SveQxVY_oRxfkK5mqN {
+      color: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      padding: 0px !important;
+      margin: 0px !important;
+      height: auto !important;
+      max-height: none !important;
+      min-height: 0px !important;
+      text-transform: none !important;
+
+      &:empty,
+      &:has(._3ry-JDFfnNe58WNZ7U6aVf:empty),
+      &:not(:has(div)) {
+        display: none !important;
+      }
+
+      // OWNERS
+      ._3ry-JDFfnNe58WNZ7U6aVf {
+        padding: 0px !important;
+        color: inherit !important;
+
+        &:empty {
+          display: none !important;
+        }
+      }
+    }
+
+    // GAME UPDATED
+    .QO8XpcXyf6i06ZtmHfFA3 {
+
+      // CIRCLE
+      ._158pN0u30Fddq7XVASpxEe {
+        margin-right: var(--zehn-size-text-gap) !important;
+        width: var(--zehn-size-indicator) !important;
+        height: var(--zehn-size-indicator) !important;
+        background-color: var(--zehn-color-indicator) !important;
+        border-radius: var(--zehn-size-indicator-radius) !important;
+        display: none !important;
+      }
+
+      // IMPORTANT UPDATE
+      ._3eZ2geN87clv6TGPMJI0qs {
+        color: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+      }
+    }
+
+    // DOWNLOAD STATUS
+    ._1KHOCigl8AaK2eHxQqPMlc {
+      background-color: transparent !important;
+      padding: 0px !important;
+      margin: 0px !important;
+      border-radius: var(--zehn-size-radius-none) !important;
+      line-height: normal !important;
+      width: 100% !important;
+      transition: none !important;
+      transform: none !important;
+
+      // CONTAINER
+      ._2RX1dsh68v-P0H9Am9Ufy1 {
+        width: 100% !important;
+        gap: var(--zehn-size-tooltip-gap) !important;
+        width: 100% !important;
+
+        // TITLE
+        ._2HOH927_SBdi8J559aStH6 {
+          color: inherit !important;
+          font-size: inherit !important;
+          margin: 0px !important;
+        }
+
+        // PROGRESS
+        ._25YVDTaClw6Y2COPsU0UaV.YWYPgSU8yPU8RyknVtCY3 {}
+
+        // STATUS DETAILS
+        ._3ddJwYxqm61xYwptGOh8Me {
+          color: var(--zehn-color-tooltip-text-other) !important;
+          font-size: inherit !important;
+          margin: 0px !important;
+        }
+      }
+    }
+
+    // PLAYTIME DETAILS
+    ._1VGPO4xU5sgRK6DFt4t74O {
+      padding: 0px !important;
+      margin: 0px !important;
+      color: var(--zehn-color-tooltip-text-other) !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      border-radius: var(--zehn-size-radius-none) !important;
+      width: unset !important;
+      letter-spacing: normal !important;
+      line-height: inherit !important;
+
+      // HEADER
+      .MIHa_O-B1JXrzkoGc255n {
+        text-transform: none !important;
+        color: inherit !important;
+        margin: 0px !important;
+        color: var(--zehn-color-tooltip-text) !important;
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// DATE TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LOCALE DATE AND TIME (WHERE IS THIS USED??)
+._2E5LHvnVEF3dSVV3wrDflm {
+  display: var(--zehn-show-tooltips) !important;
+  max-width: var(--zehn-size-tooltip-width) !important;
+  gap: var(--zehn-size-tooltip-gap) !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
+  text-transform: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// ADD MARKER BUTTON TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._2ytunPfeSrGLnjLfJzcZYH {
+  display: var(--zehn-show-tooltips) !important;
+  max-width: var(--zehn-size-tooltip-width) !important;
+  gap: var(--zehn-size-tooltip-gap) !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// RECORDING ICON TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.JB3vz2k1En56vQbe0XtOZ {
+  display: var(--zehn-show-tooltips) !important;
+  max-width: var(--zehn-size-tooltip-width) !important;
+  gap: var(--zehn-size-tooltip-gap) !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// EMOTICON TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// DOESN'T HAVE WRAPPER, DIRECTLY ON THE HOVER POSITION
+._2_lmTz0tA4NOSle5WaO1PZ ._3vg1vYU7iTWqONciv9cuJN.W_hPU2JmhTx3oUqDN9ADo {
+  margin: 0px !important;
+  min-width: fit-content !important;
+  min-height: fit-content !important;
+  display: var(--zehn-show-tooltips) !important;
+  max-width: var(--zehn-size-tooltip-width) !important;
+  gap: 0px !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
+  box-shadow: none !important;
+
+  // EMOTICON
+  ._1ZQW1wV5cNj3sDpibfbUqs {
+    display: none !important;
+    width: var(--zehn-size-tooltip-icon) !important;
+    height: var(--zehn-size-tooltip-icon) !important;
+    margin-right: var(--zehn-size-icon-gap) !important;
+
+    // LARGE
+    &._20l1z3ShpHQ9njRDYgy1I5 {}
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  // STICKER
+  ._1HdRqbOgpBfEQzQ2py5nq5 {
+    display: none !important;
+    width: var(--zehn-size-tooltip-icon) !important;
+    height: var(--zehn-size-tooltip-icon) !important;
+    margin-right: var(--zehn-size-icon-gap) !important;
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  // EFFECT HOVER EFFECT
+  ._1GZ-ESK0dV6oJBDhsU3RiH {
+    display: none !important;
+    width: var(--zehn-size-tooltip-icon) !important;
+    height: var(--zehn-size-tooltip-icon) !important;
+    margin-right: var(--zehn-size-icon-gap) !important;
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  // INFO
+  ._29D_0UxbftoceIAKZktndo {
+    padding: 0px !important;
+
+    // NAME
+    ._3zUR2KWg7TNWOQx2nDFyoh {
+      padding: 0px !important;
+      font-size: inherit !important;
+    }
+
+    // APP NAME
+    ._2JWWOJGZuX70xQcA2QaBg {
+      color: var(--zehn-color-tooltip-text-other) !important;
+      font-size: inherit !important;
+
+      &:empty {
+        display: none !important;
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// REACTION TOOLTIP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// DOESN'T HAVE WRAPPER, DIRECTLY ON THE HOVER POSITION
+._2_lmTz0tA4NOSle5WaO1PZ ._3vg1vYU7iTWqONciv9cuJN.RQYkyiM4TDn3t-i5FmXKL {
+  margin: 0px !important;
+  min-width: fit-content !important;
+  min-height: fit-content !important;
+  display: var(--zehn-show-tooltips) !important;
+  max-width: var(--zehn-size-tooltip-width) !important;
+  gap: 0px !important;
+  background: var(--zehn-color-tooltip-background) !important;
+  border-radius: var(--zehn-size-tooltip-radius) !important;
+  border: var(--zehn-size-tooltip-border) solid var(--zehn-color-tooltip-border) !important;
+  color: var(--zehn-color-tooltip-text) !important;
+  font-size: var(--zehn-size-tooltip-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: var(--zehn-size-tooltip-padding) !important;
+  line-height: var(--zehn-size-tooltip-line) !important;
+  box-shadow: none !important;
+
+  // EMOTICON REACTION
+  .m89hcklEIZomEEXW7E4Ky {
+    display: none !important;
+    width: var(--zehn-size-tooltip-icon) !important;
+    height: var(--zehn-size-tooltip-icon) !important;
+    margin-right: var(--zehn-size-icon-gap) !important;
+
+    // LARGE
+    &._2lMYTZ_JeNiu0RllNmRnjz {
+      width: var(--zehn-size-tooltip-icon) !important;
+      height: var(--zehn-size-tooltip-icon) !important;
+    }
+  }
+
+  // STICKER REACTION
+  .Ki1SGbezePO_5kPHBY1g9 {
+    display: none !important;
+    width: var(--zehn-size-tooltip-icon) !important;
+    height: var(--zehn-size-tooltip-icon) !important;
+    margin-right: var(--zehn-size-icon-gap) !important;
+
+    // LARGE
+    &._2lMYTZ_JeNiu0RllNmRnjz {
+      width: var(--zehn-size-tooltip-icon) !important;
+      height: var(--zehn-size-tooltip-icon) !important;
+    }
+  }
+
+  // DESCRIPTION
+  ._1wba__jbML-7qtlaoD9cDo {
+    margin: 0px !important;
   }
 }
 

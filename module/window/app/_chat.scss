@@ -1106,6 +1106,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .chatWindow {
   background: transparent !important;
   font-size: var(--zehn-size-14) !important;
+  --msg-padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-avatar) + var(--zehn-size-padding-xs));
+
+  &.compactView {
+    --msg-padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-compact-avatar) + var(--zehn-size-padding-xs));
+  }
 }
 
 // ABSOLUTE BACKGROUND THAT DOES NOT GO BELOW ACRYLIC HEADER
@@ -2551,7 +2556,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   height: var(--message-line) !important;
   margin-right: var(--zehn-size-spacing-xs) !important;
 
-  img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
+  img._1ZQW1wV5cNj3sDpibfbUqs {
     width: var(--message-line) !important;
     height: var(--message-line) !important;
   }
@@ -2817,19 +2822,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 .msg.ChatMsgSlashEmote .speaker,
 .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
   margin: 0px !important;
-  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-avatar) + var(--zehn-size-padding-xs)) !important;
+  padding: var(--msg-padding) !important;
   color: inherit !important;
   background: transparent !important;
   line-height: var(--zehn-size-chat-speaker) !important;
   overflow: visible !important;
-}
-
-.chatWindow.compactView .ChatHistoryContainer .nameWidthLabel,
-.chatWindow.compactView .ChatSpeaker .speaker,
-.chatWindow.compactView .ChatRoomSpeaker .speaker,
-.chatWindow.compactView .msg.ChatMsgSlashEmote .speaker,
-.chatWindow.compactView .msg.ChatMsgSlashEmote .SpeakerLineBreak .speaker {
-  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-compact-avatar) + var(--zehn-size-padding-xs)) !important;
 }
 
 // SPEAKER AVATAR
@@ -2974,11 +2971,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 }
 
 .msgText {
-  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-avatar) + var(--zehn-size-padding-xs)) !important;
-}
-
-.chatWindow.compactView .msgText {
-  padding: 0px var(--zehn-size-padding-xl) 0px calc(var(--zehn-size-padding-md) + var(--zehn-size-persona-compact-avatar) + var(--zehn-size-padding-xs)) !important;
+  padding: var(--msg-padding) !important;
 }
 
 .msgText>span {
@@ -3376,25 +3369,28 @@ span.mention.me {
 // EMOTES/STICKERS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // EMOTE
-img._1ZQW1wV5cNj3sDpibfbUqs,
-img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
+img._1ZQW1wV5cNj3sDpibfbUqs {
   margin: 0px !important;
   height: var(--zehn-size-emote) !important;
   width: var(--zehn-size-emote) !important;
   transition: none !important;
+
+  // LARGE
+  &._20l1z3ShpHQ9njRDYgy1I5 {
+    height: var(--zehn-size-emote) !important;
+    width: var(--zehn-size-emote) !important;
+  }
 }
 
 .msg {
-  img._1ZQW1wV5cNj3sDpibfbUqs,
-  img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
+  img._1ZQW1wV5cNj3sDpibfbUqs {
     height: var(--chat-line) !important;
     width: var(--chat-line) !important;
   }
 }
 
 ._22PB4rET-Rx8JtZs34nMkf {
-  img._1ZQW1wV5cNj3sDpibfbUqs,
-  img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
+  img._1ZQW1wV5cNj3sDpibfbUqs {
     height: var(--message-line) !important;
     width: var(--message-line) !important;
   }
@@ -3402,22 +3398,21 @@ img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
 
 // COMMENT THREAD
 ._34ZDOJFxOtspOltAZYWy-O {
-  img._1ZQW1wV5cNj3sDpibfbUqs,
-  img._1ZQW1wV5cNj3sDpibfbUqs._20l1z3ShpHQ9njRDYgy1I5 {
+  img._1ZQW1wV5cNj3sDpibfbUqs {
     height: var(--zehn-size-emote-small) !important;
     width: var(--zehn-size-emote-small) !important;
   }
 }
 
 // STICKER
-div:has(>img[src^="https://community.steamstatic.com/economy/sticker/"]) {
+div:not([class]):has(>img[src^="https://community.steamstatic.com/economy/sticker/"]) {
   width: var(--zehn-size-sticker) !important;
   height: var(--zehn-size-sticker) !important;
 }
 
 img[src^="https://community.steamstatic.com/economy/sticker/"] {
-  width: 100% !important;
-  height: 100% !important;
+  width: var(--zehn-size-sticker) !important;
+  height: var(--zehn-size-sticker) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3436,12 +3431,8 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
 // CONTAINER
 ._1Ab0f8lGXvkC0tPjkFoYj8 {
   margin-top: var(--zehn-size-spacing-xs) !important;
-  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xxxl) !important;
   gap: var(--zehn-size-tags-gap) !important;
-}
-
-.compactView ._1Ab0f8lGXvkC0tPjkFoYj8 {
-  padding: 0px var(--zehn-size-padding-xl) 0px var(--zehn-size-padding-xl) !important;
+  padding: var(--msg-padding) !important;
 }
 
 // REACTION
@@ -3464,21 +3455,34 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   }
 }
 
-// EMOTICON
-.m89hcklEIZomEEXW7E4Ky {
-  width: var(--zehn-size-icon-sm) !important;
-  height: var(--zehn-size-icon-sm) !important;
-  padding: 0px !important;
-  align-self: center !important;
-}
+// REACTION
+.UA15KlVbtDSJkqSpIAMIN {
+  border-color: transparent !important;
 
-// COUNT
-.a2_2ffGgB_f8RBwW8D8Rj {
-  line-height: var(--zehn-size-tag-md) !important;
-  color: var(--zehn-color-tag-text) !important;
-  font-size: var(--zehn-size-tag-text-md) !important;
-  font-weight: var(--zehn-weight-normal) !important;
-  margin: 0px 0px 0px var(--zehn-size-spacing-xs) !important;
+  // EMOTICON
+  .m89hcklEIZomEEXW7E4Ky {
+    width: var(--zehn-size-icon-sm) !important;
+    height: var(--zehn-size-icon-sm) !important;
+    padding: 0px !important;
+    align-self: center !important;
+  }
+
+  // STICKER
+  .Ki1SGbezePO_5kPHBY1g9 {
+    width: var(--zehn-size-icon-sm) !important;
+    height: var(--zehn-size-icon-sm) !important;
+    padding: 0px !important;
+    align-self: center !important;
+  }
+
+  // COUNT
+  .a2_2ffGgB_f8RBwW8D8Rj {
+    line-height: var(--zehn-size-tag-md) !important;
+    color: var(--zehn-color-tag-text) !important;
+    font-size: var(--zehn-size-tag-text-md) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    margin: 0px 0px 0px var(--zehn-size-spacing-xs) !important;
+  }
 }
 
 // ADD REACTION
@@ -3494,6 +3498,11 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   mask-position: center !important;
   mask-size: var(--zehn-size-icon-sm) !important;
   -webkit-mask-image: var(--zehn-icon-emoticon) !important;
+
+  // PICKER ICON
+  &._3XfQ_NReAGO_XZ7IQEUNTZ {}
+
+  * { display: none !important; }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
