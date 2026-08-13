@@ -106,7 +106,7 @@ Zehn is built on the foundation of variables to make broad-sweeping changes a br
 ### Color Blending
 You can blend colors into both the foreground and background of Zehn. Give Steam more than just a native look, give it your look in either light or dark mode!
 
-![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.png)
+![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.gif)
 
 > [!NOTE]
 > #### Millennium
