@@ -1078,18 +1078,27 @@
 
       .FriendPicker_SuggestedFriend {
         padding: var(--zehn-size-padding-xs) var(--zehn-size-padding-md) !important;
-        background: var(--zehn-color-list-background) !important;
+        background: var(--entry-bg) !important;
+        --entry-bg: var(--zehn-color-list-background);
 
         &:hover {
-          background: var(--zehn-color-list-background-hover) !important;
+          --entry-bg: var(--zehn-color-list-background-hover);
         }
 
         &:active {
-          background: var(--zehn-color-list-background-active) !important;
+          --entry-bg: var(--zehn-color-list-background-active);
         }
 
         &.Focus {
-          background: var(--zehn-color-list-background-focus) !important;
+          --entry-bg: var(--zehn-color-list-background-selected);
+
+          &:hover {
+            --entry-bg: var(--zehn-color-list-background-selected-hover);
+          }
+
+          &:active {
+            --entry-bg: var(--zehn-color-list-background-selected-active);
+          }
         }
       }
     }

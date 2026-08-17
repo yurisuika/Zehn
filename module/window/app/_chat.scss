@@ -253,10 +253,11 @@
   height: fit-content !important;
   background: transparent !important;
   border: none !important;
-}
 
-._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ {
-  background: transparent !important;
+  // ACTIVE
+  &.Yd-DsWkYiFiYwpci--Yk_ {
+    background: transparent !important;
+  }
 }
 
 // TAB SEPARATOR
@@ -297,10 +298,12 @@
   height: var(--zehn-size-titlebar) !important;
 }
 
-// AVATAR AND NAME
+// CHAT TAB CONTENT CHAT FRIEND
 ._21I8pyEfvklCsrYIcsBtYY,
+// CHAT TAB CONTENT CHAT ROOM
 ._3hCFlMxf40SP2WVNOubSvf {
   padding: 0px !important;
+  margin: 0px !important;
   height: fit-content !important;
 }
 
@@ -1996,19 +1999,19 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
-  border-radius: var(--zehn-size-context-radius) !important;
-  color: var(--zehn-color-context-text) !important;
-  font-size: var(--zehn-size-context-text) !important;
-  line-height: var(--zehn-size-context-line) !important;
+  border-radius: var(--zehn-size-context-menu-radius) !important;
+  color: var(--zehn-color-context-entry-text) !important;
+  font-size: var(--zehn-size-context-entry-text) !important;
+  line-height: var(--zehn-size-context-entry-line) !important;
   font-weight: var(--zehn-weight-normal) !important;
   gap: 0px !important;
-  padding: var(--zehn-size-context-padding-menu) !important;
-  border: var(--zehn-size-context-border) solid var(--zehn-color-context-menu-border) !important;
+  padding: var(--zehn-size-context-menu-padding) !important;
+  border: var(--zehn-size-context-menu-border) solid var(--zehn-color-context-menu-border) !important;
 }
 
 .STV_BroadcastSettingsMenuItems {
   background: transparent !important;
-  font-size: var(--zehn-size-context-text) !important;
+  font-size: var(--zehn-size-context-entry-text) !important;
 }
 
 .STV_BroadcastSettingsMenuItems .contextMenuItem.menuChecked {
@@ -2196,18 +2199,60 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
   background-blend-mode: exclusion !important;
   background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
-  border-radius: var(--zehn-size-context-radius) !important;
-  color: var(--zehn-color-context-text) !important;
-  font-size: var(--zehn-size-context-text-other) !important;
-  line-height: var(--zehn-size-context-line-other) !important;
+  border-radius: var(--zehn-size-context-menu-radius) !important;
+  color: var(--zehn-color-context-entry-text) !important;
+  font-size: var(--zehn-size-context-entry-text-other) !important;
+  line-height: var(--zehn-size-context-entry-line-other) !important;
   font-weight: var(--zehn-weight-normal) !important;
   padding: var(--zehn-size-padding-xs) !important;
-  border: var(--zehn-size-context-border) solid var(--zehn-color-context-menu-border) !important;
+  border: var(--zehn-size-context-menu-border) solid var(--zehn-color-context-menu-border) !important;
   margin: var(--zehn-size-spacing-md) !important;
 }
 
 .dash_video_stats .dash_stat_close_button svg {
   -webkit-mask-image: var(--zehn-icon-clear) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FRIEND BROADCAST DETAILS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.FriendChatBroadcastDetails {
+  color: inherit !important;
+  font-size: inherit !important;
+  background: var(--zehn-color-panel) !important;
+  padding: var(--zehn-size-padding-md) !important;
+  border-radius: var(--zehn-size-panel-radius) !important;
+  transition: var(--zehn-transition-panel) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-panel-hover) !important;
+  }
+}
+
+// PLAYING
+.FriendChatBroadcastDetails_PlayingText {}
+
+// ICON
+.FriendChatBroadcastDetails_Icon {
+  width: var(--zehn-size-icon-lg) !important;
+  height: var(--zehn-size-icon-lg) !important;
+  margin: 0px var(--zehn-size-icon-gap) !important;
+  border-radius: var(--zehn-size-thumbnail-radius) !important;
+}
+
+// GAME NAME
+.FriendChatBroadcastDetails_GameName {
+  margin: 0px !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3519,9 +3564,9 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
 // MENTION/COMMAND PICKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ._1QU3cLCGXCmYTUvjYiqqz6 {
-  background: var(--zehn-color-control-background) !important;
-  border: var(--zehn-size-control-border) solid var(--zehn-color-control-border) !important;
-  border-radius: var(--zehn-size-control-radius) !important;
+  background: var(--zehn-color-option-background) !important;
+  border: var(--zehn-size-option-border) solid var(--zehn-color-option-border) !important;
+  border-radius: var(--zehn-size-option-radius) !important;
   bottom: var(--zehn-size-spacing-xs) !important;
   left: var(--zehn-size-spacing-xs) !important;
   right: var(--zehn-size-spacing-xs) !important;
@@ -3530,7 +3575,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   transition: background-color 0.2s var(--zehn-timing-ease) !important;
 
   &:hover {
-    background-color: var(--zehn-color-control-background-hover) !important;
+    background-color: var(--zehn-color-option-background-hover) !important;
   }
 }
 
@@ -3991,9 +4036,9 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   width: fit-content !important;
   height: fit-content !important;
   box-sizing: content-box !important;
-  background: var(--zehn-color-control-background) !important;
-  border: var(--zehn-size-control-border) solid var(--zehn-color-control-border) !important;
-  border-radius: var(--zehn-size-control-radius) !important;
+  background: var(--zehn-color-option-background) !important;
+  border: var(--zehn-size-option-border) solid var(--zehn-color-option-border) !important;
+  border-radius: var(--zehn-size-option-radius) !important;
   padding: var(--zehn-size-padding-xxs) !important;
   top: calc(var(--zehn-size-titlebar) + var(--zehn-size-spacing-xs)) !important;
   right: var(--zehn-size-spacing-md) !important;
@@ -4001,7 +4046,7 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   transition: background-color 0.2s var(--zehn-timing-ease) 0s, opacity 0.2s var(--zehn-timing-ease) 1s !important;
 
   &:hover {
-    background-color: var(--zehn-color-control-background-hover) !important;
+    background-color: var(--zehn-color-option-background-hover) !important;
   }
 }
 

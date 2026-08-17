@@ -196,7 +196,6 @@
   width: 100% !important;
   height: fit-content !important;
   max-width: 100% !important;
-  align-items: center !important;
   box-sizing: border-box !important;
   padding: 0px !important;
 }
@@ -217,6 +216,11 @@
     transform: none !important;
     filter: none !important;
   }
+}
+
+// LABEL
+.AvatarAndUser .labelHolder {
+  align-self: center !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1446,13 +1450,16 @@
   animation: none !important;
   align-items: center !important;
   background-color: var(--zehn-color-list-background) !important;
+  --selected-bg: var(--zehn-color-list-background-selected);
 
   &:hover {
     background-color: var(--zehn-color-list-background-hover) !important;
+    --selected-bg: var(--zehn-color-list-background-selected-active);
   }
 
   &:active {
     background-color: var(--zehn-color-list-background-active) !important;
+    --selected-bg: var(--zehn-color-list-background-selected-active);
   }
 }
 
@@ -1472,19 +1479,8 @@
   z-index: -1;
   inset: 0px;
   pointer-events: none;
-  background: var(--zehn-color-list-background-focus);
-}
-
-@media (prefers-color-scheme: light) {
-  .friendStatusHover.Friend_ContextMenuActive::after {
-    filter: var(--zehn-filter-selected-light);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .friendStatusHover.Friend_ContextMenuActive::after {
-    filter: var(--zehn-filter-selected-dark);
-  }
+  background: var(--selected-bg);
+  filter: var(--zehn-filter-selected);
 }
 
 // DRAGGING GHOST

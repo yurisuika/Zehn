@@ -1,0 +1,1062 @@
+// CONTEXT MENU SHARED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// AS SEPARATE WINDOW
+._14wqdluDeDnnEcg3OSLEmd {
+  background: transparent !important;
+}
+
+// FIX FOR WINDOW MENUS BEING CUT OFF
+._14wqdluDeDnnEcg3OSLEmd .PP7LM0Ow1K5qkR8WElLpt {
+  position: relative !important;
+  border-right-width: calc(2 * var(--zehn-size-context-menu-border)) !important;
+}
+
+// CONTEXT MENU
+.PP7LM0Ow1K5qkR8WElLpt {
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  padding: var(--zehn-size-context-menu-padding) !important;
+  margin: 0px !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+  background: transparent !important;
+  border: var(--zehn-size-context-menu-border) solid transparent !important;
+  border-radius: var(--zehn-size-context-menu-radius) !important;
+
+  // NAV MENUS
+  &:has(._3pofGqV0buiKAfMPEs3_82, .Eq8Px4ixn5sAFSR6_9wWQ, ._1UgM1Pm8SbTWX7_2f-crGt) {
+    border-top: none !important;
+    padding: var(--zehn-size-context-menu-padding-menu) !important;
+  }
+
+  // EMOTICON PICKER
+  &:has(.tid_OE5NJWCCVJQP1PfRc) {
+    --picker-size: 480px !important;
+    padding: var(--zehn-size-context-menu-padding-picker) !important;
+  }
+
+  // SOUNDTRACK
+  &:has(._20v4MHXd0kP4rRu6ZTAGQU) {
+    padding: var(--zehn-size-context-menu-padding-soundtrack) !important;
+  }
+
+  // TRICK TO APPLY BORDER/BG HERE BECAUSE OF AFOREMENTIONED BUG (NOT ON CONTROLS)
+  &:not(.EDl_mzaY3WxkgmYVD8W4d):after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    display: block;
+    inset: calc(-1 * var(--zehn-size-context-menu-border));
+    background: var(--zehn-color-context-menu-background);
+    border: var(--zehn-size-context-menu-border) solid var(--zehn-color-context-menu-border);
+  }
+
+  // LIBRARY CONTEXT MENU
+  &._1UOkn2fGQ25jnyqcEJbnlo {}
+
+  // CONTEXT MENU POSITION
+  &._2yAm5LY_eu-Vg_52l0HFlM {}
+
+  // SIDEBAR DROPDOWN
+  &.EDl_mzaY3WxkgmYVD8W4d {}
+
+  // CONTENTS
+  ._2EstNjFIIZm_WUSKm5Wt7n {
+    padding: 0px !important;
+    font-size: var(--zehn-size-context-entry-text) !important;
+
+    // MENU POPUP (NAVBAR)
+    &._3pofGqV0buiKAfMPEs3_82 {
+      background: transparent !important;
+    }
+
+    // MENU POPUP (ALSO ON NAVBAR)
+    &.Eq8Px4ixn5sAFSR6_9wWQ {}
+
+    // FORCE DESKTOP (TRAY MENU)
+    &._3qIuY9S_vXm3IQS-uE9SRS {}
+
+    // ACCOUNT MENU
+    &.HoGkIKTQnkTEFGjqO-GMl {}
+
+    // MEDIA SHARE SHEET
+    &.tyP_D79lbTe9kJwFOIjfB {}
+
+    // NOTIFICATIONS
+    &._1UgM1Pm8SbTWX7_2f-crGt {}
+
+    // CHAT TABS
+    &.ChatTabs.ChatTabsContextMenu {
+      min-width: fit-content !important;
+    }
+
+    // FRIENDS CONTEXT MENU
+    &.friendsContextMenu {
+
+      // CURRENT USER
+      &.currentUserContextMenu {
+        max-width: 220px !important;
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MENU ITEM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// MENU ITEM (ALSO USED ON COMBOBOX DROPDOWN)
+._1n7Wloe5jZ6fSuvV18NNWI {
+  --selected-filter: none;
+  --entry-bg: var(--zehn-color-context-entry-background);
+  min-height: var(--zehn-size-context-entry) !important;
+  max-height: max-content !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  color: var(--zehn-color-context-entry-text) !important;
+  font-size: var(--zehn-size-context-entry-text) !important;
+  line-height: var(--zehn-size-context-entry-line) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  border-radius: var(--zehn-size-context-entry-radius) !important;
+  margin: 0px !important;
+  border: none !important;
+  padding: var(--zehn-size-context-entry-padding) !important;
+  background: transparent !important;
+  filter: none !important;
+
+  &.contextMenuUnselectable,
+  &.disabled {
+    color: var(--zehn-color-context-entry-text-disabled) !important;
+    pointer-events: none !important;
+  }
+
+  &:hover {
+    --entry-bg: var(--zehn-color-context-entry-background-hover);
+  }
+
+  &:active {
+    --entry-bg: var(--zehn-color-context-entry-background-active);
+  }
+
+  // ACTIVE
+  &.menuChecked,
+  &._18z-3vkWndCBO5WJgFldRK,
+  // ROOT MENU STATUS W/ CHECK
+  &:has(._32b_aVF7OElQOPG70LjdrJ svg),
+  // DO NOT DISTURB
+  &:has(.DNDCheckBox .Active),
+  // TRAY
+  &:has(._2QcdrheE9WasLLyJYHymUv._54dy2uxVcadf_1e6Poifs) {
+    --entry-bg: var(--zehn-color-context-entry-background-selected);
+    --selected-filter: var(--zehn-filter-selected);
+
+    &:hover {
+      --entry-bg: var(--zehn-color-context-entry-background-selected-hover);
+    }
+
+    &:active {
+      --entry-bg: var(--zehn-color-context-entry-background-selected-active);
+    }
+
+    // NO REVEAL BG ON SELECTED
+    &.zehnReveal::before {
+      background: transparent !important;
+    }
+  }
+
+  // BG APPLIED ON PSEUDO SO REVEAL BORDER IS OUTSIDE BG COLOR
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    inset: 0px;
+    pointer-events: none;
+    border-radius: var(--zehn-size-context-entry-radius);
+    background: var(--entry-bg) padding-box;
+    border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border);
+    filter: var(--selected-filter);
+  }
+
+  svg {
+    opacity: 1 !important;
+    border: none !important;
+    fill: transparent !important;
+    margin: 0px !important;
+    width: var(--zehn-size-context-entry-icon) !important;
+    height: var(--zehn-size-context-entry-icon) !important;
+    background-color: var(--zehn-color-context-entry-icon) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-context-entry-icon) !important;
+    -webkit-mask-image: var(--context-icon, var(--zehn-icon-asterisk)) !important;
+
+    * { display: none !important; }
+  }
+
+  // ACTION
+  &.Z5iAXBkRFGnwpXsO8ANTl {
+    text-transform: none !important;
+    letter-spacing: normal !important;
+
+    svg {
+      margin-right: var(--zehn-size-context-entry-gap) !important;
+    }
+
+    &.Stream {
+      --context-icon: var(--zehn-icon-streaming);
+    }
+
+    &.Connect {
+      --context-icon: var(--zehn-icon-sync);
+    }
+
+    &.BorrowApp {
+      --context-icon: var(--zehn-icon-share);
+    }
+
+    &.PurchaseApp {
+      --context-icon: var(--zehn-icon-shop-cart);
+    }
+
+    &.PreLoad {
+      --context-icon: var(--zehn-icon-install);
+    }
+
+    &.Install {
+      --context-icon: var(--zehn-icon-install);
+    }
+
+    &.Download {
+      --context-icon: var(--zehn-icon-download);
+    }
+
+    &.Launch {
+      --context-icon: var(--zehn-icon-launch);
+    }
+
+    &.Uninstall {
+      --context-icon: var(--zehn-icon-delete);
+    }
+
+    &.Update {
+      --context-icon: var(--zehn-icon-update);
+    }
+
+    &.Play {
+      --context-icon: var(--zehn-icon-play);
+    }
+
+    &.Resume {
+      --context-icon: var(--zehn-icon-play);
+    }
+    
+    &.PlayMusic {
+      --context-icon: var(--zehn-icon-audio);
+    }
+
+    &.Pause {
+      --context-icon: var(--zehn-icon-pause);
+    }
+
+    &.Stop {
+      --context-icon: var(--zehn-icon-stop);
+    }
+
+    &.Cancel {
+      --context-icon: var(--zehn-icon-cancel);
+    }
+  }
+
+  // MEDIA SHARE
+  &.QoydG3cy0VecZ1qgKRn8F {}
+
+  // CHAT TABS
+  &.ChatTabContextMenuItem {}
+
+  // CHAT
+  &.FriendMenuRoleCheckbox {}
+
+  &.ChatroomContextMenuDisableableItem {}
+
+  // FRIENDS
+  &.contextMenuGameTitle {}
+
+  &.contextMenuBroadcast {}
+
+  &.contextMenuGameOptions {
+
+    &.contextMenuPlayButton {
+
+      svg {
+        --context-icon: var(--zehn-icon-play);
+        margin-right: var(--zehn-size-context-entry-gap) !important;
+      }
+    }
+  }
+
+  // VOICE INVITE
+  &.contextVoiceInvite {
+
+    svg.SVGIcon_VoiceRoom {
+      --context-icon: var(--zehn-icon-chat-invite);
+      margin-right: var(--zehn-size-context-entry-gap) !important;
+    }
+  }
+
+  .SVGIcon_Button.SVGIcon_PlusCircle {
+    --context-icon: var(--zehn-icon-add-list);
+    margin-right: var(--zehn-size-context-entry-gap) !important;
+  }
+
+  // CLOSE CHAT TAB
+  .SVGIcon_Button.SVGIcon_X_Line {
+    --context-icon: var(--zehn-icon-clear);
+  }
+
+  .SVGIcon_Button.SVGIcon_Check,
+  .SVGIcon_Button.SVGIcon_DialogCheck {
+    --context-icon: var(--zehn-icon-checkmark);
+    margin-right: var(--zehn-size-context-entry-gap) !important;
+  }
+
+  .SVGIcon_Button.SVGIcon_Information {
+    --context-icon: var(--zehn-icon-info);
+    margin-right: var(--zehn-size-context-entry-gap) !important;
+  }
+
+  // SUB MENU
+  &._2RlEO6dx1vo3OB7EFJnzDi {
+
+    // LABEL
+    ._2qdHlYPUfe_wwwtyPIu7m3 {}
+
+    // ARROW
+    ._114nFoGF7tZ4PpremDP2w0 {
+      margin: 0px !important;
+      margin-left: var(--zehn-size-context-entry-gap) !important;
+
+      svg.SVGIcon_DownArrowContextMenu {
+        transform: none !important;
+        --context-icon: var(--zehn-icon-chevron-right);
+      }
+    }
+  }
+
+  // MENU ITEM (NAVBAR)
+  &._2jXHP0742MyApMUVUM8IFn {}
+
+  // ITEM (ALSO ON MENU)
+  &._2uiDecKkKjAq7nimy3uLhG {}
+
+  // COMBOBOX DROPDOWN
+  &.G3_eozBlouid6uYGgY2Lf {
+    top: unset !important;
+  }
+
+  // TIMELINE
+  &._1_VGcqhwscnT-kPnPb2c22 {}
+
+  // FRIENDS
+  &.personaContextMenuItem {}
+}
+
+// ICON CONTAINER (USED WHERE? SUPPOSEDLY ON SERVERS/ROOTMENU BUT I CAN'T FIND IT)
+._1n7Wloe5jZ6fSuvV18NNWI ._38-c8Lb-zCJc8GmvTzoyL1 {
+  margin: 0px !important;
+  margin-right: var(--zehn-size-context-entry-gap) !important;
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+// SEPARATOR
+.WUOrULWKkGLl3ZUQdDXg8,
+// HR SEPARATOR (USED WHERE?)
+.IjIBR_wDDi2N77Oz4KAT4 {
+  margin: var(--zehn-size-context-separator-margin) !important;
+  height: var(--zehn-size-context-separator) !important;
+  background: var(--zehn-color-separator-context) !important;
+  min-width: 0px !important;
+  width: auto !important;
+
+  // REMOVE HANGING SEPARATOR
+  &:first-of-type,
+  &:last-of-type {
+    display: none !important;
+  }
+}
+
+// INJECTED SEPARATOR
+.zehnContextSeparator {
+  height: var(--zehn-size-context-separator) !important;
+  padding: 0px !important;
+  width: auto !important;
+  background-color: var(--zehn-color-separator-context) !important;
+  margin: var(--zehn-size-context-separator-margin) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CONTROLLER SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ENTRY
+._34o03-8cUc3fQX1u650c0L.contextMenuItem {
+  --selected-filter: none;
+  --entry-bg: var(--zehn-color-context-entry-background);
+  min-height: var(--zehn-size-context-entry) !important;
+  max-height: max-content !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  color: var(--zehn-color-context-entry-text) !important;
+  font-size: var(--zehn-size-context-entry-text) !important;
+  line-height: var(--zehn-size-context-entry-line) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  border-radius: var(--zehn-size-context-entry-radius) !important;
+  margin: 0px !important;
+  border: none !important;
+  padding: var(--zehn-size-context-entry-padding) !important;
+  background: transparent !important;
+  filter: none !important;
+
+  &.disabled {
+    color: var(--zehn-color-context-entry-text-disabled) !important;
+    pointer-events: none !important;
+  }
+
+  &:hover {
+    --entry-bg: var(--zehn-color-context-entry-background-hover);
+  }
+
+  &:active {
+    --entry-bg: var(--zehn-color-context-entry-background-active);
+  }
+
+  // BG APPLIED ON PSEUDO SO REVEAL BORDER IS OUTSIDE BG COLOR
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    inset: 0px;
+    pointer-events: none;
+    border-radius: var(--zehn-size-context-entry-radius);
+    background: var(--entry-bg) padding-box;
+    border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border);
+    filter: var(--selected-filter);
+  }
+
+  // LABEL
+  ._18C7xpEWME7W-bxMsvyXdi {}
+
+  // ARROW
+  ._2T7n7sepVsm6k4PqM9hZ_U {
+    margin: 0px !important;
+    margin-left: var(--zehn-size-context-entry-gap) !important;
+
+    svg {
+      display: block !important;
+      margin: 0px !important;
+      transform: none !important;
+      fill: transparent !important;
+      width: var(--zehn-size-context-entry-icon) !important;
+      height: var(--zehn-size-context-entry-icon) !important;
+      background-color: var(--zehn-color-context-entry-icon) !important;
+      mask-repeat: no-repeat !important;
+      mask-position: center !important;
+      mask-size: var(--zehn-size-context-entry-icon) !important;
+      -webkit-mask-image: var(--context-icon, var(--zehn-icon-chevron-right)) !important;
+
+      * { display: none !important; }
+
+      // ARROW
+      &.SVGIcon_DownArrowContextMenu {
+        --context-icon: var(--zehn-icon-chevron-right);
+      }
+    }
+  }
+}
+
+// SEPARATOR
+.ixiWPQKqTMxnq43WgT3vj {
+  height: var(--zehn-size-context-separator) !important;
+  min-height: var(--zehn-size-context-separator) !important;
+  background: var(--zehn-color-separator-context) !important;
+  margin: var(--zehn-size-context-separator-margin) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// VIDEO EMBED (CHAT STORE LINK) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// MENU LAYER
+._1OFXTlU4FVAAUE-TYyLlPK {
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+
+  // STORE
+  &:empty {
+    opacity: 0 !important;
+    transform: none !important;
+  }
+}
+
+// SETTINGS MENU
+._10UNx2XXsFmsHb86RCyofu {
+  background: var(--zehn-color-context-menu-background) !important;
+  border-radius: var(--zehn-size-context-menu-radius) !important;
+  color: var(--zehn-color-context-entry-text) !important;
+  font-size: var(--zehn-size-context-entry-text) !important;
+  line-height: var(--zehn-size-context-entry-line) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  gap: 0px !important;
+  padding: var(--zehn-size-context-menu-padding) !important;
+  border: var(--zehn-size-context-menu-border) solid var(--zehn-color-context-menu-border) !important;
+
+  // MENU ITEM
+  ._2Qsf4rHzNzK6Z3UYN7tOFx {
+    gap: 0px !important;
+    --selected-filter: none;
+    --entry-bg: var(--zehn-color-context-entry-background);
+    min-height: var(--zehn-size-context-entry) !important;
+    max-height: max-content !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    color: var(--zehn-color-context-entry-text) !important;
+    font-size: var(--zehn-size-context-entry-text) !important;
+    line-height: var(--zehn-size-context-entry-line) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    border-radius: var(--zehn-size-context-entry-radius) !important;
+    margin: 0px !important;
+    border: none !important;
+    padding: var(--zehn-size-context-entry-padding) !important;
+    background: transparent !important;
+
+    &.disabled {
+      color: var(--zehn-color-context-entry-text-disabled) !important;
+      pointer-events: none !important;
+    }
+
+    // ACTIVE
+    &._3LsARNrY1BnB5awNEtG73u {
+      --entry-bg: var(--zehn-color-context-entry-background-selected);
+      --selected-filter: var(--zehn-filter-selected);
+
+      &:hover {
+        --entry-bg: var(--zehn-color-context-entry-background-selected-hover);
+      }
+
+      &:active {
+        --entry-bg: var(--zehn-color-context-entry-background-selected-active);
+      }
+
+      // NO REVEAL BG ON SELECTED
+      &.zehnReveal::before {
+        background: transparent !important;
+      }
+
+      svg {
+        width: var(--zehn-size-context-entry-icon) !important;
+        height: var(--zehn-size-context-entry-icon) !important;
+        background-color: var(--zehn-color-context-entry-icon) !important;
+        mask-repeat: no-repeat !important;
+        mask-position: center !important;
+        mask-size: var(--zehn-size-context-entry-icon) !important;
+        -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+        display: none !important;
+
+        * { display: none !important; }
+      }
+    }
+
+    // BG APPLIED ON PSEUDO SO REVEAL BORDER IS OUTSIDE BG COLOR
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      z-index: -1;
+      inset: 0px;
+      pointer-events: none;
+      border-radius: var(--zehn-size-context-entry-radius);
+      background: var(--entry-bg) padding-box;
+      border: var(--zehn-size-context-entry-border) solid var(--zehn-color-context-entry-border);
+      filter: var(--selected-filter);
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FRIENDS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.friendsContextMenu.currentUserContextMenu {
+
+  // MAKE INVISIBLE BUT COVER ENTIRE ENTRY SO WE APPLY SELECTED BG INSTEAD AS CHECK
+  .DialogCheckbox_Container.DNDCheckBox .DialogCheckbox {
+    position: absolute !important;
+    inset: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: transparent !important;
+
+    * { display: none !important; }
+  }
+}
+
+// CURRENT USER CHECKMARK
+.contextMenuCheckMark {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  position: absolute !important;
+  inset: 0px !important;
+  margin: 0px !important;
+  background: transparent !important;
+  display: none !important;
+}
+
+// SECONDARY TEXT
+.persona_menu_descriptor,
+.persona_menu_dnd_descriptor {
+  line-height: var(--zehn-size-context-entry-line-other) !important;
+  color: var(--zehn-color-context-entry-text-other) !important;
+  font-size: var(--zehn-size-context-entry-text-other) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  width: 100% !important;
+}
+
+// FRIENDS LOWER SECTION
+.contextMenuSectionContent {
+  background: transparent !important;
+}
+
+// GAME NAME
+.contextMenuGameTitleBlurCropContainer {
+  -webkit-mask: none !important;
+
+  .contextMenuGameItem {
+    line-height: var(--zehn-size-context-entry-line) !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+
+    .contextMenuGameIcon {
+      margin: 0px !important;
+      margin-right: var(--zehn-size-icon-gap) !important;
+      width: var(--zehn-size-context-entry-icon) !important;
+      height: var(--zehn-size-context-entry-icon) !important;
+      opacity: 1 !important;
+      display: none !important;
+
+      img.GameIcon {}
+    }
+
+    .contextMenuGameName {
+      color: var(--zehn-color-context-entry-text-disabled) !important;
+      font-size: inherit !important;
+      line-height: inherit !important;
+    }
+  }
+}
+
+// RECENT NAME
+.recentName {
+  padding: var(--zehn-size-context-entry-padding) !important;
+  font-size: var(--zehn-color-context-entry-text) !important;
+  color: var(--zehn-color-context-entry-text) !important;
+  line-height: var(--zehn-size-context-entry-line) !important;
+  min-width: fit-content !important;
+  display: block !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CHAT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.FriendMenuRoleCheckbox {
+
+  .SVGIcon_Button.SVGIcon_Crown {
+    --context-icon: var(--zehn-icon-crown) !important;
+    margin-right: var(--zehn-size-icon-gap) !important;
+  }
+}
+
+// NOT FRIENDS
+.contextMenuLabel,
+.contextMenuLabel.contextMenuNotAFriend {
+  text-transform: none !important;
+  border: unset !important;
+  padding: var(--zehn-size-context-entry-padding) !important;
+  color: var(--zehn-color-context-entry-text-disabled) !important;
+  font-size: var(--zehn-size-context-entry-text) !important;
+  line-height: var(--zehn-size-context-entry-line) !important;
+}
+
+// FIND GAMES TO PLAY TOGETHER (APPARENTLY NOT ALWAYS OBFUSCATED?)
+._2BbdeQcdqy7ATc2431QNtL,
+.ChatroomContextMenuDisableableItem {
+
+  // DISABLED
+  ._3TXSuIQPqQndes4gH_DrSc {
+    line-height: var(--zehn-size-context-entry-line-other) !important;
+    color: var(--zehn-color-context-entry-text-other) !important;
+    font-size: var(--zehn-size-context-entry-text-other) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+  }
+}
+
+// CHAT ROOM CONTEXT NO PERMISSION
+._1h-0-Tp3xGljlD5DWPNbhN,
+.ChatRoomContextNoPermission {
+
+  // LOCK ICON
+  svg._7jnlllrHQyvmZSvKb2PGd {
+    --context-icon: var(--zehn-icon-lock) !important;
+    margin-right: var(--zehn-size-icon-gap) !important;
+  }
+}
+
+// REMOTE PLAY ANYWHERE DESCRIPTION (WHERE IS THIS??)
+._3BuInduVWVTbAXRVAeMjD- {
+  color: var(--zehn-color-context-entry-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-context-entry-text-disabled) !important;
+  text-wrap: wrap !important;
+  line-height: var(--zehn-color-context-entry-line) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CHAT TABS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.ChatTabsContextMenu.CompactFriendsList {
+
+  // FRIEND SIZE (CLEAR VANILLA STYLING)
+  .friend {
+    padding: 0px !important;
+    height: fit-content !important;
+    align-items: center !important;
+  }
+
+  // CLOSE THIS TAB
+  ._1JXI4j2_xSpVK1YjyEuebr {
+    margin-left: auto !important;
+  }
+}
+
+// OVERRIDE TAB WIDTH
+.ChatTabContextMenuItem ._2XZq-_f6npaQdAgeRzKIkz {
+  width: auto !important;
+  min-width: fit-content !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// NAVBAR MENUS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@media (prefers-reduced-motion: no-preference) {
+  html.Notifications_Menu,
+  html.Account_Menu,
+  html[class*="_Supernav"],
+  html[class*="_Root_Menu"] {
+    .PP7LM0Ow1K5qkR8WElLpt.visible.ready {
+      animation: fall-down 0.5s var(--zehn-timing-ease-out) both !important;
+    }
+  }
+}
+
+// SEPARATOR (MENU)
+._21GPYlKBCLsHQpTsHw_RL_ {
+  margin: var(--zehn-size-context-separator-margin) !important;
+  height: var(--zehn-size-context-separator) !important;
+  background: var(--zehn-color-separator-context) !important;
+  min-width: 0px !important;
+  width: auto !important;
+
+  // MENU ITEM
+  &._2jXHP0742MyApMUVUM8IFn {
+    border: none !important;
+    padding: 0px !important;
+    color: var(--zehn-color-context-entry-text) !important;
+    font-size: var(--zehn-size-context-entry-text) !important;
+    line-height: var(--zehn-size-context-entry-line) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// ACCOUNT MENU ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LOGOUT BUTTON
+._20oWF80IgHJr1BcEb1GgHL {
+  gap: var(--zehn-size-context-entry-gap) !important;
+}
+
+// ACCOUNT NAME
+.HoGkIKTQnkTEFGjqO-GMl ._11phBiBefcVQdzrnrezkKa {
+  color: var(--zehn-color-context-entry-text-other) !important;
+}
+
+// BALANCE
+.HoGkIKTQnkTEFGjqO-GMl ._2jphjrSifC6orDT4g_7Wd {
+  padding: 0px !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SOUNDTRACK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._20v4MHXd0kP4rRu6ZTAGQU {
+  margin: 0px !important;
+  padding: 0px !important;
+  gap: var(--zehn-size-spacing-md) !important;
+  display: flex !important;
+  flex-direction: column !important;
+
+  // CONTROL BLOCK
+  ._3DLyrg7YP5cNP9HKda62qd {
+    gap: var(--zehn-size-spacing-md) !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    // PROGRESS PANEL
+    ._3DLyrg7YP5cNP9HKda62qd {
+      gap: var(--zehn-size-spacing-md) !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    // CONTROLS AND VOLUME
+    .gjP9WbEr6MS7VnS1zdyvb {
+      gap: var(--zehn-size-spacing-md) !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+  }
+}
+
+// BUTTON
+._2JNXbTydmrmO1E_p6Rky9q {
+  padding: 0px !important;
+  gap: var(--zehn-size-image-gap) !important;
+
+  // ART
+  ._2YNlqGrvNRA-xFsBpdv551 {
+    padding: var(--zehn-size-spacing-xs) !important;
+  }
+
+  // DETAILS
+  .faBTT6jhP3FFucyUnOiBK {
+    padding: 0px !important;
+
+    // SOUNDTRACK NAME
+    .I1AqdA0Q7RqYECTKSzsXc {}
+
+    // TRACK NAME
+    ._2mM3tnF33EicEuUrjZmiQv {
+      opacity: 1 !important;
+      color: inherit !important;
+    }
+  }
+}
+
+// INFO
+._26RbFDzzMplRhf211ujl5A {
+  gap: var(--zehn-size-spacing-md) !important;
+
+  // MARQUEE
+  &._2yQMJ1umABgAeEwgFWYJVV {}
+
+  // PLAYING
+  &._1XpsrsAvs4yCY2nYVsEvLw {}
+
+  // RESET ON PAUSE
+  &._1k-XZZlF-3tfscfYNn3mHz {}
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// TRAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// GAME ICON
+._2P-W-7p-jFhKaomvy0by-z {
+  width: 0px !important;
+  height: 0px !important;
+  margin-right: 0px !important;
+  opacity: 0 !important;
+  display: none !important;
+  border-radius: var(--zehn-size-thumbnail-radius) !important;
+}
+
+// JUMP LIST GAME
+._2QcdrheE9WasLLyJYHymUv {
+  color: inherit !important;
+  font-weight: inherit !important;
+
+  // RUNNING
+  &._54dy2uxVcadf_1e6Poifs {
+    color: inherit !important;
+    font-weight: inherit !important;
+  }
+
+  // UPDATING
+  &._33a4zs_vxXCtw7vFTwb3XG {
+    color: inherit !important;
+    font-weight: inherit !important;
+  }
+}
+
+// JUMP LIST ITEM TEXT
+._16CT94A4Q1AY8cbj1rtngA {}
+
+// CHECK (USED WHERE??)
+._2_evLMBW1AIMp4zfijTlt {
+  -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// BROADCASTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SELECTED USER NAME CONTAINER
+._3K4QXV1l7toIASzIn03a9w {
+  padding: var(--zehn-size-context-entry-padding) !important;
+  min-height: var(--zehn-size-context-entry) !important;
+  background: transparent !important;
+  line-height: 0px !important;
+  font-size: 0px !important;
+  box-sizing: border-box !important;
+
+  // SELECTED USER NAME
+  .c907VNi3QBNJZYF7xxgUB {
+    color: var(--zehn-color-context-entry-text-disabled) !important;
+    font-size: var(--zehn-size-context-entry-text) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    line-height: var(--zehn-size-context-entry-line) !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MILLENNIUM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SEPARATOR (USED FOR SKINS CONTEXT, ALSO ON OVERLAY???)
+._1vcky98a3hG0ulFCdee4kd {
+  height: var(--zehn-size-context-separator) !important;
+  background: var(--zehn-color-separator-context) !important;
+  margin: var(--zehn-size-context-separator-margin) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

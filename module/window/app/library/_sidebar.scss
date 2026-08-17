@@ -697,13 +697,16 @@
   border-radius: var(--zehn-size-radius-none) !important;
   line-height: var(--zehn-size-library-sidebar-entry) !important;
   background-color: var(--zehn-color-list-background) !important;
+  --selected-bg: var(--zehn-color-list-background-selected);
 
   &:hover {
     background-color: var(--zehn-color-list-background-hover) !important;
+    --selected-bg: var(--zehn-color-list-background-selected-hover);
   }
 
   &:active {
     background-color: var(--zehn-color-list-background-active) !important;
+    --selected-bg: var(--zehn-color-list-background-selected-active);
   }
 }
 
@@ -714,20 +717,8 @@
   z-index: -1;
   inset: 0px;
   pointer-events: none;
-  background: var(--zehn-color-list-background-focus);
-  background: var(--zehn-color-accent-50);
-}
-
-@media (prefers-color-scheme: light) {
-  ._3km84Vscc0uS91f0RN_30C._2-O4ZG0KrnSrzISHBKctFQ::after {
-    filter: var(--zehn-filter-selected-light);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  ._3km84Vscc0uS91f0RN_30C._2-O4ZG0KrnSrzISHBKctFQ::after {
-    filter: var(--zehn-filter-selected-dark);
-  }
+  background: var(--selected-bg);
+  filter: var(--zehn-filter-selected);
 }
 
 // HOVER OVERLAY
