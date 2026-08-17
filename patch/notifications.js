@@ -1,8 +1,8 @@
-import Options from './../js/options.js';
+import OPTIONS from './../js/options.js';
 
 /* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
-Options.applyOptions();
+OPTIONS.applyOptions();
 
 
 
@@ -13,15 +13,19 @@ Options.applyOptions();
 
 
 
-import Zehn from './../js/zehn.js';
+import ZEHN from './../js/zehn.js';
 
 /* ADD USER AGENT --------------------------------------------------------------------------------------------------- */
 
-Zehn.addUserAgent();
+ZEHN.addUserAgent();
+
+/* CONVERT SYSTEM COLORS -------------------------------------------------------------------------------------------- */
+
+ZEHN.convertAccents();
 
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
-Zehn.setGlyphColor();
+ZEHN.setGlyphColor();
 
 
 
@@ -32,12 +36,12 @@ Zehn.setGlyphColor();
 
 
 
-import Reveal from './../js/reveal.js';
+import REVEAL from './../js/reveal.js';
 
 /* REVEAL TOAST ----------------------------------------------------------------------------------------------------- */
 
-Reveal.addRevealClass('.zXrpABNQHpWKgSzqnGlL', [
+REVEAL.addRevealClass('.zXrpABNQHpWKgSzqnGlL', [
   '._1OOQPJx0nCNP9ME9toCmV7' // TOAST
 ]);
 
-Reveal.revealInner('.zXrpABNQHpWKgSzqnGlL', '._1OOQPJx0nCNP9ME9toCmV7');
+REVEAL.revealInner('.zXrpABNQHpWKgSzqnGlL', '._1OOQPJx0nCNP9ME9toCmV7');

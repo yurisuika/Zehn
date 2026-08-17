@@ -49,7 +49,16 @@ async function setRandomWaifu(list) {
 
     const OK = await imageLoads(CANDIDATE);
     if (OK) {
-      document.documentElement.style.setProperty('--zehn-waifu', `url("${CANDIDATE}")`);
+      const LINES = [
+        `:root {`,
+        `  --zehn-waifu: url("${CANDIDATE}");`,
+        `}`
+      ];
+
+      const EL = document.createElement('style');
+      EL.id = 'zehnWaifu';
+      EL.textContent = LINES.join("\n");
+      document.head.appendChild(EL);
 
       console.info('Using ' + CANDIDATE + ' for your waifu!')
       return;

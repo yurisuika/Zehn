@@ -19,6 +19,10 @@ import ZEHN from './../js/zehn.js';
 
 ZEHN.addUserAgent();
 
+/* CONVERT SYSTEM COLORS -------------------------------------------------------------------------------------------- */
+
+ZEHN.convertAccents();
+
 /* CREATE LOCALIZED ON/OFF LABELS FOR SWITCHES ---------------------------------------------------------------------- */
 
 ZEHN.createSwitchLabels();
