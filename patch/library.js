@@ -695,6 +695,16 @@ REVEAL.revealSelf('._13HxuJ0oTs2vPOIhoZ48Wm', 300);
 
 // REVEAL.revealInner('._27RcNu8aXKBpYkHcNNrt-X._2OOzYVWIHaKXm6_7sscT9i', 300);
 
+/* REVEAL EXTENDIUM PANELS ------------------------------------------------------------------------------------------ */
+
+REVEAL.addRevealClass('.extension-manager-popup', [
+  '.extension-card' // EXTENSION CARD
+], [
+  'zehnRevealBorderOnly'
+]);
+
+REVEAL.revealSelf('.extension-card', 300);
+
 
 
 
