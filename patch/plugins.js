@@ -50,10 +50,20 @@ import REVEAL from './../js/reveal.js';
 
 /* REVEAL CONTEXT EXTENDIUM ----------------------------------------------------------------------------------------- */
 
-REVEAL.addRevealClass('.extendium.Extensions .ContextMenuPopupBody', [
-  '.eKmEXJCm_lgme24Fp_HWt._2HuzvKQ2QMUJ-JJOeApaF1 ._3jMlJm4PQCA8SfNlUR99Fo' // CONTEXT ENTRY
-], [
-  'zehnRevealRipple'
-]);
+// REVEAL.addRevealClass('.extendium.Extensions .ContextMenuPopupBody', [
+//   '.eKmEXJCm_lgme24Fp_HWt._2HuzvKQ2QMUJ-JJOeApaF1 ._3jMlJm4PQCA8SfNlUR99Fo' // CONTEXT ENTRY
+// ], [
+//   'zehnRevealRipple'
+// ]);
 
-REVEAL.revealSelf('.eKmEXJCm_lgme24Fp_HWt._2HuzvKQ2QMUJ-JJOeApaF1 ._3jMlJm4PQCA8SfNlUR99Fo.zehnReveal');
+// REVEAL.revealSelf('.eKmEXJCm_lgme24Fp_HWt._2HuzvKQ2QMUJ-JJOeApaF1 ._3jMlJm4PQCA8SfNlUR99Fo.zehnReveal');
+
+/* REVEAL EXTENDIUM MENU -------------------------------------------------------------------------------------------- */
+
+// REVEAL.addRevealClass('.extendium-toolbar-manager-context-menu', [
+//   '.eKmEXJCm_lgme24Fp_HWt' // CONTEXT ENTRY
+// ], [
+//   'zehnRevealRipple'
+// ]);
+
+// REVEAL.revealSelf('.extendium-toolbar-manager-context-menu .eKmEXJCm_lgme24Fp_HWt.zehnReveal');
