@@ -1,0 +1,173 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base($style) {
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  appearance: unset !important;
+  position: relative !important;
+  display: flex !important;
+
+  transition: none !important;
+
+  align-items: center !important;
+
+  gap: var(--zehn-size-dropdown-#{$style}-gap) !important;
+
+  margin: 0px !important;
+  padding: var(--zehn-size-dropdown-#{$style}-padding) !important;
+
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--text-size) !important;
+  line-height: var(--text-line) !important;
+
+  border-width: var(--zehn-size-dropdown-#{$style}-border) !important;
+  border-style: solid !important;
+
+  outline: none !important;
+
+  --text-size: var(--zehn-size-dropdown-#{$style}-text);
+  --text-line: var(--zehn-size-dropdown-#{$style}-line);
+
+  --other-size: var(--zehn-size-dropdown-#{$style}-text-other);
+  --other-line: var(--zehn-size-dropdown-#{$style}-line-other);
+
+  --icon-size: var(--zehn-size-dropdown-#{$style}-icon);
+  --chevron-size: var(--zehn-size-dropdown-#{$style}-chevron);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SIZE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin size-fixed($height, $width) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: $width !important;
+  min-width: $width !important;
+  max-width: $width !important;
+}
+
+@mixin size-dynamic($height) {
+  height: $height !important;
+  min-height: $height !important;
+  max-height: $height !important;
+
+  width: auto !important;
+  min-width: 0px !important;
+  max-width: 100% !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SHAPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin shape($shape, $style) {
+  @if $shape == null {
+    border-radius: var(--zehn-size-dropdown-#{$style}-radius) !important;
+  } @else {
+    border-radius: #{$shape} !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin colorset($style, $mode: null) {
+  $mode: if(sass($mode != null): "-" + $mode; else: "");
+
+  background: var(--zehn-color-dropdown-#{$style}-background#{$mode}) padding-box !important;
+  color: var(--text-color) !important;
+  border-color: var(--zehn-color-dropdown-#{$style}-border#{$mode}) !important;
+
+  --text-color: var(--zehn-color-dropdown-#{$style}-text#{$mode});
+  --other-color: var(--zehn-color-dropdown-#{$style}-text-other#{$mode});
+}
+
+@mixin look($disabled, $style) {
+  & {
+    @include colorset($style);
+  }
+  &:is(:focus, :focus-within) {
+    @include colorset($style, $mode: "focus");
+  }
+  &:is(:hover) {
+    @include colorset($style, $mode: "hover");
+  }
+  &:is(:hover:focus, :hover:focus-within) {
+    @include colorset($style, $mode: "hover-focus");
+  }
+  &:is(:active) {
+    @include colorset($style, $mode: "active");
+  }
+  &:is(:active:focus, :active:focus-within) {
+    @include colorset($style, $mode: "active-focus");
+  }
+  &:is(#{$disabled}, #{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active, #{$disabled}:active:focus) {
+    @include colorset($style, $mode: "disabled");
+    pointer-events: none !important;
+  }
+
+  --icon-color: var(--zehn-color-dropdown-#{$style}-icon);
+  --chevron-color: var(--zehn-color-dropdown-#{$style}-chevron);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset-fixed($height, $width, $disabled: ":disabled", $shape: null, $style: "app") {
+  @include base($style);
+  @include size-fixed($height, $width);
+  @include shape($shape, $style);
+  @include look($disabled, $style);
+}
+
+@mixin preset-dynamic($height, $disabled: ":disabled", $shape: null, $style: "app") {
+  @include base($style);
+  @include size-dynamic($height);
+  @include shape($shape, $style);
+  @include look($disabled, $style);
+
+  flex: 1 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,3 +1,365 @@
-@forward 'dropdown/dialog';
-@forward 'dropdown/app';
-@forward 'dropdown/sorting';
+@use 'dropdown/template' as template;
+
+// DIALOG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// GENERIC
+select {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-dialog),
+    $width: fit-content,
+    $style: "dialog"
+  );
+
+  appearance: base-select !important;
+
+  // OPENED
+  &:open {
+    pointer-events: none !important;
+  }
+
+  // CHEVRON
+  &::picker-icon {
+    display: block;
+    pointer-events: none;
+    margin: auto 0px;
+    height: var(--chevron-size);
+    width: var(--chevron-size);
+    background-color: var(--chevron-color);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: var(--chevron-size);
+    -webkit-mask-image: var(--zehn-icon-chevron-down-thick);
+  }
+}
+
+// DIALOG
+.DialogDropDown._DialogInputContainer {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-dialog),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+
+  // BITRATE BUTTON (GAME RECORDING SETTINGS)
+  &._28RIt9NO4opxOwGCgtx5Ot {
+
+    // MUTED
+    ._1UpteyCApeHSfG-Tw-3H3m {
+      color: var(--other-color) !important;
+      font-size: var(--other-size) !important;
+      line-height: var(--other-line) !important;
+    }
+  }
+
+  // CURRENT DISPLAY
+  .DialogDropDown_CurrentDisplay {
+    background: transparent !important;
+    padding: 0px !important;
+    border: none !important;
+  }
+
+  // CHEVRON
+  .DialogDropDown_Arrow {
+    display: block !important;
+    background: transparent !important;
+    border-radius: var(--zehn-size-radius-none) !important; 
+    inset: unset !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    height: fit-content !important;
+    width: fit-content !important;
+
+    svg.SVGIcon_DownArrowContextMenu {
+      fill: transparent !important;
+      display: block !important;
+      margin: 0px !important;
+      padding: 0px !important;
+      width: var(--chevron-size) !important;
+      height: var(--chevron-size) !important;
+      background-color: var(--chevron-color) !important;
+      mask-repeat: no-repeat !important;
+      mask-position: center !important;
+      mask-size: var(--chevron-size) !important;
+      -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+
+      * { display: none !important; }
+    }
+  }
+}
+
+// APP PROPERTIES UPDATES
+.DialogDropDown._DialogInputContainer:has(.cbinvNOoQE045ZV5gCk_N) {
+  @include template.preset-fixed(
+    $height: fit-content,
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+}
+
+// MEDIA SHARE
+._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.zeGUOeW3Cat4UJGCGwXPZ._3PtlfdoI-VmuLuPvdS5omP {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-dialog),
+    $width: fit-content,
+    $style: "dialog"
+  );
+}
+
+// CONTROLLER SETTINGS
+.v8oJcDOQF6xmlVTw4VhOr.DialogButton._DialogLayout.cXzBZxhPBl7fZs9LODEnc {
+  @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-dialog),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+
+  // INNER CONTENTS
+  ._3OHR1e3u08hK7hMx4fFy_L {
+    gap: inherit !important;
+    align-items: center !important;
+
+    // CHEVRON
+    svg {
+      display: block !important;
+      margin: 0px !important;
+      width: var(--chevron-size) !important;
+      height: var(--chevron-size) !important;
+      background-color: var(--chevron-color) !important;
+      mask-repeat: no-repeat !important;
+      mask-position: center !important;
+      mask-size: var(--chevron-size) !important;
+      -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+
+      * { display: none !important; }
+    }
+  }
+}
+
+// ACHIEVEMENTS PLUGIN (SOME STUFF IS IMPORTANT SO THE SPECIFICITY IS NEEDED)
+.steam-hunters-achievements-page .achievements-header .DialogDropDown._DialogInputContainer {
+    @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-dialog),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "dialog"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// APP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SIDEBAR
+._2PF_m-I5yte3WnQhpcz8RC {
+    @include template.preset-fixed(
+    $height: var(--zehn-size-library-sidebar-filters),
+    $width: fit-content,
+    $style: "app"
+  );
+
+  // INNER TEXT (STYLED IN CONTEXT)
+  ._3kSh7qVSTDcPDePx9kya8C {}
+
+  // CHEVRON
+  ._15aGnszAf3gHD-PFdJBoFD {
+    display: block !important;
+    height: fit-content !important;
+    width: fit-content !important;
+
+    svg.SVGIcon_DownArrowContextMenu {
+      fill: transparent !important;
+      display: block !important;
+      width: var(--chevron-size) !important;
+      height: var(--chevron-size) !important;
+      background-color: var(--chevron-color) !important;
+      mask-repeat: no-repeat !important;
+      mask-position: center !important;
+      mask-size: var(--chevron-size) !important;
+      -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+
+      * { display: none !important; }
+    }
+  }
+}
+
+// LIBRARY SHOWCASE
+._1YdRdM9TZ_3Xolwv9aVEv- .DialogDropDown._DialogInputContainer {
+    @include template.preset-fixed(
+    $height: var(--header-size),
+    $width: fit-content,
+    $style: "app"
+  );
+
+  // COUNT
+  ._2qm05e8tWSAb-_fAHytQCP {
+    font-weight: inherit !important;
+    color: var(--other-color) !important;
+    font-size: var(--other-size) !important;
+    line-height: var(--other-line) !important;
+    padding: 0px !important;
+    margin: 0px 0px 0px var(--zehn-size-text-gap) !important;
+  }
+}
+
+// SCREENSHOTS DROPDOWNS
+._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.zeGUOeW3Cat4UJGCGwXPZ.QE3sHW9puNTAjiRDY71Xy {
+    @include template.preset-fixed(
+    $height: var(--zehn-size-media-controlbar),
+    $width: fit-content,
+    $style: "app"
+  );
+
+  // TEXT
+  ._2X6Uf9dpYzWmrq3hGfefrI {
+    color: inherit !important;
+
+    // TRUNCATE
+    &.d8HHRXZEfFuJ2DRCJXitQ {
+      max-width: none !important;
+      min-width: 0px !important;
+    }
+  }
+
+  // CHEVRON
+  svg {
+    transform: none !important;
+    fill: transparent !important;
+    display: block !important;
+    margin: 0px !important;
+    width: var(--chevron-size) !important;
+    height: var(--chevron-size) !important;
+    background-color: var(--chevron-color) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--chevron-size) !important;
+    -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+
+    * { display: none !important; }
+  }
+}
+
+// SERVERS
+._2rxrVvbku0AC8Qbequ4-z9 ._2X_ZpO2X_CIOIEfml3ZTcX .DialogDropDown._DialogInputContainer {
+    @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-app),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "app"
+  );
+}
+
+// SERVERS (FOOTER, NOT SURE WHEN THIS EXISTS)
+._2rxrVvbku0AC8Qbequ4-z9 ._341mdPDkZV7JkbIxGBREsd .DialogDropDown._DialogInputContainer {
+    @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-app),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "app"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SORTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// SORTING DROPDOWN CONTAINER (SHARED)
+._1tBzypb5E2AwNuBuVns9Hl {
+  font-size: var(--zehn-size-text-description) !important;
+  gap: var(--zehn-size-setting-control-gap) !important;
+  margin: 0px !important;
+
+  // ALSO SORTING (ON SHOWCASES)
+  &._30PVtUudUBJBzac0vEncl_ {
+    font-size: var(--zehn-size-text-description) !important;
+    margin: 0px !important;
+  }
+
+  // LABEL "SORT BY"
+  ._1ljKTq3H58WbDZGNPfM0TY {
+    color: var(--zehn-color-text-description) !important;
+    font-size: var(--zehn-size-text-description) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    margin: 0px !important;
+    line-height: 100% !important;
+    text-transform: none !important;
+    align-self: center !important;
+  }
+}
+
+// STORAGE SETTINGS
+._1tBzypb5E2AwNuBuVns9Hl ._17SQWViInfB-hmYYLoK4Yw._2ddeJfhiG4hmAfqvi1FL6X {
+    @include template.preset-fixed(
+    $height: 100%,
+    $width: fit-content,
+    $style: "sorting"
+  );
+
+  // ICON
+  svg.jewgwEvvtdAvjtgVEX2Mh {
+    order: -1 !important;
+    height: var(--icon-size) !important;
+    width: var(--icon-size) !important;;
+    display: block !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: var(--icon-color) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--icon-size) !important;
+    -webkit-mask-image: var(--zehn-icon-sort-descend) !important;
+
+    * { display: none !important; }
+  }
+
+  // CHEVRON
+  svg:not(.jewgwEvvtdAvjtgVEX2Mh) {
+    order: 9 !important;
+    display: block !important;
+    padding: 0px !important;
+    height: var(--chevron-size) !important;
+    width: var(--chevron-size) !important;;
+    display: block !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: var(--chevron-color) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--chevron-size) !important;
+    -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+
+    * { display: none !important; }
+  }
+}
+
+// SHOWCASE
+._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown._DialogInputContainer {
+    @include template.preset-fixed(
+    $height: var(--header-size),
+    $width: fit-content,
+    $disabled: ".Disabled",
+    $style: "sorting"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
