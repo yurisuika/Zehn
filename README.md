@@ -168,13 +168,9 @@ Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy th
 * Gratitude
 * HLTB for Steam
   * Game page stats made to look like the collections tags.
-  * Millennium settings options styled to the best that they can be with Chromium 126, so it looks a bit naff.
 * Size on Disk
 * Window Styler (DWMX)
   * When Transparency Effects is enabled in the settings, certain windows can have Acrylic blur behind them.
-
-> [!NOTE]
-> Until Zehn is finished being rewritten, supported plugins may appear broken. These will be reassessed afterwards.
 
 ----------
 
