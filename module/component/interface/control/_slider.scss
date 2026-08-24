@@ -1,1 +1,243 @@
-@forward 'slider/template';
+@use 'slider/template' as template;
+
+// GENERIC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// USED IN FRIENDS LIST SETTINGS
+.DialogSlider_Container._DialogInputContainer {
+  gap: var(--zehn-size-setting-label-gap) !important;
+  padding: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+
+  // REMOTE PLAY
+  &._1sbwHLsJOdQizrAQPmwIDk {
+    width: 100% !important;
+  }
+
+  // LABEL
+  .DialogLabel {
+    min-width: fit-content !important;
+  }
+
+  // SLIDER
+  .DialogSlider_Slider {
+
+    .DialogSlider_Value {}
+
+    .DialogSlider_Grabber {}
+  }
+
+  // EXPLAINER (BELOW)
+  .DialogLabelExplainer {
+    text-align: left !important;
+    line-height: var(--zehn-size-slider-notch) !important;
+  }
+}
+
+// SLIDER
+.DialogSlider_Slider {
+  @include template.preset-fixed(
+    $width: var(--slider-width, var(--zehn-size-slider-width-dialog)),
+    $track: ".DialogSlider_Value",
+    $handle: ".DialogSlider_Grabber",
+    $style: "generic"
+  );
+}
+
+// SETTINGS AND PRETTY MUCH EVERYWHERE ELSE
+._198v6zB5mZ5FWG0wpQU_3m.SliderControlPanelGroup {
+  padding: 0px !important;
+  gap: var(--zehn-size-setting-label-gap) !important;
+
+  // CONTROL + NOTCHES (WRAPS SLIDER)
+  ._23hjXB5XSry64xirVGpWAY {
+    padding: 0px !important;
+    --slider-extra-notch-padding: 0px;
+
+    // WITH DEFAULT VALUE
+    &._2vIQRDODaxmltxEdCSbuYf {
+      padding: 0px !important;
+    }
+  }
+}
+
+._1udlGGE4F5pggcpxovorUd.SliderControl {
+  @include template.preset-fixed(
+    $width: var(--slider-width, var(--zehn-size-slider-width-dialog)),
+    $track: "._2_vG6TwMW2XtyLlTEaODH9.SliderTrack",
+    $handle: "._11PBfip2UlKlY3vWSz8PA4.SliderHandle",
+    $style: "generic"
+  );
+
+  --value: calc(100% * var(--normalized-slider-value));
+
+  // NOT USING THESE ANYMORE WITH THE BEFORE/AFTER TRACK THING
+  --inverse-normalized-value: calc(1 - var(--normalized-slider-value));
+  --inverse-normalized-default-value: calc(1 - var(--normalized-slider-default-value));
+
+  ._2_vG6TwMW2XtyLlTEaODH9.SliderTrack {
+    --normalized-fill-start: calc(100% * min(var(--normalized-slider-value), var(--normalized-slider-origin)));
+    --normalized-fill-end: calc((100% - var(--slider-extra-notch-padding) * 2) * max(var(--normalized-slider-value), var(--normalized-slider-origin)) + var(--slider-extra-notch-padding));
+    --normalized-width-handle: calc(var(--normalized-fill-end) - var(--normalized-fill-start));
+    inset: 0px !important;
+    width: 100% !important;
+    height: var(--slider-track-height) !important;
+    position: absolute !important;
+  }
+
+  // HANDLE CONTAINER
+  ._8xNY6EWVZsDfOfUqDrus-.SliderHandleContainer {
+    margin: auto 0px !important;
+    inset: 0px !important;
+    height: 100% !important;
+    position: absolute !important;
+    transform: none !important;
+
+    ._11PBfip2UlKlY3vWSz8PA4.SliderHandle {}
+  }
+
+  // DEFAULT VALUE TICK
+  ._2aCoHO7mXYYdPXMN0USBAW {
+    margin: auto 0px !important;
+    width: 100% !important;
+    position: absolute !important;
+    transform: none !important;
+    height: var(--slider-handle-height) !important;
+    --value: calc(100% * var(--normalized-slider-default-value));
+
+    // TICK
+    ._1NgUy7a2LKuF-moe-rzsiH {
+      position: absolute !important;
+      top: 0px !important;
+      bottom: 0px !important;
+      left: var(--value);
+      transform: translateX(-50%) !important;
+      height: fit-content !important;
+      width: fit-content !important;
+
+      svg {
+        color: transparent !important;
+        width: var(--zehn-size-tick-width) !important;
+        height: var(--zehn-size-tick-height) !important;
+        margin: 0px !important;
+        position: relative !important;
+        inset: 0px !important;
+        top: unset !important;
+        background: var(--zehn-color-tick) !important;
+
+        * { display: none !important; }
+      }
+    }
+  }
+}
+
+// NOTCH CONTAINER
+._2yM7SDNRgnEnGEZIf-WSoG {
+  padding: 0px !important;
+  width: auto !important;
+  margin-top: var(--zehn-size-setting-label-gap) !important;
+
+  // NOTCH
+  .LYPXtQ-MbXCeitc8-tCDO {
+    min-width: var(--zehn-size-slider-notch) !important;
+    width: var(--zehn-size-slider-notch) !important;
+
+    // ALIGN TO ENDS
+    &.VvfcCRnmUv8J7Kx9Ia1sG {}
+
+    // LABEL
+    .dbACWBb8zr4cf4u05jQ4x {
+      font-weight: var(--zehn-weight-normal) !important;
+      font-size: var(--zehn-size-text-description) !important;
+      line-height: normal !important;
+      color: var(--zehn-color-text-description) !important;
+      letter-spacing: normal !important;
+      text-transform: none !important;
+      width: fit-content !important;
+      text-align: center !important;
+      padding: 0px !important;
+
+      // ALIGN LEFT
+      &._3jR_dhev70aT-Fhegy-8Mg {}
+
+      // ALIGN RIGHT
+      &.OBP79s7MvBySJTfm5wp_Z {}
+    }
+  }
+}
+
+// MILLENNIUM VALUE (TREAT AS NOTCH)
+.MillenniumPluginSettingsSliderValue,
+.MillenniumThemeSliderValue {
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-description) !important;
+  line-height: normal !important;
+  color: var(--zehn-color-text-description) !important;
+  position: relative !important;
+  inset: unset !important;
+  order: 2 !important;
+}
+
+// SLIDER
+.BroadcastVolumeSlider {
+  @include template.preset-fixed(
+    $width: var(--volume-width),
+    $track: ".BroadcastVolumeSlider_Track",
+    $handle: ".BroadcastVolumeSlider_Thumb",
+    $style: "generic"
+  );
+}
+
+.BroadcastVolumeSlider_Fill {
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// MUSIC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// VOLUME
+.gjP9WbEr6MS7VnS1zdyvb ._1udlGGE4F5pggcpxovorUd.SliderControl {
+  @include template.preset-fixed(
+    $width: var(--zehn-size-slider-width-volume),
+    $track: "._2_vG6TwMW2XtyLlTEaODH9.SliderTrack",
+    $handle: "._11PBfip2UlKlY3vWSz8PA4.SliderHandle",
+    $style: "music"
+  );
+}
+
+// TRACK
+.P_NVQ7KUOfqYaa_SwWOpS ._1udlGGE4F5pggcpxovorUd.SliderControl {
+  @include template.preset-fixed(
+    $width: 100%,
+    $track: "._2_vG6TwMW2XtyLlTEaODH9.SliderTrack",
+    $handle: "._11PBfip2UlKlY3vWSz8PA4.SliderHandle",
+    $style: "music"
+  );
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// VIDEO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// MAYBE ONE DAY WE WILL FIGURE OUT HOW TO SHOEHORN TIMELINES INTO ONE TEMPLATE, BUT TODAY IS NOT THAT DAY
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

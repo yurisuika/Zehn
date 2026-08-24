@@ -7,22 +7,24 @@
 
 // OVERLAY VERSION
 ._1itstBRykbCEZZrECYg_YU ._2sssIwe0duyIrFvat2oXzH._3few7361SOf4k_YuKCmM62 {
-  height: 720px !important;
-  width: 850px !important;
+  --settings-height: 720px;
+  --settings-width: 850px;
+  height: var(--settings-height) !important;
+  width: var(--settings-width) !important;
 }
 
 // FIX FOR OVERLAY SETTINGS OVERFLOW BECAUSE OF FIT-CONTENT EATING UP THE BORDER
 ._1itstBRykbCEZZrECYg_YU .DialogContentTransition {
-  max-width: calc(100% - var(--zehn-size-pagelist-width) - (var(--zehn-size-border) * 2));
-  max-height: calc(100% - (var(--zehn-size-border) * 2)) !important;
+  max-width: calc(var(--settings-width) - (var(--zehn-size-pagelist-width) + (var(--zehn-size-border) * 2))) !important;
+  max-height: calc(var(--settings-height) - (var(--zehn-size-border) * 2)) !important;
 }
 
 ._1itstBRykbCEZZrECYg_YU .PageListColumn {
-  max-height: calc(100% - (var(--zehn-size-border) * 2)) !important;
+  max-height: calc(var(--settings-height) - (var(--zehn-size-border) * 2)) !important;
 }
 
 .ModalDialogPopup .ModalDialogBody.DesktopUI .PopupFullWindow .TitleBar._3gGR9H910U7tiqa3tPCQa8 {
-  width: calc(100% - (var(--zehn-size-border) * 2)) !important;
+  width: calc(var(--settings-width) - (var(--zehn-size-border) * 2)) !important;
   box-sizing: border-box !important;
 }
 
