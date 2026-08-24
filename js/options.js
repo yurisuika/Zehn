@@ -17,9 +17,7 @@ async function applyOptions() {
 
   if (document.getElementById(CHECK_FOR_ID)) return;
 
-  const SCRIPT_URL = (document.currentScript && document.currentScript.src) || (typeof importMetaUrl !== 'undefined' ? importMetaUrl : (typeof import.meta !== 'undefined' ? import.meta.url : null)) || window.location.href;
-
-  const MATCH = SCRIPT_URL && SCRIPT_URL.match(/\/skins\/([^\/]+)\//);
+  const MATCH = import.meta.url.match(/\/skins\/([^\/]+)\//);
   const THEME_FOLDER = MATCH ? MATCH[1] : 'Zehn';
 
   const SOURCE = `https://steamloopback.host/skins/${THEME_FOLDER}/options.json`;
@@ -31,11 +29,6 @@ async function applyOptions() {
   const VAR_MAP = {};
 
   const UNIT_PATTERN = new RegExp(`^[-+]?\\d*\\.?\\d+(?:${UNITS.map(u => u.replace(/[%.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})$`, 'i');
-
-  function normalizePath(keyPath) {
-    if (Array.isArray(keyPath)) return keyPath.slice();
-    return String(keyPath).split('.').map(s => s.trim()).filter(Boolean);
-  };
 
   function safeSegmentKeepSpaces(seg) {
     let s = String(seg).trim();

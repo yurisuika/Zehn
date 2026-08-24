@@ -25,7 +25,8 @@ ZEHN.convertAccents();
 
 /* CREATE LOCALIZED ON/OFF LABELS FOR SWITCHES ---------------------------------------------------------------------- */
 
-ZEHN.createSwitchLabels();
+let localizationJson = await ZEHN.getLocalizationJson();
+ZEHN.createSwitchLabels(localizationJson);
 
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
@@ -70,10 +71,6 @@ ZEHN.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
 ZEHN.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
   '.friendGroup.offlineFriends .groupHeaderContainer .SortByRecent' // SORT BY BUTTON
 ]);
-
-/* WRAP ADD FRIENDS BUTTON ------------------------------------------------------------------------------------------ */
-
-ZEHN.createContainer('.MultiUserChat', '.inviteAnotherFriendButton', ['.zehnAddFriendWrapper']);
 
 /* CREATE FRIENDS TABLIST ------------------------------------------------------------------------------------------- */
 
@@ -122,11 +119,11 @@ function toggleList(root, target, button) {
   }
 };
 
-let localFriends = await ZEHN.localize(document.documentElement.lang, "Label_Friends");
+let localFriends = await ZEHN.localize(localizationJson, document.documentElement.lang, "Label_Friends");
 ZEHN.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabFriends', 'zehnFriendsTablistFriendsOpened');
 ZEHN.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabFriends', '.zehnToggled'], localFriends, toggleList);
 
-let localChats = await ZEHN.localize(document.documentElement.lang, "Label_Chats");
+let localChats = await ZEHN.localize(localizationJson, document.documentElement.lang, "Label_Chats");
 ZEHN.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabChats', 'zehnFriendsTablistChatsOpened');
 ZEHN.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localChats, toggleList);
 
@@ -158,12 +155,6 @@ ZEHN.movePrepend('.MultiUserChat', '.chatRoomOptions', [
 ZEHN.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
 ZEHN.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
 
-/* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
-
-ZEHN.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
-  '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // CHAT ROOM NAME
-]);
-
 /* WRAP POPOUT SVG -------------------------------------------------------------------------------------------------- */
 
 ZEHN.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
@@ -171,6 +162,33 @@ ZEHN.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
 /* WRAP EMOTICON ADD SVG -------------------------------------------------------------------------------------------- */
 
 ZEHN.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
+
+/* COPY BROADCAST VOLUME SLIDER TO VARIABLE ------------------------------------------------------------------------- */
+
+ZEHN.findRootsAndTargets('.BroadcastVolumeSlider', '.BroadcastVolumeSlider_Thumb', (root, target) => {
+  function syncVariable() {
+    const VALUE = target.style.left;
+
+    if (VALUE) {
+      root.style.setProperty('--value', VALUE);
+    } else {
+      root.style.removeProperty('--value');
+    }
+  };
+
+  syncVariable();
+
+  const OBSERVER = new MutationObserver((mutations) => {
+    if (mutations.some(mutation => mutation.attributeName === 'style')) {
+      syncVariable();
+    }
+  });
+
+  OBSERVER.observe(target, {
+    attributes: true,
+    attributeFilter: ['style']
+  });
+});
 
 
 

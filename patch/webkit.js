@@ -13,11 +13,11 @@ OPTIONS.applyOptions();
 
 
 
-import Zehn from './../js/zehn.js';
+import ZEHN from './../js/zehn.js';
 
 /* ADD USER AGENT --------------------------------------------------------------------------------------------------- */
 
-Zehn.addUserAgent();
+ZEHN.addUserAgent();
 
 /* CONVERT SYSTEM COLORS -------------------------------------------------------------------------------------------- */
 
@@ -25,4 +25,4 @@ ZEHN.convertAccents();
 
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
-Zehn.setGlyphColor();
+ZEHN.setGlyphColor();

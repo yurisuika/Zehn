@@ -6,34 +6,29 @@ export default WAIFU;
 async function findWaifu() {
   const STEAM_LIST_URL = 'https://steamloopback.host/waifus/waifus.json';
   const FALLBACK_URL = './../waifus.json';
-  const SCRIPT_ELEMENT = document.currentScript || (() => {
-    const SCRIPTS = document.getElementsByTagName('script');
-    return SCRIPTS[SCRIPTS.length - 1];
-  })();
-  const SCRIPT_SRC = SCRIPT_ELEMENT && SCRIPT_ELEMENT.src ? SCRIPT_ELEMENT.src : window.location.href;
-  const SCRIPT_DIR = SCRIPT_SRC.replace(/\/[^/]*$/, '/');
 
-  const resolveRelativeToScript = rel => new URL(rel, SCRIPT_DIR).href;
+  // IF IT IS NOT THE MAIN STEAM WINDOW, DON'T BOTHER
+  if (!document.querySelector('.Rp8QOGJ2DypeDniMnRBhr')) return;
 
   const tryList = async url => {
     try {
       const RESPONSE = await fetch(url);
-      if (!RESPONSE.ok) throw new Error('Fetching waifu JSON failed!');
+      if (!RESPONSE.ok) throw new Error('Fetching waifu JSON failed');
       const LIST = await RESPONSE.json();
-      if (!Array.isArray(LIST) || LIST.length === 0) throw new Error('JSON has empty waifu list!');
+      if (!Array.isArray(LIST) || LIST.length === 0) throw new Error('JSON has empty waifu list');
       return LIST;
     } catch {
-      console.warn('Cannot find a valid waifu JSON at ' + url + '.');
+      console.warn('Cannot find a valid waifu JSON at ' + url);
       return null;
     }
   };
 
   const STEAM_LIST = await tryList(STEAM_LIST_URL);
   if (!STEAM_LIST) console.warn('Attempting to use fallback waifu JSON in Zehn directory...');
-  const FALLBACK_LIST = STEAM_LIST ? null : await tryList(resolveRelativeToScript(FALLBACK_URL));
+  const FALLBACK_LIST = STEAM_LIST ? null : await tryList(new URL(FALLBACK_URL, import.meta.url).href);
   const LIST = STEAM_LIST || FALLBACK_LIST;
   if (!LIST) {
-    console.warn('No valid waifu list available!');
+    console.warn('No valid waifu list available');
     return;
   }
 
@@ -67,7 +62,7 @@ async function setRandomWaifu(list) {
     console.warn(CANDIDATE + ' is not a valid waifu, attempting to find another...');
   }
 
-  console.warn('No valid waifu found!');
+  console.warn('No valid waifu found');
 };
 
 function imageLoads(src, timeout = 5000) {

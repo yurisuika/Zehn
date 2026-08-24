@@ -44,4 +44,4 @@ REVEAL.addRevealClass('.zXrpABNQHpWKgSzqnGlL', [
   '._1OOQPJx0nCNP9ME9toCmV7' // TOAST
 ]);
 
-REVEAL.revealInner('.zXrpABNQHpWKgSzqnGlL', '._1OOQPJx0nCNP9ME9toCmV7');
+REVEAL.revealSelf('.zXrpABNQHpWKgSzqnGlL ._1OOQPJx0nCNP9ME9toCmV7');

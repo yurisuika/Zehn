@@ -25,7 +25,8 @@ ZEHN.convertAccents();
 
 /* CREATE LOCALIZED ON/OFF LABELS FOR SWITCHES ---------------------------------------------------------------------- */
 
-ZEHN.createSwitchLabels();
+let localizationJson = await ZEHN.getLocalizationJson();
+ZEHN.createSwitchLabels(localizationJson);
 
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
@@ -262,9 +263,9 @@ ZEHN.createButton('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', ['.title-area
   target.style.display = `none`;
 });
 
-ZEHN.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', (root, millenniumSettings) => {
-  const CH = new BroadcastChannel('millennium-settings-sync');
+const CH = new BroadcastChannel('millennium-settings-sync');
 
+ZEHN.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', (root, millenniumSettings) => {
   CH.onmessage = (event) => {
     const { type: TYPE, style: STYLE } = event.data || {};
     if (TYPE !== 'APPLY_STYLE') return;
@@ -274,8 +275,6 @@ ZEHN.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', (root,
 });
 
 ZEHN.findRootsAndTargets('.Steam_Root_Menu', '._2EstNjFIIZm_WUSKm5Wt7n .contextMenuItem:nth-of-type(7)', (root, millenniumEntry) => {
-  const CH = new BroadcastChannel('millennium-settings-sync');
-
   document.addEventListener('click', (e) => {
     if (e.target === millenniumEntry || millenniumEntry.contains(e.target)) {
       CH.postMessage({
@@ -381,6 +380,54 @@ ZEHN.createContainer('.ModalDialogPopup', '[src^="/steaminputglyphs/"]', ['.zehn
 
 ZEHN.createContainer('._1mfQu39T7gxcr0KSHso6_A', '[src^="/steaminputglyphs/"]', ['.zehnGlyphWrapper']);
 
+/* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
+
+ZEHN.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
+  '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // CHAT ROOM NAME
+]);
+
+/* CREATE MISSING HANDLE IN SOUNDTRACK SLIDERS ---------------------------------------------------------------------- */
+
+ZEHN.findRootsAndTargets('._198v6zB5mZ5FWG0wpQU_3m.SliderControlPanelGroup', '._1udlGGE4F5pggcpxovorUd.SliderControl', (root, target) => {
+  if (!target.querySelector("._8xNY6EWVZsDfOfUqDrus-.SliderHandleContainer")) {
+    const CONTAINER = document.createElement('div');
+    const HANDLE = document.createElement('div');
+
+    CONTAINER.classList.add("_8xNY6EWVZsDfOfUqDrus-", "SliderHandleContainer");
+    HANDLE.classList.add("_11PBfip2UlKlY3vWSz8PA4", "SliderHandle");
+
+    CONTAINER.appendChild(HANDLE);
+    target.appendChild(CONTAINER);
+  }
+});
+
+/* COPY LEGACY SLIDER TRACK WIDTH AS VARIABLE TO CONTAINER ---------------------------------------------------------- */
+
+ZEHN.findRootsAndTargets('.DialogSlider_Slider', '.DialogSlider_Grabber', (root, target) => {
+  function syncVariable() {
+    const VALUE = target.style.getPropertyValue('--position').trim();
+
+    if (VALUE) {
+      root.style.setProperty('--value', VALUE);
+    } else {
+      root.style.removeProperty('--value');
+    }
+  };
+
+  syncVariable();
+
+  const OBSERVER = new MutationObserver((mutations) => {
+    if (mutations.some(mutation => mutation.attributeName === 'style')) {
+      syncVariable();
+    }
+  });
+
+  OBSERVER.observe(target, {
+    attributes: true,
+    attributeFilter: ['style']
+  });
+});
+
 
 
 
@@ -405,7 +452,7 @@ REVEAL.revealSelf('._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
 /* REVEAL DROPDOWN -------------------------------------------------------------------------------------------------- */
 
 REVEAL.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
-  '._2oAiZidGyUxL-hfupFDQ2m:not(_2U_Y7A-0lddoJdrJBvf8JE, ._1Sa12sphmVOOs0on58tDn7)' // DROPDOWN ENTRY
+  '._2oAiZidGyUxL-hfupFDQ2m:not(._2U_Y7A-0lddoJdrJBvf8JE, ._1Sa12sphmVOOs0on58tDn7)' // DROPDOWN ENTRY
 ], [
   'zehnRevealRipple'
 ]);

@@ -1,6 +1,7 @@
 export const ZEHN = {
   addUserAgent,
   convertAccents,
+  getLocalizationJson,
   localize,
   createSwitchLabels,
   setGlyphColor,
@@ -172,47 +173,45 @@ function convertAccents() {
   };
 };
 
-function localize(langCode, langKey) {
-  const SCRIPT_ELEMENT = document.currentScript || (() => {
-    const SCRIPTS = document.getElementsByTagName('script');
-    return SCRIPTS[SCRIPTS.length - 1];
-  })();
-  const SCRIPT_SRC = SCRIPT_ELEMENT && SCRIPT_ELEMENT.src ? SCRIPT_ELEMENT.src : window.location.href;
-  const SCRIPT_DIR = SCRIPT_SRC.replace(/\/[^/]*$/, '/');
-
-  const resolveRelativeToScript = rel => new URL(rel, SCRIPT_DIR).href;
-
-  async function loadJson(relativePath) {
-    const RESPOSNE = await fetch(relativePath);
-    if (!RESPOSNE.ok) throw new Error(`Failed to load JSON...`);
-    return RESPOSNE.json();
+async function getLocalizationJson() {
+  const RESPONSE = await fetch(
+    new URL("./../data/localization.json", import.meta.url)
+  );
+  if (!RESPONSE.ok) {
+    throw new Error("Failed to load localization JSON");
   }
-
-  function getValue(obj, langCode, langKey) {
-    return obj?.[langCode]?.[langKey];
-  }
-
-  return (async () => {
-    const DATA = await loadJson(
-      resolveRelativeToScript("./../data/localization.json")
-    );
-
-    return getValue(DATA, langCode, langKey);
-  })();
+  return await RESPONSE.json();
 };
 
-function createSwitchLabels() {
-  async function labelPair(switchSelector) {
-    let localOn = await ZEHN.localize(document.documentElement.lang, "Dialog_On");
-    let localOff = await ZEHN.localize(document.documentElement.lang, "Dialog_Off");
+async function localize(data, langCode, langKey) {
+  let translations = data[langCode];
 
-    ZEHN.createText('html', switchSelector, ['.zehnLabelOn'], localOn);
-    ZEHN.createText('html', switchSelector, ['.zehnLabelOff'], localOff);
+  if (!translations) {
+    console.warn(`Language "${langCode}" was not found, falling back to English...`);
+    translations = data.en;
   }
 
-  labelPair('._9Ql-oVe_j8E-vsDdyVdWo'); // GAMEPAD
-  labelPair('._3Sl0QHQ69uK7ZMQo5vBfrA'); // WHAT'S NEW & FRIENDS SETTINGS
-  labelPair('.DialogToggleField_OptionPanel'); // OLD CHAT DIALOGS
+  if (!Object.hasOwn(translations, langKey)) {
+    throw new Error(`Localization key "${langKey}" was not found`);
+  }
+
+  return translations[langKey];
+};
+
+function createSwitchLabels(data) {
+  let currentLang = document.documentElement.lang;
+
+  async function labelPair(...switchSelector) {
+    let localOn = await ZEHN.localize(data, currentLang, "Dialog_On");
+    let localOff = await ZEHN.localize(data, currentLang, "Dialog_Off");
+    
+    for (var sel of [...switchSelector]) {
+      ZEHN.createText('html', sel, ['.zehnLabelOn'], localOn);
+      ZEHN.createText('html', sel, ['.zehnLabelOff'], localOff);
+    }
+  }
+
+  labelPair('._9Ql-oVe_j8E-vsDdyVdWo', '._3Sl0QHQ69uK7ZMQo5vBfrA', '.DialogToggleField_OptionPanel'); // GAMEPAD, WHAT'S NEW & FRIENDS SETTINGS, OLD CHAT DIALOGS
 };
 
 function setGlyphColor() {
