@@ -47,6 +47,13 @@
   );
 }
 
+// FIND BOX
+._1xLWmfPlWGV47FujycPN_c input.DialogInput._1zbolwszrDb3e7tDIusPMG {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-find)
+  );
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -61,12 +68,24 @@
 // DIALOG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // TEXT INPUT - GENERIC
-input[type="text"],
+input[type="text"] {
+  @include template.preset-dynamic(
+    $height: var(--zehn-size-input-dialog),
+    $style: "dialog"
+  );
+}
+
 input[type="number"] {
   @include template.preset-dynamic(
     $height: var(--zehn-size-input-dialog),
     $style: "dialog"
   );
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+  }
 }
 
 // DIALOG

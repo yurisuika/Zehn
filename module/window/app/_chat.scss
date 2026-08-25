@@ -1554,7 +1554,7 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
 
 // CONTAINER
 .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
-  --groupchat-offset: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
+  --groupchat-offset: var(--zehn-size-titlebar);
   margin-top: calc(var(--groupchat-offset)) !important;
   min-width: 0px !important;
   max-width: 100% !important;
@@ -1566,7 +1566,11 @@ n.chatRoomGroupNavCollapsed .chatRoomVoiceChannelNameContainer .RenameChatRoomIn
   box-sizing: border-box !important;
 }
 
-.TheaterMode .broadcastVisible .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
+.MultiUserChat.broadcastVisible:has(.chatRoomHeader) .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
+  --groupchat-offset: var(--zehn-size-titlebar) + var(--zehn-size-chat-header);
+}
+
+.TheaterMode .MultiUserChat.broadcastVisible .ChatRoomGroup_Main_Content>div:has(.BroadcastSection) {
   padding: 0px !important;
   --groupchat-offset: 0px;
 }
