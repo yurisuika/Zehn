@@ -3,12 +3,13 @@ export const WAIFU = {
 };
 export default WAIFU;
 
-async function findWaifu() {
-  const STEAM_LIST_URL = 'https://steamloopback.host/waifus/waifus.json';
-  const FALLBACK_URL = './../waifus.json';
+/* WAIFU ------------------------------------------------------------------------------------------------------------ */
 
-  // IF IT IS NOT THE MAIN STEAM WINDOW, DON'T BOTHER
-  if (!document.querySelector('.Rp8QOGJ2DypeDniMnRBhr')) return;
+async function findWaifu(parent) {
+  const STEAM_LIST_URL = 'https://steamloopback.host/waifus/waifus.json';
+  const FALLBACK_URL = '../../waifus.json';
+
+  if (!document.querySelector(parent)) return;
 
   const tryList = async url => {
     try {
@@ -34,6 +35,17 @@ async function findWaifu() {
 
   setRandomWaifu(LIST);
 };
+
+
+
+
+
+
+
+
+
+
+/* INTERNAL --------------------------------------------------------------------------------------------------------- */
 
 async function setRandomWaifu(list) {
   const REMAINING = list.slice();

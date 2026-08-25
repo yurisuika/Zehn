@@ -1,16 +1,17 @@
-import ZEHN from './zehn.js';
+import { FIND, STORE, TOGGLE, CREATE, MOVE } from './util.js';
 
 export const REVEAL = {
   addRevealClass,
   revealInner,
-  revealSelf,
-  reveal
+  revealSelf
 };
 export default REVEAL;
 
+/* REVEAL ----------------------------------------------------------------------------------------------------------- */
+
 function addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
   targetSelectors.forEach((targetSelector) => {
-    ZEHN.handleOnMutation(rootSelector, targetSelector, (root, target) => {
+    FIND.handleOnMutation(rootSelector, targetSelector, (root, target) => {
       target.classList.toggle('zehnReveal', true);
       additionalNames.forEach(name => {target.classList.toggle(name, true)});
     }, { shouldObserveTarget: false, shouldDisconnect: true, shouldAddAttributeFilter: true });
@@ -18,16 +19,27 @@ function addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
 };
 
 function revealInner(containerSelector, maskSize) {
-  ZEHN.handleOnMutation(containerSelector, '.zehnReveal', (container, revealed) => {
-    this.reveal(container, revealed, maskSize);
+  FIND.handleOnMutation(containerSelector, '.zehnReveal', (container, revealed) => {
+    reveal(container, revealed, maskSize);
   });
 };
 
 function revealSelf(selfSelector, maskSize) {
-  ZEHN.findTargets(document, selfSelector, (revealed) => {
-    this.reveal(revealed, revealed, maskSize);
-  }, false);
+  FIND.findTargets(document, selfSelector, (revealed) => {
+    reveal(revealed, revealed, maskSize);
+  }, { shouldDisconnect: false });
 };
+
+
+
+
+
+
+
+
+
+
+/* INTERNAL --------------------------------------------------------------------------------------------------------- */
 
 function reveal(container, revealed, maskSize = 150) {
   if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-transparency-effects-reveal').trim() == 0) return;

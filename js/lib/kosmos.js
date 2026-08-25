@@ -3,7 +3,9 @@ export const KOSMOS = {
 };
 export default KOSMOS;
 
-function stars() {
+/* KOSMOS ----------------------------------------------------------------------------------------------------------- */
+
+function stars(parent) {
   let canvasApp = null;
 
   function startCanvas() {
@@ -18,7 +20,7 @@ function stars() {
     CANVAS.width = innerWidth;
     CANVAS.height = innerHeight;
 
-    const PARENT = document.querySelector('.VZ6x_grhNkIYJG__jEEyp');
+    const PARENT = document.querySelector(parent);
     if (!PARENT) return;
     PARENT.prepend(CANVAS);
 
@@ -32,6 +34,17 @@ function stars() {
 
   startCanvas();
 };
+
+
+
+
+
+
+
+
+
+
+/* INTERNAL --------------------------------------------------------------------------------------------------------- */
 
 function createApp(canvas) {
   const CTX = canvas.getContext('2d');

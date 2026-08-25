@@ -3,7 +3,9 @@ export const SECRET = {
 };
 export default SECRET;
 
-function discover() {
+/* SECRET ----------------------------------------------------------------------------------------------------------- */
+
+function discover(parent) {
   const CODE = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
   let kpos = 0;
   let canvasApp = null;
@@ -42,7 +44,7 @@ function discover() {
     CANVAS.style.background = 'black';
     CANVAS.width = innerWidth;
     CANVAS.height = innerHeight;
-    document.querySelector('._27qasW5wLU4h4nUgawpo1q').appendChild(CANVAS);
+    document.querySelector(parent).appendChild(CANVAS);
 
     canvasApp = createApp(CANVAS);
     canvasApp.start();
@@ -70,6 +72,17 @@ function discover() {
     }
   };
 };
+
+
+
+
+
+
+
+
+
+
+/* INTERNAL --------------------------------------------------------------------------------------------------------- */
 
 function createApp(canvas) {
   const CTX = canvas.getContext('2d');

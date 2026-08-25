@@ -3,6 +3,8 @@ export const OPTIONS = {
 };
 export default OPTIONS;
 
+/* OPTIONS ---------------------------------------------------------------------------------------------------------- */
+
 async function applyOptions() {
   const EXT = '.css';
   const BOOLEAN_NAME_MAP = { true: 'on', false: 'off' };

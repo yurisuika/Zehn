@@ -1,4 +1,5 @@
-import OPTIONS from './../js/options.js';
+import OPTIONS from '../lib/options.js';
+import COLORS from '../lib/colors.js';
 
 /* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
@@ -13,16 +14,10 @@ OPTIONS.applyOptions();
 
 
 
-import ZEHN from './../js/zehn.js';
-
-/* ADD USER AGENT --------------------------------------------------------------------------------------------------- */
-
-ZEHN.addUserAgent();
-
 /* CONVERT SYSTEM COLORS -------------------------------------------------------------------------------------------- */
 
-ZEHN.convertAccents();
+COLORS.convertAccentColors();
 
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
-ZEHN.setGlyphColor();
+COLORS.colorScrollbarGlyphs();

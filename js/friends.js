@@ -1,82 +1,50 @@
-import OPTIONS from './../js/options.js';
+import './shared/base.js';
+import './shared/spinner.js';
+import './shared/context.js';
+import { CURRENT_LANG, LOCALIZATION_JSON } from './shared/data.js';
+import { FIND, STORE, TOGGLE, CREATE, MOVE } from './lib/util.js';
+import LOCALIZATION from './lib/localization.js';
+import REVEAL from './lib/reveal.js';
 
-/* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
+/* STORE HEIGHT OF FRIENDS HEADER ----------------------------------------------------------------------------------- */
 
-OPTIONS.applyOptions();
-
-
-
-
-
-
-
-
-
-
-import ZEHN from './../js/zehn.js';
-
-/* ADD USER AGENT --------------------------------------------------------------------------------------------------- */
-
-ZEHN.addUserAgent();
-
-/* CONVERT SYSTEM COLORS -------------------------------------------------------------------------------------------- */
-
-ZEHN.convertAccents();
-
-/* CREATE LOCALIZED ON/OFF LABELS FOR SWITCHES ---------------------------------------------------------------------- */
-
-let localizationJson = await ZEHN.getLocalizationJson();
-ZEHN.createSwitchLabels(localizationJson);
-
-/* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
-
-ZEHN.setGlyphColor();
-
-/* CREATE SPINNER --------------------------------------------------------------------------------------------------- */
-
-ZEHN.createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ');
-ZEHN.createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v');
-ZEHN.createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE');
-
-/* STORE HEIGHT OF HEADER ------------------------------------------------------------------------------------------- */
-
-ZEHN.storeTargetHeightAsVariable('.friendsListContainer', '.friendListHeaderContainer', '--friends-header-height');
+STORE.storeTargetHeightAsVariable('.friendsListContainer', '.friendListHeaderContainer', '--friends-header-height');
 
 /* TOGGLE CLASSES BASED ON WHAT HEADER CONTENT IS OPEN -------------------------------------------------------------- */
 
-ZEHN.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearchActive', 'zehnSearchOpened');
+TOGGLE.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearchActive', 'zehnSearchOpened');
 
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
-ZEHN.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
-ZEHN.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
-  ZEHN.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
-}, false);
+TOGGLE.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
+CREATE.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
+  TOGGLE.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
+}, { shouldAppend: false });
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
-ZEHN.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
-ZEHN.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
-  ZEHN.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
+TOGGLE.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
+CREATE.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+  TOGGLE.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
 });
 
 /* MOVE CURRENT USER INTO VOICE CONTROLS WRAPPER -------------------------------------------------------------------- */
 
-ZEHN.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
+MOVE.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
   '.currentUserContainer' // CURRENT USER
 ]);
 
 /* MOVE SORT BY INTO GROUP HEADER ----------------------------------------------------------------------------------- */
 
-ZEHN.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
+MOVE.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
   '.friendGroup.offlineFriends .groupHeaderContainer .SortByRecent' // SORT BY BUTTON
 ]);
 
 /* CREATE FRIENDS TABLIST ------------------------------------------------------------------------------------------- */
 
-ZEHN.createAdjacentElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], false);
+CREATE.createAdjacentElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], { shouldPlaceBefore: false });
 
-ZEHN.findRootsAndTargets('.friendsListContainer', '.friendlist', (root, target) => {
+FIND.findRootsAndTargets('.friendsListContainer', '.friendlist', (root, target) => {
   target.id = 'zehnFriendsDisplayed';
 });
 
@@ -119,53 +87,53 @@ function toggleList(root, target, button) {
   }
 };
 
-let localFriends = await ZEHN.localize(localizationJson, document.documentElement.lang, "Label_Friends");
-ZEHN.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabFriends', 'zehnFriendsTablistFriendsOpened');
-ZEHN.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabFriends', '.zehnToggled'], localFriends, toggleList);
+let localFriends = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Label_Friends");
+TOGGLE.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabFriends', 'zehnFriendsTablistFriendsOpened');
+CREATE.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabFriends', '.zehnToggled'], localFriends, toggleList);
 
-let localChats = await ZEHN.localize(localizationJson, document.documentElement.lang, "Label_Chats");
-ZEHN.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabChats', 'zehnFriendsTablistChatsOpened');
-ZEHN.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localChats, toggleList);
+let localChats = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Label_Chats");
+TOGGLE.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabChats', 'zehnFriendsTablistChatsOpened');
+CREATE.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localChats, toggleList);
 
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
-ZEHN.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
-ZEHN.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
-  ZEHN.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
+TOGGLE.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
+CREATE.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+  TOGGLE.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
 });
 
 /* TOGGLE GROUP CHAT CHANNEL PAGELIST ------------------------------------------------------------------------------- */
 
-ZEHN.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
-ZEHN.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
-  ZEHN.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
+TOGGLE.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
+CREATE.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+  TOGGLE.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
 });
 
 /* TOGGLE MEMBER LIST STATUS ---------------------------------------------------------------------------------------- */
 
-ZEHN.moveAppend('.MultiUserChat', '.chatRoomOptions', [
+MOVE.moveAppend('.MultiUserChat', '.chatRoomOptions', [
   '.MemberListOption.ToggleMemberListView'
 ]);
 
 /* MOVE GROUP CHAT BROADCAST BUTTON INTO HEADER --------------------------------------------------------------------- */
 
-ZEHN.movePrepend('.MultiUserChat', '.chatRoomOptions', [
+MOVE.movePrepend('.MultiUserChat', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
 ]);
-ZEHN.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
-ZEHN.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
+CREATE.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
+CREATE.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
 
 /* WRAP POPOUT SVG -------------------------------------------------------------------------------------------------- */
 
-ZEHN.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
+CREATE.createContainer('.msg', '.chatImageURL', ['.zehnEmbedLinkWrapper']);
 
 /* WRAP EMOTICON ADD SVG -------------------------------------------------------------------------------------------- */
 
-ZEHN.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
+CREATE.createContainer('.msg', '._2FJUPOjT7afeB0125mqdQt', ['.zehnAddEmoticon']);
 
 /* COPY BROADCAST VOLUME SLIDER TO VARIABLE ------------------------------------------------------------------------- */
 
-ZEHN.findRootsAndTargets('.BroadcastVolumeSlider', '.BroadcastVolumeSlider_Thumb', (root, target) => {
+FIND.findRootsAndTargets('.BroadcastVolumeSlider', '.BroadcastVolumeSlider_Thumb', (root, target) => {
   function syncVariable() {
     const VALUE = target.style.left;
 
@@ -199,25 +167,6 @@ ZEHN.findRootsAndTargets('.BroadcastVolumeSlider', '.BroadcastVolumeSlider_Thumb
 
 
 
-import REVEAL from './../js/reveal.js';
-
-/* REVEAL CONTEXT --------------------------------------------------------------------------------------------------- */
-
-REVEAL.addRevealClass('.friendsui-container ._2EstNjFIIZm_WUSKm5Wt7n', [
-  '._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem:not(.contextMenuUnselectable, .disabled)' // CONTEXT ENTRY
-], [
-  'zehnRevealRipple'
-]);
-
-REVEAL.addRevealClass('.friendsui-container ._10UNx2XXsFmsHb86RCyofu', [
-  '._2Qsf4rHzNzK6Z3UYN7tOFx' // VIDEO
-], [
-  'zehnRevealRipple'
-]);
-
-REVEAL.revealSelf('._2EstNjFIIZm_WUSKm5Wt7n ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
-REVEAL.revealSelf('._10UNx2XXsFmsHb86RCyofu ._2Qsf4rHzNzK6Z3UYN7tOFx.zehnReveal');
-
 /* REVEAL BROADCAST CONTEXT MENU ------------------------------------------------------------------------------------ */
 
 REVEAL.addRevealClass('.STV_BroadcastSettingsPanel', [
@@ -227,6 +176,16 @@ REVEAL.addRevealClass('.STV_BroadcastSettingsPanel', [
 ]);
 
 REVEAL.revealSelf('.STV_BroadcastSettingsPanel ._1n7Wloe5jZ6fSuvV18NNWI.contextMenuItem.zehnReveal');
+
+/* REVEAL BROADCAST SETTINGS MENU ----------------------------------------------------------------------------------- */
+
+REVEAL.addRevealClass('._10UNx2XXsFmsHb86RCyofu', [
+  '._2Qsf4rHzNzK6Z3UYN7tOFx' // VIDEO
+], [
+  'zehnRevealRipple'
+]);
+
+REVEAL.revealSelf('._10UNx2XXsFmsHb86RCyofu ._2Qsf4rHzNzK6Z3UYN7tOFx.zehnReveal');
 
 /* REVEAL FRIENDS --------------------------------------------------------------------------------------------------- */
 
@@ -276,7 +235,6 @@ REVEAL.addRevealClass('.chatHeader', [
 ]);
 
 REVEAL.revealInner('.chatHeader');
-
 
 /* REVEAL CHAT CHANNEL NAV ------------------------------------------------------------------------------------------ */
 
