@@ -226,8 +226,6 @@ CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', ['.title-ar
   target.style.display = `none`;
 });
 
-const CH = new BroadcastChannel('millennium-settings-sync');
-
 FIND.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '.MillenniumSettings', (root, millenniumSettings) => {
   const CH = new BroadcastChannel('millennium-settings-sync');
 

@@ -25,6 +25,8 @@ CREATE.createIconTextContainer('.Help_Root_Menu', '.contextMenuItem', ['.zehnRoo
 /* OPEN MILLENNIUM SETTINGS ----------------------------------------------------------------------------------------- */
 
 FIND.findRootsAndTargets('.Steam_Root_Menu', '._2EstNjFIIZm_WUSKm5Wt7n .contextMenuItem:nth-of-type(7)', (root, millenniumEntry) => {
+  const CH = new BroadcastChannel('millennium-settings-sync');
+
   document.addEventListener('click', (e) => {
     if (e.target === millenniumEntry || millenniumEntry.contains(e.target)) {
       CH.postMessage({
