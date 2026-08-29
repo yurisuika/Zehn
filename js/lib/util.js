@@ -170,7 +170,7 @@ function toggleClassWithPresence(rootSelector, targetSelector, presentSelector, 
   handleOnMutation(rootSelector, targetSelector, (root, target) => {
     const PRESENT = !!root.querySelector(presentSelector);
     target.classList.toggle(toggleName, PRESENT);
-  }, { shouldObserveTarget: true, shouldDisconnect: true,  shouldAddAttributeFilter: true });
+  }, { shouldObserveTarget: true, shouldDisconnect: true, shouldAddAttributeFilter: true });
 };
 
 function addRootClassOnToggle(root, target, button, buttonTargetToggleName) {
