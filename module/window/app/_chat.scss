@@ -4418,14 +4418,24 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
 
 // GROUP NAME AREA
 .chatRoomMembers .friendGroup .groupName {
-  display: none !important;
-  padding: 0px !important;
+  // BECAUSE REACT BREAKS
+  position: absolute !important;
+  height: 26px !important;
+  line-height: 26px !important;
+
+  // display: none !important;
+  padding: var(--zehn-size-chat-memberlist-padding) !important;
   margin: 0px !important;
 }
 
 .MemberListColumn.MemberListViewCompact .chatRoomMembers .friendGroup .groupName {
-  display: none !important;
-  padding: 0px !important;
+  // BECAUSE REACT BREAKS
+  position: absolute !important;
+  height: 26px !important;
+  line-height: 26px !important;
+
+  // display: none !important;
+  padding: var(--zehn-size-chat-memberlist-padding) !important;
   margin: 0px !important;
   height: 0px !important;
   width: 0px !important;
@@ -4478,31 +4488,36 @@ img[src^="https://community.steamstatic.com/economy/sticker/"] {
   line-height: normal !important;
 }
 
-// USER CONTAINER
+// USER CONTAINER - REACT LIST SO IT JUMPS ON SCROLL WHEN WE TRY TO FORCE HEIGHT
 .MemberListColumn .Panel:has(>.friend),
 .MemberListColumn.MemberListViewCompact .Panel:has(>.friend),
 .MemberListColumn .chatRoomMembers.groupMemberList .chatroomBucket_regular,
 .MemberListColumn.MemberListViewCompact .chatRoomMembers.groupMemberList .chatroomBucket_regular {
-  height: var(--zehn-size-chat-memberlist-height) !important;
-  max-height: var(--zehn-size-chat-memberlist-height) !important;
-  position: relative !important;
+  // BECAUSE REACT BREAKS
+  // height: var(--zehn-size-chat-memberlist-height) !important;
+  // max-height: var(--zehn-size-chat-memberlist-height) !important;
+  // position: relative !important;
+  // inset: unset !important;
+
   display: block !important;
-  inset: unset !important;
   transition: none !important;
   animation: none !important;
   padding: 0px !important;
   margin: 0px !important;
 }
 
-// INNER CONTAINER
+// INNER CONTAINER - REACT LIST SO IT JUMPS ON SCROLL WHEN WE TRY TO FORCE HEIGHT
 .MemberListColumn .Panel>.friend,
 .MemberListViewCompact .CompactFriendsList .friend,
 .MemberListViewCompact .CompactFriendsList .friendGroup .friend,
 .CompactFriendsList .friendGroup .ChatRoomMemberScrollList_List .friend {
+  // BECAUSE REACT BREAKS
+  height: 36px !important;
+  // height: var(--zehn-size-chat-memberlist-height) !important;
+
   box-sizing: border-box !important;
-  height: var(--zehn-size-chat-memberlist-height) !important;
   margin: 0px !important;
-  padding:  var(--zehn-size-chat-memberlist-padding) !important;
+  padding: var(--zehn-size-chat-memberlist-padding) !important;
   align-items: center !important;
 }
 
