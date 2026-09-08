@@ -7,7 +7,7 @@ import REVEAL from './lib/reveal.js';
 
 /* ADD SEPARATOR ELEMENT IN NOTIFICATIONS DROPDOWN ------------------------------------------------------------------ */
 
-CREATE.createAdjacentElement('._1UgM1Pm8SbTWX7_2f-crGt', '.MCa4RMSvWJwwWjcZP2wTT', ['.zehnContextSeparator'], { shouldPlaceBefore: false });
+CREATE.createSiblingElement('._1UgM1Pm8SbTWX7_2f-crGt', '.MCa4RMSvWJwwWjcZP2wTT', ['.zehnContextSeparator'], { shouldPlaceBefore: false });
 
 /* MOVE SUPERNAV AND ROOT MENU LIST ITEMS INTO CONTAINERS ----------------------------------------------------------- */
 

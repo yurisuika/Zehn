@@ -22,7 +22,8 @@ export const CREATE = {
   createTextWrapper,
   createWrapper,
   createContainer,
-  createAdjacentElement
+  createChildElement,
+  createSiblingElement
 };
 export const MOVE = {
   moveAppend,
@@ -359,10 +360,32 @@ function createContainer(rootSelector, targetSelector, nameSelectors) {
   });
 };
 
-function createAdjacentElement(rootSelector, targetSelector, nameSelectors, { shouldPlaceBefore = true } = {}) {
+function createChildElement(rootSelector, targetSelector, nameSelectors, { shouldAppend = true, shouldClearExisting = false } = {}) {
   findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     const ELEMENT = document.createElement('div');
     nameSelectors.forEach((nameSelector) => {
+      if (shouldClearExisting) {
+        document.querySelector(nameSelector)?.remove();
+      }
+
+      nameElement(ELEMENT, nameSelector);
+    });
+    if (shouldAppend) {
+      target.append(ELEMENT);
+    } else {
+      target.prepend(ELEMENT);
+    }
+  });
+};
+
+function createSiblingElement(rootSelector, targetSelector, nameSelectors, { shouldPlaceBefore = true, shouldClearExisting = false } = {}) {
+  findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
+    const ELEMENT = document.createElement('div');
+    nameSelectors.forEach((nameSelector) => {
+      if (shouldClearExisting) {
+        document.querySelector(nameSelector)?.remove();
+      }
+
       nameElement(ELEMENT, nameSelector);
     });
     if (shouldPlaceBefore) {

@@ -42,7 +42,7 @@ MOVE.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer
 
 /* CREATE FRIENDS TABLIST ------------------------------------------------------------------------------------------- */
 
-CREATE.createAdjacentElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], { shouldPlaceBefore: false });
+CREATE.createSiblingElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], { shouldPlaceBefore: false, shouldClearExisting: true });
 
 FIND.findRootsAndTargets('.friendsListContainer', '.friendlist', (root, target) => {
   target.id = 'zehnFriendsDisplayed';
