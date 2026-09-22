@@ -96,6 +96,11 @@
   order: 1 !important;
 }
 
+.friendListHeaderContainer>.currentUserContainer {
+  // IF WE DON'T MOVE THIS, THEN THE VC WRAPPER WILL BE ABSOLUTE.
+  order: 2;
+}
+
 .quickAccessFriends {
   order: 3 !important;
 }
@@ -180,6 +185,13 @@
   padding: var(--zehn-size-friends-entry-compact-padding) !important;
 }
 
+.zehnFriendsHeaderClosed .friendListHeaderContainer>.currentUserContainer,
+.friendsListContainer:not(.zehnUserOpened) .friendListHeaderContainer>.currentUserContainer {
+  display: none !important;
+  height: 0px !important;
+  min-height: 0px !important;
+}
+
 // BACKGROUND GLOW
 .statusHeaderGlow {
   opacity: 0 !important;
@@ -239,6 +251,9 @@
   justify-content: space-between !important;
   gap: 0px !important;
   z-index: 10;
+  position: absolute !important;
+  right: 0px !important;
+  top: calc(var(--zehn-size-titlebar) + var(--zehn-size-friends-searchbar)) !important;
 }
 
 .zehnFriendsHeaderClosed .friendListHeaderContainer>div:not([class]),
