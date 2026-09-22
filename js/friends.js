@@ -16,23 +16,23 @@ TOGGLE.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearc
 
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
-TOGGLE.checkTargetToggle('.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
+TOGGLE.checkTargetToggle('.chat_main', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
 CREATE.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
-}, { shouldAppend: false });
+}, { shouldAppend: false, toggleSelector: 'zehnFriendsHeaderClosed' });
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
-TOGGLE.checkTargetToggle('.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
+TOGGLE.checkTargetToggle('.chat_main', '.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
 CREATE.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
-});
+}, { toggleSelector: 'zehnUserOpened' });
 
 /* MOVE CURRENT USER INTO VOICE CONTROLS WRAPPER -------------------------------------------------------------------- */
 
-MOVE.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
-  '.currentUserContainer' // CURRENT USER
-]);
+// MOVE.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
+//   '.currentUserContainer' // CURRENT USER
+// ]);
 
 /* MOVE SORT BY INTO GROUP HEADER ----------------------------------------------------------------------------------- */
 

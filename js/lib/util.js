@@ -203,7 +203,7 @@ function checkTargetToggle(rootSelector, targetSelector, additionName, toggleSel
 
 /* CREATE ----------------------------------------------------------------------------------------------------------- */
 
-function createButton(rootSelector, targetSelector, nameSelectors, callback, { shouldAppend = true } = {}) {
+function createButton(rootSelector, targetSelector, nameSelectors, callback, { shouldAppend = true, toggleSelector = null } = {}) {
   findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
     const BUTTON = document.createElement('button');
     BUTTON.name = 'button';
@@ -211,6 +211,11 @@ function createButton(rootSelector, targetSelector, nameSelectors, callback, { s
     nameSelectors.forEach((nameSelector) => {
       nameElement(BUTTON, nameSelector);
     });
+
+    if (toggleSelector) {
+      if (root.classList.contains(toggleSelector)) BUTTON.classList.toggle('zehnToggled', true);
+    }
+
     if (shouldAppend) {
       target.append(BUTTON);
     } else {
