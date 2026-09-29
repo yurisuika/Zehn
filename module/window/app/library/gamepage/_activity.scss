@@ -6,12 +6,12 @@
 }
 
 #zehnGameFeatured {
-  padding: var(--zehn-content-mode-activity-spacing) !important;
+  padding: var(--zehn-size-activity-panel-spacing) !important;
   padding-bottom: 0px !important;
 }
 
 #zehnGameActivity {
-  padding: var(--zehn-content-mode-activity-spacing) !important;
+  padding: var(--zehn-size-activity-panel-spacing) !important;
 }
 
 #zehnGameActivity ._2r4TK4BAuU-J4FuF_O7v_5._3yTl3RiWfo-Itg-xp967wP {
@@ -22,7 +22,7 @@
 
 // POST, FEED, AND LOAD MORE
 ._5uvIN6jXDXzzck59F-nhv._2EEApFUXB7aWXBtitgV5dk {
-  gap: var(--zehn-content-mode-activity-spacing) !important;
+  gap: var(--zehn-size-activity-panel-spacing) !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,6 +61,12 @@
       // DOUBLE EVENT CLEAR MARGIN
       .UVeN0kaD3zv1feMj_mMw5._3xi-HLpFVHaakihoqhQ_6C {
         margin: 0px !important;
+      }
+    }
+
+    @container style(--setting-content-mode: flat) {
+      .UVeN0kaD3zv1feMj_mMw5 {
+        margin-inline: calc(-1 * var(--zehn-size-spotlight-panel-padding)) !important;
       }
     }
   }
@@ -216,7 +222,7 @@
 
 // EVENT DAYS GAP
 ._5uvIN6jXDXzzck59F-nhv>.Panel:has(.S2Fu9HxHCA5MaCLGrN2ib) {
-  gap: var(--zehn-content-mode-activity-spacing) !important;
+  gap: var(--zehn-size-activity-panel-spacing) !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -261,6 +267,9 @@ div[class="UVeN0kaD3zv1feMj_mMw5"],
   height: auto !important;
   padding: var(--zehn-size-activity-panel-content-padding) !important;
   background-color: var(--zehn-color-list-background) !important;
+  margin-inline: calc(var(--content-offset-factor) * var(--zehn-size-activity-panel-content-padding)) !important;
+  --header-offset-factor: -1;
+  --content-offset-factor: 0;
 
   &:hover {
     background-color: var(--zehn-color-list-background-hover) !important;
@@ -268,6 +277,14 @@ div[class="UVeN0kaD3zv1feMj_mMw5"],
 
   &:active {
     background-color: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+@container style(--setting-content-mode: flat) {
+  div[class="UVeN0kaD3zv1feMj_mMw5"],
+  .UVeN0kaD3zv1feMj_mMw5.Panel {
+    --header-offset-factor: 0;
+    --content-offside-factor: -1;
   }
 }
 
@@ -311,7 +328,7 @@ div[class="UVeN0kaD3zv1feMj_mMw5"],
       margin-left: 0px !important;
       position: absolute !important;
       top: calc((var(--zehn-size-activity-panel-content-padding) + var(--zehn-size-panel-header)) * -1) !important;
-      left: calc(var(--zehn-size-activity-panel-content-padding) * -1) !important;
+      left: calc(var(--zehn-size-activity-panel-content-padding) * var(--header-offset-factor)) !important;
       pointer-events: none !important;
     }
   }
@@ -1107,6 +1124,7 @@ div[class="UVeN0kaD3zv1feMj_mMw5"],
 
 // LOAD MORE ACTIVITY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// ACTUAL BUTTON THAT WE ADD MORE STUFF INTO, BECAUSE WRAPPING IT BREAKS EVENTUALLY
 ._3yTl3RiWfo-Itg-xp967wP ._39ZurKJQex6v69aXzvc_nj {
   line-height: var(--zehn-size-panel-header-large) !important;
   width: 100% !important;
@@ -1146,7 +1164,7 @@ div[class="UVeN0kaD3zv1feMj_mMw5"],
   color: var(--zehn-color-text1) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  margin: var(--zehn-content-mode-activity-spacing) !important;
+  margin: var(--zehn-size-activity-panel-spacing) !important;
   border: none !important;
   background: var(--zehn-content-mode-activity-panel-color) !important;
   padding: var(--zehn-size-activity-panel-padding) !important;
@@ -1182,7 +1200,7 @@ div[class="UVeN0kaD3zv1feMj_mMw5"],
   color: var(--zehn-color-text1) !important;
   font-size: var(--zehn-size-14) !important;
   font-weight: var(--zehn-weight-normal) !important;
-  margin: var(--zehn-content-mode-activity-spacing) !important;
+  margin: var(--zehn-size-activity-panel-spacing) !important;
   border: none !important;
   background: var(--zehn-content-mode-activity-panel-color) !important;
   padding: var(--zehn-size-activity-panel-padding) !important;
