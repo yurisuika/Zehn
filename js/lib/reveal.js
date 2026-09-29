@@ -18,15 +18,15 @@ function addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
   });
 };
 
-function revealInner(containerSelector, maskSize) {
+function revealInner(containerSelector, { maskSize = 150, requiresContentModePanel = false } = {}) {
   FIND.handleOnMutation(containerSelector, '.zehnReveal', (container, revealed) => {
-    reveal(container, revealed, maskSize);
+    reveal(container, revealed, maskSize, requiresContentModePanel);
   });
 };
 
-function revealSelf(selfSelector, maskSize) {
+function revealSelf(selfSelector, { maskSize = 150, requiresContentModePanel = false } = {}) {
   FIND.findTargets(document, selfSelector, (revealed) => {
-    reveal(revealed, revealed, maskSize);
+    reveal(revealed, revealed, maskSize, requiresContentModePanel);
   }, { shouldDisconnect: false });
 };
 
@@ -41,8 +41,12 @@ function revealSelf(selfSelector, maskSize) {
 
 /* INTERNAL --------------------------------------------------------------------------------------------------------- */
 
-function reveal(container, revealed, maskSize = 150) {
-  if (getComputedStyle(document.documentElement).getPropertyValue('--zehn-transparency-effects-reveal').trim() == 0) return;
+function reveal(container, revealed, maskSize, requiresContentModePanel) {
+  if (getComputedStyle(document.documentElement).getPropertyValue('--setting-transparency-effects').trim() == 'off') return;
+
+  if (requiresContentModePanel) {
+    if (getComputedStyle(document.documentElement).getPropertyValue('--setting-content-mode').trim() == 'flat') return;
+  }
 
   const TARGETS = [revealed];
   const MASK_SIZE = maskSize;
