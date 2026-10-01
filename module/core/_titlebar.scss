@@ -191,15 +191,11 @@
 // UNFOCUS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 body:not(.WindowFocus) {
-  // NAVBAR GLOBAL BUTTON ICON COLOR OVERRIDE
-  ._3Z7VQ1IMk4E3HsHvrkLNgo * {
-    --icon-color: var(--zehn-color-icon3);
-  }
 
   // TITLEBAR CONTROLS
-  .ModalPosition_Dismiss .closeButton:not(:hover) svg,
-  .title-area-icon:not(.closeButton:hover) .title-area-icon-inner svg {
-    background-color: var(--zehn-color-icon3) !important;
+  .ModalPosition_Dismiss .closeButton:not(:hover, :enabled:hover) svg,
+  .windowControlButton:not(:hover, :enabled:hover) .title-area-icon-inner svg {
+    --icon-color: var(--zehn-color-icon3);
   }
 
   // ROOTMENU
@@ -209,27 +205,46 @@ body:not(.WindowFocus) {
   // NAVBAR DIRECTION CONTROLS
   #zehnBackwardsWrapper:has(._1LYTHQzcI1u6tcxbbcc5V3),
   #zehnForwardsWrapper:has(._1LYTHQzcI1u6tcxbbcc5V3),
-  // NAVBAR BUTTONS
-  ._3cykd-VfN_xBxf3Qxriccm,
-  // FORMER BOTTOMBAR - ADD GAME / FRIENDS & CHAT
-  ._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k,
-  ._1TdaAqMFadi0UTqilrkelR ._3OhUxFVlQYr9W5ThxstR8k,
+  // ADD GAME
+  ._2foCkpRXhqq0UGVE50BWqj,
+  // FRIENDS
+  ._1TdaAqMFadi0UTqilrkelR,
+  // ANNOUNCEMENTS
+  ._5wILZhsLODVwGfcJ0hKmJ,
+  // NOTIFICATIONS
+  .RtSv39ZoBOySnb8XQ5hJf,
+  // BIG PICTURE
+  ._3LKQ3S_yqrebeNLF6aeiog,
   // DOWNLOADS PROGRESS
   .ip-YZhijAMZcuRoXBGiye ._3wJnTtcTLEp0R7eQj_mK8Y,
-  ._3cykd-VfN_xBxf3Qxriccm ._2_FomluqqgQ2Hx8ON3AVep,
+  ._2_FomluqqgQ2Hx8ON3AVep,
+  // DOWNLOADS STATUS
+  .ip-YZhijAMZcuRoXBGiye,
   // ACCOUNT
   ._3yD46y5pd3zOGR7CzKs0mC,
+  // VR
+  ._3lRfTo8Wo3phXfE1DvK6QW,
+  // FAMILY VIEW
+  ._13vrqU6oOqmmxrsZSW5O39,
+  ._3arz-hc3FJ0QKXLPRUSaah,
   // NO CONNECTION
-  body:not(.WindowFocus)  ._2EQ7ghgqIdjKv9jsQC0Zq9>.ip-YZhijAMZcuRoXBGiye>._1sCy-pm412Smb0wJx0W-4,
+  ._2EQ7ghgqIdjKv9jsQC0Zq9>.ip-YZhijAMZcuRoXBGiye>._1sCy-pm412Smb0wJx0W-4,
   // LOW DISK
-  ._3cykd-VfN_xBxf3Qxriccm ._2Wnj2MoFgxo_2MhcLG5FwU,
+  ._2Wnj2MoFgxo_2MhcLG5FwU,
   // ACCOUNT ALERT
   ._32TmRVFkc8HMIUZ-KnnKby._3E5iVG630BkOHTaJJaMEMw,
   // THEATER MODE
   #zehnToggleTheaterMode,
   // NAVBAR EXPANDER
-  #zehnToggleExpandedNavbar {
+  #zehnToggleExpandedNavbar,
+  // FORMER BOTTOMBAR - ADD GAME / FRIENDS & CHAT
+  ._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k,
+  ._1TdaAqMFadi0UTqilrkelR ._3OhUxFVlQYr9W5ThxstR8k {
     color: var(--zehn-color-text3) !important;
+
+    &:not(:hover, :enabled:hover) {
+      --icon-color: var(--zehn-color-icon3);
+    }
   }
 
   // FRIENDS - MENU
@@ -239,7 +254,10 @@ body:not(.WindowFocus) {
   // FRIENDS - COLLAPSE
   ._1tN7mH20YhTaXLqtoW2hR- {
     color: var(--zehn-color-text3) !important;
-    --icon-color: var(--zehn-color-icon3);
+
+    &:not(:hover, :enabled:hover) {
+      --icon-color: var(--zehn-color-icon3);
+    }
   }
 
   // CHAT - EXPAND FRIENDS
@@ -249,14 +267,20 @@ body:not(.WindowFocus) {
   // CHAT - BROADCAST - RESTORE CHAT
   .TheaterMode .BroadcastChatExpander {
     color: var(--zehn-color-text3) !important;
-    --icon-color: var(--zehn-color-icon3);
+
+    &:not(:hover, :enabled:hover) {
+      --icon-color: var(--zehn-color-icon3);
+    }
   }
 
   // NOTES
   ._3LLH_F43MTu6UtG4Z3kudv,
   ._1cWmu5TUWFAVHlv1EVaF8e {
     color: var(--zehn-color-text3) !important;
-    --icon-color: var(--zehn-color-icon3);
+
+    &:not(:hover, :enabled:hover) {
+      --icon-color: var(--zehn-color-icon3);
+    }
   }
 }
 
