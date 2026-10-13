@@ -1,0 +1,772 @@
+/* SIZES ------------------------------------------------------------------------------------------------------------ */
+
+:root {
+  /* GENERIC SIZE */
+  --zehn-size-08: 8px;
+  --zehn-size-10: 10px;
+  --zehn-size-12: 12px;
+  --zehn-size-14: 14px;
+  --zehn-size-16: 16px;
+  --zehn-size-18: 18px;
+  --zehn-size-20: 20px;
+  --zehn-size-24: 24px;
+  --zehn-size-28: 28px;
+  --zehn-size-32: 32px;
+  --zehn-size-48: 48px;
+  --zehn-size-64: 64px;
+
+  /* SPACING */
+  --zehn-size-spacing-xxxs: 2px;
+  --zehn-size-spacing-xxs: 4px;
+  --zehn-size-spacing-xs: 8px;
+  --zehn-size-spacing-sm: 12px;
+  --zehn-size-spacing-md: 16px;
+  --zehn-size-spacing-lg: 24px;
+  --zehn-size-spacing-xl: 32px;
+  --zehn-size-spacing-xxl: 48px;
+  --zehn-size-spacing-xxxl: 64px;
+
+  --zehn-size-padding-xxxs: 2px;
+  --zehn-size-padding-xxs: 4px;
+  --zehn-size-padding-xs: 8px;
+  --zehn-size-padding-sm: 12px;
+  --zehn-size-padding-md: 16px;
+  --zehn-size-padding-lg: 24px;
+  --zehn-size-padding-xl: 32px;
+  --zehn-size-padding-xxl: 48px;
+  --zehn-size-padding-xxxl: 64px;
+
+  /* CORNER RADIUS */
+  --zehn-size-radius-none: 0px;
+  --zehn-size-radius-xs: 2px;
+  --zehn-size-radius-sm: 4px;
+  --zehn-size-radius-md: 8px;
+  --zehn-size-radius-lg: 16px;
+  --zehn-size-radius-pill: 1337px;
+  --zehn-size-radius-circular: 50%;
+
+  /* AVATAR */
+  --zehn-size-avatar-xs: 16px;
+  --zehn-size-avatar-sm: 24px;
+  --zehn-size-avatar-md: 32px;
+  --zehn-size-avatar-lg: 48px;
+  --zehn-size-avatar-xl: 64px;
+
+  --zehn-size-persona-avatar: 32px;
+  --zehn-size-persona-gap: 12px;
+
+  --zehn-size-persona-compact-avatar: 16px;
+  --zehn-size-persona-compact-gap: 8px;
+
+  --zehn-size-persona-notification: 24px;
+
+  /* ICONS */
+  --zehn-size-icon-xs: 8px;
+  --zehn-size-icon-sm: 12px;
+  --zehn-size-icon-md: 16px;
+  --zehn-size-icon-lg: 24px;
+  --zehn-size-icon-xl: 32px;
+  --zehn-size-icon-xxl: 48px;
+  --zehn-size-icon-xxxl: 64px;
+  --zehn-size-icon-xxxxl: 128px;
+
+  /* IMAGES */
+  --zehn-size-image-md: 48px;
+  --zehn-size-image-lg: 96px;
+
+  /* THUMBNAIL ICON */
+  --zehn-size-thumbnail-radius: var(--zehn-size-radius-xs);
+
+  /* STATUS INDICATOR DOT */
+  --zehn-size-indicator: 6px;
+  --zehn-size-indicator-large: 12px;
+  --zehn-size-indicator-super: 24px;
+  --zehn-size-indicator-radius: var(--zehn-size-radius-circular);
+
+  /* GENERIC PANELS */
+  --zehn-size-panel-xs: 16px;
+  --zehn-size-panel-sm: 24px;
+  --zehn-size-panel-md: 32px;
+  --zehn-size-panel-lg: 48px;
+  --zehn-size-panel-xl: 64px;
+
+  --zehn-size-panel-radius: var(--zehn-panel-roundness);
+  --zehn-size-panel-inset-padding: var(--zehn-size-padding-xs);
+  --zehn-size-panel-inset-radius: var(--zehn-content-roundness);
+  --zehn-size-panel-inset-gap: 8px;
+  --zehn-size-panel-inset-text: var(--zehn-size-12);
+
+  /* BUTTONS */
+  --zehn-size-button-sm: 24px;
+  --zehn-size-button-md: 32px;
+  --zehn-size-button-lg: 48px;
+
+  --zehn-size-button-padding: 0px;
+  --zehn-size-button-padding-wide: 0px var(--zehn-size-padding-md);
+  --zehn-size-button-padding-tall: var(--zehn-size-padding-md) 0px;
+  --zehn-size-button-text: var(--zehn-size-14);
+  --zehn-size-button-text-other: var(--zehn-size-12);
+  --zehn-size-button-line: 16px;
+  --zehn-size-button-line-other: 16px;
+  --zehn-size-button-gap-bar: 0px;
+  --zehn-size-button-gap-spaced: 8px;
+  --zehn-size-button-gap-dialog: 16px 8px;
+
+  --zehn-size-button-dialog-border: 0px;
+  --zehn-size-button-dialog-outline: 2px;
+  --zehn-size-button-dialog-offset: -2px;
+  --zehn-size-button-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-dialog-gap: 8px;
+
+  --zehn-size-button-app-border: 0px;
+  --zehn-size-button-app-outline: 0px;
+  --zehn-size-button-app-offset: 0px;
+  --zehn-size-button-app-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-app-gap: 8px;
+
+  --zehn-size-button-glyph-border: 0px;
+  --zehn-size-button-glyph-outline: 0px;
+  --zehn-size-button-glyph-offset: 0px;
+  --zehn-size-button-glyph-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-glyph-gap: 8px;
+
+  --zehn-size-button-tab-border: 0px;
+  --zehn-size-button-tab-outline: 0px;
+  --zehn-size-button-tab-offset: 0px;
+  --zehn-size-button-tab-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-tab-gap: 8px;
+
+  --zehn-size-button-nav-border: 0px;
+  --zehn-size-button-nav-outline: 0px;
+  --zehn-size-button-nav-offset: 0px;
+  --zehn-size-button-nav-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-nav-gap: 8px;
+
+  --zehn-size-button-close-border: 0px;
+  --zehn-size-button-close-outline: 0px;
+  --zehn-size-button-close-offset: 0px;
+  --zehn-size-button-close-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-close-gap: 0px;
+
+  --zehn-size-button-return-border: 0px;
+  --zehn-size-button-return-outline: 0px;
+  --zehn-size-button-return-offset: 0px;
+  --zehn-size-button-return-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-return-gap: 0px;
+
+  --zehn-size-button-music-border: 0px;
+  --zehn-size-button-music-outline: 0px;
+  --zehn-size-button-music-offset: 0px;
+  --zehn-size-button-music-radius: var(--zehn-size-radius-circular);
+  --zehn-size-button-music-gap: 0px;
+
+  --zehn-size-button-play-border: 0px;
+  --zehn-size-button-play-outline: 2px;
+  --zehn-size-button-play-offset: -2px;
+  --zehn-size-button-play-radius: var(--zehn-size-radius-circular);
+  --zehn-size-button-play-gap: 0px;
+
+  --zehn-size-button-basicui-border: 0px;
+  --zehn-size-button-basicui-outline: 0px;
+  --zehn-size-button-basicui-offset: 0px;
+  --zehn-size-button-basicui-radius: var(--zehn-size-radius-none);
+  --zehn-size-button-basicui-gap: 8px;
+
+  /* CHECKBOX BUTTONS */
+  --zehn-size-checkbox: 20px;
+  --zehn-size-checkbox-radius: var(--zehn-size-radius-none);
+  --zehn-size-checkbox-check: 16px;
+
+  --zehn-size-checkbox-dialog-border: 2px;
+  --zehn-size-checkbox-dialog-outline: 0px;
+
+  --zehn-size-checkbox-media-border: 1px;
+  --zehn-size-checkbox-media-outline: 2px;
+
+  --zehn-size-checkbox-column: 100px;
+
+  /* RADIO BUTTONS */
+  --zehn-size-radio: 20px;
+  --zehn-size-radio-outline: 2px;
+  --zehn-size-radio-radius: var(--zehn-size-radius-circular);
+  --zehn-size-radio-toggle: 10px;
+
+  /* SWITCH BUTTONS */
+  --zehn-size-switch-height: 20px;
+  --zehn-size-switch-width: 44px;
+  --zehn-size-switch-border: 2px;
+  --zehn-size-switch-radius: var(--zehn-size-radius-pill);
+  --zehn-size-switch-toggle: 10px;
+  --zehn-size-switch-toggle-margin: 5px;
+  --zehn-size-switch-toggle-radius: var(--zehn-size-radius-circular);
+
+  --zehn-size-switch-column: 150px;
+
+  /* TEXT INPUTS */
+  --zehn-size-input-md: 32px;
+  --zehn-size-input-lg: 48px;
+
+  --zehn-size-input-app-border: 0px;
+  --zehn-size-input-app-radius: var(--zehn-size-radius-none);
+  --zehn-size-input-app-padding: 0px 12px;
+  --zehn-size-input-app-text: var(--zehn-size-14);
+  --zehn-size-input-app-line: 24px;
+
+  --zehn-size-input-dialog: 32px;
+  --zehn-size-input-dialog-width: 300px;
+
+  --zehn-size-input-dialog-border: 2px;
+  --zehn-size-input-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-input-dialog-padding: 0px calc(12px - var(--zehn-size-input-dialog-border));
+  --zehn-size-input-dialog-text: var(--zehn-size-14);
+  --zehn-size-input-dialog-line: 24px;
+
+  --zehn-size-input-bar-border: 0px;
+  --zehn-size-input-bar-radius: var(--zehn-size-radius-none);
+  --zehn-size-input-bar-padding: 0px var(--zehn-size-padding-md);
+  --zehn-size-input-bar-text: var(--zehn-size-14);
+  --zehn-size-input-bar-line: 24px;
+
+  --zehn-size-input-url-border: 1px;
+  --zehn-size-input-url-radius: var(--zehn-size-radius-none);
+  --zehn-size-input-url-padding: 4px 16px 4px calc(var(--zehn-size-button-md) + 8px);
+  --zehn-size-input-url-text: var(--zehn-size-14);
+  --zehn-size-input-url-line: 24px;
+
+  --zehn-size-input-pin: 64px;
+  --zehn-size-input-pin-width: 48px;
+
+  --zehn-size-input-pin-border: 0px;
+  --zehn-size-input-pin-radius: var(--zehn-size-radius-none);
+  --zehn-size-input-pin-padding: 0px calc(12px - var(--zehn-size-input-pin-border));
+  --zehn-size-input-pin-text: var(--zehn-size-28);
+  --zehn-size-input-pin-line: 48px;
+
+  /* DROPDOWNS */
+  --zehn-size-dropdown-app: 48px;
+  --zehn-size-dropdown-app-gap: 16px;
+  --zehn-size-dropdown-app-border: 0px;
+  --zehn-size-dropdown-app-radius: var(--zehn-size-radius-none);
+  --zehn-size-dropdown-app-padding:  8px 16px;
+  --zehn-size-dropdown-app-text: var(--zehn-size-14);
+  --zehn-size-dropdown-app-text-other: var(--zehn-size-14);
+  --zehn-size-dropdown-app-line: 24px;
+  --zehn-size-dropdown-app-line-other: 16px;
+  --zehn-size-dropdown-app-icon: var(--zehn-size-icon-md);
+  --zehn-size-dropdown-app-chevron: var(--zehn-size-icon-xs);
+
+  --zehn-size-dropdown-dialog: 32px;
+  --zehn-size-dropdown-dialog-gap: 8px;
+  --zehn-size-dropdown-dialog-border: 2px;
+  --zehn-size-dropdown-dialog-radius: var(--zehn-size-radius-none);
+  --zehn-size-dropdown-dialog-padding: 2px 8px 2px 10px;
+  --zehn-size-dropdown-dialog-text: var(--zehn-size-14);
+  --zehn-size-dropdown-dialog-text-other: var(--zehn-size-12);
+  --zehn-size-dropdown-dialog-line: 24px;
+  --zehn-size-dropdown-dialog-line-other: 16px;
+  --zehn-size-dropdown-dialog-icon: var(--zehn-size-icon-md);
+  --zehn-size-dropdown-dialog-chevron: var(--zehn-size-icon-sm);
+  
+  --zehn-size-dropdown-sorting: 100%;
+  --zehn-size-dropdown-sorting-gap: 8px;
+  --zehn-size-dropdown-sorting-border: 0px;
+  --zehn-size-dropdown-sorting-radius: var(--zehn-size-radius-none);
+  --zehn-size-dropdown-sorting-padding: 0px;
+  --zehn-size-dropdown-sorting-text: var(--zehn-size-14);
+  --zehn-size-dropdown-sorting-text-other: var(--zehn-size-14);
+  --zehn-size-dropdown-sorting-line: 16px;
+  --zehn-size-dropdown-sorting-line-other: 16px;
+  --zehn-size-dropdown-sorting-icon: var(--zehn-size-icon-md);
+  --zehn-size-dropdown-sorting-chevron: var(--zehn-size-icon-sm);
+
+  /* SLIDERS */
+  --zehn-size-slider-width-dialog: 400px;
+  --zehn-size-slider-width-volume: 200px;
+  --zehn-size-slider-width-volume-player: 100px;
+
+  --zehn-size-slider-notch: 24px;
+
+  --zehn-size-slider-generic-gap: 0px;
+  --zehn-size-slider-generic-track-height: 2px;
+  --zehn-size-slider-generic-track-radius: var(--zehn-size-radius-none);
+  --zehn-size-slider-generic-handle-height: 24px;
+  --zehn-size-slider-generic-handle-width: 8px;
+  --zehn-size-slider-generic-handle-border: 0px;
+  --zehn-size-slider-generic-handle-radius: var(--zehn-size-radius-pill);
+
+  --zehn-size-slider-music-gap: 3px;
+  --zehn-size-slider-music-track-height: 2px;
+  --zehn-size-slider-music-track-radius: var(--zehn-size-radius-none);
+  --zehn-size-slider-music-handle-height: 16px;
+  --zehn-size-slider-music-handle-width: 16px;
+  --zehn-size-slider-music-handle-border: 3px;
+  --zehn-size-slider-music-handle-radius: var(--zehn-size-radius-circular);
+
+  /* VIDEO TIMELINE */
+  --zehn-size-timeline-gap: 0px;
+  --zehn-size-timeline-track-height: 2px;
+  --zehn-size-timeline-track-radius: var(--zehn-size-radius-none);
+  --zehn-size-timeline-handle-height: 16px;
+  --zehn-size-timeline-handle-width: 16px;
+  --zehn-size-timeline-handle-border: 2px;
+  --zehn-size-timeline-handle-radius: var(--zehn-size-radius-circular);
+
+  --zehn-size-timeline-range: 2px;
+  --zehn-size-timeline-range-grip: 12px;
+
+  --zehn-size-timeline-control: 32px;
+
+  --zehn-size-tick-height: 4px;
+  --zehn-size-tick-width: 2px;
+
+  /* PROGRESSBARS */
+  --zehn-size-progressbar-width: 400px;
+  --zehn-size-progressbar-thin: 2px;
+  --zehn-size-progressbar-normal: 4px;
+  --zehn-size-progressbar-thick: 8px;
+  --zehn-size-progressbar-radius: var(--zehn-size-radius-none);
+
+  /* COLOR PICKERS */
+  --zehn-size-picker: 44px;
+  --zehn-size-picker-border: 2px;
+  --zehn-size-picker-checkbox: 20px;
+  --zehn-size-picker-checkmark: var(--zehn-size-icon-md);
+
+  /* LOADING THROBBERS */
+  --zehn-size-loading-line-sm: 2px;
+  --zehn-size-loading-line-md: 3px;
+  --zehn-size-loading-line-lg: 4px;
+  --zehn-size-loading-sm: 32px;
+  --zehn-size-loading-md: 48px;
+  --zehn-size-loading-lg: 64px;
+  --zehn-size-loading-radius: var(--zehn-size-radius-circular);
+
+  /* TEXT */
+  --zehn-size-text-page-title: 12px;
+  --zehn-size-text-page-header: 28px;
+  --zehn-size-text-section-header: 20px;
+  --zehn-size-text-body: 14px;
+  --zehn-size-text-label: 14px;
+  --zehn-size-text-title: 14px;
+  --zehn-size-text-description: 14px;
+  --zehn-size-text-description-small: 12px;
+  --zehn-size-text-control: 14px;
+  --zehn-size-text-error: 14px;
+  --zehn-size-text-warning: 14px;
+
+  --zehn-size-text-gap: 4px;
+  --zehn-size-icon-gap: 8px;
+  --zehn-size-icon-gap-small: 4px;
+  --zehn-size-image-gap: 16px;
+
+  /* TAGS */
+  --zehn-size-tags-gap: 4px;
+
+  --zehn-size-tag-gap: 4px;
+  --zehn-size-tag-sm: 16px;
+  --zehn-size-tag-md: 24px;
+  --zehn-size-tag-lg: 32px;
+  --zehn-size-tag-radius-sm: var(--zehn-size-radius-sm);
+  --zehn-size-tag-radius-md: var(--zehn-size-radius-sm);
+  --zehn-size-tag-radius-lg: var(--zehn-size-radius-sm);
+  --zehn-size-tag-padding-sm: 0px 4px;
+  --zehn-size-tag-padding-md: 0px 4px;
+  --zehn-size-tag-padding-lg: 0px 8px;
+  --zehn-size-tag-text-sm: 10px;
+  --zehn-size-tag-text-md: 12px;
+  --zehn-size-tag-text-lg: 14px;
+  
+  /* KEYBOARD */
+  --zehn-size-key: 48px;
+  --zehn-size-key-text: 18px;
+  --zehn-size-key-text-alt: 14px;
+  --zehn-size-key-gap: 4px;
+  --zehn-size-key-padding: var(--zehn-size-padding-sm);
+
+  /* CONTEXT */
+  --zehn-size-context-menu-padding: 4px 0px;
+  --zehn-size-context-menu-padding-menu: 0px 0px 4px 0px;
+  --zehn-size-context-menu-padding-picker: 8px;
+  --zehn-size-context-menu-padding-soundtrack: 16px;
+  --zehn-size-context-menu-border: 1px;
+  --zehn-size-context-menu-radius: var(--zehn-size-radius-none);
+
+  --zehn-size-context-dropdown-padding: 4px 0px;
+  --zehn-size-context-dropdown-padding-controls: 8px 0px;
+  --zehn-size-context-dropdown-border: 1px;
+  --zehn-size-context-dropdown-radius: var(--zehn-size-radius-none);
+
+  --zehn-size-context-entry: 32px;
+  --zehn-size-context-entry-padding: 8px 16px;
+  --zehn-size-context-entry-padding-notification: 16px 16px;
+  --zehn-size-context-entry-border: 1px;
+  --zehn-size-context-entry-radius: var(--zehn-size-radius-none);
+  --zehn-size-context-entry-gap: 8px;
+  --zehn-size-context-entry-text: 14px;
+  --zehn-size-context-entry-text-other: 12px;
+  --zehn-size-context-entry-line: 16px;
+  --zehn-size-context-entry-line-other: 16px;
+  --zehn-size-context-entry-icon: var(--zehn-size-icon-md);
+
+  --zehn-size-context-separator: 1px;
+  --zehn-size-context-separator-margin: 4px 16px;
+
+  /* TOOLTIP */
+  --zehn-size-tooltip-width: 300px;
+  --zehn-size-tooltip-width-friend: 200px;
+  --zehn-size-tooltip-width-media: 150px;
+  --zehn-size-tooltip-width-portrait: 200px;
+  --zehn-size-tooltip-width-app: 400px;
+  --zehn-size-tooltip-width-store: 300px;
+  --zehn-size-tooltip-width-miniprofile: 300px;
+  --zehn-size-tooltip-border: 1px;
+  --zehn-size-tooltip-radius: var(--zehn-size-radius-none);
+  --zehn-size-tooltip-padding: 8px;
+  --zehn-size-tooltip-text: 12px;
+  --zehn-size-tooltip-line: 16px;
+  --zehn-size-tooltip-gap: var(--zehn-size-spacing-xs);
+  --zehn-size-tooltip-bind-radius: var(--zehn-size-radius-sm);
+  --zehn-size-tooltip-bind-padding: 0px 4px;
+  --zehn-size-tooltip-bind-text: 10px;
+  --zehn-size-tooltip-icon: 16px;
+  --zehn-size-tooltip-icon-inline: 16px;
+  --zehn-size-tooltip-content-radius: 2px;
+  --zehn-size-tooltip-badge: var(--zehn-size-avatar-sm);
+
+  /* TABLIST */
+  --zehn-size-tablist: 48px;
+  --zehn-size-tablist-sm: 32px;
+  --zehn-size-tablist-radius: var(--zehn-size-radius-none);
+  --zehn-size-tablist-text: 14px;
+
+  /* PAGELIST */
+  --zehn-size-pagelist-header: 64px;
+  --zehn-size-pagelist-height: 48px;
+  --zehn-size-pagelist-width: 240px;
+  --zehn-size-pagelist-padding: 0px 16px;
+  --zehn-size-pagelist-text: 14px;
+  --zehn-size-pagelist-gap: 16px;
+
+  --zehn-size-chatlist-height: 48px;
+  --zehn-size-chatlist-width: 240px;
+
+  /* GRID */
+  --zehn-size-grid-gap: 8px;
+  --zehn-size-grid-entry-padding: 8px;
+  --zehn-size-grid-entry-gap: 4px;
+
+  /* LIST */
+  --zehn-size-list-entry: 32px;
+  --zehn-size-list-entry-padding: 8px 16px;
+  --zehn-size-list-entry-text: 14px;
+  --zehn-size-list-entry-text-other: 12px;
+  --zehn-size-list-entry-line: 24px;
+  --zehn-size-list-entry-line-other: 16px;
+  --zehn-size-list-entry-gap: 8px;
+  --zehn-size-list-header: 32px;
+  --zehn-size-list-header-text: 14px;
+  --zehn-size-list-header-label-gap: 8px;
+  --zehn-size-list-header-gap: 16px;
+
+  /* TABLES */
+  --zehn-size-table-header: 32px;
+  --zehn-size-table-entry: 32px;
+  --zehn-size-table-entry-large: 48px;
+  --zehn-size-table-entry-padding: 0px 8px;
+  --zehn-size-table-entry-gap: 8px;
+  --zehn-size-table-text: 14px;
+  --zehn-size-table-text-line: 16px;
+
+  /* CAROUSELS */
+  --zehn-size-carousel-date: 16px;
+  --zehn-size-carousel-date-text: 12px;
+  --zehn-size-carousel-title: 16px;
+  --zehn-size-carousel-title-text: 12px;
+  --zehn-size-carousel-description: 16px;
+  --zehn-size-carousel-description-text: 12px;
+  --zehn-size-carousel-item-gap: 8px;
+  --zehn-size-carousel-gap: 8px;
+
+  /* WINDOWS */
+  --zehn-size-border: 1px;
+
+  --zehn-size-titlebar: var(--zehn-titlebar-size);
+  --zehn-size-titlebar-control: 48px;
+  --zehn-size-titlebar-text: 12px;
+  --zehn-size-titlebar-text-padding-x: var(--zehn-size-padding-sm);
+  --zehn-size-titlebar-text-padding-y: 0px;
+  --zehn-size-titlebar-text-padding: var(--zehn-size-titlebar-text-padding-y) var(--zehn-size-titlebar-text-padding-x);
+  --zehn-size-titlebar-text-gap: 4px;
+
+  --zehn-size-navbar: var(--zehn-navbar-size);
+  --zehn-size-navbar-control: var(--zehn-size-titlebar-control);
+
+  /* LIBRARY */
+  --zehn-size-library-sidebar-controls: 48px;
+  --zehn-size-library-sidebar-filters: 48px;
+  --zehn-size-library-sidebar-search: 48px;
+  --zehn-size-library-sidebar-collection-inset: 16px;
+  --zehn-size-library-sidebar-game-inset: 24px;
+  --zehn-size-library-sidebar-entry: 26px;
+
+  --zehn-size-library-playbar: 48px;
+  --zehn-size-library-playbar-action: 218px;
+
+  --zehn-size-panel-header-large: 48px;
+  --zehn-size-panel-header: 32px;
+
+  --zehn-size-library-panel-spacing: var(--zehn-size-spacing-md);
+  --zehn-size-library-panel-radius: var(--zehn-panel-roundness);
+  --zehn-size-library-panel-padding: var(--zehn-content-mode-library-padding);
+  --zehn-size-library-panel-content-radius: var(--zehn-content-roundness);
+  --zehn-size-library-panel-content-gap: var(--zehn-size-spacing-md);
+
+  --zehn-size-downloads-panel-spacing: var(--zehn-size-spacing-md);
+  --zehn-size-downloads-panel-radius: var(--zehn-panel-roundness);
+  --zehn-size-downloads-panel-padding: var(--zehn-content-mode-downloads-padding);
+
+  --zehn-size-spotlight-panel-spacing: var(--zehn-size-spacing-md);
+  --zehn-size-spotlight-panel-radius: var(--zehn-panel-roundness);
+  --zehn-size-spotlight-panel-padding: var(--zehn-content-mode-spotlight-padding);
+  --zehn-size-spotlight-panel-content-radius: var(--zehn-content-roundness);
+  --zehn-size-spotlight-panel-content-gap: var(--zehn-size-spacing-md);
+
+  --zehn-size-activity-panel-spacing: var(--zehn-size-spacing-md);
+  --zehn-size-activity-panel-radius: var(--zehn-panel-roundness);
+  --zehn-size-activity-panel-padding: var(--zehn-content-mode-activity-padding);
+  --zehn-size-activity-panel-content-radius: var(--zehn-content-roundness);
+  --zehn-size-activity-panel-content-gap: var(--zehn-size-spacing-md);
+  --zehn-size-activity-panel-content-padding: 16px;
+
+  --zehn-size-community-panel-spacing: var(--zehn-size-spacing-md);
+  --zehn-size-community-panel-radius: var(--zehn-panel-roundness);
+  --zehn-size-community-panel-padding: var(--zehn-content-mode-community-padding);
+  --zehn-size-community-panel-content-radius: var(--zehn-content-roundness);
+  --zehn-size-community-panel-content-gap: var(--zehn-size-spacing-xs);
+  --zehn-size-community-panel-info: 32px;
+
+  --zehn-size-details-panel-spacing: var(--zehn-size-spacing-md);
+  --zehn-size-details-panel-radius: var(--zehn-panel-roundness);
+  --zehn-size-details-panel-padding: var(--zehn-content-mode-details-padding);
+  --zehn-size-details-panel-content-radius: var(--zehn-content-roundness);
+  --zehn-size-details-panel-content-gap: var(--zehn-size-spacing-xs);
+  --zehn-size-details-panel: 400px;
+
+  --zehn-size-game-banner: 320px;
+
+  --zehn-size-game-info-inset: 32px;
+
+  --zehn-size-game-link-entry: 48px;
+
+  /* ACHIEVEMENT */
+  --zehn-size-achievement-radius: var(--zehn-size-thumbnail-radius);
+  --zehn-size-achievement: 48px;
+
+  /* SOUNDTRACK */
+  --zehn-size-soundtrack-list: 48px;
+
+  /* MODAL */
+  --zehn-size-modal-radius: var(--zehn-size-radius-none);
+  --zehn-size-modal-border: 1px;
+  --zehn-size-modal-inset: var(--zehn-size-spacing-xl);
+
+  /* OPTION MENU */
+  --zehn-size-options-gap: 4px;
+
+  --zehn-size-control-radius: var(--zehn-size-radius-sm);
+  --zehn-size-control-border: 1px;
+
+  --zehn-size-control-reaction: 16px;
+  --zehn-size-control-reaction-padding: 8px;
+  --zehn-size-control-reaction-gap: 8px;
+
+  /* ALERT */
+  --zehn-size-alert-radius: var(--zehn-size-radius-sm);
+  --zehn-size-alert-border: 1px;
+
+  /* FOCUSBAR */
+  --zehn-size-focusbar: 2px;
+  --zehn-size-focusbar-spacing: 4px;
+  --zehn-size-focusbar-pagelist: 4px;
+  --zehn-size-focusbar-pagelist-length: 20px;
+  --zehn-size-focusbar-tablist: 4px;
+  --zehn-size-focusbar-tablist-spacing: 0px;
+  --zehn-size-focusbar-tablist-sm: 2px;
+  --zehn-size-focusbar-tablist-spacing-sm: 0px;
+
+  /* DRAG & DROP */
+  --zehn-size-dragging: 2px;
+
+  /* DROPPING */
+  --zehn-size-dropping: 4px;
+  --zehn-size-dropping-offset-multiplier-double: -2;
+  --zehn-size-dropping-offset-multiplier: -1;
+
+  /* SEPARATOR */
+  --zehn-size-separator: 1px;
+  --zehn-size-separator-dot: 8px;
+  --zehn-size-separator-margin: 4px;
+
+  /* DOWNLOADS */
+  --zehn-size-downloads: 200px;
+  --zehn-size-downloads-section-header: 48px;
+
+  /* EVENT OVERLAY */
+  --zehn-size-event-padding: 32px;
+  --zehn-size-event-width: 100%;
+  --zehn-size-event-width-max: 1024px;
+  --zehn-size-event-gap: var(--zehn-size-spacing-md);
+
+  /* DIALOG */
+  --zehn-size-dialog-padding: 16px;
+  --zehn-size-dialog-inset-padding: 8px;
+  --zehn-size-dialog-inset-radius: 2px;
+  --zehn-size-dialog-gap: 16px;
+  --zehn-size-dialog-paragraph-gap: 8px;
+
+  /* CODE */
+  --zehn-size-code-padding: 16px;
+  --zehn-size-code-radius: 2px;
+  --zehn-size-code-text: 14px;
+  --zehn-size-code-text-gutter: 12px;
+  --zehn-size-code-gutter: 24px;
+  --zehn-size-code-cursor: 8px;
+
+  /* SETTINGS */
+  --zehn-size-setting-content: 450px;
+  --zehn-size-setting-header: 48px;
+  --zehn-size-setting-section-header: 32px;
+  --zehn-size-setting-section-gap: 32px;
+  --zehn-size-setting-group-gap: 16px;
+  --zehn-size-setting-field-gap: 8px;
+  --zehn-size-setting-label: 24px;
+  --zehn-size-setting-label-gap: 8px;
+  --zehn-size-setting-control-gap: 8px;
+  --zehn-size-setting-indent: 16px;
+
+  /* FRIENDS */
+  --zehn-size-friends-quickaccess: 64px;
+  --zehn-size-friends-quickaccess-compact: 48px;
+  --zehn-size-friends-searchbar: 48px;
+  --zehn-size-friends-group: 32px;
+  --zehn-size-friends-group-padding: 0px 16px;
+  --zehn-size-friends-entry: 48px;
+  --zehn-size-friends-entry-padding: 0px 16px;
+  --zehn-size-friends-entry-compact: 32px;
+  --zehn-size-friends-entry-compact-padding: 0px 16px;
+
+  /* CHAT */
+  --zehn-size-chat-header: 48px;
+  --zehn-size-chat-tab: 200px;
+  --zehn-size-chat-entry: 48px;
+  --zehn-size-chat-broadcast-channelbar: 48px;
+  --zehn-size-chat-memberlist-height: 48px;
+  --zehn-size-chat-memberlist-padding: 0px 16px;
+  --zehn-size-chat-speaker: 32px;
+
+  --zehn-size-embed: var(--zehn-embed-size);
+  --zehn-size-embed-radius: var(--zehn-panel-roundness);
+  --zehn-size-embed-border: 0px;
+  --zehn-size-embed-padding: 12px;
+  --zehn-size-embed-content-radius: var(--zehn-content-roundness);
+  --zehn-size-embed-inset-padding: var(--zehn-size-padding-xxs) var(--zehn-size-padding-xs);
+  --zehn-size-embed-inset-radius: var(--zehn-size-radius-xs);
+
+  --zehn-size-msg-text-small: 12px;
+  --zehn-size-msg-text-default: 14px;
+  --zehn-size-msg-text-large: 16px;
+
+  --zehn-size-msg-subtext-small: 10px;
+  --zehn-size-msg-subtext-default: 12px;
+  --zehn-size-msg-subtext-large: 14px;
+
+  --zehn-size-msg-time-small: 8px;
+  --zehn-size-msg-time-default: 10px;
+  --zehn-size-msg-time-large: 12px;
+
+  --zehn-size-msg-line-small: 20px;
+  --zehn-size-msg-line-default: 24px;
+  --zehn-size-msg-line-large: 28px;
+
+  --zehn-size-emote: 32px;
+  --zehn-size-emote-small: 16px;
+  --zehn-size-sticker: 150px;
+
+  /* MEDIA */
+  --zehn-size-media-controlbar: 48px;
+  --zehn-size-media-scrub: 32px;
+  --zehn-size-media-scrub-preview: 320px;
+  --zehn-size-media-flow: 96px;
+
+  /* GALLERY */
+  --zehn-size-gallery-selection: 4px;
+  --zehn-size-gallery-gap: 8px;
+  --zehn-size-gallery-padding: var(--zehn-size-padding-md) var(--zehn-size-padding-xxxl);
+
+  --zehn-size-gallery-content-radius: var(--zehn-content-roundness);
+
+  /* DETAILS */
+  --zehn-size-detail: 32px;
+  --zehn-size-detail-text: 12px;
+  --zehn-size-detail-gap: 8px;
+  --zehn-size-detail-padding: 8px 16px;
+
+  /* SERVERS */
+  --zehn-size-servers-controlbar: 48px;
+  --zehn-size-servers-footer: 48px;
+
+  /* CLOCK */
+  --zehn-size-clock-tab: 48px;
+  --zehn-size-clock-time: 64px;
+  --zehn-size-clock-time-text: 48px;
+  --zehn-size-clock-controlbar: 48px;
+  --zehn-size-clock-controlbar-width: 96px;
+
+  /* NOTES */
+  --zehn-size-notes-format: 48px;
+
+  /* BROWSER */
+  --zehn-size-browser-tab: 200px;
+  --zehn-size-browser-urlbar: 48px;
+  --zehn-size-browser-urlbar-margin: 8px;
+  --zehn-size-browser-urlbar-inner: 32px;
+  --zehn-size-browser-urlbar-button-gap: 2px;
+
+  /* MILLENNIUM FLYOUT */
+  --zehn-size-flyout-control: 300px;
+
+  /* SEARCH BOX */
+  --zehn-size-find: 32px;
+
+  /* NOTIFICATION */
+  --zehn-size-notification-padding: 0px 16px;
+
+  /* OVERLAY */
+  --zehn-size-overlay-bar: 64px;
+  --zehn-size-overlay-button-xs: 24px;
+  --zehn-size-overlay-button-sm: 32px;
+  --zehn-size-overlay-button-md: 48px;
+  --zehn-size-overlay-button-lg: 64px;
+  --zehn-size-overlay-border: 1px;
+  --zehn-size-overlay-margin: 32px;
+  --zehn-size-overlay-clip-controls: 32px;
+  --zehn-size-overlay-radius: var(--zehn-size-radius-none);
+
+  /* VIRTUALMENU */
+  --zehn-size-virtualmenu-border: 4px;
+
+  /* DIVIDER RESIZER */
+  --zehn-size-divider: 8px;
+
+  /* REVEAL */
+  --zehn-size-reveal-border: 1px;
+
+  /* BASICUI (BIG PICTURE MODE / CONTROLLER SETTINGS) */
+  --zehn-size-basicui-edge: 64px;
+  --zehn-size-basicui-header: 80px;
+  --zehn-size-basicui-header-inner: 48px;
+  --zehn-size-basicui-footer: 64px;
+  --zehn-size-basicui-footer-inner: 32px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */

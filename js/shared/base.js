@@ -1,9 +1,9 @@
-import OPTIONS from '../lib/options.js';
-import COLORS from '../lib/colors.js';
+import OPTION from '../lib/option.js';
+import COLOR from '../lib/color.js';
 
 /* ENABLE CONFIG WITHOUT MILLENNIUM --------------------------------------------------------------------------------- */
 
-OPTIONS.applyOptions();
+OPTION.applyOptions();
 
 
 
@@ -16,8 +16,8 @@ OPTIONS.applyOptions();
 
 /* CONVERT SYSTEM COLORS -------------------------------------------------------------------------------------------- */
 
-COLORS.convertAccentColors();
+COLOR.generateAccentColors();
 
 /* SET SCROLLBAR GLYPH COLORS --------------------------------------------------------------------------------------- */
 
-COLORS.colorScrollbarGlyphs();
+COLOR.colorScrollbarGlyphs();

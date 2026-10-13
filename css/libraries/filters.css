@@ -1,0 +1,34 @@
+/* FILTERS ---------------------------------------------------------------------------------------------------------- */
+
+:root {
+  --zehn-filter-acrylic-blur: blur(30px) saturate(200%);
+  --zehn-filter-light-blur: blur(4px);
+  --zehn-filter-heavy-blur: blur(10px);
+  --zehn-filter-defocus: blur(30px) opacity(50%) saturate(70%);
+  --zehn-filter-mono: grayscale(1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --zehn-filter-selected: brightness(155%) saturate(55%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zehn-filter-selected: brightness(55%) saturate(145%);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --zehn-filter-acrylic-blur: none;
+    --zehn-filter-light-blur: none;
+    --zehn-filter-heavy-blur: none;
+    --zehn-filter-defocus: none;
+    --zehn-filter-selected: none;
+    --zehn-filter-mono: none;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */

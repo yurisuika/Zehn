@@ -30,10 +30,10 @@ function stars(parent) {
       CANVAS.width = innerWidth;
       CANVAS.height = innerHeight;
     }
-  };
+  }
 
   startCanvas();
-};
+}
 
 
 
@@ -68,7 +68,6 @@ function createApp(canvas) {
   let shootingStars = [];
 
   function rand(a, b) { return a + Math.random() * (b - a); }
-  function choice(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
   function initStars() {
     stars = [];
@@ -105,14 +104,13 @@ function createApp(canvas) {
       maxLife: rand(40, 90),
       alpha: 0.9
     });
-  };
+  }
 
   function drawStar(s) {
     const PX = s.x + (MOUSE.x - w / 2) * (s.z * 0.002);
     const PY = s.y + (MOUSE.y - h / 2) * (s.z * 0.002);
     const TWINKLE = Math.sin(s.twinklePhase) * 0.5 + 0.5;
-    const ALPHA = Math.max(0, Math.min(1, s.baseAlpha * (0.6 + TWINKLE * 0.8)));
-    CTX.globalAlpha = ALPHA;
+    CTX.globalAlpha = Math.max(0, Math.min(1, s.baseAlpha * (0.6 + TWINKLE * 0.8)));
     CTX.fillStyle = '#fff';
     const RADIUS = Math.max(0.2, s.size * (0.6 + TWINKLE * 0.8));
     CTX.beginPath();
@@ -136,7 +134,7 @@ function createApp(canvas) {
     CTX.arc(st.x, st.y, 2.5, 0, Math.PI * 2);
     CTX.fill();
     CTX.restore();
-  };
+  }
 
   let last = 0;
 
@@ -171,7 +169,7 @@ function createApp(canvas) {
     }
 
     requestAnimationFrame(frame);
-  };
+  }
 
   function createSkyGradient(ctx, width, height) {
     const SCHEME = getSkyScheme();
@@ -215,7 +213,7 @@ function createApp(canvas) {
         glowPos: 0.9
       };
     }
-  };
+  }
 
   initStars();
   requestAnimationFrame((t) => { last = t; frame(t); });
@@ -223,4 +221,4 @@ function createApp(canvas) {
   addEventListener('click', () => {
     for (let i = 0; i < 3; i++) spawnShootingStar();
   });
-};
+}

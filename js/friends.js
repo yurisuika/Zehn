@@ -9,6 +9,7 @@ import REVEAL from './lib/reveal.js';
 /* STORE HEIGHT OF FRIENDS HEADER ----------------------------------------------------------------------------------- */
 
 STORE.storeTargetHeightAsVariable('.friendsListContainer', '.friendListHeaderContainer', '--friends-header-height');
+STORE.storeTargetHeightAsVariable('.friendsListContainer', '.currentUserContainer', '--friends-footer-height');
 
 /* TOGGLE CLASSES BASED ON WHAT HEADER CONTENT IS OPEN -------------------------------------------------------------- */
 
@@ -19,30 +20,40 @@ TOGGLE.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearc
 TOGGLE.checkTargetToggle('.chat_main', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
 CREATE.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
-}, { shouldAppend: false, toggleSelector: 'zehnFriendsHeaderClosed' });
+}, { placement: 'prepend', toggleSelector: 'zehnFriendsHeaderClosed' });
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
 TOGGLE.checkTargetToggle('.chat_main', '.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
-CREATE.createButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+CREATE.createTooltipButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
-}, { toggleSelector: 'zehnUserOpened' });
+}, { toggleSelector: 'zehnUserOpened', activeTooltipText: 'Collapse current user', inactiveTooltipText: 'Expand current user' });
 
-/* MOVE CURRENT USER INTO VOICE CONTROLS WRAPPER -------------------------------------------------------------------- */
+/* TOGGLE QUICK ACCESS ---------------------------------------------------------------------------------------------- */
 
-// MOVE.moveAppend('.friendlist', '.friendListHeaderContainer>div:not([class])', [
-//   '.currentUserContainer' // CURRENT USER
-// ]);
+TOGGLE.checkTargetToggle('.chat_main', '.friendsTabButtonsContainer', '#zehnToggleQuickAccess', 'zehnQuickAccessOpened');
+CREATE.createTooltipButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleQuickAccess', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+  TOGGLE.addRootClassOnToggle(root, target, button, 'zehnQuickAccessOpened');
+}, { placement: 'append', toggleSelector: 'zehnQuickAccessOpened', activeTooltipText: 'Quick access', inactiveTooltipText: 'Quick access' });
+
+FIND.findRootsAndTargets('.friendsListContainer', '.zehnFriendsBackdrop', (root, target) => {
+  const QA_BTN = document.getElementById('zehnToggleQuickAccess');
+
+  target.addEventListener('click', (e) => {
+    root.classList.contains('zehnQuickAccessOpened') && root.classList.remove('zehnQuickAccessOpened');
+    QA_BTN.classList.contains('zehnToggled') && QA_BTN.classList.remove('zehnToggled');
+  });
+});
 
 /* MOVE SORT BY INTO GROUP HEADER ----------------------------------------------------------------------------------- */
 
-MOVE.moveAppend('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
+MOVE.moveElement('.chat_main', '.friendGroup.offlineFriends .groupHeaderContainer .groupName', [
   '.friendGroup.offlineFriends .groupHeaderContainer .SortByRecent' // SORT BY BUTTON
 ]);
 
 /* CREATE FRIENDS TABLIST ------------------------------------------------------------------------------------------- */
 
-CREATE.createSiblingElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], { shouldPlaceBefore: false, shouldClearExisting: true });
+CREATE.createElement('.friendsListContainer', '.socialTabSearchContainer', ['.zehnFriendsTablist'], { placement: 'after', shouldClearExisting: true });
 
 FIND.findRootsAndTargets('.friendsListContainer', '.friendlist', (root, target) => {
   target.id = 'zehnFriendsDisplayed';
@@ -60,15 +71,15 @@ function toggleList(root, target, button) {
     const LISTS = [FRIENDS, CHATS];
 
     LISTS.forEach((list) => {
-      if (button == BTN_FRIENDS) {
-        if (list && (list == FRIENDS)) {
+      if (button === BTN_FRIENDS) {
+        if (list && (list === FRIENDS)) {
           list.classList.add('zehnDisplayed');
           CONTAINER.id = 'zehnFriendsDisplayed';
         } else if (list) {
           list.classList.remove('zehnDisplayed');
         }
-      } else if (button == BTN_CHATS) {
-        if (list && (list == CHATS)) {
+      } else if (button === BTN_CHATS) {
+        if (list && (list === CHATS)) {
           list.classList.add('zehnDisplayed');
           CONTAINER.id = 'zehnChatsDisplayed';
         } else if (list) {
@@ -78,14 +89,14 @@ function toggleList(root, target, button) {
     });
 
     BUTTONS.forEach((element) => {
-      if (element == button) {
+      if (element === button) {
         element.classList.add('zehnToggled');
       } else {
         element.classList.remove('zehnToggled');
       }
     });
   }
-};
+}
 
 let localFriends = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Label_Friends");
 TOGGLE.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabFriends', 'zehnFriendsTablistFriendsOpened');
@@ -95,31 +106,48 @@ let localChats = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "L
 TOGGLE.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabChats', 'zehnFriendsTablistChatsOpened');
 CREATE.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localChats, toggleList);
 
+/* FRIENDS LIST FLYOUT BACKDROP ------------------------------------------------------------------------------------- */
+
+CREATE.createElement('.friendsListContainer', '.friendListHeaderContainer', ['.zehnFriendsBackdrop'], { placement: 'append', shouldClearExisting: true });
+
+/* CHAT CHANNEL LIST BACKDROP --------------------------------------------------------------------------------------- */
+
+CREATE.createElement('.multiChatDialog', '.ChatRoomGroup_MainAndChatEntry', ['.zehnChatBackdrop'], { placement: 'after', shouldClearExisting: false });
+
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
 TOGGLE.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
-CREATE.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+CREATE.createTooltipButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
-});
+}, { activeTooltipText: 'Collapse settings', inactiveTooltipText: 'Expand settings' });
 
 /* TOGGLE GROUP CHAT CHANNEL PAGELIST ------------------------------------------------------------------------------- */
 
 TOGGLE.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
-CREATE.createButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+CREATE.createTooltipButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
+}, { activeTooltipText: 'Collapse channel list', inactiveTooltipText: 'Expand channel list' });
+
+FIND.findRootsAndTargets('.MultiUserChat', '.zehnChatBackdrop', (root, target) => {
+  const CHANNEL_BTN = root.querySelector('.zehnToggleChannelList');
+
+  target.addEventListener('click', (e) => {
+    root.classList.contains('zehnChannelListOpened') && root.classList.remove('zehnChannelListOpened');
+    CHANNEL_BTN.classList.contains('zehnToggled') && CHANNEL_BTN.classList.remove('zehnToggled');
+  });
 });
 
 /* TOGGLE MEMBER LIST STATUS ---------------------------------------------------------------------------------------- */
 
-MOVE.moveAppend('.MultiUserChat', '.chatRoomOptions', [
+MOVE.moveElement('.MultiUserChat', '.chatRoomOptions', [
   '.MemberListOption.ToggleMemberListView'
 ]);
 
 /* MOVE GROUP CHAT BROADCAST BUTTON INTO HEADER --------------------------------------------------------------------- */
 
-MOVE.movePrepend('.MultiUserChat', '.chatRoomOptions', [
+MOVE.moveElement('.MultiUserChat', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
-]);
+], { placement: 'prepend' });
 CREATE.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
 CREATE.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
 
@@ -142,7 +170,7 @@ FIND.findRootsAndTargets('.BroadcastVolumeSlider', '.BroadcastVolumeSlider_Thumb
     } else {
       root.style.removeProperty('--value');
     }
-  };
+  }
 
   syncVariable();
 
@@ -193,6 +221,10 @@ REVEAL.addRevealClass('.friendsTabButtonsContainer', [
   '.searchIconButton', // SEARCH
   '.friendRequestButton', // REQUESTS
   '.addFriendButton' // ADD
+]);
+
+REVEAL.addRevealClass('.friendListHeaderContainer', [
+  '.VoiceControlPanelButton' // VOICE CONTROLS
 ]);
 
 REVEAL.revealInner('.friendListHeaderContainer');

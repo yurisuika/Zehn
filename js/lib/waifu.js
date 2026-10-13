@@ -34,7 +34,7 @@ async function findWaifu(parent) {
   }
 
   setRandomWaifu(LIST);
-};
+}
 
 
 
@@ -51,23 +51,19 @@ async function setRandomWaifu(list) {
   const REMAINING = list.slice();
 
   while (REMAINING.length) {
-    const IDX = Math.floor(Math.random() * REMAINING.length);
-    const CANDIDATE = REMAINING.splice(IDX, 1)[0];
+    const INDEX = Math.floor(Math.random() * REMAINING.length);
+    const CANDIDATE = REMAINING.splice(INDEX, 1)[0];
 
-    const OK = await imageLoads(CANDIDATE);
-    if (OK) {
-      const LINES = [
-        `:root {`,
-        `  --zehn-waifu: url("${CANDIDATE}");`,
-        `}`
-      ];
+    if (await imageLoads(CANDIDATE)) {
+      const CSS_TEXT = `  --zehn-waifu: url("${CANDIDATE}");`;
 
-      const EL = document.createElement('style');
-      EL.id = 'zehnWaifu';
-      EL.textContent = LINES.join("\n");
-      document.head.appendChild(EL);
+      const STYLE = document.createElement('style');
+      STYLE.dataset.waifus = "";
+      STYLE.id = 'Waifus';
+      STYLE.textContent = `:root {\n${CSS_TEXT}\n}`;
+      document.head.appendChild(STYLE);
 
-      console.info('Using ' + CANDIDATE + ' for your waifu!')
+      console.info('Using ' + CANDIDATE + ' for your waifu!');
       return;
     }
 
@@ -75,7 +71,7 @@ async function setRandomWaifu(list) {
   }
 
   console.warn('No valid waifu found');
-};
+}
 
 function imageLoads(src, timeout = 5000) {
   return new Promise(resolve => {
@@ -96,4 +92,4 @@ function imageLoads(src, timeout = 5000) {
     const TIMER = setTimeout(() => done(false), timeout);
     IMG.src = src;
   });
-};
+}

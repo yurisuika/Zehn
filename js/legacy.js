@@ -17,7 +17,7 @@ CREATE.createTextWrapper('.LegacyPopup', '._1NqKTWvxtFgflRlqLTtv7e', ['.zehnLeav
 
 /* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
 
-MOVE.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
+MOVE.moveElement('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
   '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // CHAT ROOM NAME
 ]);
 

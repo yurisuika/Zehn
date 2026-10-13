@@ -3,7 +3,7 @@ import REVEAL from '../lib/reveal.js';
 
 /* ADD SEPARATOR ELEMENT IN DROPDOWN -------------------------------------------------------------------------------- */
 
-CREATE.createSiblingElement('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE', ['.zehnContextSeparator']);
+CREATE.createElement('._30wJO3MC4x-I1OWpy1TAeE', '._2oAiZidGyUxL-hfupFDQ2m._2U_Y7A-0lddoJdrJBvf8JE', ['.zehnContextSeparator'], { placement: 'before' });
 
 
 

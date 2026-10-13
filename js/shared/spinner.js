@@ -20,7 +20,7 @@ function createSpinner(rootSelector, targetSelector) {
     target.prepend(SPINNER);
     return SPINNER;
   });
-};
+}
 
 createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ'); // BROWSER
 createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v'); // LOGIN

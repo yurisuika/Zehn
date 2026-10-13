@@ -41,7 +41,7 @@ CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3Z7VQ1IMk4E3HsHvrkLNgo', ['#zeh
   const ROOT_MENUS = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
   ROOT_MENUS.classList.toggle('zehnMenuOpened', !button.classList.contains('zehnToggled'));
   button.classList.toggle('zehnToggled');
-}, { shouldAppend: false });
+}, { placement: 'prepend' });
 
 FIND.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '._1rDh5rXSFZJOqCa4UpnI4z', (root, target) => {
   const ROOT_MENUS = document.querySelector('._3mz8wQ6Q44B8P7pzPP4Iyw');
@@ -56,16 +56,16 @@ FIND.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '._1rDh5rXSFZJOqCa4UpnI4z', (
 /* TOGGLE LIBRARY SEARCH SECTION ------------------------------------------------------------------------------------ */
 
 TOGGLE.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleSidebarSearch', 'zehnSearchOpened');
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', ['#zehnToggleSidebarSearch', '.zehnButton', '.zehnReveal'], (root, target, button) => {
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', ['#zehnToggleSidebarSearch', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnSearchOpened');
-}, { shouldAppend: false });
+}, { placement: 'prepend', activeTooltipText: 'Search my apps', inactiveTooltipText: 'Search my apps' });
 
 /* TOGGLE LIBRARY WHAT'S NEW SECTION -------------------------------------------------------------------------------- */
 
 TOGGLE.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleWhatsNew', 'zehnWhatsNewCollapsed');
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._17uEBe5Ri8TMsnfELvs8-N .SMWMsB-gz3WbYRK2HOm7i ._2o5c89vAnrXN8C60QTSMqO .bsNegRKT1Hbv4tqHrOk9-', ['#zehnToggleWhatsNew', '.zehnButton'], (root, target, button) => {
+CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2hfibYuzyMOQ0sj2egsHh0', ['#zehnToggleWhatsNew', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnWhatsNewCollapsed');
-}, { shouldAppend: false });
+}, { placement: 'after' });
 
 /* ID GAME PAGE SECTIONS -------------------------------------------------------------------------------------------- */
 
@@ -175,12 +175,12 @@ function togglePage(root, target, button) {
   }
 };
 
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { shouldAppend: false }); // STICKY DETAILS
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { shouldAppend: false }); // DETAILS
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { shouldAppend: false }); // STICKY COMMUNITY
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { shouldAppend: false }); // COMMUNITY
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { shouldAppend: false }); // STICKY ACTIVITY
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { shouldAppend: false }); // ACTIVITY
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { placement: 'prepend', activeTooltipText: 'Game details', inactiveTooltipText: 'Game details' }); // STICKY DETAILS
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { placement: 'prepend', activeTooltipText: 'Game details', inactiveTooltipText: 'Game details' }); // DETAILS
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Community feed', inactiveTooltipText: 'Community feed' }); // STICKY COMMUNITY
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Community feed', inactiveTooltipText: 'Community feed' }); // COMMUNITY
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Activity feed', inactiveTooltipText: 'Activity feed' }); // STICKY ACTIVITY
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Activity feed', inactiveTooltipText: 'Activity feed' }); // ACTIVITY
 
 /* WRAP NAVIGATION CONTROLS FOR BACKGROUND -------------------------------------------------------------------------- */
 
@@ -189,7 +189,7 @@ CREATE.createContainer('._2D64jIEK7wpUR_NlObDW76', '._2D64jIEK7wpUR_NlObDW76>._2
 
 /* MOVE VANILLA BUTTONS INTO NAVBAR ---------------------------------------------------------------------------------- */
 
-MOVE.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
+MOVE.moveElement('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
   '._2EQ7ghgqIdjKv9jsQC0Zq9', // DOWNLOADS
   '._2foCkpRXhqq0UGVE50BWqj', // ADD GAME
   '._1TdaAqMFadi0UTqilrkelR' // FRIENDS
@@ -198,23 +198,23 @@ MOVE.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
 /* TOGGLE THEATER MODE AKA REMOVE LIBRARY SIDEBAR ------------------------------------------------------------------- */
 
 TOGGLE.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleTheaterMode', 'zehnTheaterMode');
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleTheaterMode', '.zehnButton'], (root, target, button) => {
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleTheaterMode', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnTheaterMode');
-});
+}, { activeTooltipText: 'Exit theater mode', inactiveTooltipText: 'Enter theater mode' });
 
 /* TOGGLE NAVBAR EXPANSION ------------------------------------------------------------------------------------------ */
 
 TOGGLE.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleExpandedNavbar', 'zehnExpandedNavbar');
-CREATE.createButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleExpandedNavbar', '.zehnButton'], (root, target, button) => {
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleExpandedNavbar', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnExpandedNavbar');
-});
+}, { activeTooltipText: 'Collapse navbar items', inactiveTooltipText: 'Expand navbar items' });
 
 /* MOVE LIBRARY SIDEBAR BUTTONS ------------------------------------------------------------------------------------- */
 
-MOVE.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._20QAC4WMXm8qFE8waUT5oo', [
+MOVE.moveElement('.QsvsRVwbsApgKt1MhM0fz', '._20QAC4WMXm8qFE8waUT5oo', [
   '._2PF_m-I5yte3WnQhpcz8RC' // SIDEBAR BUTTON CATEGORIES
 ]);
-MOVE.moveAppend('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', [
+MOVE.moveElement('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', [
   '._3AhYljPF4e4E8LaBt-FoY0', // SIDEBAR BUTTON LIBRARY
   '._2CEKFex6JMsAse2lqMMjUp', // SIDEBAR BUTTON COLLECTIONS
   '._1PgAonvorr0o_NMxNKiDFU ._3mzKdQXht__YHo6PX1LmB6' // FILTER CONTROLS
@@ -252,8 +252,8 @@ function toggleLinks(root, target, button) {
   });
 };
 
-CREATE.createButton('._2Dd4T78PcCTUVgOtDGFY5j', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks); // STICKY PLAYBAR
-CREATE.createButton('._2Dd4T78PcCTUVgOtDGFY5j', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks); // PLAYBAR
+CREATE.createTooltipButton('._2Dd4T78PcCTUVgOtDGFY5j', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks, { activeTooltipText: 'Collapse game links', inactiveTooltipText: 'Expand game links' }); // STICKY PLAYBAR
+CREATE.createTooltipButton('._2Dd4T78PcCTUVgOtDGFY5j', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks, { activeTooltipText: 'Collapse game links', inactiveTooltipText: 'Expand game links' }); // PLAYBAR
 
 /* WRAP LOAD MORE --------------------------------------------------------------------------------------------------- */
 

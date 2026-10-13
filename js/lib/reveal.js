@@ -1,4 +1,4 @@
-import { FIND, STORE, TOGGLE, CREATE, MOVE } from './util.js';
+import {FIND} from './util.js';
 
 export const REVEAL = {
   addRevealClass,
@@ -16,19 +16,19 @@ function addRevealClass(rootSelector, targetSelectors, additionalNames = []) {
       additionalNames.forEach(name => {target.classList.toggle(name, true)});
     }, { shouldObserveTarget: false, shouldDisconnect: true, shouldAddAttributeFilter: true });
   });
-};
+}
 
 function revealInner(containerSelector, { maskSize = 150, requiresContentModePanel = false } = {}) {
   FIND.handleOnMutation(containerSelector, '.zehnReveal', (container, revealed) => {
     reveal(container, revealed, maskSize, requiresContentModePanel);
   });
-};
+}
 
 function revealSelf(selfSelector, { maskSize = 150, requiresContentModePanel = false } = {}) {
   FIND.findTargets(document, selfSelector, (revealed) => {
     reveal(revealed, revealed, maskSize, requiresContentModePanel);
   }, { shouldDisconnect: false });
-};
+}
 
 
 
@@ -202,9 +202,7 @@ function reveal(container, revealed, maskSize, requiresContentModePanel) {
       const X = e.clientX - RECT.left;
       const Y = e.clientY - RECT.top;
 
-      const RIPPLE = spawnRipple(T, X, Y);
-
-      container.__activeRipple = RIPPLE;
+      container.__activeRipple = spawnRipple(T, X, Y);
     }, { passive: true });
 
     const speedUp = () => {
@@ -229,4 +227,4 @@ function reveal(container, revealed, maskSize, requiresContentModePanel) {
   window.addEventListener('scroll', scheduleRefreshRects, { passive: true });
 
   refreshRects();
-};
+}

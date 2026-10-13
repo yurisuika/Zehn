@@ -14,18 +14,18 @@ CREATE.createContainer('.FriendPicker', '.FriendPicker_ChosenFriend .SVGIcon_X_L
 
 /* MOVE SCREENSHOT ELEMENTS ----------------------------------------------------------------------------------------- */
 
-MOVE.moveAppend('._2p9h7sf5EGrEVlsWxtvUPH', '.DKXVRVBokaW_Xxo6kyKq0', [
+MOVE.moveElement('._2p9h7sf5EGrEVlsWxtvUPH', '.DKXVRVBokaW_Xxo6kyKq0', [
   '._3-jI6bR_mj4JCTwXNFFuuL' // SCREENSHOT CAPTION
 ]);
-MOVE.moveAppend('._2p9h7sf5EGrEVlsWxtvUPH', '._1gvujtNl7v7FpJK6kaMeKZ', [
+MOVE.moveElement('._2p9h7sf5EGrEVlsWxtvUPH', '._1gvujtNl7v7FpJK6kaMeKZ', [
   '._2yt71EY8-YdWa8dBEE1DAW' // ARTWORK DESCRIPTION
 ]);
 
 /* MOVE NOTES DELETE BUTTON ----------------------------------------------------------------------------------------- */
 
-MOVE.movePrepend('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', [
+MOVE.moveElement('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', [
   '._1fu6xumTI1nCY5wc6FG_N2 .tool-tip-source' // NOTES DELETE
-], { shouldObserve: true });
+], { shouldObserve: true, placement: 'prepend' });
 
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
@@ -33,12 +33,12 @@ CREATE.createIconTextContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl
 
 /* MOVE BROWSER TABS INTO TITLEBAR ---------------------------------------------------------------------------------- */
 
-MOVE.movePrepend('._1UJDmU3N-pkv7oTJ_Zf9nK', '.TabbedPopupBrowser .TitleBar.title-area', [
+MOVE.moveElement('._1UJDmU3N-pkv7oTJ_Zf9nK', '.TabbedPopupBrowser .TitleBar.title-area', [
   '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
-]);
-MOVE.movePrepend('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Browser .TitleBar.title-area', [
+], { placement: 'prepend' });
+MOVE.moveElement('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Browser .TitleBar.title-area', [
   '.aqvbkhC1ejt4s8QvWA-c5' // BROWSER TABS
-]);
+], { placement: 'prepend' });
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
@@ -50,7 +50,7 @@ CREATE.createTextWrapper('.LegacyPopup', '._1NqKTWvxtFgflRlqLTtv7e', ['.zehnLeav
 
 /* NOTIFICATION SETTINGS MOVE INTO TITLEBAR ------------------------------------------------------------------------- */
 
-MOVE.moveAppend('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
+MOVE.moveElement('.LegacyPopup', '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogHeader', [
   '.ChatRoomNotificationSettingsDialog > .DialogContent_InnerWidth > form > .DialogLabel._DialogLayout' // CHAT ROOM NAME
 ]);
 

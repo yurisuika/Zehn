@@ -1,23 +1,16 @@
-export const OPTIONS = {
+export const OPTION = {
   applyOptions
 };
-export default OPTIONS;
+export default OPTION;
 
-/* OPTIONS ---------------------------------------------------------------------------------------------------------- */
+/* OPTION ----------------------------------------------------------------------------------------------------------- */
 
 async function applyOptions() {
-  const EXT = '.css';
-  const BOOLEAN_NAME_MAP = { true: 'on', false: 'off' };
-  const SANITIZE_SEGMENTS = true;
-  const CONTAINER_SELECTOR = 'head';
-  const ATTRIBUTE_PREFIX = 'data-zehn-';
-  const CHECK_EXISTS = false;
-  const SKIP_NULL = true;
-  const CHECK_FOR_ID = 'MillenniumQuickCss';
-  const VARIABLE_STYLE_ID = 'zehnVarOptions';
-  const UNITS = ['px', '%', 'em', 'rem', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'cm', 'mm', 'in', 'pt', 'pc'];
+  if (document.getElementById('MillenniumQuickCss')) return;
 
-  if (document.getElementById(CHECK_FOR_ID)) return;
+  const VARIABLE_STYLE_ID = 'VariableOptions';
+  const BOOLEAN_NAME_MAP = { true: 'on', false: 'off' };
+  const UNITS = ['px', '%', 'em', 'rem', 'vh', 'vw', 'vmin', 'vmax', 'ch', 'ex', 'cm', 'mm', 'in', 'pt', 'pc'];
 
   const MATCH = import.meta.url.match(/\/skins\/([^\/]+)\//);
   const THEME_FOLDER = MATCH ? MATCH[1] : 'Zehn';
@@ -25,7 +18,7 @@ async function applyOptions() {
   const SOURCE = `https://steamloopback.host/skins/${THEME_FOLDER}/options.json`;
   const BASE_DIR = `https://steamloopback.host/skins/${THEME_FOLDER}/option/`;
 
-  const CONTAINER = document.querySelector(CONTAINER_SELECTOR) || document.head;
+  const CONTAINER = document.querySelector('head') || document.head;
   const LINK_STORE = new Map();
   const GENERATED_MAPPING = {};
   const VAR_MAP = {};
@@ -34,11 +27,10 @@ async function applyOptions() {
 
   function safeSegmentKeepSpaces(seg) {
     let s = String(seg).trim();
-    if (!SANITIZE_SEGMENTS) return s;
     s = s.replace(/[^\w\s\-\._]/g, '');
     s = s.replace(/\s+/g, ' ');
     return s;
-  };
+  }
 
   function safeVarNameFromFinalSegment(seg) {
     return String(seg)
@@ -48,7 +40,7 @@ async function applyOptions() {
       .replace(/[^a-z0-9\-_]/g, '')
       .replace(/^-+/, '')
       .replace(/-+$/, '') || 'unnamed';
-  };
+  }
 
   function buildHrefFromPath(keyPathArray, value) {
     const SEGMENTS = keyPathArray.map(safeSegmentKeepSpaces).filter(Boolean);
@@ -59,12 +51,12 @@ async function applyOptions() {
     valueSegment = safeSegmentKeepSpaces(valueSegment);
 
     const PARTS = [BASE_DIR.replace(/\/+$/, '')].concat(SEGMENTS).concat([valueSegment]);
-    return PARTS.join('/') + EXT;
-  };
+    return PARTS.join('/') + '.css';
+  }
 
   function makeAttrName(keyPath) {
-    return `${ATTRIBUTE_PREFIX}${String(keyPath).replace(/\./g, '-').replace(/\s+/g, '-')}`;
-  };
+    return `data-${String(keyPath).replace(/\./g, '-').replace(/\s+/g, '-')}`;
+  }
 
   function addLink(keyPath, href, rawValue) {
     removeLink(keyPath);
@@ -76,7 +68,7 @@ async function applyOptions() {
     LINK.setAttribute(ATTR_NAME, ATTR_VALUE);
     CONTAINER.appendChild(LINK);
     LINK_STORE.set(String(keyPath), LINK);
-  };
+  }
 
   function removeLink(keyPath) {
     const KEY = String(keyPath);
@@ -85,30 +77,19 @@ async function applyOptions() {
       EXISTING.remove();
       LINK_STORE.delete(KEY);
     }
-  };
+  }
 
   async function maybeAddLink(keyPath, href, rawValue) {
-    if (!CHECK_EXISTS) {
-      addLink(keyPath, href, rawValue);
-      return true;
-    }
-    try {
-      const RESPONSE = await fetch(href, { method: 'HEAD', cache: 'no-store' });
-      if (RESPONSE.ok) { addLink(keyPath, href, rawValue); return true; }
-      removeLink(keyPath);
-      return false;
-    } catch (e) {
-      removeLink(keyPath);
-      return false;
-    }
-  };
+    addLink(keyPath, href, rawValue);
+    return true;
+  }
 
   async function loadData(src) {
     if (typeof src === 'object' && src !== null) return src;
     const RESPONSE = await fetch(String(src), { cache: 'no-store' });
     if (!RESPONSE.ok) throw new Error('Failed to load JSON: ' + RESPONSE.status);
     return await RESPONSE.json();
-  };
+  }
 
   function collectLeaves(obj, prefix = []) {
     const LEAVES = [];
@@ -125,23 +106,24 @@ async function applyOptions() {
       }
     }
     return LEAVES;
-  };
+  }
 
-  function applyRootVars(styleId = VARIABLE_STYLE_ID, prefix = 'theme') {
-    const STYLE_ELEMENT = document.getElementById(styleId) || (() => {
+  function applyRootVars() {
+    const STYLE = document.getElementById(VARIABLE_STYLE_ID) || (() => {
       const STYLE = document.createElement('style');
-      STYLE.id = styleId;
+      STYLE.dataset.variableOptions = "";
+      STYLE.id = VARIABLE_STYLE_ID;
       document.head.appendChild(STYLE);
       return STYLE;
     })();
 
-    const LINES = [];
+    const CSS_TEXT = [];
     for (const [VAR_NAME, VAL] of Object.entries(VAR_MAP)) {
       const SAFE_VAL = typeof VAL === 'string' && /\s/.test(VAL) && !/^["'].*["']$/.test(VAL) ? `"${VAL.replace(/"/g, '\\"')}"` : String(VAL);
-      LINES.push(`  --${prefix}-${VAR_NAME}: ${SAFE_VAL};`);
+      CSS_TEXT.push(`  --option-${VAR_NAME}: ${SAFE_VAL};`);
     }
-    STYLE_ELEMENT.textContent = `:root {\n${LINES.join('\n')}\n}`;
-  };
+    STYLE.textContent = `:root {\n${CSS_TEXT.join('\n')}\n}`;
+  }
 
   async function applyFrom(src) {
     const DATA = await loadData(src);
@@ -152,7 +134,7 @@ async function applyOptions() {
 
     const TASKS = LEAVES.map(async ([pathArray, value]) => {
       const KEY_PATH = pathArray.join('.');
-      if (SKIP_NULL && (value === null || value === undefined)) {
+      if (value === null || value === undefined) {
         removeLink(KEY_PATH);
         return false;
       }
@@ -175,7 +157,7 @@ async function applyOptions() {
     await Promise.all(TASKS);
 
     if (Object.keys(VAR_MAP).length > 0) {
-      applyRootVars(VARIABLE_STYLE_ID, 'option');
+      applyRootVars();
     } else {
       const EXISTING_STYLE = document.getElementById(VARIABLE_STYLE_ID);
       if (EXISTING_STYLE) EXISTING_STYLE.remove();
@@ -186,7 +168,7 @@ async function applyOptions() {
       mapping: { ...GENERATED_MAPPING },
       varsApplied: { ...VAR_MAP }
     };
-  };
+  }
 
   const RESULT = await applyFrom(SOURCE);
 
@@ -194,11 +176,6 @@ async function applyOptions() {
     appliedLinks: RESULT.appliedLinks,
     mapping: RESULT.mapping,
     varsApplied: RESULT.varsApplied,
-    refresh: async (newSource = SOURCE) => await applyFrom(newSource),
-    removeAll: () => {
-      for (const KEY of Array.from(LINK_STORE.keys())) removeLink(KEY);
-      const STYLE_ELEMENT = document.getElementById(VARIABLE_STYLE_ID);
-      if (STYLE_ELEMENT) STYLE_ELEMENT.remove();
-    }
+    refresh: async (newSource = SOURCE) => await applyFrom(newSource)
   };
-};
+}

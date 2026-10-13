@@ -12,7 +12,7 @@ async function addLocalizedLabels(...switchSelector) {
     CREATE.createText('html', sel, ['.zehnLabelOn'], localOn);
     CREATE.createText('html', sel, ['.zehnLabelOff'], localOff);
   }
-};
+}
 
 addLocalizedLabels(
   '._9Ql-oVe_j8E-vsDdyVdWo', // GAMEPAD

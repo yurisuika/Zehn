@@ -8,13 +8,13 @@ export default LOCALIZATION;
 
 async function getLocalizationJson() {
   const RESPONSE = await fetch(
-    new URL("../../data/localization.json", import.meta.url)
+    new URL('../../data/localization.json', import.meta.url)
   );
   if (!RESPONSE.ok) {
-    throw new Error("Failed to load localization JSON");
+    throw new Error('Failed to load localization JSON');
   }
   return await RESPONSE.json();
-};
+}
 
 async function localize(data, langCode, langKey) {
   let translations = data[langCode];
@@ -29,4 +29,4 @@ async function localize(data, langCode, langKey) {
   }
 
   return translations[langKey];
-};
+}

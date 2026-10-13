@@ -7,25 +7,25 @@ export default SECRET;
 
 function discover(parent) {
   const CODE = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-  let kpos = 0;
+  let keyPos = 0;
   let canvasApp = null;
 
   function keyDownHandler(e) {
     if (!canvasApp) {
-      if (e.keyCode === CODE[kpos]) {
-        kpos++;
-        if (kpos === CODE.length) {
-          kpos = 0;
+      if (e.keyCode === CODE[keyPos]) {
+        keyPos++;
+        if (keyPos === CODE.length) {
+          keyPos = 0;
           startCanvas();
         }
       } else {
-        kpos = e.keyCode === CODE[0] ? 1 : 0;
+        keyPos = e.keyCode === CODE[0] ? 1 : 0;
       }
     } else {
       canvasApp.onKeyDown && canvasApp.onKeyDown(e);
       if (e.key === "Escape") stopCanvas();
     }
-  };
+  }
 
   function keyUpHandler(e) { canvasApp && canvasApp.onKeyUp && canvasApp.onKeyUp(e); };
 
@@ -54,7 +54,7 @@ function discover(parent) {
       CANVAS.height = innerHeight;
       canvasApp.onResize && canvasApp.onResize();
     }
-  };
+  }
 
   function stopCanvas() {
     if (!canvasApp) return;
@@ -62,7 +62,7 @@ function discover(parent) {
     const ELEMENT = canvasApp.canvas;
     if (ELEMENT && ELEMENT.parentNode) ELEMENT.parentNode.removeChild(ELEMENT);
     canvasApp = null;
-  };
+  }
 
   return {
     stopListening: () => {
@@ -71,7 +71,7 @@ function discover(parent) {
       stopCanvas();
     }
   };
-};
+}
 
 
 

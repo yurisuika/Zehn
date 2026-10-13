@@ -5,9 +5,9 @@ import REVEAL from './lib/reveal.js';
 
 /* MOVE OVERLAY BUTTONS --------------------------------------------------------------------------------------------- */
 
-MOVE.movePrepend('._3b_pllMxcr_an1aQ5goWvB', '.fi6UDkxJq66MLo2z9wabQ', [
+MOVE.moveElement('._3b_pllMxcr_an1aQ5goWvB', '.fi6UDkxJq66MLo2z9wabQ', [
   '._3OzkVrQFFPv0aV41N4MrHV' // OVERLAY BUTTONS
-]);
+], { placement: 'prepend' });
 
 
 

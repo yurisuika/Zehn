@@ -11,7 +11,7 @@ FIND.findRootsAndTargets('.DialogSlider_Slider', '.DialogSlider_Grabber', (root,
     } else {
       root.style.removeProperty('--value');
     }
-  };
+  }
 
   syncVariable();
 
