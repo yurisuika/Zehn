@@ -1,0 +1,240 @@
+// PAGELIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LIST COLUMN
+._2kwFFHckg8jvnwJfg9-la8.PageListColumn {
+  padding: 0px !important;
+  height: 100% !important;
+  min-width: var(--zehn-size-pagelist-width) !important;
+  max-width: var(--zehn-size-pagelist-width) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+// TITLE IN TITLEBAR
+._2rjVTGz8aLvqOdz5v2gq5C {
+  padding: var(--zehn-size-titlebar-text-padding) !important;
+  font-size: var(--zehn-size-titlebar-text) !important;
+  color: var(--zehn-color-text-page-title) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0px !important;
+  line-height: var(--zehn-size-titlebar) !important;
+  text-transform: capitalize !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  min-height: var(--zehn-size-titlebar) !important;
+  box-sizing: border-box !important;
+}
+
+// LIST
+._18QCu-7MTzd51UpVbYysDy {
+  padding: 0px !important;
+  margin: 0px !important;
+
+  // DISABLED SCROLLING
+  &.yTqIu5oXmYa9Em9FCpO3c {
+    overflow-x: hidden !important;
+  }
+}
+
+// ENTRY
+._1-vlriAtKYDViAEunue4VO {
+  position: relative !important;
+  font-size: var(--zehn-size-pagelist-text) !important;
+  color: var(--zehn-color-list-text) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: var(--zehn-size-pagelist-height) !important;
+  min-height: var(--zehn-size-pagelist-height) !important;
+  padding: var(--zehn-size-pagelist-padding) !important;
+  margin: 0px !important;
+  max-width: 100% !important;
+  min-width: 0px !important;
+  background-color: var(--zehn-color-list-background) !important;
+  --content-scale: 1;
+  --focusbar-scale: 1;
+
+  &:hover {
+    color: var(--zehn-color-list-text) !important;
+    background-color: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    color: var(--zehn-color-list-text) !important;
+    background-color: var(--zehn-color-list-background-active) !important;
+    --content-scale: 0.98;
+    --focusbar-scale: 1.05;
+  }
+
+  // ACTIVE
+  &._2DpXjzK3WWsOtUWUrcuOG7 {
+
+    // FOCUSBAR
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: var(--zehn-size-focusbar-pagelist);
+      height: var(--zehn-size-focusbar-pagelist-length);
+      left: 0px;
+      top: calc((var(--zehn-size-pagelist-height) - var(--zehn-size-focusbar-pagelist-length)) / 2);
+      background: var(--zehn-color-focusbar);
+      transition: transform 0.05s var(--zehn-timing-ease);
+      transform: scale(var(--focusbar-scale));
+    }
+  }
+
+  // DEFAULT ICON (NOT USED)
+  ._1rD8X96FdnksZLvRRlEiCR {
+    color: transparent !important;
+    width: fit-content !important;
+    height: fit-content !important;
+    margin-right: var(--zehn-size-pagelist-gap) !important;
+    display: none !important;
+    transition: transform 0.05s var(--zehn-timing-ease) !important;
+    transform: scale(var(--content-scale)) !important;
+
+    svg {
+      width: var(--zehn-size-icon-md) !important;
+      height: var(--zehn-size-icon-md) !important;
+      margin: 0px !important;
+      background-color: var(--zehn-color-list-icon) !important;
+      mask-repeat: no-repeat !important;
+      mask-position: center !important;
+      mask-size: var(--zehn-size-icon-md) !important;
+
+      * { display: none !important; }
+    }
+  }
+
+  // TEXT
+  ._2PPbMrzl8PKBwpkjYs9b0i {
+    position: relative !important;
+    display: flex !important;
+    transition: transform 0.05s var(--zehn-timing-ease) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: normal !important;
+    max-width: fit-content !important;
+    transform: scale(var(--content-scale)) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    line-height: var(--zehn-size-pagelist-height) !important;
+    height: var(--zehn-size-pagelist-height) !important;
+    color: var(--zehn-color-list-text) !important;
+    font-size: var(--zehn-size-pagelist-text) !important;
+
+    // ICON (SCALED WITH TEXT)
+    &::before {
+      content: "";
+      position: relative;
+      width: var(--zehn-size-icon-md);
+      height: var(--zehn-size-icon-md);
+      margin-right: var(--zehn-size-pagelist-gap);
+      background-color: var(--zehn-color-list-icon);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: var(--zehn-size-icon-md);
+      display: block;
+      align-self: center;
+      flex-shrink: 0;
+      -webkit-mask-image: var(--icon);
+    }
+  }
+
+  // ICONS
+  --icon: var(--zehn-icon-info);
+
+  &[id$="/settings/account"] {
+    --icon: var(--zehn-icon-contact-info);
+  }
+
+  &[id$="/settings/friends"] {
+    --icon: var(--zehn-icon-contacts);
+  }
+
+  &[id$="/settings/family"] {
+    --icon: var(--zehn-icon-group);
+  }
+
+  &[id$="/settings/security"] {
+    --icon: var(--zehn-icon-shield);
+  }
+
+  &[id$="/settings/notifications"] {
+    --icon: var(--zehn-icon-notification);
+  }
+
+  &[id$="/settings/interface"] {
+    --icon: var(--zehn-icon-panel);
+  }
+
+  &[id$="/settings/store"] {
+    --icon: var(--zehn-icon-store);
+  }
+
+  &[id$="/settings/library"] {
+    --icon: var(--zehn-icon-library);
+  }
+
+  &[id$="/settings/downloads"] {
+    --icon: var(--zehn-icon-download);
+  }
+
+  &[id$="/settings/storage"] {
+    --icon: var(--zehn-icon-harddrive);
+  }
+
+  &[id$="/settings/cloud"] {
+    --icon: var(--zehn-icon-cloud);
+  }
+
+  &[id$="/settings/ingame"] {
+    --icon: var(--zehn-icon-gamepad);
+  }
+
+  &[id$="/settings/compatibility"] {
+    --icon: var(--zehn-icon-compatibility);
+  }
+
+  &[id$="/settings/accessibility"] {
+    --icon: var(--zehn-icon-accessibility);
+  }
+
+  &[id*="/settings/controller"] {
+    --icon: var(--zehn-icon-controller);
+  }
+
+  &[id$="/settings/gamerecording"] {
+    --icon: var(--zehn-icon-film);
+  }
+
+  &[id$="/settings/voice"] {
+    --icon: var(--zehn-icon-mic);
+  }
+
+  &[id$="/settings/remoteplay"] {
+    --icon: var(--zehn-icon-remote-play);
+  }
+
+  &[id$="/settings/broadcast"] {
+    --icon: var(--zehn-icon-video);
+  }
+
+  &[id$="/settings/music"] {
+    --icon: var(--zehn-icon-audio);
+  }
+
+  &[id$="/settings/developer"] {
+    --icon: var(--zehn-icon-developer);
+  }
+}
+
+// SEPARATOR
+._1Hye7o1wYIfc9TE9QKRW4T {
+  margin: 0px !important;
+  padding: var(--zehn-size-pagelist-padding) !important;
+  background: var(--zehn-color-separator) !important;
+  height: var(--zehn-size-separator) !important;
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

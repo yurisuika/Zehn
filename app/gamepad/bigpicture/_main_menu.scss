@@ -1,0 +1,167 @@
+// MAIN MENU (BASICALLY A PAGELIST) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+._3vzvOyI0h9mIihOEtO6wZ2 {
+ 
+  // OPEN
+  &._3apLK4XGwOjawDa-8X1CUa {}
+}
+
+// MENU
+._23IDiI-F_FxXotrgpY71r8 {
+  --menu-width: var(--zehn-size-pagelist-width);
+  transform: translateX(calc(-1 * var(--menu-width))) !important;
+  transition-property: width, transform, background-color !important;
+  transition-duration: 0.5s !important;
+  transition-timing-function: var(--zehn-timing-ease) !important;
+  margin: 0px !important;
+  top: var(--zehn-size-basicui-header) !important;
+  bottom: var(--zehn-size-basicui-footer) !important;
+  inset-inline: var(--zehn-size-basicui-edge) !important;
+  width: var(--menu-width) !important;
+  height: calc(100% - (var(--zehn-size-basicui-footer) + var(--zehn-size-basicui-header))) !important;
+  background-color: transparent !important;
+
+  // OPEN
+  &._3apLK4XGwOjawDa-8X1CUa {
+    transform: translateX(0px) !important;
+  }
+}
+
+// ITEM (OUTER)
+._1BbM8Qq8OL5N8gL4PYH397 {
+  background: transparent !important;
+  width: 100% !important;
+  margin: 0px !important;
+  padding: 0px !important;
+
+  // ITEM
+  ._2w9TpQwxU7vcwaAbf3KGv_ {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    border: none !important;
+    position: relative !important;
+    font-size: var(--zehn-size-pagelist-text) !important;
+    color: var(--zehn-color-list-text) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    line-height: var(--zehn-size-pagelist-height) !important;
+    min-height: var(--zehn-size-pagelist-height) !important;
+    padding: var(--zehn-size-pagelist-padding) !important;
+    margin: 0px !important;
+    max-width: 100% !important;
+    min-width: 0px !important;
+    background: var(--zehn-color-list-background) !important;
+    --content-scale: 1;
+    --focusbar-scale: 1;
+
+    &:hover {
+      color: var(--zehn-color-list-text) !important;
+      background: var(--zehn-color-list-background-hover) !important;
+    }
+
+    &:active {
+      color: var(--zehn-color-list-text) !important;
+      background: var(--zehn-color-list-background-active) !important;
+      --content-scale: 0.98;
+      --focusbar-scale: 1.05;
+    }
+
+    // ACTIVE
+    &._10bq5BppQ3fcLqTNXms8yA {}
+
+    // ACTIVE DOT
+    ._1uLVHdiiCg78BRnhqLxUID {
+      position: absolute !important;
+      display: block !important;
+      width: var(--zehn-size-focusbar-pagelist) !important;
+      height: var(--zehn-size-focusbar-pagelist-length) !important;
+      left: 0px !important;
+      top: calc((var(--zehn-size-pagelist-height) - var(--zehn-size-focusbar-pagelist-length)) / 2) !important;
+      background: var(--zehn-color-focusbar) !important;
+      transition: transform 0.05s var(--zehn-timing-ease) !important;
+      transform: scale(var(--focusbar-scale)) !important;
+      border-radius: var(--zehn-size-radius-none) !important;
+    }
+
+    // ITEM ICON
+    ._3xZ3ZujYllkNRr5UdDfNmz {
+      width: var(--zehn-size-icon-md) !important;
+      height: var(--zehn-size-icon-md) !important;
+      margin-right: var(--zehn-size-pagelist-gap) !important;
+      transition: transform 0.05s var(--zehn-timing-ease) !important;
+      transform: scale(var(--content-scale)) !important;
+
+      // CONSOLE HAS NO ICON
+      >div {
+        text-indent: -9999px !important;
+      }
+
+      svg,
+      div {
+        width: var(--zehn-size-icon-md) !important;
+        height: var(--zehn-size-icon-md) !important;
+        background-color: var(--zehn-color-list-icon) !important;
+        mask-repeat: no-repeat !important;
+        mask-position: center !important;
+        mask-size: var(--zehn-size-icon-md) !important;
+        -webkit-mask-image: var(--icon, var(--zehn-icon-command)) !important;
+
+        &:has([d="M32 15V32H22V22H14V32H4V15L18 3L32 15Z"]) {
+          --icon: var(--zehn-icon-home);
+        }
+
+        &:has([d="M16 4H4V16H16V4Z"]) {
+          --icon: var(--zehn-icon-library);
+        }
+
+        &:has([d="M33.78 19.22L19.22 33.78L4 18.56V4H18.56L33.78 19.22Z"]) {
+          --icon: var(--zehn-icon-store);
+        }
+
+        &:has([d="M18 26V31H2V26C2 23.8783 2.84285 21.8434 4.34315 20.3431C5.84344 18.8429 7.87827 18 10 18C12.1217 18 14.1566 18.8429 15.6569 20.3431C17.1571 21.8434 18 23.8783 18 26ZM10 15C10.89 15 11.76 14.7361 12.5001 14.2416C13.2401 13.7471 13.8169 13.0443 14.1575 12.2221C14.4981 11.3998 14.5872 10.495 14.4135 9.6221C14.2399 8.74918 13.8113 7.94736 13.182 7.31802C12.5526 6.68868 11.7508 6.2601 10.8779 6.08647C10.005 5.91283 9.10019 6.00195 8.27792 6.34254C7.45566 6.68314 6.75285 7.25991 6.25839 7.99994C5.76392 8.73996 5.5 9.60999 5.5 10.5C5.49868 11.0913 5.61418 11.6771 5.83986 12.2236C6.06554 12.7702 6.39695 13.2668 6.81508 13.6849C7.23321 14.103 7.72981 14.4345 8.27637 14.6601C8.82293 14.8858 9.40868 15.0013 10 15ZM31.66 18.34C30.8643 17.5434 29.9094 16.9238 28.8578 16.5216C27.8062 16.1194 26.6815 15.9437 25.5574 16.006C24.4332 16.0683 23.3348 16.3672 22.3341 16.8831C21.3334 17.399 20.4528 18.1204 19.75 19C21.2201 21.0373 22.0077 23.4877 22 26V29H34V24C34.0008 22.9491 33.7946 21.9084 33.3931 20.9372C32.9916 19.966 32.4027 19.0835 31.66 18.34ZM26 13C26.89 13 27.76 12.7361 28.5001 12.2416C29.2401 11.7471 29.8169 11.0443 30.1575 10.2221C30.4981 9.39981 30.5872 8.49501 30.4135 7.6221C30.2399 6.74918 29.8113 5.94736 29.182 5.31802C28.5526 4.68868 27.7508 4.2601 26.8779 4.08647C26.005 3.91283 25.1002 4.00195 24.2779 4.34254C23.4557 4.68314 22.7529 5.25991 22.2584 5.99994C21.7639 6.73996 21.5 7.60999 21.5 8.5C21.4987 9.09132 21.6142 9.67708 21.8399 10.2236C22.0655 10.7702 22.397 11.2668 22.8151 11.6849C23.2332 12.103 23.7298 12.4345 24.2764 12.6601C24.8229 12.8858 25.4087 13.0013 26 13Z"]) {
+          --icon: var(--zehn-icon-contacts);
+        }
+
+        &:has([d="M0.111115 0.361084V13.6944H17.8889V0.361084H0.111115ZM12.8889 2.58331C13.2185 2.58331 13.5408 2.68105 13.8148 2.86419C14.0889 3.04733 14.3025 3.30762 14.4287 3.61217C14.5548 3.91671 14.5878 4.25182 14.5235 4.57512C14.4592 4.89843 14.3005 5.1954 14.0674 5.42848C13.8343 5.66157 13.5373 5.82031 13.214 5.88462C12.8907 5.94892 12.5556 5.91592 12.2511 5.78977C11.9465 5.66363 11.6862 5.45001 11.5031 5.17592C11.32 4.90184 11.2222 4.57961 11.2222 4.24997C11.2222 3.80795 11.3978 3.38402 11.7104 3.07146C12.0229 2.7589 12.4469 2.58331 12.8889 2.58331V2.58331ZM11.7778 11.4722H2.33334L7.05556 5.36108L9.77778 8.88331L11.2222 7.02775L14.6778 11.4722H11.7778Z"]) {
+          --icon: var(--zehn-icon-film);
+        }
+
+        &:has([d="M29 23V27H7V23H2V32H34V23H29Z"]) {
+          --icon: var(--zehn-icon-download);
+        }
+
+        &:has([d="M33 20.38V15.62L29.07 14.9C28.8121 14.015 28.453 13.1628 28 12.36L30.27 9.08L26.92 5.71L23.64 8C22.8372 7.54696 21.985 7.18793 21.1 6.93L20.38 3H15.62L14.9 6.93C14.015 7.18793 13.1628 7.54696 12.36 8L9.08 5.71L5.71 9.08L8 12.36C7.54696 13.1628 7.18793 14.015 6.93 14.9L3 15.62V20.38L6.93 21.1C7.18793 21.985 7.54696 22.8372 8 23.64L5.71 26.92L9.08 30.29L12.36 28C13.1637 28.4461 14.0159 28.7984 14.9 29.05L15.62 33H20.38L21.1 29.07C21.985 28.8121 22.8372 28.453 23.64 28L26.92 30.27L30.29 26.9L28 23.64C28.4461 22.8363 28.7984 21.9841 29.05 21.1L33 20.38ZM18 23C17.0111 23 16.0444 22.7068 15.2221 22.1573C14.3999 21.6079 13.759 20.827 13.3806 19.9134C13.0022 18.9998 12.9031 17.9945 13.0961 17.0245C13.289 16.0546 13.7652 15.1637 14.4645 14.4645C15.1637 13.7652 16.0546 13.289 17.0245 13.0961C17.9945 12.9031 18.9998 13.0022 19.9134 13.3806C20.827 13.759 21.6079 14.3999 22.1573 15.2221C22.7068 16.0444 23 17.0111 23 18C23 18.6566 22.8707 19.3068 22.6194 19.9134C22.3681 20.52 21.9998 21.0712 21.5355 21.5355C21.0712 21.9998 20.52 22.3681 19.9134 22.6194C19.3068 22.8707 18.6566 23 18 23Z"]) {
+          --icon: var(--zehn-icon-settings);
+        }
+
+        &:has([d="M33 18C33.0014 20.7047 32.2715 23.3594 30.8875 25.6832C29.5035 28.0069 27.517 29.9133 25.1382 31.2004C22.7594 32.4875 20.0769 33.1075 17.3746 32.9947C14.6722 32.8819 12.0507 32.0406 9.7874 30.5597C7.52413 29.0789 5.70334 27.0137 4.5178 24.5827C3.33226 22.1517 2.82607 19.4454 3.05281 16.7502C3.27955 14.0551 4.2308 11.4714 5.80584 9.2726C7.38089 7.07385 9.52113 5.34187 12 4.26V8.79C10.0125 10.0834 8.49624 11.9845 7.67712 14.2098C6.85801 16.4351 6.77992 18.8655 7.45451 21.1388C8.12909 23.4121 9.52023 25.4066 11.4206 26.8249C13.3209 28.2433 15.6287 29.0095 18 29.0095C20.3713 29.0095 22.6791 28.2433 24.5794 26.8249C26.4798 25.4066 27.8709 23.4121 28.5455 21.1388C29.2201 18.8655 29.142 16.4351 28.3229 14.2098C27.5038 11.9845 25.9875 10.0834 24 8.79V4.26C26.6738 5.42694 28.9493 7.34824 30.5478 9.78866C32.1463 12.2291 32.9985 15.0827 33 18ZM20 1H16V15H20V1Z"]) {
+          --icon: var(--zehn-icon-power);
+        }
+      }
+    }
+
+    // ITEM LABEL
+    ._3x-ZK1MiNB1Uvo7Aa6qEBs {
+      margin: 0px !important;
+      line-height: inherit !important;
+      font-weight: inherit !important;
+      color: inherit !important;
+      transition: transform 0.05s var(--zehn-timing-ease) !important;
+      transform: scale(var(--content-scale)) !important;
+      max-width: fit-content !important;
+
+      // CONTAINER
+      ._26RbFDzzMplRhf211ujl5A {
+
+        // PLAYING
+        &._1XpsrsAvs4yCY2nYVsEvLw {}
+
+        // CONTENT
+        ._2ADpTpv53dcY1uFpMWO1KT {}
+      }
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

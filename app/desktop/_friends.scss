@@ -1,0 +1,2032 @@
+// CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.friendsListContainer {
+  background: transparent !important;
+  --friends-header-height: var(--zehn-size-titlebar);
+  --friends-footer-height: 0px;
+
+  // SINGLE WINDOW COLLAPSED
+  &.collapsed {
+    transition: none !important;
+  }
+}
+
+// INNER CONTAINER
+.friendlist>* {
+  transition: none !important;
+}
+
+.friendlist:not(.GamepadMode)::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0px;
+  background: var(--zehn-color-base);
+  height: var(--friends-header-height);
+}
+
+// CALCULATE BACKGROUND BEHIND LIST
+.friendlist:not(.GamepadMode) .FriendsListContent::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0px;
+  background: var(--zehn-color-app);
+  margin-top: var(--friends-header-height);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// HEADER CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.friendListHeaderContainer {
+  border: none !important;
+  min-height: 0px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  width: 100% !important;
+  z-index: 100 !important;
+  background: transparent !important;
+}
+
+.friendlist:not(.GamepadMode) .friendListHeaderContainer {
+  --noise-opacity: 0;
+
+  &::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    inset: 0px;
+    background: var(--zehn-color-section-acrylic-inactive);
+    transition: background-color 0.2s var(--zehn-timing-ease);
+    backdrop-filter: var(--zehn-transparency-effects-acrylic-filter);
+    background-blend-mode: exclusion;
+  }
+
+  &::after {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    inset: 0px;
+    opacity: var(--noise-opacity);
+    pointer-events: none;
+    background-size: auto;
+    background-image: var(--zehn-transparency-effects-acrylic-texture);
+    transition: opacity 0.2s var(--zehn-timing-ease);
+  }
+}
+
+.WindowFocus .friendlist:not(.GamepadMode) .friendListHeaderContainer {
+  --noise-opacity: var(--zehn-transparency-effects-acrylic);
+
+  &::before {
+    background-color: var(--zehn-color-section-acrylic-active);
+  }
+}
+
+// ORDER
+.friendListHeaderContainer>div:not([class]) {
+  order: 2 !important;
+}
+
+.socialTabSearchContainer {
+  order: 1 !important;
+}
+
+.friendListHeaderContainer>.currentUserContainer {
+  // IF WE DON'T MOVE THIS, THEN THE VC WRAPPER WILL BE ABSOLUTE.
+  order: 2;
+}
+
+.quickAccessFriends {
+  order: 3 !important;
+}
+
+.zehnFriendsTablist {
+  order: 4 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// TTTLEBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.friendListHeaderContainer .title-area {
+  position: relative !important;
+  background: transparent !important;
+  // background: var(--zehn-color-titlebar-desktop) !important;
+}
+
+.WindowFocus .friendListHeaderContainer .title-area {
+  // background: var(--zehn-color-titlebar-desktop-focus) !important;
+}
+
+// WINDOW CONTROLS
+.friendsui-container .title-area .title-bar-action {
+  margin: 0px !important;
+}
+
+// TOGGLE QUICK ACCESS
+#zehnToggleFriendsHeader {
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  .zehnIcon {
+    -webkit-mask-image: var(--zehn-icon-navigation);
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CURRENT USER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.currentUserContainer {
+  position: absolute !important;
+  top: var(--zehn-size-titlebar) !important;
+  right: var(--zehn-size-friends-searchbar) !important;
+  left: 0px !important;
+  z-index: 20 !important;
+  flex: 1 !important;
+  border: none !important;
+  align-items: center !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+  min-width: 0px !important;
+  height: var(--zehn-size-friends-entry) !important;
+  min-height: var(--zehn-size-friends-entry) !important;
+  max-height: var(--zehn-size-friends-entry) !important;
+  padding: var(--zehn-size-friends-entry-padding) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  background: transparent !important;
+  transition: color 0.2s var(--zehn-timing-ease) !important;
+}
+
+.compactView .currentUserContainer {
+  height: var(--zehn-size-friends-entry-compact) !important;
+  min-height: var(--zehn-size-friends-entry-compact) !important;
+  max-height: var(--zehn-size-friends-entry-compact) !important;
+  padding: var(--zehn-size-friends-entry-compact-padding) !important;
+}
+
+.zehnFriendsHeaderClosed .friendListHeaderContainer>.currentUserContainer,
+.friendsListContainer:not(.zehnUserOpened) .friendListHeaderContainer>.currentUserContainer {
+  display: none !important;
+  height: 0px !important;
+  min-height: 0px !important;
+}
+
+// REDUCE SPACE FOR ACTIVE VOICE CONTROLS
+.friendListHeaderContainer:has(.activeVoiceControls) .currentUserContainer .AvatarAndUser {
+  max-width: calc(100% - (3 * var(--zehn-size-friends-searchbar))) !important;
+}
+
+// BACKGROUND GLOW
+.statusHeaderGlow {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+// USER WRAPPER
+.AvatarAndUser {
+  width: 100% !important;
+  height: fit-content !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0px !important;
+}
+
+.compactView .AvatarAndUser {
+  padding: 0px !important;
+}
+
+// AVATAR
+.currentUserAvatar {
+  border-radius: var(--zehn-size-radius-none) !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  margin: 0px !important;
+  z-index: 0 !important;
+
+  &:hover {
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+// LABEL
+.AvatarAndUser .labelHolder {
+  align-self: center !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// VOICE CONTROLS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// OUTER CONTAINER THAT CURRENT USER IS MOVED INTO
+.friendListHeaderContainer>div:not([class]) {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important;
+  gap: 0px !important;
+  z-index: 21 !important;
+  position: absolute !important;
+  right: var(--zehn-size-friends-searchbar) !important;
+  top: var(--zehn-size-titlebar) !important;
+  --voice-controls-gap: var(--zehn-size-button-gap-bar);
+}
+
+.zehnFriendsHeaderClosed .friendListHeaderContainer>div:not([class]),
+.friendsListContainer:not(.zehnUserOpened) .friendListHeaderContainer>div:not([class]) {
+  display: none !important;
+  height: 0px !important;
+  min-height: 0px !important;
+}
+
+// CONTAINER
+.friendListHeaderContainer .activeVoiceControls,
+.compactView  .friendListHeaderContainer .activeVoiceControls {
+  transform: none !important;
+  border: unset !important;
+  border-image: url() !important;
+  align-content: center !important;
+  margin: 0px !important;
+  background: transparent !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  transition: none !important;
+  min-width: fit-content !important;
+}
+
+.friendListHeaderContainer .activeVoiceControls {
+  height: var(--zehn-size-friends-entry) !important;
+  min-height: var(--zehn-size-friends-entry) !important;
+}
+
+.compactView .friendListHeaderContainer .activeVoiceControls {
+  height: var(--zehn-size-friends-entry-compact) !important;
+  min-height: var(--zehn-size-friends-entry-compact) !important;
+}
+
+.friendListHeaderContainer .activeVoiceControls::before {
+  height: 0px !important;
+  width: 0px !important;
+  background: transparent !important;
+}
+
+// STATUS LABELS
+.activeVoiceControls .connectionStatusLabels,
+.chatRoomVoiceChannel .connectionStatusLabels {
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text1) !important;
+  margin: 0px !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// REMOTE PLAY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+._14S4rlGAAqfqW6lMKYB2GM ._1tN7mH20YhTaXLqtoW2hR- {
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: 0px !important;
+  line-height: inherit !important;
+  background-color: transparent !important;
+  position: absolute !important;
+  top: 0px !important;
+  left: var(--zehn-size-titlebar-control) !important;
+  z-index: 10 !important;
+  -webkit-app-region: no-drag !important;
+
+  // TEXT
+  ._2sIHGS_555xUrHvjOwV0Y2 {
+    font-size: inherit !important;
+    text-transform: none !important;
+    display: none !important;
+  }
+
+  // ICON
+  ._3voPlg-2HzAUhuCyVhXm_D {
+    margin: 0px !important;
+    width: fit-content !important;
+    height: fit-content !important;
+
+    ._3UDCWUbI0_05r9ATmvC2HD {
+      -webkit-mask-image: var(--zehn-icon-controller-split) !important;
+    }
+  }
+}
+
+// LINK EXPLAINER
+._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 {
+  z-index: 10 !important;
+  height: fit-content !important;
+  position: fixed !important;
+  inset: var(--zehn-size-spacing-md) !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  background: var(--zehn-color-modal-background) !important;
+  border: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  border-radius: var(--zehn-size-modal-radius) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
+  transition: none !important;
+}
+
+._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 ._3sgj23BemKViTVqwcKSU9G {
+  color: var(--zehn-color-text-body) !important;
+  font-size: var(--zehn-size-text-body) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  padding: 0px !important;
+  line-height: normal !important;
+  text-align: center !important;
+  margin: 0px 0px var(--zehn-size-dialog-gap) 0px !important;
+}
+
+._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 ._3sgj23BemKViTVqwcKSU9G ._17Ln3DR0RIQFZl06IF3d1K {
+  font-weight: var(--zehn-weight-normal) !important;
+  font-style: normal !important;
+}
+
+// TRIANGLE
+._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 ._3O7zSIxFPCfDxrCf7T8fGM {
+  display: none !important;
+}
+
+// "GOT IT"
+._14S4rlGAAqfqW6lMKYB2GM ._1u3O6b4coM67TPrM0e-lN6 ._1m0afeRW-Gr5ZDK4viq3SY {
+  align-self: center !important;
+  text-transform: uppercase !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// QUICK ACCESS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.quickAccessFriends {
+  --qa-width: var(--zehn-size-friends-quickaccess);
+  gap: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  min-height: fit-content !important;
+  height: fit-content !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  justify-content: center !important;
+  align-content: center !important;
+  box-sizing: content-box !important;
+  display: block !important;
+  flex-wrap: nowrap !important;
+  flex-direction: column !important;
+  z-index: 25 !important;
+  position: fixed !important;
+  inset: 0px !important;
+  right: unset !important;
+  height: -webkit-fill-available !important;
+  width: var(--qa-width) !important;
+  max-width: var(--qa-width) !important;
+  min-width: var(--qa-width) !important;
+  background: var(--zehn-color-modal-background) padding-box !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+  background-size: auto !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
+  border-right: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  transition: transform 0.5s var(--zehn-timing-ease-in-out), opacity 0s var(--zehn-timing-linear) 0.5s !important;
+  transform: translateX(calc(-1 * var(--qa-width))) !important;
+  opacity: 0 !important;
+  overflow-y: auto !important;
+
+  &.compactQuickAccess {
+    --qa-width: var(--zehn-size-friends-quickaccess-compact);
+  }
+
+  &.hintDismissed {
+
+    &.emptyQuickAccess {}
+  }
+
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
+.friendsListContainer.zehnFriendsHeaderClosed .quickAccessFriends {
+  display: none !important;
+}
+
+.friendsListContainer.zehnQuickAccessOpened .quickAccessFriends {
+  transition: transform 0.5s var(--zehn-timing-ease-in-out) !important;
+  transform: translateX(0px) !important;
+  opacity: 1 !important;
+}
+
+// BACKDROP
+.zehnFriendsBackdrop {
+  position: fixed;
+  inset: 0px;
+  background: var(--zehn-color-backdrop);
+  transition: opacity 0.5s var(--zehn-timing-ease);
+  opacity: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.friendsListContainer.zehnQuickAccessOpened .zehnFriendsBackdrop {
+  opacity: 1;
+  pointer-events: all;
+}
+
+// DROP TARGET FOR DRAGGING
+.dropTargetBox {
+  border-radius: var(--zehn-size-radius-none) !important;
+  border: none !important;
+  background: transparent !important;
+  transform: none !important;
+  margin: 0px !important;
+  inset: 0px !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s var(--zehn-timing-ease) !important;
+}
+
+// INITIAL MESSAGE
+.quickAccessFriendsMessage {
+  transition: none !important;
+  color: var(--zehn-color-text1) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  border: var(--zehn-size-dragging) dashed var(--zehn-color-dragging) !important;
+  margin: 0px !important;
+  padding: var(--zehn-size-padding-md) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: var(--hint-display) !important;
+  text-align: center !important;
+  line-height: var(--zehn-size-16) !important;
+  box-sizing: border-box !important;
+  height: 100% !important;
+  align-content: center;
+  text-transform: none !important;
+}
+
+// INITIAL MESSAGE DISMISS
+.quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss {
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text1) !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  background: var(--zehn-color-accent) !important;
+  text-align: center !important;
+  inset: 0px !important;
+  line-height: var(--zehn-size-16) !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.quickAccessFriends.emptyQuickAccess .quickAccessFriendsMessageDismiss:hover {
+  background: var(--zehn-color-accent) !important;
+  opacity: 1 !important;
+}
+
+.quickAccessFriends.emptyQuickAccess.compactQuickAccess .quickAccessFriendsMessageDismiss {
+  line-height: var(--zehn-size-16) !important;
+}
+
+// FRIEND CONTAINER WRAPPER
+.favoriteElement,
+.compactQuickAccess .favoriteElement {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex: 0 !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  height: fit-content !important;
+  transition: none !important;
+  animation: none !important;
+  align-items: center !important;
+  background: var(--zehn-color-list-background) !important;
+
+  &:hover {
+    background: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+.friendlist:not(.GamepadMode) .favoriteElement {
+  padding: var(--zehn-size-padding-xs) !important;
+  width: 100% !important;
+  min-height: fit-content !important;
+}
+
+// FRIEND CONTAINER
+.friend.quickAccessFriend,
+.QuickAccessChat.quickAccessFriend,
+.QuickAccessFriend.QuickAccessClan.quickAccessFriend,
+.compactQuickAccess .friend.quickAccessFriend,
+.compactQuickAccess .QuickAccessChat.quickAccessFriend,
+.compactQuickAccess .QuickAccessFriend.QuickAccessClan.quickAccessFriend {
+  display: flex !important;
+  flex: 1 !important;
+  place-content: center !important;
+  height: fit-content !important;
+  align-items: center !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  box-sizing: content-box !important;
+  transition: none !important;
+  background: transparent !important;
+
+  // DROP GHOST
+  &.dropGhost {
+    opacity: 0.5 !important;
+  }
+
+  &:is(:hover, :active) {
+    background: transparent !important;
+  }
+}
+
+.quickAccessFriend.friendStatusHover>div {
+  display: flex !important;
+  flex-direction: column !important;
+  place-content: center !important;
+}
+
+// BPM (TREAT AS LIST)
+.BasicUI .favoriteElement {
+  width: 100% !important;
+  height: var(--zehn-size-friends-entry) !important;
+  padding: var(--zehn-size-friends-entry-padding) !important;
+  background: var(--zehn-color-list-background) !important;
+
+  &:hover {
+    background: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+// GAME ICON
+.FavoriteFriend_GameIcon {
+  display: none !important;
+  background-color: transparent !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  right: unset !important;
+}
+
+.FavoriteFriend_GameIcon img.gameIcon {
+  border: none !important;
+  border-radius: var(--zehn-size-radius-xs) !important;
+}
+
+// FRIEND NAME (CLAN DOES NOT USE WRAPPER)
+.playerNameQuickAccessContainer {
+  line-height: var(--zehn-size-16) !important;
+  width: fit-content !important;
+  position: absolute !important;
+  bottom: 0px !important;
+  z-index: 5 !important;
+  place-content: center !important;
+  opacity: 1 !important;
+}
+
+.quickAccessFriend .clanName,
+.quickAccessFriend .playerName {
+  text-align: left !important;
+  width: fit-content !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-12) !important;
+  text-overflow: ellipsis !important;
+  -webkit-mask: none !important;
+}
+
+// NOT BPM
+.friendlist:not(.GamepadMode) {
+
+  .quickAccessFriend .clanName,
+  .quickAccessFriend .playerName {
+    text-align: center !important;
+    display: none !important;
+    position: absolute !important;
+    bottom: 0px !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s var(--zehn-timing-ease) !important;
+  }
+
+  .favoriteElement:hover .quickAccessFriend .clanName,
+  .favoriteElement:hover .quickAccessFriend .playerName {
+    opacity: 1 !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SEARCHBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.socialTabSearchContainer {
+  transform: none !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+}
+
+.friendsListContainer.zehnFriendsHeaderClosed .socialTabSearchContainer {
+  display: none !important;
+  height: 0px !important;
+  min-height: 0px !important;
+}
+
+// REMOVE REVEAL WHEN QA FLYOUT IS OPENED
+.zehnQuickAccessOpened .friendsTabButtonsContainer .zehnReveal::before {
+  pointer-events: none !important;
+  display: none !important;
+}
+
+// INNER CONTAINER
+.socialTabContainer {
+  flex-direction: column !important;
+}
+
+// LABEL AND BUTTONS WRAPPER
+.socialListTab {
+  margin: 0px !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  line-height: var(--zehn-size-friends-searchbar) !important;
+  text-transform: uppercase !important;
+  transition: none !important;
+  transition-duration: 0s !important;
+  align-items: flex-start !important;
+  box-sizing: border-box !important;
+  align-self: flex-end !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  height: fit-content !important;
+  padding: 0px !important;
+
+  &.TabSearchActive {
+    height: fit-content !important;
+    padding: 0px !important;
+  }
+}
+
+.activeTab {
+  color: var(--zehn-color-text1) !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+// TAB LABEL
+.socialListTab .tabLabel {
+  cursor: pointer !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  line-height: var(--zehn-size-friends-searchbar) !important;
+  transition: none !important;
+  display: none !important;
+}
+
+.socialListTab.TabSearchActive .tabLabel {
+  width: 0px !important;
+}
+
+// BUTTONS WRAPPER
+.friendsTabButtonsContainer {
+  padding: 0px !important;
+  gap: var(--zehn-size-button-gap-bar) !important;
+  transition: none !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+// MAKE ADD FRIEND BUTTON LINK WRAPPER GROW WHEN SEARCH IS HIDDEN
+.friendsTabButtonsContainer:not(:has(.socialSearchContainer)) {
+
+  .searchIconButton,
+  .friendRequestButton,
+  .addFriendButton,
+  >a,
+  .tool-tip-source:has(>#zehnToggleUser),
+  .tool-tip-source:has(>#zehnToggleQuickAccess) {
+    flex: 1 !important;
+    display: flex !important;
+  }
+}
+
+// HIDE BUTTONS WHEN SEARCH IS OPEN (CAN'T USE TABSEARCHACTIVE BECAUSE OF THE DELAY)
+.friendsTabButtonsContainer:has(.socialSearchContainer) {
+
+  .searchIconButton {
+    flex: 0 !important;
+  }
+
+  .friendRequestButton,
+  >a,
+  .tool-tip-source:has(>#zehnToggleUser),
+  .tool-tip-source:has(>#zehnToggleQuickAccess) {
+    display: none !important;
+  }
+}
+
+// HIDE BUTTONS WHEN CURRENT USER IS OPENED
+.zehnUserOpened .friendsTabButtonsContainer {
+
+  .tool-tip-source:has(>#zehnToggleUser) {
+    flex: 0 !important;
+  }
+
+  .TabSearchButton,
+  .friendRequestButton,
+  >a,
+  .tool-tip-source:has(>#zehnToggleQuickAccess) {
+    display: none !important;
+  }
+}
+
+// TAB SEARCH BUTTON WRAPPER
+.TabSearchButton {
+  background-color: transparent !important;
+  padding: 0px !important;
+  height: var(--zehn-size-friends-searchbar) !important;
+  width: 0px !important;
+  min-width: var(--zehn-size-friends-searchbar) !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  margin: 0px !important;
+  gap: 0px !important;
+  transition: none !important;
+  border: none !important;
+}
+
+// SELECTED
+.friendRequestButton.friendRequestViewActive::after,
+.TabSearchActive .TabSearchButton .searchIconButton::after,
+#zehnToggleUser.zehnToggled::after,
+#zehnToggleQuickAccess.zehnToggled::after {
+  content: "";
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+  display: block;
+  position: absolute;
+  border: none;
+}
+
+// ICONS
+.friendsTabButtonsContainer .TabSearchButton .SVGIcon_MagnifyingGlass {
+  -webkit-mask-image: var(--zehn-icon-contact-search) !important;
+}
+
+.friendRequestButton .SVGIcon_FriendRequest {
+  -webkit-mask-image: var(--zehn-icon-contact-request) !important;
+}
+
+.addFriendButton .SVGIcon_AddFriend {
+  -webkit-mask-image: var(--zehn-icon-contact-add) !important;
+}
+
+#zehnToggleUser svg.zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-profile);
+}
+
+#zehnToggleQuickAccess svg.zehnIcon {
+  -webkit-mask-image: var(--zehn-icon-favorite-list);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// SEARCH ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.tabSearchTransitionGroup {
+  transition: none !important;
+  position: relative !important;
+  opacity: 1 !important;
+  height: var(--zehn-size-friends-searchbar) !important;
+  transform: scaleY(1) !important;
+
+  &:empty {
+    display: none !important;
+  }
+}
+
+.socialListTab.TabSearchActive .tabSearchTransitionGroup {
+  opacity: 1 !important;
+  height: var(--zehn-size-friends-searchbar) !important;
+  transform: scaleY(1) !important;
+}
+
+// ANIMATION WRAPPER
+.socialSearchContainer {
+  background-color: transparent !important;
+  transition: none !important;
+  transition-duration: 0s !important;
+  animation: none !important;
+  margin: 0px !important;
+  padding: var(--zehn-size-padding-xs) !important;
+
+  &.tab-search-anim-exit.tab-search-anim-exit-active {
+    opacity: 1 !important;
+  }
+
+  // CAUSES A DELAY AFTER TABSEARCHACTIVE IS REMOVED
+  &.tab-search-anim-enter {}
+  &.tab-search-anim-enter-active {}
+  &.tab-search-anim-enter-done {}
+  &.tab-search-anim-exit {}
+  &.tab-search-anim-exit-active {}
+  &.tab-search-anim-exit-done {}
+}
+
+// INNER WRAPPER
+.socialInputContainer {
+  transition: none !important;
+  transform: none !important;
+
+  .inputContainer {
+    margin: 0px !important;
+    border-radius: var(--zehn-size-radius-none) !important;
+    height: fit-content !important;
+    position: relative !important;
+  }
+}
+
+.socialInputContainer.SearchActive {
+  max-height: var(--zehn-size-friends-searchbar) !important;
+}
+
+// NO RESULTS
+.friendSearchNoResultsContainer {
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  color: var(--zehn-color-text3) !important;
+  margin: var(--zehn-size-spacing-xs) 0px !important;
+  padding: var(--zehn-size-friends-group-padding) !important;
+  text-align: center !important;
+}
+
+.friendSearchNoResultsContainer a {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-decoration: none !important;
+}
+
+.friendSearchNoResultsContainer .searchSteamSuggestion {
+  margin-top: var(--zehn-size-spacing-xs) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LISTS TABLIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.zehnFriendsTablist {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: fit-content;
+  min-height: fit-content;
+  position: relative;
+  padding: 0px var(--zehn-size-padding-xs);
+  transform: none;
+
+  .zehnFriendsTabFriends,
+  .zehnFriendsTabChats {
+    flex: 1;
+    text-transform: uppercase;
+
+    &.zehnToggled::after {
+      content: "";
+      position: absolute;
+      display: block;
+      pointer-events: none;
+      z-index: -1;
+      bottom: var(--zehn-size-focusbar-tablist-spacing-sm);
+      left: var(--zehn-size-focusbar-tablist-spacing-sm);
+      right: var(--zehn-size-focusbar-tablist-spacing-sm);
+      height: var(--zehn-size-focusbar-tablist-sm);
+      background-color: var(--zehn-color-focusbar);
+    }
+  }
+
+  .zehnFriendsTabFriends {
+
+    svg {
+      -webkit-mask-image: var(--zehn-icon-contacts);
+    }
+  }
+
+  .zehnFriendsTabChats {
+
+    svg {
+      -webkit-mask-image: var(--zehn-icon-chat-multi);
+    }
+  }
+}
+
+.friendsListContainer.zehnFriendsHeaderClosed .zehnFriendsTablist {
+  display: none !important;
+  height: 0px !important;
+  min-height: 0px !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FRIENDS LIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINER
+.FriendsListContent {
+  margin: 0px !important;
+  height: 100% !important;
+  background: transparent !important;
+}
+
+// IF NOT IN BPM, MAKE ABSOLUTE SO IT CAN GO UNDER THE HEADER
+.friendlist:not(.GamepadMode) .FriendsListContent {
+  position: absolute !important;
+  inset: 0px !important;
+}
+
+// LIST FADE
+._1qeW35auMlJ5pJVNtBC-bF {
+  display: none !important;
+}
+
+._1osHa9KHOmdCDNrA232z4N {
+  background: transparent !important;
+  height: 0px !important;
+  display: none !important;
+}
+
+// INNER CONTAINER
+.friendlistListContainer {
+  background: transparent !important;
+  min-height: fit-content !important;
+  height: fit-content !important;
+  overflow-y: visible !important;
+  overflow: visible !important;
+  margin-top: var(--friends-header-height) !important;
+}
+
+#zehnChatsDisplayed .friendlistListContainer {
+  display: none !important;
+}
+
+// BACK TO FRIENDS LIST - NEVER SHOW THIS
+button.DialogButton.BackToFriendsListButton {
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// INVITES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// CONTAINERS
+.confirmInviteRequestActions,
+.friendInviteButtons,
+.friendInviteContainer {
+  margin: 0px !important;
+}
+
+// ACCEPT OR CANCEL
+.friendInviteButtons {
+  padding: 0px !important;
+}
+
+.friendInviteButton.bright::after {
+  content: "";
+  bottom: var(--zehn-size-focusbar-spacing);
+  left: var(--zehn-size-focusbar-spacing);
+  right: var(--zehn-size-focusbar-spacing);
+  height: var(--zehn-size-focusbar);
+  background-color: var(--zehn-color-focusbar);
+  display: block;
+  position: absolute;
+}
+
+.friendInviteButton {
+  position: relative !important;
+
+  .SVGIcon_Check {
+    -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+  }
+}
+
+.declineFriendInvite .SVGIcon_X_Line {
+  -webkit-mask-image: var(--zehn-icon-cancel) !important;
+}
+
+// BLOCK USER
+.friendInviteContainer .friend.dim {
+  filter: none !important;
+  opacity: 0 !important;
+}
+
+.friendInviteBlockContainer {
+  transform: none !important;
+  transition: none !important;
+  height: fit-content;
+  inset: unset !important;
+  padding: var(--zehn-size-friends-entry-padding) !important;
+}
+
+.compactView .friendInviteBlockContainer {
+  padding: var(--zehn-size-friends-entry-compact-padding) !important;
+  height: fit-content !important;
+}
+
+// BLOCK CHECKBOX
+.friendInviteBlockContainer .displayColumn {
+  margin: 0px 0px 0px var(--zehn-size-setting-control-gap) !important;
+}
+
+.friendInviteBlockContainer .blockCommunicationLabel,
+.compactView .friendInviteBlockContainer .blockCommunicationLabel {
+  font-size: var(--zehn-size-14) !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  margin: 0px !important;
+  line-height: var(--zehn-size-16) !important;
+}
+
+.friendInviteBlockContainer .blockCommunicationLabel.subtitle {
+  font-size: var(--zehn-size-12) !important;
+  color: var(--zehn-color-text3) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+}
+
+// CONFIRM ACTIONS
+.confirmInviteRequestContainer {
+  padding: 0px !important;
+  flex-direction: row !important;
+}
+
+.confirmInviteRequestActions {
+  margin: 0px !important;
+  gap: 0px !important;
+  flex: 1 !important;
+}
+
+.confirmInvites.dim {
+  opacity: 1 !important;
+  border: none !important;
+}
+
+// RETURN
+.confirmInviteRequestContainer .cancelAddFriends {
+  display: none !important;
+  position: relative !important;
+  inset: unset !important;
+}
+
+.confirmInviteRequestContainer .cancelAddFriends svg {
+  -webkit-mask-image: var(--zehn-icon-direction-backwards) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+// FRIENDS GROUPS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// RECENT CHAT CONTAINER
+.recentChatsGroup .friendGroup {
+  margin: 0px !important;
+  transition: none !important;
+  padding: 0px !important;
+}
+
+// RECENT CHAT FRIEND WRAPPER
+.unreadFriend {
+  transition: none !important;
+}
+
+// GROUP WRAPPERS
+.FriendsListContent .friendlistListContainer .friendGroup,
+.FriendsListContent .friendlistListContainer .friendGroup.onlineFriends,
+.FriendsListContent .friendlistListContainer .friendGroup.offlineFriends,
+.FriendsListContent .friendlistListContainer .friendGroup.taggedGroup,
+.FriendsListContent .friendlistListContainer .friendGroup.gameGroup {
+  border: none !important;
+  background: transparent !important;
+  margin: 0px !important;
+}
+
+// GROUP HEADER CONTAINER
+.friendGroup .groupHeaderContainer {}
+
+// GROUP NAME (ALSO USED ON INVITES AND ELSEWHERE)
+.groupName {
+  box-sizing: border-box;
+  align-items: center !important;
+  display: flex !important;
+  transition: none !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-transform: uppercase !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+// GROUP HEADER
+.friendGroup .groupName,
+.friendGroup.friendOutgoingRequests .groupName,
+.friendGroup.friendRequests .groupName,
+.friendGroup.onlineFriends .groupName,
+.friendGroup.offlineFriends .groupName,
+.friendGroup.taggedGroup .groupName
+.friendGroup.gameGroup .groupName,
+.recentChatsGroup.unreadChatsGroup .groupName {
+  display: block !important;
+  border: none !important;
+  min-width: 100% !important;
+  height: var(--zehn-size-friends-group) !important;
+  line-height: var(--zehn-size-friends-group) !important;
+  color: var(--zehn-color-text1) !important;
+  font-size: var(--zehn-size-14) !important;
+  padding: var(--zehn-size-friends-group-padding) !important;
+  background: var(--zehn-color-list-background) !important;
+  position: relative !important;
+
+  &:hover {
+    background: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+.CompactFriendsList .friendGroup .groupName {
+  line-height: var(--zehn-size-friends-group) !important;
+  font-size: var(--zehn-size-14) !important;
+  padding: var(--zehn-size-friends-group-padding) !important;
+}
+
+// NAME SUB-CONTAINER
+.gameGroup .gameGroupContainer {
+ align-items: center !important; 
+}
+
+// GROUP COUNT
+.groupName .groupCount {
+  color: var(--zehn-color-text3) !important;
+  opacity: 0 !important;
+  font-size: var(--zehn-size-14) !important;
+  margin-left: var(--zehn-size-spacing-xxs) !important;
+  transform: none !important;
+  transition: none !important;
+  margin-left: var(--zehn-size-spacing-xxs) !important;
+}
+
+.groupName.Collapsed .groupCount {
+  opacity: 1 !important;
+}
+
+// EXPANDER
+.ExpandPlusMinus {
+  position: absolute !important;
+  left: 0px !important;
+  display: none !important;
+  color: transparent !important;
+  opacity: 0 !important;
+  margin: 0px !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  transition: none !important;
+  color: var(--collapser-color) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  --collapser-color: var(--zehn-color-collapser);
+
+  &:hover {
+    --collapser-color: var(--zehn-color-collapser-hover);
+  }
+
+  &:active {
+    --collapser-color: var(--zehn-color-collapser-active);
+  }
+}
+
+.groupName:hover .ExpandPlusMinus,
+.Collapsed .ExpandPlusMinus {
+  color: transparent !important;
+  opacity: 1 !important;
+}
+
+.ExpandPlusMinus .SVGIcon_PlusCircle {
+  margin: 0px !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: var(--collapser-color) !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: var(--zehn-size-icon-sm) !important;
+  -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+
+  * { display: none !important; }
+}
+
+.groupName.Collapsed .ExpandPlusMinus .SVGIcon_PlusCircle {
+  -webkit-mask-image: var(--zehn-icon-chevron-up-thick) !important;
+}
+
+// GAME GROUP ICON
+.gameGroup:not(.OtherGamesGroup):not(.NonSteamGamesGroup) .gameGroupContainer {
+  background: transparent !important;
+  border: none !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  margin: 0px !important;
+}
+
+.groupName .gameGroupContainer .groupIcon,
+.FriendInGameIcon {
+  line-height: 100% !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  margin: 0px !important;
+  background-color: transparent !important;
+  display: none !important;
+}
+
+.groupName .gameGroupContainer .groupIcon img,
+.FriendInGameIcon img {
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  margin: 0px var(--zehn-size-spacing-xs) 0px 0px !important;
+  border-radius: var(--zehn-size-radius-xs) !important;
+  border: unset !important;
+}
+
+// GAME GROUP LINES
+.friend.firstInGroup .SteamPlayerGroupLines,
+.friend.inGroup .SteamPlayerGroupLines,
+.friend.lastInGroup .SteamPlayerGroupLines,
+.SteamPlayerGroupFooter .SteamPlayerGroupLines {
+  border-width: 0px !important;
+  margin: 0px !important;
+  width: 0px !important;
+}
+
+.friend.firstInGroup .SteamPlayerGroupLines {
+  height: 0px !important;
+  margin-top: 0px;
+  border-left: unset !important;
+  border-top: unset !important;
+  border-top-left-radius: 0 !important;
+}
+
+.SteamPlayerGroupLines {
+  display: none !important;
+}
+
+// GAME GROUP FOOTER
+.SteamPlayerGroupFooter {
+  --footer-height: var(--zehn-size-24);
+  margin: 0px !important;
+  padding: var(--zehn-size-friends-entry-padding) !important;
+  align-items: center !important;
+  height: var(--footer-height) !important;
+}
+
+.CompactFriendsList .SteamPlayerGroupFooter {
+  padding: var(--zehn-size-friends-entry-compact-padding) !important;
+  display: none !important;
+}
+
+.SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
+  border: unset !important;
+  width: var(--zehn-size-persona-avatar) !important;
+  transform: none !important;
+  background: transparent !important;
+  margin: auto 0px !important;
+  padding: 0px var(--zehn-size-padding-xs) !important;
+  line-height: var(--footer-height) !important;
+  height: var(--footer-height) !important;
+  box-sizing: border-box !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+}
+
+.CompactFriendsList .SteamPlayerGroupFooter .SteamPlayerGroupFooterCount {
+  width: var(--zehn-size-persona-compact-avatar) !important;
+  height: var(--footer-height) !important;
+  margin: auto 0px !important;
+  transition: none !important;
+}
+
+.SteamPlayerGroupFooterCount .count {
+  width: 100% !important;
+  display: table-cell !important;
+  line-height: var(--footer-height) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  text-align: center !important;
+  color: var(--zehn-color-text3) !important;
+  margin-top: 0px !important;
+}
+
+.SteamPlayerGroupFooterLabel {
+  align-self: center !important;
+  padding: 0px !important;
+  vertical-align: middle !important;
+  height: initial !important;
+  margin-left: var(--zehn-size-spacing-md) !important;
+  font-size: var(--zehn-size-12) !important;
+  text-align: left !important;
+  color: var(--zehn-color-text3) !important;
+  -webkit-mask: none !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  line-height: var(--footer-height) !important;
+}
+
+// SORT BY BUTTON
+.groupHeaderContainer .SortByRecent {
+  position: absolute !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  right: var(--zehn-size-spacing-md) !important;
+  margin: auto 0px !important;
+  transform: scale(0.5) !important;
+  opacity: 0 !important;
+}
+
+.groupHeaderContainer:hover .SortByRecent {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.groupHeaderContainer .SortByRecent.Collapsed {
+  display: none !important;
+}
+
+.groupHeaderContainer .SortByRecent svg {
+  -webkit-mask-image: var(--zehn-icon-switch-vertical) !important;
+}
+
+.groupHeaderContainer .SortByRecent.Recent svg {
+  -webkit-mask-image: var(--zehn-icon-clock) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// LIST CONTAINER
+.friendsContainer,
+.CompactFriendsList .friendsContainer {
+  padding: 0px !important;
+  transition: none !important;
+}
+
+.friendGroup:has(.Collapsed) .groupList,
+.friendGroup:has(.Collapsed) .friendsContainer {
+  display: none !important;
+}
+
+// CUSTOM CATEGORY FRIEND WRAPPER
+.friendCategoryContainer {
+  transition: none !important;
+}
+
+// FRIEND ENTRY
+.friend,
+.GenericConfirmDialog .friend {
+  margin: 0px !important;
+  transition: none !important;
+}
+
+.friendGroup .friend.friendStatusHover {
+  box-sizing: border-box !important;
+  margin: 0px !important;
+  padding:  var(--zehn-size-friends-entry-padding) !important;
+  height: var(--zehn-size-friends-entry) !important;
+  transition: none !important;
+  animation: none !important;
+  align-items: center !important;
+  background-color: var(--zehn-color-list-background) !important;
+  --selected-bg: var(--zehn-color-list-background-selected);
+
+  &:hover {
+    background-color: var(--zehn-color-list-background-hover) !important;
+    --selected-bg: var(--zehn-color-list-background-selected-active);
+  }
+
+  &:active {
+    background-color: var(--zehn-color-list-background-active) !important;
+    --selected-bg: var(--zehn-color-list-background-selected-active);
+  }
+}
+
+.CompactFriendsList .friendGroup .friend.friendStatusHover {
+  padding:  var(--zehn-size-friends-entry-compact-padding) !important;
+  height: var(--zehn-size-friends-entry-compact) !important;
+}
+
+.friendGroup .friend.friendStatusHover.Friend_ContextMenuActive {
+  background-color: transparent !important;
+}
+
+.friendStatusHover.Friend_ContextMenuActive::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: -1;
+  inset: 0px;
+  pointer-events: none;
+  background: var(--selected-bg);
+  filter: var(--zehn-filter-selected);
+}
+
+// DRAGGING GHOST
+.friend.dragOriginGhost {
+  opacity: 1 !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// GROUP CHATS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// GROUP CHAT CONTAINER
+.FriendsListChatSection.ChatRoomListContainerParent {
+  margin-top: var(--friends-header-height) !important;
+}
+
+#zehnFriendsDisplayed .FriendsListChatSection.ChatRoomListContainerParent {
+  display: none !important;
+}
+
+// GROUP CHAT HEADER
+.friendsListSectionTitle.chatSectionTitle {
+  align-items: center !important;
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  line-height: var(--zehn-size-friends-group) !important;
+  height: var(--zehn-size-friends-group) !important;
+  padding: 0px var(--zehn-size-padding-md) !important;
+  border: none !important;
+  background: var(--zehn-color-list-background) !important;
+  position: relative !important;
+
+  &:hover {
+    background: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+.voiceRoomDragBar {
+  align-items: center !important;
+  cursor: pointer !important;
+}
+
+.friendsListSectionTitle.chatSectionTitle .groupChatSectionTitle {
+  padding: 0px !important;
+  margin: 0px !important;
+  font-weight: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  text-transform: uppercase !important;
+}
+
+// TOGGLE LIST BUTTON
+.ToggleGroupChatList {
+  width: 100% !important;
+  padding: 0px !important;
+  position: absolute !important;
+  z-index: 99 !important;
+}
+
+.FriendsListChatSection.ChatRoomListContainerParent .ToggleGroupChatList .SVGIcon_DoubleArrow,
+.FriendsListChatSection.ChatRoomListContainerParent.Collapsed .ToggleGroupChatList .SVGIcon_DoubleArrow {
+  transition: none !important;
+  display: none !important;
+
+  * { display: none !important; }
+}
+
+// CREATE NEW GROUP CHAT BUTTON
+.createChatRoomButton {
+  transform: scale(0.5) !important;
+  opacity: 0 !important;
+  margin: 0px !important;
+  z-index: 100 !important;
+}
+
+.friendsListSectionTitle.chatSectionTitle:hover .createChatRoomButton {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+.FriendsListChatSection.ChatRoomListContainerParent.Collapsed .createChatRoomButton {
+  display: none !important;
+}
+
+.createChatRoomButton .SVGIcon_NewChatGroup {
+  -webkit-mask-image: var(--zehn-icon-chat-start) !important;
+}
+
+// GROUP LIST CONTAINER
+.chatRoomListContainer {
+  background: transparent !important;
+  transition: none !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+  max-height: fit-content !important;
+  overflow-y: visible !important;
+}
+
+.FriendsListChatSection.ChatRoomListContainerParent.Collapsed .chatRoomListContainer {
+  height: 0px !important;
+  min-height: 0px !important;
+  max-height: 0px !important;
+}
+
+.ChatRoomList {
+  padding: 0px !important;
+
+  // EMPTY
+  .ChatRoomList_Empty {
+    padding: var(--zehn-size-padding-md) !important;
+    color: var(--zehn-color-text3) !important;
+    font-weight: var(--zehn-weight-normal) !important;
+    font-size: var(--zehn-size-14) !important;
+  }
+}
+
+// GROUP ENTRY CONTAINER
+.ChatRoomListGroupItem {
+  align-content: center !important;
+  transition: none !important;
+  box-sizing: border-box !important;
+  min-height: var(--zehn-size-friends-entry) !important;
+  height: fit-content !important;
+  padding: 0px !important;
+  background-color: var(--zehn-color-list-background) !important;
+
+  &:hover {
+    background-color: var(--zehn-color-list-background-hover) !important;
+  }
+
+  &:active {
+    background-color: var(--zehn-color-list-background-active) !important;
+  }
+}
+
+.compactView .ChatRoomListGroupItem {
+  min-height: var(--zehn-size-friends-entry-compact) !important;
+}
+
+.ChatRoomListGroupItem_header {
+  --status-line: var(--zehn-size-16);
+  margin: 0px !important;
+  padding: var(--zehn-size-friends-entry-padding) !important;
+  height: var(--zehn-size-friends-entry) !important;
+  align-items: center !important;
+  line-height: 100% !important;
+  position: relative !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.compactView .ChatRoomListGroupItem_header {
+  padding: var(--zehn-size-friends-entry-compact-padding) !important;
+  height: var(--zehn-size-friends-entry-compact) !important;
+}
+
+// GROUP NAME AND STATUS
+.groupNameStatusContainer,
+.HasLinkedBroadcast .groupNameStatusContainer {
+  padding: 0px !important;
+  margin-left: var(--zehn-size-persona-gap) !important;
+}
+
+.compactView .groupNameStatusContainer,
+.compactView .HasLinkedBroadcast .groupNameStatusContainer {
+  margin-left: var(--zehn-size-persona-compact-gap) !important;
+}
+
+.ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName,
+.ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
+  margin-block: auto !important;
+}
+
+.compactView .ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName,
+.compactView .ChatRoomListGroupItem.HasLinkedBroadcast .groupNameStatusContainer .displayRow {
+  margin-block: auto !important;
+}
+
+// GROUP NAME
+.ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName,
+.ChatRoomListGroupItem .ChatRoomListGroupItem_header .chatRoomName,
+.ChatRoomListGroupItem:not(.NonGroupHovered) .ChatRoomListGroupItem_header:hover .chatRoomName {
+  margin-left: 0px !important;
+  position: relative !important;
+  color: var(--zehn-color-user-default) !important;
+  font-size: var(--zehn-size-14) !important;
+  font-weight: var(--zehn-weight-persona) !important;
+  line-height: var(--status-line) !important;
+}
+
+// GROUP STATUS (ONLY IF HAS SUBTITLE, BPM DOESN'T)
+.HasLinkedBroadcast .steamTVSubtitle+.groupNameStatusContainer .chatRoomName {
+  top: calc(-0.5 * var(--status-line)) !important;
+}
+
+.compactView .HasLinkedBroadcast .steamTVSubtitle+.groupNameStatusContainer .chatRoomName {
+  top: unset !important;
+}
+
+.ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
+  color: var(--zehn-color-user-activity) !important;
+  font-size: var(--zehn-size-12) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  line-height: var(--status-line) !important;
+  margin: 0px 0px 0px calc(var(--zehn-size-persona-avatar) + var(--zehn-size-persona-gap)) !important;
+  left: unset !important;
+  // BECAUSE WE WANT THE CONTEXT BUTTON INSIDE OF THE NAME CONTAINER TO BE CENTERED AND NOT ABSOLUTE
+  top: calc(1.5 * var(--status-line)) !important;
+  bottom: unset !important;
+  position: absolute !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  display: block !important;
+  max-width: calc(100% - (var(--zehn-size-persona-avatar) + var(--zehn-size-persona-gap) + var(--zehn-size-spacing-xs) + var(--zehn-size-icon-md))) !important;
+}
+
+.compactView .ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle {
+  display: none !important;
+}
+
+.ChatRoomListGroupItem.HasLinkedBroadcast .steamTVSubtitle::before {
+  content: "STEAM TV" !important;
+  color: inherit !important;
+}
+
+.ChatRoomListGroupItem.HasLinkedBroadcast .SVGIcon_SteamTV {
+  display: none !important;
+}
+
+// OPEN GROUP BUTTON WRAPPER
+.ChatRoomListGroupItem_header>div:has(.openGroupButton) {
+  opacity: 0 !important;
+  width: 0px !important;
+  display: none !important;
+  margin-left: var(--zehn-size-spacing-xs) !important;
+  align-content: center !important;
+}
+
+.ChatRoomListGroupItem_header:hover>div:has(.openGroupButton) {
+  opacity: 1 !important;
+  width: var(--zehn-size-icon-md) !important;
+  display: block !important;
+}
+
+// OPEN GROUP BUTTON
+.ChatRoomListGroupItem .openGroupButton {
+  position: relative !important;
+  border-radius: var(--zehn-size-radius-none) !important;
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+  margin: 0px !important;
+  right: 0px !important;
+  top: 0px !important;
+  transition: none !important;
+  background-color: transparent !important;
+  --icon-color: var(--zehn-color-collapser);
+
+  &:hover {
+    --icon-color: var(--zehn-color-collapser-hover);
+  }
+
+  &:active {
+    --icon-color: var(--zehn-color-collapser-active);
+  }
+
+  .SVGIcon_DoubleArrow {
+    background-color: var(--icon-color) !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    mask-size: var(--zehn-size-icon-sm) !important;
+    -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+    position: relative !important;
+    inset: 0px !important;
+    margin: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+
+    * { display: none !important; }
+  }
+}
+
+.ChatRoomListGroupItem.ShowAllChannels .openGroupButton svg {
+  -webkit-mask-image: var(--zehn-icon-chevron-up-thick) !important;
+}
+
+.compactView .ChatRoomListGroupItem .openGroupButton {
+  width: var(--zehn-size-icon-md) !important;
+  height: var(--zehn-size-icon-md) !important;
+}
+
+// VOICE CHANNELS CONTAINER
+.ChatRoomListGroupItem .detailsView {
+  background-color: transparent !important;
+  padding: 0px !important;
+  border: none !important;
+}
+
+.ChatRoomListGroupItem.ShowAllChannels .detailsView {
+  background-color: transparent !important;
+  padding: 0px !important;
+  border: none !important;
+}
+
+.ChatRoomListGroupItemChatRooms {
+  margin: 0px !important;
+  padding: 0px !important;
+  font-size: var(--zehn-size-14) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// UNREAD MESSAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.unreadMessageViolator {
+  color: var(--zehn-color-text1) !important;
+  background: var(--zehn-color-alert-background) !important;
+  border: var(--zehn-size-alert-border) solid var(--zehn-color-alert-border) !important;
+  border-radius: var(--zehn-size-alert-radius) !important;
+  font-size: var(--zehn-size-12) !important;
+  height: fit-content !important;
+  transition: background-color 0.2s var(--zehn-timing-ease), transform 0.5s var(--zehn-timing-ease), bottom 0.5s var(--zehn-timing-ease), opacity 0.5s var(--zehn-timing-ease) !important;
+  width: fit-content !important;
+  padding: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  top: unset !important;
+  left: unset !important;
+  margin: var(--zehn-size-spacing-xs) var(--zehn-size-spacing-md) !important;
+  line-height: var(--zehn-size-panel-sm) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  overflow: hidden !important;
+  z-index: 20 !important;
+  text-transform: uppercase !important;
+
+  &:hover {
+    background-color: var(--zehn-color-alert-background-hover) !important;
+  }
+
+  &.unread-messages-anim-enter,
+  &.unread-messages-anim-enter-active,
+  &.unread-messages-anim-exit,
+  &.unread-messages-anim-exit-active,
+  &.unread-messages-anim-exit-done {
+    opacity: 0 !important;
+    transform: translateY(var(--zehn-size-panel-sm)) !important;
+  }
+
+  &.unread-messages-anim-enter-done {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// OFFLINE MESSAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+._18bmBH7zyngCgHtgY3IEL_ {
+  background-color: transparent !important;
+  overflow: hidden !important;
+  margin-top: var(--friends-header-height) !important;
+}
+
+._3t-tVOpu2n074cjZsygYfm {
+  max-width: 300px !important;
+  padding: var(--zehn-size-padding-md) !important;
+  background: transparent !important;
+  gap: var(--zehn-size-spacing-md) !important;
+  box-sizing: border-box !important;
+  justify-content: flex-end !important;
+}
+
+._3t-tVOpu2n074cjZsygYfm ._2MByvWz7Ec6CRwKDWFmHrS {
+  color: var(--zehn-color-text1) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-14) !important;
+  line-height: var(--zehn-size-16) !important;
+  margin: 0px !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+}
+
+._3t-tVOpu2n074cjZsygYfm .rORRrCcMO9z86bopxDvrH {
+  color: var(--zehn-color-text3) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-12) !important;
+  line-height: var(--zehn-size-16) !important;
+  margin: 0px !important;
+  text-align: center !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.friendListFooter {
+  flex-grow: 1 !important;
+  min-height: 0px !important;
+  background: transparent !important;
+  display: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

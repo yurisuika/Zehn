@@ -1,0 +1,219 @@
+// MILLENNIUM FLYOUT HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// OVERLAY
+.MillenniumDesktopSidebar_Overlay {
+  z-index: 1337 !important;
+  background: var(--zehn-color-backdrop) !important;
+  transition: opacity 0.5s var(--zehn-timing-ease) !important;
+}
+
+// SIDEBAR
+.MillenniumDesktopSidebar {
+  box-sizing: content-box !important;
+  z-index: 1338 !important;
+  --sidebar-width: calc(var(--zehn-size-flyout-control) + (2 * var(--zehn-size-dialog-padding)));
+  --slider-width: var(--zehn-size-flyout-control);
+  background: var(--zehn-color-modal-background) padding-box !important;
+  border-left: var(--zehn-size-modal-border) solid var(--zehn-color-modal-border) !important;
+  backdrop-filter: var(--zehn-transparency-effects-acrylic-filter) !important;
+  background-blend-mode: exclusion !important;
+  background-size: auto !important;
+  background-image: var(--zehn-transparency-effects-acrylic-texture) !important;
+  width: var(--sidebar-width) !important;
+  transition: transform 0.5s var(--zehn-timing-ease-in-out) !important;
+}
+
+// TITLE
+._34nl5vUoFCDYYnmHNL7axB,
+.MillenniumDesktopSidebar_Title {
+  --title-height: var(--zehn-size-setting-section-header);
+  background: transparent !important;
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  line-height: var(--title-height) !important;
+  height: var(--title-height) !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  margin: 0px !important;
+
+  div {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+}
+
+// BUTTONS
+.MillenniumDesktopSidebar_TitleButtons button.DialogButton.MillenniumIconButton[data-icon-name="Settings"] svg {
+  -webkit-mask-image: var(--zehn-icon-settings) !important;
+}
+
+.MillenniumDesktopSidebar_TitleButtons button.DialogButton.MillenniumIconButton svg,
+.MillenniumDesktopSidebar[data-focused-item-type="THEME"] .MillenniumDesktopSidebar_Title button.DialogButton.MillenniumIconButton svg {
+  -webkit-mask-image: var(--zehn-icon-direction-backwards) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.MillenniumDesktopSidebar_Content {
+  gap: 0px !important;
+  padding: 0px !important;
+}
+
+// PLUGIN/THEME LISTS
+._3gY0aBuNR8_NPTpXIYfkby {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  padding: var(--zehn-size-dialog-padding) !important;
+  margin: 0px !important;
+}
+
+// PLUGIN/THEME LIST HEADER
+._1IigUZ3GHaZS2Y-3V3T2rT {
+  color: var(--zehn-color-text-description) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-description) !important;
+  padding: 0px !important;
+  line-height: normal !important;
+}
+
+.MillenniumDesktopSidebar_LibraryItemButton svg {
+  -webkit-mask-image: var(--zehn-icon-surprise) !important;
+}
+
+// EDITOR
+.MillenniumDesktopSidebar_Editor {}
+
+// EDITOR HEADER
+.MillenniumDesktopSidebar_EditorHeader {
+  padding: var(--zehn-size-dialog-padding) !important;
+  margin: 0px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+// EDITOR CONTENT
+.MillenniumDesktopSidebar_EditorContent {
+  padding: 0px !important;
+  background: transparent !important;
+  gap: 0px !important;
+
+  .SettingsDialogSubHeader:not(:first-child) {
+    margin-top: var(--zehn-size-setting-section-gap) !important;
+  }
+}
+
+// INDENT LEVEL (PLUGINS?)
+.MillenniumDesktopSidebar_EditorContent .eKmEXJCm_lgme24Fp_HWt.xIITXDcM70faUNqssgUyx {
+  left: calc(var(--zehn-size-dialog-gap) * var(--indent-level)) !important;
+}
+
+// SEPARATOR
+.MillenniumDesktopSidebar_EditorContent .eKmEXJCm_lgme24Fp_HWt._39x36zDuDr8Z0Z_UnJkY4S::after {
+  bottom: 0px !important;
+  position: relative !important;
+  margin: var(--zehn-size-dialog-gap) 0px 0px 0px !important;
+  height: var(--zehn-size-separator) !important;
+  background: var(--zehn-color-separator) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// HLTB GOOFYNESS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.MillenniumDesktopSidebar[data-focused-item-type="PLUGIN"] .MillenniumDesktopSidebar_EditorContent {
+  padding: var(--zehn-size-dialog-padding) !important;
+
+  >div {
+    padding: 0px !important;
+  }
+}
+
+.MillenniumDesktopSidebar_EditorContent>div>div:has(>.eKmEXJCm_lgme24Fp_HWt) {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  gap: var(--zehn-size-dialog-gap) !important;
+  border: none !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-label) !important;
+}
+
+
+.MillenniumDesktopSidebar_EditorContent>div:not(:has(div)) {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  border: none !important;
+}
+
+.MillenniumDesktopSidebar_EditorContent>div:not(:has(div))[style^="font-size: 16px"] {
+  color: var(--zehn-color-text-section-header) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-section-header) !important;
+  line-height: var(--zehn-size-setting-section-header) !important;
+  margin-top: var(--zehn-size-setting-section-gap) !important;
+
+  &:first-child {
+    margin-top: 0px !important;
+  }
+}
+
+.MillenniumDesktopSidebar_EditorContent>div:not(:has(div))[style^="font-size: 11px"] {
+  color: var(--zehn-color-text-description) !important;
+  font-weight: var(--zehn-weight-normal) !important;
+  font-size: var(--zehn-size-text-description) !important;
+  line-height: normal !important;
+  margin-top: var(--zehn-size-setting-label-gap) !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// STEAM EASYGRID CLASSLESS DIV MADNESS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.MillenniumDesktopSidebar[data-focused-item-type="PLUGIN"] .MillenniumDesktopSidebar_EditorContent {
+
+  >div:not([class]) {
+
+    >button:first-child~div {
+      margin-top: var(--zehn-size-setting-group-gap) !important;
+    }
+
+    >button:first-child~button {
+      margin-top: var(--zehn-size-setting-section-gap) !important;
+    }
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

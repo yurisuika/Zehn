@@ -1,0 +1,69 @@
+// BASE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin base() {
+  font-weight: var(--zehn-weight-normal) !important;
+  text-decoration: none !important;
+
+  border: none !important;
+
+  outline: none !important;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// LOOK ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin colorset($style, $mode: null) {
+  $mode: if(sass($mode != null): "-" + $mode; else: "");
+
+  color: var(--zehn-color-link-#{$style}#{$mode}) !important;
+}
+
+@mixin look($disabled, $style) {
+  &,
+    &:is(:focus) {
+    @include colorset($style);
+  }
+  &:is(:hover),
+  &:is(:hover:focus) {
+    @include colorset($style, $mode: "hover");
+  }
+  &:is(:active),
+  &:is(:active:focus) {
+    @include colorset($style, $mode: "active");
+  }
+  &:is(#{$disabled}, #{$disabled}:hover,  #{$disabled}:active),
+  &:is(#{$disabled}:focus, #{$disabled}:hover:focus, #{$disabled}:active:focus) {
+    @include colorset($style, $mode: "disabled");
+    pointer-events: none !important;
+  }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+// PRESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin preset($disabled: ":disabled", $style: "generic") {
+  @include base();
+  @include look($disabled, $style);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
