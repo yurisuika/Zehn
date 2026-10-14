@@ -25,3 +25,4 @@ function createSpinner(rootSelector, targetSelector) {
 createSpinner('html', '.VicgWmz2sj_UUd0XKXvFQ'); // BROWSER
 createSpinner('html', '._3CN5DkgNMvdtT9fJhNOj_v'); // LOGIN
 createSpinner('html', '._2wAKy-0ZkO_vhbiQCP9MgE'); // CHAT
+createSpinner('html', '._3O0u0sQlmSmP2MRXulRGEc'); // MEDIA VIDEO

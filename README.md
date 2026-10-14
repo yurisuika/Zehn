@@ -11,13 +11,6 @@ Why the name "Zehn"? Well, I wanted to make my own attempt to match Steam to a s
 
 Part of the design philosophy behind Zehn is to only show what is always going to be relevant to your needs. The rest can be displayed when the ephemeral moment comes. Steam has a lot of visual clutter and redundancy, so Zehn seeks to alleviate you of this and let you navigate Steam without all the distraction. This is the elegent simplicity of Windows 10 Fluent Design that you love brought to Steam!
 
-Some ways this is accomplished in Zehn:
-* Most controls are consolidated into the navigation bar of the main Steam window. The root menu is only shown when you open it via the menu button.
-* Instead of a long, narrow details sidebar that is always shown and a community content feed that you can only access after scrolling past all of the activity feed on a game page, Zehn offers three simple buttons in the play bar to switch between displaying these and the activity feed. You can focus solely on that of which you choose!
-* On the sidebar, the search and filters are hidden by default. When you hide the search section, any filters you have set are still active but don't take up space. This way, you can still retain full functionality while giving the game list center stage.
-* You can toggle showing your own status and the friends search on the friends list. You can even hide the whole header as well to just view your contacts.
-* Steam natively allows the chat channel list to be pinned open or collapsed, but Zehn takes it a step further and allows you to completely hide it. Additionally, the members list is displayed as an overlay that is only shown when you need it.
-
 > [!TIP]
 > Check out these extended previews to see more of Zehn! 
 >
@@ -113,16 +106,16 @@ You can blend colors into both the foreground and background of Zehn. Give Steam
 > Configure color blending on the `Personalization` tab under the `Theme` section. Set the colors under the `Colors` tab.
 >
 > #### SFP
-> Edit the config in `options.json` as usual. Set the colors in `/config/colors.css`.
+> Edit the config in `options.json` as usual. Set the colors in `/option/colors.css`.
 
 ### Acrylic
 Acrylic is a Fluent Design material that blurs the background of a surface with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways when `Transparency Effects` is enabled in the options.
 
 Certain surfaces will always have an Acrylic blur on them. These are generally small panels that blur images behind them.
 
-Some windows have reactive panels that change into an Acrylic surface on window focus. These fall into two categories:
-* Panels that overlay and blur Steam content below them, such as the main window navbar.
-* Panels that blur behind the window when focused, such as the settings windows. This requires the DWMX plugin for Millennium to work.
+Some windows have reactive panels that change into an Acrylic surface upon window focus. These fall into two categories:
+* Panels that overlay and blur Steam content below them. This works out of the box!
+* Windows that blur the desktop and other windows behind them. This requires the DWMX plugin for Millennium to work.
 
 ![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.gif)
 
@@ -140,37 +133,20 @@ You can give your waifu a home in your library! Supports random image selection,
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
 
 ### Other Features
-Zehn features several added buttons for an improved experience:
-* On the library window...
-  * The root menu is toggled via the menu button in the left end of the navbar. It is hidden by default.
-  * Many navbar buttons that are simply redundant links that may be found in the root menus and supernav menus are collapsed until opened by a button added to the navbar buttons area.
-  * Theater Mode, which hides the game list sidebar, can be enabled from a button added to the navbar buttons area.
-  * Several search and filter related controls in library sidebar can be toggled via a button in the upper-left corner of the sidebar. These controls are hidden by default.
-  * The What's New container in the library may be collapsed via the button next to the carousel controls.
-  * Three buttons to select between displaying the Activity feed, the Community feed, and the Details panels for a game entry are found added to the playbar.
-  * To match toggling the info panel on the game page, the game links panel may be toggled with a button added to the playbar.
-* On the friends list window...
-  * The header containers are toggled via the menu button in the upper-left corner. These are shown by default.
-  * The current user container is toggled via the button at the ends of the friends tab buttons container. It is hidden by default.
-* On the chat window...
-  * The channel list, member list, and settings buttons are toggled via three buttons added to the group chat header bar.
+Zehn features numerous added buttons to expand/collapse content, switch between pages, adjust layouts, and more! Many also have their own tooltips done just like they were part of Steam!
 
 Any text added by Zehn is localized to languages supported by Steam via localization keys in `/data/localization.json`.
 
 ### Plugin Support
 Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy the following plugins made to look right at home in a Zehn Steam:
 * Achievement Groups
-  * Made to match the other achievement overlay tabs.
 * Collections+
 * Easy SteamGrid
 * Extendium
-  * Browser bar buttons, extensions context menus, and settings dialogs all skinned.
 * Gratitude
 * HLTB for Steam
-  * Game page stats made to look like the collections tags.
 * Size on Disk
 * Window Styler (DWMX)
-  * When Transparency Effects is enabled in the settings, certain windows can have Acrylic blur behind them.
 
 ----------
 
