@@ -83,20 +83,20 @@ Part of the design philosophy behind Zehn is to only show what is always going t
 ## What Does Zehn Offer?
 
 ### Customization
-Zehn features various options to change the look and layout of the skin, including hiding and showing content, changing avatar style, and more.
+Check out the options to make Zehn tailored to your tastes, including hiding and showing content, styling looks of components and pages, and more!
 
-There are several options that mirror settings in Windows 10, such as using transparency effects and showing the accent color on window borders. Along with the choice of light or dark mode, you can ensure Zehn matches your Windows 10 setup! You can even let Zehn automatically sync with your system mode!
-
-Zehn is built on the foundation of variables to make broad-sweeping changes a breeze and offer a high degree of consistency. You can use Millennium's Quick CSS feature or modify `custom.css` on SFP to override these variables found in `/css/variables.css`!
+Several options mirror settings in Windows 10, such as toggling transparency effects and showing your accent color on window borders. Along with the choice of light or dark modes, you can ensure Zehn matches your Windows 10 setup! You can even let Zehn automatically sync with your system mode!
 
 > [!NOTE]
 > #### Millennium
-> Use Millennium's Library Manager to select Zehn's options inside of Steam.
+> Use Millennium's Library Manager to select Zehn's options inside of Steam. Write your own styles using Quick CSS!
 >
 > #### SFP
-> Edit the config in `options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be.
+> Edit the config in `options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be. Write your own styles in `custom.css`!
 
 ### Color Blending
+Zehn is built on the foundation of CSS variables to make broad-sweeping changes a breeze and offer a high degree of consistency. Everything except accent colors can be recolored to your liking without having to edit any CSS!
+
 You can blend colors into both the foreground and background of Zehn. Give Steam more than just a native look, give it your look in either light or dark mode!
 
 ![color](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/color.gif)
@@ -108,8 +108,13 @@ You can blend colors into both the foreground and background of Zehn. Give Steam
 > #### SFP
 > Edit the config in `options.json` as usual. Set the colors in `/option/colors.css`.
 
-### Acrylic
-Acrylic is a Fluent Design material that blurs the background of a surface with a translucent color along with a bit of noise. In Zehn, Acrylic is handled in two ways when `Transparency Effects` is enabled in the options.
+### Fluent Design
+
+#### Reveal
+Reveal is a Fluent Design effect that reveals hidden backgrounds and borders where you mouse over. When `Transparency Effects` is enabled, certain buttons, lists, and more are given Reveal!
+
+#### Acrylic
+Acrylic is a Fluent Design material that blurs the background of a surface with a translucent color along with a bit of noise. Acrylic is given to many surfaces when `Transparency Effects` is enabled.
 
 Certain surfaces will always have an Acrylic blur on them. These are generally small panels that blur images behind them.
 
@@ -117,20 +122,20 @@ Some windows have reactive panels that change into an Acrylic surface upon windo
 * Panels that overlay and blur Steam content below them. This works out of the box!
 * Windows that blur the desktop and other windows behind them. This requires the DWMX plugin for Millennium to work.
 
-![acrylic](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/acrylic.gif)
+![fluent](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/fluent.gif)
 
 > [!WARNING]
 > Behind-window Acrylic may require additional compositing software to function. See the [Acrylic](https://github.com/yurisuika/Zehn/wiki/Acrylic) page on the wiki for a guide on how to get it to work!
 
-### Reveal
-Reveal is a Fluent Design effect that reveals hidden backgrounds and borders where you mouse over. When `Transparency Effects` is enabled, certain buttons, lists, and more are given Reveal!
-
-![reveal](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/reveal.gif)
-
 ### Waifus
-You can give your waifu a home in your library! Supports random image selection, adjustable placement, and more.
+You can give your waifu a home in your library!
+
+Have a harem? You can have someone different greet you every time Steam loads with random image selection, configurable via JSON! Adjust appearance and placement to your liking!
 
 ![waifu](https://raw.githubusercontent.com/yurisuika/Zehn/refs/heads/assets/waifu.png)
+
+> [!TIP]
+> Did I mention the [wiki](https://github.com/yurisuika/Zehn/wiki)?
 
 ### Other Features
 Zehn features numerous added buttons to expand/collapse content, switch between pages, adjust layouts, and more! Many also have their own tooltips done just like they were part of Steam!
