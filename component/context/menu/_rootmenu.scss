@@ -2,14 +2,20 @@
 
 html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem {
   display: flex !important;
+  gap: var(--zehn-size-context-entry-gap) !important;
 }
-
-html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem .zehnRootmenu {
-  display: flex !important;
+.zehnRootMenuEntry {
+  display: flex;
   gap: var(--zehn-size-context-entry-gap);
+  order: -1;
+
+  // HIDE IF ACTUALLY HAS ICON (STATUSES)
+  &:has(+._1GNJUJrGs0xUpASde60jQh) {
+    display: none !important;
+  }
 }
 
-html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem .zehnRootmenu  .zehnIcon {
+.zehnContextIcon {
   position: relative;
   display: block;
   width: var(--zehn-size-context-entry-icon);
@@ -124,19 +130,23 @@ html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem .zehnRootmen
   --context-icon: var(--zehn-icon-contact-settings);
 }
 
-.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(4) {
+.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(4),
+._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(4):has(._1GNJUJrGs0xUpASde60jQh) {
   --context-icon: var(--zehn-icon-status-online);
 }
 
-.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(5) {
+.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(5),
+._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(5):has(._1GNJUJrGs0xUpASde60jQh) {
   --context-icon: var(--zehn-icon-status-away);
 }
 
-.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(6) {
+.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(6),
+._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(6):has(._1GNJUJrGs0xUpASde60jQh) {
   --context-icon: var(--zehn-icon-status-invisible);
 }
 
-.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(7) {
+.Friends_Root_Menu ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(7),
+._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem:nth-of-type(7):has(._1GNJUJrGs0xUpASde60jQh) {
   --context-icon: var(--zehn-icon-status-offline);
 }
 
@@ -190,7 +200,7 @@ html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem .zehnRootmen
   --context-icon: var(--zehn-icon-steam);
 }
 
-// STOCK STATUS ICON - REMOVED
+// STATUS ENTRY
 ._1GNJUJrGs0xUpASde60jQh {
   gap: var(--zehn-size-context-entry-gap) !important;
 }
@@ -205,6 +215,10 @@ html[class*="_Root_Menu"] ._2EstNjFIIZm_WUSKm5Wt7n>.contextMenuItem .zehnRootmen
   -webkit-mask-image: var(--context-icon, var(--zehn-icon-asterisk)) !important;
   margin: 0px !important;
   flex-shrink: 0 !important;
+
+  &:has(svg) {
+    -webkit-mask-image: var(--zehn-icon-checkmark) !important;
+  }
 
   // SVG ONLY EXISTS WHEN CHECKED
   svg {
