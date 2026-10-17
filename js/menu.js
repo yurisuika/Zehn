@@ -11,16 +11,16 @@ CREATE.createElement('._1UgM1Pm8SbTWX7_2f-crGt', '.MCa4RMSvWJwwWjcZP2wTT', ['.ze
 
 /* MOVE SUPERNAV AND ROOT MENU LIST ITEMS INTO CONTAINERS ----------------------------------------------------------- */
 
-CREATE.createIconTextContainer('.Store_Supernav', '.contextMenuItem', ['.zehnSupernav']);
-CREATE.createIconTextContainer('.Library_Supernav', '.contextMenuItem', ['.zehnSupernav']);
-CREATE.createIconTextContainer('.Community_Supernav', '.contextMenuItem', ['.zehnSupernav']);
-CREATE.createIconTextContainer('.Profile_Supernav', '.contextMenuItem', ['.zehnSupernav']);
+CREATE.createIconContainer('.Store_Supernav', '.contextMenuItem', ['.zehnSuperNavEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
+CREATE.createIconContainer('.Library_Supernav', '.contextMenuItem', ['.zehnSuperNavEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
+CREATE.createIconContainer('.Community_Supernav', '.contextMenuItem', ['.zehnSuperNavEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
+CREATE.createIconContainer('.Profile_Supernav', '.contextMenuItem', ['.zehnSuperNavEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
 
-CREATE.createIconTextContainer('.Steam_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
-CREATE.createIconTextContainer('.View_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
-CREATE.createIconTextContainer('.Friends_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
-CREATE.createIconTextContainer('.Games_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
-CREATE.createIconTextContainer('.Help_Root_Menu', '.contextMenuItem', ['.zehnRootmenu']);
+CREATE.createIconContainer('.Steam_Root_Menu', '.contextMenuItem', ['.zehnRootMenuEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
+CREATE.createIconContainer('.View_Root_Menu', '.contextMenuItem', ['.zehnRootMenuEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
+CREATE.createIconContainer('.Friends_Root_Menu', '.contextMenuItem', ['.zehnRootMenuEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
+CREATE.createIconContainer('.Games_Root_Menu', '.contextMenuItem', ['.zehnRootMenuEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
+CREATE.createIconContainer('.Help_Root_Menu', '.contextMenuItem', ['.zehnRootMenuEntry'], ['.zehnContextIcon'], { placement: 'prepend' });
 
 /* OPEN MILLENNIUM SETTINGS ----------------------------------------------------------------------------------------- */
 

@@ -262,7 +262,7 @@ CREATE.createTextContainer('._5uvIN6jXDXzzck59F-nhv', '._39ZurKJQex6v69aXzvc_nj'
 
 /* ADD PLAY ICON INTO CONTAINER ------------------------------------------------------------------------------------- */
 
-CREATE.createIconContainer('.QsvsRVwbsApgKt1MhM0fz', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnPlayWrapper']);
+CREATE.createIconContainer('.QsvsRVwbsApgKt1MhM0fz', '.jjN9CtYfeIJoHpKOCmKOx', ['.zehnPlayWrapper'], ['.zehnIcon']);
 
 /* WRAP ALL COLLECTIONS HEADER AND LIST ----------------------------------------------------------------------------- */
 

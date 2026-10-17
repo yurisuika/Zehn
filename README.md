@@ -85,7 +85,7 @@ Part of the design philosophy behind Zehn is to only show what is always going t
 ### Customization
 Check out the options to make Zehn tailored to your tastes, including hiding and showing content, styling looks of components and pages, and more!
 
-Several options mirror settings in Windows 10, such as toggling transparency effects and showing your accent color on window borders. Along with the choice of light or dark modes, you can ensure Zehn matches your Windows 10 setup! You can even let Zehn automatically sync with your system mode!
+Several options mirror settings in Windows 10, such as toggling transparency effects and showing your accent color on window borders. Along with the choice of light or dark modes, you can ensure Zehn matches your Windows 10 setup! You can even let Zehn automatically sync with your system color mode!
 
 > [!NOTE]
 > #### Millennium
@@ -95,7 +95,7 @@ Several options mirror settings in Windows 10, such as toggling transparency eff
 > Edit the config in `options.json`. Please reference the [wiki](https://github.com/yurisuika/Zehn/wiki) to know what the values for each option may be. Write your own styles in `custom.css`!
 
 ### Color Blending
-Zehn is built on the foundation of CSS variables to make broad-sweeping changes a breeze and offer a high degree of consistency. Everything except accent colors can be recolored to your liking without having to edit any CSS!
+Zehn is built on the foundation of CSS variables to make broad-sweeping changes a breeze and offer a high degree of consistency. Recolor everything to your liking without having to edit any CSS!
 
 You can blend colors into both the foreground and background of Zehn. Give Steam more than just a native look, give it your look in either light or dark mode!
 
@@ -137,10 +137,10 @@ Have a harem? You can have someone different greet you every time Steam loads wi
 > [!TIP]
 > Did I mention the [wiki](https://github.com/yurisuika/Zehn/wiki)?
 
-### Other Features
+### Take Control
 Zehn features numerous added buttons to expand/collapse content, switch between pages, adjust layouts, and more! Many also have their own tooltips done just like they were part of Steam!
 
-Any text added by Zehn is localized to languages supported by Steam via localization keys in `/data/localization.json`.
+Any text added by Zehn is localized to languages supported by Steam via localization keys in `/data/localization.json`. Tooltips to be done soon!
 
 ### Plugin Support
 Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy the following plugins made to look right at home in a Zehn Steam:

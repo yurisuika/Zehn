@@ -408,7 +408,7 @@ function createText(rootSelector, targetSelector, nameSelectors, text, {
   });
 }
 
-function createIconTextContainer(rootSelector, targetSelector, nameSelectors, {
+function createIconTextContainer(rootSelector, targetSelector, nameSelectors, iconNameSelectors, {
   placement = 'append'
 } = {}) {
   findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
@@ -427,13 +427,15 @@ function createIconTextContainer(rootSelector, targetSelector, nameSelectors, {
       target.childNodes[0].remove();
 
       const ICON = document.createElement('svg');
-      ICON.classList.add('zehnIcon');
+      iconNameSelectors.forEach((iconNameSelector) => {
+        name(ICON, iconNameSelector);
+      });
       CONTAINER.prepend(ICON);
     }
   });
 }
 
-function createIconContainer(rootSelector, targetSelector, nameSelectors, {
+function createIconContainer(rootSelector, targetSelector, nameSelectors, iconNameSelectors, {
   placement = 'append'
 } = {}) {
   findRootsAndTargets(rootSelector, targetSelector, (root, target) => {
@@ -445,7 +447,9 @@ function createIconContainer(rootSelector, targetSelector, nameSelectors, {
     insert(target, CONTAINER, placement);
 
     const ICON = document.createElement('svg');
-    ICON.classList.add('zehnIcon');
+    iconNameSelectors.forEach((iconNameSelector) => {
+      name(ICON, iconNameSelector);
+    });
     CONTAINER.prepend(ICON);
   });
 }

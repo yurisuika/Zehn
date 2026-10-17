@@ -29,7 +29,7 @@ MOVE.moveElement('._1AL7l2CN6z-vuLfp1iCLa', '.LCeIT0gmFTY8fdfaVgk4j', [
 
 /* ADD ICON ELEMENTS TO CLOCK BUTTONS-------------------------------------------------------------------------------- */
 
-CREATE.createIconTextContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl', ['.zehnClock']);
+CREATE.createIconTextContainer('.jSQQl34mj8a4NOKubD6AT', '.HijmccPB1BKyhOwhX1EVl', ['.zehnClock'], ['.zehnIcon']);
 
 /* MOVE BROWSER TABS INTO TITLEBAR ---------------------------------------------------------------------------------- */
 
@@ -42,7 +42,7 @@ MOVE.moveElement('._1UJDmU3N-pkv7oTJ_Zf9nK', '.OverlayBrowser_Browser .TitleBar.
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
-CREATE.createIconTextContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', ['.zehnPagelist']);
+CREATE.createIconTextContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', ['.zehnPagelist'], ['.zehnIcon']);
 
 /* WRAP LEAVE GROUP CHAT TEXT --------------------------------------------------------------------------------------- */
 

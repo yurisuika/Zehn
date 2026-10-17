@@ -148,8 +148,8 @@ MOVE.moveElement('.MultiUserChat', '.chatRoomOptions', [
 MOVE.moveElement('.MultiUserChat', '.chatRoomOptions', [
   '.doGxCBJrGimabHm365bOV' // YULE LOG
 ], { placement: 'prepend' });
-CREATE.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper']);
-CREATE.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper']);
+CREATE.createIconContainer('.MultiUserChat', '.broadcastInfoContainer .thumbnail', ['.zehnBroadcastPlaceholderWrapper'], ['.zehnIcon']);
+CREATE.createIconContainer('.MultiUserChat', '.doGxCBJrGimabHm365bOV', ['.zehnBroadcastPreviewWrapper'], ['.zehnIcon']);
 
 /* WRAP POPOUT SVG -------------------------------------------------------------------------------------------------- */
 

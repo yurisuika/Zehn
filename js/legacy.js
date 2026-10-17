@@ -9,7 +9,7 @@ import REVEAL from './lib/reveal.js';
 
 /* ADD ICON ELEMENTS TO GROUP CHAT SETTINGS PAGELIST ---------------------------------------------------------------- */
 
-CREATE.createIconTextContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', ['.zehnPagelist']);
+CREATE.createIconTextContainer('.LegacyPopup', '._2YV0m3IRCNOoUV9YhJNFnV', ['.zehnPagelist'], ['.zehnIcon']);
 
 /* WRAP LEAVE GROUP CHAT TEXT --------------------------------------------------------------------------------------- */
 
