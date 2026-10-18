@@ -5,7 +5,9 @@ import './shared/spinner.js';
 import './shared/switch.js';
 import './shared/context.js';
 import './shared/pagelist.js';
+import { CURRENT_LANG, LOCALIZATION_JSON } from './shared/data.js';
 import { FIND, STORE, TOGGLE, CREATE, MOVE } from './lib/util.js';
+import LOCALIZATION from './lib/localization.js';
 import REVEAL from './lib/reveal.js';
 import WAIFU from './lib/waifu.js';
 import SECRET from './lib/secret.js';
@@ -55,10 +57,11 @@ FIND.findRootsAndTargets('.QsvsRVwbsApgKt1MhM0fz', '._1rDh5rXSFZJOqCa4UpnI4z', (
 
 /* TOGGLE LIBRARY SEARCH SECTION ------------------------------------------------------------------------------------ */
 
+let localTooltipSidebarSearch = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Sidebar_Search");
 TOGGLE.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleSidebarSearch', 'zehnSearchOpened');
 CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2WgQEFvIzJw_SHNGbjtRFU', ['#zehnToggleSidebarSearch', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnSearchOpened');
-}, { placement: 'prepend', activeTooltipText: 'Search my apps', inactiveTooltipText: 'Search my apps' });
+}, { placement: 'prepend', activeTooltipText: localTooltipSidebarSearch, inactiveTooltipText: localTooltipSidebarSearch });
 
 /* TOGGLE LIBRARY WHAT'S NEW SECTION -------------------------------------------------------------------------------- */
 
@@ -175,12 +178,15 @@ function togglePage(root, target, button) {
   }
 };
 
-CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { placement: 'prepend', activeTooltipText: 'Game details', inactiveTooltipText: 'Game details' }); // STICKY DETAILS
-CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { placement: 'prepend', activeTooltipText: 'Game details', inactiveTooltipText: 'Game details' }); // DETAILS
-CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Community feed', inactiveTooltipText: 'Community feed' }); // STICKY COMMUNITY
-CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Community feed', inactiveTooltipText: 'Community feed' }); // COMMUNITY
-CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Activity feed', inactiveTooltipText: 'Activity feed' }); // STICKY ACTIVITY
-CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: 'Activity feed', inactiveTooltipText: 'Activity feed' }); // ACTIVITY
+let localTooltipGameActivity = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Game_Activity");
+let localTooltipGameCommunity = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Game_Community");
+let localTooltipGameDetails = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Game_Details");
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { placement: 'prepend', activeTooltipText: localTooltipGameDetails, inactiveTooltipText: localTooltipGameDetails }); // STICKY DETAILS
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleDetails', '.zehnButton', '.zehnReveal', '.zehnToggled'], togglePage, { placement: 'prepend', activeTooltipText: localTooltipGameDetails, inactiveTooltipText: localTooltipGameDetails }); // DETAILS
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: localTooltipGameCommunity, inactiveTooltipText: localTooltipGameCommunity }); // STICKY COMMUNITY
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleCommunity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: localTooltipGameCommunity, inactiveTooltipText: localTooltipGameCommunity }); // COMMUNITY
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: localTooltipGameActivity, inactiveTooltipText: localTooltipGameActivity }); // STICKY ACTIVITY
+CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleActivity', '.zehnButton', '.zehnReveal'], togglePage, { placement: 'prepend', activeTooltipText: localTooltipGameActivity, inactiveTooltipText: localTooltipGameActivity }); // ACTIVITY
 
 /* WRAP NAVIGATION CONTROLS FOR BACKGROUND -------------------------------------------------------------------------- */
 
@@ -197,17 +203,21 @@ MOVE.moveElement('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm', [
 
 /* TOGGLE THEATER MODE AKA REMOVE LIBRARY SIDEBAR ------------------------------------------------------------------- */
 
+let localTooltipTheaterModeEnter = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Theater_Mode_Enter");
+let localTooltipTheaterModeExit = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Theater_Mode_Exit");
 TOGGLE.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleTheaterMode', 'zehnTheaterMode');
 CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleTheaterMode', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnTheaterMode');
-}, { activeTooltipText: 'Exit theater mode', inactiveTooltipText: 'Enter theater mode' });
+}, { activeTooltipText: localTooltipTheaterModeExit, inactiveTooltipText: localTooltipTheaterModeEnter });
 
 /* TOGGLE NAVBAR EXPANSION ------------------------------------------------------------------------------------------ */
 
+let localTooltipNavbarCollapse = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Navbar_Collapse");
+let localTooltipNavbarExpand = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Navbar_Expand");
 TOGGLE.checkButtonToggle('.QsvsRVwbsApgKt1MhM0fz', '#zehnToggleExpandedNavbar', 'zehnExpandedNavbar');
 CREATE.createTooltipButton('.QsvsRVwbsApgKt1MhM0fz', '._3cykd-VfN_xBxf3Qxriccm._1-9sir4j_KQiMqdkZjQN0u', ['#zehnToggleExpandedNavbar', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnExpandedNavbar');
-}, { activeTooltipText: 'Collapse navbar items', inactiveTooltipText: 'Expand navbar items' });
+}, { activeTooltipText: localTooltipNavbarCollapse, inactiveTooltipText: localTooltipNavbarExpand });
 
 /* MOVE LIBRARY SIDEBAR BUTTONS ------------------------------------------------------------------------------------- */
 
@@ -252,8 +262,10 @@ function toggleLinks(root, target, button) {
   });
 };
 
-CREATE.createTooltipButton('._2Dd4T78PcCTUVgOtDGFY5j', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks, { activeTooltipText: 'Collapse game links', inactiveTooltipText: 'Expand game links' }); // STICKY PLAYBAR
-CREATE.createTooltipButton('._2Dd4T78PcCTUVgOtDGFY5j', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks, { activeTooltipText: 'Collapse game links', inactiveTooltipText: 'Expand game links' }); // PLAYBAR
+let localTooltipGameLinksCollapse = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Game_Links_Collapse");
+let localTooltipGameLinksExpand = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Game_Links_Expand");
+CREATE.createTooltipButton('._2Dd4T78PcCTUVgOtDGFY5j', '._2L3s2nzh7yCnNESfI5_dN1._3Yf8b2v5oOD8Wqsxu04ar .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks, { activeTooltipText: localTooltipGameLinksCollapse, inactiveTooltipText: localTooltipGameLinksExpand }); // STICKY PLAYBAR
+CREATE.createTooltipButton('._2Dd4T78PcCTUVgOtDGFY5j', '._3VQUewWB8g6Z5qB4C7dGFr._2iE-78WxX2Pj4GHbq7YJiA .lO1IF132jJ1gc9yz2HYvV', ['.zehnToggleGameLinks', '.zehnButton', '.zehnReveal'], toggleLinks, { activeTooltipText: localTooltipGameLinksCollapse, inactiveTooltipText: localTooltipGameLinksExpand }); // PLAYBAR
 
 /* WRAP LOAD MORE --------------------------------------------------------------------------------------------------- */
 

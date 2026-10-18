@@ -24,17 +24,20 @@ CREATE.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTi
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
+let localTooltipProfileCollapse = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Profile_Collapse");
+let localTooltipProfileExpand = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Profile_Expand");
 TOGGLE.checkTargetToggle('.chat_main', '.friendsTabButtonsContainer', '#zehnToggleUser', 'zehnUserOpened');
 CREATE.createTooltipButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleUser', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnUserOpened');
-}, { toggleSelector: 'zehnUserOpened', activeTooltipText: 'Collapse current user', inactiveTooltipText: 'Expand current user' });
+}, { toggleSelector: 'zehnUserOpened', activeTooltipText: localTooltipProfileCollapse, inactiveTooltipText: localTooltipProfileExpand });
 
 /* TOGGLE QUICK ACCESS ---------------------------------------------------------------------------------------------- */
 
+let localTooltipQuickAccess = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Quick_Access");
 TOGGLE.checkTargetToggle('.chat_main', '.friendsTabButtonsContainer', '#zehnToggleQuickAccess', 'zehnQuickAccessOpened');
 CREATE.createTooltipButton('.friendsListContainer', '.friendsTabButtonsContainer', ['#zehnToggleQuickAccess', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnQuickAccessOpened');
-}, { placement: 'append', toggleSelector: 'zehnQuickAccessOpened', activeTooltipText: 'Quick access', inactiveTooltipText: 'Quick access' });
+}, { placement: 'append', toggleSelector: 'zehnQuickAccessOpened', activeTooltipText: localTooltipQuickAccess, inactiveTooltipText: localTooltipQuickAccess });
 
 FIND.findRootsAndTargets('.friendsListContainer', '.zehnFriendsBackdrop', (root, target) => {
   const QA_BTN = document.getElementById('zehnToggleQuickAccess');
@@ -98,13 +101,13 @@ function toggleList(root, target, button) {
   }
 }
 
-let localFriends = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Label_Friends");
+let localLabelFriends = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Label_Friends");
 TOGGLE.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabFriends', 'zehnFriendsTablistFriendsOpened');
-CREATE.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabFriends', '.zehnToggled'], localFriends, toggleList);
+CREATE.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabFriends', '.zehnToggled'], localLabelFriends, toggleList);
 
-let localChats = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Label_Chats");
+let localLabelChats = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Label_Chats");
 TOGGLE.checkButtonToggle('.friendsListContainer', '.zehnFriendsTabChats', 'zehnFriendsTablistChatsOpened');
-CREATE.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localChats, toggleList);
+CREATE.createTextButton('.friendsListContainer', '.zehnFriendsTablist', ['.zehnFriendsTabChats'], localLabelChats, toggleList);
 
 /* FRIENDS LIST FLYOUT BACKDROP ------------------------------------------------------------------------------------- */
 
@@ -116,17 +119,21 @@ CREATE.createElement('.multiChatDialog', '.ChatRoomGroup_MainAndChatEntry', ['.z
 
 /* TOGGLE GROUP CHAT SETTINGS BUTTONS ------------------------------------------------------------------------------- */
 
+let localTooltipSettingsCollapse = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Settings_Collapse");
+let localTooltipSettingsExpand = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Settings_Expand");
 TOGGLE.checkButtonToggle('.MultiUserChat', '.zehnToggleSettingsButtons', 'zehnSettingsButtonsOpened');
 CREATE.createTooltipButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleSettingsButtons', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnSettingsButtonsOpened');
-}, { activeTooltipText: 'Collapse settings', inactiveTooltipText: 'Expand settings' });
+}, { activeTooltipText: localTooltipSettingsCollapse, inactiveTooltipText: localTooltipSettingsExpand });
 
 /* TOGGLE GROUP CHAT CHANNEL PAGELIST ------------------------------------------------------------------------------- */
 
+let localTooltipChannelsCollapse = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Channels_Collapse");
+let localTooltipChannelsExpand = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Channels_Expand");
 TOGGLE.checkButtonToggle('.MultiUserChat', '.zehnToggleChannelList', 'zehnChannelListOpened');
 CREATE.createTooltipButton('.MultiUserChat', '.chatRoomOptions', ['.zehnToggleChannelList', '.zehnButton', '.zehnReveal'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnChannelListOpened');
-}, { activeTooltipText: 'Collapse channel list', inactiveTooltipText: 'Expand channel list' });
+}, { activeTooltipText: localTooltipChannelsCollapse, inactiveTooltipText: localTooltipChannelsExpand });
 
 FIND.findRootsAndTargets('.MultiUserChat', '.zehnChatBackdrop', (root, target) => {
   const CHANNEL_BTN = root.querySelector('.zehnToggleChannelList');

@@ -7,12 +7,8 @@ export default LOCALIZATION;
 /* LOCALIZATION ----------------------------------------------------------------------------------------------------- */
 
 async function getLocalizationJson() {
-  const RESPONSE = await fetch(
-    new URL('../../data/localization.json', import.meta.url)
-  );
-  if (!RESPONSE.ok) {
-    throw new Error('Failed to load localization JSON');
-  }
+  const RESPONSE = await fetch(new URL('../../data/localization.json', import.meta.url));
+  if (!RESPONSE.ok) throw new Error('Failed to load localization JSON');
   return await RESPONSE.json();
 }
 
