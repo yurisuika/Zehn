@@ -138,9 +138,9 @@ Have a harem? You can have someone different greet you every time Steam loads wi
 > Did I mention the [wiki](https://github.com/yurisuika/Zehn/wiki)?
 
 ### Take Control
-Zehn features numerous added buttons to expand/collapse content, switch between pages, adjust layouts, and more! Many also have their own tooltips done just like they were part of Steam!
+Zehn features numerous added buttons to expand/collapse content, switch between pages, adjust layouts, and more! Many buttons also have their own tooltips done just like they were part of Steam.
 
-Any text added by Zehn is localized to languages supported by Steam via localization keys in `/data/localization.json`. Tooltips to be done soon!
+As such, Zehn uses localization data (found in `/data/localization.json`) to display this text in your language! You can help improve the localization for your lanuage over at [the localization thread](https://github.com/yurisuika/Zehn/discussions/129)!
 
 ### Plugin Support
 Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy the following plugins made to look right at home in a Zehn Steam:

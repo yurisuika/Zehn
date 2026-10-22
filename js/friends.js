@@ -17,10 +17,12 @@ TOGGLE.toggleClassWithPresence('.chat_main', '.friendsListContainer', '.TabSearc
 
 /* TOGGLE HEADER CONTAINERS ----------------------------------------------------------------------------------------- */
 
+let localTooltipTheaterModeEnter = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Theater_Mode_Enter");
+let localTooltipTheaterModeExit = await LOCALIZATION.localize(LOCALIZATION_JSON, CURRENT_LANG, "Tooltip_Theater_Mode_Exit");
 TOGGLE.checkTargetToggle('.chat_main', '.friendListHeaderContainer .chatTitleBar', '#zehnToggleFriendsHeader', 'zehnFriendsHeaderClosed');
-CREATE.createButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
+CREATE.createTooltipButton('.friendsListContainer', '.friendListHeaderContainer .chatTitleBar', ['#zehnToggleFriendsHeader', '.zehnButton'], (root, target, button) => {
   TOGGLE.addRootClassOnToggle(root, target, button, 'zehnFriendsHeaderClosed');
-}, { placement: 'prepend', toggleSelector: 'zehnFriendsHeaderClosed' });
+}, { placement: 'prepend', toggleSelector: 'zehnFriendsHeaderClosed', activeTooltipText: localTooltipTheaterModeExit, inactiveTooltipText: localTooltipTheaterModeEnter });
 
 /* TOGGLE CURRENT USER CONTAINER ------------------------------------------------------------------------------------ */
 
