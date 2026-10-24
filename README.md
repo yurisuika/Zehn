@@ -142,6 +142,11 @@ Zehn features numerous added buttons to expand/collapse content, switch between 
 
 As such, Zehn uses localization data (found in `/data/localization.json`) to display this text in your language! You can help improve the localization for your lanuage over at [the localization thread](https://github.com/yurisuika/Zehn/discussions/129)!
 
+### The Big Picture
+Support for Big Picture Mode is in progress to bring a Windows 10-era style Xbox dashboard to your Steam!
+
+At the moment it is complete in places, and broken in other places. If you wish to use BPM unhindered until it is finished, please remove the BPM patches from `skin.json`.
+
 ### Plugin Support
 Some Millennium plugins need a bit of styling to fit with Zehn. You can enjoy the following plugins made to look right at home in a Zehn Steam:
 * Achievement Groups
