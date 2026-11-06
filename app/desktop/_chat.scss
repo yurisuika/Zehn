@@ -3203,31 +3203,51 @@ span.mention.me {
 }
 
 .spoilerMsg.spoilerMedia .BBCodeResizableComponent .BBCodeResizableElement {
-  opacity: 0.1 !important;
+  opacity: 1 !important;
   filter: none !important;
-  transition: none !important;
   margin: 0px !important;
-  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+  transition: none !important;
+
+  img {
+    overflow: hidden !important;
+    opacity: 1 !important;
+    filter: var(--zehn-filter-defocus) !important;
+    transition: filter 0.2s var(--zehn-timing-ease) !important;
+  }
 }
 
 .spoilerMsg.spoilerMedia .BBCodeResizableComponent.ActivelyResizing .BBCodeResizableElement,
 .spoilerMsg.spoilerMedia .BBCodeResizableComponent:hover .BBCodeResizableElement {
-  opacity: 1 !important;
-  filter: none !important;
+
+  img {
+    opacity: 1 !important;
+    filter: none !important;
+  }
 }
 
 .msgText .spoilerMsgText .spoilerMsg {
-  opacity: 0.1 !important;
+  opacity: 1 !important;
   filter: none !important;
-  transition: none !important;
   margin: 0px !important;
-  transition: opacity 0.2s var(--zehn-timing-ease) !important;
+  transition: filter 0.2s var(--zehn-timing-ease) !important;
+
+  img {
+    overflow: hidden !important;
+    opacity: 1 !important;
+    filter: var(--zehn-filter-defocus) !important;
+    transition: filter 0.2s var(--zehn-timing-ease) !important;
+  }
 }
 
 .msgText .spoilerMsgText:hover .spoilerMsg,
 .RevealSpoiler .msgText .spoilerMsgText .spoilerMsg {
   opacity: 1 !important;
   filter: none !important;
+
+  img {
+    opacity: 1 !important;
+    filter: none !important;
+  }
 }
 
 // FIXED WIDTH
