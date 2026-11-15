@@ -404,6 +404,7 @@ REVEAL.addRevealClass('._27RcNu8aXKBpYkHcNNrt-X._2OOzYVWIHaKXm6_7sscT9i', [
   '#zehnGameFeatured ._2r4TK4BAuU-J4FuF_O7v_5._3yTl3RiWfo-Itg-xp967wP', // FEATURED ACTIVITY
   '._25oBZpa3dUcMw8QAsa2u67 ._2jPMy2QZr8bWi6yrk5ZzHA', // INFO PANEL
   '._2r4TK4BAuU-J4FuF_O7v_5._3-V8vjmrwuJM6Ws3tsjFJj ._31ptFGGMZrSQc5BCX1e5lm._3KfxIwlXEvum7FCD_AM2_t', // GAME LINKS
+  '.v66w8s0IBeRURM9hD5nAw', // FRAME RATE DATA
   '._1rjqv6aCi9t7H-prIq99fk', // NEW DLC
   '._1RXqe8xTnoJk0PaVkFTk4O', // DEMO
   '._3LE-6w1ItIAB4CKJFCa3Od', // UPDATE REVEAL
@@ -427,6 +428,7 @@ REVEAL.revealSelf('._27RcNu8aXKBpYkHcNNrt-X ._11kuVRYZvWXn-3rBJ_6yL8 ._1OMmVJHDg
 REVEAL.revealSelf('#zehnGameFeatured ._2r4TK4BAuU-J4FuF_O7v_5._3yTl3RiWfo-Itg-xp967wP', { maskSize: 300,  requiresContentModePanel: true });
 REVEAL.revealSelf('._25oBZpa3dUcMw8QAsa2u67 ._2jPMy2QZr8bWi6yrk5ZzHA', { maskSize: 300,  requiresContentModePanel: true });
 REVEAL.revealSelf('._2r4TK4BAuU-J4FuF_O7v_5._3-V8vjmrwuJM6Ws3tsjFJj ._31ptFGGMZrSQc5BCX1e5lm._3KfxIwlXEvum7FCD_AM2_t', { maskSize: 300,  requiresContentModePanel: true });
+REVEAL.revealSelf('.v66w8s0IBeRURM9hD5nAw', { maskSize: 300,  requiresContentModePanel: true });
 REVEAL.revealSelf('._1rjqv6aCi9t7H-prIq99fk', { maskSize: 300,  requiresContentModePanel: true });
 REVEAL.revealSelf('._1RXqe8xTnoJk0PaVkFTk4O', { maskSize: 300,  requiresContentModePanel: true });
 REVEAL.revealSelf('._3LE-6w1ItIAB4CKJFCa3Od', { maskSize: 300,  requiresContentModePanel: true });
