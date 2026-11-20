@@ -33,3 +33,11 @@ REVEAL.addRevealClass('._30wJO3MC4x-I1OWpy1TAeE', [
 ]);
 
 REVEAL.revealSelf('._2oAiZidGyUxL-hfupFDQ2m.zehnReveal');
+
+REVEAL.addRevealClass('._1PUg8GjnBeN7rBK-dcyQFl', [
+  '._20oF9tLSfptitLraDOp6X6' // DROPDOWN ENTRY
+], [
+  'zehnRevealRipple'
+]);
+
+REVEAL.revealSelf('._20oF9tLSfptitLraDOp6X6.zehnReveal');

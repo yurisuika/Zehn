@@ -17,5 +17,6 @@ async function addLocalizedLabels(...switchSelector) {
 addLocalizedLabels(
   '._9Ql-oVe_j8E-vsDdyVdWo', // GAMEPAD
   '._3Sl0QHQ69uK7ZMQo5vBfrA', // WHAT'S NEW & FRIENDS SETTINGS
-  '.DialogToggleField_OptionPanel' // OLD CHAT DIALOGS
+  '.DialogToggleField_OptionPanel', // OLD CHAT DIALOGS
+  // 'div[role="switch"]' // LATE 2026 ACHIEVEMENTS REFRESH
 );
