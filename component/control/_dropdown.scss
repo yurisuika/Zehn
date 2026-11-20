@@ -98,7 +98,6 @@ select {
     $disabled: ".Disabled",
     $style: "dialog"
   );
-
 }
 
 // MEDIA SHARE
@@ -150,6 +149,44 @@ select {
     $disabled: ".Disabled",
     $style: "dialog"
   );
+}
+
+// LATE 2026 ACHIEVEMENTS REFRESH
+div[role="combobox"] {
+    @include template.preset-fixed(
+    $height: var(--zehn-size-dropdown-dialog),
+    $width: fit-content,
+    $style: "dialog"
+  );
+
+  // TEXT
+  .f6hU22EA7Z8peFWZVBJU {
+    font-weight: inherit !important;
+    color: var(--text-color) !important;
+    font-size: var(--text-size) !important;
+    line-height: var(--text-line) !important;
+    padding: 0px !important;
+  }
+
+  // CHEVRON
+  div:has(svg) {
+    padding: 0px !important;
+
+    svg {
+      display: block !important;
+      position: relative !important;
+      margin: 0px !important;
+      width: var(--chevron-size) !important;
+      height: var(--chevron-size) !important;
+      background-color: var(--chevron-color) !important;
+      mask-repeat: no-repeat !important;
+      mask-position: center !important;
+      mask-size: var(--chevron-size) !important;
+      -webkit-mask-image: var(--zehn-icon-chevron-down-thick) !important;
+
+      * { display: none !important; }
+     }
+  }
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
