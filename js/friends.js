@@ -46,7 +46,7 @@ FIND.findRootsAndTargets('.friendsListContainer', '.zehnFriendsBackdrop', (root,
 
   target.addEventListener('click', (e) => {
     root.classList.contains('zehnQuickAccessOpened') && root.classList.remove('zehnQuickAccessOpened');
-    QA_BTN.classList.contains('zehnToggled') && QA_BTN.classList.remove('zehnToggled');
+    QA_BTN.classList.remove('zehnToggled');
   });
 });
 
