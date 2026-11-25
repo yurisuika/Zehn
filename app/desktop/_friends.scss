@@ -194,12 +194,10 @@
   border-radius: var(--zehn-size-radius-none) !important;
   background: transparent !important;
   transition: color 0.2s var(--zehn-timing-ease) !important;
+}
 
-  &.offline {
-    position: relative !important;
-    top: 0px !important;
-    right: 0px !important;
-  }
+.friendListHeaderContainer:not(:has(>.socialTabSearchContainer)) .currentUserContainer {
+  --user-state: none;
 }
 
 .compactView .currentUserContainer {
@@ -1050,6 +1048,11 @@
   display: none !important;
   height: 0px !important;
   min-height: 0px !important;
+}
+
+// DON'T SHOW WHEN OFFLINE
+.friendListHeaderContainer:not(:has(>.socialTabSearchContainer)) .zehnFriendsTablist {
+  display: none !important;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
